@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/lexer/valid/surrogate-pair-emoji.tson"
+spec: "§7.2.2"
+description: "A high/low surrogate escape pair decodes to the single supplementary-plane code point it encodes"
+outcome: valid
+tokens: [
+  { kind: single-line-token text: "😀" }
+]

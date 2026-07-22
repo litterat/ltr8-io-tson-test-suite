@@ -1,0 +1,4 @@
+# Test vectors are byte-exact fixtures -- their whole purpose is to pin down
+# specific bytes (BOM, CR/LF/NEL/LS/PS, non-NFC sequences, etc.). Git MUST
+# NOT apply any line-ending or encoding normalization to them.
+*.tn1 -text -diff
