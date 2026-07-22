@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/rational-negative-and-unreduced.tson"
+{
+  spec: "§7.6"
+  description: "meta.tn1: rational tokens are not normalized (-2/4 round-trips as -2/4, not -1/2), but equality operates on the value -- asserting value: \"-1/2\" here (not \"-2/4\") checks that a conforming implementation compares -2/4 and -1/2 as equal, not that it silently reduces the written form"
+  outcome: valid
+  type-ref: "rational"
+  value: "-1/2"
+}

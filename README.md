@@ -255,6 +255,16 @@ matching the resolver layer's own "information content, not canonical form" phil
 results aren't yet representable in this sidecar shape at all (`value` is a plain decimal string) — add a
 dedicated field for them when a vector actually needs to assert one.
 
+**`value`'s shape for `rational`/`complex`.** Neither has a natural `BigDecimal` representation — a
+rational is an exact fraction (not always a terminating decimal, e.g. `1/3`), and a complex number is a
+pair. `rational` vectors give `value` as a `"numerator/denominator"` string instead (e.g. `"2/3"`,
+`"-1/2"`) — compared by *value*, not written form (meta.tn1: "the token is preserved as written and `2/4`
+round-trips as `2/4`... equality operates on the value", so a vector may legitimately assert `value:
+"-1/2"` against an input written as `"-2/4"`, and a conforming implementation must still pass). `complex`
+vectors give `value` as a small record, `{ real: "<decimal>" imaginary: "<decimal>" }`, each part compared
+the same way the `BigDecimal`-based families are (exact for this atom — `complex`'s default component
+type is `NUMBER`, so no rounding concern the way `float32`/`float64` have).
+
 Invalid vocabulary vectors use the same `outcome: error` / `category` shape as any other layer (see
 below) — but see the categorization note there before assuming `category: resolver` on these is settled.
 
