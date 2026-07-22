@@ -45,7 +45,7 @@ the mechanism under test and would make the fixture ambiguous about what's reall
 
 The sidecar is itself TSON — deliberately, both because it's the natural choice for a TSON project and
 because it dogfoods the format. **Caveat:** as of this writing there is no TSON parser yet (only a lexer,
-in [ltr8-io-tson-java](https://github.com/ltr8-io/ltr8-io-tson-java)), so sidecars can't yet be
+in [ltr8-io-tson-java](https://github.com/litterat/ltr8-io-tson-java)), so sidecars can't yet be
 machine-validated against their own grammar. They're hand-written to be valid per the spec; treat that as
 provisional until a conforming parser exists to check them.
 
@@ -93,3 +93,23 @@ self-describing if it's ever moved.
 Position (line/column/byte-offset) of the error is deliberately **not** asserted — different
 implementations may legitimately report an error at slightly different points depending on how far they
 look ahead before failing. What's normative is that an error of the given category occurs somewhere.
+
+## Validating vectors
+
+`scripts/check_vectors.py` (stdlib-only) checks that every `.tn1` has a matching `.tson` and vice versa,
+and that each sidecar has the required fields with sane values. It's deliberately shallow — a regex-based
+check, not a real parse — since there's no TSON parser yet to validate sidecars against their own
+grammar. Runs in CI on every push and PR.
+
+```
+python3 scripts/check_vectors.py
+```
+
+## Related
+
+- [ltr8-io-tson-java](https://github.com/litterat/ltr8-io-tson-java) — the Java TSON implementation this
+  suite was seeded and cross-checked against.
+
+## License
+
+Apache License 2.0 — see [LICENSE](LICENSE).
