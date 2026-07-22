@@ -231,14 +231,29 @@ implementation-defined, so this suite asserts the underlying value, not a bound 
 }
 ```
 
-Vectors only exercise annotations §5.6 currently publishes — `int32`/`int64`/`uint32`/`uint64` for now.
-The core type library's `integer_type` constructor also backs `int8`/`int16`/`int128`/`int256`, the
-matching `uint*` widths, and the `positive_integer`/`non_negative_integer`/`negative_integer`/
-`non_positive_integer` refinements, but none of those names appear in §5.6's *published* table — asserting
-a vector against one would bind every implementation running this suite to one implementation's reading of
-an already-flagged spec gap, not to the spec text itself, and a strictly-literal implementation would
-correctly treat e.g. `!int8` as an unrecognized marker rather than a built-in atom. Add vectors for those
-names once §5.6 actually publishes them.
+Vectors only exercise annotations §5.6 currently publishes — the integer family is restricted to
+`int32`/`int64`/`uint32`/`uint64` for now. The core type library's `integer_type` constructor also backs
+`int8`/`int16`/`int128`/`int256`, the matching `uint*` widths, and the `positive_integer`/
+`non_negative_integer`/`negative_integer`/`non_positive_integer` refinements, but none of those names
+appear in §5.6's *published* table — asserting a vector against one would bind every implementation
+running this suite to one implementation's reading of an already-flagged spec gap, not to the spec text
+itself, and a strictly-literal implementation would correctly treat e.g. `!int8` as an unrecognized marker
+rather than a built-in atom. Add vectors for those names once §5.6 actually publishes them. `number`,
+`float32`, and `float64` are fully published as-is, so those aren't similarly restricted.
+
+**`value` and floating-point precision.** For the exact atoms (the integer family, `number`), `value` is
+unambiguous — compare it as an arbitrary-precision decimal, done. For the approximate atoms (`float32`/
+`float64`), the *accepted* value is whatever the token rounds to on the named IEEE 754 grid, which two
+different (correct) implementations could format differently as text at the same underlying value. To
+sidestep that entirely, `vocabulary/valid` float vectors are restricted to inputs whose rounded value is
+**exactly representable in decimal at the chosen `value`'s precision** (`12.5`, `-3.5`, hex-floats that
+land on values like `12.0`/`1.0`) — deliberately avoiding inputs like `3.14` or `0.1` that have no exact
+binary representation, where the rounded binary32/binary64 value's *exact* decimal expansion is a long,
+implementation-comparison-hostile string. Consuming implementations should compare `value` against the
+atom's result via numeric equality (e.g. `BigDecimal.compareTo`, not `equals` — scale isn't normative),
+matching the resolver layer's own "information content, not canonical form" philosophy. `NaN`/`Infinity`
+results aren't yet representable in this sidecar shape at all (`value` is a plain decimal string) — add a
+dedicated field for them when a vector actually needs to assert one.
 
 Invalid vocabulary vectors use the same `outcome: error` / `category` shape as any other layer (see
 below) — but see the categorization note there before assuming `category: resolver` on these is settled.

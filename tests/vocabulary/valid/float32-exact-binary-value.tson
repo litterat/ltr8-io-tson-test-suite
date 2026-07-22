@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/float32-exact-binary-value.tson"
+{
+  spec: "§5.6"
+  description: "-3.5 (= -(3 + 2^-1)) is exactly representable on the binary32 grid, same reasoning as the float64 counterpart"
+  outcome: valid
+  type-ref: "float32"
+  value: "-3.5"
+}
