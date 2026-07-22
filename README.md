@@ -27,13 +27,19 @@ tests/
     schema-document/
       <slug>.tn1
       <slug>.tson
+  resolver/
+    valid/
+      <slug>.tn1
+      <slug>.tson
 ```
 
-Top-level grouping is by **conformance layer** — `lexer`, `parser`, and eventually `resolver`,
+Top-level grouping is by **conformance layer** — `lexer`, `parser`, `resolver`, and eventually
 `vocabulary`, `schema` — mirroring the four error categories the spec itself defines and treats as
 stable for the whole series (spec §8.1: "the categories are defined here for the whole series"). Within
 each layer, vectors split into `valid/` (the input is well-formed at this layer), `invalid/` (the input
-MUST be rejected at this layer), and — parser layer only — `schema-document/` (see below).
+MUST be rejected at this layer), and — parser layer only — `schema-document/` (see below). `resolver` has
+no `invalid/` bucket: base type resolution (§4) never rejects a token, it always resolves to *something*
+(worst case, string) — see "Valid resolver-layer vectors" below.
 
 `<slug>` is a short, stable, descriptive name (e.g. `escape-basic`, `lone-high-surrogate`). Slugs are
 **not** derived from spec section numbers, so a future spec revision renumbering a section never forces a
@@ -155,6 +161,44 @@ third outcome, distinct from both `valid` and `error`:
   spec: "§1.5"
   description: "A header containing !!meta identifies a schema document, not a data document"
   outcome: schema-document
+}
+```
+
+### Valid resolver-layer vectors
+
+The `.tn1` file is a single bare token as the whole document (a token alone is a complete, valid
+data-value). `base-value` is the expected result of base type resolution (§4), using the spec's own
+vocabulary for which of the four number-grammar forms a number matched (§7.6) rather than any particular
+implementation's internal type names — deliberately **identification only**: which grammar form and its
+components, not a bound host numeric type (`long`/`double`/`BigInteger`/`BigDecimal`). The spec leaves that
+binding as "an implementation concern" (§4.3), and different implementations may reasonably choose
+different host representations, so this suite doesn't assert one:
+
+```
+base-value = { kind: null }
+           / { kind: boolean value: true|false }
+           / { kind: string text: <string> }
+           / { kind: number form: <number-form> }
+
+number-form = { shape: integer        sign: plus|minus|_  digits: <string> }
+            / { shape: based-integer  sign: plus|minus|_  radix: hex|octal|binary  digits: <string> }
+            / { shape: float          sign: plus|minus|_  integer-part: <string-or-absent>
+                                       fraction-digits: <string-or-absent>  exponent: <exponent-or-absent> }
+            / { shape: special-value  sign: plus|minus|_  kind: nan|infinity }
+
+exponent = { sign: plus|minus|_ digits: <string> }
+```
+
+```
+!!id:"https://tson.io/test-suite/resolver/valid/hex-based-integer.tson"
+{
+  spec: "§4.3"
+  description: "An unquoted 0x-prefixed token identifies as a based-integer number in hex"
+  outcome: valid
+  base-value: {
+    kind: number
+    form: { shape: based-integer sign: _ radix: hex digits: "FF" }
+  }
 }
 ```
 

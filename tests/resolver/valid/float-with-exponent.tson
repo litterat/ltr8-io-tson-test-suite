@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/resolver/valid/float-with-exponent.tson"
+{
+  spec: "§4.3"
+  description: "A float with an exponent captures the exponent as its own component"
+  outcome: valid
+  base-value: {
+    kind: number
+    form: {
+      shape: float
+      sign: _
+      integer-part: "6"
+      fraction-digits: "02"
+      exponent: {
+        sign: _
+        digits: "23"
+      }
+    }
+  }
+}

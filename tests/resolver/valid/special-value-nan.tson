@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/resolver/valid/special-value-nan.tson"
+{
+  spec: "§4.3"
+  description: "'.nan' identifies as the special-value form, kind nan, and is never signed"
+  outcome: valid
+  base-value: {
+    kind: number
+    form: {
+      shape: special-value
+      sign: _
+      kind: nan
+    }
+  }
+}
