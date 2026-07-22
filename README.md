@@ -239,8 +239,8 @@ appear in §5.6's *published* table — asserting a vector against one would bin
 running this suite to one implementation's reading of an already-flagged spec gap, not to the spec text
 itself, and a strictly-literal implementation would correctly treat e.g. `!int8` as an unrecognized marker
 rather than a built-in atom. Add vectors for those names once §5.6 actually publishes them. `number`,
-`float32`, `float64`, `rational`, `complex`, and (§5.5) `uuid` are all fully published as-is, so those
-aren't similarly restricted. `text` is deliberately *not* covered at all — `text_type` exists in
+`float32`, `float64`, `rational`, `complex`, and (§5.5) `uuid`/`uri` are all fully published as-is, so
+those aren't similarly restricted. `text` is deliberately *not* covered at all — `text_type` exists in
 meta-kernel.tn1 but `!text` never appears in §5's published table (see this repo's sibling
 implementation's `SPEC-FEEDBACK.md` #9).
 
@@ -281,6 +281,14 @@ represents the resulting value, not an echo of the input. `duration` has no sing
 to compare against (confirmed during development that no common library type covers the combined
 `PnYnMnDTnHnMnS` form directly), so `value` is a small record splitting the calendar and clock parts into
 their own independently-parseable ISO 8601 substrings: `{ period: "P1Y2M3D" clock: "PT4H5M6S" }`.
+
+**`value`'s shape for `uri` (§5.5).** `value` is the plain URI string, compared as-is (no normalization —
+`uri_type` doesn't claim any). §5.5 cites RFC 3986; be aware that a widely-used implementation
+(`java.net.URI`) actually implements the older RFC 2396 (as amended by RFC 2732), not RFC 3986. Vectors in
+this suite stick to constructs valid under both revisions (a plain `https://` authority form, a
+scheme-less relative reference, a `urn:` scheme) rather than exercising the handful of constructs where
+the two revisions disagree, so passing this suite doesn't by itself certify RFC 3986 conformance for an
+RFC-2396-based implementation.
 
 Invalid vocabulary vectors use the same `outcome: error` / `category` shape as any other layer (see
 below) — but see the categorization note there before assuming `category: resolver` on these is settled.
