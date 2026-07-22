@@ -239,7 +239,10 @@ appear in §5.6's *published* table — asserting a vector against one would bin
 running this suite to one implementation's reading of an already-flagged spec gap, not to the spec text
 itself, and a strictly-literal implementation would correctly treat e.g. `!int8` as an unrecognized marker
 rather than a built-in atom. Add vectors for those names once §5.6 actually publishes them. `number`,
-`float32`, and `float64` are fully published as-is, so those aren't similarly restricted.
+`float32`, `float64`, `rational`, `complex`, and (§5.5) `uuid` are all fully published as-is, so those
+aren't similarly restricted. `text` is deliberately *not* covered at all — `text_type` exists in
+meta-kernel.tn1 but `!text` never appears in §5's published table (see this repo's sibling
+implementation's `SPEC-FEEDBACK.md` #9).
 
 **`value` and floating-point precision.** For the exact atoms (the integer family, `number`), `value` is
 unambiguous — compare it as an arbitrary-precision decimal, done. For the approximate atoms (`float32`/
