@@ -268,6 +268,13 @@ vectors give `value` as a small record, `{ real: "<decimal>" imaginary: "<decima
 the same way the `BigDecimal`-based families are (exact for this atom — `complex`'s default component
 type is `NUMBER`, so no rounding concern the way `float32`/`float64` have).
 
+**`value`'s shape for the binary family (`base64`/`base64url`/`base32`/`hex`, §5.3).** The host value is a
+byte array, not anything `BigDecimal`-comparable — `value` is a plain hex string of the decoded bytes
+(e.g. `"4d616e"` for `"Man"`), compared against the atom's result byte-for-byte. Note for `base64url`
+vectors specifically: pick byte sequences that actually need the URL-safe alphabet's `-`/`_` (i.e. would
+produce `+`/`/` under the standard alphabet) — a byte sequence both alphabets encode identically wouldn't
+exercise anything `base64url`-specific.
+
 Invalid vocabulary vectors use the same `outcome: error` / `category` shape as any other layer (see
 below) — but see the categorization note there before assuming `category: resolver` on these is settled.
 
