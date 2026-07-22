@@ -17,13 +17,23 @@ tests/
     invalid/
       <slug>.tn1
       <slug>.tson
+  parser/
+    valid/
+      <slug>.tn1
+      <slug>.tson
+    invalid/
+      <slug>.tn1
+      <slug>.tson
+    schema-document/
+      <slug>.tn1
+      <slug>.tson
 ```
 
-Top-level grouping is by **conformance layer** — `lexer`, and eventually `parser`, `resolver`,
+Top-level grouping is by **conformance layer** — `lexer`, `parser`, and eventually `resolver`,
 `vocabulary`, `schema` — mirroring the four error categories the spec itself defines and treats as
 stable for the whole series (spec §8.1: "the categories are defined here for the whole series"). Within
-each layer, vectors split into `valid/` (the input is well-formed at this layer) and `invalid/` (the
-input MUST be rejected at this layer).
+each layer, vectors split into `valid/` (the input is well-formed at this layer), `invalid/` (the input
+MUST be rejected at this layer), and — parser layer only — `schema-document/` (see below).
 
 `<slug>` is a short, stable, descriptive name (e.g. `escape-basic`, `lone-high-surrogate`). Slugs are
 **not** derived from spec section numbers, so a future spec revision renumbering a section never forces a
@@ -44,10 +54,16 @@ the mechanism under test and would make the fixture ambiguous about what's reall
 ## The sidecar format
 
 The sidecar is itself TSON — deliberately, both because it's the natural choice for a TSON project and
-because it dogfoods the format. **Caveat:** as of this writing there is no TSON parser yet (only a lexer,
-in [ltr8-io-tson-java](https://github.com/litterat/ltr8-io-tson-java)), so sidecars can't yet be
-machine-validated against their own grammar. They're hand-written to be valid per the spec; treat that as
-provisional until a conforming parser exists to check them.
+because it dogfoods the format. The whole sidecar body (everything after the `!!id` header directive) is
+a single record `{ ... }`: a bare `field: value` sequence with no enclosing braces is *not* a valid
+top-level TSON data-value (records require braces), so every example below is wrapped accordingly — an
+earlier revision of this file got that wrong throughout, caught only once
+[ltr8-io-tson-java](https://github.com/litterat/ltr8-io-tson-java) had a real structural parser to check
+against, which is exactly why "eat your own dog food" is worth doing early. **Caveat:**
+`scripts/check_vectors.py`, run in this repo's own CI, still validates sidecars only shallowly
+(regex-based field checks, not a real parse) — see "Validating vectors" below. Sidecars are cross-checked
+against `ltr8-io-tson-java`'s real lexer/parser before being committed, but that cross-check isn't wired
+into this repo's own CI yet.
 
 ### Common fields
 
@@ -56,7 +72,7 @@ provisional until a conforming parser exists to check them.
 | `spec`        | The spec section this vector targets, e.g. `"§7.2.2"`. Metadata only — not an identifier, not load-bearing for the test. |
 | `description` | One line: what this vector exercises and why it's interesting. |
 | `encoding`    | Optional. Present only when the `.tn1` file is not plain UTF-8 (e.g. `utf-16`, or a case with intentionally invalid UTF-8 bytes). Absent means UTF-8. |
-| `outcome`     | `valid` or `error`. |
+| `outcome`     | `valid`, `error`, or (parser layer only) `schema-document`. |
 
 ### Valid lexer-layer vectors
 
@@ -68,22 +84,90 @@ EOF is not listed.
 
 ```
 !!id:"https://tson.io/test-suite/lexer/valid/escape-basic.tson"
-spec: "§7.2.2"
-description: "All single-character escape sequences decode to their target characters"
-outcome: valid
-tokens: [
-  { kind: single-line-token text: "\" \\ / \b \f \n \r \t  " }
-]
+{
+  spec: "§7.2.2"
+  description: "All single-character escape sequences decode to their target characters"
+  outcome: valid
+  tokens: [
+    { kind: single-line-token text: "\" \\ / \b \f \n \r \t  " }
+  ]
+}
+```
+
+### Valid parser-layer vectors
+
+`document` is the expected parse tree, using the spec's own grammar vocabulary (§2.3, §7.4) rather than
+any implementation's internal type names, so it stays language-agnostic:
+
+```
+document = { id: <string-or-absent> schema: <string-or-absent> root: <data-value> }
+
+data-value  = { annotations: [ <annotation> ... ] type-ref: <string-or-absent> core: <core-value> }
+annotation  = { name: <string> value: <data-value-or-absent> }
+scoped-value = { schema-ref: <string-or-absent> value: <data-value> }
+
+core-value  = { kind: token  form: unquoted|single-line|multi-line  text: <string> }
+            / { kind: absent }
+            / { kind: empty-brace }
+            / { kind: record  fields: [ { name: <string> value: <scoped-value> } ... ] }
+            / { kind: map     entries: [ { key: <data-value> value: <scoped-value> } ... ] }
+            / { kind: array   elements: [ <scoped-value> ... ] }
+```
+
+`<string-or-absent>` and `<data-value-or-absent>` use the absent sentinel `_` when the optional thing
+isn't present (there's no id-directive, no schema-directive, no type-ref, no annotation value) — chosen
+over simply omitting the field so every `document`/`data-value`/`annotation`/`scoped-value` record has a
+fixed, predictable shape regardless of content.
+
+```
+!!id:"https://tson.io/test-suite/parser/valid/simple-record.tson"
+{
+  spec: "§2.5"
+  description: "A record with one field"
+  outcome: valid
+  document: {
+    id: _
+    schema: _
+    root: {
+      annotations: []
+      type-ref: _
+      core: {
+        kind: record
+        fields: [
+          { name: "name" value: { schema-ref: _ value: { annotations: [] type-ref: _ core: { kind: token form: unquoted text: "Alice" } } } }
+        ]
+      }
+    }
+  }
+}
+```
+
+### Schema-document vectors (parser layer only)
+
+A document whose header contains `!!meta` is a *schema* document (§2.2), not a data document. A Class 1
+(data-format-only) processor MUST recognise and reject it with a distinct, categorized diagnostic — not
+treat it as malformed input, and not attempt to parse it as data (§1.5, §8.1). These vectors capture that
+third outcome, distinct from both `valid` and `error`:
+
+```
+!!id:"https://tson.io/test-suite/parser/schema-document/meta-directive-header.tson"
+{
+  spec: "§1.5"
+  description: "A header containing !!meta identifies a schema document, not a data document"
+  outcome: schema-document
+}
 ```
 
 ### Invalid vectors (any layer)
 
 ```
 !!id:"https://tson.io/test-suite/lexer/invalid/lone-high-surrogate.tson"
-spec: "§7.2.2"
-description: "A high surrogate escape not followed by a low surrogate escape is a lexer error"
-outcome: error
-category: lexer
+{
+  spec: "§7.2.2"
+  description: "A high surrogate escape not followed by a low surrogate escape is a lexer error"
+  outcome: error
+  category: lexer
+}
 ```
 
 `category` is one of the spec's four §8.1 categories: `lexer`, `parser`, `resolver`, `validation`. It's
@@ -98,8 +182,11 @@ look ahead before failing. What's normative is that an error of the given catego
 
 `scripts/check_vectors.py` (stdlib-only) checks that every `.tn1` has a matching `.tson` and vice versa,
 and that each sidecar has the required fields with sane values. It's deliberately shallow — a regex-based
-check, not a real parse — since there's no TSON parser yet to validate sidecars against their own
-grammar. Runs in CI on every push and PR.
+check, not a real parse — since this repo doesn't wire in a TSON implementation of its own to parse
+sidecars with (that would mean picking one implementation as a dependency for a repo meant to be
+implementation-neutral). Runs in CI on every push and PR. Each vector is additionally cross-checked
+against `ltr8-io-tson-java`'s real lexer/parser before being committed, but that step is manual, not part
+of this repo's own CI.
 
 ```
 python3 scripts/check_vectors.py

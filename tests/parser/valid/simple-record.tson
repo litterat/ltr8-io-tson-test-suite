@@ -1,0 +1,34 @@
+!!id:"https://tson.io/test-suite/parser/valid/simple-record.tson"
+{
+  spec: "§2.5"
+  description: "A record with one field"
+  outcome: valid
+  document: {
+    id: _
+    schema: _
+    root: {
+      annotations: []
+      type-ref: _
+      core: {
+        kind: record
+        fields: [
+          {
+            name: "name"
+            value: {
+              schema-ref: _
+              value: {
+                annotations: []
+                type-ref: _
+                core: {
+                  kind: token
+                  form: unquoted
+                  text: "Alice"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

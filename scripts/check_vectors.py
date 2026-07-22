@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Structural consistency check for the conformance vectors under tests/.
 
-There's no TSON parser yet to validate sidecars against their own grammar
-(see README.md's caveat on this), so this is deliberately shallow: it checks
-pairing (every .tn1 has a matching .tson and vice versa) and a handful of
-required fields via substring/regex matching, not a real parse. Replace this
-with a real parser-based check once one exists.
+This is deliberately shallow: it checks pairing (every .tn1 has a matching
+.tson and vice versa) and a handful of required fields via substring/regex
+matching, not a real parse of the sidecar's own TSON content (see README.md's
+caveat on this). Replace this with a real parser-based check once this repo
+wires in a TSON implementation to read sidecars with.
 """
 import re
 import sys
@@ -39,16 +39,21 @@ def check_sidecar_fields(errors: list[str]) -> None:
             fail(f"{rel}: missing 'outcome' field", errors)
             continue
         outcome = outcome_match.group(1)
-        if outcome not in ("valid", "error"):
-            fail(f"{rel}: outcome must be 'valid' or 'error', found '{outcome}'", errors)
+        if outcome not in ("valid", "error", "schema-document"):
+            fail(f"{rel}: outcome must be 'valid', 'error', or 'schema-document', found '{outcome}'", errors)
             continue
 
-        is_invalid_bucket = "/invalid/" in str(tson_path)
-        is_valid_bucket = "/valid/" in str(tson_path)
-        if is_invalid_bucket and outcome != "error":
-            fail(f"{rel}: lives under invalid/ but outcome is '{outcome}', expected 'error'", errors)
-        if is_valid_bucket and outcome != "valid":
-            fail(f"{rel}: lives under valid/ but outcome is '{outcome}', expected 'valid'", errors)
+        bucket_to_outcome = {
+            "invalid": "error",
+            "valid": "valid",
+            "schema-document": "schema-document",
+        }
+        for bucket, expected_outcome in bucket_to_outcome.items():
+            if f"/{bucket}/" in str(tson_path) and outcome != expected_outcome:
+                fail(
+                    f"{rel}: lives under {bucket}/ but outcome is '{outcome}', expected '{expected_outcome}'",
+                    errors,
+                )
 
         if outcome == "error":
             category_match = re.search(r"\bcategory:\s*(\S+)", text)

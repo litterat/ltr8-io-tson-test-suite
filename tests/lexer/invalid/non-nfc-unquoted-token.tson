@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/lexer/invalid/non-nfc-unquoted-token.tson"
-spec: "§7.2.1"
-description: "An unquoted token whose source text is not NFC-normalized (here: NFD 'e' + combining acute accent, U+0065 U+0301) is a lexer error"
-outcome: error
-category: lexer
+{
+  spec: "§7.2.1"
+  description: "An unquoted token whose source text is not NFC-normalized (here: NFD 'e' + combining acute accent, U+0065 U+0301) is a lexer error"
+  outcome: error
+  category: lexer
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/parser/invalid/record-field-name-with-annotation.tson"
+{
+  spec: "§2.5"
+  description: "A record field name must be a bare token; an annotation before it is a parse error"
+  outcome: error
+  category: parser
+}

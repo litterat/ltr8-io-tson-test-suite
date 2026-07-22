@@ -1,0 +1,24 @@
+!!id:"https://tson.io/test-suite/parser/valid/valueless-annotation.tson"
+{
+  spec: "§3.1"
+  description: "An annotation with no ':' has no value, and annotates the following core-value"
+  outcome: valid
+  document: {
+    id: _
+    schema: _
+    root: {
+      annotations: [
+        {
+          name: "deprecated"
+          value: _
+        }
+      ]
+      type-ref: _
+      core: {
+        kind: token
+        form: unquoted
+        text: "GOLD"
+      }
+    }
+  }
+}

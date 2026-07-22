@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/parser/schema-document/meta-directive-header.tson"
+{
+  spec: "§1.5"
+  description: "A header containing !!meta identifies a schema document, which a Class 1 processor must recognise and reject with a categorized diagnostic, not attempt to parse as data"
+  outcome: schema-document
+}
