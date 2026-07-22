@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/uint64-max-boundary.tson"
+{
+  spec: "§5.6"
+  description: "18446744073709551615 (2^64-1) is the inclusive upper bound of the unsigned 64-bit range -- exceeds every signed 64-bit host type, so implementations binding to a fixed-width signed primitive need a wider representation here"
+  outcome: valid
+  type-ref: "uint64"
+  value: "18446744073709551615"
+}

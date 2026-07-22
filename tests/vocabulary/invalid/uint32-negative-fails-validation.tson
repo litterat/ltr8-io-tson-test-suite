@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/invalid/uint32-negative-fails-validation.tson"
+{
+  spec: "§5.6"
+  description: "§5.6: 'the range constraint, not the lexer, enforces unsignedness' -- -10 parses as a signed integer, then fails uint32's [0, 2^32-1] range at validation"
+  outcome: error
+  category: validation
+  type-ref: "uint32"
+}

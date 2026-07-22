@@ -31,15 +31,23 @@ tests/
     valid/
       <slug>.tn1
       <slug>.tson
+  vocabulary/
+    valid/
+      <slug>.tn1
+      <slug>.tson
+    invalid/
+      <slug>.tn1
+      <slug>.tson
 ```
 
-Top-level grouping is by **conformance layer** — `lexer`, `parser`, `resolver`, and eventually
-`vocabulary`, `schema` — mirroring the four error categories the spec itself defines and treats as
-stable for the whole series (spec §8.1: "the categories are defined here for the whole series"). Within
-each layer, vectors split into `valid/` (the input is well-formed at this layer), `invalid/` (the input
-MUST be rejected at this layer), and — parser layer only — `schema-document/` (see below). `resolver` has
-no `invalid/` bucket: base type resolution (§4) never rejects a token, it always resolves to *something*
-(worst case, string) — see "Valid resolver-layer vectors" below.
+Top-level grouping is by **conformance layer** — `lexer`, `parser`, `resolver`, `vocabulary`, and
+eventually `schema` — mirroring the four error categories the spec itself defines and treats as stable
+for the whole series (spec §8.1: "the categories are defined here for the whole series"). Within each
+layer, vectors split into `valid/` (the input is well-formed at this layer), `invalid/` (the input MUST
+be rejected at this layer), and — parser layer only — `schema-document/` (see below). `resolver` has no
+`invalid/` bucket: base type resolution (§4) never rejects a token, it always resolves to *something*
+(worst case, string) — see "Valid resolver-layer vectors" below. `vocabulary` (§5, the built-in type
+vocabulary) does have both: a built-in atom's parsing contract can reject a token outright.
 
 `<slug>` is a short, stable, descriptive name (e.g. `escape-basic`, `lone-high-surrogate`). Slugs are
 **not** derived from spec section numbers, so a future spec revision renumbering a section never forces a
@@ -202,6 +210,39 @@ exponent = { sign: plus|minus|_ digits: <string> }
 }
 ```
 
+### Vocabulary-layer vectors
+
+The `.tn1` file is a single bare `!type-ref value` data-value — a type-ref immediately followed by its
+token (a token alone is a complete data-value at every other layer; here the type-ref is what selects a
+built-in atom's parsing contract, §5). `type-ref` restates the annotation name for self-description;
+`value`, on a `valid` vector, is the atom's accepted value as a plain decimal string — deliberately
+**host-representation-neutral**, the same reasoning as the resolver layer's `base-value`: §5.2 requires an
+implementation to preserve the parsed value's information content but leaves the concrete host type
+implementation-defined, so this suite asserts the underlying value, not a bound Java/whatever type:
+
+```
+!!id:"https://tson.io/test-suite/vocabulary/valid/int32-plain.tson"
+{
+  spec: "§5.6"
+  description: "!int32 accepts a plain decimal integer within the signed 32-bit range"
+  outcome: valid
+  type-ref: "int32"
+  value: "200"
+}
+```
+
+Vectors only exercise annotations §5.6 currently publishes — `int32`/`int64`/`uint32`/`uint64` for now.
+The core type library's `integer_type` constructor also backs `int8`/`int16`/`int128`/`int256`, the
+matching `uint*` widths, and the `positive_integer`/`non_negative_integer`/`negative_integer`/
+`non_positive_integer` refinements, but none of those names appear in §5.6's *published* table — asserting
+a vector against one would bind every implementation running this suite to one implementation's reading of
+an already-flagged spec gap, not to the spec text itself, and a strictly-literal implementation would
+correctly treat e.g. `!int8` as an unrecognized marker rather than a built-in atom. Add vectors for those
+names once §5.6 actually publishes them.
+
+Invalid vocabulary vectors use the same `outcome: error` / `category` shape as any other layer (see
+below) — but see the categorization note there before assuming `category: resolver` on these is settled.
+
 ### Invalid vectors (any layer)
 
 ```
@@ -217,6 +258,20 @@ exponent = { sign: plus|minus|_ digits: <string> }
 `category` is one of the spec's four §8.1 categories: `lexer`, `parser`, `resolver`, `validation`. It's
 included explicitly rather than inferred from the directory the vector lives in, so a vector remains
 self-describing if it's ever moved.
+
+**Categorization note for vocabulary-layer parse failures.** §5.2 phrases a built-in atom rejecting a
+token's format as "is a parse error", and §8.1's canonical-phrasing table maps that exact phrase to the
+`parser` category. But §8.1's own `parser`-category description ("structural mismatches: unclosed
+brackets, adjacency violations, unexpected tokens, missing separators...") doesn't describe an atom's
+value-format contract, and the check happens well after the structural parser has already accepted the
+document as well-formed (`!int32 twelve` is a syntactically complete data-value; only interpreting
+`twelve` against `int32`'s contract fails) — which every implementation this suite is aware of detects
+during resolution, architecturally, not during structural parsing. This suite's `vocabulary/invalid`
+vectors currently assert `category: resolver` for this case as the more architecturally coherent reading,
+but flag it as provisional in each vector's own `description` — treat only the `error` outcome as settled
+for these specific vectors until the spec clarifies which category actually governs. Range/constraint
+violations (`9999999999` under `!int32`, `-10` under `!uint32`) are unambiguous: §8.1 explicitly assigns
+"range violations by the numeric atoms" to the `validation` category.
 
 Position (line/column/byte-offset) of the error is deliberately **not** asserted — different
 implementations may legitimately report an error at slightly different points depending on how far they
