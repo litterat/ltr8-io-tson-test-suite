@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/invalid/datetime-space-instead-of-t-rejected.tson"
+{
+  spec: "§5.4"
+  description: "date-time requires the 'T'/'t' separator specifically -- a space (sometimes accepted by other date-time formats/profiles) is not RFC 3339 date-time"
+  outcome: error
+  category: resolver
+  type-ref: "datetime"
+}

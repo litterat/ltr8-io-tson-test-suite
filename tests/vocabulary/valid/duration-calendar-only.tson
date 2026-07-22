@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/duration-calendar-only.tson"
+{
+  spec: "§5.4"
+  description: "Pure calendar duration, no T-time part at all"
+  outcome: valid
+  type-ref: "duration"
+  value: { period: "P1Y2M3D" clock: "PT0S" }
+}

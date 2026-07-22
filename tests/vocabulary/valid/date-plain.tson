@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/date-plain.tson"
+{
+  spec: "§5.4"
+  description: "!date accepts RFC 3339 full-date -- valid unquoted (§5.4: \"full-date values are valid unquoted\")"
+  outcome: valid
+  type-ref: "date"
+  value: "2025-03-13"
+}

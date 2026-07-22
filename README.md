@@ -275,6 +275,13 @@ vectors specifically: pick byte sequences that actually need the URL-safe alphab
 produce `+`/`/` under the standard alphabet) — a byte sequence both alphabets encode identically wouldn't
 exercise anything `base64url`-specific.
 
+**`value`'s shape for the temporal family (§5.4).** `date`/`time`/`datetime` give `value` as the plain
+RFC 3339 string, in canonical form (uppercase `T`/`Z`) regardless of the input's exact casing — it
+represents the resulting value, not an echo of the input. `duration` has no single common representation
+to compare against (confirmed during development that no common library type covers the combined
+`PnYnMnDTnHnMnS` form directly), so `value` is a small record splitting the calendar and clock parts into
+their own independently-parseable ISO 8601 substrings: `{ period: "P1Y2M3D" clock: "PT4H5M6S" }`.
+
 Invalid vocabulary vectors use the same `outcome: error` / `category` shape as any other layer (see
 below) — but see the categorization note there before assuming `category: resolver` on these is settled.
 
