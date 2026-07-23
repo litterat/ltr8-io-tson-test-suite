@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/ipv6-full-form.tson"
+{
+  spec: "§5.5"
+  description: "!ipv6 accepts the uncompressed, 8-group preferred form"
+  outcome: valid
+  type-ref: "ipv6"
+  value: "00010002000300040005000600070008"
+}

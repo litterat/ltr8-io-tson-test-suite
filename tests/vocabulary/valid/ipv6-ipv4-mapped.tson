@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/ipv6-ipv4-mapped.tson"
+{
+  spec: "§5.5"
+  description: "!ipv6 accepts RFC 4291 §2.2's IPv4-mapped alternative form, embedding a dotted-quad tail"
+  outcome: valid
+  type-ref: "ipv6"
+  value: "00000000000000000000ffffc0000201"
+}

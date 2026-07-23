@@ -239,7 +239,7 @@ appear in §5.6's *published* table — asserting a vector against one would bin
 running this suite to one implementation's reading of an already-flagged spec gap, not to the spec text
 itself, and a strictly-literal implementation would correctly treat e.g. `!int8` as an unrecognized marker
 rather than a built-in atom. Add vectors for those names once §5.6 actually publishes them. `number`,
-`float32`, `float64`, `rational`, `complex`, and (§5.5) `uuid`/`uri`/`ipv4` are all fully published as-is, so
+`float32`, `float64`, `rational`, `complex`, and (§5.5) `uuid`/`uri`/`ipv4`/`ipv6` are all fully published as-is, so
 those aren't similarly restricted. `text` is deliberately *not* covered at all — `text_type` exists in
 meta-kernel.tn1 but `!text` never appears in §5's published table (see this repo's sibling
 implementation's `SPEC-FEEDBACK.md` #9).
@@ -300,6 +300,20 @@ ambiguity behind real SSRF-filter-bypass techniques, where a validator and the a
 disagree about what address a string denotes. `vocabulary/invalid` includes vectors for exactly these
 three lenient-but-non-conformant forms (`ipv4-leading-zero-rejected`, `ipv4-bare-integer-rejected`,
 `ipv4-short-form-rejected`) for that reason, not merely as edge-case padding.
+
+**`value`'s shape for `ipv6` (§5.5) — deliberately *not* a textual IPv6 literal.** Unlike every other
+vocabulary family in this suite, `value` here is a plain 32-character hex string of the address's 16 raw
+bytes (the same convention the binary family uses for its decoded bytes), not an RFC 4291 §2.2 text form.
+The reason is specific to IPv6: a widely-used host implementation's own `InetAddress.getByAddress(byte[])`
+silently returns a *different Java type* (`Inet4Address` instead of `Inet6Address`) for a 16-byte array in
+the IPv4-mapped range (the shape produced by input like `::ffff:192.0.2.1`) — so a comparison oracle built
+by handing this suite's own `value` string to that same kind of JDK literal parser would be trustworthy for
+some vectors and silently wrong for others, depending on which narrow sub-range the address falls in. A
+raw-bytes comparison sidesteps that ambiguity entirely: any implementation can decode 32 hex characters to
+16 bytes without needing to trust *any* particular address-literal parser as ground truth.
+`vocabulary/valid` includes a vector for exactly this IPv4-mapped form (`ipv6-ipv4-mapped`) for that
+reason, not merely as coverage padding — a conformant implementation must still report it as a genuine
+IPv6 value, not silently reinterpret it as `ipv4`'s type.
 
 Invalid vocabulary vectors use the same `outcome: error` / `category` shape as any other layer (see
 below) — but see the categorization note there before assuming `category: resolver` on these is settled.
