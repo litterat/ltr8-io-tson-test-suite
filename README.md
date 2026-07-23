@@ -239,7 +239,7 @@ appear in §5.6's *published* table — asserting a vector against one would bin
 running this suite to one implementation's reading of an already-flagged spec gap, not to the spec text
 itself, and a strictly-literal implementation would correctly treat e.g. `!int8` as an unrecognized marker
 rather than a built-in atom. Add vectors for those names once §5.6 actually publishes them. `number`,
-`float32`, `float64`, `rational`, `complex`, and (§5.5) `uuid`/`uri` are all fully published as-is, so
+`float32`, `float64`, `rational`, `complex`, and (§5.5) `uuid`/`uri`/`ipv4` are all fully published as-is, so
 those aren't similarly restricted. `text` is deliberately *not* covered at all — `text_type` exists in
 meta-kernel.tn1 but `!text` never appears in §5's published table (see this repo's sibling
 implementation's `SPEC-FEEDBACK.md` #9).
@@ -289,6 +289,17 @@ this suite stick to constructs valid under both revisions (a plain `https://` au
 scheme-less relative reference, a `urn:` scheme) rather than exercising the handful of constructs where
 the two revisions disagree, so passing this suite doesn't by itself certify RFC 3986 conformance for an
 RFC-2396-based implementation.
+
+**`value`'s shape for `ipv4` (§5.5).** `value` is the plain dotted-quad string, compared by numeric
+address value. `ipv4_type` cites RFC 3986's `IPv4address` production (the ABNF used inside a URI's host
+component), which is a materially *stricter* grammar than what widely-used IP-address parsers accept —
+notably, no leading zeros on an octet and exactly four dotted octets, full stop. This isn't just a
+spec-fidelity nicety: a parser that leniently accepts a leading zero (historically read as octal by some
+libraries), a short "class-based" form, or a bare 32-bit integer literal as an IP address is exactly the
+ambiguity behind real SSRF-filter-bypass techniques, where a validator and the actual network stack
+disagree about what address a string denotes. `vocabulary/invalid` includes vectors for exactly these
+three lenient-but-non-conformant forms (`ipv4-leading-zero-rejected`, `ipv4-bare-integer-rejected`,
+`ipv4-short-form-rejected`) for that reason, not merely as edge-case padding.
 
 Invalid vocabulary vectors use the same `outcome: error` / `category` shape as any other layer (see
 below) — but see the categorization note there before assuming `category: resolver` on these is settled.

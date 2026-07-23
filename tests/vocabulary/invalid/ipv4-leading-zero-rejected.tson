@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/invalid/ipv4-leading-zero-rejected.tson"
+{
+  spec: "§5.5"
+  description: "RFC 3986's dec-octet grammar forbids a leading zero on a multi-digit octet; widely-used IP parsers accept this leniently (historically as octal), which is exactly the ambiguity the strict grammar rules out"
+  outcome: error
+  category: resolver
+  type-ref: "ipv4"
+}
