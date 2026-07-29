@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/duration-combined.tson"
-{
-  spec: "§5.4"
-  description: "!duration accepts the full PnYnMnDTnHnMnS grammar, combining calendar (Y/M/D) and clock (H/M/S) designators in one value -- notably, no single common library type covers this combined form directly (confirmed against java.time.Period/java.time.Duration during development: Period rejects any T-time part, Duration rejects any Y/M). value splits the calendar and clock parts into their own ISO 8601 substrings (each independently parseable by java.time.Period/java.time.Duration) rather than assuming a shared representation across implementations"
-  outcome: valid
-  type-ref: "duration"
-  value: { period: "P1Y2M3D" clock: "PT4H5M6S" }
-}

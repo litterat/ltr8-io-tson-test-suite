@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/invalid/uri-unescaped-space-rejected.tson"
-{
-  spec: "§5.5"
-  description: "An unescaped space is not valid anywhere in a URI reference"
-  outcome: error
-  category: resolver
-  type-ref: "uri"
-}

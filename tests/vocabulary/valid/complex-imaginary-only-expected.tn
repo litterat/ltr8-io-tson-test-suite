@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/complex-imaginary-only-expected.tn"
+{
+  spec: "§7.6"
+  description: "complex's second grammar alternative ([sign] magnitude imag-unit) -- a purely imaginary value, real part implicitly zero. 'j' is accepted as an imag-unit alongside 'i'"
+  outcome: valid
+  type-ref: "complex"
+  value: { real: "0" imaginary: "-2.5" }
+}

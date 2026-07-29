@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/datetime-utc.tson"
-{
-  spec: "§5.4"
-  description: "!datetime accepts RFC 3339 date-time -- full-date 'T' full-time, MUST be quoted (§5.4)"
-  outcome: valid
-  type-ref: "datetime"
-  value: "2025-03-13T10:15:30Z"
-}

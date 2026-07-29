@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/time-utc-expected.tn"
+{
+  spec: "§5.4"
+  description: "!time accepts RFC 3339 full-time -- MUST be quoted since it contains colons (§5.4)"
+  outcome: valid
+  type-ref: "time"
+  value: "10:15:30Z"
+}

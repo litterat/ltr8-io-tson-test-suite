@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/invalid/ipv6-zone-identifier-rejected-expected.tn"
+{
+  spec: "§5.5"
+  description: "core.tn explicitly excludes zone identifiers (RFC 4007, '%eth0') from ipv6_type's contract -- they're host-local, not part of the address value"
+  outcome: error
+  category: resolver
+  type-ref: "ipv6"
+}

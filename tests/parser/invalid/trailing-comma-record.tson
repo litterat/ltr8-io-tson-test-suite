@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/parser/invalid/trailing-comma-record.tson"
-{
-  spec: "§2.4"
-  description: "A trailing comma before the closing brace is not permitted"
-  outcome: error
-  category: parser
-}

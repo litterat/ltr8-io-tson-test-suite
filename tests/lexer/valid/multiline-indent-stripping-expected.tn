@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/lexer/valid/multiline-indent-stripping-expected.tn"
+{
+  spec: "§7.2.3"
+  description: "Common leading whitespace across content lines and the closing delimiter line is stripped"
+  outcome: valid
+  tokens: [
+    { kind: multi-line-token text: "Leave the parcel with the concierge.\nGift wrap, no prices on the slip." }
+  ]
+}

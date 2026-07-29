@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/datetime-lowercase-t-and-z.tson"
-{
-  spec: "§5.4"
-  description: "RFC 3339 explicitly allows lowercase 't'/'z' as alternatives to 'T'/'Z' -- value is given in canonical uppercase form since it represents the resulting value, not an echo of the input's exact casing"
-  outcome: valid
-  type-ref: "datetime"
-  value: "2025-03-13T10:15:30Z"
-}

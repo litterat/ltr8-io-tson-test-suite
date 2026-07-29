@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/uri-absolute-with-query-fragment.tson"
-{
-  spec: "§5.5"
-  description: "!uri accepts an absolute URI with authority, path, query, and fragment"
-  outcome: valid
-  type-ref: "uri"
-  value: "https://example.com/a/b?x=1#frag"
-}

@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/lexer/valid/unquoted-forms-expected.tn"
+{
+  spec: "§7.1"
+  description: "Several unquoted-token shapes (plain integer, based integer, date-like, dotted version, hyphenated identifier) all lex as unquoted-token, unchanged from source text -- the lexer does not interpret them"
+  outcome: valid
+  tokens: [
+    { kind: structural-delimiter text: "[" }
+    { kind: unquoted-token text: "1042" }
+    { kind: unquoted-token text: "0b0110" }
+    { kind: unquoted-token text: "2025-03-13" }
+    { kind: unquoted-token text: "v1.2.3" }
+    { kind: unquoted-token text: "A-100" }
+    { kind: structural-delimiter text: "]" }
+  ]
+}

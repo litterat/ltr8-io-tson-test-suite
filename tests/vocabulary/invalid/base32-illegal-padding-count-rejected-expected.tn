@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/invalid/base32-illegal-padding-count-rejected-expected.tn"
+{
+  spec: "§5.3"
+  description: "RFC 4648 §6's padding table only permits 0/1/3/4/6 trailing '=' characters in a length-8 block -- 2 (as here) is never legal, regardless of what it would arithmetically decode to"
+  outcome: error
+  category: resolver
+  type-ref: "base32"
+}

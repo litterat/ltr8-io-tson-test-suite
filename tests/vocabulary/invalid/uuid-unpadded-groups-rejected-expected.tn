@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/invalid/uuid-unpadded-groups-rejected-expected.tn"
+{
+  spec: "§5.5"
+  description: "A common implementation trap: many UUID-parsing library functions (e.g. Java's java.util.UUID.fromString) are more lenient than RFC 9562's canonical 8-4-4-4-12 grouping and would silently accept unpadded groups like this one -- the !uuid atom contract must not. Confirmed empirically against java.util.UUID before this vector was written"
+  outcome: error
+  category: resolver
+  type-ref: "uuid"
+}

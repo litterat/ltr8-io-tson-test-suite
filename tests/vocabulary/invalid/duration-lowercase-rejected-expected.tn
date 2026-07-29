@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/invalid/duration-lowercase-rejected-expected.tn"
+{
+  spec: "§5.4"
+  description: "A common implementation trap: some duration-parsing library functions (e.g. Java's java.time.Duration.parse) accept lowercase designators -- ISO 8601's PnYnMnDTnHnMnS notation implies uppercase-only, unlike RFC 3339's explicit T/Z case-insensitivity allowance elsewhere in this same family. Confirmed empirically before this vector was written"
+  outcome: error
+  category: resolver
+  type-ref: "duration"
+}

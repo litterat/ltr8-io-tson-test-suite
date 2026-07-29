@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/lexer/invalid/bare-plus-expected.tn"
+{
+  spec: "§7.2.4"
+  description: "A bare '+' not followed by an unquoted-continuation character has no grammar role and is a lexer error"
+  outcome: error
+  category: lexer
+}

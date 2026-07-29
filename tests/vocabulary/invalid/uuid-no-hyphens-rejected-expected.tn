@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/invalid/uuid-no-hyphens-rejected-expected.tn"
+{
+  spec: "§5.5"
+  description: "32 hex digits with no hyphens at all is not RFC 9562's canonical form"
+  outcome: error
+  category: resolver
+  type-ref: "uuid"
+}

@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/parser/invalid/directive-argument-not-a-uri.tson"
-{
-  spec: "§3.3"
-  description: "A directive's argument must be a URI (RFC 3986); an unescaped space is not valid anywhere in a URI"
-  outcome: error
-  category: parser
-}

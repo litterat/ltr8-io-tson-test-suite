@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/number-preserves-trailing-zero.tson"
-{
-  spec: "§5.6"
-  description: "!number is the exact tier -- the value is preserved as written, including a trailing zero that a lossy float round-trip would normalize away"
-  outcome: valid
-  type-ref: "number"
-  value: "199.90"
-}

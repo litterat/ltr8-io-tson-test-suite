@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/invalid/int32-float-form-rejected.tson"
-{
-  spec: "§5.6"
-  description: "§5.6's table restricts the integer atoms to integer/based-integer forms -- a float-form token is rejected, unlike float32/float64 which do accept it. Same categorization note as int32-non-numeric-token applies"
-  outcome: error
-  category: resolver
-  type-ref: "int32"
-}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/resolver/valid/quoted-token-always-string-expected.tn"
+{
+  spec: "§4.4"
+  description: "A quoted token resolves to string regardless of content -- form is consulted exactly once (§2.4)"
+  outcome: valid
+  base-value: {
+    kind: string
+    text: "42"
+  }
+}

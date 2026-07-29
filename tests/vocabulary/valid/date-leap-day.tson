@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/date-leap-day.tson"
-{
-  spec: "§5.4"
-  description: "2024 is a leap year, so February 29 is a valid calendar date"
-  outcome: valid
-  type-ref: "date"
-  value: "2024-02-29"
-}

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/uint32-hex-based-integer-expected.tn"
+{
+  spec: "§5.6"
+  description: "The integer atoms accept based-integer forms uniformly with decimal -- 0xFF00_0000 is 4278190080, within the unsigned 32-bit range"
+  outcome: valid
+  type-ref: "uint32"
+  value: "4278190080"
+}

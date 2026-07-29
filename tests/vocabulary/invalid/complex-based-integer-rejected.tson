@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/invalid/complex-based-integer-rejected.tson"
-{
-  spec: "§5.6"
-  description: "!complex's accepted forms are complex/float/integer, not based-integer"
-  outcome: error
-  category: resolver
-  type-ref: "complex"
-}

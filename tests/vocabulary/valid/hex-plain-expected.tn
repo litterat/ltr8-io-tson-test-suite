@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/hex-plain-expected.tn"
+{
+  spec: "§5.3"
+  description: "!hex decodes RFC 4648 §8 base16"
+  outcome: valid
+  type-ref: "hex"
+  value: "deadbeef"
+}

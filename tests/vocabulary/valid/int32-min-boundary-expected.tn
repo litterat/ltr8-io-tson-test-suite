@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/int32-min-boundary-expected.tn"
+{
+  spec: "§5.6"
+  description: "-2147483648 (-2^31) is the inclusive lower bound of the signed 32-bit range"
+  outcome: valid
+  type-ref: "int32"
+  value: "-2147483648"
+}

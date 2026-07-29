@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/resolver/valid/boolean-false-expected.tn"
+{
+  spec: "§4.2"
+  description: "The unquoted token 'false' identifies as boolean false"
+  outcome: valid
+  base-value: {
+    kind: boolean
+    value: false
+  }
+}

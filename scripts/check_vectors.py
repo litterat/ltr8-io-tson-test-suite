@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Structural consistency check for the conformance vectors under tests/.
 
-This is deliberately shallow: it checks pairing (every .tn1 has a matching
-.tson and vice versa) and a handful of required fields via substring/regex
-matching, not a real parse of the sidecar's own TSON content (see README.md's
-caveat on this). Replace this with a real parser-based check once this repo
-wires in a TSON implementation to read sidecars with.
+This is deliberately shallow: it checks pairing (every <slug>.tn has a matching
+<slug>-expected.tn sidecar and vice versa) and a handful of required fields via
+substring/regex matching, not a real parse of the sidecar's own TSON content
+(see README.md's caveat on this). Replace this with a real parser-based check
+once this repo wires in a TSON implementation to read sidecars with.
 """
 import re
 import sys
@@ -13,26 +13,35 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent / "tests"
 VALID_CATEGORIES = {"lexer", "parser", "resolver", "validation"}
+SIDECAR_SUFFIX = "-expected"
 
 
 def fail(msg: str, errors: list[str]) -> None:
     errors.append(msg)
 
 
-def check_pairing(errors: list[str]) -> None:
-    tn1_files = {p.with_suffix("") for p in ROOT.rglob("*.tn1")}
-    tson_files = {p.with_suffix("") for p in ROOT.rglob("*.tson")}
+def is_sidecar(p: Path) -> bool:
+    return p.stem.endswith(SIDECAR_SUFFIX)
 
-    for missing_sidecar in sorted(tn1_files - tson_files):
-        fail(f"{missing_sidecar}.tn1 has no matching .tson sidecar", errors)
-    for missing_input in sorted(tson_files - tn1_files):
-        fail(f"{missing_input}.tson has no matching .tn1 input", errors)
+
+def check_pairing(errors: list[str]) -> None:
+    all_tn = list(ROOT.rglob("*.tn"))
+    subjects = {p for p in all_tn if not is_sidecar(p)}
+    sidecars = {p for p in all_tn if is_sidecar(p)}
+
+    subject_keys = {(p.parent, p.stem): p for p in subjects}
+    sidecar_keys = {(p.parent, p.stem[: -len(SIDECAR_SUFFIX)]): p for p in sidecars}
+
+    for key in sorted(subject_keys.keys() - sidecar_keys.keys()):
+        fail(f"{subject_keys[key]} has no matching {SIDECAR_SUFFIX}.tn sidecar", errors)
+    for key in sorted(sidecar_keys.keys() - subject_keys.keys()):
+        fail(f"{sidecar_keys[key]} has no matching .tn input", errors)
 
 
 def check_sidecar_fields(errors: list[str]) -> None:
-    for tson_path in sorted(ROOT.rglob("*.tson")):
-        text = tson_path.read_text(encoding="utf-8")
-        rel = tson_path.relative_to(ROOT.parent)
+    for sidecar_path in sorted(p for p in ROOT.rglob("*.tn") if is_sidecar(p)):
+        text = sidecar_path.read_text(encoding="utf-8")
+        rel = sidecar_path.relative_to(ROOT.parent)
 
         outcome_match = re.search(r"\boutcome:\s*(\S+)", text)
         if not outcome_match:
@@ -49,7 +58,7 @@ def check_sidecar_fields(errors: list[str]) -> None:
             "schema-document": "schema-document",
         }
         for bucket, expected_outcome in bucket_to_outcome.items():
-            if f"/{bucket}/" in str(tson_path) and outcome != expected_outcome:
+            if f"/{bucket}/" in str(sidecar_path) and outcome != expected_outcome:
                 fail(
                     f"{rel}: lives under {bucket}/ but outcome is '{outcome}', expected '{expected_outcome}'",
                     errors,
@@ -82,7 +91,7 @@ def main() -> int:
             print(f"  - {e}")
         return 1
 
-    count = len(list(ROOT.rglob("*.tn1")))
+    count = len([p for p in ROOT.rglob("*.tn") if not is_sidecar(p)])
     print(f"OK: {count} vector(s), all paired and all sidecars have required fields.")
     return 0
 

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/parser/invalid/annotation-is-not-itself-a-value-expected.tn"
+{
+  spec: "§3.1"
+  description: "The spec's own example: @a's nested data-value (starting with annotation @b) still requires a core-value after @b:val, and finds none"
+  outcome: error
+  category: parser
+}

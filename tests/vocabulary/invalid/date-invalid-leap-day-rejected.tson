@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/invalid/date-invalid-leap-day-rejected.tson"
-{
-  spec: "§5.4"
-  description: "2023 is not a leap year, so February 29 is not a valid calendar date -- this is a parse error, not merely a range/validation concern, since the token never denotes a real date at all"
-  outcome: error
-  category: resolver
-  type-ref: "date"
-}

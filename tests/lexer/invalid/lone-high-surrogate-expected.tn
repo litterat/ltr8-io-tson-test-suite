@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/lexer/invalid/lone-high-surrogate-expected.tn"
+{
+  spec: "§7.2.2"
+  description: "A high surrogate escape not immediately followed by a low surrogate escape is a lexer error"
+  outcome: error
+  category: lexer
+}

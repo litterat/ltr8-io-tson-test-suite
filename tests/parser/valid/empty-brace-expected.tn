@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/parser/valid/empty-brace-expected.tn"
+{
+  spec: "§2.8"
+  description: "{} is its own core-value kind, not resolved to record or map at this layer"
+  outcome: valid
+  document: {
+    id: _
+    schema: _
+    root: {
+      annotations: []
+      type-ref: _
+      core: {
+        kind: empty-brace
+      }
+    }
+  }
+}

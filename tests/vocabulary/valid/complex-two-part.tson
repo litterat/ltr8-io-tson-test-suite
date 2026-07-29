@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/complex-two-part.tson"
-{
-  spec: "§5.6, §7.6"
-  description: "!complex accepts the a+bi complex grammar form directly -- expressible unquoted, unlike rational (§5.6)"
-  outcome: valid
-  type-ref: "complex"
-  value: { real: "3" imaginary: "4" }
-}

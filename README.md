@@ -2,9 +2,15 @@
 
 A language-agnostic collection of test vectors for validating TSON implementations against the
 [TSON specification](https://tson.io) — starting with Part 1 (lexer and data format). Each vector is a
-real `.tn1` input document paired with a TSON sidecar describing the expected outcome. Any implementation,
-in any language, should be able to run this suite by reading the `.tn1` file, running its own
+real `.tn` input document paired with a TSON sidecar describing the expected outcome. Any implementation,
+in any language, should be able to run this suite by reading the `.tn` file, running its own
 lexer/parser/resolver over it, and comparing against the sidecar.
+
+**`.tn`, not `.tn1`:** the spec reserves `.tn1` as a positive stability claim for the eventual, frozen
+"TSON version 1" release — not yet reached, since the spec itself is still a pre-release, 2026-revision-
+series draft (see `SPEC-FEEDBACK.md` #20 in the sibling
+[ltr8-io-tson-java](https://github.com/litterat/ltr8-io-tson-java) repo). This suite's own vectors use
+the unversioned `.tn` extension for as long as that remains true.
 
 ## Layout
 
@@ -12,32 +18,32 @@ lexer/parser/resolver over it, and comparing against the sidecar.
 tests/
   lexer/
     valid/
-      <slug>.tn1
-      <slug>.tson
+      <slug>.tn
+      <slug>-expected.tn
     invalid/
-      <slug>.tn1
-      <slug>.tson
+      <slug>.tn
+      <slug>-expected.tn
   parser/
     valid/
-      <slug>.tn1
-      <slug>.tson
+      <slug>.tn
+      <slug>-expected.tn
     invalid/
-      <slug>.tn1
-      <slug>.tson
+      <slug>.tn
+      <slug>-expected.tn
     schema-document/
-      <slug>.tn1
-      <slug>.tson
+      <slug>.tn
+      <slug>-expected.tn
   resolver/
     valid/
-      <slug>.tn1
-      <slug>.tson
+      <slug>.tn
+      <slug>-expected.tn
   vocabulary/
     valid/
-      <slug>.tn1
-      <slug>.tson
+      <slug>.tn
+      <slug>-expected.tn
     invalid/
-      <slug>.tn1
-      <slug>.tson
+      <slug>.tn
+      <slug>-expected.tn
 ```
 
 Top-level grouping is by **conformance layer** — `lexer`, `parser`, `resolver`, `vocabulary`, and
@@ -54,16 +60,16 @@ vocabulary) does have both: a built-in atom's parsing contract can reject a toke
 rename — the section reference lives inside the sidecar instead (see below), where it's just metadata,
 not an identifier anything depends on.
 
-## Why the input document is always a standalone `.tn1` file
+## Why the input document is always a standalone `.tn` file
 
 Test inputs are never embedded as escaped strings inside another format. Several things this suite needs
 to test only exist as raw bytes: a leading byte-order mark, literal NEL/LS/PS characters, un-normalized
 (non-NFC) Unicode, mismatched surrogate byte sequences, and so on. Embedding those inside a sidecar string
 would require them to survive a round trip through the sidecar format's own escaping — which is exactly
 the mechanism under test and would make the fixture ambiguous about what's really being exercised. A raw
-`.tn1` file removes that ambiguity: what the implementation reads is exactly what's on disk.
+`.tn` file removes that ambiguity: what the implementation reads is exactly what's on disk.
 
-`.tn1` files are UTF-8 unless a vector's sidecar says otherwise (see `encoding` below).
+`.tn` files are UTF-8 unless a vector's sidecar says otherwise (see `encoding` below).
 
 ## The sidecar format
 
@@ -85,7 +91,7 @@ into this repo's own CI yet.
 |---------------|---------|
 | `spec`        | The spec section this vector targets, e.g. `"§7.2.2"`. Metadata only — not an identifier, not load-bearing for the test. |
 | `description` | One line: what this vector exercises and why it's interesting. |
-| `encoding`    | Optional. Present only when the `.tn1` file is not plain UTF-8 (e.g. `utf-16`, or a case with intentionally invalid UTF-8 bytes). Absent means UTF-8. |
+| `encoding`    | Optional. Present only when the `.tn` file is not plain UTF-8 (e.g. `utf-16`, or a case with intentionally invalid UTF-8 bytes). Absent means UTF-8. |
 | `outcome`     | `valid`, `error`, or (parser layer only) `schema-document`. |
 
 ### Valid lexer-layer vectors
@@ -97,7 +103,7 @@ token-stream grammar vocabulary, §7.3 — `single-line-token`, `multi-line-toke
 EOF is not listed.
 
 ```
-!!id:"https://tson.io/test-suite/lexer/valid/escape-basic.tson"
+!!id:"https://tson.io/test-suite/lexer/valid/escape-basic-expected.tn"
 {
   spec: "§7.2.2"
   description: "All single-character escape sequences decode to their target characters"
@@ -134,7 +140,7 @@ over simply omitting the field so every `document`/`data-value`/`annotation`/`sc
 fixed, predictable shape regardless of content.
 
 ```
-!!id:"https://tson.io/test-suite/parser/valid/simple-record.tson"
+!!id:"https://tson.io/test-suite/parser/valid/simple-record-expected.tn"
 {
   spec: "§2.5"
   description: "A record with one field"
@@ -164,7 +170,7 @@ treat it as malformed input, and not attempt to parse it as data (§1.5, §8.1).
 third outcome, distinct from both `valid` and `error`:
 
 ```
-!!id:"https://tson.io/test-suite/parser/schema-document/meta-directive-header.tson"
+!!id:"https://tson.io/test-suite/parser/schema-document/meta-directive-header-expected.tn"
 {
   spec: "§1.5"
   description: "A header containing !!meta identifies a schema document, not a data document"
@@ -174,7 +180,7 @@ third outcome, distinct from both `valid` and `error`:
 
 ### Valid resolver-layer vectors
 
-The `.tn1` file is a single bare token as the whole document (a token alone is a complete, valid
+The `.tn` file is a single bare token as the whole document (a token alone is a complete, valid
 data-value). `base-value` is the expected result of base type resolution (§4), using the spec's own
 vocabulary for which of the four number-grammar forms a number matched (§7.6) rather than any particular
 implementation's internal type names — deliberately **identification only**: which grammar form and its
@@ -198,7 +204,7 @@ exponent = { sign: plus|minus|_ digits: <string> }
 ```
 
 ```
-!!id:"https://tson.io/test-suite/resolver/valid/hex-based-integer.tson"
+!!id:"https://tson.io/test-suite/resolver/valid/hex-based-integer-expected.tn"
 {
   spec: "§4.3"
   description: "An unquoted 0x-prefixed token identifies as a based-integer number in hex"
@@ -212,7 +218,7 @@ exponent = { sign: plus|minus|_ digits: <string> }
 
 ### Vocabulary-layer vectors
 
-The `.tn1` file is a single bare `!type-ref value` data-value — a type-ref immediately followed by its
+The `.tn` file is a single bare `!type-ref value` data-value — a type-ref immediately followed by its
 token (a token alone is a complete data-value at every other layer; here the type-ref is what selects a
 built-in atom's parsing contract, §5). `type-ref` restates the annotation name for self-description;
 `value`, on a `valid` vector, is the atom's accepted value as a plain decimal string — deliberately
@@ -221,7 +227,7 @@ implementation to preserve the parsed value's information content but leaves the
 implementation-defined, so this suite asserts the underlying value, not a bound Java/whatever type:
 
 ```
-!!id:"https://tson.io/test-suite/vocabulary/valid/int32-plain.tson"
+!!id:"https://tson.io/test-suite/vocabulary/valid/int32-plain-expected.tn"
 {
   spec: "§5.6"
   description: "!int32 accepts a plain decimal integer within the signed 32-bit range"
@@ -241,7 +247,7 @@ itself, and a strictly-literal implementation would correctly treat e.g. `!int8`
 rather than a built-in atom. Add vectors for those names once §5.6 actually publishes them. `number`,
 `float32`, `float64`, `rational`, `complex`, and (§5.5) `uuid`/`uri`/`ipv4`/`ipv6` are all fully published as-is, so
 those aren't similarly restricted. `text` is deliberately *not* covered at all — `text_type` exists in
-meta-kernel.tn1 but `!text` never appears in §5's published table (see this repo's sibling
+meta-kernel.tn but `!text` never appears in §5's published table (see this repo's sibling
 implementation's `SPEC-FEEDBACK.md` #9).
 
 **`value` and floating-point precision.** For the exact atoms (the integer family, `number`), `value` is
@@ -261,7 +267,7 @@ dedicated field for them when a vector actually needs to assert one.
 **`value`'s shape for `rational`/`complex`.** Neither has a natural `BigDecimal` representation — a
 rational is an exact fraction (not always a terminating decimal, e.g. `1/3`), and a complex number is a
 pair. `rational` vectors give `value` as a `"numerator/denominator"` string instead (e.g. `"2/3"`,
-`"-1/2"`) — compared by *value*, not written form (meta.tn1: "the token is preserved as written and `2/4`
+`"-1/2"`) — compared by *value*, not written form (meta.tn: "the token is preserved as written and `2/4`
 round-trips as `2/4`... equality operates on the value", so a vector may legitimately assert `value:
 "-1/2"` against an input written as `"-2/4"`, and a conforming implementation must still pass). `complex`
 vectors give `value` as a small record, `{ real: "<decimal>" imaginary: "<decimal>" }`, each part compared
@@ -321,7 +327,7 @@ below) — but see the categorization note there before assuming `category: reso
 ### Invalid vectors (any layer)
 
 ```
-!!id:"https://tson.io/test-suite/lexer/invalid/lone-high-surrogate.tson"
+!!id:"https://tson.io/test-suite/lexer/invalid/lone-high-surrogate-expected.tn"
 {
   spec: "§7.2.2"
   description: "A high surrogate escape not followed by a low surrogate escape is a lexer error"
@@ -354,7 +360,8 @@ look ahead before failing. What's normative is that an error of the given catego
 
 ## Validating vectors
 
-`scripts/check_vectors.py` (stdlib-only) checks that every `.tn1` has a matching `.tson` and vice versa,
+`scripts/check_vectors.py` (stdlib-only) checks that every `.tn` has a matching `-expected.tn` sidecar
+and vice versa,
 and that each sidecar has the required fields with sane values. It's deliberately shallow — a regex-based
 check, not a real parse — since this repo doesn't wire in a TSON implementation of its own to parse
 sidecars with (that would mean picking one implementation as a dependency for a repo meant to be

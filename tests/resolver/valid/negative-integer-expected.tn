@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/resolver/valid/negative-integer-expected.tn"
+{
+  spec: "§4.3"
+  description: "A signed integer identifies as an integer number with its sign captured"
+  outcome: valid
+  base-value: {
+    kind: number
+    form: {
+      shape: integer
+      sign: minus
+      digits: "42"
+    }
+  }
+}
