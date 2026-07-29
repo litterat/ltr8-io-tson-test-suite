@@ -1,0 +1,44 @@
+!!id:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+!!meta:"https://tson.io/2026/32/m/meta.tn"
+!!import:"https://tson.io/2026/32/m/core.tn"
+@doc:"""
+  Formal shape of a lexer-layer sidecar (tests/lexer/**/*-expected.tn) -- see README.md's own
+  "Valid lexer-layer vectors" section for the worked example this schema formalizes.
+  """
+{
+  @doc:"The nine token kinds this suite's own README documents, using the spec's own token-stream vocabulary (§7.3), not any implementation's internal type names."
+  lexer_token_kind => !enum [
+    single-line-token
+    multi-line-token
+    unquoted-token
+    absent-token
+    structural-delimiter
+    map-arrow-token
+    directive-token
+    range-token
+    special-token
+  ]
+
+  lexer_outcome => !enum [valid error]
+
+  @doc:"Shared across every layer's own sidecar schema (see README.md's 'Invalid vectors (any layer)' section) -- one of the spec's own four §8.1 diagnostic categories."
+  error_category => !enum [lexer parser resolver validation]
+
+  lexer_token => {
+    kind: lexer_token_kind
+    text: text
+  }
+
+  @doc:"Fields every layer's sidecar shares -- spec/description are always present, encoding only when the .tn file isn't plain UTF-8."
+  sidecar_common => {
+    spec: text
+    description: text
+    encoding: text?
+  }
+
+  lexer_sidecar => sidecar_common & {
+    outcome: lexer_outcome
+    tokens: [lexer_token]?
+    category: error_category?
+  }
+}

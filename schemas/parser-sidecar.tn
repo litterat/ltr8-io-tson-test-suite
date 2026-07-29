@@ -1,0 +1,93 @@
+!!id:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+!!meta:"https://tson.io/2026/32/m/meta.tn"
+!!import:"https://tson.io/2026/32/m/core.tn"
+@doc:"""
+  Formal shape of a parser-layer sidecar (tests/parser/**/*-expected.tn) -- see README.md's own
+  "Valid parser-layer vectors" and "Schema-document vectors" sections for the worked examples this
+  schema formalizes. document/data_value/sidecar_annotation/scoped_value/core_value mirror the spec's own
+  grammar vocabulary (§2.3, §7.4), not this implementation's internal AST type names, so the schema
+  stays language-agnostic the same way the sidecars themselves already are.
+
+  Field names match the real sidecar's own spelling exactly, hyphens included (`type-ref`,
+  `schema-ref`) -- confirmed empirically that a hyphenated field declaration parses and resolves
+  fine (this project's own schema-authored identifiers are conventionally snake_case, but nothing
+  in the grammar actually requires that). Only *type* names here are underscored -- those never
+  appear literally in real sidecar data, so there's no wire fidelity to preserve for them.
+  """
+{
+  @doc:"Shared across every layer's own sidecar schema (see README.md's 'Invalid vectors (any layer)' section) -- one of the spec's own four §8.1 diagnostic categories."
+  error_category => !enum [lexer parser resolver validation]
+
+  @doc:"Fields every layer's sidecar shares -- spec/description are always present, encoding only when the .tn file isn't plain UTF-8."
+  sidecar_common => {
+    spec: text
+    description: text
+    encoding: text?
+  }
+
+  parser_outcome => !enum [valid error schema-document]
+
+  core_value_kind => !enum [token absent empty-brace record map array]
+  core_value_form => !enum [unquoted single-line multi-line]
+
+  @doc:"One field of a core_value's own kind: record -- { name: <string> value: <scoped_value> }."
+  record_field_entry => {
+    name: text
+    value: scoped_value
+  }
+
+  @doc:"One entry of a core_value's own kind: map -- { key: <data_value> value: <scoped_value> }."
+  map_entry => {
+    key: data_value
+    value: scoped_value
+  }
+
+  @doc:"""
+    The parsed shape of one core-value (§2.3). Modeled as a single record with a kind discriminator
+    and every other field OPTIONAL, rather than a tagged union of six separate shapes -- exactly
+    what a real sidecar already looks like on the wire, and the only shape this project's own
+    resolver can bind an Instance against today. Only the fields relevant to `kind`'s own value are
+    ever populated: token needs form/text; record needs fields; map needs entries; array needs
+    elements; absent and empty-brace need nothing further.
+    """
+  core_value => {
+    kind: core_value_kind
+    form: core_value_form?
+    text: text?
+    fields: [record_field_entry]?
+    entries: [map_entry]?
+    elements: [scoped_value]?
+  }
+
+  @doc:"A data-value (§2.3): zero or more annotations, an optional type-ref, and exactly one core-value."
+  data_value => {
+    annotations: [sidecar_annotation]
+    type-ref: text?
+    core: core_value
+  }
+
+  @doc:"One annotation (§3.1) -- a name and an optional value, itself a full data-value. Named sidecar_annotation, not annotation, since core.tn's own !!import already declares an entry called annotation (its own @annotation-tagged marker atom) -- reusing that name here would collide."
+  sidecar_annotation => {
+    name: text
+    value: data_value?
+  }
+
+  @doc:"A value in a position that may carry its own schema-ref (§2.7) -- record field values, map entry values, and array elements are all scoped_value, never a bare data_value."
+  scoped_value => {
+    schema-ref: text?
+    value: data_value
+  }
+
+  @doc:"The parsed document as a whole (§2.3, §7.4): the header's own !!id/!!schema, absent as `_` when not present, plus the root data-value."
+  document => {
+    id: text?
+    schema: text?
+    root: data_value
+  }
+
+  parser_sidecar => sidecar_common & {
+    outcome: parser_outcome
+    document: document?
+    category: error_category?
+  }
+}

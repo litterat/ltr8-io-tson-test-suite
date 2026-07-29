@@ -85,6 +85,19 @@ against, which is exactly why "eat your own dog food" is worth doing early. **Ca
 against `ltr8-io-tson-java`'s real lexer/parser before being committed, but that cross-check isn't wired
 into this repo's own CI yet.
 
+**The [`schemas/`](schemas) directory holds one real TSON schema per conformance layer**
+(`lexer-sidecar.tn`, `parser-sidecar.tn`, `resolver-sidecar.tn`, `vocabulary-sidecar.tn`) — a formal,
+machine-checkable description of each layer's own sidecar shape, replacing the ad hoc BNF-like
+notation (`document = { ... } / { ... }`, `<string-or-absent>` placeholders) an earlier revision of
+this README used. Each one resolves and links cleanly against the real bundled meta.tn/core.tn chain
+(`SidecarSchemasTest` in `ltr8-io-tson-java`, run alongside the conformance suite itself, so drift
+between these schemas and the toolchain that's meant to validate them fails loudly, not silently).
+They live outside `tests/` deliberately, so `scripts/check_vectors.py`'s own subject/sidecar pairing
+check doesn't see them. **Not yet wired onto the real sidecars themselves** — no existing
+`-expected.tn` file carries a `!!schema` directive pointing at one of these yet, so today they're
+documentation with a resolver behind it, not live validation; retrofitting the ~110 existing sidecars
+(and fixing whatever real shape mismatches that surfaces) is tracked as separate follow-up work.
+
 ### Common fields
 
 | Field         | Meaning |
@@ -94,13 +107,75 @@ into this repo's own CI yet.
 | `encoding`    | Optional. Present only when the `.tn` file is not plain UTF-8 (e.g. `utf-16`, or a case with intentionally invalid UTF-8 bytes). Absent means UTF-8. |
 | `outcome`     | `valid`, `error`, or (parser layer only) `schema-document`. |
 
+### Schema-governed vectors
+
+Some vectors need their subject document's own `!!meta`/`!!import` to point at a real, working
+schema — not the fake `example.com` placeholders `parser`-layer vectors use, where no real
+resolution ever happens. Hardcoding the real, versioned identity (e.g.
+`https://tson.io/2026/32/m/core.tn`) into every such vector's own `.tn` file would mean every one of
+them needs editing whenever the spec revision bumps. Instead, the *sidecar* names the target by a
+short, unversioned name, and the runner splices in the real directive before parsing:
+
+| Field    | Meaning |
+|----------|---------|
+| `meta`   | Optional. A short name (see table below) for the subject's own `!!meta` target. |
+| `import` | Optional. An array of short names for the subject's own `!!import` entries, in order — always an array, even for a single entry. |
+
+| Short name       | Current real identity |
+|------------------|------------------------|
+| `meta-kernel.tn` | `https://tson.io/2026/32/m/meta-kernel.tn` |
+| `meta.tn`        | `https://tson.io/2026/32/m/meta.tn` |
+| `core.tn`        | `https://tson.io/2026/32/m/core.tn` |
+
+These are the three schema documents this suite's own reference implementation
+([ltr8-io-tson-java](https://github.com/litterat/ltr8-io-tson-java)) bundles. Any implementation
+running this suite hard-codes this same three-entry table however is natural for it — in
+`ltr8-io-tson-java`'s own case, directly off `TsonBundledSchemas`'s constants, so a version bump only
+ever touches that one class. When the spec revision bumps, it's this table — not every vector that
+imports `core.tn` — that changes.
+
+A runner resolves `meta`/`import` and splices the real `!!meta:"..."`/`!!import:"..."` directives
+into the subject's own header before parsing it — right after the subject's own `!!id` line (a
+schema document requires `!!meta` "immediately after `!!id` if present", Part 2 §2.2), or at the
+very start if the subject has no `!!id` at all. A subject using this mechanism writes its own
+`!!id` but omits `!!meta`/`!!import` entirely; the runner adds those:
+
+```
+!!id:"https://tson.io/test-suite/schema/valid/some-vector.tn"
+{ my_int => integer }
+```
+
+```
+!!id:"https://tson.io/test-suite/schema/valid/some-vector-expected.tn"
+{
+  spec: "§8.3"
+  description: "A bare reference to a real core.tn constructor resolves"
+  outcome: valid
+  meta: "meta.tn"
+  import: ["core.tn"]
+}
+```
+
+What actually gets parsed, spliced together, is equivalent to:
+
+```
+!!id:"https://tson.io/test-suite/schema/valid/some-vector.tn"
+!!meta:"https://tson.io/2026/32/m/meta.tn"
+!!import:"https://tson.io/2026/32/m/core.tn"
+{ my_int => integer }
+```
+
+No vector uses this yet — it's plumbing for the not-yet-added `schema` conformance layer (and any
+other layer whose subject ever needs a real governing schema), added ahead of the vectors themselves
+specifically so those vectors never have to hardcode a versioned identity.
+
 ### Valid lexer-layer vectors
 
 `tokens` is the expected token stream: an array of records, each with a `kind` (using the spec's own
 token-stream grammar vocabulary, §7.3 — `single-line-token`, `multi-line-token`, `unquoted-token`,
 `structural-delimiter`, `absent-token`, `map-arrow-token`, `directive-token`, `range-token`,
 `special-token` — not any particular implementation's internal type names) and the token's decoded `text`.
-EOF is not listed.
+EOF is not listed. Formally described by [`schemas/lexer-sidecar.tn`](schemas/lexer-sidecar.tn).
 
 ```
 !!id:"https://tson.io/test-suite/lexer/valid/escape-basic-expected.tn"
@@ -116,28 +191,20 @@ EOF is not listed.
 
 ### Valid parser-layer vectors
 
-`document` is the expected parse tree, using the spec's own grammar vocabulary (§2.3, §7.4) rather than
-any implementation's internal type names, so it stays language-agnostic:
+`document` is the expected parse tree, formally described by
+[`schemas/parser-sidecar.tn`](schemas/parser-sidecar.tn) — a real TSON schema, resolved and
+regression-tested against the reference implementation's own compiler (see
+`SidecarSchemasTest` in `ltr8-io-tson-java`), not ad hoc grammar notation. It uses the spec's own
+grammar vocabulary (§2.3, §7.4) rather than any implementation's internal type names, so it stays
+language-agnostic — `document`/`data_value`/`sidecar_annotation` (`annotation` collides with a name
+`core.tn` already declares)/`scoped_value`/`core_value`, the last discriminated by a `kind` field
+covering the six core-value shapes (`token`/`absent`/`empty-brace`/`record`/`map`/`array`) rather than
+one BNF alternative per shape.
 
-```
-document = { id: <string-or-absent> schema: <string-or-absent> root: <data-value> }
-
-data-value  = { annotations: [ <annotation> ... ] type-ref: <string-or-absent> core: <core-value> }
-annotation  = { name: <string> value: <data-value-or-absent> }
-scoped-value = { schema-ref: <string-or-absent> value: <data-value> }
-
-core-value  = { kind: token  form: unquoted|single-line|multi-line  text: <string> }
-            / { kind: absent }
-            / { kind: empty-brace }
-            / { kind: record  fields: [ { name: <string> value: <scoped-value> } ... ] }
-            / { kind: map     entries: [ { key: <data-value> value: <scoped-value> } ... ] }
-            / { kind: array   elements: [ <scoped-value> ... ] }
-```
-
-`<string-or-absent>` and `<data-value-or-absent>` use the absent sentinel `_` when the optional thing
-isn't present (there's no id-directive, no schema-directive, no type-ref, no annotation value) — chosen
-over simply omitting the field so every `document`/`data-value`/`annotation`/`scoped-value` record has a
-fixed, predictable shape regardless of content.
+Every optional field (`id`, `schema`, `type_ref`, an annotation's own `value`, ...) uses the absent
+sentinel `_` when the thing isn't present — chosen over simply omitting the field so every
+`document`/`data_value`/`sidecar_annotation`/`scoped_value` record has a fixed, predictable shape
+regardless of content.
 
 ```
 !!id:"https://tson.io/test-suite/parser/valid/simple-record-expected.tn"
@@ -181,27 +248,14 @@ third outcome, distinct from both `valid` and `error`:
 ### Valid resolver-layer vectors
 
 The `.tn` file is a single bare token as the whole document (a token alone is a complete, valid
-data-value). `base-value` is the expected result of base type resolution (§4), using the spec's own
-vocabulary for which of the four number-grammar forms a number matched (§7.6) rather than any particular
-implementation's internal type names — deliberately **identification only**: which grammar form and its
-components, not a bound host numeric type (`long`/`double`/`BigInteger`/`BigDecimal`). The spec leaves that
-binding as "an implementation concern" (§4.3), and different implementations may reasonably choose
-different host representations, so this suite doesn't assert one:
-
-```
-base-value = { kind: null }
-           / { kind: boolean value: true|false }
-           / { kind: string text: <string> }
-           / { kind: number form: <number-form> }
-
-number-form = { shape: integer        sign: plus|minus|_  digits: <string> }
-            / { shape: based-integer  sign: plus|minus|_  radix: hex|octal|binary  digits: <string> }
-            / { shape: float          sign: plus|minus|_  integer-part: <string-or-absent>
-                                       fraction-digits: <string-or-absent>  exponent: <exponent-or-absent> }
-            / { shape: special-value  sign: plus|minus|_  kind: nan|infinity }
-
-exponent = { sign: plus|minus|_ digits: <string> }
-```
+data-value). `base-value` is the expected result of base type resolution (§4), formally described by
+[`schemas/resolver-sidecar.tn`](schemas/resolver-sidecar.tn) — `base_value`/`number_form`/`exponent`,
+using the spec's own vocabulary for which of the four number-grammar forms a number matched (§7.6)
+rather than any particular implementation's internal type names — deliberately **identification
+only**: which grammar form and its components, not a bound host numeric type
+(`long`/`double`/`BigInteger`/`BigDecimal`). The spec leaves that binding as "an implementation
+concern" (§4.3), and different implementations may reasonably choose different host representations,
+so this suite doesn't assert one.
 
 ```
 !!id:"https://tson.io/test-suite/resolver/valid/hex-based-integer-expected.tn"
@@ -224,7 +278,11 @@ built-in atom's parsing contract, §5). `type-ref` restates the annotation name 
 `value`, on a `valid` vector, is the atom's accepted value as a plain decimal string — deliberately
 **host-representation-neutral**, the same reasoning as the resolver layer's `base-value`: §5.2 requires an
 implementation to preserve the parsed value's information content but leaves the concrete host type
-implementation-defined, so this suite asserts the underlying value, not a bound Java/whatever type:
+implementation-defined, so this suite asserts the underlying value, not a bound Java/whatever type.
+Formally described by [`schemas/vocabulary-sidecar.tn`](schemas/vocabulary-sidecar.tn) — see that
+schema's own `@doc` for the two atom families (`complex`, `duration`) whose real `value` is actually a
+small nested record, which its own single `text` field is a deliberate simplification of, not a
+precise per-family shape (the notes below spell out each family's own real shape in prose):
 
 ```
 !!id:"https://tson.io/test-suite/vocabulary/valid/int32-plain-expected.tn"

@@ -1,0 +1,38 @@
+!!id:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+!!meta:"https://tson.io/2026/32/m/meta.tn"
+!!import:"https://tson.io/2026/32/m/core.tn"
+@doc:"""
+  Formal shape of a vocabulary-layer sidecar (tests/vocabulary/**/*-expected.tn) -- see README.md's
+  own "Vocabulary-layer vectors" section for the worked example this schema formalizes, and its own
+  extensive prose on exactly what `value` means per atom family (host-representation-neutral: a
+  plain decimal string for the exact/approximate numeric families, a hex string for the binary
+  family and ipv6's raw bytes, a "numerator/denominator" string for rational, an RFC 3339 string for
+  the temporal family, ...).
+
+  value is typed here as a plain, optional text field -- a deliberate simplification, not a full
+  per-atom-family shape: two families (complex, duration) actually write value as a small NESTED
+  RECORD in real sidecars ({ real: "..." imaginary: "..." } / { period: "..." clock: "..." }), which
+  a single text field can't capture. Loosening this further (e.g. one shape per atom family) is left
+  for whenever this schema is actually wired onto real sidecars via !!schema -- see README.md's own
+  note on that being tracked separately, not done in this pass.
+  """
+{
+  @doc:"Shared across every layer's own sidecar schema (see README.md's 'Invalid vectors (any layer)' section) -- one of the spec's own four §8.1 diagnostic categories."
+  error_category => !enum [lexer parser resolver validation]
+
+  @doc:"Fields every layer's sidecar shares -- spec/description are always present, encoding only when the .tn file isn't plain UTF-8."
+  sidecar_common => {
+    spec: text
+    description: text
+    encoding: text?
+  }
+
+  vocabulary_outcome => !enum [valid error]
+
+  vocabulary_sidecar => sidecar_common & {
+    outcome: vocabulary_outcome
+    type-ref: text?
+    value: text?
+    category: error_category?
+  }
+}

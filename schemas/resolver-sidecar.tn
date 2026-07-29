@@ -1,0 +1,67 @@
+!!id:"https://tson.io/test-suite/schemas/resolver-sidecar.tn"
+!!meta:"https://tson.io/2026/32/m/meta.tn"
+!!import:"https://tson.io/2026/32/m/core.tn"
+@doc:"""
+  Formal shape of a resolver-layer sidecar (tests/resolver/**/*-expected.tn) -- see README.md's own
+  "Valid resolver-layer vectors" section for the worked example this schema formalizes.
+  Identification only (§4.3): base_value/number_form describe which of the four number-grammar
+  forms a number matched and its own components, never a bound host numeric type.
+
+  resolver_outcome is deliberately a single-member enum (valid) -- base type resolution (§4) never
+  rejects a token, it always resolves to *something* (worst case, string), so no real vector, and
+  therefore no field in this schema, needs an error/category shape at this layer.
+  """
+{
+  @doc:"Fields every layer's sidecar shares -- spec/description are always present, encoding only when the .tn file isn't plain UTF-8."
+  sidecar_common => {
+    spec: text
+    description: text
+    encoding: text?
+  }
+
+  resolver_outcome => !enum [valid]
+
+  base_value_kind => !enum [null boolean string number]
+  number_form_shape => !enum [integer based-integer float special-value]
+  number_form_sign => !enum [plus minus]
+  number_form_radix => !enum [hex octal binary]
+  number_form_special_kind => !enum [nan infinity]
+
+  exponent => {
+    sign: number_form_sign?
+    digits: text
+  }
+
+  @doc:"""
+    One of the four §7.6 number-grammar forms, discriminated by shape, every other field OPTIONAL
+    and populated only for the shapes that actually carry it: integer needs sign/digits;
+    based-integer needs sign/radix/digits; float needs sign/integer-part/fraction-digits/exponent;
+    special-value needs sign/kind.
+    """
+  number_form => {
+    shape: number_form_shape
+    sign: number_form_sign?
+    digits: text?
+    radix: number_form_radix?
+    integer-part: text?
+    fraction-digits: text?
+    exponent: exponent?
+    kind: number_form_special_kind?
+  }
+
+  @doc:"""
+    The result of base type resolution (§4), discriminated by kind. null/boolean carry a plain
+    value; string carries its own text; number carries a full number_form.
+    """
+  base_value => {
+    kind: base_value_kind
+    value: text?
+    text: text?
+    form: number_form?
+  }
+
+  resolver_sidecar => sidecar_common & {
+    outcome: resolver_outcome
+    base-value: base_value?
+  }
+}
