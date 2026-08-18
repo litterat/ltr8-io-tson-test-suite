@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/cidr6-compressed-expected.tn"
+{
+  spec: "§5.5"
+  description: "!cidr6 accepts an RFC 4291 §2.2 address followed by a prefix length, compression included; the authored spelling is preserved rather than expanded"
+  outcome: valid
+  type-ref: "cidr6"
+  value: "2001:db8::/32"
+}

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/invalid/cidr4-nonzero-host-bits-rejected-expected.tn"
+{
+  spec: "§5.5"
+  description: "The host value is a network, and accept-and-mask would be lossy, so bits set beyond the prefix are a validation error rather than something to silently clear"
+  outcome: error
+  category: validation
+  type-ref: "cidr4"
+}

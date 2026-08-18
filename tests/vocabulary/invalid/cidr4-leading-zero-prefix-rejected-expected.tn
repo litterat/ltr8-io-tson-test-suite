@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/invalid/cidr4-leading-zero-prefix-rejected-expected.tn"
+{
+  spec: "§5.5"
+  description: "A prefix length is a canonical decimal: /08 and /8 must not be two spellings of one network, the same ambiguity RFC 3986 dec-octet grammar rules out for the address half"
+  outcome: error
+  category: resolver
+  type-ref: "cidr4"
+}

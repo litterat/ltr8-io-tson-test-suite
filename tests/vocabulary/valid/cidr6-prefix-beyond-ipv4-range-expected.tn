@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/cidr6-prefix-beyond-ipv4-range-expected.tn"
+{
+  spec: "§5.5"
+  description: "The prefix range is per address family: /33 is out of range for cidr4 and ordinary for cidr6, whose addresses are 128 bits wide"
+  outcome: valid
+  type-ref: "cidr6"
+  value: "2001:db8:8000::/33"
+}
