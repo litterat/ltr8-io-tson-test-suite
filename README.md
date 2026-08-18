@@ -95,7 +95,7 @@ between these schemas and the toolchain that's meant to validate them fails loud
 They live outside `tests/` deliberately, so `scripts/check_vectors.py`'s own subject/sidecar pairing
 check doesn't see them. **Not yet wired onto the real sidecars themselves** — no existing
 `-expected.tn` file carries a `!!schema` directive pointing at one of these yet, so today they're
-documentation with a resolver behind it, not live validation; retrofitting the ~110 existing sidecars
+documentation with a resolver behind it, not live validation; retrofitting the ~120 existing sidecars
 (and fixing whatever real shape mismatches that surfaces) is tracked as separate follow-up work.
 
 ### Common fields
