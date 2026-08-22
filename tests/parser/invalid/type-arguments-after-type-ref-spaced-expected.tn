@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/parser/invalid/type-arguments-after-type-ref-spaced-expected.tn"
+{
+  spec: "§3.2"
+  description: "separating the argument list with whitespace does not make it a data value; a type-ref is a bare name"
+  outcome: error
+  category: parser
+}
