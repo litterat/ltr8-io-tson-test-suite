@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/parser/invalid/array-type-after-bang-expected.tn"
+{
+  spec: "§3.2"
+  description: "array-type brackets are type-expression syntax and MUST NOT appear after '!' in a data value"
+  outcome: error
+  category: parser
+}

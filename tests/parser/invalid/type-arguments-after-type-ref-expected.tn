@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/parser/invalid/type-arguments-after-type-ref-expected.tn"
+{
+  spec: "§3.2"
+  description: "type arguments are type-expression syntax and MUST NOT appear after '!' in a data value"
+  outcome: error
+  category: parser
+}
