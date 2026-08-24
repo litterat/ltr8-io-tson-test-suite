@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/resolver/valid/near-miss-radix-prefix-alone-is-string-expected.tn"
+{
+  spec: "§4.4"
+  description: "A radix prefix with no digits after it is not a based-integer, and not an integer either -- it resolves to a string"
+  outcome: valid
+  base-value: {
+    kind: string
+    text: "0x"
+  }
+}

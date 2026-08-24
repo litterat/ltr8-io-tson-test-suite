@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/lexer/invalid/utf8-encoded-surrogate-expected.tn"
+{
+  spec: "§9.1"
+  description: "U+D800 encoded as if it were a character. Surrogates exist only inside UTF-16 and UTF-8 does not encode them"
+  encoding: "invalid-utf8"
+  outcome: error
+  category: lexer
+}

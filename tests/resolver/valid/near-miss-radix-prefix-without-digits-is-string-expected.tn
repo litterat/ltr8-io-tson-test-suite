@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/resolver/valid/near-miss-radix-prefix-without-digits-is-string-expected.tn"
+{
+  spec: "§4.4"
+  description: "0o with a digit outside its radix matches neither based-integer nor integer -- the whole token must match the number production (§4.3), so it falls through to string. An implementation that consumes the prefix before checking the digits can read this as the integer 9"
+  outcome: valid
+  base-value: {
+    kind: string
+    text: "0o9"
+  }
+}

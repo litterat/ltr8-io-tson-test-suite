@@ -104,7 +104,7 @@ documentation with a resolver behind it, not live validation; retrofitting the ~
 |---------------|---------|
 | `spec`        | The spec section this vector targets, e.g. `"§7.2.2"`. Metadata only — not an identifier, not load-bearing for the test. |
 | `description` | One line: what this vector exercises and why it's interesting. |
-| `encoding`    | Optional. Present only when the `.tn` file is not plain UTF-8 (e.g. `utf-16`, or a case with intentionally invalid UTF-8 bytes). Absent means UTF-8. |
+| `encoding`    | Optional. Present only when the `.tn` file is not plain UTF-8. Absent means UTF-8. Values in use: `invalid-utf8` (the subject is deliberately not decodable — §9.1 vectors), `utf-16`, `utf-32`. **A runner must feed the subject's bytes to its lexer unchanged for these**: reading the file into a string first re-encodes it, and for `invalid-utf8` the decode substitutes U+FFFD before the lexer sees anything, so the vector would assert against a different document than the one on disk. An implementation that reads only UTF-8 should *skip* a `utf-16`/`utf-32` vector rather than fail it — §9.1 permits those encodings, so not reading them is a gap in the implementation, not a failed conformance claim. |
 | `outcome`     | `valid`, `error`, or (parser layer only) `schema-document`. |
 
 ### Schema-governed vectors
