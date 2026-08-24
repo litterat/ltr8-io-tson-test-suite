@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/lexer/invalid/utf8-lone-continuation-byte-expected.tn"
+{
+  spec: "§9.1"
+  description: "A continuation byte with no lead byte before it is not a UTF-8 sequence. A decoder that substitutes U+FFFD instead of failing accepts a document that cannot be decoded (see ltr8-io-tson-java's SPEC-FEEDBACK.md #59 -- §9.1 names the encodings and §8.1's error list does not mention encoding)"
+  encoding: "invalid-utf8"
+  outcome: error
+  category: lexer
+}

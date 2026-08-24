@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/lexer/invalid/utf8-bad-continuation-byte-expected.tn"
+{
+  spec: "§9.1"
+  description: "A two-byte sequence whose second byte is not a continuation byte"
+  encoding: "invalid-utf8"
+  outcome: error
+  category: lexer
+}
