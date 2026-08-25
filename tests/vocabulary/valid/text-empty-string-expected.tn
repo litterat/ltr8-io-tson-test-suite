@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/vocabulary/valid/text-empty-string-expected.tn"
+{
+  spec: "§5.5"
+  description: "The empty token is a token: !text carries no length floor of its own, text_type's min_length being unset on the unconstrained instance"
+  outcome: valid
+  type-ref: "text"
+  value: ""
+}

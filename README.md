@@ -8,9 +8,9 @@ lexer/parser/resolver over it, and comparing against the sidecar.
 
 **`.tn`, not `.tn1`:** the spec reserves `.tn1` as a positive stability claim for the eventual, frozen
 "TSON version 1" release — not yet reached, since the spec itself is still a pre-release, 2026-revision-
-series draft (see `SPEC-FEEDBACK.md` #20 in the sibling
-[ltr8-io-tson-java](https://github.com/litterat/ltr8-io-tson-java) repo). This suite's own vectors use
-the unversioned `.tn` extension for as long as that remains true.
+series draft. [TSON-DATA] §7.1 states the rule: `.tn` "makes no stability claim: it is the extension of
+the 2026 revision series", while `.tn1` "MUST NOT be used before that release". This suite's own vectors
+use `.tn` for as long as that remains true.
 
 ## Layout
 
@@ -295,18 +295,15 @@ precise per-family shape (the notes below spell out each family's own real shape
 }
 ```
 
-Vectors only exercise annotations §5.6 currently publishes — the integer family is restricted to
-`int32`/`int64`/`uint32`/`uint64` for now. The core type library's `integer_type` constructor also backs
-`int8`/`int16`/`int128`/`int256`, the matching `uint*` widths, and the `positive_integer`/
-`non_negative_integer`/`negative_integer`/`non_positive_integer` refinements, but none of those names
-appear in §5.6's *published* table — asserting a vector against one would bind every implementation
-running this suite to one implementation's reading of an already-flagged spec gap, not to the spec text
-itself, and a strictly-literal implementation would correctly treat e.g. `!int8` as an unrecognized marker
-rather than a built-in atom. Add vectors for those names once §5.6 actually publishes them. `number`,
-`float32`, `float64`, `rational`, `complex`, and (§5.5) `uuid`/`uri`/`ipv4`/`ipv6` are all fully published as-is, so
-those aren't similarly restricted. `text` is deliberately *not* covered at all — `text_type` exists in
-meta-kernel.tn but `!text` never appears in §5's published table (see this repo's sibling
-implementation's `SPEC-FEEDBACK.md` #9).
+Vectors only exercise annotations §5 publishes, which as of Revision 33 is the whole vocabulary the core
+type library backs. Two restrictions this note used to record are gone with that revision: §5.6 now lists
+the full `int8`..`int256`/`uint8`..`uint256` ladder together with the `positive_integer`/
+`non_negative_integer`/`negative_integer`/`non_positive_integer` refinements, and §5.5 now carries `!text`
+and `!email` beside `uuid`/`uri`/`ipv4`/`ipv6`/`cidr4`/`cidr6`/`mac`. **Coverage has not caught up with
+that yet**: the integer family's vectors are still only `int32`/`int64`/`uint32`/`uint64`, and `email` has
+none, so both are open invitations rather than deliberate exclusions. `text` is covered — its host value is
+the token's own text, so its vectors are about what the annotation does *not* do (`!text 0xFF` is the
+four-character string, not `255`) as much as what it accepts.
 
 **`value` and floating-point precision.** For the exact atoms (the integer family, `number`), `value` is
 unambiguous — compare it as an arbitrary-precision decimal, done. For the approximate atoms (`float32`/
