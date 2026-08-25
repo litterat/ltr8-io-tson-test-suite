@@ -112,7 +112,7 @@ documentation with a resolver behind it, not live validation; retrofitting the ~
 Some vectors need their subject document's own `!!meta`/`!!import` to point at a real, working
 schema — not the fake `example.com` placeholders `parser`-layer vectors use, where no real
 resolution ever happens. Hardcoding the real, versioned identity (e.g.
-`https://tson.io/2026/32/m/core.tn`) into every such vector's own `.tn` file would mean every one of
+`https://tson.io/2026/33/m/core.tn`) into every such vector's own `.tn` file would mean every one of
 them needs editing whenever the spec revision bumps. Instead, the *sidecar* names the target by a
 short, unversioned name, and the runner splices in the real directive before parsing:
 
@@ -123,9 +123,9 @@ short, unversioned name, and the runner splices in the real directive before par
 
 | Short name       | Current real identity |
 |------------------|------------------------|
-| `meta-kernel.tn` | `https://tson.io/2026/32/m/meta-kernel.tn` |
-| `meta.tn`        | `https://tson.io/2026/32/m/meta.tn` |
-| `core.tn`        | `https://tson.io/2026/32/m/core.tn` |
+| `meta-kernel.tn` | `https://tson.io/2026/33/m/meta-kernel.tn` |
+| `meta.tn`        | `https://tson.io/2026/33/m/meta.tn` |
+| `core.tn`        | `https://tson.io/2026/33/m/core.tn` |
 
 These are the three schema documents this suite's own reference implementation
 ([ltr8-io-tson-java](https://github.com/litterat/ltr8-io-tson-java)) bundles. Any implementation
@@ -160,8 +160,8 @@ What actually gets parsed, spliced together, is equivalent to:
 
 ```
 !!id:"https://tson.io/test-suite/schema/valid/some-vector.tn"
-!!meta:"https://tson.io/2026/32/m/meta.tn"
-!!import:"https://tson.io/2026/32/m/core.tn"
+!!meta:"https://tson.io/2026/33/m/meta.tn"
+!!import:"https://tson.io/2026/33/m/core.tn"
 { my_int => integer }
 ```
 
