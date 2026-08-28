@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/lexer/invalid/nfkc-excluded-inside-unquoted-token-expected.tn"
+{
+  spec: "§7.1"
+  description: "U+037A GREEK YPOGEGRAMMENI is in ID_Continue but not XID_Continue -- XID drops the characters whose NFKC form is not itself an identifier, and §7.1's profile is stated over XID"
+  outcome: error
+  category: lexer
+}
