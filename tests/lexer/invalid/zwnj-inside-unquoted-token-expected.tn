@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/lexer/invalid/zwnj-inside-unquoted-token-expected.tn"
+{
+  spec: "§7.1"
+  description: "U+200C ZWNJ is deliberately excluded from TSON's UAX #31 profile even though it is in XID_Continue: §7.1 names it and ZWJ, and requires names whose orthography needs them to be quoted"
+  outcome: error
+  category: lexer
+}
