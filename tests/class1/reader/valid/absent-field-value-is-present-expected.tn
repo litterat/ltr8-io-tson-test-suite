@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/reader/valid/absent-field-value-is-present-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.9"
+  description: "A field set to the absent sentinel is present with an absent value, distinct from not appearing at all. The record has one field."
+  valid: {
+    value: { record: { fields: [
+      { name: "a"  value: { absent: _ } }
+    ] } }
+  }
+}

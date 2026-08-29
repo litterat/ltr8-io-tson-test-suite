@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/reader/invalid/duplicate-field-name-nfc-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.5"
+  description: "Precomposed and decomposed spellings of the same character are one field name: identity is NFC identity after escape processing, and the escapes here are resolved before that comparison."
+  error: { category: resolver }
+}

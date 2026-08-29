@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/reader/invalid/duplicate-map-key-decoded-digit-separators-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.6"
+  description: "The same decoded-value rule, over digit separators rather than a radix prefix."
+  error: { category: resolver }
+}

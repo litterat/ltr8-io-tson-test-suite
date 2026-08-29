@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class1/reader/valid/absent-as-the-document-root-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.9"
+  description: "The absent sentinel may occupy any data-value position, the document's top-level value included."
+  valid: {
+    value: { absent: _ }
+  }
+}

@@ -58,6 +58,14 @@ The category is **not** derivable from the layer. The layers are processing stag
 are the spec's. The vocabulary layer raises `resolver` and `validation` errors and never a
 "vocabulary" one.
 
+### 3a. At the reader layer, check that the subject parses
+
+A `class1/reader/` error vector exists because no tier below the reader can fail on it. A runner must
+therefore parse the subject cleanly *first*, and only then assert that the read reports. That is how this
+layer satisfies rule 3: the stated `resolver` category means the reader rejected the document, not the
+lexer or the parser, and a vector that had accidentally become a parse error would otherwise pass for the
+wrong reason.
+
 ### 4. Do not assert position
 
 Sidecars carry no line, column, or byte offset, and a runner must not require one. Implementations

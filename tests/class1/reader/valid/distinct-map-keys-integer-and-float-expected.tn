@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/reader/valid/distinct-map-keys-integer-and-float-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.6"
+  description: "With no schema in scope these are two keys, not one: a declared key type may make more keys equal, but never fewer, and none is declared here. The map keeps both entries."
+  valid: {
+    value: { map: { entries: [
+      { key: { atom: { number: "1" } }    value: { atom: { string: "a" } } }
+      { key: { atom: { number: "1.0" } }  value: { atom: { string: "b" } } }
+    ] } }
+  }
+}

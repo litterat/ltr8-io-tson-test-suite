@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/reader/invalid/duplicate-map-key-decoded-radix-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.6"
+  description: "A processor that decodes values compares decoded values, so from base type resolution onward two spellings of one number are one key. This is the reader layer's own rule: the textual identity a parser applies could not relate these two."
+  error: { category: resolver }
+}

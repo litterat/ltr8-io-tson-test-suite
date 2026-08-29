@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/reader/invalid/duplicate-field-name-not-adjacent-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.5"
+  description: "The repeat need not be adjacent to the first occurrence; uniqueness is over the whole record."
+  error: { category: resolver }
+}

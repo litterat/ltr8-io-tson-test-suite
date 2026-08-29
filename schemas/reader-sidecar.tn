@@ -1,0 +1,81 @@
+!!id:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+!!meta:"https://tson.io/2026/33/m/meta.tn"
+!!import:"https://tson.io/2026/33/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
+@doc:"""
+  Formal shape of a reader-layer sidecar (tests/class1/reader/**/*-expected.tn) -- see README.md's
+  own "The reader layer" section and RUNNER.md.
+
+  The layer exists because §1.2 puts a set of rules below neither tier: the token stream and the
+  structural parser both decline to dedupe fields or keys, resolve an empty brace, or interpret
+  token text, so a lexer- or parser-bucket vector structurally cannot fail on §2.5's unique field
+  names, §2.6's key identity, §2.8's empty brace or §2.9's absent-key restriction. This is the layer
+  where a Class 1 document gets its verdict, and the first that can.
+
+  A `reader_value` is what a schemaless read produces, so it differs from the parser layer's
+  core_value in three ways that are the point rather than an accident: an empty brace is gone
+  (§2.8 resolves it), a duplicate is gone (§2.5/§2.6 reject it), and a token has become a resolved
+  base value (§4). It carries no annotations -- annotation capture is the parser layer's to state,
+  and nothing here needs them.
+  """
+{
+  @doc:"One field of a record, after §2.5's uniqueness rule has been applied."
+  reader_field => {
+    name: text
+    value: reader_value
+  }
+
+  @doc:"One entry of a map, after §2.6's key-identity rule has been applied."
+  reader_entry => {
+    key: reader_value
+    value: reader_value
+  }
+
+  reader_record => { fields: [reader_field] }
+  reader_map    => { entries: [reader_entry] }
+  reader_array  => { elements: [reader_value] }
+
+  @doc:"""
+    A leaf, named by the base type §4 resolved it to. A number is written as a decimal string and
+    compared by numeric value, not by spelling -- §4.3 leaves the host type an implementation
+    concern, so `0xFF` and `255` are one value here and a vector cannot ask which was written.
+    That is the resolver layer's question, not this one.
+
+    §4's `null` has no member, deliberately: this layer exists for §2.5/§2.6/§2.8/§2.9, and whether
+    a tree model gives `null` a node of its own or folds it in with the absent sentinel is a model
+    choice that changes no document's verdict. A vector turning on it would be testing the model.
+    """
+  reader_atom => {
+    ( boolean: boolean
+    | string: text
+    | number: text )
+  }
+
+  @doc:"""
+    One value of the tree a schemaless read produces. `absent` is the sentinel occupying a position
+    (§2.9): it is a value, distinct from the position not being there, which is why it is a member
+    here rather than an omission.
+    """
+  reader_value => {
+    ( record: reader_record
+    | map: reader_map
+    | array: reader_array
+    | atom: reader_atom
+    | absent: void )
+  }
+
+  reader_valid => {
+    value: reader_value
+  }
+
+  @doc:"""
+    An `error` vector's category is `resolver` throughout this layer: §2.9 names it outright for an
+    absent map key, and §8.1's resolver bullet already houses the data-format rules a processor
+    applies once the structural parser has accepted the document. §2.5 and §2.6 require rejection of
+    a duplicate without assigning a category at all, and §8.1's own lists do not mention duplicates
+    -- an open question this corpus answers the same way for both.
+    """
+  reader_sidecar => sidecar_common & {
+    ( valid: reader_valid | error: vector_error )
+  }
+}

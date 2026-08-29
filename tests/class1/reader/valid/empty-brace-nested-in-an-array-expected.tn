@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/reader/valid/empty-brace-nested-in-an-array-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.8"
+  description: "The resolution applies wherever an empty brace stands, not only at the document root."
+  valid: {
+    value: { array: { elements: [
+      { record: { fields: [] } }
+      { record: { fields: [] } }
+    ] } }
+  }
+}

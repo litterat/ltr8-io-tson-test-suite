@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class1/reader/valid/same-map-key-in-nested-maps-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.6"
+  description: "Key uniqueness is per map, the same way field uniqueness is per record."
+  valid: {
+    value: { map: { entries: [
+      { key: { atom: { string: "a" } }
+        value: { map: { entries: [ { key: { atom: { string: "x" } }  value: { atom: { number: "1" } } } ] } } }
+      { key: { atom: { string: "b" } }
+        value: { map: { entries: [ { key: { atom: { string: "x" } }  value: { atom: { number: "2" } } } ] } } }
+    ] } }
+  }
+}

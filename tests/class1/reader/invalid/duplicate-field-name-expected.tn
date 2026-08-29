@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/reader/invalid/duplicate-field-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.5"
+  description: "A record states each field name at most once; the repeat states a value for nothing. Neither tier dedupes (§1.2), so no lexer- or parser-layer vector can fail on this."
+  error: { category: resolver }
+}

@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class1/reader/valid/empty-brace-is-an-empty-record-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.8"
+  description: "In the absence of declared type information an empty-brace resolves to an empty record. Both tiers leave it unresolved, so this is the first layer that can state what it became."
+  valid: {
+    value: { record: { fields: [] } }
+  }
+}
