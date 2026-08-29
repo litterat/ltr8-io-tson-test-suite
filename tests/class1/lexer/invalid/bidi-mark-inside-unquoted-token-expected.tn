@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/lexer/invalid/bidi-mark-inside-unquoted-token-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+{
+  spec: "§7.1"
+  description: "U+200E LEFT-TO-RIGHT MARK stands between two characters that would otherwise be one token. It is Pattern_White_Space, but UAX31-R3a-1 sorts that property into end-of-line (item 1), ignorable format controls (item 2) and horizontal space (item 3), and its own note names U+200E and U+200F as exactly item 2: they are allowed only in contexts UAX31-I1/I2/I3, 'where their insertion shall have no effect on the meaning of the program'. Reading them as horizontal space instead splits ab<LRM>c into two tokens, which is an insertion that plainly changes the meaning, and invisibly. R3a's own note gives the strategy: ignore them when lexing, then treat as illegal any lexical element that contains one. The text below is written with the literal character because that is what a reader must reject."
+  error: { category: lexer }
+}

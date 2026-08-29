@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/number-plain-integer-expected.tn"
-{
-  spec: "§5.6"
-  description: "!number accepts a plain decimal integer token, the same integer/float forms as float32/float64 minus based-integer and hex-float"
-  outcome: valid
-  type-ref: "number"
-  value: "42"
-}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/cidr4-whole-address-space-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "A /0 prefix is in range and leaves no host bits to be nonzero, so the all-zero address is the only value it admits"
+  type-ref: "cidr4"
+  valid: {
+    value: { text: "0.0.0.0/0" }
+  }
+}

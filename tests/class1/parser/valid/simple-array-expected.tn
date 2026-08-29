@@ -1,0 +1,52 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/simple-array-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.7"
+  description: "A whitespace-separated array of three unquoted tokens"
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: []
+        type-ref: _
+        core: {
+          array: {
+            elements: [
+              {
+                schema-ref: _
+                value: {
+                  annotations: []
+                  type-ref: _
+                  core: {
+                    token: { form: unquoted  text: "1" }
+                  }
+                }
+              }
+              {
+                schema-ref: _
+                value: {
+                  annotations: []
+                  type-ref: _
+                  core: {
+                    token: { form: unquoted  text: "2" }
+                  }
+                }
+              }
+              {
+                schema-ref: _
+                value: {
+                  annotations: []
+                  type-ref: _
+                  core: {
+                    token: { form: unquoted  text: "3" }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

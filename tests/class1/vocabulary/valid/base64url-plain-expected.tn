@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/base64url-plain-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.3"
+  description: "!base64url decodes RFC 4648 §5's URL-safe alphabet -- the bytes 0xfbffbe encode as \"-_--\" here (\"+/++\" under the standard alphabet), deliberately chosen to actually exercise the URL-safe characters rather than a byte sequence both alphabets would encode identically"
+  type-ref: "base64url"
+  valid: {
+    value: { hex: "fbffbe" }
+  }
+}

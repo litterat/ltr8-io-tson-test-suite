@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/cidr4-missing-prefix-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "CIDR notation is an address, a solidus and a prefix length; a bare address is an ipv4 value, not a cidr4 one"
+  type-ref: "cidr4"
+  error: { category: resolver }
+}

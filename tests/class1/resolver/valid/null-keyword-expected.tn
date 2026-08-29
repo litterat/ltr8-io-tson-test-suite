@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class1/resolver/valid/null-keyword-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/resolver-sidecar.tn"
+{
+  spec: "§4.1"
+  description: "The unquoted token 'null' identifies as null"
+  valid: {
+    base-value: { null: _ }
+  }
+}

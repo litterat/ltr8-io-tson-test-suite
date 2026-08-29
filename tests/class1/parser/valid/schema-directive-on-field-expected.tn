@@ -1,0 +1,35 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/schema-directive-on-field-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.3"
+  description: "A field value is a scoped-value, so it may carry its own !!schema directive"
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: []
+        type-ref: _
+        core: {
+          record: {
+            fields: [
+              {
+                name: "x"
+                value: {
+                  schema-ref: "https://example.com/s.tn1"
+                  value: {
+                    annotations: []
+                    type-ref: "t"
+                    core: {
+                      token: { form: unquoted  text: "1" }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

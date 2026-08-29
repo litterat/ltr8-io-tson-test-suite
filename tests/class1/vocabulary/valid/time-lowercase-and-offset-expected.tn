@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/time-lowercase-and-offset-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.4"
+  description: "A numeric (non-UTC) offset -- full-time's time-offset production accepts either 'Z' or a signed HH:MM numeric offset"
+  type-ref: "time"
+  valid: {
+    value: { text: "10:15:30+05:30" }
+  }
+}

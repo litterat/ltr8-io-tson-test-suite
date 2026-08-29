@@ -1,9 +1,0 @@
-!!id:"https://tson.io/test-suite/resolver/valid/null-keyword-expected.tn"
-{
-  spec: "§4.1"
-  description: "The unquoted token 'null' identifies as null"
-  outcome: valid
-  base-value: {
-    kind: null
-  }
-}

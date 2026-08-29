@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/text-quoted-numeric-expected.tn"
-{
-  spec: "§5.5"
-  description: "§5.5's own stated reason for the atom existing: a quoted numeric token under !text is unambiguously the string, where §4.4 would have to decide from form alone"
-  outcome: valid
-  type-ref: "text"
-  value: "42"
-}

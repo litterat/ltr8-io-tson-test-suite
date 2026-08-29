@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/lexer/invalid/utf8-five-byte-form-expected.tn"
-{
-  spec: "§9.1"
-  description: "A five-byte lead byte: UTF-8 has never encoded more than four, whatever early drafts allowed"
-  encoding: "invalid-utf8"
-  outcome: error
-  category: lexer
-}

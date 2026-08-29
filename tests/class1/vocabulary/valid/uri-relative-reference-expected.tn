@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/uri-relative-reference-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "!uri accepts a scheme-less relative reference with a query component"
+  type-ref: "uri"
+  valid: {
+    value: { text: "foo/bar?x=1" }
+  }
+}

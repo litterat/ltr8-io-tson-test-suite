@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/date-plain-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.4"
+  description: "!date accepts RFC 3339 full-date -- valid unquoted (§5.4: \"full-date values are valid unquoted\")"
+  type-ref: "date"
+  valid: {
+    value: { text: "2025-03-13" }
+  }
+}

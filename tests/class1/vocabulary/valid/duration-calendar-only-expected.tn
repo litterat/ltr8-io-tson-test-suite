@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/duration-calendar-only-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.4"
+  description: "Pure calendar duration, no T-time part at all"
+  type-ref: "duration"
+  valid: {
+    value: {
+      duration: { period: "P1Y2M3D"  clock: "PT0S" }
+    }
+  }
+}

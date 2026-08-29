@@ -11,3 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/check_vectors.py
+
+      # The corpus describes its own coverage, and a generated file that nobody regenerates is a
+      # file that lies. Regenerating here and failing on a diff keeps COVERAGE.md honest without
+      # letting CI decide what it contains.
+      - run: python3 scripts/coverage.py --check

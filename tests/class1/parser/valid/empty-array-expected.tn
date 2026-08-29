@@ -1,0 +1,21 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/empty-array-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.7"
+  description: "[] is unambiguously an empty array directly from the grammar"
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: []
+        type-ref: _
+        core: {
+          array: {
+            elements: []
+          }
+        }
+      }
+    }
+  }
+}

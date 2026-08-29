@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/cidr4-plain-expected.tn"
-{
-  spec: "§5.5"
-  description: "!cidr4 accepts a dotted-quad address followed by a prefix length; the value is the authored text, since a CIDR block has no JDK host type"
-  outcome: valid
-  type-ref: "cidr4"
-  value: "192.0.2.0/24"
-}

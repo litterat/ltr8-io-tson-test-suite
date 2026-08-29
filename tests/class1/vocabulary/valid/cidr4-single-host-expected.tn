@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/cidr4-single-host-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "A /32 prefix covers the whole 32-bit address, so every bit is a network bit and a single host is a valid network"
+  type-ref: "cidr4"
+  valid: {
+    value: { text: "203.0.113.5/32" }
+  }
+}

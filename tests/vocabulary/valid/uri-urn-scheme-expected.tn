@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/uri-urn-scheme-expected.tn"
-{
-  spec: "§5.5"
-  description: "!uri accepts a non-hierarchical urn: scheme URI, not just http(s)"
-  outcome: valid
-  type-ref: "uri"
-  value: "urn:isbn:0451450523"
-}

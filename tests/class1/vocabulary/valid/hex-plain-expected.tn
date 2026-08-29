@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/hex-plain-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.3"
+  description: "!hex decodes RFC 4648 §8 base16"
+  type-ref: "hex"
+  valid: {
+    value: { hex: "deadbeef" }
+  }
+}

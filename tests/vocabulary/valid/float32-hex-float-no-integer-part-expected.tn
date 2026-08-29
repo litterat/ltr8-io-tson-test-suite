@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/float32-hex-float-no-integer-part-expected.tn"
-{
-  spec: "§7.6"
-  description: "hex-float's second alternative ([sign] \"0x\" \".\" hex-digits hex-exponent, no integer part before the dot) -- 0x.8p1 = 0.5 * 2^1 = 1.0"
-  outcome: valid
-  type-ref: "float32"
-  value: "1.0"
-}

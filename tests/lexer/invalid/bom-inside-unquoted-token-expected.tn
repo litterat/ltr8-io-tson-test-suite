@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/lexer/invalid/bom-inside-unquoted-token-expected.tn"
-{
-  spec: "§7.1"
-  description: "U+FEFF inside an unquoted token is an unrecognised character and a lexer error -- §7.1 strips a byte order mark only at the very start of a document, and it is not an identifier character anywhere else outside a quoted token"
-  outcome: error
-  category: lexer
-}

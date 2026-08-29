@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class1/resolver/valid/simple-float-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/resolver-sidecar.tn"
+{
+  spec: "§4.3"
+  description: "A decimal float identifies with its integer and fraction parts captured separately"
+  valid: {
+    base-value: {
+      number: {
+        float: { sign: _  integer-part: "1"  fraction-digits: "5"  exponent: _ }
+      }
+    }
+  }
+}

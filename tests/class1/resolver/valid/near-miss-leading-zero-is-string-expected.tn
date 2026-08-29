@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/resolver/valid/near-miss-leading-zero-is-string-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/resolver-sidecar.tn"
+{
+  spec: "§4.4"
+  description: "A leading zero fails the number grammar, so the token falls through to string (spec's own example)"
+  valid: {
+    base-value: {
+      string: { text: "007" }
+    }
+  }
+}

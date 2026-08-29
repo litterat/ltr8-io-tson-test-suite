@@ -1,0 +1,47 @@
+!!id:"https://tson.io/test-suite/schemas/sidecar-common.tn"
+!!meta:"https://tson.io/2026/33/m/meta.tn"
+!!import:"https://tson.io/2026/33/m/core.tn"
+@doc:"""
+  The declarations every layer's sidecar schema shares. Imported rather than copied: these four sat
+  duplicated in all four layer schemas, where a change had to be made four times and a divergence
+  was invisible.
+  """
+{
+  @doc:"""
+    One of the spec's own four §8.1 diagnostic categories. Written out on an error vector rather
+    than inferred from the directory it lives in, so a vector stays self-describing if it moves --
+    and because the layer a vector exercises is a processing stage, not a category: the vocabulary
+    layer raises `resolver` and `validation` errors, never a `vocabulary` one.
+    """
+  error_category => !enum [lexer parser resolver validation]
+
+  @doc:"""
+    Present only when the subject `.tn` is not plain UTF-8. A runner MUST feed such a subject's
+    bytes through unchanged -- reading it into a string first re-encodes it, and for `invalid-utf8`
+    the decode substitutes U+FFFD before the lexer sees anything, so the vector would assert against
+    a different document than the one on disk. §9.1 permits utf-16/utf-32, so an implementation that
+    reads only UTF-8 skips those rather than failing them.
+    """
+  encoding_name => !enum [invalid-utf8 utf-16 utf-32]
+
+  @doc:"""
+    Fields every sidecar carries, whatever its layer or outcome. `spec` names the section the
+    vector targets (metadata: not an identifier, and nothing keys on it); `description` says in one
+    line what it exercises and why it is interesting.
+    """
+  sidecar_common => {
+    spec: text
+    description: text
+    encoding: encoding_name?
+  }
+
+  @doc:"""
+    The payload of an `error` outcome. Position is deliberately absent: implementations legitimately
+    fail at different points depending on how far they look ahead, so what is normative is that an
+    error of this category occurs, not where. §8.1's MUST is that a processor report a position, not
+    that two processors agree on one.
+    """
+  vector_error => {
+    category: error_category
+  }
+}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/float64-exact-binary-value-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.6"
+  description: "12.5 (= 12 + 2^-1) is exactly representable on the binary64 grid, so no rounding ambiguity affects the asserted value -- see this suite's README for why vocabulary/valid float vectors are deliberately restricted to exactly-representable values"
+  type-ref: "float64"
+  valid: {
+    value: { decimal: "12.5" }
+  }
+}

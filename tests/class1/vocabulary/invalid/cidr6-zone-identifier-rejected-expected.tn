@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/cidr6-zone-identifier-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "cidr6 parses its address half with the ipv6 grammar, so a host-local zone identifier is excluded from this contract for the same reason it is excluded there"
+  type-ref: "cidr6"
+  error: { category: resolver }
+}

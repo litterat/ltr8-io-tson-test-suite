@@ -1,0 +1,41 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/multi-line-token-as-map-key-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.6"
+  description: "The companion to multi-line-token-as-field-name: a map key is a data-value, not a name, so all three token forms stay available to it. The two constructs share one '{' and are told apart by ':' versus '=>', which is the only thing separating this document from that one."
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: []
+        type-ref: _
+        core: {
+          map: {
+            entries: [
+              {
+                key: {
+                  annotations: []
+                  type-ref: _
+                  core: {
+                    token: { form: multi-line  text: "a" }
+                  }
+                }
+                value: {
+                  schema-ref: _
+                  value: {
+                    annotations: []
+                    type-ref: _
+                    core: {
+                      token: { form: unquoted  text: "1" }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

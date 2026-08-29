@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/ipv6-unspecified-expected.tn"
-{
-  spec: "§5.5"
-  description: "!ipv6 accepts the unspecified address '::', all 16 bytes zero"
-  outcome: valid
-  type-ref: "ipv6"
-  value: "00000000000000000000000000000000"
-}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/ipv6-full-form-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "!ipv6 accepts the uncompressed, 8-group preferred form"
+  type-ref: "ipv6"
+  valid: {
+    value: { hex: "00010002000300040005000600070008" }
+  }
+}

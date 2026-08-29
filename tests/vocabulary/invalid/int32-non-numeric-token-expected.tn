@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/invalid/int32-non-numeric-token-expected.tn"
-{
-  spec: "§5.2"
-  description: "The spec's own example: 'twelve' under !int32 fails the integer/based-integer grammar before any range check runs. Category asserted as 'resolver', not 'parser', despite §5.2's 'is a parse error' phrasing -- see this suite's README for the §5.2/§8.1 categorization note; only 'error' should be treated as normative here"
-  outcome: error
-  category: resolver
-  type-ref: "int32"
-}

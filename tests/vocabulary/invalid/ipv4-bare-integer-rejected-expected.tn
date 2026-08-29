@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/invalid/ipv4-bare-integer-rejected-expected.tn"
-{
-  spec: "§5.5"
-  description: "RFC 3986's IPv4address production requires four dotted dec-octets; a bare 32-bit integer literal is not that shape, even though some IP parsers accept it leniently as one"
-  outcome: error
-  category: resolver
-  type-ref: "ipv4"
-}

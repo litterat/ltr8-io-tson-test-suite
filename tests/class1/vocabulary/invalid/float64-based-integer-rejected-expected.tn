@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/float64-based-integer-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.6"
+  description: "The float atoms accept integer/float/hex-float/special-value, not based-integer -- 0xFF (a based-integer whole number) is rejected even though it's a valid hex-float prefix short one character (0x1p0 would be accepted)"
+  type-ref: "float64"
+  error: { category: resolver }
+}

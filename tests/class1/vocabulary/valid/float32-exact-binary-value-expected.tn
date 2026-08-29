@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/float32-exact-binary-value-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.6"
+  description: "-3.5 (= -(3 + 2^-1)) is exactly representable on the binary32 grid, same reasoning as the float64 counterpart"
+  type-ref: "float32"
+  valid: {
+    value: { decimal: "-3.5" }
+  }
+}

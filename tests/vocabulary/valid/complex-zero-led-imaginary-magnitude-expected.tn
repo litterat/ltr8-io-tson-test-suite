@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/complex-zero-led-imaginary-magnitude-expected.tn"
-{
-  spec: "§7.6"
-  description: "A magnitude may be zero-led: magnitude is decimal-natural [\".\" digits] [exponent] and decimal-natural is \"0\" / nonzero-digit ... . An implementation whose complex grammar splices decimal-natural's own alternation into the magnitude's can refuse this while accepting 1.5i"
-  outcome: valid
-  type-ref: "complex"
-  value: { real: "0" imaginary: "0.5" }
-}

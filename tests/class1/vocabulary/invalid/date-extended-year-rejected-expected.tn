@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/date-extended-year-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.4"
+  description: "A common implementation trap: some date-parsing library functions (e.g. Java's java.time.LocalDate.parse) accept ISO 8601's 'extended year' format with a leading sign and more than 4 digits -- RFC 3339's full-date grammar requires exactly a 4-digit year, no sign, so the !date atom contract must reject this. Confirmed empirically before this vector was written"
+  type-ref: "date"
+  error: { category: resolver }
+}

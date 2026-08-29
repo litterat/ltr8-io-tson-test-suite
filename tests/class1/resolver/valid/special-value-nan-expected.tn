@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class1/resolver/valid/special-value-nan-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/resolver-sidecar.tn"
+{
+  spec: "§4.3"
+  description: "'.nan' identifies as the special-value form, kind nan, and is never signed"
+  valid: {
+    base-value: {
+      number: {
+        special-value: { sign: _  kind: nan }
+      }
+    }
+  }
+}

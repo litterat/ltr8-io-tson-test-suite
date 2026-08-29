@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/parser/invalid/annotation-name-not-an-identifier-expected.tn"
-{
-  spec: "§7.4"
-  description: "An annotation names something, so '@' takes an identifier on the same terms a type-ref does. The dot is the case worth pinning: it is a well-formed unquoted-token character, and identifier-Continue leaves it out deliberately to reserve it as a future identifier separator rather than spend it as an identifier character. A processor that keeps '@x.y' as an informational annotation has accepted a name the format reserves."
-  outcome: error
-  category: parser
-}

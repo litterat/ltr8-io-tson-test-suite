@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/complex-based-integer-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.6"
+  description: "!complex's accepted forms are complex/float/integer, not based-integer"
+  type-ref: "complex"
+  error: { category: resolver }
+}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/rational-plain-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.6, §7.6"
+  description: "!rational accepts numerator/denominator text -- always quoted in practice since '/' is outside the unquoted token profile (§5.6)"
+  type-ref: "rational"
+  valid: {
+    value: { rational: "2/3" }
+  }
+}

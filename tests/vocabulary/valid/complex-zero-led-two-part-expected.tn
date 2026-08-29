@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/complex-zero-led-two-part-expected.tn"
-{
-  spec: "§7.6"
-  description: "The two-part form with both magnitudes zero-led"
-  outcome: valid
-  type-ref: "complex"
-  value: { real: "0.5" imaginary: "-0.25" }
-}

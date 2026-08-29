@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/invalid/number-based-integer-rejected-expected.tn"
-{
-  spec: "§5.6"
-  description: "!number's accepted forms are integer/float only -- based-integer (0xFF) is rejected, unlike the integer atoms which do accept it. Same categorization note as the integer family's parse-shape failures applies (see README)"
-  outcome: error
-  category: resolver
-  type-ref: "number"
-}

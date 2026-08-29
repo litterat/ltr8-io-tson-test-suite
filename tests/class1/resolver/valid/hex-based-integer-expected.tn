@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class1/resolver/valid/hex-based-integer-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/resolver-sidecar.tn"
+{
+  spec: "§4.3"
+  description: "An unquoted 0x-prefixed token identifies as a based-integer number in hex"
+  valid: {
+    base-value: {
+      number: {
+        based-integer: { sign: _  radix: hex  digits: "FF" }
+      }
+    }
+  }
+}

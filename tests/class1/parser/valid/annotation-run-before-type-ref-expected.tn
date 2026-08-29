@@ -1,0 +1,73 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/annotation-run-before-type-ref-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§3.3"
+  description: "Every annotation in a run precedes the type-ref, whatever each one's own value is"
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: [
+          {
+            name: "doc"
+            value: {
+              annotations: []
+              type-ref: _
+              core: {
+                token: { form: single-line  text: "prose about this document" }
+              }
+            }
+          }
+          {
+            name: "owner"
+            value: {
+              annotations: []
+              type-ref: _
+              core: {
+                record: {
+                  fields: [
+                    {
+                      name: "team"
+                      value: {
+                        schema-ref: _
+                        value: {
+                          annotations: []
+                          type-ref: _
+                          core: {
+                            token: { form: single-line  text: "platform" }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+          { name: "deprecated"  value: _ }
+        ]
+        type-ref: "gold"
+        core: {
+          record: {
+            fields: [
+              {
+                name: "id"
+                value: {
+                  schema-ref: _
+                  value: {
+                    annotations: []
+                    type-ref: _
+                    core: {
+                      token: { form: unquoted  text: "7" }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

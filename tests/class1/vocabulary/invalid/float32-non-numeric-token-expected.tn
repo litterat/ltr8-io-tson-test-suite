@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/float32-non-numeric-token-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.2"
+  description: "A token matching none of integer/float/hex-float/special-value is a parse error under float32, same reasoning as int32's own 'twelve' example"
+  type-ref: "float32"
+  error: { category: resolver }
+}

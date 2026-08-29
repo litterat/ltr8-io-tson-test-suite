@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/uri-relative-reference-expected.tn"
-{
-  spec: "§5.5"
-  description: "!uri accepts a scheme-less relative reference with a query component"
-  outcome: valid
-  type-ref: "uri"
-  value: "foo/bar?x=1"
-}

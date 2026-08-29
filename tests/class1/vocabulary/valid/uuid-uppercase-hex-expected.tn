@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/uuid-uppercase-hex-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "Uppercase hex digits are accepted and denote the same value as their lowercase form -- value is asserted in lowercase since that's the canonical comparison form, but implementations should compare by value, not by written case"
+  type-ref: "uuid"
+  valid: {
+    value: { text: "9f1c8e2a-4b7d-4e6f-9a3b-2c5d8e7f1a09" }
+  }
+}

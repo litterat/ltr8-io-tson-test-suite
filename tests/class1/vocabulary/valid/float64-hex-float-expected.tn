@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/float64-hex-float-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.6, §7.6"
+  description: "hex-float (0x1.8p3 = 1.5 * 2^3 = 12.0) is only reachable through the float atoms -- base type resolution (§4.3) never recognizes it, and !number doesn't accept it either"
+  type-ref: "float64"
+  valid: {
+    value: { decimal: "12.0" }
+  }
+}
