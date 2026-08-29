@@ -41,6 +41,7 @@ tests/
     parser/{valid,invalid,schema-document}/  §2, §3, §7.4, §7.5
     resolver/valid/                        §4
     vocabulary/{valid,invalid}/            §5
+    reader/{valid,invalid}/                §2.5, §2.6, §2.8, §2.9
   class2/                      the schema-aware processor ([TSON-SCHEMA] §1.3)
 schemas/                       one sidecar schema per layer
 ```
@@ -57,6 +58,21 @@ every error vector writes its category out rather than leaving it to be inferred
 
 `resolver` has no `invalid/` bucket: base type resolution (§4) never rejects a token, it always
 resolves to *something* — worst case, string.
+
+### The reader layer
+
+The other layers stop below the readers. §1.2 leaves a set of rules to no tier at all: the token stream
+and the structural parser both decline to dedupe fields or keys, resolve an empty brace, or interpret
+token text. So §2.5's unique field names, §2.6's key identity, §2.8's empty brace and §2.9's
+absent-key restriction have nowhere else to be tested from outside an implementation — a
+`parser/invalid/` vector cannot fail on `{ a: 1  a: 2 }`, because the parser accepts it by design.
+
+This is the layer where a Class 1 document gets its verdict, and the first that can. §2.6's own
+"a processor that decodes values compares decoded values" is the clearest case: `{ 0xFF => 1  255 => 2 }`
+has two textually distinct keys and one decoded one, so only a reader can see the duplicate.
+
+An `error` vector here states `category: resolver`, and its subject **must parse** — that is what makes
+it a reader-layer vector rather than a parser-layer one, and `RUNNER.md` requires a runner to check it.
 
 `<slug>` is a short, stable, descriptive name (`escape-basic`, `lone-high-surrogate`). Slugs are
 **not** derived from spec section numbers, so a future revision renumbering a section never forces a

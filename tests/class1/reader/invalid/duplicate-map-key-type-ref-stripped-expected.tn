@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/reader/invalid/duplicate-map-key-type-ref-stripped-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.6"
+  description: "A key's annotations and type annotation do not participate in identity at any layer, so a type-ref'd key and a bare one with the same value are one key."
+  error: { category: resolver }
+}

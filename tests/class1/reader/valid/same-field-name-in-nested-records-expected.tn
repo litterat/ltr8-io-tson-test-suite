@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/reader/valid/same-field-name-in-nested-records-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.5"
+  description: "Uniqueness is per record, not per document: the same name in two sibling records is not a duplicate."
+  valid: {
+    value: { record: { fields: [
+      { name: "a"  value: { record: { fields: [ { name: "x"  value: { atom: { number: "1" } } } ] } } }
+      { name: "b"  value: { record: { fields: [ { name: "x"  value: { atom: { number: "2" } } } ] } } }
+    ] } }
+  }
+}

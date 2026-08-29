@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/reader/invalid/absent-map-key-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.9"
+  description: "The absent sentinel must not appear as a map key. This is a resolver-layer constraint and not a grammar one: the map-entry production accepts any value in key position, so a parser-layer vector cannot fail on it and the resolver is what rejects it."
+  error: { category: resolver }
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/reader/invalid/duplicate-map-key-compound-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.6"
+  description: "Keys are not restricted to scalars: compound keys are identical if they have the same structure with identical elements at every position."
+  error: { category: resolver }
+}

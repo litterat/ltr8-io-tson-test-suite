@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/reader/invalid/duplicate-field-name-quoted-and-unquoted-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.5"
+  description: "Two field names are identical if they produce the same NFC-normalized string after escape processing, so name and the quoted form of it are one field name, not two."
+  error: { category: resolver }
+}

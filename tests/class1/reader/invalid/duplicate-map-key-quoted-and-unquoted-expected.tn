@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/reader/invalid/duplicate-map-key-quoted-and-unquoted-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.6"
+  description: "Textual identity is the minimum every processor applies: scalar keys are identical if they produce the same NFC-normalized string after escape processing."
+  error: { category: resolver }
+}
