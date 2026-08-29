@@ -12,6 +12,19 @@ series draft. [TSON-DATA] §7.1 states the rule: `.tn` "makes no stability claim
 the 2026 revision series", while `.tn1` "MUST NOT be used before that release". This suite's own vectors
 use `.tn` for as long as that remains true.
 
+## Spec revision, and how to consume this repo
+
+The corpus states what **one** spec revision settles. `REVISION` names it — currently `33` — and the
+repository is tagged per revision (`rev-33`, `rev-34`, …) at the last commit that targets it. A vector
+encodes a revision's behaviour, so a revision bump can legitimately move a vector's expected outcome;
+that is a corpus change, not a regression in whoever was passing before.
+
+**Consume this repo at a pinned commit, never at a branch.** An implementation that tracks `main` goes
+red when a vector is added upstream, with no change of its own — which has already happened to a
+consumer here. Pinning makes the bump a deliberate commit: fetch the corpus at a fixed SHA, and move
+the pin when you are ready to answer whatever it now asks. Both current implementations do this with a
+small `scripts/fetch-references.sh`.
+
 ## Layout
 
 ```
