@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/bang-not-adjacent-to-type-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.5"
+  description: "'!' MUST be immediately adjacent to the type name, with no whitespace between them"
+  error: { category: parser }
+}

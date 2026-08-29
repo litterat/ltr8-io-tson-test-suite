@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/text-unquoted-token-expected.tn"
-{
-  spec: "§5.5"
-  description: "!text is the unconstrained text atom: it accepts every token, and the host value is the token's text"
-  outcome: valid
-  type-ref: "text"
-  value: "hello"
-}

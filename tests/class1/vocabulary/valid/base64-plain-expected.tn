@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/base64-plain-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.3"
+  description: "!base64 decodes RFC 4648 §4 standard base64 -- \"TWFu\" is \"Man\" (0x4d616e). value is a plain hex string of the decoded bytes, host-representation-neutral the same way the numeric families are"
+  type-ref: "base64"
+  valid: {
+    value: { hex: "4d616e" }
+  }
+}

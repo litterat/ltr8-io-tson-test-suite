@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/lexer/invalid/lone-low-surrogate-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+{
+  spec: "§7.2.2"
+  description: "A low surrogate escape not immediately preceded by a high surrogate escape is a lexer error"
+  error: { category: lexer }
+}

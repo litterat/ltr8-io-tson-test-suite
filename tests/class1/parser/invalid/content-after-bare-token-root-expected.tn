@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/content-after-bare-token-root-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.3"
+  description: "A second bare token after a token-valued root is trailing content, not a second value"
+  error: { category: parser }
+}

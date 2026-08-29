@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/ipv4-max-octets-expected.tn"
-{
-  spec: "§5.5"
-  description: "!ipv4 accepts the maximum dec-octet value (255) in every position"
-  outcome: valid
-  type-ref: "ipv4"
-  value: "255.255.255.255"
-}

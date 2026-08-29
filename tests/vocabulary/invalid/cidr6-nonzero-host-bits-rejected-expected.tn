@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/invalid/cidr6-nonzero-host-bits-rejected-expected.tn"
-{
-  spec: "§5.5"
-  description: "The host-bits rule is the same in both families; here the set bit falls in the group immediately past a 32-bit prefix"
-  outcome: error
-  category: validation
-  type-ref: "cidr6"
-}

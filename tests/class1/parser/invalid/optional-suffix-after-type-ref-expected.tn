@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/optional-suffix-after-type-ref-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§3.2"
+  description: "the optional '?' suffix is type-expression syntax and MUST NOT appear after '!' in a data value"
+  error: { category: parser }
+}

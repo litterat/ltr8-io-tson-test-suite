@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/invalid/rational-zero-denominator-rejected-expected.tn"
-{
-  spec: "§7.6"
-  description: "denominator = nonzero-digit *( [\"_\"] DIGIT ) -- a zero denominator fails the grammar itself, before any value-level validation could reject it"
-  outcome: error
-  category: resolver
-  type-ref: "rational"
-}

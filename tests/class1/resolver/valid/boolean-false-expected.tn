@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class1/resolver/valid/boolean-false-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/resolver-sidecar.tn"
+{
+  spec: "§4.2"
+  description: "The unquoted token 'false' identifies as boolean false"
+  valid: {
+    base-value: { boolean: false }
+  }
+}

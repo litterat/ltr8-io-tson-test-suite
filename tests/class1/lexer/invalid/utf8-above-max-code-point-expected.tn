@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/lexer/invalid/utf8-above-max-code-point-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+{
+  spec: "§9.1"
+  description: "A four-byte sequence denoting a value beyond U+10FFFF, the last Unicode code point"
+  encoding: invalid-utf8
+  error: { category: lexer }
+}

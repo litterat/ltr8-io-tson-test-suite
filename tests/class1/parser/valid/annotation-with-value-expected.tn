@@ -1,0 +1,30 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/annotation-with-value-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§3.1"
+  description: "An annotation with an adjacent ':' takes exactly one data-value as its value"
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: [
+          {
+            name: "expires"
+            value: {
+              annotations: []
+              type-ref: _
+              core: {
+                token: { form: single-line  text: "2026-12-31" }
+              }
+            }
+          }
+        ]
+        type-ref: _
+        core: {
+          token: { form: unquoted  text: "GOLD" }
+        }
+      }
+    }
+  }
+}

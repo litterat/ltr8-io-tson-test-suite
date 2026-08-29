@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/invalid/base64-wrong-alphabet-rejected-expected.tn"
-{
-  spec: "§5.3"
-  description: "\"-_--\" is valid under the URL-safe alphabet (!base64url) but !base64's standard alphabet doesn't include '-'/'_' -- each encoding is a distinct type (§5.3: \"there is no generic !binary annotation\"), so the wrong alphabet's characters must be rejected, not silently accepted"
-  outcome: error
-  category: resolver
-  type-ref: "base64"
-}

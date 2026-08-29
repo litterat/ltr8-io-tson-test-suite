@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/ipv4-plain-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "!ipv4 accepts a plain RFC 3986 dotted-quad address"
+  type-ref: "ipv4"
+  valid: {
+    value: { text: "192.168.0.1" }
+  }
+}

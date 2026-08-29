@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/uuid-canonical-lowercase-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "!uuid accepts the canonical RFC 9562 8-4-4-4-12 hex-and-hyphen form unquoted"
+  type-ref: "uuid"
+  valid: {
+    value: { text: "9f1c8e2a-4b7d-4e6f-9a3b-2c5d8e7f1a09" }
+  }
+}

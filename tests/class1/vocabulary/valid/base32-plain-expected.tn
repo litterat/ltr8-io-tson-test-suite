@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/base32-plain-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.3"
+  description: "!base32 decodes RFC 4648 §6 -- \"MZXW6YTB\" is one of RFC 4648 §10's own test vectors, decoding to the ASCII text \"fooba\" (0x666f6f6261)"
+  type-ref: "base32"
+  valid: {
+    value: { hex: "666f6f6261" }
+  }
+}

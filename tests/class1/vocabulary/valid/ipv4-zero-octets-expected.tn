@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/ipv4-zero-octets-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "!ipv4 accepts an all-zero address; a single '0' digit is a valid dec-octet, not a leading zero"
+  type-ref: "ipv4"
+  valid: {
+    value: { text: "0.0.0.0" }
+  }
+}

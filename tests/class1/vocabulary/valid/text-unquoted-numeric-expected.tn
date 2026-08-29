@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/text-unquoted-numeric-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "Form is not meaning (§2.4): the annotation decides the type, so an unquoted numeric under !text is the string \"42\", where the same token unannotated resolves to a number (§4.3)"
+  type-ref: "text"
+  valid: {
+    value: { text: "42" }
+  }
+}

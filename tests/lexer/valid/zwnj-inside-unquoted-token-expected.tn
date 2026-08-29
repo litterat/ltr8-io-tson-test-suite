@@ -1,9 +1,0 @@
-!!id:"https://tson.io/test-suite/lexer/valid/zwnj-inside-unquoted-token-expected.tn"
-{
-  spec: "§7.1"
-  description: "U+200C ZWNJ continues an unquoted token, being a member of XID_Continue. §7.1's prose excludes it and ZWJ by name while its own set algebra contains both; this follows the algebra. The exclusion the prose wants is a property of a *name*, not of a token, and belongs to UTS #39 §3.1.1.1's contextual rule, which admits a joiner where it has a shaping effect and refuses it where it is invisible -- so a Persian or Malayalam name keeps its spelling while ad<ZWNJ>min is still refused. The text below is written with an escape because the character is invisible."
-  outcome: valid
-  tokens: [
-    { kind: unquoted-token text: "ab\u200Cc" }
-  ]
-}

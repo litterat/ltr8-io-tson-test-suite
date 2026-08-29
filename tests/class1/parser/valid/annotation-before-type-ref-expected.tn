@@ -1,0 +1,46 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/annotation-before-type-ref-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§3.3"
+  description: "A data-value is *annotation [type-ref] core-value, so an annotation precedes the type-ref of the value it attaches to"
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: [
+          {
+            name: "expires"
+            value: {
+              annotations: []
+              type-ref: _
+              core: {
+                token: { form: single-line  text: "2026-12-31" }
+              }
+            }
+          }
+        ]
+        type-ref: "gold"
+        core: {
+          record: {
+            fields: [
+              {
+                name: "id"
+                value: {
+                  schema-ref: _
+                  value: {
+                    annotations: []
+                    type-ref: _
+                    core: {
+                      token: { form: unquoted  text: "7" }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/lexer/invalid/utf8-overlong-solidus-expected.tn"
-{
-  spec: "§9.1"
-  description: "'/' written in two bytes rather than one. An overlong form is a second spelling of a character a validator upstream may have seen only one spelling of -- §9.4's confusability concern at the encoding layer"
-  encoding: "invalid-utf8"
-  outcome: error
-  category: lexer
-}

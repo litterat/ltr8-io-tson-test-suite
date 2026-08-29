@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/ipv6-unspecified-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "!ipv6 accepts the unspecified address '::', all 16 bytes zero"
+  type-ref: "ipv6"
+  valid: {
+    value: { hex: "00000000000000000000000000000000" }
+  }
+}

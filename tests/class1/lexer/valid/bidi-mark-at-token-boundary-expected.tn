@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/lexer/valid/bidi-mark-at-token-boundary-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+{
+  spec: "§7.1"
+  description: "U+200E LEFT-TO-RIGHT MARK adjacent to horizontal space is UAX31-I1, one of the three contexts UAX31-R3a-1 item 2 allows an ignorable format control in, and its insertion has no effect: the tokens are the ones 'ab c' produces on its own. This is the half a reader must not over-refuse -- the mark exists so an author can correct the plain-text display of a document mixing scripts, and a rule that refused it everywhere would take that away. The pairing vector is lexer/invalid/bidi-mark-inside-unquoted-token, where the same character stands inside a token instead."
+  valid: {
+    tokens: [
+      { kind: unquoted-token  text: "ab" }
+      { kind: unquoted-token  text: "c" }
+    ]
+  }
+}

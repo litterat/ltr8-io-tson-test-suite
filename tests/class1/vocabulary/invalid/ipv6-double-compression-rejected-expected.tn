@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/ipv6-double-compression-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "More than one '::' run in a single address is ambiguous -- how many zero groups each one represents can't be determined"
+  type-ref: "ipv6"
+  error: { category: resolver }
+}

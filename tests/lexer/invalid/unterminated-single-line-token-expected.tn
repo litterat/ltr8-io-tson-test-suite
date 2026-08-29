@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/lexer/invalid/unterminated-single-line-token-expected.tn"
-{
-  spec: "§7.2.2"
-  description: "A single-line quoted token with no closing double-quote before end of input is a lexer error"
-  outcome: error
-  category: lexer
-}

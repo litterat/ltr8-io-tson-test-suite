@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/ipv6-compressed-expected.tn"
-{
-  spec: "§5.5"
-  description: "!ipv6 accepts a mid-address '::' run-of-zeros compression"
-  outcome: valid
-  type-ref: "ipv6"
-  value: "20010db8000000000000000000000001"
-}

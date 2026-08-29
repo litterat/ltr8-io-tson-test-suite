@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/parser/invalid/content-after-root-value-expected.tn"
-{
-  spec: "§2.3"
-  description: "A document holds exactly one root data-value; anything after it is an error, not ignored"
-  outcome: error
-  category: parser
-}

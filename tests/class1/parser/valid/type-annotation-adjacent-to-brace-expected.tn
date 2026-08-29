@@ -1,0 +1,35 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/type-annotation-adjacent-to-brace-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§3.2"
+  description: "No whitespace is required between a type annotation and a following structural delimiter"
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: []
+        type-ref: "person"
+        core: {
+          record: {
+            fields: [
+              {
+                name: "name"
+                value: {
+                  schema-ref: _
+                  value: {
+                    annotations: []
+                    type-ref: _
+                    core: {
+                      token: { form: unquoted  text: "Alice" }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

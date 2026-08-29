@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/invalid/cidr4-prefix-out-of-family-range-rejected-expected.tn"
-{
-  spec: "§5.5"
-  description: "An IPv4 address is 32 bits wide, so a prefix length of 33 is outside the family range -- a validation error, not a shape one, since the token parses as CIDR notation perfectly well"
-  outcome: error
-  category: validation
-  type-ref: "cidr4"
-}

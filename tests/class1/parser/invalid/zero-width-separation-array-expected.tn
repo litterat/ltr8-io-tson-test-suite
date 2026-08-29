@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/zero-width-separation-array-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.4"
+  description: "Two adjacent array elements with no whitespace or comma between them is a parse error"
+  error: { category: parser }
+}

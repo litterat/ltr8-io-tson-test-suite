@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/uri-absolute-with-query-fragment-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "!uri accepts an absolute URI with authority, path, query, and fragment"
+  type-ref: "uri"
+  valid: {
+    value: { text: "https://example.com/a/b?x=1#frag" }
+  }
+}

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/time-missing-offset-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.4"
+  description: "full-time = partial-time time-offset -- the offset is mandatory, not optional; a bare local time without one is rejected"
+  type-ref: "time"
+  error: { category: resolver }
+}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/uri-urn-scheme-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "!uri accepts a non-hierarchical urn: scheme URI, not just http(s)"
+  type-ref: "uri"
+  valid: {
+    value: { text: "urn:isbn:0451450523" }
+  }
+}

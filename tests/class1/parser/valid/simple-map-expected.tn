@@ -1,0 +1,41 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/simple-map-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.6"
+  description: "A map with one entry, key and value have different token forms"
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: []
+        type-ref: _
+        core: {
+          map: {
+            entries: [
+              {
+                key: {
+                  annotations: []
+                  type-ref: _
+                  core: {
+                    token: { form: unquoted  text: "WELCOME10" }
+                  }
+                }
+                value: {
+                  schema-ref: _
+                  value: {
+                    annotations: []
+                    type-ref: _
+                    core: {
+                      token: { form: single-line  text: "10%" }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

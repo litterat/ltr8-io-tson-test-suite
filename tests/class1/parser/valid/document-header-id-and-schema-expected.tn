@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/document-header-id-and-schema-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.2"
+  description: "Both header directives are optional and independent"
+  valid: {
+    document: {
+      id: "https://example.com/orders/1042.tn1"
+      schema: "https://example.com/order.tn1"
+      root: {
+        annotations: []
+        type-ref: _
+        core: {
+          token: { form: unquoted  text: "Alice" }
+        }
+      }
+    }
+  }
+}

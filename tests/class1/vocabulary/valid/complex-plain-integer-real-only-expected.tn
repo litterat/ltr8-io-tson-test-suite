@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/complex-plain-integer-real-only-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.6"
+  description: "!complex also accepts a bare integer/float token (no complex grammar, no imag-unit) as a real-only complex number, imaginary part zero"
+  type-ref: "complex"
+  valid: {
+    value: {
+      complex: { real: "42"  imaginary: "0" }
+    }
+  }
+}

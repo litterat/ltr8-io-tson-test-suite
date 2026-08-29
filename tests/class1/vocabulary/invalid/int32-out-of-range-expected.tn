@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/int32-out-of-range-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.6"
+  description: "The spec's own example: 9999999999 parses as an integer but exceeds the signed 32-bit range [-2^31, 2^31-1] -- a validation error, distinct from a parse error"
+  type-ref: "int32"
+  error: { category: validation }
+}

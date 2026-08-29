@@ -1,9 +1,0 @@
-!!id:"https://tson.io/test-suite/lexer/valid/xid-continue-only-character-expected.tn"
-{
-  spec: "§7.1"
-  description: "U+0E33 THAI CHARACTER SARA AM is in XID_Continue but not XID_Start, so it continues an unquoted token though it could not begin one -- the case that distinguishes the profile's two sets"
-  outcome: valid
-  tokens: [
-    { kind: unquoted-token text: "abำc" }
-  ]
-}

@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/lexer/invalid/control-inside-unquoted-token-expected.tn"
-{
-  spec: "§7.1"
-  description: "A non-whitespace C0 control (U+0001) is not in XID_Continue and does not continue an unquoted token; host identifier predicates that treat controls as identifier-ignorable admit it"
-  outcome: error
-  category: lexer
-}

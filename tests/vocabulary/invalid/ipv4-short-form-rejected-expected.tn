@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/invalid/ipv4-short-form-rejected-expected.tn"
-{
-  spec: "§5.5"
-  description: "RFC 3986's IPv4address production requires exactly four dotted dec-octets; the legacy BSD-style class-based short form (three octets) is not that shape, even though some IP parsers accept it leniently"
-  outcome: error
-  category: resolver
-  type-ref: "ipv4"
-}

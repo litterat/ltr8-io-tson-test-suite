@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/lexer/invalid/utf8-malformed-inside-quoted-token-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+{
+  spec: "§9.1"
+  description: "A malformed byte inside a quoted token. This is the case a replacing decoder gets most wrong: outside a quoted token the substituted U+FFFD is an unrecognised character and an error, but here it is content, so the document reads and carries a character nobody wrote"
+  encoding: invalid-utf8
+  error: { category: lexer }
+}

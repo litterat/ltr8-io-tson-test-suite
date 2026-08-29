@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/parser/invalid/multi-line-token-as-field-name-expected.tn"
-{
-  spec: "§7.4"
-  description: "field-name is unquoted-token / single-line-token: a field name may be quoted, which is what keeps JSON's quoted keys ordinary, but the multi-line form is not one of the two spellings a name is written in. The production stays lexical rather than becoming 'identifier' -- a Class 1 document has no schema, so nothing there knows which tokens are meant as names, and { \"first name\": 1 } must keep reading as an ordinary record. Narrowing it costs no name anyone can write and removes a third spelling for one field name."
-  outcome: error
-  category: parser
-}

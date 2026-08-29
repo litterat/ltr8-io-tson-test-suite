@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/duration-bare-p-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.4"
+  description: "'P' alone, with every designator absent, is not a duration -- at least one designator is required"
+  type-ref: "duration"
+  error: { category: resolver }
+}

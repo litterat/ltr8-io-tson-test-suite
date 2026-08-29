@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/valid/text-based-integer-is-not-decoded-expected.tn"
-{
-  spec: "§5.5"
-  description: "The host value is the token's TEXT, not the value the token would denote elsewhere: 0xFF under !text is the four-character string, not 255. A trap for an implementation that runs base type resolution first and annotates afterwards"
-  outcome: valid
-  type-ref: "text"
-  value: "0xFF"
-}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/lexer/invalid/soft-hyphen-inside-unquoted-token-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+{
+  spec: "§7.1"
+  description: "U+00AD SOFT HYPHEN is a format character and not in XID_Continue, so it does not continue an unquoted token"
+  error: { category: lexer }
+}

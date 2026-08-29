@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/vocabulary/invalid/hex-odd-length-rejected-expected.tn"
-{
-  spec: "§5.3"
-  description: "An odd number of hex digits can't encode a whole number of bytes"
-  outcome: error
-  category: resolver
-  type-ref: "hex"
-}

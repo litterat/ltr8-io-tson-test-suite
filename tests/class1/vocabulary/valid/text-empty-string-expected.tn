@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/text-empty-string-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "The empty token is a token: !text carries no length floor of its own, text_type's min_length being unset on the unconstrained instance"
+  type-ref: "text"
+  valid: {
+    value: { text: "" }
+  }
+}
