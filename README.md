@@ -120,9 +120,9 @@ directive in before parsing:
 
 | Short name       | Current real identity                      |
 |------------------|--------------------------------------------|
-| `meta-kernel.tn` | `https://tson.io/2026/33/m/meta-kernel.tn` |
-| `meta.tn`        | `https://tson.io/2026/33/m/meta.tn`        |
-| `core.tn`        | `https://tson.io/2026/33/m/core.tn`        |
+| `meta-kernel.tn` | `https://tson.io/2026/34/m/meta-kernel.tn` |
+| `meta.tn`        | `https://tson.io/2026/34/m/meta.tn`        |
+| `core.tn`        | `https://tson.io/2026/34/m/core.tn`        |
 
 ## Two things the sidecars deliberately do not pin
 
