@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/sidecar-common.tn"
-!!meta:"https://tson.io/2026/33/m/meta.tn"
-!!import:"https://tson.io/2026/33/m/core.tn"
+!!meta:"https://tson.io/2026/34/m/meta.tn"
+!!import:"https://tson.io/2026/34/m/core.tn"
 @doc:"""
   The declarations every layer's sidecar schema shares. Imported rather than copied: these four sat
   duplicated in all four layer schemas, where a change had to be made four times and a divergence

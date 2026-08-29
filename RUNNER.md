@@ -98,7 +98,7 @@ compares the hashes is testing its own hash function.
 A vector whose subject needs a real `!!meta`/`!!import`/`!!schema` does not hardcode one: the
 *sidecar* names the target by a short, unversioned name (`meta.tn`, `core.tn`), and the runner
 splices the real, current directive into the subject's header before parsing. Hardcoding
-`https://tson.io/2026/33/m/core.tn` in every such subject would mean editing all of them at each
+`https://tson.io/2026/34/m/core.tn` in every such subject would mean editing all of them at each
 revision bump.
 
 The splice is not a prepend. The header grammar is a fixed sequence — optional `!!id`, then `!!meta`

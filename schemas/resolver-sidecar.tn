@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/resolver-sidecar.tn"
-!!meta:"https://tson.io/2026/33/m/meta.tn"
-!!import:"https://tson.io/2026/33/m/core.tn"
+!!meta:"https://tson.io/2026/34/m/meta.tn"
+!!import:"https://tson.io/2026/34/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
   Formal shape of a resolver-layer sidecar (tests/class1/resolver/**/*-expected.tn) -- base type
