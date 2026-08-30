@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class1/reader/valid/a-lone-confusable-field-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§8.2"
+  description: "The pairing vector for the two refusals: mechanism 1 is a relation over a set, so it fires on a colliding pair and never on a lone name. A Cyrillic field name with nothing to collide with is read like any other, which is the half a processor must not over-refuse -- §8.2 says 'id_пользователя alone is not' caught."
+  valid: {
+    value: {
+      record: {
+        fields: [
+          {
+            name: "аdmin"
+            value: { atom: { number: "1" } }
+          }
+        ]
+      }
+    }
+  }
+}

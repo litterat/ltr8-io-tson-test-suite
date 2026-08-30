@@ -62,4 +62,35 @@
     import: [text]?
     schema: text?
   }
+
+  @doc:"""
+    Which of §8.2's three name-hygiene mechanisms refused a document. They are named rather than
+    inferred for the same reason an error vector names its category: the mechanisms are three
+    different rules over three different tables, and an implementation that refused a document by
+    the wrong one has not passed the vector.
+    """
+  hygiene_mechanism => !enum [skeleton-distinctness identifier-status restriction-level]
+
+  @doc:"""
+    The payload of a `refused` outcome -- §8.1's fifth outcome, which §8.2 says MUST NOT be reported
+    in any of the four error categories. The document is not invalid: it is *refused by this
+    processor*, under a stated policy, and a conforming processor names the UTS #39 data version in
+    the refusal.
+
+    `unicode` is that version, and it is the one thing here that is not about the document. Every
+    mechanism reads data the Unicode Consortium declines to freeze -- `confusables.txt`,
+    `IdentifierStatus.txt`, the script tables -- so a verdict can change under a routine UCD
+    refresh, and §8.2 says two implementations may legitimately disagree with the version the only
+    thing that explains it. A vector is therefore labelled with the version it was computed against,
+    which is what makes a disagreement diagnosable rather than a mystery.
+
+    Position is absent for the same reason it is absent from `vector_error`, though §8.2 does say
+    where a refusal is reported -- at the second occurrence of a colliding pair, in the manner of
+    §2.6's duplicate-key diagnostic. What is normative is the refusal, not where a processor
+    noticed it.
+    """
+  vector_refusal => {
+    mechanism: hygiene_mechanism
+    unicode: text
+  }
 }

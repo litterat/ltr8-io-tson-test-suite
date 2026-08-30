@@ -56,13 +56,13 @@ def render(layers, sections, section_layers) -> str:
         "",
         "## By layer",
         "",
-        "| Class | Layer | valid | invalid | schema-document | total |",
-        "|---|---|--:|--:|--:|--:|",
+        "| Class | Layer | valid | invalid | schema-document | refused | total |",
+        "|---|---|--:|--:|--:|--:|--:|",
     ]
     for (cls, layer) in sorted(layers):
         c = layers[(cls, layer)]
         out.append(f"| {cls} | {layer} | {c['valid']} | {c['invalid']} | "
-                   f"{c['schema-document']} | {sum(c.values())} |")
+                   f"{c['schema-document']} | {c['refused']} | {sum(c.values())} |")
     out += [
         "",
         "## By spec section",
