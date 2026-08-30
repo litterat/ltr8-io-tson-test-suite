@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class1/lexer/invalid/bidi-override-inside-unquoted-token-expected.tn"
 !!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
 {
-  spec: "§7.1"
+  spec: "§7.1, §9.4, §9.5"
   description: "U+202E RIGHT-TO-LEFT OVERRIDE is not in XID_Continue, so it cannot appear in an unquoted token -- the bidi formatting controls are the spoofing surface §9.4 is concerned with, and the profile excludes them by property rather than by a rule of their own"
   error: { category: lexer }
 }

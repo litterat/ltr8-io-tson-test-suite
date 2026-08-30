@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/lexer/invalid/arabic-letter-mark-outside-a-quoted-token-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+{
+  spec: "§7.1, §9.5"
+  description: "U+061C ARABIC LETTER MARK, the third of §9.5's ranges and the one that sits on its own rather than in a block with its neighbours. Cf and outside every profile, so it is a lexer error wherever it stands outside a quoted token -- token boundary included, since it is not Pattern_White_Space."
+  error: { category: lexer }
+}

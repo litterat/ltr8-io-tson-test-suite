@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/lexer/valid/bidi-controls-inside-a-quoted-token-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+{
+  spec: "§7.2.6, §9.5"
+  description: "The half of the rule that must not over-refuse: within a quoted token every bidirectional formatting character is ordinary content. The subject carries one from each of §9.5's three ranges -- U+202B, U+2066, U+061C -- each of which is a lexer error outside quotes, and the token's text keeps all three. This is where UTS #55 3.2 says an author corrects a document's plain-text display, so a reader that refused them everywhere would take that away."
+  valid: {
+    tokens: [
+      { kind: single-line-token  text: "a\u202Bb\u2066c\u061Cd" }
+    ]
+  }
+}
