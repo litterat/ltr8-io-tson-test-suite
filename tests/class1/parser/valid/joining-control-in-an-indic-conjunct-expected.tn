@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/joining-control-in-an-indic-conjunct-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.7"
+  description: "The Malayalam conjunct ക്‍ക, with ZWJ (U+200D) after the virama. Rule 2's condition B is what admits it, and §7.7 says outright that an implementation MUST implement all three conditions because 'the Arabic condition alone admits Persian and refuses Malayalam, which is the wrong line' -- so this is the vector a partial implementation fails."
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: []
+        type-ref: "ക്‍ക"
+        core: {
+          token: { form: unquoted  text: "1" }
+        }
+      }
+    }
+  }
+}

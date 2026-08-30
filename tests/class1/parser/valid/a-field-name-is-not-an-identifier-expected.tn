@@ -1,0 +1,48 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/a-field-name-is-not-an-identifier-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.5, §7.7"
+  description: "Class 1 field names are lexical, and §7.7 is explicit that they are not matched against the identifier grammar: '_id' is spellable as a field name because a quoted token carries it, and '42x' because an unquoted one does. Neither is a name, and under a schema neither could be a declared field."
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: []
+        type-ref: _
+        core: {
+          record: {
+            fields: [
+              {
+                name: "_id"
+                value: {
+                  schema-ref: _
+                  value: {
+                    annotations: []
+                    type-ref: _
+                    core: {
+                      token: { form: unquoted  text: "1" }
+                    }
+                  }
+                }
+              }
+              {
+                name: "42x"
+                value: {
+                  schema-ref: _
+                  value: {
+                    annotations: []
+                    type-ref: _
+                    core: {
+                      token: { form: unquoted  text: "2" }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

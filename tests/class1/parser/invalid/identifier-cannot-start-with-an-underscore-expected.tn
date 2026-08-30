@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/identifier-cannot-start-with-an-underscore-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.7"
+  description: "Rule 3's own example. The token-initial underscore is the absent sentinel (§7.1), and '_' is XID_Continue only, so no identifier begins with it: '_id' is not a name and there is no way to spell one that is. This is the format's one lexical reservation, and it is not a reservation on names."
+  error: { category: parser }
+}

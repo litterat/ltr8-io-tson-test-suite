@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/joining-control-with-no-shaping-effect-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.7"
+  description: "ZWNJ (U+200C) sits between 'ab' and 'cd' in a Latin name. The joiners are XID_Continue and so admitted by the production, but rule 2 admits them only in the UTS #39 §3.1.1.1 contexts, and in a Latin name a joiner is invisible. This is what makes §7.1's admission of the joiners into the token profile safe."
+  error: { category: parser }
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/a-naming-position-admits-only-the-unquoted-spelling-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.4, §7.7"
+  description: "'gold' decodes to a perfectly good identifier and is still refused, because §7.4's type-ref production takes an unquoted token and nothing else. §7.7 states the division: a name is constrained however it was spelled, and which spellings a position admits is the position's own grammar rule -- a position may admit fewer spellings without admitting a different set of names."
+  error: { category: parser }
+}
