@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/reader/valid/a-single-script-name-outside-latin-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§8.2"
+  description: "The half mechanism 3 must not over-refuse: a name wholly in one script is not mixed, whatever the script, and Highly Restrictive admits it. §8.2 is explicit that the mechanisms constrain names rather than scripts -- refusing a Cyrillic or Greek or Han name outright would make the format Latin-only, which is the opposite of what a restriction level is for."
+  valid: {
+    value: {
+      atom: { number: "2" }
+    }
+  }
+}
