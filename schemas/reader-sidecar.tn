@@ -76,6 +76,6 @@
     -- an open question this corpus answers the same way for both.
     """
   reader_sidecar => sidecar_common & {
-    ( valid: reader_valid | error: vector_error )
+    ( valid: reader_valid | error: vector_error | refused: vector_refusal )
   }
 }

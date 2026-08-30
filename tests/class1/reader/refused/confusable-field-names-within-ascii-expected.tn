@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/reader/refused/confusable-field-names-within-ascii-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§8.2"
+  description: "The same mechanism with no second script in sight: 'comer' and 'corner' share a skeleton through m -> rn. §8.2 names this pair itself as a pure-ASCII false positive, and calls it 'a sound basis for a default and an unsound one for a rule' -- which is the whole argument for the fifth outcome. A processor that made this a validity error would make two well-formed English field names an invalid document."
+  refused: {
+    mechanism: skeleton-distinctness
+    unicode: "16.0"
+  }
+}

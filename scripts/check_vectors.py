@@ -26,8 +26,10 @@ LAYERS = {
     "class1": {"lexer", "parser", "resolver", "vocabulary", "reader", "json"},
     "class2": {"schema", "link", "validate"},
 }
-# The outcome group member each bucket's sidecars must state.
-BUCKET_OUTCOME = {"valid": "valid", "invalid": "error", "schema-document": "schema-document"}
+# The outcome group member each bucket's sidecars must state. `refused` is TSON-DATA 8.1's fifth
+# outcome -- a name-hygiene policy refusal (8.2), which is not one of the four error categories.
+BUCKET_OUTCOME = {"valid": "valid", "invalid": "error", "schema-document": "schema-document",
+                  "refused": "refused"}
 
 
 def is_sidecar(p: Path) -> bool:
@@ -66,6 +68,8 @@ def check_layout(errors: list[str]) -> None:
             errors.append(f"tests/{rel}: unknown bucket '{bucket}'")
         elif bucket == "schema-document" and layer != "parser":
             errors.append(f"tests/{rel}: the schema-document bucket is parser-layer only")
+        elif bucket == "refused" and layer != "reader":
+            errors.append(f"tests/{rel}: the refused bucket is reader-layer only")
 
 
 def check_sidecar_header(errors: list[str]) -> None:

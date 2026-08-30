@@ -89,6 +89,20 @@ schema it could not obtain, a binding its own host application got wrong. None o
 four categories, and none of them is a document being invalid. A runner that lets one satisfy an `error`
 vector reports a pass for a vector it did not run.
 
+### 3d. A refusal is not an error, and must be told apart from one
+
+A `refused` vector states one of [TSON-DATA] §8.2's three name-hygiene mechanisms, not one of §8.1's four
+categories. §8.2 is explicit that a document failing one of those checks is **refused by this processor**
+— a fifth, distinguishable outcome that MUST NOT be reported in any of the four. So a runner must
+establish two things: that the document was refused, and that the refusal is distinguishable from a
+validity error in whatever the implementation reports. An implementation that reports a confusable pair
+the way it reports an out-of-range integer has not passed the vector, however red the document goes.
+
+The distinction is the point of the whole layer. The mechanisms read `confusables.txt`,
+`IdentifierStatus.txt` and the script tables, none of which the Unicode Consortium freezes, so a verdict
+can change under a routine UCD refresh — and a content-addressed document must mean the same thing
+forever. That is why none of this may decide validity, and why the outcome is its own.
+
 ### 4. Do not assert position
 
 Sidecars carry no line, column, or byte offset, and a runner must not require one. Implementations
@@ -105,6 +119,11 @@ why. Exactly three grounds are legitimate:
   ground — it must reach the lexer and be rejected there.
 - **A `class2/` vector under a Class 1 processor.** Declared by conformance class, not per vector.
 - **A vector under `proposed/`.**
+- **A `refused` vector whose `unicode` version the implementation does not carry.** §8.2 says two
+  conforming implementations may legitimately disagree on a refusal and that the UTS #39 data version is
+  the only thing that explains it, so a runner at a different version has no verdict to give rather than
+  a wrong one. It MUST compare versions and report the skip; it MUST NOT skip a vector whose version it
+  *does* carry.
 
 Anything else — a vector the implementation cannot currently pass — is a failure. Recording it as a
 skip is how a corpus stops measuring anything.

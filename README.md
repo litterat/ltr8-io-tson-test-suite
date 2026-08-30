@@ -114,6 +114,25 @@ into the *data*. Never a message, never a position, and never a schema pointer �
 constraint is written is an implementation's choice of route, and two conforming processors legitimately
 name different ones.
 
+### The fifth outcome
+
+`reader/refused/` is the one bucket that is not a verdict on the document. §8.2's name-hygiene
+mechanisms — skeleton distinctness, `Identifier_Status`, and the restriction level — refuse a document
+*without making it invalid*, and §8.1 gives that its own outcome, which MUST NOT be reported in any of
+the four error categories.
+
+The reason is that none of them can be validity. Each reads data the Unicode Consortium declines to
+freeze (`confusables.txt`, `IdentifierStatus.txt`, the script tables), so a verdict can change under a
+routine UCD refresh, and a content-addressed document must mean the same thing forever. Skeleton
+distinctness has a second disqualification: it does not compose across `!!import`, and it has pure-ASCII
+false positives — `comer` and `corner` share a skeleton through `m → rn`, which this corpus carries as a
+vector precisely because it is the argument. A sound basis for a default; an unsound one for a rule.
+
+So a `refused` sidecar names the mechanism and the **UTS #39 data version** it was computed against.
+§8.2 says two conforming implementations may legitimately disagree and that the version is the only
+thing that explains it — which makes the version a runner's fourth legitimate skip ground, and the
+only one that is about the vector rather than the implementation's conformance class.
+
 `<slug>` is a short, stable, descriptive name (`escape-basic`, `lone-high-surrogate`). Slugs are
 **not** derived from spec section numbers, so a future revision renumbering a section never forces a
 rename; the section reference lives in the sidecar, where it is metadata rather than an identifier.
