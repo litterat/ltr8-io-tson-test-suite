@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/reader/refused/a-restricted-character-in-a-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§8.2"
+  description: "U+0132 LATIN CAPITAL LIGATURE IJ is XID_Continue, so the name is a well-formed identifier and §7.7 has no complaint. Mechanism 2 narrows names to Identifier_Status=Allowed, which removes the obsolete and technical characters -- a per-character rule with no cross-script judgement in it. The distinction is the point: the grammar decides what a name is and never changes under a UCD refresh, while this decides what this processor will accept and may."
+  refused: {
+    mechanism: identifier-status
+    unicode: "16.0"
+  }
+}
