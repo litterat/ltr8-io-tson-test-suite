@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-field-the-type-does-not-declare-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.2"
+  description: "Records are closed under their type: a field the declaration does not name is an error, reported at the field's own RFC 6901 pointer rather than at the record."
+  schema: "meta.tn"
+  error: {
+    category: validation
+    path: "/colour"
+  }
+}

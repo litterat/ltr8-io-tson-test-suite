@@ -1,0 +1,55 @@
+!!id:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!meta:"https://tson.io/2026/34/m/meta.tn"
+!!import:"https://tson.io/2026/34/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
+@doc:"""
+  Formal shape of a link-layer sidecar (tests/class2/link/**/*-expected.tn) -- what [TSON-SCHEMA]
+  §2.2.3's import closure, §5.4's derived disjointness and §5.10.1's productivity rule make of a
+  schema that has already resolved. See README.md's "The Class 2 layers" and RUNNER.md.
+
+  Where the schema layer compares a whole resolved document, this layer states individual facts
+  about the linked namespace. That is deliberate and not laziness: linking derives three things and
+  merges a fourth, and a vector that exercises one of them should not have to write out every
+  entry of core.tn to say so. Each list is optional, so a vector states only what it is about, and
+  a sidecar stating none of them is an empty claim that `check_vectors.py` cannot catch but a
+  reviewer can.
+  """
+{
+  @doc:"""
+    A choice entry and the disjointness §5.4 derives for it. The fact is total and two-valued --
+    `true` exactly when every variant occupies a distinct discrimination class -- so a vector may
+    state either value, and `false` is as much a claim as `true`.
+    """
+  disjointness => {
+    name: text
+    value: boolean
+  }
+
+  @doc:"A named entry and the entries §8.2's resolver-managed `subtypes` index must list under it, in any order."
+  subtyping => {
+    name: text
+    subtypes: [text]
+  }
+
+  @doc:"""
+    What the linked namespace must show. `binds` names entries the closure must resolve, which is
+    how §2.2.3's "an !!import contributes the imported schema's entire namespace" is stated from
+    outside an implementation: a name reachable only through an import's own import is the case
+    worth writing.
+    """
+  link_valid => {
+    binds: [text]?
+    disjoint: [disjointness]?
+    subtypes: [subtyping]?
+  }
+
+  @doc:"""
+    An `error` vector's category is `resolver` throughout this layer, for the same [TSON-DATA] §8.1
+    reason the schema layer's is: linking is part of making a schema load, and every failure to load
+    or ingest one is a resolver error. A schema that will not link is never a `validation` failure,
+    which is reserved for data checked against a schema that did load.
+    """
+  link_sidecar => sidecar_common & spliced_header & {
+    ( valid: link_valid | error: vector_error )
+  }
+}

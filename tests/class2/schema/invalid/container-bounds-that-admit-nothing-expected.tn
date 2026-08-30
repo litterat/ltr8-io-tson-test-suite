@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/container-bounds-that-admit-nothing-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.2"
+  description: "The structural twin of an incoherent atom body: a size specifier whose lower bound exceeds its upper. One type, one answer, whichever of the two spellings wrote it."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

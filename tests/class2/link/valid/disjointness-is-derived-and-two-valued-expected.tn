@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/disjointness-is-derived-and-two-valued-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4"
+  description: "Disjointness is derived on every choice and is total and two-valued: true exactly when every variant occupies a distinct discrimination class. Two records share one, a record and an atom do not."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    disjoint: [
+      { name: shapes  value: false }
+      { name: tagged  value: true }
+    ]
+  }
+}

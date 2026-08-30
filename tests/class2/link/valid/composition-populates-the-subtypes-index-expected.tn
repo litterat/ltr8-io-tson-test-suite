@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/composition-populates-the-subtypes-index-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §8.2"
+  description: "subtypes is the resolver-managed inverse of supertypes: composing with an entry lists the composing entry under it. Declarations never set either index."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    subtypes: [
+      { name: named  subtypes: [employee contractor] }
+    ]
+  }
+}

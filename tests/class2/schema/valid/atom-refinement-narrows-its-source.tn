@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/atom-refinement-narrows-its-source.tn"
+{
+  small => !int32 ^ { min: 0  max: 10 }
+}

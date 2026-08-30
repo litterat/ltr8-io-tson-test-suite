@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/atom-refinement-narrows-its-source-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.9"
+  description: "An atom refinement merges with its source rather than replacing it: the resolved body carries every facet the source had settled, not only the ones the refinement restated. Its source is the atom constructor family, and the name it refined becomes a supertype."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        small => !type_definition {
+          kind: ATOM
+          source: integer_type
+          supertypes: [int32]
+          body: !integer_type { size: { bits: 32  signed: true }  min: 0  max: 10 }
+        }
+      }
+      """
+  }
+}

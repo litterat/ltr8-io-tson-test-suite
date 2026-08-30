@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-type-no-finite-document-satisfies-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10.1"
+  description: "An entry whose every value would have to contain another value of itself is uninhabited: no finite document satisfies it, and linking refuses it rather than leaving a type nothing can be written against."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

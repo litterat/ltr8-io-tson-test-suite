@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/container-bounds-that-admit-nothing.tn"
+{
+  tags => [text; 5..3]
+}

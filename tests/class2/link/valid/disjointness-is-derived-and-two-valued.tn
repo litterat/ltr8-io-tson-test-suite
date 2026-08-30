@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/disjointness-is-derived-and-two-valued.tn"
+{
+  circle => {
+    radius: int32
+  }
+
+  square => {
+    side: int32
+  }
+
+  tag => text
+
+  shapes    => ( circle | square )
+  tagged    => ( circle | tag )
+}

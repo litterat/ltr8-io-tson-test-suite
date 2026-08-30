@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/record-with-optional-field-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A record declaration resolves to a !record body whose fields carry their declared state; `?` is OPTIONAL and a bare field is REQUIRED."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        point => !type_definition {
+          kind: PRODUCT
+          body: !record { fields: [
+            !record_field { name: x      type: int32 }
+            !record_field { name: y      type: int32 }
+            !record_field { name: label  type: text   state: OPTIONAL }
+          ] }
+        }
+      }
+      """
+  }
+}

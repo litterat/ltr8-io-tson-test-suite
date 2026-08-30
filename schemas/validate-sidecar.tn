@@ -1,0 +1,51 @@
+!!id:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+!!meta:"https://tson.io/2026/34/m/meta.tn"
+!!import:"https://tson.io/2026/34/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
+@doc:"""
+  Formal shape of a validate-layer sidecar (tests/class2/validate/**/*-expected.tn) -- a data
+  document read against a schema that has already loaded. See README.md's "The Class 2 layers" and
+  RUNNER.md.
+
+  This is the layer where [TSON-DATA] §8.1's `validation` category finally has vectors: it is
+  "reserved for data checked against a successfully loaded schema", which is exactly what a subject
+  here is. The governing schema is named by the sidecar's `schema` short name and spliced into the
+  subject's header as a real `!!schema`; the subject names its own root type the way any
+  self-describing document does, with a type-ref on its root value.
+  """
+{
+  @doc:"""
+    The neutral half of a diagnostic, and deliberately only that half: §8.1's category, plus the RFC
+    6901 pointer into the *data* document naming the value that failed. Never a message (that means
+    parsing prose), never a position (RUNNER.md rule 4), and never a schema pointer -- where in the
+    schema a constraint is written is an implementation's choice of route, and two conforming
+    processors legitimately name different ones.
+
+    `path` is optional and omitted rather than written `""` where a vector does not turn on it. The
+    root value's own pointer *is* `""`, so the two are not interchangeable: a vector that writes it
+    is claiming the failure is at the root, and one that omits it is claiming nothing.
+
+    No vector here turns on the one category README.md records as unsettled -- an atom rejecting a
+    token's *format*, which §5.2 phrases as a parse error while §8.1's own `parser` description
+    covers structural mismatches and the check happens well after the parser has accepted the
+    document. What §8.1 does settle is the neighbouring case: "range violations by the numeric atoms"
+    are `validation` explicitly, and that is what an atom vector here exercises.
+
+    A runner asserts that at least one reported diagnostic matches. A document may legitimately
+    report more than one -- §8.1 asks a processor to continue after an error -- and a vector naming
+    one of them is not a claim that it is the only one.
+    """
+  validate_error => vector_error & {
+    path: text?
+  }
+
+  @doc:"""
+    `valid` carries nothing and is written `_`. What is normative is that the document conforms --
+    the *value* a read produces is the reader layer's subject (`class1/reader/`), stated there once
+    in a model that has nothing to do with schemas, and restating it here would make a Class 2
+    vector fail whenever a tree model changed shape.
+    """
+  validate_sidecar => sidecar_common & spliced_header & {
+    ( valid: void | error: validate_error )
+  }
+}

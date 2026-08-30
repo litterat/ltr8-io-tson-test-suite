@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/record-with-optional-field.tn"
+{
+  point => {
+    x: int32
+    y: int32
+    label: text?
+  }
+}

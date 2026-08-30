@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/composition-populates-the-subtypes-index.tn"
+{
+  named => {
+    name: text
+  }
+
+  employee => named & {
+    payroll: int32
+  }
+
+  contractor => named & {
+    agency: text
+  }
+}

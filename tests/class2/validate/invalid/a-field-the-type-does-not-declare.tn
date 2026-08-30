@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-field-the-type-does-not-declare.tn"
+!record_field {
+  name: age
+  type: int32
+  colour: red
+}

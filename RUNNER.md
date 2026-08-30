@@ -66,6 +66,29 @@ layer satisfies rule 3: the stated `resolver` category means the reader rejected
 lexer or the parser, and a vector that had accidentally become a parse error would otherwise pass for the
 wrong reason.
 
+### 3b. At the Class 2 schema and link layers, the category is the phase's
+
+An `error` vector under `class2/schema/` or `class2/link/` states `category: resolver`, and it always
+will. [TSON-DATA] §8.1 settles it outright for Part 2: "every error that makes a schema fail to load or
+ingest — incoherent constraint values, invalid defaults, refuted assertions, failed ingest checks — is a
+resolver error, however value-like the violated rule, because it is detected while resolving the schema.
+Validation errors are reserved for data checked against a successfully loaded schema."
+
+So a runner satisfies rule 3 at those layers by establishing that the schema did not load. What it must
+*not* do is read the category off whatever internal code it happens to raise: an implementation that
+catches a schema-authoring mistake through its meta-schema's own reader will have a record-shaped code in
+hand, and it is still a resolver error. The code says which rule; the phase says which category.
+
+`class2/validate/` is the other way round, and is where the `validation` category finally has vectors: the
+schema loaded, so what a diagnostic says about the *data* is the category.
+
+### 3c. A diagnostic that is not a verdict does not satisfy an error vector
+
+An implementation may report that it could not judge something — a construct it has not implemented, a
+schema it could not obtain, a binding its own host application got wrong. None of those is one of §8.1's
+four categories, and none of them is a document being invalid. A runner that lets one satisfy an `error`
+vector reports a pass for a vector it did not run.
+
 ### 4. Do not assert position
 
 Sidecars carry no line, column, or byte offset, and a runner must not require one. Implementations
@@ -86,18 +109,23 @@ why. Exactly three grounds are legitimate:
 Anything else — a vector the implementation cannot currently pass — is a failure. Recording it as a
 skip is how a corpus stops measuring anything.
 
-### 6. Normalise a synthetic entry's name before comparing (Class 2)
+### 6. Normalise a resolver-minted name before comparing (Class 2)
 
-A resolved schema's synthetic entries carry a name ending in an implementation-chosen content hash.
+The entries a resolver mints for itself — a synthetic lifted from a sugar form, an instantiation closed
+from a template application — carry a name ending in an implementation-chosen content hash.
 [TSON-SCHEMA] §8.2 keys identity on structure, not on that spelling, so it is **not normative**: both
-sides reduce a trailing `_[0-9a-f]{8}` to a fixed placeholder before comparing. A runner that
+sides reduce a trailing `_[0-9a-f]{8}` to a fixed placeholder before comparing, wherever such a name
+appears — as an entry's own key, inside a body, or in a list of names a sidecar states. A runner that
 compares the hashes is testing its own hash function.
 
 ## Schema-governed vectors
 
 A vector whose subject needs a real `!!meta`/`!!import`/`!!schema` does not hardcode one: the
-*sidecar* names the target by a short, unversioned name (`meta.tn`, `core.tn`), and the runner
-splices the real, current directive into the subject's header before parsing. Hardcoding
+*sidecar* names the target by a short, unversioned name (`meta.tn`, `core.tn`) in its `meta`, `import`
+or `schema` field, and the runner splices the real, current directive into the subject's header before
+parsing. `meta`/`import` govern a schema-document subject, which is what the `class2/schema/` and
+`class2/link/` layers use; `schema` governs a data-document subject, which is what `class2/validate/`
+uses. Hardcoding
 `https://tson.io/2026/34/m/core.tn` in every such subject would mean editing all of them at each
 revision bump.
 

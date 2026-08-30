@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/the-same-field-written-twice-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.5"
+  description: "A field name repeated in one record. §8.1 places a duplicate field name among the resolver errors, one category for one rule, whichever layer of key identity detects it."
+  schema: "meta.tn"
+  error: {
+    category: resolver
+    path: "/name"
+  }
+}

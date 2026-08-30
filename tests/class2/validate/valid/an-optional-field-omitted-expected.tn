@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-optional-field-omitted-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "An omitted OPTIONAL field is not a missing one: the value is simply absent, and the document conforms."
+  schema: "meta.tn"
+  valid: _
+}

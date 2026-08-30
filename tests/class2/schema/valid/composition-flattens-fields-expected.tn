@@ -1,0 +1,30 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/composition-flattens-fields-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8"
+  description: "Composition absorbs an operand's fields into the composed record and records the operand as a supertype; the resolved body states every field flat."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        named => !type_definition {
+          kind: PRODUCT
+          subtypes: [person]
+          body: !record { fields: [
+            !record_field { name: name  type: text }
+          ] }
+        }
+      
+        person => !type_definition {
+          kind: PRODUCT
+          supertypes: [named]
+          body: !record { supertypes: [named]  fields: [
+            !record_field { name: name  type: text }
+            !record_field { name: age   type: int32 }
+          ] }
+        }
+      }
+      """
+  }
+}

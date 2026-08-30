@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/the-disjoint-marker-contradicted.tn"
+{
+  circle => {
+    radius: int32
+  }
+
+  square => {
+    side: int32
+  }
+
+  @disjoint
+  shapes => ( circle | square )
+}
