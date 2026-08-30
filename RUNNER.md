@@ -148,6 +148,20 @@ uses. Hardcoding
 `https://tson.io/2026/34/m/core.tn` in every such subject would mean editing all of them at each
 revision bump.
 
+**A short name that is not one of those three is the corpus's own schema**, named by its path under
+`schemas/` — `fixtures/link-money.tn` resolves to
+`https://tson.io/test-suite/schemas/fixtures/link-money.tn`, which a runner serves from its checkout.
+That is a *rule*, not a table: the three bundled names have to be listed because their identities carry
+the spec revision and nothing in the name says so, and everything else is derived. A runner that keeps a
+per-fixture table instead has to be edited every time the corpus grows one, in every language — the same
+drift this document exists to stop, once per fixture rather than once.
+
+The link layer's §2.2.3 vectors are what need this: an import closure cannot be exercised with one
+document, and the topology lives in the fixture schemas' own `!!import` headers, so a chain, a diamond or
+a wide fan-in is a matter of which files exist rather than of anything a runner knows. Fixtures are named
+for what they declare rather than for the vector that uses them, the namespace being shared, and each one
+resolves on its own — the collisions those vectors are about exist only in the importer.
+
 The splice is not a prepend. The header grammar is a fixed sequence — optional `!!id`, then `!!meta`
 immediately after it, then `!!import` — so the directives go in right after the subject's own `!!id`
 line, or at the very start when it has none.

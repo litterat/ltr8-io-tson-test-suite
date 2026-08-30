@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-billing.tn"
+!!meta:"https://tson.io/2026/34/m/meta.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-money.tn"
+@doc:"One half of the diamond: imports link-money.tn and builds on it."
+{
+  invoice => {
+    total: money
+  }
+}

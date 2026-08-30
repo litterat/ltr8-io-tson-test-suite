@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-local-declaration-shadowing-an-import.tn"
+{
+  money => {
+    amount: int32
+  }
+}

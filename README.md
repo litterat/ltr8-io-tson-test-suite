@@ -44,6 +44,7 @@ tests/
     reader/{valid,invalid}/                §2.5, §2.6, §2.8, §2.9
   class2/                      the schema-aware processor ([TSON-SCHEMA] §1.3)
 schemas/                       one sidecar schema per layer
+  fixtures/                    schemas the link layer's vectors import
 ```
 
 Top-level grouping is by **conformance class**, because the spec defines exactly two and an
@@ -189,6 +190,11 @@ directive in before parsing:
 | `meta-kernel.tn` | `https://tson.io/2026/34/m/meta-kernel.tn` |
 | `meta.tn`        | `https://tson.io/2026/34/m/meta.tn`        |
 | `core.tn`        | `https://tson.io/2026/34/m/core.tn`        |
+
+Any other short name is the corpus's own schema, named by its path under `schemas/` — so
+`fixtures/link-money.tn` is `https://tson.io/test-suite/schemas/fixtures/link-money.tn`. The three
+bundled names are listed because their identities carry the spec revision; everything else is derived,
+which is what lets the corpus grow a fixture without every runner editing a constant to keep up.
 
 ## Two things the sidecars deliberately do not pin
 

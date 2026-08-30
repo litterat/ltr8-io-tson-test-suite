@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-money-alt.tn"
+!!meta:"https://tson.io/2026/34/m/meta.tn"
+!!import:"https://tson.io/2026/34/m/core.tn"
+@doc:"""
+  A second, unrelated declaration of 'money', for the vector that imports this and link-money.tn together.
+  Each schema is perfectly valid on its own -- the collision exists only in the importer, which is the
+  property [TSON-SCHEMA] §2.2.3's rule is about.
+  """
+{
+  money => {
+    cents: int64
+  }
+}
