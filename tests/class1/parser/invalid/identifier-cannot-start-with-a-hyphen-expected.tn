@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/identifier-cannot-start-with-a-hyphen-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.7"
+  description: "The sign half of the same rule '!42x' pins for the digit half: §7.1's token profile adds '-' to Start so a number can be an unquoted token, and identifier-Start is XID_Start, which does not. '-foo' is a well-formed unquoted token and not a name."
+  error: { category: parser }
+}

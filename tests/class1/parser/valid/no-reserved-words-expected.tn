@@ -1,0 +1,30 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/no-reserved-words-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.7"
+  description: "Rule 3: the grammar excludes nothing by name. 'true', 'false' and 'null' are identifiers like any other, and a name matching one is a name -- there is no keyword list to collide with."
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: [
+          {
+            name: "null"
+            value: {
+              annotations: []
+              type-ref: _
+              core: {
+                token: { form: unquoted  text: "1" }
+              }
+            }
+          }
+        ]
+        type-ref: "true"
+        core: {
+          token: { form: unquoted  text: "2" }
+        }
+      }
+    }
+  }
+}

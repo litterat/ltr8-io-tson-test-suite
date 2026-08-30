@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class1/lexer/invalid/non-nfc-unquoted-token-expected.tn"
 !!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
 {
-  spec: "§7.2.1"
-  description: "An unquoted token whose source text is not NFC-normalized (here: NFD 'e' + combining acute accent, U+0065 U+0301) is a lexer error"
+  spec: "§7.2.1, §7.7"
+  description: "An unquoted token whose source text is not NFC-normalized (here: NFD 'e' + combining acute accent, U+0065 U+0301) is a lexer error. This is also §7.7 rule 1 for an unquoted spelling, which defers to exactly this rule -- an identifier's text MUST be NFC, and for an unquoted name nothing further is needed because the lexer has already refused the alternative."
   error: { category: lexer }
 }

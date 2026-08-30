@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/joining-control-at-the-end-of-a-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.7"
+  description: "The same Persian name that is valid with ZWNJ between its two parts, with the ZWNJ last instead. Same script and same joiner, so nothing about the name's script decides it: rule 2's conditions read the neighbouring characters, and a joiner with nothing after it shapes nothing."
+  error: { category: parser }
+}

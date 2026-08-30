@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/joining-control-with-a-shaping-effect-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.7"
+  description: "The Persian name کتاب‌ها, with ZWNJ (U+200C) between its two parts, where it stops the BEH from joining the HEH and so has a visible shaping effect. Rule 2's UTS #39 §3.1.1.1 condition A is what admits it, and the same joiner in a Latin name is refused."
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: []
+        type-ref: "کتاب‌ها"
+        core: {
+          token: { form: unquoted  text: "1" }
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class1/parser/invalid/type-ref-name-not-an-identifier-expected.tn"
 !!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
 {
-  spec: "§7.4"
+  spec: "§7.4, §7.7"
   description: "A type-ref names a type, and a name is an identifier: its text is matched in full against the identifier profile (XID_Start, then XID_Continue plus '-', in NFC), the way §7.6 matches a number's text against the number grammar. §7.1's token profile adds Nd, '-', '+' and '.' to Start for one stated purpose -- so a number can be an unquoted token -- and those reach names only because names and values share one lexical class. '42x' is a well-formed unquoted token and not a name, so '!42x' is a syntax error rather than a reference to a type nobody declared."
   error: { category: parser }
 }
