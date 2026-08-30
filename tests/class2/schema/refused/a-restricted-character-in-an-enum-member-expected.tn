@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/a-restricted-character-in-an-enum-member-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §11.4"
+  description: "The same rule at the scope §11.4 names first: the members of one enum. Worth its own vector because an enum member reaches a schema through the constructor's own vocabulary rather than through a declaration, so an implementation applying the mechanism where a name is read rather than where a scope is walked can miss exactly this position."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  refused: {
+    mechanism: identifier-status
+    unicode: "16.0"
+  }
+}

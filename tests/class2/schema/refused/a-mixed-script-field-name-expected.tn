@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/a-mixed-script-field-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §11.4"
+  description: "Mechanism 3 over the field names of one record definition: Latin p, Cyrillic U+0430, Latin y. Both characters are Identifier_Status=Allowed and no other field resembles it, so mechanisms 1 and 2 have nothing to say and the restriction level is what refuses it."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  refused: {
+    mechanism: restriction-level
+    unicode: "16.0"
+  }
+}

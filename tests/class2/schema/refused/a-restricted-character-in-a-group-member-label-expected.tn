@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/a-restricted-character-in-a-group-member-label-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §11.4, §5.11"
+  description: "§11.4 puts a group's member labels in the record scope explicitly. They reach the resolved form flattened into the record's own fields, so an implementation that walks the scope catches them and one that checks each field name as it is parsed may not -- which is the same hazard the enum-member vector covers, at the other position it bites."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  refused: {
+    mechanism: identifier-status
+    unicode: "16.0"
+  }
+}

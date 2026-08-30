@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/two-declared-names-that-read-alike-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §11.4"
+  description: "Latin 'admin' and an 'admin' whose 'a' is Cyrillic U+0430, declared in one schema. §11.4 calls the declared names of one schema a scope, and this is where a spoofed name does the most damage: it changes which type a document validates against."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  refused: {
+    mechanism: skeleton-distinctness
+    unicode: "16.0"
+  }
+}

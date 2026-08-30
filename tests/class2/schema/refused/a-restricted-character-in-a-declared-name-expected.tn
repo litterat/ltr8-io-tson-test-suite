@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/a-restricted-character-in-a-declared-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §11.4"
+  description: "U+0132 LATIN CAPITAL LIGATURE IJ is XID_Continue, so the name is a well-formed identifier and §7.7 has no complaint. What refuses it is §8.2's mechanism 2, which narrows a name to Identifier_Status=Allowed."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  refused: {
+    mechanism: identifier-status
+    unicode: "16.0"
+  }
+}

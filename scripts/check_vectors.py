@@ -68,8 +68,8 @@ def check_layout(errors: list[str]) -> None:
             errors.append(f"tests/{rel}: unknown bucket '{bucket}'")
         elif bucket == "schema-document" and layer != "parser":
             errors.append(f"tests/{rel}: the schema-document bucket is parser-layer only")
-        elif bucket == "refused" and layer != "reader":
-            errors.append(f"tests/{rel}: the refused bucket is reader-layer only")
+        elif bucket == "refused" and layer not in {"reader", "schema", "link"}:
+            errors.append(f"tests/{rel}: the refused bucket is for the reader, schema and link layers")
 
 
 def check_sidecar_header(errors: list[str]) -> None:

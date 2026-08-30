@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/a-restricted-character-in-an-enum-member.tn"
+{
+  status => !enum [ACTIVE aĲb]
+}
