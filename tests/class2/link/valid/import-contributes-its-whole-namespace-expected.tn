@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/import-contributes-its-whole-namespace-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3"
+  description: "An !!import contributes the imported schema's entire namespace, so a name the subject never mentions is bound alongside its own declarations."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    binds: [port int32 uuid date]
+  }
+}

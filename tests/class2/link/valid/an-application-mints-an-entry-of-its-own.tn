@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-application-mints-an-entry-of-its-own.tn"
+{
+  box => <T> {
+    value: T
+  }
+
+  text_box => box<text>
+}

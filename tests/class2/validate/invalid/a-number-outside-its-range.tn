@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-number-outside-its-range.tn"
+!int32 3000000000

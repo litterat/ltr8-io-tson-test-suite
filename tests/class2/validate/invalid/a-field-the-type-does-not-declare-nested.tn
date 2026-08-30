@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-field-the-type-does-not-declare-nested.tn"
+!integer_type {
+  size: { bits: 8  signed: true  colour: red }
+}

@@ -44,4 +44,22 @@
   vector_error => {
     category: error_category
   }
+
+  @doc:"""
+    The directives a runner splices into a subject's own header before parsing it, each naming its
+    target by a short, unversioned name (`meta.tn`, `core.tn`) rather than the revision-stamped
+    identity the directive finally carries. A vector that hardcoded
+    `https://tson.io/2026/34/m/core.tn` would have to be edited at every revision bump; naming the
+    target here means the runner's own short-name table is the only thing that moves.
+
+    The splice is not a prepend: the header grammar is a fixed sequence, so the directives go in
+    immediately after the subject's own `!!id` line, or at the very start where it has none. `meta`
+    and `import` govern a schema-document subject; `schema` governs a data-document subject, which
+    is what a `class2/validate/` vector needs.
+    """
+  spliced_header => {
+    meta: text?
+    import: [text]?
+    schema: text?
+  }
 }

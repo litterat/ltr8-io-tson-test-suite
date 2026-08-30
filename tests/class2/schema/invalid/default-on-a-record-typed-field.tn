@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/default-on-a-record-typed-field.tn"
+{
+  point => {
+    x: int32
+  }
+
+  odd => {
+    p: point ~ 3
+  }
+}

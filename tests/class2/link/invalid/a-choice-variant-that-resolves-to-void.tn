@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-choice-variant-that-resolves-to-void.tn"
+{
+  nothing => void
+
+  maybe => ( nothing | text )
+}

@@ -74,6 +74,40 @@ has two textually distinct keys and one decoded one, so only a reader can see th
 An `error` vector here states `category: resolver`, and its subject **must parse** — that is what makes
 it a reader-layer vector rather than a parser-layer one, and `RUNNER.md` requires a runner to check it.
 
+### The Class 2 layers
+
+A Class 2 processor resolves a schema, links it, and validates data against it, and the three layers are
+those three answers.
+
+**`schema/` needs no invented expectation format.** [TSON-SCHEMA] §1.3 makes producing a resolved schema
+value a MUST and §8 fixes its serialization, so a valid vector's subject is a schema document and its
+expected side is the resolved output that document denotes, written in the spec's own §8 form. A runner
+reads that output with its own meta.tn-governed reader before comparing, which makes the expected side
+validated data rather than a transcript of whoever wrote it.
+
+The expected side is carried as a multi-line token rather than modelled field by field. Modelling it
+would restate meta.tn inside a sidecar schema and leave two statements of one shape to drift; a
+multi-line token escapes nothing, so this stays inside the conservative subset RUNNER.md rule 2 states.
+
+**No `schema/` subject declares a template**, and that is a boundary rather than an omission. §8.1 says
+an *open* entry is serialized as its declaration — `<params> !C core-value`, the held body — rather than
+as a `type_definition` value. But the kernel declares the resolved document's own type as
+`schema => {type_name => type_definition}`, so a document carrying one does not conform to the schema the
+expected side is read against, and no runner can read it. What a template resolves to is stated at the
+link layer instead, over the entries it mints.
+
+**`link/` states individual facts** about the linked namespace rather than a whole document: what
+§2.2.3's import closure binds, what §5.4 derives for a choice, what §8.2's `subtypes` index holds.
+Linking derives a handful of things and merges a namespace, and a vector exercising one of them should
+not have to write out every entry of core.tn to say so.
+
+**`validate/` is where §8.1's `validation` category finally has vectors** — it is "reserved for data
+checked against a successfully loaded schema", which is exactly what a subject here is. The expected side
+of a failure is the neutral half of a diagnostic and only that: the category, and the RFC 6901 pointer
+into the *data*. Never a message, never a position, and never a schema pointer — where in a schema a
+constraint is written is an implementation's choice of route, and two conforming processors legitimately
+name different ones.
+
 `<slug>` is a short, stable, descriptive name (`escape-basic`, `lone-high-surrogate`). Slugs are
 **not** derived from spec section numbers, so a future revision renumbering a section never forces a
 rename; the section reference lives in the sidecar, where it is metadata rather than an identifier.

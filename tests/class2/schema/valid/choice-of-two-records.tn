@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/choice-of-two-records.tn"
+{
+  circle => {
+    radius: int32
+  }
+
+  square => {
+    side: int32
+  }
+
+  shape => ( circle | square )
+}

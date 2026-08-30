@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-with-every-required-field-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.2"
+  description: "A self-describing data document: its !!schema names the governing schema and its root value names its own type. Every required field is present and every value conforms."
+  schema: "meta.tn"
+  valid: _
+}

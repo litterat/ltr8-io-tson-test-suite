@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-type-no-finite-document-satisfies.tn"
+{
+  loop => {
+    self: loop
+  }
+}

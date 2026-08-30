@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-required-field-omitted.tn"
+!record_field {
+  type: int32
+}

@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/incoherent-atom-bounds-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §8.1"
+  description: "A single atom body whose own facets admit nothing: a minimum above its maximum. §8.1 names incoherent constraint values as a resolver error, being detected while resolving the schema."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

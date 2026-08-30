@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/incoherent-atom-bounds.tn"
+{
+  impossible => !integer ^ { min: 10  max: 3 }
+}

@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-required-field-omitted-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A REQUIRED field with no default and no value in the document. The schema loaded, so this is a validation error rather than a resolver one; the pointer names the field that is missing, not the record that is missing it."
+  schema: "meta.tn"
+  error: {
+    category: validation
+    path: "/name"
+  }
+}

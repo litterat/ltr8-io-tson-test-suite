@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-application-mints-an-entry-of-its-own-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
+  description: "Closing a template application mints an entry keyed on the application, which the declaration naming it aliases; the trailing content hash of that entry's name is not normative."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    binds: [box text_box box_text_xxhash]
+  }
+}

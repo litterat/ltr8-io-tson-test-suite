@@ -1,0 +1,59 @@
+!!id:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!meta:"https://tson.io/2026/34/m/meta.tn"
+!!import:"https://tson.io/2026/34/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
+@doc:"""
+  Formal shape of a schema-layer sidecar (tests/class2/schema/**/*-expected.tn) -- [TSON-SCHEMA]
+  §5's declaration forms and §8's resolved output. See README.md's "The Class 2 layers" and
+  RUNNER.md.
+
+  This is the first layer of Class 2, and the one that needs no invented expectation format. §1.3
+  makes producing a resolved schema value a MUST and §8 fixes its serialization, so a vector's
+  subject is a schema document and its expected side is the resolved output that document denotes,
+  written in the spec's own §8 form.
+  """
+{
+  @doc:"""
+    A resolved schema, as §8.1's ingest form: a `!schema` map of `name => !type_definition { ... }`,
+    exactly what `spec/m/*-resolved.tn` carry and what §8.2 keys identity on.
+
+    Carried as a multi-line token rather than modelled field by field, which would restate meta.tn
+    inside this schema and leave two statements of one shape to drift apart. A runner reads the text
+    with its own meta.tn-governed reader -- so the payload is validated against the spec's own
+    schema, by the implementation under test, rather than against a paraphrase of it here. Nothing
+    is escaped on the way: a multi-line token is raw text, which is why this stays inside the
+    conservative sidecar subset RUNNER.md rule 2 states.
+
+    The `subtypes` index §8.2 calls resolver-managed is part of that output and is stated where a vector
+    has one: the layer is about what a schema document resolves to, and an entry that another entry
+    composes with says so here. What §2.2.3's import closure makes of a *namespace* is the link layer's,
+    which is why nothing at this layer states an imported name.
+
+    No subject at this layer declares a template, and that is a boundary rather than an omission.
+    §8.1 says an **open** entry is serialized as its declaration -- `<params> !C core-value`, the held
+    body -- rather than as a `type_definition` value. But the kernel declares the resolved document's own
+    type as `schema => {type_name => type_definition}`, so a document carrying one does not conform to
+    the schema this layer's expected side is read against, and no runner can read it. What a template
+    resolves to is stated at the link layer instead, over the entries it mints.
+
+    The resolved document carries no header. Which schema governs it is not the vector's to say --
+    it is meta.tn for every vector at this layer -- and a runner names it when it reads.
+    """
+  schema_valid => {
+    resolved: text
+  }
+
+  @doc:"""
+    An `error` vector's category is `resolver` throughout this layer. [TSON-DATA] §8.1 says so
+    outright for Part 2: "every error that makes a schema fail to load or ingest -- incoherent
+    constraint values, invalid defaults, refuted assertions, failed ingest checks -- is a resolver
+    error, however value-like the violated rule, because it is detected while resolving the schema.
+    Validation errors are reserved for data checked against a successfully loaded schema."
+
+    So a bound that cannot be met and a default of the wrong type are both `resolver` here, and
+    `validation` at this layer would be wrong however much the rule reads like a constraint.
+    """
+  schema_sidecar => sidecar_common & spliced_header & {
+    ( valid: schema_valid | error: vector_error )
+  }
+}

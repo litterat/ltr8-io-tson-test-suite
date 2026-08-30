@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-with-every-required-field.tn"
+!record_field {
+  name: age
+  type: int32
+}

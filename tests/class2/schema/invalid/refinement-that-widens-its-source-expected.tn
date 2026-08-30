@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/refinement-that-widens-its-source-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.9"
+  description: "A refinement must narrow what it refines. Widening a bound is refused at schema load, which §8.1 makes a resolver error however value-like the rule reads."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

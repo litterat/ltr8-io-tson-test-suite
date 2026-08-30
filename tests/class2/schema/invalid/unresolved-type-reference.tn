@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/unresolved-type-reference.tn"
+{
+  user => {
+    home: address
+  }
+}

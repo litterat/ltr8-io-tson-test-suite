@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-number-outside-its-range-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §8.1"
+  description: "A range violation by a numeric atom, which §8.1 assigns to the validation category explicitly. The root value is what failed, so the pointer is the root's own, which is the empty string and not an absence."
+  schema: "core.tn"
+  error: {
+    category: validation
+    path: ""
+  }
+}

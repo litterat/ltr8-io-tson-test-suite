@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/enum-declaration.tn"
+{
+  colour => !enum [RED GREEN BLUE]
+}

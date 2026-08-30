@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/composition-flattens-fields.tn"
+{
+  named => {
+    name: text
+  }
+
+  person => named & {
+    age: int32
+  }
+}
