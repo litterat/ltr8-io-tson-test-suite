@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/one-schema-reached-by-two-routes-unifies-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3"
+  description: "The diamond: the subject imports two schemas that each import a third, so 'money' arrives twice. §2.2.3 decides collisions by entry identity rather than by name occurrence, so one schema reached by several routes unifies and the merge is ordinary. A processor comparing by name alone reports a collision here and is wrong."
+  meta: "meta.tn"
+  import: ["core.tn" "fixtures/link-billing.tn" "fixtures/link-shipping.tn"]
+  valid: {
+    binds: [order invoice parcel money]
+  }
+}

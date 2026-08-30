@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/two-schemas-declaring-one-name.tn"
+{
+  order => {
+    paid: money
+  }
+}

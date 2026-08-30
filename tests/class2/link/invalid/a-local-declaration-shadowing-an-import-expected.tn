@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-local-declaration-shadowing-an-import-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3"
+  description: "An import contributes the imported schema's entire namespace, and nothing may shadow a name that closure already binds -- so redeclaring 'money' locally is an error rather than an override. Without the rule, a schema could silently change what an imported declaration means for every type that references it."
+  meta: "meta.tn"
+  import: ["core.tn" "fixtures/link-money.tn"]
+  error: { category: resolver }
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/one-schema-reached-by-two-routes-unifies.tn"
+{
+  order => {
+    billed: invoice
+    shipped: parcel
+  }
+}

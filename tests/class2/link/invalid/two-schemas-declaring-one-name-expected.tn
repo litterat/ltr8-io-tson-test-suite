@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/two-schemas-declaring-one-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3"
+  description: "The other side of the same rule: two imports whose 'money' entries are declared by different schemas. Each is valid alone -- the collision exists only in the importer, which is why it cannot be caught when either is published. §2.2.3 makes a flat namespace, so distinct types cannot share one name in it."
+  meta: "meta.tn"
+  import: ["core.tn" "fixtures/link-money.tn" "fixtures/link-money-alt.tn"]
+  error: { category: resolver }
+}
