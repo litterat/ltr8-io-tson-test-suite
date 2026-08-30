@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/lexer/invalid/right-to-left-mark-inside-unquoted-token-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+{
+  spec: "§7.1, §9.5"
+  description: "The pairing vector for bidi-mark-inside-unquoted-token, in the other direction. UAX31-R3a-1's note names U+200E and U+200F together, and §9.5 lists both as the two Pattern_White_Space marks the format treats as ignorable format controls -- so a profile that hardcoded the left-to-right one passes that vector and fails this. The text below is written with the literal character because that is what a reader must reject."
+  error: { category: lexer }
+}
