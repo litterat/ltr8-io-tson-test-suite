@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/reader/refused/a-mixed-script-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§8.2"
+  description: "Latin p, Cyrillic U+0430, Latin y. Both characters are Identifier_Status=Allowed and the name is a well-formed identifier, so mechanisms 1 and 2 have nothing to say -- what refuses it is mechanism 3, the UTS #39 restriction level, whose recommended default is Highly Restrictive over the whole name. A homograph reads as another name exactly by mixing scripts inside one word."
+  refused: {
+    mechanism: restriction-level
+    unicode: "16.0"
+  }
+}
