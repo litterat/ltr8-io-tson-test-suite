@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/a-mixed-script-field-name.tn"
+{
+  order => {
+    pаy: text
+  }
+}

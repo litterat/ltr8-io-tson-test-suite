@@ -59,7 +59,19 @@
     So a bound that cannot be met and a default of the wrong type are both `resolver` here, and
     `validation` at this layer would be wrong however much the rule reads like a constraint.
     """
+  @doc:"""
+    `refused` is [TSON-DATA] §8.1's fifth outcome at this layer, and the schema-side peer of the reader
+    layer's. §8.2's name-hygiene mechanisms refuse a schema without making it invalid, and [TSON-SCHEMA]
+    §11.4 supplies the scopes they run over -- the members of one enum, the field names of one record
+    definition with its groups' member labels, the declared names of one schema, and the merged namespace
+    at `!!import`.
+
+    It is a distinct outcome from `error` for the reason §11.4 gives: the mechanisms read data the Unicode
+    Consortium declines to freeze, and as validity rules they would make an import of two independently
+    published schemas impossible to write where a skeleton happens to collide. A refused schema is one this
+    processor declines, under a policy a deployment may relax in code -- not one the format says is wrong.
+    """
   schema_sidecar => sidecar_common & spliced_header & {
-    ( valid: schema_valid | error: vector_error )
+    ( valid: schema_valid | error: vector_error | refused: vector_refusal )
   }
 }

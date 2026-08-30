@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/a-restricted-character-in-a-group-member-label.tn"
+{
+  contact => {
+    ( aĲb: text | phone: text )
+  }
+}

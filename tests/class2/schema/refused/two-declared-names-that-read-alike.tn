@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/two-declared-names-that-read-alike.tn"
+{
+  admin => {
+    a: text
+  }
+
+  аdmin => {
+    b: text
+  }
+}
