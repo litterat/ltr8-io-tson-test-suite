@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
-!!meta:"https://tson.io/2026/34/m/meta.tn"
-!!import:"https://tson.io/2026/34/m/core.tn"
+!!meta:"https://tson.io/2026/35/m/meta.tn"
+!!import:"https://tson.io/2026/35/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
   Formal shape of a schema-layer sidecar (tests/class2/schema/**/*-expected.tn) -- [TSON-SCHEMA]

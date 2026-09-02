@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/link-sidecar.tn"
-!!meta:"https://tson.io/2026/34/m/meta.tn"
-!!import:"https://tson.io/2026/34/m/core.tn"
+!!meta:"https://tson.io/2026/35/m/meta.tn"
+!!import:"https://tson.io/2026/35/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
   Formal shape of a link-layer sidecar (tests/class2/link/**/*-expected.tn) -- what [TSON-SCHEMA]
