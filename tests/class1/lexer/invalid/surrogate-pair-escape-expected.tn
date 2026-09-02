@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/lexer/invalid/surrogate-pair-escape-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+{
+  spec: "§7.2.2"
+  description: "A surrogate code point is not a Unicode scalar value, so an escape naming one is an error whichever half it is and whatever follows it. Two in a row are two errors, not a pair: the braced form is how a supplementary character is written."
+  error: { category: lexer }
+}
