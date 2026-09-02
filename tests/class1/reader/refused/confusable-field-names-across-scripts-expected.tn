@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
 {
   spec: "§8.2"
-  description: "Latin 'admin' and an 'admin' whose 'a' is Cyrillic U+0430 are two identifiers that NFC does not relate and a reader cannot tell apart. Mechanism 1 is skeleton distinctness over one named scope, and at this layer the scope is the field names of one record. The document is not invalid -- it is refused by this processor, under a policy that reads data the UCD does not freeze."
+  description: "Two distinct field names that read alike: Latin 'pass' and the same shape spelled in Cyrillic (U+0440 U+0430 U+0455 U+0455). Each name is single-script, so the restriction level admits both and mechanism 1 is the only rule with anything to say -- which is what makes this a test of mechanism 1 rather than of whichever rule happens to fire first. §2.5 makes the pair distinct names, so this is not the duplicate-field rule either."
   refused: {
     mechanism: skeleton-distinctness
     unicode: "16.0"

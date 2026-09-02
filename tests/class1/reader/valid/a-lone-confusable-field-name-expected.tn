@@ -2,13 +2,13 @@
 !!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
 {
   spec: "§8.2"
-  description: "The pairing vector for the two refusals: mechanism 1 is a relation over a set, so it fires on a colliding pair and never on a lone name. A Cyrillic field name with nothing to collide with is read like any other, which is the half a processor must not over-refuse -- §8.2 says 'id_пользователя alone is not' caught."
+  description: "The pairing vector for the look-alike refusal: mechanism 1 is a relation over a set, so it fires on a colliding pair and never on a lone name. This field name is confusable with the Latin 'pass' and has nothing here to collide with, so it is read like any other -- the half a processor must not over-refuse. It is single-script deliberately: a field name is a name (§2.5), so a within-word homograph would be refused by mechanism 3 before mechanism 1 had a pair to compare, and this vector is about mechanism 1."
   valid: {
     value: {
       record: {
         fields: [
           {
-            name: "аdmin"
+            name: "раѕѕ"
             value: { atom: { number: "1" } }
           }
         ]

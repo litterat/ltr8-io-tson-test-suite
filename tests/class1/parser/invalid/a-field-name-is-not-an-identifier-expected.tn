@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/a-field-name-is-not-an-identifier-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.5, §7.7"
+  description: "A field name is an identifier, and quoting does not change what a name is: '_id' is refused because identifier-Start is XID_Start and '_' is not in it, and '42x' because an identifier never begins with a digit. Both are refused in either spelling -- the quoted form carries a name the unquoted form would misread, never a key that is not a name. A record's fields are the named members of a shape, which is what makes them declarable; arbitrary keys are what a map is for."
+  error: { category: parser }
+}
