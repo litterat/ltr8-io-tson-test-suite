@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/duration-calendar-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "A year and a month have no fixed length, so they are not durations: P1M is one month and belongs to period, where a minute is PT1M. Splitting the two is what lets each be totally ordered."
+  type-ref: "duration"
+  error: { category: resolver }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/period-years-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "P1Y and P12M are one value -- a year is twelve months exactly, which is why the expected side states months rather than a spelling."
+  type-ref: "period"
+  valid: {
+    value: {
+      decimal: "12"
+    }
+  }
+}

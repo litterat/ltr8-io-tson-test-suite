@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/duration-week-form-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "PnW stands alone, as in the RFC 3339 Appendix A ABNF. A week is 7 days and a day 86400 s, so P3W is 1814400 -- one value with PT504H, which is why the expected side states seconds rather than a canonical spelling."
+  type-ref: "duration"
+  valid: {
+    value: {
+      decimal: "1814400"
+    }
+  }
+}

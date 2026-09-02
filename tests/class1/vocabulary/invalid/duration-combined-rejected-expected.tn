@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/duration-combined-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "The combined calendar-and-clock form is gone with the split. A span that is genuinely both is a record with a period field and a duration field."
+  type-ref: "duration"
+  error: { category: resolver }
+}

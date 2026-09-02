@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/period-negative-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "The leading sign is admitted, as on a duration."
+  type-ref: "period"
+  valid: {
+    value: {
+      decimal: "-3"
+    }
+  }
+}
