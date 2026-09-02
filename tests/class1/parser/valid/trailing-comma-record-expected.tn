@@ -1,0 +1,35 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/trailing-comma-record-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.4"
+  description: "A comma may follow a value, so one before the closing brace is ordinary: it separated the last field from the delimiter, which is nothing. It cannot mean an absent field -- absence is written '_' and occupies a slot -- so there is nothing for a stray comma to be confused with. The ban this replaces is RFC 8259's, and it exists there because that grammar has elision, which this one does not."
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: []
+        type-ref: _
+        core: {
+          record: {
+            fields: [
+              {
+                name: "x"
+                value: {
+                  schema-ref: _
+                  value: {
+                    annotations: []
+                    type-ref: _
+                    core: {
+                      token: { form: unquoted  text: "1" }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

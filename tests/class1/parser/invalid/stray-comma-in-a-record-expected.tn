@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/stray-comma-in-a-record-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.4"
+  description: "A comma may follow a value, and this one follows a comma. It needs no rule of its own: a comma is not a value, so the parser is simply missing one. A leading comma fails the same way. The trailing case is the only position where a comma with nothing after it is admitted, and it is admitted because nothing else could be meant there."
+  error: { category: parser }
+}
