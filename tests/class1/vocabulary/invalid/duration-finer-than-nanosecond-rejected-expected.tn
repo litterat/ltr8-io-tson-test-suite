@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/duration-finer-than-nanosecond-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "One hundred picoseconds -- a tenth fractional digit, where the seconds component carries at most nine. RFC 3339's time-secfrac is unbounded, so the restriction is the format's own: below a nanosecond there is no host type to decode into, and a processor could only round (making every bound beneath it lie) or refuse. A resolver error rather than a validation one, the cap being on the production and not on the value."
+  type-ref: "duration"
+  error: { category: resolver }
+}

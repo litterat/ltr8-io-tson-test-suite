@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/duration-past-widest-magnitude-negated-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "The one value a signed 64-bit count holds and the format does not: int64's range is asymmetric, and its most negative value has no positive counterpart. The ceiling is a magnitude, so this is refused and the sign of a duration never decides whether it can be written. A processor that bounds by casting to its own int64 admits this and fails here."
+  type-ref: "duration"
+  error: { category: validation }
+}

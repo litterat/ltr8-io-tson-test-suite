@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/duration-days-past-widest-magnitude-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "About 1095 years, written in days so that no single component is large -- the ceiling is on the value and not on any one field, the seconds count being summed from D, H, M and S. Several runtimes' duration types would hold this comfortably, which is the point: the range is the format's and not the reader's, or a document's meaning depends on who opens it. A span this long is a calendar span and is a period."
+  type-ref: "duration"
+  error: { category: validation }
+}

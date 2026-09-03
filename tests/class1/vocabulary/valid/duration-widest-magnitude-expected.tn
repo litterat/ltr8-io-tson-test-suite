@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/duration-widest-magnitude-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "The widest duration there is: 2^63 - 1 nanoseconds, about 292 years. A processor must represent every value up to here, so this is the vector that refuses one whose duration type is narrower."
+  type-ref: "duration"
+  valid: {
+    value: {
+      decimal: "9223372036.854775807"
+    }
+  }
+}

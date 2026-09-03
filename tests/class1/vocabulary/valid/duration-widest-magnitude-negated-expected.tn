@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/duration-widest-magnitude-negated-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "The same span negated, and the reason the ceiling is stated as a magnitude rather than as a signed 64-bit range: negating an admitted duration always yields an admitted one. A processor deriving its bounds from int64 directly admits one further value on this side, which the next vector refuses."
+  type-ref: "duration"
+  valid: {
+    value: {
+      decimal: "-9223372036.854775807"
+    }
+  }
+}
