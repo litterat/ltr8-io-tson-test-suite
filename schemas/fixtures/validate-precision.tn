@@ -1,0 +1,23 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-precision.tn"
+!!meta:"https://tson.io/2026/35/m/meta.tn"
+!!import:"https://tson.io/2026/35/m/core.tn"
+@doc:"""
+  `precision` on the two families that carry it ([TSON-SCHEMA] §5.5). meta's own `@doc` for `time_type` is
+  explicit that it constrains the value and not the spelling — "`precision: N` admits a value that is a
+  whole number of 10^-N seconds… A text encoding may spell an admitted value with trailing zeros
+  (`12:00:00.500` under `precision: 1`) and writes at most N digits" — and gives the worked example the
+  vectors here use.
+
+  Both fields are at `precision: 1`, so one document separates a processor testing the value from one
+  counting the digits the author typed: the two agree on every value written in its shortest form and
+  disagree on every other.
+  """
+{
+  tenth_second => !time ^ { precision: 1 }
+  tenth_span   => !duration ^ { precision: 1 }
+
+  reading => {
+    at:   tenth_second
+    over: tenth_span
+  }
+}

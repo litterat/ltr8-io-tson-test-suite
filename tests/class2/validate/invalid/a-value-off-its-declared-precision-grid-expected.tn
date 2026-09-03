@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-value-off-its-declared-precision-grid-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "The other half of the value rule, and the reason it is not simply a relaxation: 0.51 seconds is not a whole number of tenths, so `precision: 1` refuses it and nothing rounds it onto the grid. `at` is admitted, which fixes the pointer on `over`."
+  schema: "fixtures/validate-precision.tn"
+  error: {
+    category: validation
+    path: "/over"
+  }
+}

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-precision-constrained-value-spelled-with-trailing-zeros-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "meta's own worked example for `time_type.precision`, and its duration twin. Both values are a whole number of tenths of a second and both are spelled with three digits, so a processor counting the digits written refuses them and one testing the value admits them. The atom is exact either way — nothing is truncated to fit."
+  schema: "fixtures/validate-precision.tn"
+  valid: _
+}
