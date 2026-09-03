@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-scoped-value-read-against-the-schema-it-names.tn"
+!envelope {
+  local:   !note { body: "resolved in the governing namespace" }
+  foreign: !!schema:"https://tson.io/test-suite/schemas/fixtures/scoped-claim.tn"
+           !claim { id: CLM-5678  amount: 450 }
+  either:  !!schema:"https://tson.io/test-suite/schemas/fixtures/scoped-claim.tn"
+           !remark { text: "either cell, foreign this time" }
+  closed:  1
+}

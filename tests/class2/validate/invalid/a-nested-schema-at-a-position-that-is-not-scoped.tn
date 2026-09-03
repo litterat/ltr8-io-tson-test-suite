@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-nested-schema-at-a-position-that-is-not-scoped.tn"
+!envelope {
+  local:   !note { body: b }
+  foreign: !!schema:"https://tson.io/test-suite/schemas/fixtures/scoped-claim.tn"
+           !claim { id: CLM-1  amount: 1 }
+  either:  !note { body: b }
+  closed:  !!schema:"https://tson.io/test-suite/schemas/fixtures/scoped-claim.tn" 1
+}

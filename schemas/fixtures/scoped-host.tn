@@ -1,0 +1,24 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/scoped-host.tn"
+!!meta:"https://tson.io/2026/35/m/meta.tn"
+!!import:"https://tson.io/2026/35/m/core.tn"
+@doc:"""
+  The governing side of a scope push ([TSON-SCHEMA] §7.8). It deliberately does NOT import
+  scoped-claim.tn: the point of `extern` is that a schema takes a value from a schema it does not
+  import, the value naming its own.
+
+  One field per cell of core's three named `scoped` instances, plus one ordinary field. `closed` is
+  what makes §7.8's typed-position restriction testable -- cross-schema acceptance is authored
+  intent, so a nested `!!schema` at a position the schema did not declare scoped is refused.
+  """
+{
+  note => {
+    body: text
+  }
+
+  envelope => {
+    local:   declared
+    foreign: extern
+    either:  dynamic
+    closed:  int32
+  }
+}

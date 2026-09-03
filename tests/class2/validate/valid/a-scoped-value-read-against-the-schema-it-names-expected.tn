@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-scoped-value-read-against-the-schema-it-names-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.8"
+  description: "The three cells of core's scoped instances in one document: `declared` resolves the value's own type-ref in the governing namespace, `extern` pushes the schema the value names and validates against it in full, and `dynamic` admits either. The scope reverts when each value ends."
+  schema: "fixtures/scoped-host.tn"
+  valid: _
+}
