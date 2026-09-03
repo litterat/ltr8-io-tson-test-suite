@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/base64-missing-padding-rejected-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
-{
-  spec: "§5.3"
-  description: "A common implementation trap: some base64 decoding library functions (e.g. Java's java.util.Base64.getDecoder()) accept missing padding and would decode this identically to the correctly-padded \"TWE=\" -- RFC 4648 §3.2 requires padding unless the referring spec states otherwise, and §5.3 doesn't, so the !base64 atom contract must reject this. Confirmed empirically against java.util.Base64 before this vector was written"
-  type-ref: "base64"
-  error: { category: resolver }
-}

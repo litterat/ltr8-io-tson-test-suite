@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/bytes-plain-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "!bytes decodes RFC 4648 §4 base64 -- TWFu is Man (0x4d616e). base64 is not a default among four: it is the only spelling Part 1 has, a schemaless document having no schema to carry a @bytes_encoding directive. value is a plain hex string of the decoded octets, host-representation-neutral the same way the numeric families are."
+  type-ref: "bytes"
+  valid: {
+    value: {
+      hex: "4d616e"
+    }
+  }
+}

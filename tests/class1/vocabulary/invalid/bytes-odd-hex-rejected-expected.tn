@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/bytes-odd-hex-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "Six characters is well-formed hex and not well-formed base64, whose input is a multiple of four. That hex's alphabet is a subset of base64's is exactly why a spelling cannot be guessed from the token."
+  type-ref: "bytes"
+  error: { category: resolver }
+}
