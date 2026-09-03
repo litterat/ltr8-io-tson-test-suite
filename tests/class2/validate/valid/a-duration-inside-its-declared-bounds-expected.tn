@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-duration-inside-its-declared-bounds-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "A duration satisfying a floor, a ceiling and a step at once, and a date satisfying a floor. The ordinary case, and the one a processor that never read the bounds also passes — which is why the vectors below matter more."
+  schema: "fixtures/validate-bounds.tn"
+  valid: _
+}

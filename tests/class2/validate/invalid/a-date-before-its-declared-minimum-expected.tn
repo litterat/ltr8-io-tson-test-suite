@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-date-before-its-declared-minimum-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4"
+  description: "The same question one family over, and the reason the rule is about the `value` slot rather than about durations: a date bound is decoded by the same base type resolution and reaches the same string. The day before the floor, so nothing but the comparison separates it from the valid case."
+  schema: "fixtures/validate-bounds.tn"
+  error: {
+    category: validation
+    path: "/on"
+  }
+}

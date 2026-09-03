@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-duration-bound-compares-the-value-not-the-token.tn"
+!reservation {
+  span: P0DT5400S
+  on:   2024-06-01
+}

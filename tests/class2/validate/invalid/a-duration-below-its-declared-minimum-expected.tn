@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-duration-below-its-declared-minimum-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "Below the declared floor. A processor whose `value`-typed bound never became a duration cannot report this, because it has no bound to compare against — the schema loaded and the constraint went missing."
+  schema: "fixtures/validate-bounds.tn"
+  error: {
+    category: validation
+    path: "/span"
+  }
+}

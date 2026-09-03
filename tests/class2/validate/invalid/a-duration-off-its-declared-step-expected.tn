@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-duration-off-its-declared-step-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "Inside both bounds and off the quarter-hour step. Separated from the range vectors because `multiple_of` is the facet a processor is most likely to have left unimplemented while still enforcing the ordering."
+  schema: "fixtures/validate-bounds.tn"
+  error: {
+    category: validation
+    path: "/span"
+  }
+}
