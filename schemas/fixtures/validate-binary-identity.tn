@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-binary-identity.tn"
+!!meta:"https://tson.io/2026/35/m/meta.tn"
+!!import:"https://tson.io/2026/35/m/core.tn"
+@doc:"""
+  The three rules that compare two decoded values, over `bytes` ([TSON-SCHEMA] §7.5's duplicate rule and
+  §5.2's FIXED check, [TSON-DATA] §2.6's key identity). Each delegates the comparison to the type's own
+  equality contract, and a host language whose binary type carries reference equality satisfies none of
+  them while looking like it does: the schema loads, the document reads, and every comparison silently
+  answers "different".
+
+  Every vector over this fixture states one value **in one spelling, twice**, so none of them depends on
+  what §7.5's contract says about two spellings of one octet string — that question is open (see the
+  register) and a vector turning on it would fail a processor that answers it the other way. A value equals
+  itself under any contract there could be, which is what makes these safe and what makes them sharp: an
+  implementation failing them has no equality at all rather than the wrong one.
+  """
+{
+  digests => set<bytes>
+  by_hash => { bytes => text }
+
+  receipt => {
+    seen:  digests
+    named: by_hash
+    tag:   bytes = "SGk="
+  }
+}

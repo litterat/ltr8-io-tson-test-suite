@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/one-binary-value-twice-in-a-set-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.5"
+  description: "One octet string, one spelling, stated twice in a set. No equality contract can call these two values, so this fails only for a processor whose binary type compares by reference -- which is every processor that has not been asked the question."
+  schema: "fixtures/validate-binary-identity.tn"
+  error: {
+    category: validation
+    path: "/seen/1"
+  }
+}

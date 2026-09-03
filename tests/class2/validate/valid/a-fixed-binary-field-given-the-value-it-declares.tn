@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-fixed-binary-field-given-the-value-it-declares.tn"
+!receipt {
+  seen:  [ "SGk=" ]
+  named: { "SGVsbG8=" => greeting }
+  tag:   "SGk="
+}
