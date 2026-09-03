@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-value-in-a-sparse-member-set.tn"
+!listing {
+  p: 443
+  q: 2.50
+}
