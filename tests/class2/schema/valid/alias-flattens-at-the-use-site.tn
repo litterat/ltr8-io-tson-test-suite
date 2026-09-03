@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/valid/alias-flattens-at-the-use-site.tn"
-{
-  user_id => text
-
-  user => {
-    key: user_id
-  }
-}

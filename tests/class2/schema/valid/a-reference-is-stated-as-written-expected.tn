@@ -1,8 +1,8 @@
-!!id:"https://tson.io/test-suite/class2/schema/valid/alias-flattens-at-the-use-site-expected.tn"
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-reference-is-stated-as-written-expected.tn"
 !!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §8.3"
-  description: "A type position naming a REFERENCE entry is rewritten to the end of its chain and keeps the name the author wrote as @alias, which is what makes an instantiation identity a single-level comparison."
+  description: "A reference is a hop, not a rewrite: a type position naming a REFERENCE entry states that name, and the chain stays walkable through the entries themselves. When a processor collapses the chain is its own choice, and it is made after linking, when readers are built."
   meta: "meta.tn"
   import: ["core.tn"]
   valid: {
@@ -17,7 +17,7 @@
         user => !type_definition {
           kind: PRODUCT
           body: !record { fields: [
-            !record_field { name: key  type: @alias:user_id text }
+            !record_field { name: key  type: user_id }
           ] }
         }
       }
