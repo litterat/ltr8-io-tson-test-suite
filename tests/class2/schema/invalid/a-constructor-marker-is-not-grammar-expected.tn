@@ -1,0 +1,23 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-constructor-marker-is-not-grammar-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §12.1, [TSON-SCHEMA] §4.1"
+  description: """
+    There is no constructor marker. A `~` at the start of a type-def body is not a production of the
+    schema grammar, so this fails in the parser rather than resolving to a constructor -- which is the
+    observable difference between a revision that carries the marker and one that does not.
+
+    What makes an entry a constructor is that it IS-A `top` (§4.1): it composes, transitively, with a base
+    kind, which its supertype chain records. Dropping the `~` from this very declaration leaves a valid
+    constructor declaration, refused for a different reason -- §2.2.2, since this subject is governed by
+    meta.tn and not by the meta-kernel.
+
+    Category is `resolver` even though the failure is a parse one: §8.1 makes every error that stops a
+    schema loading a resolver error, however early the phase that caught it.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

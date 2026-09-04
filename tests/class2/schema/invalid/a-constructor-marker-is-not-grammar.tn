@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-constructor-marker-is-not-grammar.tn"
+{
+  my_atom => ~atom & { spec: text }
+}
