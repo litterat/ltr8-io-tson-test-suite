@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
 {
   spec: "§5.5"
-  description: "!cidr6 accepts an RFC 4291 §2.2 address followed by a prefix length, compression included; the authored spelling is preserved rather than expanded"
+  description: "!cidr6 accepts an RFC 4291 §2.2 address followed by a prefix length, compression included; the subject is authored in RFC 5952 canonical form, which is the form the expected value states"
   type-ref: "cidr6"
   valid: {
     value: { text: "2001:db8::/32" }

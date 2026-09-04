@@ -25,6 +25,13 @@
     - `rational` "numerator/denominator"
     - `text`     the value's canonical text form -- text, uri, uuid, the temporal family, ipv4,
                  cidr4/cidr6, mac, email
+
+    `cidr4`/`cidr6` carry a further obligation on the *subject*: author it in canonical form
+    (RFC 5952 for IPv6), because §5.2 leaves the host type open and the two readings of a network
+    disagree everywhere else. An implementation that keeps the authored text and one that parses a
+    prefix-plus-length value both satisfy a canonically-written vector, and a vector written
+    `2001:0db8:0000:0000:0000:0000:0000:0000/32` would refuse one of them for a choice the spec
+    leaves it.
     - `complex`  real and imaginary parts, each a decimal string
 
     `duration` and `period` use `decimal`, not `text`: their values are a signed number of
