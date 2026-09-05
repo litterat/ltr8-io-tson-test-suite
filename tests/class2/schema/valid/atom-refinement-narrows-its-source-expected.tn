@@ -9,7 +9,6 @@
     resolved: """
       !schema {
         small => !type_definition {
-          kind: ATOM
           source: integer_type
           supertypes: [int32]
           body: !integer_type { size: { bits: 32  signed: true }  min: 0  max: 10 }
