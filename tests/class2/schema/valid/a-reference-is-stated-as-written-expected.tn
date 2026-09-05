@@ -9,13 +9,11 @@
     resolved: """
       !schema {
         user_id => !type_definition {
-          kind: REFERENCE
           source: text
           body: !reference { target: text }
         }
 
         user => !type_definition {
-          kind: PRODUCT
           body: !record { fields: [
             !record_field { name: key  type: user_id }
           ] }

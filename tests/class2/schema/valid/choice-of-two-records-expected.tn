@@ -9,21 +9,18 @@
     resolved: """
       !schema {
         circle => !type_definition {
-          kind: PRODUCT
           body: !record { fields: [
             !record_field { name: radius  type: int32 }
           ] }
         }
 
         square => !type_definition {
-          kind: PRODUCT
           body: !record { fields: [
             !record_field { name: side  type: int32 }
           ] }
         }
 
         shape => !type_definition {
-          kind: SUM
           source: choice
           body: !choice { variants: [circle square]  disjoint: false }
         }

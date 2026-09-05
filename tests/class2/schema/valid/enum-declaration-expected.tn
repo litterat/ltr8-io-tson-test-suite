@@ -9,7 +9,6 @@
     resolved: """
       !schema {
         colour => !type_definition {
-          kind: ATOM
           source: enum
           body: !enum { members: [RED GREEN BLUE] }
         }
