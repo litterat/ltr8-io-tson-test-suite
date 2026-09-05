@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-duration-below-its-declared-minimum.tn"
+!reservation {
+  span: PT10M
+  on:   2024-06-01
+}

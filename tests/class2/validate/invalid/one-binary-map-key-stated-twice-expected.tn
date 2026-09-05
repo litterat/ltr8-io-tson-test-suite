@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/one-binary-map-key-stated-twice-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.6"
+  description: "The same question at a map key, where §2.6 states the rule outright -- key identity is the decoded value. A resolver error rather than a validation one, as every duplicate-key vector at the reader layer is: the rule is §2.6's and not the schema's, and the schema here only supplies the key type. A processor comparing decoded text keys correctly can still miss this one, the two rules being one rule only if something owns the comparison."
+  schema: "fixtures/validate-binary-identity.tn"
+  error: {
+    category: resolver
+    path: "/named/SGVsbG8="
+  }
+}

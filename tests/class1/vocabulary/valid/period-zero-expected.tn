@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/period-zero-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "P0Y, P0M and -P0M are one value."
+  type-ref: "period"
+  valid: {
+    value: {
+      decimal: "0"
+    }
+  }
+}

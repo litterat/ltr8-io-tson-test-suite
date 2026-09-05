@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/scoped-claim.tn"
+!!meta:"https://tson.io/2026/35/m/meta.tn"
+!!import:"https://tson.io/2026/35/m/core.tn"
+@doc:"""
+  The foreign side of a scope push ([TSON-SCHEMA] §7.8): a schema a subject's value names for itself
+  with a nested `!!schema`, declaring a type the governing schema knows nothing about. Its identity is
+  written into the subject directly rather than spliced, the corpus's own identities carrying no spec
+  revision -- only the three bundled names do, which is the whole reason the splice exists.
+  """
+{
+  claim => {
+    id:     text
+    amount: int32
+  }
+
+  @doc:"A second type in the same schema, so a vector can name one that is not the one admitted."
+  remark => {
+    text: text
+  }
+}

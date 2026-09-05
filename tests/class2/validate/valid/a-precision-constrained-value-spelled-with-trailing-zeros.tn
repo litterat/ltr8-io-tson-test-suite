@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-precision-constrained-value-spelled-with-trailing-zeros.tn"
+!reading {
+  at:   "12:00:00.500Z"
+  over: PT0.500S
+}

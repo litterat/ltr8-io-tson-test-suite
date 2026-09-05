@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/link-shipping.tn"
-!!meta:"https://tson.io/2026/34/m/meta.tn"
+!!meta:"https://tson.io/2026/35/m/meta.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/link-money.tn"
 @doc:"The other half of the diamond: imports the same link-money.tn by a second route."
 {

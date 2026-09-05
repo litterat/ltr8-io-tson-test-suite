@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/lexer/valid/unicode-escape-braced-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+{
+  spec: "§7.2.2"
+  description: "The braced escape names a Unicode scalar value directly, so it reaches the supplementary planes four hex digits cannot -- including plane 14's invisible characters, which a document has reason to write visibly rather than embed. It spells a BMP character too, the two forms being two spellings of one number. The expected text writes the visible character literally and the invisible one as an escape, which is the same reason the braced form exists."
+  valid: {
+    tokens: [
+      { kind: single-line-token  text: "😀 \u{E0100} A" }
+    ]
+  }
+}

@@ -187,9 +187,9 @@ directive in before parsing:
 
 | Short name       | Current real identity                      |
 |------------------|--------------------------------------------|
-| `meta-kernel.tn` | `https://tson.io/2026/34/m/meta-kernel.tn` |
-| `meta.tn`        | `https://tson.io/2026/34/m/meta.tn`        |
-| `core.tn`        | `https://tson.io/2026/34/m/core.tn`        |
+| `meta-kernel.tn` | `https://tson.io/2026/35/m/meta-kernel.tn` |
+| `meta.tn`        | `https://tson.io/2026/35/m/meta.tn`        |
+| `core.tn`        | `https://tson.io/2026/35/m/core.tn`        |
 
 Any other short name is the corpus's own schema, named by its path under `schemas/` — so
 `fixtures/link-money.tn` is `https://tson.io/test-suite/schemas/fixtures/link-money.tn`. The three

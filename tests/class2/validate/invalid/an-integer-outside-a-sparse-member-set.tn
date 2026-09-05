@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-integer-outside-a-sparse-member-set.tn"
+!listing {
+  p: 22
+  q: 1
+}

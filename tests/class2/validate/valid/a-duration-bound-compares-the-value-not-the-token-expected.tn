@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-duration-bound-compares-the-value-not-the-token-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "5400 seconds is 90 minutes, which is the ceiling PT2H and the step PT15M both admit, and it shares no substring with either. A day is exactly 86400 s and a week 7 days, so the components are interchangeable and the comparison is on the value; a processor comparing tokens has nothing to compare here."
+  schema: "fixtures/validate-bounds.tn"
+  valid: _
+}

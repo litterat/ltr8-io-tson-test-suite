@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-duration-inside-its-declared-bounds.tn"
+!reservation {
+  span: PT45M
+  on:   2024-06-01
+}

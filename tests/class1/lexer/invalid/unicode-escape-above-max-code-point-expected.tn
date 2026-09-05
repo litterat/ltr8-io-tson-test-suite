@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/lexer/invalid/unicode-escape-above-max-code-point-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+{
+  spec: "§7.2.2"
+  description: "The braced escape's value must be a Unicode scalar value, so one above U+10FFFF names nothing and is an error."
+  error: { category: lexer }
+}

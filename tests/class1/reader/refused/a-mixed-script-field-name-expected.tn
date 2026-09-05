@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/reader/refused/a-mixed-script-field-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§8.2"
+  description: "A field name is an identifier at every layer (§2.5), so it meets the restriction level exactly as a type-ref or annotation name does -- there is no conformance class in which a record's field names are judged by a different rule. Latin p, Cyrillic U+0430, Latin y: a within-word homograph, refused by mechanism 3 with nothing for mechanism 1 to compare it against."
+  refused: {
+    mechanism: restriction-level
+    unicode: "16.0"
+  }
+}

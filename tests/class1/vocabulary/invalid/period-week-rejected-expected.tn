@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/period-week-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "No W component: a week is 7 days, a fixed length, so it is a duration."
+  type-ref: "period"
+  error: { category: resolver }
+}

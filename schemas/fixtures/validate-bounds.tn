@@ -1,0 +1,24 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-bounds.tn"
+!!meta:"https://tson.io/2026/35/m/meta.tn"
+!!import:"https://tson.io/2026/35/m/core.tn"
+@doc:"""
+  Ordered bounds on the atom families whose values are not numbers ([TSON-SCHEMA] §5.5, §9). A
+  constructor's constraint fields are typed `value` — §7.4's rule, and the bootstrap ordering behind it:
+  `duration_type` is what defines a duration, and `duration => !duration_type {}` lives a layer up in
+  core.tn, so meta.tn cannot write `min: duration`. A `value` slot is decoded by [TSON-DATA] §4, which
+  resolves boolean, number and string and none of those is a duration — so a processor that stops at base
+  type resolution has a string where the bound should be, and one that reads the token under the atom of
+  the position it stands in has the bound.
+
+  `window` carries all three facets a duration takes, so a document exercises a floor, a ceiling and a
+  step against one declaration. `booking` carries a date bound, the same question one family over.
+  """
+{
+  window  => !duration ^ { min: PT30M  max: PT2H  multiple_of: PT15M }
+  booking => !date ^ { min: 2020-01-01 }
+
+  reservation => {
+    span: window
+    on:   booking
+  }
+}

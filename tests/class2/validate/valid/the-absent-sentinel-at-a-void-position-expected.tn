@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/the-absent-sentinel-at-a-void-position-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.3"
+  description: "A void-typed position admits the absent sentinel '_', and that is the whole of its contract: the type has one inhabitant and this is how it is written."
+  schema: "core.tn"
+  valid: _
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/period-years-and-months-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "Y then M, in that order. P1Y6M and P18M are one value."
+  type-ref: "period"
+  valid: {
+    value: {
+      decimal: "18"
+    }
+  }
+}

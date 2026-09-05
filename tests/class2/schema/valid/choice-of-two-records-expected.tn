@@ -2,31 +2,27 @@
 !!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §8.2"
-  description: "A choice resolves to a SUM entry naming its variants. Two record variants share a discrimination class, so the derived disjointness is false -- and a variant is not a subtype of the choice, subtypes being the inverse of the supertype relation and not of membership."
+  description: "A choice resolves to a SUM entry naming its variants. Two record variants share a discrimination class, so the derived disjointness -- recorded on the choice body, which is the only thing with a variant list -- is false -- and a variant is not a subtype of the choice, subtypes being the inverse of the supertype relation and not of membership."
   meta: "meta.tn"
   import: ["core.tn"]
   valid: {
     resolved: """
       !schema {
         circle => !type_definition {
-          kind: PRODUCT
           body: !record { fields: [
             !record_field { name: radius  type: int32 }
           ] }
         }
 
         square => !type_definition {
-          kind: PRODUCT
           body: !record { fields: [
             !record_field { name: side  type: int32 }
           ] }
         }
 
         shape => !type_definition {
-          kind: SUM
           source: choice
-          disjoint: false
-          body: !choice { variants: [circle square] }
+          body: !choice { variants: [circle square]  disjoint: false }
         }
       }
       """

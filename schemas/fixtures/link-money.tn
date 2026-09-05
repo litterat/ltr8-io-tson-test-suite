@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/link-money.tn"
-!!meta:"https://tson.io/2026/34/m/meta.tn"
-!!import:"https://tson.io/2026/34/m/core.tn"
+!!meta:"https://tson.io/2026/35/m/meta.tn"
+!!import:"https://tson.io/2026/35/m/core.tn"
 @doc:"""
   A fixture schema for the class2/link layer, declaring one type the vectors import.
 

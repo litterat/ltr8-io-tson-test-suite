@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-fixed-binary-field-given-the-value-it-declares-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A FIXED field written with exactly the value it is fixed to, which §5.2 makes the one document such a field accepts. A valid vector rather than an invalid one on purpose: a missing equality is usually a missing verdict, and here it is an inverted one -- reference equality rejects the only document that can conform, so the field is unusable and every other vector over it passes for the wrong reason."
+  schema: "fixtures/validate-binary-identity.tn"
+  valid: _
+}

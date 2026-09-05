@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-extern-position-naming-no-schema-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.8"
+  description: "The other half of the cell rule: core's `extern` holds EXTERN alone, so a value carrying no `!!schema` names a type in a namespace the position does not admit. Schema scope changes are always visible in the data, never implicit, which is what makes the omission an error rather than a fallback to the governing namespace."
+  schema: "fixtures/scoped-host.tn"
+  error: {
+    category: validation
+    path: "/foreign"
+  }
+}

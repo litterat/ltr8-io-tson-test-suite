@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-reference-is-stated-as-written.tn"
+{
+  user_id => text
+
+  user => {
+    key: user_id
+  }
+}

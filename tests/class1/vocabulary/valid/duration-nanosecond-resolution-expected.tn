@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/duration-nanosecond-resolution-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "One nanosecond, the finest resolution a duration carries. Every mainstream runtime's duration type reaches it and none goes finer, so it is where the value space stops rather than where any one implementation does."
+  type-ref: "duration"
+  valid: {
+    value: {
+      decimal: "0.000000001"
+    }
+  }
+}

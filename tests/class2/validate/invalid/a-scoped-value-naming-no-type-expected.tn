@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-scoped-value-naming-no-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.8"
+  description: "A scoped position is open -- the value names its own type -- so a value naming none is a validation error rather than a vocabulary-only read. §7.8 states it for the extern cell (\"the discriminant is required\") and it holds for every cell, there being nothing else to discriminate on."
+  schema: "fixtures/scoped-host.tn"
+  error: {
+    category: validation
+    path: "/local"
+  }
+}

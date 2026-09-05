@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
 {
   spec: "§5.5"
-  description: "!cidr4 accepts a dotted-quad address followed by a prefix length; the value is the authored text, since a CIDR block has no JDK host type"
+  description: "!cidr4 accepts a dotted-quad address followed by a prefix length; the value is the network -- the prefix address and the prefix length -- stated here in its canonical text form"
   type-ref: "cidr4"
   valid: {
     value: { text: "192.0.2.0/24" }

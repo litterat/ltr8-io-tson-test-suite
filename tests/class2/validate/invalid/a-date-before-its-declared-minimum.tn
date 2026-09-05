@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-date-before-its-declared-minimum.tn"
+!reservation {
+  span: PT45M
+  on:   2019-12-31
+}

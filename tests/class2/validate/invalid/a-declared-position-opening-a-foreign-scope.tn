@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-declared-position-opening-a-foreign-scope.tn"
+!envelope {
+  local:   !!schema:"https://tson.io/test-suite/schemas/fixtures/scoped-claim.tn"
+           !claim { id: CLM-1  amount: 1 }
+  foreign: !!schema:"https://tson.io/test-suite/schemas/fixtures/scoped-claim.tn"
+           !claim { id: CLM-1  amount: 1 }
+  either:  !note { body: b }
+  closed:  1
+}

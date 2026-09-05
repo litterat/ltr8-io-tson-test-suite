@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-extern-position-naming-no-schema.tn"
+!envelope {
+  local:   !note { body: b }
+  foreign: !note { body: "a governing-namespace type where a foreign one is required" }
+  either:  !note { body: b }
+  closed:  1
+}

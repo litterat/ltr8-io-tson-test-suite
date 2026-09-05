@@ -1,0 +1,24 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-reference-is-stated-as-written-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §8.3"
+  description: "A reference is a hop, not a rewrite: a type position naming a REFERENCE entry states that name, and the chain stays walkable through the entries themselves. When a processor collapses the chain is its own choice, and it is made after linking, when readers are built."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        user_id => !type_definition {
+          source: text
+          body: !reference { target: text }
+        }
+
+        user => !type_definition {
+          body: !record { fields: [
+            !record_field { name: key  type: user_id }
+          ] }
+        }
+      }
+      """
+  }
+}

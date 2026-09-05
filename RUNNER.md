@@ -145,7 +145,7 @@ or `schema` field, and the runner splices the real, current directive into the s
 parsing. `meta`/`import` govern a schema-document subject, which is what the `class2/schema/` and
 `class2/link/` layers use; `schema` governs a data-document subject, which is what `class2/validate/`
 uses. Hardcoding
-`https://tson.io/2026/34/m/core.tn` in every such subject would mean editing all of them at each
+`https://tson.io/2026/35/m/core.tn` in every such subject would mean editing all of them at each
 revision bump.
 
 **A short name that is not one of those three is the corpus's own schema**, named by its path under

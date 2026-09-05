@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-integer-outside-a-sparse-member-set-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6"
+  description: "A value the member set does not admit. 22 lies below every member and 81 would lie between two, so a set that has silently degraded into a range still fails this one. `q` is a member and does not fail, which is what fixes the pointer on `/p`."
+  schema: "fixtures/validate-ports.tn"
+  error: {
+    category: validation
+    path: "/p"
+  }
+}

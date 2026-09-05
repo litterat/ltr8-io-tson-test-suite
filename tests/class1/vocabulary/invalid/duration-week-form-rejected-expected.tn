@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/duration-week-form-rejected-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
-{
-  spec: "§5.4"
-  description: "ISO 8601 also defines a PnW week-count alternative form, mutually exclusive with the Y/M/D/H/M/S designators -- §5.4's own table gives the accepted format as literally PnYnMnDTnHnMnS with no W, read here as exhaustive rather than illustrative. This is a genuine ambiguity, not a confident call -- see this suite's sibling implementation's SPEC-FEEDBACK.md #12. Implementations that read the format reference as deferring wholesale to 'the ISO 8601 duration format' (of which PnW is a normal part) may reasonably accept this instead"
-  type-ref: "duration"
-  error: { category: resolver }
-}

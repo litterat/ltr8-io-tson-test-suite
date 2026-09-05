@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
 {
   spec: "§4.5"
-  description: "Base type resolution runs over an unquoted token in the fixed order null, boolean, number, string, so true is a boolean and Alice falls through to string."
+  description: "Base type resolution runs over an unquoted token in the fixed order boolean, number, string, so true is a boolean and Alice falls through to string."
   valid: {
     value: { record: { fields: [
       { name: "flag"  value: { atom: { boolean: true } } }

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/period-months-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "An M component alone. The value is a signed number of months."
+  type-ref: "period"
+  valid: {
+    value: {
+      decimal: "18"
+    }
+  }
+}

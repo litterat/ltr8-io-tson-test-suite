@@ -1,0 +1,48 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/a-quoted-field-name-is-the-same-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.5, §7.4"
+  description: "The field-name production keeps both spellings, and a quoted name that is an identifier is an ordinary field name. What quoting buys is the lexical accidents of the unquoted form -- a name that would otherwise resolve as a number -- and not a different set of names."
+  valid: {
+    document: {
+      id: _
+      schema: _
+      root: {
+        annotations: []
+        type-ref: _
+        core: {
+          record: {
+            fields: [
+              {
+                name: "order-id"
+                value: {
+                  schema-ref: _
+                  value: {
+                    annotations: []
+                    type-ref: _
+                    core: {
+                      token: { form: unquoted  text: "1" }
+                    }
+                  }
+                }
+              }
+              {
+                name: "order-id2"
+                value: {
+                  schema-ref: _
+                  value: {
+                    annotations: []
+                    type-ref: _
+                    core: {
+                      token: { form: unquoted  text: "2" }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

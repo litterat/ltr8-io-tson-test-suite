@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/one-binary-map-key-stated-twice.tn"
+!receipt {
+  seen:  [ "SGk=" ]
+  named: { "SGVsbG8=" => greeting  "SGVsbG8=" => again }
+  tag:   "SGk="
+}

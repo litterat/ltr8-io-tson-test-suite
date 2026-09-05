@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/resolver-sidecar.tn"
-!!meta:"https://tson.io/2026/34/m/meta.tn"
-!!import:"https://tson.io/2026/34/m/core.tn"
+!!meta:"https://tson.io/2026/35/m/meta.tn"
+!!import:"https://tson.io/2026/35/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
   Formal shape of a resolver-layer sidecar (tests/class1/resolver/**/*-expected.tn) -- base type
@@ -61,13 +61,15 @@
   }
 
   @doc:"""
-    The result of base type resolution (§4). `null` carries nothing and is written `_`; `boolean`
-    carries the resolved value; `string` its text; `number` a full number_form -- the structure the
-    grammar identified, never a host numeric type, which §4.3 leaves to binding.
+    The result of base type resolution (§4). `boolean` carries the resolved value; `string` its
+    text; `number` a full number_form -- the structure the grammar identified, never a host numeric
+    type, which §4.3 leaves to binding.
+
+    There are three members because §4 resolves three classes. Absence is not one of them: `_` is
+    lexical, never a token, so no token this layer describes can resolve to it.
     """
   base_value => {
-    ( null: void
-    | boolean: boolean
+    ( boolean: boolean
     | string: string_value
     | number: number_form )
   }

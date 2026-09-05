@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-decimal-outside-a-sparse-member-set-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6"
+  description: "The decimal family's own member set, which the exact tier carries and the binary tiers do not: a member set is a claim about a step on a grid, and a binary grid has no exact one. 3 is admitted by every other facet on the body and refused by this one."
+  schema: "fixtures/validate-ports.tn"
+  error: {
+    category: validation
+    path: "/q"
+  }
+}

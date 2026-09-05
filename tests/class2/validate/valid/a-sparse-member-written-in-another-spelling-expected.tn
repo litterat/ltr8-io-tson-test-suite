@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-sparse-member-written-in-another-spelling-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §4.3"
+  description: "Membership is the value denoted, not the spelling: `0x50` is the member written `80`, and `1.00` the member written `1`. Neither spelling appears in the schema, so a processor comparing tokens rather than values fails this while passing every vector where the two happen to agree."
+  schema: "fixtures/validate-ports.tn"
+  valid: _
+}

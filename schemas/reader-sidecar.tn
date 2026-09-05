@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
-!!meta:"https://tson.io/2026/34/m/meta.tn"
-!!import:"https://tson.io/2026/34/m/core.tn"
+!!meta:"https://tson.io/2026/35/m/meta.tn"
+!!import:"https://tson.io/2026/35/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
   Formal shape of a reader-layer sidecar (tests/class1/reader/**/*-expected.tn) -- see README.md's
@@ -41,9 +41,9 @@
     concern, so `0xFF` and `255` are one value here and a vector cannot ask which was written.
     That is the resolver layer's question, not this one.
 
-    §4's `null` has no member, deliberately: this layer exists for §2.5/§2.6/§2.8/§2.9, and whether
-    a tree model gives `null` a node of its own or folds it in with the absent sentinel is a model
-    choice that changes no document's verdict. A vector turning on it would be testing the model.
+    There are three members because §4 resolves three classes. The token `null` is a string like
+    any other unquoted token that matched neither the boolean nor the number rule, and absence is
+    not a base type at all: `_` is lexical, and reaches a tree through `absent` below.
     """
   reader_atom => {
     ( boolean: boolean

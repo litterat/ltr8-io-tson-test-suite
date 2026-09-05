@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-value-off-its-declared-precision-grid.tn"
+!reading {
+  at:   "12:00:00.5Z"
+  over: PT0.51S
+}

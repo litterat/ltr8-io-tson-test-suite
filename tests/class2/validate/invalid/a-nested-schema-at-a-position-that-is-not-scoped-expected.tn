@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-nested-schema-at-a-position-that-is-not-scoped-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.8"
+  description: "§7.8's typed-position restriction: cross-schema acceptance is authored intent, so a nested `!!schema` at a position whose type the outer schema constrains is an error. `closed` is typed int32, which admits no scope push, and the failure is at that field rather than at the record."
+  schema: "fixtures/scoped-host.tn"
+  error: {
+    category: validation
+    path: "/closed"
+  }
+}

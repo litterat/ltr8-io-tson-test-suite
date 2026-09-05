@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/period-days-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "No D component: a day is a fixed length and belongs to duration. A span that is both is a record with a field of each."
+  type-ref: "period"
+  error: { category: resolver }
+}

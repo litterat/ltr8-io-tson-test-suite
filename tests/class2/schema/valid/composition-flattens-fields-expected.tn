@@ -9,7 +9,6 @@
     resolved: """
       !schema {
         named => !type_definition {
-          kind: PRODUCT
           subtypes: [person]
           body: !record { fields: [
             !record_field { name: name  type: text }
@@ -17,7 +16,6 @@
         }
       
         person => !type_definition {
-          kind: PRODUCT
           supertypes: [named]
           body: !record { supertypes: [named]  fields: [
             !record_field { name: name  type: text }

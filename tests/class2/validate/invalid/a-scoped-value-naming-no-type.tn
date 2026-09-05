@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-scoped-value-naming-no-type.tn"
+!envelope {
+  local:   { body: "no type-ref, and a scoped position has nothing to infer one from" }
+  foreign: !!schema:"https://tson.io/test-suite/schemas/fixtures/scoped-claim.tn"
+           !claim { id: CLM-1  amount: 1 }
+  either:  !note { body: b }
+  closed:  1
+}

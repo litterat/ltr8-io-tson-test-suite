@@ -9,7 +9,6 @@
     resolved: """
       !schema {
         post => !type_definition {
-          kind: PRODUCT
           body: !record { fields: [
             !record_field { name: title  type: text }
             !record_field { name: tags   type: array_text_xxhash }
@@ -17,7 +16,6 @@
         }
       
         @synthetic array_text_xxhash => !type_definition {
-          kind: PRODUCT
           source: array
           body: !array { element_type: text }
         }

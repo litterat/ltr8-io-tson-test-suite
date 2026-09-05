@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/the-null-token-at-a-void-position-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.3"
+  description: "'null' is an unquoted token like any other, so it does not spell absence at a void-typed position either: void admits '_' and nothing else. The failure is at the root value itself, so the pointer is the root's own empty string."
+  schema: "core.tn"
+  error: {
+    category: validation
+    path: ""
+  }
+}

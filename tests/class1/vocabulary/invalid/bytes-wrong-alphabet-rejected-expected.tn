@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/bytes-wrong-alphabet-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "The URL-safe alphabet's own characters are not base64's. !bytes is base64 and nothing else in a schemaless document; a schema wanting base64url says so with @bytes_encoding."
+  type-ref: "bytes"
+  error: { category: resolver }
+}

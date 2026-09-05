@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class1/resolver/valid/null-token-is-a-string-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/resolver-sidecar.tn"
+{
+  spec: "§4.4"
+  description: "The unquoted token 'null' is a string. §4 resolves boolean, then number, then string, and 'null' matches neither of the first two -- it is an unquoted token like 'frobnicate', with no keyword status to give it another reading. Absence has one spelling, the sentinel '_', which is lexical and never a token this layer sees."
+  valid: {
+    base-value: { string: { text: "null" } }
+  }
+}

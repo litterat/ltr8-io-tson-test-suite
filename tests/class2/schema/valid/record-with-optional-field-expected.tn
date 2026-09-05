@@ -9,7 +9,6 @@
     resolved: """
       !schema {
         point => !type_definition {
-          kind: PRODUCT
           body: !record { fields: [
             !record_field { name: x      type: int32 }
             !record_field { name: y      type: int32 }

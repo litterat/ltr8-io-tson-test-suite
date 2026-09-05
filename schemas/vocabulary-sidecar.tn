@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
-!!meta:"https://tson.io/2026/34/m/meta.tn"
-!!import:"https://tson.io/2026/34/m/core.tn"
+!!meta:"https://tson.io/2026/35/m/meta.tn"
+!!import:"https://tson.io/2026/35/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
   Formal shape of a vocabulary-layer sidecar (tests/class1/vocabulary/**/*-expected.tn) -- the
@@ -15,11 +15,6 @@
     imaginary: text
   }
 
-  duration_value => {
-    period: text
-    clock: text
-  }
-
   @doc:"""
     The expected host value, host-representation-neutral: §5.2 leaves the concrete bound type
     implementation-defined, so a vector states the value in whichever textual form every
@@ -30,19 +25,30 @@
     - `rational` "numerator/denominator"
     - `text`     the value's canonical text form -- text, uri, uuid, the temporal family, ipv4,
                  cidr4/cidr6, mac, email
-    - `complex`  real and imaginary parts, each a decimal string
-    - `duration` the calendar and clock halves, each an ISO 8601 string
 
-    The flat `value: text?` this replaces could not express the last two at all, though real
-    sidecars have always written them as nested records.
+    `cidr4`/`cidr6` carry a further obligation on the *subject*: author it in canonical form
+    (RFC 5952 for IPv6), because §5.2 leaves the host type open and the two readings of a network
+    disagree everywhere else. An implementation that keeps the authored text and one that parses a
+    prefix-plus-length value both satisfy a canonically-written vector, and a vector written
+    `2001:0db8:0000:0000:0000:0000:0000:0000/32` would refuse one of them for a choice the spec
+    leaves it.
+    - `complex`  real and imaginary parts, each a decimal string
+
+    `duration` and `period` use `decimal`, not `text`: their values are a signed number of
+    seconds and a signed number of months respectively, so `PT1H30M` is `5400` and `P1Y2M` is
+    `14`. Stating the value rather than a canonical spelling is what keeps them comparable --
+    `P3W`, `PT504H` and `P21D` are one duration, and no implementation's choice of output form
+    is privileged.
+
+    The flat `value: text?` this replaces could not express complex at all, though real
+    sidecars have always written it as a nested record.
     """
   atom_value => {
     ( decimal: text
     | hex: text
     | rational: text
     | text: text
-    | complex: complex_value
-    | duration: duration_value )
+    | complex: complex_value )
   }
 
   vocabulary_valid => {

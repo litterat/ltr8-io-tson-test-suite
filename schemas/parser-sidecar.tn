@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
-!!meta:"https://tson.io/2026/34/m/meta.tn"
-!!import:"https://tson.io/2026/34/m/core.tn"
+!!meta:"https://tson.io/2026/35/m/meta.tn"
+!!import:"https://tson.io/2026/35/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
   Formal shape of a parser-layer sidecar (tests/class1/parser/**/*-expected.tn) -- see README.md's

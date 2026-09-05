@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-declared-position-opening-a-foreign-scope-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.8"
+  description: "A scoped instance's `scope` is what the position admits, and core's `declared` holds LOCAL alone: the type comes from the governing namespace, so a value opening a foreign scope is refused there even though the very same value is admitted one field along, at `extern`."
+  schema: "fixtures/scoped-host.tn"
+  error: {
+    category: validation
+    path: "/local"
+  }
+}

@@ -2,10 +2,10 @@
 !!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
 {
   spec: "§7.2.2"
-  description: "All nine single-character escape sequences decode to their target characters"
+  description: "All eight single-character escape sequences decode to their target characters. There is no solidus escape: a solidus needs no escaping anywhere in the format."
   valid: {
     tokens: [
-      { kind: single-line-token  text: "\" \\ / \b \f \n \r \t  " }
+      { kind: single-line-token  text: "\" \\ \b \f \n \r \t  " }
     ]
   }
 }

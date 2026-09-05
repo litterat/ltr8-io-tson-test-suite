@@ -2,6 +2,6 @@
 !!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
 {
   spec: "§7.2.2"
-  description: "A high surrogate escape not immediately followed by a low surrogate escape is a lexer error"
+  description: "A surrogate code point is not a Unicode scalar value, so an escape naming one is a lexer error. Nothing may follow it to make it well-formed: there is no pairing rule left to satisfy."
   error: { category: lexer }
 }
