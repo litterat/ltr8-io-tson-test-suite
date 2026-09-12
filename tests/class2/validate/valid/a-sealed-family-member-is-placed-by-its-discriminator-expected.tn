@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-sealed-family-member-is-placed-by-its-discriminator-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "The document carries no tag and the schema declares no mapping: the member is found by reading the field it already states, and `breed` is a field only `dog` declares, so the value validates only if the read really reached it."
+  schema: "fixtures/validate-family.tn"
+  valid: _
+}

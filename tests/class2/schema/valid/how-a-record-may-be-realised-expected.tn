@@ -1,0 +1,47 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/how-a-record-may-be-realised-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "How a record may be realised is a fact of the resolved body and not an annotation: the marks are consumed and `record.extension` carries what they said, so a resolver that preserved them instead would show them in the annotation channel and leave every record OPEN. Each of the four members appears once here, and the discriminator field carries its own member on the field rather than on the record. OPEN and false are the defaults and are omitted, as every default is."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        pet => !type_definition {
+          subtypes: [dog]
+          body: !record { fields: [
+            !record_field { name: pet_type  type: text  discriminator: true }
+            !record_field { name: name      type: text }
+          ]  extension: SEALED }
+        }
+
+        dog => !type_definition {
+          supertypes: [pet]
+          body: !record { supertypes: [pet]  fields: [
+            !record_field { name: pet_type  type: text  state: REQUIRED_FIXED  discriminator: true  value: "dog" }
+            !record_field { name: name      type: text }
+          ] }
+        }
+
+        shape => !type_definition {
+          body: !record { fields: [
+            !record_field { name: area  type: int32 }
+          ]  extension: ABSTRACT }
+        }
+
+        reading => !type_definition {
+          body: !record { fields: [
+            !record_field { name: sensor  type: text }
+          ]  extension: FINAL }
+        }
+
+        plain => !type_definition {
+          body: !record { fields: [
+            !record_field { name: note  type: text }
+          ] }
+        }
+      }
+      """
+  }
+}

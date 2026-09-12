@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-sealed-family-member-is-placed-by-its-discriminator.tn"
+!holder {
+  p: {
+    pet_type: dog
+    name:     Rex
+    breed:    corgi
+  }
+}

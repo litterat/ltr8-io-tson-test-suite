@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-discriminator-value-no-member-pins-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "The mapping is derived from the members' pins and never declared, so a value outside it selects nothing. One character from `dog`, which is the mistake the family exists to catch at the position rather than as a run of unknown fields further in."
+  schema: "fixtures/validate-family.tn"
+  error: {
+    category: validation
+    path: "/p"
+  }
+}

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-agreeing-with-the-discriminator-is-admitted-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A tag at a sealed position may assert what the members already decided. It is not required, it changes nothing, and where it agrees the value reads exactly as it would without it."
+  schema: "fixtures/validate-family.tn"
+  valid: _
+}

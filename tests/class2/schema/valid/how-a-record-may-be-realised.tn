@@ -1,0 +1,23 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/how-a-record-may-be-realised.tn"
+{
+  pet => @sealed {
+    @discriminator pet_type: text
+    name: text
+  }
+
+  dog => pet & {
+    pet_type: = "dog"
+  }
+
+  shape => @abstract {
+    area: int32
+  }
+
+  reading => @final {
+    sensor: text
+  }
+
+  plain => {
+    note: text
+  }
+}

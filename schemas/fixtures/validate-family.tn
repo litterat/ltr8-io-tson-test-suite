@@ -1,0 +1,58 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-family.tn"
+!!meta:"https://tson.io/2026/36/m/meta.tn"
+!!import:"https://tson.io/2026/36/m/core.tn"
+@doc:"""
+  A subtype family, both ways a position typed by one is read ([TSON-SCHEMA] §5.2).
+
+  `pet` is SEALED: it declares a discriminator and each member pins it, so a value at a `pet` position is
+  placed by reading the member it already carries and needs no tag at all. `shape` is ABSTRACT: it declares
+  no discriminator, so the tag is the only selector and is required. Both bases are abstract — neither has
+  direct instances — and that is what makes a tag naming either of them select nothing.
+
+  `frame` pins with `= 0xFF` where the documents write `255`, which is the case a processor comparing
+  tokens rather than values gets wrong while passing everything else here: §4.3 makes those one integer,
+  and the pin and the member's value are decoded by the same parser before either is compared.
+
+  `holder` puts each family at a field position. A document's own root type-ref names the position's type,
+  so reading a family at the root would be testing the root convention rather than the family.
+  """
+{
+  pet => @sealed {
+    @discriminator pet_type: text
+    name: text
+  }
+
+  dog => pet & {
+    pet_type: = "dog"
+    breed: text
+  }
+
+  cat => pet & {
+    pet_type: = "cat"
+    indoor: boolean
+  }
+
+  shape => @abstract {
+    area: int32
+  }
+
+  square => shape & {
+    side: int32
+  }
+
+  frame => @sealed {
+    @discriminator opcode: int32
+    payload: text
+  }
+
+  ping => frame & {
+    opcode: = 0xFF
+    seq: int32
+  }
+
+  holder => {
+    p: pet
+    s: shape?
+    f: frame?
+  }
+}

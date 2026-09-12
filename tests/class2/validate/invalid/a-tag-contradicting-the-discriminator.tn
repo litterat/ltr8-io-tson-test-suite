@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-contradicting-the-discriminator.tn"
+!holder {
+  p: !cat {
+    pet_type: dog
+    name:     Rex
+    breed:    corgi
+  }
+}

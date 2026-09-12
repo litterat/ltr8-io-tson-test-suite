@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-pin-is-matched-as-a-value-and-not-as-a-token-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.3"
+  description: "The schema pins `= 0xFF` and the document writes 255, which §4.3 makes one integer: the pin and the stated value are decoded by the same parser before either is compared. `seq` is a field only `ping` declares, so a processor comparing spellings finds no member and fails here while passing every other vector in this set."
+  schema: "fixtures/validate-family.tn"
+  valid: _
+}

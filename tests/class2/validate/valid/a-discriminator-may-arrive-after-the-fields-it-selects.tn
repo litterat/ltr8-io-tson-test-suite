@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-discriminator-may-arrive-after-the-fields-it-selects.tn"
+!holder {
+  p: {
+    breed:    corgi
+    name:     Rex
+    pet_type: dog
+  }
+}

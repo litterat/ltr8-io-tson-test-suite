@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-naming-a-sealed-base-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A redundant tag restating a position's own type is ordinarily admitted, but that rule holds where the type has direct instances. A sealed base has none, so naming it asserts what no value satisfies and selects nothing."
+  schema: "fixtures/validate-family.tn"
+  error: {
+    category: validation
+    path: "/p"
+  }
+}
