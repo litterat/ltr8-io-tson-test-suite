@@ -1,0 +1,52 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-alias.tn"
+!!meta:"https://tson.io/2026/36/m/meta.tn"
+!!import:"https://tson.io/2026/36/m/core.tn"
+@doc:"""
+  A type annotation written as an alias. [TSON-SCHEMA] §7.2 compares a value's annotation against the
+  position's type "after reference flattening of both", so an alias and its target are one type at either
+  end of that comparison — at the position's own type and at each of its subtypes alike.
+
+  `s_of` is the ordinary case: a REFERENCE entry naming a subtype, written where the subtype's own name
+  would be. An implementation that flattens only the position's side refuses it.
+
+  `ok_of` is the case that cannot be written any other way. `ok<text>` closes to an entry the resolver
+  minted, whose name is implementation-chosen and non-normative (§8.2) — so no document can name it, and an
+  alias is the only spelling there is. A processor that does not flatten the subtype side cannot admit any
+  member of a subtype-template family at all.
+
+  `apart` is unrelated to `base` and `a_of` names it: flattening decides what a name means, never whether
+  it is admitted, so this one stays refused.
+  """
+{
+  base => {
+    tag: text
+  }
+
+  sub => base & {
+    extra: text
+  }
+
+  s_of => sub
+
+  apart => {
+    only: text
+  }
+
+  a_of => apart
+
+  result => <T> {
+    payload: T
+  }
+
+  ok => <T> result<T> & {
+    note: text
+  }
+
+  result_of => result<text>
+  ok_of     => ok<text>
+
+  holder => {
+    b: base
+    r: result_of?
+  }
+}

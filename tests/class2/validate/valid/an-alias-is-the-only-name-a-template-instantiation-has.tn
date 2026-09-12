@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-alias-is-the-only-name-a-template-instantiation-has.tn"
+!holder {
+  b: {
+    tag: plain
+  }
+  r: !ok_of {
+    payload: carried
+    note:    added
+  }
+}
