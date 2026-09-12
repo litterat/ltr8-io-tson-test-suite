@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-precision.tn"
-!!meta:"https://tson.io/2026/35/m/meta.tn"
-!!import:"https://tson.io/2026/35/m/core.tn"
+!!meta:"https://tson.io/2026/36/m/meta.tn"
+!!import:"https://tson.io/2026/36/m/core.tn"
 @doc:"""
   `precision` on the two families that carry it ([TSON-SCHEMA] §5.5). meta's own `@doc` for `time_type` is
   explicit that it constrains the value and not the spelling — "`precision: N` admits a value that is a

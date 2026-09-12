@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/scoped-host.tn"
-!!meta:"https://tson.io/2026/35/m/meta.tn"
-!!import:"https://tson.io/2026/35/m/core.tn"
+!!meta:"https://tson.io/2026/36/m/meta.tn"
+!!import:"https://tson.io/2026/36/m/core.tn"
 @doc:"""
   The governing side of a scope push ([TSON-SCHEMA] §7.8). It deliberately does NOT import
   scoped-claim.tn: the point of `extern` is that a schema takes a value from a schema it does not

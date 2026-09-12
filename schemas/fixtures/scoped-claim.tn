@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/scoped-claim.tn"
-!!meta:"https://tson.io/2026/35/m/meta.tn"
-!!import:"https://tson.io/2026/35/m/core.tn"
+!!meta:"https://tson.io/2026/36/m/meta.tn"
+!!import:"https://tson.io/2026/36/m/core.tn"
 @doc:"""
   The foreign side of a scope push ([TSON-SCHEMA] §7.8): a schema a subject's value names for itself
   with a nested `!!schema`, declaring a type the governing schema knows nothing about. Its identity is

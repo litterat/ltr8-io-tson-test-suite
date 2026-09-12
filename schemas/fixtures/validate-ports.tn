@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-ports.tn"
-!!meta:"https://tson.io/2026/35/m/meta.tn"
-!!import:"https://tson.io/2026/35/m/core.tn"
+!!meta:"https://tson.io/2026/36/m/meta.tn"
+!!import:"https://tson.io/2026/36/m/core.tn"
 @doc:"""
   A sparse numeric member set on each exact tier ([TSON-SCHEMA] §5.6). `members` is the spelling for a
   value set that is neither a contiguous range nor an arithmetic progression, and so is expressible by
