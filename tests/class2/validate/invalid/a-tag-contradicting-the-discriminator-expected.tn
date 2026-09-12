@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-contradicting-the-discriminator-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "There is one selector per position and the members are it. A tag may assert what they decided and may not overrule it, so this is a refusal rather than a question of which wins."
+  schema: "fixtures/validate-family.tn"
+  error: {
+    category: validation
+    path: "/p"
+  }
+}

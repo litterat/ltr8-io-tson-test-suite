@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-abstract-position-with-no-tag-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "An abstract record has no direct instances, so there is no value for an untagged one to be. Nothing about the value's shape is consulted: it fails before its fields are read, and a shape matching a subtype exactly is not recovered to it."
+  schema: "fixtures/validate-family.tn"
+  error: {
+    category: validation
+    path: "/s"
+  }
+}

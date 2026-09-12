@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-sealed-family-value-with-no-discriminator.tn"
+!holder {
+  p: {
+    name:  Rex
+    breed: corgi
+  }
+}

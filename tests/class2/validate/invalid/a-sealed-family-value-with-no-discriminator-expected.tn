@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-sealed-family-value-with-no-discriminator-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "The selector is a REQUIRED field of the base, so a value that leaves it out is invalid on §5.2's ordinary terms and selects nothing. Never an occasion to fall back to the tag: a family that dispatched two ways would admit documents its members disagree about. Located at the selector rather than at the value, as any omitted required field is."
+  schema: "fixtures/validate-family.tn"
+  error: {
+    category: validation
+    path: "/p/pet_type"
+  }
+}

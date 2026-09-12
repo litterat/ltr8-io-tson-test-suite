@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-naming-a-sealed-base.tn"
+!holder {
+  p: !pet {
+    pet_type: dog
+    name:     Rex
+    breed:    corgi
+  }
+}

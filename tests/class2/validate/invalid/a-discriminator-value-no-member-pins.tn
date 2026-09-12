@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-discriminator-value-no-member-pins.tn"
+!holder {
+  p: {
+    pet_type: dgo
+    name:     Rex
+  }
+}

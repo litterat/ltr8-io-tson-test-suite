@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-abstract-position-reads-the-tagged-subtype-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "An abstract base declares no discriminator, so the tag is the only selector and naming a subtype is how a value gets placed."
+  schema: "fixtures/validate-family.tn"
+  valid: _
+}

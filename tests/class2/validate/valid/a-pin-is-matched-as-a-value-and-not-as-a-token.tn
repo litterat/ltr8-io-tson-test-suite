@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-pin-is-matched-as-a-value-and-not-as-a-token.tn"
+!holder {
+  p: {
+    pet_type: dog
+    name:     Rex
+    breed:    corgi
+  }
+  f: {
+    opcode:  255
+    payload: hi
+    seq:     1
+  }
+}

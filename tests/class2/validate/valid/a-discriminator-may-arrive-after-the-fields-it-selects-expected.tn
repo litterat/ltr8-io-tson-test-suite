@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-discriminator-may-arrive-after-the-fields-it-selects-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.5"
+  description: "A record's fields carry no significant order, so a selector may be stated last. A processor that decides on the opening brace, or on the first field, cannot read this at all."
+  schema: "fixtures/validate-family.tn"
+  valid: _
+}
