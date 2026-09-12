@@ -1,0 +1,21 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-subtype-template-closes-to-an-is-a-edge.tn"
+{
+  result => <T> {
+    payload: T
+  }
+
+  ok => <T> result<T> & {
+    note: text
+  }
+
+  err => <T> result<T> & {
+    reason: text
+  }
+
+  result_of_text => result<text>
+  ok_of_text     => ok<text>
+  err_of_text    => err<text>
+
+  result_of_int  => result<int32>
+  ok_of_int      => ok<int32>
+}

@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-subtype-template-closes-to-an-is-a-edge-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
+  description: "A template composing its base at its own parameter carries the application, not a head name, so closing mints an IS-A edge to the instantiation the arguments name. result<text> indexes ok<text> and err<text>; result<int32> indexes only ok<int32>. An edge recorded as the head name alone would hold of every instantiation at once."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    subtypes: [
+      { name: result_text_xxhash  subtypes: [ok_text_xxhash err_text_xxhash] }
+      { name: result_int32_xxhash  subtypes: [ok_int32_xxhash] }
+      { name: ok_text_xxhash  subtypes: [] }
+    ]
+  }
+}
