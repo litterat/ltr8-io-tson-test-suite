@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/pins-that-differ-only-in-radix.tn"
+{
+  frame => @sealed {
+    @discriminator opcode: int32
+    payload: text
+  }
+
+  ping => frame & {
+    opcode: = 255
+  }
+
+  pong => frame & {
+    opcode: = 0xFF
+  }
+}

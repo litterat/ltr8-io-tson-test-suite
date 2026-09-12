@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-sealed-record-with-no-discriminator.tn"
+{
+  pet => @sealed {
+    name: text
+  }
+}

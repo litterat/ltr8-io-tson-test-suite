@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/composing-onto-a-final-record.tn"
+{
+  reading => @final {
+    sensor: text
+  }
+
+  calibrated => reading & {
+    offset: int32
+  }
+}

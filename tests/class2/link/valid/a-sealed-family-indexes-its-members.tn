@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-sealed-family-indexes-its-members.tn"
+{
+  pet => @sealed {
+    @discriminator pet_type: text
+    name: text
+  }
+
+  dog => pet & {
+    pet_type: = "dog"
+    breed: text
+  }
+
+  cat => pet & {
+    pet_type: = "cat"
+    indoor: boolean
+  }
+}

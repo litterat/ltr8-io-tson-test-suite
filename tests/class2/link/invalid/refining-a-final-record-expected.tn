@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/refining-a-final-record-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "Refinement mints an IS-A edge as composition does, so FINAL refuses it on the same terms. A processor checking only composition admits half of what the mark forbids."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

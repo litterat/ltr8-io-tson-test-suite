@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-family-member-that-does-not-pin-the-discriminator.tn"
+{
+  pet => @sealed {
+    @discriminator pet_type: text
+    name: text
+  }
+
+  bird => pet & {
+    wings: int32
+  }
+}

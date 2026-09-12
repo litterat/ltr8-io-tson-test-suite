@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-family-member-that-does-not-pin-the-discriminator-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "Every member of a sealed family states its own value for each selector, with =, and it is those values a position typed by the base dispatches on. A member leaving the field unpinned can never be selected."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

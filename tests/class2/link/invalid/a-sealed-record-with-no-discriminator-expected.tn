@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-sealed-record-with-no-discriminator-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A sealed record is dispatched on its own members, so at least one field must carry @discriminator. With none there is nothing to dispatch on, and what the author meant is @abstract, whose subtypes are selected by the tag instead."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
