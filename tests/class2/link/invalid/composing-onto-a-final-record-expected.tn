@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/composing-onto-a-final-record-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "FINAL admits no subtype, and composition mints one. The refusal reaches the declaring schema and any schema that imports it."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

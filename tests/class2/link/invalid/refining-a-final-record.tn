@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/refining-a-final-record.tn"
+{
+  reading => @final {
+    sensor: text
+  }
+
+  named => reading ^ {
+    sensor: text = "thermometer"
+  }
+}

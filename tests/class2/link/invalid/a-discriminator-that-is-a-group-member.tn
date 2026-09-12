@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-discriminator-that-is-a-group-member.tn"
+{
+  pet => @sealed {
+    name: text
+    ( @discriminator pet_type: text | legacy_kind: text )
+  }
+}

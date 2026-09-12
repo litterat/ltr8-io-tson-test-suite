@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-abstract-record-carrying-a-discriminator-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "@abstract is the tag-dispatched case and admits no discriminator; @sealed is the member-dispatched one and requires one. The two marks are each other's condition, so a family cannot drift from one dispatch to the other by an edit deep in a field list."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

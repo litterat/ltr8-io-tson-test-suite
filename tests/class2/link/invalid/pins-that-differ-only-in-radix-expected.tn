@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/pins-that-differ-only-in-radix-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.3"
+  description: "Pin distinctness is under the field type's own equality contract and not over tokens: §4.3 makes 255 and 0xFF one integer, so these two members pin one value. A processor comparing spellings accepts a schema whose dispatch table is not a function."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/subtraction-from-a-final-record-keeps-no-is-a-edge-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.9"
+  description: "FINAL forbids a subtype, and subtraction is not one: §5.9 empties the contract index so no IS-A edge is minted, which is the only thing FINAL constrains. A processor that refuses this has read FINAL as forbidding every operation rather than the one it names."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    binds: [bare]
+  }
+}

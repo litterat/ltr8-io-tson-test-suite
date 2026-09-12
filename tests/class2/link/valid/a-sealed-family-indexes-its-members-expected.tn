@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-sealed-family-indexes-its-members-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A sealed family is a composition, not a declared mapping: the base marks the field and each member pins it, and the members are found through the ordinary subtypes index. Nothing enumerates the family and no mapping table is written."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    subtypes: [
+      { name: pet  subtypes: [dog cat] }
+    ]
+  }
+}

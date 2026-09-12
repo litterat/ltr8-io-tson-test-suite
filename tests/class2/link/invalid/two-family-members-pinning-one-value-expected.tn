@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/two-family-members-pinning-one-value-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "The pins of a sealed family must be pairwise distinct: two members carrying one value are two subtypes a decoder cannot tell apart, so the mapping the family derives is not a function."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
