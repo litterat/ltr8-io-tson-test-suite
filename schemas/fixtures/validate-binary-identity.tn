@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-binary-identity.tn"
-!!meta:"https://tson.io/2026/35/m/meta.tn"
-!!import:"https://tson.io/2026/35/m/core.tn"
+!!meta:"https://tson.io/2026/36/m/meta.tn"
+!!import:"https://tson.io/2026/36/m/core.tn"
 @doc:"""
   The three rules that compare two decoded values, over `bytes` ([TSON-SCHEMA] §7.5's duplicate rule and
   §5.2's FIXED check, [TSON-DATA] §2.6's key identity). Each delegates the comparison to the type's own

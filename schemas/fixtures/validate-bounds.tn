@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-bounds.tn"
-!!meta:"https://tson.io/2026/35/m/meta.tn"
-!!import:"https://tson.io/2026/35/m/core.tn"
+!!meta:"https://tson.io/2026/36/m/meta.tn"
+!!import:"https://tson.io/2026/36/m/core.tn"
 @doc:"""
   Ordered bounds on the atom families whose values are not numbers ([TSON-SCHEMA] §5.5, §9). A
   constructor's constraint fields are typed `value` — §7.4's rule, and the bootstrap ordering behind it:
