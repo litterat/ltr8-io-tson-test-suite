@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-alias-names-the-subtype-it-flattens-to.tn"
+!holder {
+  b: !s_of {
+    tag:   base-field
+    extra: subtype-field
+  }
+}

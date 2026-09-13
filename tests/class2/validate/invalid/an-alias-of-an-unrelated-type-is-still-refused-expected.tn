@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-alias-of-an-unrelated-type-is-still-refused-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.2"
+  description: "Flattening decides what a written name means, never whether it is admitted. `a_of` flattens to `apart`, which is neither `base` nor a subtype of it, so the annotation is refused exactly as `!apart` would be."
+  schema: "fixtures/validate-alias.tn"
+  error: {
+    category: validation
+    path: "/b"
+  }
+}

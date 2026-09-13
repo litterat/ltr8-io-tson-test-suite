@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-alias-is-the-only-name-a-template-instantiation-has-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.2, [TSON-SCHEMA] §5.10"
+  description: "ok<text> closes to an entry the resolver minted, whose name is implementation-chosen and non-normative, so an alias is the only spelling a document has for it. A processor that flattens only the position's side cannot admit any member of a subtype-template family."
+  schema: "fixtures/validate-alias.tn"
+  valid: _
+}

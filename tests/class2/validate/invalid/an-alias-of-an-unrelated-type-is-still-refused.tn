@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-alias-of-an-unrelated-type-is-still-refused.tn"
+!holder {
+  b: !a_of {
+    only: unrelated
+  }
+}
