@@ -9,6 +9,14 @@
   no discriminator, so the tag is the only selector and is required. Both bases are abstract — neither has
   direct instances — and that is what makes a tag naming either of them select nothing.
 
+  `outcome` is ABSTRACT and a **template**. The mark constrains the marked type alone — no direct instances
+  — which holds of every instantiation identically, so closing `outcome<text>` yields an abstract entry and
+  `won<text>` is its one member. Both are entries the resolver minted, and §8.2 makes such a name
+  implementation-chosen, so the aliases are the only spellings a document has for either: this is the family
+  where §7.2's "after reference flattening of both" is the difference between a readable family and one
+  nothing can name. `@sealed` and `@final` are refused on a template, having no set of subtypes to range
+  over, and no vector states that here — it is a schema-layer refusal.
+
   `frame` pins with `= 0xFF` where the documents write `255`, which is the case a processor comparing
   tokens rather than values gets wrong while passing everything else here: §4.3 makes those one integer,
   and the pin and the member's value are decoded by the same parser before either is compared.
@@ -50,9 +58,21 @@
     seq: int32
   }
 
+  outcome => @abstract <T> {
+    code: T
+  }
+
+  won => <T> outcome<T> & {
+    prize: text
+  }
+
+  outcome_of => outcome<text>
+  won_of     => won<text>
+
   holder => {
     p: pet
     s: shape?
     f: frame?
+    o: outcome_of?
   }
 }

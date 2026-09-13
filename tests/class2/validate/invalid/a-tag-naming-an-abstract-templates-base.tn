@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-naming-an-abstract-templates-base.tn"
+!holder {
+  p: {
+    pet_type: cat
+    name:     Tom
+    indoor:   true
+  }
+  o: !outcome_of {
+    code: drawn
+  }
+}

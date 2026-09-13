@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-alias-selects-a-member-of-an-abstract-template-family-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.2"
+  description: "An abstract template's instantiation is abstract, so the tag is the only selector at an outcome<text> position. Every member of such a family is an entry the resolver minted, and §8.2 makes a minted name non-normative — so the alias is the only spelling a document has, and a processor that flattens only the position's side of §7.2 cannot admit any member of the family it just built."
+  schema: "fixtures/validate-family.tn"
+  valid: _
+}

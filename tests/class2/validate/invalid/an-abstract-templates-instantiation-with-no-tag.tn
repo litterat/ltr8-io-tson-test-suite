@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-abstract-templates-instantiation-with-no-tag.tn"
+!holder {
+  p: {
+    pet_type: cat
+    name:     Tom
+    indoor:   true
+  }
+  o: {
+    code:  drawn
+    prize: cup
+  }
+}

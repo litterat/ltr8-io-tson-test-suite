@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-naming-an-abstract-templates-base-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.2"
+  description: "§8.1 admits a tag restating a position's own type, but an abstract base has no direct instances, so naming it selects nothing. The base of a template family is a minted entry too, so the refusal has to reach the alias: a processor comparing the base's own name alone lets this document through."
+  schema: "fixtures/validate-family.tn"
+  error: {
+    category: validation
+    path: "/o"
+  }
+}
