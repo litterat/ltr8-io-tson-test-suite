@@ -5,7 +5,7 @@
   description: "Flattening decides what a written name means, never whether it is admitted. `a_of` flattens to `apart`, which is neither `base` nor a subtype of it, so the annotation is refused exactly as `!apart` would be."
   schema: "fixtures/validate-alias.tn"
   error: {
-    category: resolver
+    category: validation
     path: "/b"
   }
 }
