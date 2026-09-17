@@ -11,7 +11,7 @@
         pet => !type_definition {
           subtypes: [dog]
           body: !record { fields: [
-            !record_field { name: pet_type  type: text  discriminator: true }
+            !record_field { name: pet_type  type: text }
             !record_field { name: name      type: text }
           ]  extension: SEALED  discriminators: [pet_type] }
         }
