@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.2"
-  description: "How a record may be realised is a fact of the resolved body and not an annotation: the marks are consumed and `record.extension` carries what they said, so a resolver that preserved them instead would show them in the annotation channel and leave every record OPEN. Each of the four members appears once here, and the discriminator field carries its own member on the field rather than on the record. OPEN and false are the defaults and are omitted, as every default is."
+  description: "How a record may be realised is a fact of the resolved body and not an annotation: the marks are consumed and `record.extension` carries what they said, so a resolver that preserved them instead would show them in the annotation channel and leave every record OPEN. Each of the four members appears once here, and the discriminator field carries its own member on the field rather than on the record -- on the base's field alone: the mark says which field a family dispatches on, which is the base's statement, so a member that pins the selector restates the value and not the mark. OPEN and false are the defaults and are omitted, as every default is."
   meta: "meta.tn"
   import: ["core.tn"]
   valid: {
@@ -19,7 +19,7 @@
         dog => !type_definition {
           supertypes: [pet]
           body: !record { supertypes: [pet]  fields: [
-            !record_field { name: pet_type  type: text  state: REQUIRED_FIXED  discriminator: true  value: "dog" }
+            !record_field { name: pet_type  type: text  state: REQUIRED_FIXED  value: "dog" }
             !record_field { name: name      type: text }
           ] }
         }
