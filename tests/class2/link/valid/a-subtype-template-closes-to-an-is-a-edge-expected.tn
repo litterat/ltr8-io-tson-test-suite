@@ -2,14 +2,14 @@
 !!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
-  description: "A template composing its base at its own parameter carries the application, not a head name, so closing mints an IS-A edge to the instantiation the arguments name. result<text> indexes ok<text> and err<text>; result<int32> indexes only ok<int32>. An edge recorded as the head name alone would hold of every instantiation at once."
+  description: "A template composing its base at its own parameter carries the application, not a head name, so closing mints an IS-A edge to the instantiation the arguments name. result_of_text indexes ok_of_text and err_of_text; result_of_int indexes only ok_of_int. An edge recorded as the head name alone would hold of every instantiation at once. Each member is named by the declaration that closed it, a declared application being the entry rather than a reference to a content-named one (§8.2)."
   meta: "meta.tn"
   import: ["core.tn"]
   valid: {
     subtypes: [
-      { name: result_text_xxhash  subtypes: [ok_text_xxhash err_text_xxhash] }
-      { name: result_int32_xxhash  subtypes: [ok_int32_xxhash] }
-      { name: ok_text_xxhash  subtypes: [] }
+      { name: result_of_text  subtypes: [ok_of_text err_of_text] }
+      { name: result_of_int  subtypes: [ok_of_int] }
+      { name: ok_of_text  subtypes: [] }
     ]
   }
 }

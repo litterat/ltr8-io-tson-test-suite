@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-declared-application-is-the-entry-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
+  description: "A declaration whose body is a fully-bound application is the instantiation entry itself, not a reference to a separately named one: text_box is the closed record, carrying the application in its own source. §8.2 gives a declared entry its name as its identity, so an application a declaration names needs no content-derived name; one a use site writes still gets one. The subtypes claim is what states the absence: box indexes exactly text_box, where a separately minted entry would be indexed under box beside it."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    binds: [box text_box]
+    subtypes: [
+      { name: box  subtypes: [text_box] }
+    ]
+  }
+}
