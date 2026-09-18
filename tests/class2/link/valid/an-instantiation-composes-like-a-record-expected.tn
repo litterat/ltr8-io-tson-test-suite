@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-instantiation-composes-like-a-record-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.3, [TSON-SCHEMA] §5.8"
+  description: "Both operator families consume vocabulary bodies, and a record template's instantiation is one: bx closes to a !record carrying item, so bx & { extra: text } merges its fields rather than being refused as finished. §4.3 requires an operand's body be a !record and also names a template instantiation among the forms that are finished, and for a record template those two demands disagree -- the body is what decides, which leaves the finished rule doing its work wherever an instantiation closes to something with no fields, an !array or a !map. What an author wrote cannot decide it either: §8.2 keys identity on the type, not on the provenance, so composing with a name for an instantiation admits exactly what composing with the application itself admits. The subtypes claim is what states the admission from outside: composition grants IS-A per parent (§5.8), so bx indexes sub, which a refusal would leave empty."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    binds: [box bx sub]
+    subtypes: [
+      { name: bx  subtypes: [sub] }
+    ]
+  }
+}
