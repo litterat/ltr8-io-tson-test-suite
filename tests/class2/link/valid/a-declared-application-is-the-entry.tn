@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-declared-application-is-the-entry.tn"
+{
+  box => <T> {
+    value: T
+  }
+
+  text_box => box<text>
+}
