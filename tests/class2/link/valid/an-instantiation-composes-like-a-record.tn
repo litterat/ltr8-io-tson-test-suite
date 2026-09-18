@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-instantiation-composes-like-a-record.tn"
+{
+  box => <V> {
+    item: V
+  }
+
+  bx => box<text>
+
+  sub => bx & { extra: text }
+}
