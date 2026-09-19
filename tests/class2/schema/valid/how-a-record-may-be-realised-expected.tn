@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.2"
-  description: "How a record may be realised is a fact of the resolved body and not an annotation: the marks are consumed and `record.extension` carries what they said, so a resolver that preserved them instead would show them in the annotation channel and leave every record OPEN. Each of the four members appears once here. A sealed base names the fields it dispatches on in `record.discriminators`, in the order their pins are compared as a tuple: which fields select is the base's own statement about its family, not a property of each field in isolation. A member inherits the base's fields by §5.8 flattening and states no discriminators of its own, so it restates the selector to pin the value and never to claim a family. OPEN and false are the defaults and are omitted, as every default is."
+  description: "How a record may be realised is a fact of the resolved body and not an annotation: the marks are consumed and `record.extension` carries what they said, so a resolver that preserved them instead would show them in the annotation channel and leave every record OPEN. Each of the three members appears once here. **How a record may be realised and how its members are selected are two facts**: `pet` and `shape` are both ABSTRACT, and what makes `pet` dispatch on its members rather than on the tag is the non-empty `record.discriminators` beside it. A base names those fields in the order their pins are compared as a tuple: which fields select is the base's own statement about its family, not a property of each field in isolation. A member inherits the base's fields by §5.8 flattening and states no discriminators of its own, so it restates the selector to pin the value and never to claim a family. OPEN and false are the defaults and are omitted, as every default is."
   meta: "meta.tn"
   import: ["core.tn"]
   valid: {
@@ -13,7 +13,7 @@
           body: !record { fields: [
             !record_field { name: pet_type  type: text }
             !record_field { name: name      type: text }
-          ]  extension: SEALED  discriminators: [pet_type] }
+          ]  extension: ABSTRACT  discriminators: [pet_type] }
         }
 
         dog => !type_definition {
