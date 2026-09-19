@@ -14,7 +14,7 @@
   `won<text>` is its one member. Both are entries the resolver minted, and §8.2 makes such a name
   implementation-chosen, so the aliases are the only spellings a document has for either: this is the family
   where §7.2's "after reference flattening of both" is the difference between a readable family and one
-  nothing can name. `@sealed` and `@final` are refused on a template, having no set of subtypes to range
+  nothing can name. `@abstract` and `@final` are refused on a template, having no set of subtypes to range
   over, and no vector states that here — it is a schema-layer refusal.
 
   `frame` pins with `= 0xFF` where the documents write `255`, which is the case a processor comparing
@@ -25,8 +25,8 @@
   so reading a family at the root would be testing the root convention rather than the family.
   """
 {
-  pet => @sealed {
-    @discriminator pet_type: text
+  pet => @abstract {
+    pet_type: text =?
     name: text
   }
 
@@ -48,8 +48,8 @@
     side: int32
   }
 
-  frame => @sealed {
-    @discriminator opcode: int32
+  frame => @abstract {
+    opcode: int32 =?
     payload: text
   }
 

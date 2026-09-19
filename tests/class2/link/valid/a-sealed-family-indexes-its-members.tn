@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-sealed-family-indexes-its-members.tn"
 {
-  pet => @sealed {
-    @discriminator pet_type: text
+  pet => @abstract {
+    pet_type: text =?
     name: text
   }
 
