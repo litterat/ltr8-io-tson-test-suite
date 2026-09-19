@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/link/invalid/an-abstract-record-carrying-a-discriminator.tn"
-{
-  pet => @abstract {
-    @discriminator pet_type: text
-    name: text
-  }
-}

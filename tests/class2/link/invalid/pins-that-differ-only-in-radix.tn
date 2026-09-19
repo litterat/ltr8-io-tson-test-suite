@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/pins-that-differ-only-in-radix.tn"
 {
-  frame => @sealed {
-    @discriminator opcode: int32
+  frame => @abstract {
+    opcode: int32 =?
     payload: text
   }
 
