@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/link/invalid/a-discriminator-without-abstract.tn"
-{
-  pet => {
-    pet_type: text =?
-    name: text
-  }
-}
