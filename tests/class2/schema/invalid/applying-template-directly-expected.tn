@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/applying-template-directly-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §8.1"
+  description: "`template` is resolver vocabulary: an open entry's body, derived from a declaration's parameter list. A source declaration applying it directly is a resolver error, even though it IS-A `top` -- otherwise it would mint an open entry whose held body skipped every check §5.10 makes of a template."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

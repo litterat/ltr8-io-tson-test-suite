@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/applying-template-directly-in-an-open-entry-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §8.1"
+  description: "The open spelling of applying `template` directly is refused like the closed one: both are a source declaration applying resolver vocabulary, and a parameter list on the declaration does not make the hand-written held body a derived one."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

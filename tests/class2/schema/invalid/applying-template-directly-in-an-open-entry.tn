@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/applying-template-directly-in-an-open-entry.tn"
+{
+  sneaky => <U> !template { parameters: [U]  template: "!array { element_type: U }" }
+}
