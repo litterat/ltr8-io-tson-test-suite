@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/applying-template-directly.tn"
+{
+  sneaky => !template { parameters: [T]  template: "!array { element_type: T }" }
+}
