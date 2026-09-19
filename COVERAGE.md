@@ -14,7 +14,7 @@ diff, so it always describes the vectors actually present.
 | class1 | reader | 11 | 11 | 0 | 5 | 27 |
 | class1 | resolver | 14 | 0 | 0 | 0 | 14 |
 | class1 | vocabulary | 57 | 46 | 0 | 0 | 103 |
-| class2 | link | 9 | 12 | 0 | 0 | 21 |
+| class2 | link | 10 | 11 | 0 | 0 | 21 |
 | class2 | schema | 8 | 8 | 0 | 5 | 21 |
 | class2 | validate | 18 | 26 | 0 | 0 | 44 |
 

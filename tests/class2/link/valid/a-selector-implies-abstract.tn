@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-selector-implies-abstract.tn"
+{
+  pet => {
+    pet_type: text =?
+    name: text
+  }
+
+  dog => pet & {
+    pet_type: = "dog"
+  }
+}

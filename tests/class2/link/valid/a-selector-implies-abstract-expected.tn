@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-selector-implies-abstract-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A field written '=?' says this record's members pin it, so the record is the base they are selected from and has no values of its own: ABSTRACT is derived and '@abstract' is not required. Stating the mark asserts what the body already says and is admitted, in the manner of '@disjoint'; '@final' beside a selector is refused, since the members it selects could never exist."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    subtypes: [
+      { name: pet  subtypes: [dog] }
+    ]
+  }
+}
