@@ -8,11 +8,13 @@
     -- and this one changes it: erase it and a direct instance becomes readable at every position typed
     by the record.
 
-    The name is refused rather than ignored, which is the whole point of the vector. A processor that
-    merely stopped reading `@abstract` would resolve it against the governing meta, park it in the
-    author-annotation channel, and leave the record OPEN -- silently admitting the values the author
-    wrote the mark to exclude. Refusing by name is unconditional and happens before the meta is
-    consulted, so no meta-schema can give the name a second meaning at a declaration.
+    The governing meta declares no type of that name, so this is the ordinary unresolved-name error of
+    §3.3.3 -- the footing `@sealed` and `@discriminator` are already on, and there is no name left to
+    reserve once the mark is a word the grammar reads.
+
+    What the vector guards is that the document fails at all. A processor keeping the retired
+    declaration would resolve the name, park it in the author-annotation channel, and leave the record
+    OPEN -- silently admitting the values the author wrote the mark to exclude.
     """
   meta: "meta.tn"
   import: ["core.tn"]
