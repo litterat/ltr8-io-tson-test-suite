@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/two-family-members-pinning-one-value.tn"
 {
-  pet => @abstract {
+  pet => abstract {
     pet_type: text =?
     name: text
   }

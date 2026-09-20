@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/two-definition-marks-on-one-declaration-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.1"
+  description: """
+    The three ways a record may be realised are alternatives, so the grammar gives them one optional
+    slot rather than two independent flags: ABSTRACT has no instances of its own and FINAL has instances
+    and no subtype, and a record claiming both would have no values anywhere. Writing two is therefore
+    ungrammatical, not a rule a resolver has to state and check -- which is the observable difference
+    between one slot and two.
+
+    Category is `resolver` even though the failure is a parse one: §8.1 makes every error that stops a
+    schema loading a resolver error, however early the phase that caught it.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

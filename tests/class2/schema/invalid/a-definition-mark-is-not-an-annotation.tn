@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-definition-mark-is-not-an-annotation.tn"
+{
+  pet => @abstract {
+    name: text
+  }
+}

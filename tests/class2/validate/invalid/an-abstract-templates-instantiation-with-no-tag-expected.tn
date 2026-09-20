@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10"
-  description: "@abstract constrains the marked type alone — no direct instances — which is true of every instantiation identically, so closing an abstract template yields an abstract entry and the tag is required there exactly as at a closed abstract record. A processor that drops the mark while holding the body reads this document as an ordinary record and accepts it."
+  description: "The 'abstract' mark constrains the marked type alone — no direct instances — which is true of every instantiation identically, so closing an abstract template yields an abstract entry and the tag is required there exactly as at a closed abstract record. A processor that drops the mark while holding the body reads this document as an ordinary record and accepts it."
   schema: "fixtures/validate-family.tn"
   error: {
     category: validation

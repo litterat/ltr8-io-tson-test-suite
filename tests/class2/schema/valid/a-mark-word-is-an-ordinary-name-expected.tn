@@ -1,0 +1,38 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-mark-word-is-an-ordinary-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §12.1, [TSON-DATA] §7.4"
+  description: """
+    `abstract` and `final` are marks at one position and ordinary identifiers everywhere else, so
+    [TSON-DATA] §7.4's "no reserved words" stands: the grammar still excludes nothing by name. Both are
+    declared here as type names and referenced as field types, which a processor treating them as
+    reserved words would refuse. The one thing a schema declaring them gives up is naming them as a
+    whole declaration body, which the companion invalid vector pins.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        abstract => !type_definition {
+          body: !record { fields: [
+            !record_field { name: a  type: text }
+          ] }
+        }
+
+        final => !type_definition {
+          body: !record { fields: [
+            !record_field { name: b  type: text }
+          ] }
+        }
+
+        holder => !type_definition {
+          body: !record { fields: [
+            !record_field { name: f  type: abstract }
+            !record_field { name: g  type: final }
+          ] }
+        }
+      }
+      """
+  }
+}
