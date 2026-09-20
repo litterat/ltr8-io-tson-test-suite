@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-marked-name-cannot-be-applied-as-a-body.tn"
+{
+  abstract => <T> {
+    v: T
+  }
+
+  pet => abstract<text>
+}

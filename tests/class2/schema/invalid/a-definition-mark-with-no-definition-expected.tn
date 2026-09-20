@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-definition-mark-with-no-definition-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.1"
+  description: """
+    At the head of a type definition the two words are marks unconditionally, so `pet => abstract` is a
+    declaration missing its definition rather than an alias of the record declared above it. This is the
+    whole of the reservation the marks make, and it is what keeps `mid => abstract base & { … }`
+    writable: a marked composition and an alias differ only in what follows the head, so reading the
+    word conditionally would have to give one of them up.
+
+    The companion valid vector shows the other side -- both words remain ordinary names at every
+    position but this one.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

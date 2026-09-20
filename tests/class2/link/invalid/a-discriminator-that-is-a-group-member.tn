@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-discriminator-that-is-a-group-member.tn"
 {
-  pet => @abstract {
+  pet => abstract {
     name: text
     ( pet_type: text =? | legacy_kind: text )
   }

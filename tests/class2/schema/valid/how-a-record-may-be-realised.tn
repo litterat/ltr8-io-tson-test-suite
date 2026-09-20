@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/how-a-record-may-be-realised.tn"
 {
-  pet => @abstract {
+  pet => abstract {
     pet_type: text =?
     name: text
   }
@@ -9,11 +9,11 @@
     pet_type: = "dog"
   }
 
-  shape => @abstract {
+  shape => abstract {
     area: int32
   }
 
-  reading => @final {
+  reading => final {
     sensor: text
   }
 

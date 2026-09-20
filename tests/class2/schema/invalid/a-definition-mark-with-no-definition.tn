@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-definition-mark-with-no-definition.tn"
+{
+  abstract => {
+    a: text
+  }
+
+  pet => abstract
+}

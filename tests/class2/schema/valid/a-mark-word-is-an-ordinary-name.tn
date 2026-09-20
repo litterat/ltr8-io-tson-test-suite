@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-mark-word-is-an-ordinary-name.tn"
+{
+  abstract => {
+    a: text
+  }
+
+  final => {
+    b: text
+  }
+
+  holder => {
+    f: abstract
+    g: final
+  }
+}

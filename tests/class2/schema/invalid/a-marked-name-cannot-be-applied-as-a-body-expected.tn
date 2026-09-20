@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-marked-name-cannot-be-applied-as-a-body-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.1"
+  description: """
+    The companion of the bare case, reached through a parameter list. `abstract<text>` applies a template
+    of that name as a whole declaration body, and the mark takes the head before the arguments are seen.
+
+    The two cannot be told apart where the mark is read -- `abstract <T> { … }` opens with the same two
+    tokens -- so what separates them is whether a type definition follows the parameters. A processor
+    deciding on the head alone reports something about the closing brace instead, which is the observable
+    difference and the reason this vector is separate from the bare one.
+
+    Declaring the template is fine, and so is referencing it at any type position; naming it as an entire
+    declaration body is the single thing the marks reserve.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

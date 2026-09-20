@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/two-definition-marks-on-one-declaration.tn"
+{
+  pet => abstract final {
+    name: text
+  }
+}
