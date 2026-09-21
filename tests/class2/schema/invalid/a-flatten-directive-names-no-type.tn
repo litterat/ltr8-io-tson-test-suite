@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-flatten-directive-names-no-type.tn"
+{
+  config => {
+    name: text
+    @rest extras: {text => text}
+  }
+}

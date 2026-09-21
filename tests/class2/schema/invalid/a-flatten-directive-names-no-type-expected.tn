@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-flatten-directive-names-no-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §6, [TSON-SCHEMA] §7.2, [TSON-JSON] §6.1.1"
+  description: """
+    No annotation designates a field an encoding should flatten. A record is closed under its type
+    (§7.2) in every encoding, and a schema carrying open-ended data declares a map-typed field, which
+    is written the same way wherever it is written -- the entries are map keys, so they are data
+    rather than names and no identifier rule reaches them.
+
+    The governing meta declares no type named `rest`, so this is the ordinary unresolved-name error of
+    §3.3.3. The mark it retired was a representation directive whose class could not be stated: §6
+    confines a directive's force to the encodings in its class and offers the text class as the
+    example, and this one bound JSON while TSON text declined it, leaving "the encodings that claim
+    it" as the only class it had.
+
+    What the vector guards is that the document fails at all. A processor keeping the retired
+    declaration would resolve the name and park it in the author-annotation channel, where it changes
+    nothing -- leaving a schema that reads as though it had asked for a flatten no encoding performs.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
