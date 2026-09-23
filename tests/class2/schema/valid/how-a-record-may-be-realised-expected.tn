@@ -19,7 +19,7 @@
         dog => !type_definition {
           supertypes: [pet]
           body: !record { supertypes: [pet]  fields: [
-            !record_field { name: pet_type  type: text  state: REQUIRED_FIXED  value: "dog" }
+            !record_field { name: pet_type  type: text  optional: true  role: FIXED  value: "dog" }
             !record_field { name: name      type: text }
           ] }
         }
