@@ -61,7 +61,7 @@
     | map: reader_map
     | array: reader_array
     | atom: reader_atom
-    | absent: void )
+    | absent: void? )
   }
 
   reader_valid => {

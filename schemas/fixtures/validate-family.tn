@@ -31,12 +31,12 @@
   }
 
   dog => pet & {
-    pet_type: = "dog"
+    pet_type?: = "dog"
     breed: text
   }
 
   cat => pet & {
-    pet_type: = "cat"
+    pet_type?: = "cat"
     indoor: boolean
   }
 
@@ -54,7 +54,7 @@
   }
 
   ping => frame & {
-    opcode: = 0xFF
+    opcode?: = 0xFF
     seq: int32
   }
 
@@ -71,8 +71,8 @@
 
   holder => {
     p: pet
-    s: shape?
-    f: frame?
-    o: outcome_of?
+    s?: shape?
+    f?: frame?
+    o?: outcome_of?
   }
 }

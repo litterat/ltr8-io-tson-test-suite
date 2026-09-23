@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-default-on-a-key-that-is-always-written.tn"
+{
+  config => {
+    port: int32 ~ 8080
+  }
+}

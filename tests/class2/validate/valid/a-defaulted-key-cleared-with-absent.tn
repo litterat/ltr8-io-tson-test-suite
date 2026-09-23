@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-defaulted-key-cleared-with-absent.tn"
+!entry {
+  name:    Ada
+  from:    1
+  timeout: _
+  version: "2.0"
+}

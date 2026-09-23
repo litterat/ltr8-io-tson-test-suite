@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-optional-key-written-as-absent.tn"
+!entry {
+  name:     Ada
+  nickname: _
+  from:     1
+  version:  "2.0"
+}

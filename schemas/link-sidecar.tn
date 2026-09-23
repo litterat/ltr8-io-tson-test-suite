@@ -38,9 +38,9 @@
     worth writing.
     """
   link_valid => {
-    binds: [text]?
-    disjoint: [disjointness]?
-    subtypes: [subtyping]?
+    binds?: [text]?
+    disjoint?: [disjointness]?
+    subtypes?: [subtyping]?
   }
 
   @doc:"""

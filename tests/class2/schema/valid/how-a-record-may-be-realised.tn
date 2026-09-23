@@ -6,7 +6,7 @@
   }
 
   dog => pet & {
-    pet_type: = "dog"
+    pet_type?: = "dog"
   }
 
   shape => abstract {

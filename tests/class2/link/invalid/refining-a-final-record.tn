@@ -5,6 +5,6 @@
   }
 
   named => reading ^ {
-    sensor: text = "thermometer"
+    sensor?: text = "thermometer"
   }
 }

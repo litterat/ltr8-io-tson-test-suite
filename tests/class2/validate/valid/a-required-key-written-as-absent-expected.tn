@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-required-key-written-as-absent-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "`from: int32?` must be written, and may be written `_`: the key is required and the value voidable, JSON Schema's `required` beside `[\"integer\", \"null\"]`. Stating `_` satisfies it."
+  schema: "fixtures/validate-field-marks.tn"
+  valid: _
+}

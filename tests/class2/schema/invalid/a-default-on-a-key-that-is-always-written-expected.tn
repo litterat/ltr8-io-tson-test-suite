@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-default-on-a-key-that-is-always-written-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A default is what omission yields, so it is written only on a key that may be omitted: an unmarked name says the key is always written, and `port: int32 ~ 8080` names a value nothing can reach. `port?: int32 ~ 8080` is the default."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

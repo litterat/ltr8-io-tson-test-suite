@@ -32,7 +32,7 @@
   sidecar_common => {
     spec: text
     description: text
-    encoding: encoding_name?
+    encoding?: encoding_name?
   }
 
   @doc:"""
@@ -58,9 +58,9 @@
     is what a `class2/validate/` vector needs.
     """
   spliced_header => {
-    meta: text?
-    import: [text]?
-    schema: text?
+    meta?: text?
+    import?: [text]?
+    schema?: text?
   }
 
   @doc:"""

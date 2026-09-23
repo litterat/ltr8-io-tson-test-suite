@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-pin-to-absence-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A pin names a value of the field's type, and `_` is none: `extra?: text = _` pins `text` to something that is not a text, and `extra?: text? = _` would be a pin on a voidable type. A field that may be omitted or written `_` and nothing else is `extra?: void?`."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-void-field-the-document-must-write.tn"
+{
+  sealed_off => {
+    name:  text
+    never: void
+  }
+}

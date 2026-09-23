@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-required-key-written-as-absent.tn"
+!entry {
+  name:    Ada
+  from:    _
+  version: "2.0"
+}

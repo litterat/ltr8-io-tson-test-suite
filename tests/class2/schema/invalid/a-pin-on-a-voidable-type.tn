@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-pin-on-a-voidable-type.tn"
+{
+  config => {
+    format?: text? = "json"
+  }
+}

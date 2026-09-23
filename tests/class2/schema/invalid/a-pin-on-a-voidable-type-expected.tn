@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-pin-on-a-voidable-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A pin names the only value a field admits, and `_` is not it: `?` on the type would admit `_` beside the pin, so a pin on a voidable type is refused whatever the name's mark says. `format?: text = \"json\"` is the pin that omission supplies."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

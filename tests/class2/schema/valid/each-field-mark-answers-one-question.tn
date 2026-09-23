@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/each-field-mark-answers-one-question.tn"
+{
+  entry => {
+    name:       text
+    nickname?:  text
+    from:       int32?
+    note?:      text?
+    timeout?:   int32? ~ 30
+    version:    text = "2.0"
+    kind?:      text = "entry"
+  }
+}
