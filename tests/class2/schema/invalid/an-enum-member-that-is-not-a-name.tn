@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-enum-member-that-is-not-a-name.tn"
+{
+  activity => !enum ["sedentary" "lightly active"]
+}

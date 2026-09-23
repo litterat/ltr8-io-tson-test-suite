@@ -1,0 +1,36 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-enum-declares-which-kind-of-enumeration-it-is-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4, [TSON-SCHEMA] §9"
+  description: """
+    An enum models two things and `profile` says which. `status` is a vocabulary: its members are
+    names, so they stay a named scope for [TSON-DATA] §8.2's hygiene and each has a host-safe
+    spelling. `activity` is a value set: two strings a document may carry, neither of them a name and
+    neither writable without quotes.
+
+    Both are enums, and the member set is typed by `text` in each. What separates them is the
+    declaration, never the shape of the members -- a resolver inferring the kind from how the members
+    happen to be spelled would switch a spoofing check on and off by accident.
+
+    `IDENTIFIER` is the default, so `status` says nothing and resolves exactly as it did before the
+    facet existed; a default concrete in the constructor's own declaration is omitted from the
+    binding record (§5.6), which is why only `activity` states one.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        status => !type_definition {
+          source: enum
+          body: !enum { members: [OPEN ACTIVE DONE] }
+        }
+
+        activity => !type_definition {
+          source: enum
+          body: !enum { members: ["sedentary" "lightly active"]  profile: TEXT }
+        }
+      }
+      """
+  }
+}

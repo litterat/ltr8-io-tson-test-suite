@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-member-outside-the-facets-beside-it-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4, [TSON-SCHEMA] §7.2"
+  description: """
+    Every member of a `members` set must satisfy the other facets on the same body, the `pattern`
+    included -- the uniform members rule, which the numeric tiers already carry against their bounds
+    and step. `nz` does not match `[A-Z]{2}`, so the body admits a member it also refuses, and that
+    is a schema-load error rather than something a reader discovers one document at a time.
+
+    This is the one member check in the series that needs a regex match rather than a comparison, so
+    an implementation whose constraint model has no regex engine cannot run it beside the others. The
+    vector exists because that is exactly the check most likely to be quietly skipped: skipping it
+    leaves a type whose declared value set and declared shape disagree, and every value that would
+    have shown it up is one the type rejects anyway.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

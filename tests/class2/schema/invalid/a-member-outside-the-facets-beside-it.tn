@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-member-outside-the-facets-beside-it.tn"
+{
+  country_code => !text ^ {
+    pattern: "[A-Z]{2}"
+    members: ["AU" "nz"]
+  }
+}
