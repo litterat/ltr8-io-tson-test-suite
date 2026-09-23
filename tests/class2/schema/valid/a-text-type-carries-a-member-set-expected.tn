@@ -1,0 +1,41 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-text-type-carries-a-member-set-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4, [TSON-SCHEMA] §5.7, [TSON-SCHEMA] §9"
+  description: """
+    `text_type.members` is the sparse case on the text tier, as `integer_type.members` is on the
+    integer one -- a value set on a type whose other facets are also wanted, where the family's own
+    parsing still applies. It is a plain field beside `pattern` rather than an alternative to it: a
+    pattern is a value set when it is an alternation and a shape when it is not, nothing decides
+    which, and beside a shape a member set composes exactly as a bound does.
+
+    `nordic` is the narrowing that arrangement exists to keep. §5.6's atom refinement merges over the
+    source's bound values, so the resolved body carries the inherited `pattern` and the new
+    `members` together, and every member answers to the pattern or the schema fails to load.
+
+    Each of the pair is settable once: `nordic` could not have replaced the pattern, and nothing may
+    shrink its member set afterwards. They occupy one logical position, and the pattern half cannot
+    be narrowed without deciding regular-language containment, so the position takes one rule rather
+    than two.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        country_code => !type_definition {
+          source: text_type
+          supertypes: [text]
+          subtypes: [nordic]
+          body: !text_type { pattern: "[A-Z]{2}" }
+        }
+
+        nordic => !type_definition {
+          source: text_type
+          supertypes: [country_code]
+          body: !text_type { pattern: "[A-Z]{2}"  members: ["SE" "NO" "DK"] }
+        }
+      }
+      """
+  }
+}

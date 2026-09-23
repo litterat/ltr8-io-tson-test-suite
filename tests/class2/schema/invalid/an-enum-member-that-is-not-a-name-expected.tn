@@ -1,0 +1,21 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-enum-member-that-is-not-a-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4, [TSON-DATA] §7.7"
+  description: """
+    `enum.profile` defaults to IDENTIFIER, under which every member must match [TSON-DATA] §7.7's
+    grammar. `lightly active` holds a space, so it is not a name and the body contradicts its own
+    declaration -- a schema-load error, in the family of coherence errors §7.2 makes a compilation
+    concern rather than data validation.
+
+    The companion valid vector writes the same member set with `profile: TEXT` and resolves. What this
+    one guards is that the default is the strict reading: a processor defaulting to TEXT would accept
+    this document and would, in doing so, have dropped §8.2's restricted-character and
+    restricted-script rules from every enum in existence without anything being written down.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

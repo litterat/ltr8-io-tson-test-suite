@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-text-type-carries-a-member-set.tn"
+{
+  country_code => !text ^ { pattern: "[A-Z]{2}" }
+
+  nordic => !country_code ^ { members: ["SE" "NO" "DK"] }
+}
