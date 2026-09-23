@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-field-fixed-to-absent-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: "`type? = _` pins a field to absence: optional, voidable and FIXED, with no `value`, since the pin's value is `_` itself. A written value contradicts it, and omission yields the absence it is pinned to."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        person => !type_definition {
+          body: !record { fields: [
+            !record_field { name: name     type: text }
+            !record_field { name: retired  type: text  optional: true  voidable: true  role: FIXED }
+          ] }
+        }
+      }
+      """
+  }
+}
