@@ -6,12 +6,12 @@
   }
 
   dog => pet & {
-    pet_type: = "dog"
+    pet_type?: = "dog"
     breed: text
   }
 
   hound => pet & {
-    pet_type: = "dog"
+    pet_type?: = "dog"
     scent: text
   }
 }

@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-void-field-the-document-must-write-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10.1, [TSON-SCHEMA] §4.2"
+  description: "`void`'s only value is `_`, and a field whose type has no `?` refuses `_`, so `never: void` is a field no document can state; its name has no `?`, so no document may leave it out either. The record is uninhabited and linking refuses it. `never?: void` would empty only the field, and stays legal."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

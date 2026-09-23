@@ -52,8 +52,9 @@
     token carries form and text and cannot carry `fields`, a record carries `fields` and nothing
     else, and so on -- the correlation the flat `kind` discriminator could state but not enforce.
 
-    `absent` and `empty-brace` have no payload, so they are typed `void`, whose parsing contract
-    admits only the absent sentinel: they are written `absent: _` and `empty-brace: _`. §2.8's empty
+    `absent` and `empty-brace` have no payload, so they are typed `void?` -- `void`, whose only value
+    is the absent sentinel, at a position that admits it: they are written `absent: _` and
+    `empty-brace: _`. §2.8's empty
     brace is deliberately still unresolved here -- which container it denotes is a reader question,
     not a Tier 3 one.
     """
@@ -62,14 +63,14 @@
     | record: record_core
     | map: map_core
     | array: array_core
-    | absent: void
-    | empty-brace: void )
+    | absent: void?
+    | empty-brace: void? )
   }
 
   @doc:"A data-value (§2.3): zero or more annotations, an optional type-ref, and exactly one core-value."
   data_value => {
     annotations: [sidecar_annotation]
-    type-ref: text?
+    type-ref?: text?
     core: core_value
   }
 
@@ -80,19 +81,19 @@
     """
   sidecar_annotation => {
     name: text
-    value: data_value?
+    value?: data_value?
   }
 
   @doc:"A value in a position that may carry its own schema-ref (§3.3): record field values, map entry values and array elements are all scoped_value, never a bare data_value."
   scoped_value => {
-    schema-ref: text?
+    schema-ref?: text?
     value: data_value
   }
 
   @doc:"The parsed document (§2.3, §7.4): the header's own !!id/!!schema, absent as `_` when not present, plus the root data-value."
   document => {
-    id: text?
-    schema: text?
+    id?: text?
+    schema?: text?
     root: data_value
   }
 
@@ -103,11 +104,11 @@
   @doc:"""
     Exactly one of the three outcomes. `schema-document` is a document whose header carries !!meta:
     §1.5 makes rejecting it with a categorized diagnostic a Class 1 obligation, and there is nothing
-    further for the vector to state, so the member is `void` and written `schema-document: _`.
+    further for the vector to state, so the member is `void?` and written `schema-document: _`.
     """
   parser_sidecar => sidecar_common & {
     ( valid: parser_valid
     | error: vector_error
-    | schema-document: void )
+    | schema-document: void? )
   }
 }

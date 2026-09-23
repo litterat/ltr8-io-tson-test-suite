@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-defaulted-key-cleared-with-absent-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "`timeout?: int32? ~ 30` gives omission, `_` and a value three meanings: left out it is 30, written `_` it is cleared, written it is the value. Writing `_` conforms because the type is voidable."
+  schema: "fixtures/validate-field-marks.tn"
+  valid: _
+}

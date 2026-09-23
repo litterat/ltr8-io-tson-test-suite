@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-optional-key-written-as-absent-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "`nickname?: text` may be left out, and refuses `_`: omitting the key is admitted by the name's `?`, and the type has none. This is JSON Schema's ordinary optional property, which refuses null."
+  schema: "fixtures/validate-field-marks.tn"
+  error: {
+    category: validation
+    path: "/nickname"
+  }
+}

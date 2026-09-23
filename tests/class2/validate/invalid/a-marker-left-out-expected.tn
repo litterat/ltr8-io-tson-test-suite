@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-marker-left-out-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A pin on a name with no `?` is a marker the document states itself: `version: text = \"2.0\"` refuses omission, where `version?: text = \"2.0\"` would supply the pin."
+  schema: "fixtures/validate-field-marks.tn"
+  error: {
+    category: validation
+    path: "/version"
+  }
+}

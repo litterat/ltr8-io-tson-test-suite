@@ -1,6 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-pin-on-an-optional-field.tn"
-{
-  config => {
-    format: text? = "json"
-  }
-}

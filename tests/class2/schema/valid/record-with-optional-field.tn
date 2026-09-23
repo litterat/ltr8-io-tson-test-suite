@@ -3,6 +3,6 @@
   point => {
     x: int32
     y: int32
-    label: text?
+    label?: text?
   }
 }

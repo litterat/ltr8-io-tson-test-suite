@@ -36,7 +36,7 @@
     one of them is not a claim that it is the only one.
     """
   validate_error => vector_error & {
-    path: text?
+    path?: text?
   }
 
   @doc:"""
@@ -46,6 +46,6 @@
     vector fail whenever a tree model changed shape.
     """
   validate_sidecar => sidecar_common & spliced_header & {
-    ( valid: void | error: validate_error )
+    ( valid: void? | error: validate_error )
   }
 }

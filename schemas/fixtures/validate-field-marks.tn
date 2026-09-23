@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-field-marks.tn"
+!!meta:"https://tson.io/2026/36/m/meta.tn"
+!!import:"https://tson.io/2026/36/m/core.tn"
+@doc:"""
+  One field per question a field answers ([TSON-SCHEMA] §5.2): whether its key may be omitted (the name's
+  `?`), whether a written `_` is admitted (the type's `?`), and what value the schema supplies (`~`, `=`).
+  """
+{
+  entry => {
+    name:      text
+    nickname?: text
+    from:      int32?
+    timeout?:  int32? ~ 30
+    version:   text = "2.0"
+  }
+}

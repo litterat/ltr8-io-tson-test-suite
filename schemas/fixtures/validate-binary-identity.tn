@@ -21,6 +21,6 @@
   receipt => {
     seen:  digests
     named: by_hash
-    tag:   bytes = "SGk="
+    tag?:  bytes = "SGk="
   }
 }

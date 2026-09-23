@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-marker-left-out.tn"
+!entry {
+  name: Ada
+  from: 1
+}

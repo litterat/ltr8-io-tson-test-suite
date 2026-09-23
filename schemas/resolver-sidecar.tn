@@ -16,30 +16,30 @@
   special_kind      => !enum [nan infinity]
 
   exponent => {
-    sign: number_form_sign?
+    sign?: number_form_sign?
     digits: text
   }
 
   integer_form => {
-    sign: number_form_sign?
+    sign?: number_form_sign?
     digits: text
   }
 
   based_integer_form => {
-    sign: number_form_sign?
+    sign?: number_form_sign?
     radix: number_form_radix
     digits: text
   }
 
   float_form => {
-    sign: number_form_sign?
-    integer-part: text?
-    fraction-digits: text?
-    exponent: exponent?
+    sign?: number_form_sign?
+    integer-part?: text?
+    fraction-digits?: text?
+    exponent?: exponent?
   }
 
   special_value_form => {
-    sign: number_form_sign?
+    sign?: number_form_sign?
     kind: special_kind
   }
 

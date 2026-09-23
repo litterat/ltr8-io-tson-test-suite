@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-required-voidable-key-left-out-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A voidable field whose name has no `?` must still be written: admitting `_` says nothing about omitting the key, so leaving `from` out is the missing-field error even though `from: _` would conform."
+  schema: "fixtures/validate-field-marks.tn"
+  error: {
+    category: validation
+    path: "/from"
+  }
+}

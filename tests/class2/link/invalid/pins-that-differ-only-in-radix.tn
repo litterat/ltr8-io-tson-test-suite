@@ -6,10 +6,10 @@
   }
 
   ping => frame & {
-    opcode: = 255
+    opcode?: = 255
   }
 
   pong => frame & {
-    opcode: = 0xFF
+    opcode?: = 0xFF
   }
 }

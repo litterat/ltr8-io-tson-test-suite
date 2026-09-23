@@ -6,12 +6,12 @@
   }
 
   dog => pet & {
-    pet_type: = "dog"
+    pet_type?: = "dog"
     breed: text
   }
 
   cat => pet & {
-    pet_type: = "cat"
+    pet_type?: = "cat"
     indoor: boolean
   }
 }

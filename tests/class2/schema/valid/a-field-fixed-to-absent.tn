@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/valid/a-field-fixed-to-absent.tn"
-{
-  person => {
-    name:    text
-    retired: text? = _
-  }
-}
