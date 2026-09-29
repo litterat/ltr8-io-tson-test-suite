@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-argument-to-a-positional-enum-template-is-a-member.tn"
+!holder {
+  n: c
+}

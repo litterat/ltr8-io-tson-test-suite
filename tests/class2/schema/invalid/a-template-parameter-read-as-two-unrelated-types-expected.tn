@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-parameter-read-as-two-unrelated-types-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    A template parameter is read as one type, derived from the positions it stands in. `N` defaults a
+    `text` field and an `int32` field, so an argument for it would have to be both, and neither type IS-A
+    the other. The declaration is refused rather than every application of it.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
