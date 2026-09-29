@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-template-members.tn"
+!!meta:"https://tson.io/2026/37/m/meta.tn"
+!!import:"https://tson.io/2026/37/m/core.tn"
+@doc:"""
+  An enum template written in the positional form ([TSON-SCHEMA] §5.6): `!enum [a b M]` binds `members`,
+  so `M` stands in a member position and an argument for it is a member, not a type name. `names<c>` is
+  the enum with members a, b and c.
+  """
+{
+  names => <M> !enum [a b M]
+
+  holder => {
+    n: names<c>
+  }
+}

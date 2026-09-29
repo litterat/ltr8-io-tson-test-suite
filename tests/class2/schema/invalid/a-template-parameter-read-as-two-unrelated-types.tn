@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-parameter-read-as-two-unrelated-types.tn"
+{
+  clash => <N> {
+    a?: text  ~ N
+    b?: int32 ~ N
+  }
+}
