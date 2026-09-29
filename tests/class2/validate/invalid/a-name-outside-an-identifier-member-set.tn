@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-name-outside-an-identifier-member-set.tn"
+!route {
+  name:    order_id
+  heading: east
+}

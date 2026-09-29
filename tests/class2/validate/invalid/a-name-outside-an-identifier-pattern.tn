@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-name-outside-an-identifier-pattern.tn"
+!route {
+  name:    orderId
+  heading: north
+}

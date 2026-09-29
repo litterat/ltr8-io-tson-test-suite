@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-identifier-member-outside-the-grammar.tn"
+{
+  heading => !identifier ^ {
+    members: [north "2nd"]
+  }
+}
