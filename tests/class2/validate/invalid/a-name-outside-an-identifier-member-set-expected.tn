@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-name-outside-an-identifier-member-set-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2"
+  description: "`east` is a well-formed identifier outside the closed vocabulary the `members` facet states."
+  schema: "fixtures/validate-identifier.tn"
+  error: {
+    category: validation
+    path: "/heading"
+  }
+}

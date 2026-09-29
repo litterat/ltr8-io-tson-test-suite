@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-name-outside-an-identifier-pattern-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2"
+  description: "`orderId` is a well-formed identifier, so the grammar admits it, and the naming convention the `pattern` facet states refuses it."
+  schema: "fixtures/validate-identifier.tn"
+  error: {
+    category: validation
+    path: "/name"
+  }
+}
