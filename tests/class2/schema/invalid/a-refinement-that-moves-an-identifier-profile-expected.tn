@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-that-moves-an-identifier-profile-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.7"
+  description: """
+    An identifier profile's facets are fixed where the profile is constructed: a refinement restates
+    them or leaves them. `start_add` left unset on `identifier` cannot be set by a refinement, because
+    an addition widens the profile -- `_order` would be a `dunder` without being an `identifier` -- and a
+    different profile is a fresh `!identifier_type`.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

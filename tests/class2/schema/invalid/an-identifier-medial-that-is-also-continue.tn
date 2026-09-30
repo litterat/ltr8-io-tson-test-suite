@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-identifier-medial-that-is-also-continue.tn"
+{
+  both => !identifier_type { continue_add: "-"  medial: "-" }
+}

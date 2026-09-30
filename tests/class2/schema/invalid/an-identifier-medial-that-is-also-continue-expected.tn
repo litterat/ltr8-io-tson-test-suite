@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-identifier-medial-that-is-also-continue-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2"
+  description: """
+    A medial character stands only between two others, and a Continue character anywhere after the
+    first. One that is both could be read either way, so the profile does not say where `-` may stand,
+    and the body is refused when the schema loads.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
