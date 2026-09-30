@@ -2,8 +2,5 @@
 {
   status => !enum [OPEN ACTIVE DONE]
 
-  activity => !enum {
-    members: ["sedentary" "lightly active"]
-    profile: TEXT
-  }
+  activity => !text_enum ["sedentary" "lightly active"]
 }
