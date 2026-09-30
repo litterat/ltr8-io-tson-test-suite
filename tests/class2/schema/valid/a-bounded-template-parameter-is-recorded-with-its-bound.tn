@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-bounded-template-parameter-is-recorded-with-its-bound.tn"
+{
+  boxed => <T: text> { a: T }
+}

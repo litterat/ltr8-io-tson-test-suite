@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-type-argument-outside-its-parameters-bound-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: "`boxed` bounds `T` by `text`, and `int32` does not IS-A `text`. The application is refused at the argument, where the bound is checked, rather than inside the body it would be substituted into -- where `a: int32` is an ordinary field and nothing would object."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
