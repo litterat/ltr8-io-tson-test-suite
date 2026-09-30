@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-enum-draws-its-labels-from-a-vocabulary-the-schema-declares.tn"
+{
+  kebab => !identifier ^ { pattern: "[a-z]+(-[a-z]+)*" }
+
+  steps => !enum_type { type: kebab  members: [make-tea drink-tea] }
+}
