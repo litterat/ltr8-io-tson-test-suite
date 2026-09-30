@@ -3,16 +3,16 @@
 {
   spec: "[TSON-SCHEMA] §7.4, [TSON-SCHEMA] §9"
   description: """
-    An enum's members are labels drawn from a naming vocabulary, its label type, and the constructor
-    says which: `enum` is `enum_of<identifier>` and `text_enum` is `enum_of<text>`. `status` is a
-    vocabulary: its members are names, so they stay a named scope for [TSON-DATA] §8.2's hygiene.
-    `activity` is a value set of arbitrary text: two strings a document may carry, neither of them a
-    name and neither writable without quotes.
+    An enum's members are labels, held as text, and its `type` is the text family they are drawn
+    from. `enum` pins `type: identifier` and `text_enum` pins `type: text`, so the constructor an
+    author applies says which: `status` is a vocabulary whose members are names, a named scope for
+    [TSON-DATA] §8.2's hygiene; `activity` is a value set of arbitrary text, two strings a document
+    may carry, neither of them a name and neither writable without quotes.
 
     What separates them is the declaration, never the shape of the members -- a resolver inferring
     the kind from how the members happen to be spelled would switch a spoofing check on and off by
-    accident. Each instance records the constructor it applied as its `source`, and the label type is
-    that constructor's own `enum_of<T>` application.
+    accident. Each instance records the constructor it applied as its `source`; the pinned `type`
+    is injected rather than written, so neither body states it.
     """
   meta: "meta.tn"
   import: ["core.tn"]
