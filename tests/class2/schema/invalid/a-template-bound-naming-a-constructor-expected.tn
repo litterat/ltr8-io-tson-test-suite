@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-bound-naming-a-constructor-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3.1, §5.10"
+  description: "A bound names a type, which every argument must IS-A. `text_type` is a constructor of the governing meta -- structure vocabulary, not a type -- so no type argument could satisfy the bound, and the declaration is refused."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

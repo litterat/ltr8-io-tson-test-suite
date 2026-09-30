@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-bound-naming-a-constructor.tn"
+{
+  boxed => <T: text_type> { a: T }
+}
