@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-type-argument-outside-its-bound-where-a-declaration-names-the-application.tn"
+{
+  boxed => <T: text> { a: T }
+  held  => boxed<int32>
+}
