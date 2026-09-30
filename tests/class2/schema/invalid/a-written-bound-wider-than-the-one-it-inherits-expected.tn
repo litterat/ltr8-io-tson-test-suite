@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-written-bound-wider-than-the-one-it-inherits-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: "`wrong` passes `T` to `boxed`, whose parameter is bounded by `text`, so `T` must name a type that IS-A `text`. The written bound `int32` does not, so no argument could satisfy both, and the declaration is refused before anything applies it."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
