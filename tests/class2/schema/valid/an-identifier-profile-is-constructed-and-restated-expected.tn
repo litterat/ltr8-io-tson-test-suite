@@ -1,0 +1,31 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-identifier-profile-is-constructed-and-restated-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.7"
+  description: """
+    `identifier_type` is a UAX #31 profile -- Start and Continue bases, additions, medials, exclusions
+    and a normalization form -- with the text facets inside it. `kebab_name` constructs a profile of its
+    own. `short_kebab` refines it: the text facets narrow as they do on any text family, and the profile
+    facets are fixed where the profile is constructed, so a refinement restates them or leaves them.
+    `medial: "-"` restated is the same profile, and the resolved body carries it once.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        kebab_name => !type_definition {
+          source: identifier_type
+          subtypes: [short_kebab]
+          body: !identifier_type { medial: "-" }
+        }
+
+        short_kebab => !type_definition {
+          source: identifier_type
+          supertypes: [kebab_name]
+          body: !identifier_type { max_length: 12  medial: "-" }
+        }
+      }
+      """
+  }
+}

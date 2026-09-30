@@ -7,13 +7,22 @@
   refining core's `identifier`, and by constructing the family directly. A naming convention is a
   `pattern` and a closed vocabulary of names is `members`. A value is judged by the grammar first -- a
   token outside it is not an identifier, whatever the facets would say -- and by the facets after.
+
+  `identifier_type` is a UAX #31 profile, and `kebab_name` constructs another one: `-` is medial, so it
+  joins two words and never leads, trails or doubles, where the kernel's `identifier` holds `-` as a
+  Continue character and admits `content-`.
   """
 {
   snake_name => !identifier ^ { pattern: "[a-z][a-z0-9_]*" }
   direction  => !identifier_type { members: [north south] }
+  kebab_name => !identifier_type { medial: "-" }
 
   route => {
     name:    snake_name
     heading: direction
+  }
+
+  header => {
+    name: kebab_name
   }
 }

@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-medial-that-ends-a-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2"
+  description: "Under a profile whose `-` is medial, a name cannot end with it -- where the kernel's `identifier`, holding `-` as a Continue character, admits `content-`. The profile is the family's form, so the failure is a resolver error ([TSON-DATA] §8.1)."
+  schema: "fixtures/validate-identifier.tn"
+  error: {
+    category: resolver
+    path: "/name"
+  }
+}

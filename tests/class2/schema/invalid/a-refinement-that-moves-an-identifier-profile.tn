@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-that-moves-an-identifier-profile.tn"
+{
+  dunder => !identifier ^ { start_add: "_" }
+}

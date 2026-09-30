@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-identifier-profile-is-constructed-and-restated.tn"
+{
+  kebab_name => !identifier_type { medial: "-" }
+
+  short_kebab => !kebab_name ^ { max_length: 12  medial: "-" }
+}
