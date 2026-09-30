@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-type-argument-outside-its-bound-where-a-declaration-names-the-application-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: "The bound holds wherever the application is written. `held` names `boxed<int32>` itself, so it is the entry that application denotes -- and `int32` does not IS-A `text` there any more than at a field."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
