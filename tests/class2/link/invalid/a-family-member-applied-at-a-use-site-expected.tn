@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-family-member-applied-at-a-use-site-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3.4, [TSON-SCHEMA] §8.2"
+  description: "`dog_of<text>` composes onto `pet`, so applying it at a use site would add a member to pet's family under a minted name -- one a read would report, a tag could not name and a binding could not map. A family member is declared: `dogs => dog_of<text>`."
+  meta: "meta.tn"
+  import: ["core.tn" "fixtures/link-pet-base.tn"]
+  error: { category: resolver }
+}
