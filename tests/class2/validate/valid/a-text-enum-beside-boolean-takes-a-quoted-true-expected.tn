@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-text-enum-beside-boolean-takes-a-quoted-true-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4, [TSON-SCHEMA] §5.4"
+  description: "A text enum whose members spell `true` and `false` is string-class, so beside `boolean` the string `\"true\"` goes to `answer` untagged."
+  schema: "fixtures/validate-text-enum-class.tn"
+  valid: _
+}
