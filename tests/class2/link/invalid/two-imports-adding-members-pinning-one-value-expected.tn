@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/two-imports-adding-members-pinning-one-value-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3.4, [TSON-SCHEMA] §5.2"
+  description: "Each import adds a member to pet's family pinning \"cat\", and each is valid alone. Importing both puts `cat` and `kitten` in one family that a value cannot dispatch over, so the importer is refused: a family is judged over the closure that holds it."
+  meta: "meta.tn"
+  import: ["core.tn" "fixtures/link-pet-cats.tn" "fixtures/link-pet-kittens.tn"]
+  error: { category: resolver }
+}

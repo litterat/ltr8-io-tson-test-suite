@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-pet-base.tn"
+!!meta:"https://tson.io/2026/37/m/meta.tn"
+!!import:"https://tson.io/2026/37/m/core.tn"
+@doc:"A sealed family and a template that builds its members: `dog_of<T>` composes onto `pet` and pins its discriminator."
+{
+  pet    => abstract { pet_type: text =?  name: text }
+  dog_of => <T> pet & { pet_type?: = "dog"  breed: T }
+}

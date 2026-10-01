@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/two-imports-adding-members-pinning-one-value.tn"
+{
+  home => { p: pet }
+}
