@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/a-mixed-script-identifier-default-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §8.2"
+  description: "A default whose 'a' is Cyrillic U+0430, on a field typed by an identifier family. A value of such a type is a name wherever it stands, and a default is one the schema supplies: it reaches every document that omits the field, so a value the reader would refuse if a document wrote it must not be one it injects."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  refused: {
+    mechanism: restriction-level
+    unicode: "16.0"
+  }
+}
