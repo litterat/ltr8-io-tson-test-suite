@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/refused/two-identifier-set-elements-that-read-alike-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §11.4, [TSON-DATA] §8.2"
+  description: "Latin 'pass' and Cyrillic 'раѕѕ' as two elements of a set whose element type is an identifier. Each is single-script, so the restriction level admits both and only skeleton distinctness can see the pair: a set of names is one naming scope, as an identifier-keyed map's keys are, and two of its names read alike."
+  schema: "fixtures/validate-identifier.tn"
+  refused: {
+    mechanism: skeleton-distinctness
+    unicode: "16.0"
+  }
+}

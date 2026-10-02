@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/refused/a-mixed-script-identifier-set-element-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §8.2"
+  description: "'аdmin', its first letter Cyrillic, as an element of a set of identifiers. A name mixing scripts inside one word is refused by the restriction level wherever it stands, and a refused element is in no duplicate check: there is no value to compare."
+  schema: "fixtures/validate-identifier.tn"
+  refused: {
+    mechanism: restriction-level
+    unicode: "16.0"
+  }
+}
