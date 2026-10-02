@@ -7,8 +7,8 @@
     text family, written by the author and resolved in the author's own namespace. So an ordinary
     schema, which may not declare a constructor, can still enumerate the labels of a naming
     vocabulary it declares itself. Each member must be a value of `type` -- here an identifier
-    matching `kebab`'s pattern -- and since `kebab` refines `identifier`, the members are names and
-    [TSON-DATA] §8.2's hygiene reaches them.
+    matching `kebab`'s pattern -- and since `kebab` is an `identifier_type` instance, the members are
+    names and [TSON-DATA] §8.2's hygiene reaches them.
     """
   meta: "meta.tn"
   import: ["core.tn"]
@@ -17,7 +17,6 @@
       !schema {
         kebab => !type_definition {
           source: identifier_type
-          supertypes: [identifier]
           body: !identifier_type { continue_add: "-"  pattern: "[a-z]+(-[a-z]+)*" }
         }
 

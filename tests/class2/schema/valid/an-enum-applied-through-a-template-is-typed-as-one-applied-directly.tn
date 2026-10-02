@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-enum-applied-through-a-template-is-typed-as-one-applied-directly.tn"
+{
+  names => <M> !enum [a b M]
+  named => names<c>
+}

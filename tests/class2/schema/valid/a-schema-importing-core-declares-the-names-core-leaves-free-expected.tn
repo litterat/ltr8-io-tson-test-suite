@@ -1,0 +1,40 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-schema-importing-core-declares-the-names-core-leaves-free-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3, §9"
+  description: """
+    A local declaration may not reuse a name its import closure binds, so every name core declares is
+    one no schema importing it may declare. Core keeps to the types a schema cannot do without, and the
+    names a schema would use for its own types are left free: an identifier profile, a sign bound, a
+    length bound and a documentation annotation are each declared here, in a schema importing core.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        identifier => !type_definition {
+          source: identifier_type
+          body: !identifier_type { continue_add: "-" }
+        }
+
+        positive_integer => !type_definition {
+          source: integer_type
+          supertypes: [integer]
+          body: !integer_type { min: 1 }
+        }
+
+        non_empty_text => !type_definition {
+          source: text_type
+          supertypes: [text]
+          body: !text_type { min_length: 1 }
+        }
+
+        documentation => @annotation !type_definition {
+          source: text
+          body: !reference { target: text }
+        }
+      }
+      """
+  }
+}
