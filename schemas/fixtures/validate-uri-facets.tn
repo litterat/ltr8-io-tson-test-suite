@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-uri-facets.tn"
+!!meta:"https://tson.io/2026/37/m/meta.tn"
+!!import:"https://tson.io/2026/37/m/core.tn"
+@doc:"""
+  Fields typed by core's two URI atoms and by refinements of `uri` through `uri_type`'s own facets.
+  `uri` has a scheme (RFC 3986 §3) and `uri_reference` may be relative (§4.1); `schemes` admits a
+  set of schemes, compared case-insensitively (§3.1); `allow_fragment` withdrawn refuses a fragment.
+  `iri` and `iri_reference` are the same pair over RFC 3987, whose characters reach beyond US-ASCII.
+  """
+{
+  web_address => !uri ^ { schemes: [http https] }
+  absolute    => !uri ^ { allow_fragment: false }
+  link        => { href: web_address  base: absolute  home: uri  ref: uri_reference }
+  resource    => { id: iri  ref: iri_reference }
+}

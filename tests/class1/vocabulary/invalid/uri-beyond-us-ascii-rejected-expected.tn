@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/uri-beyond-us-ascii-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "A URI is US-ASCII (RFC 3986 §2): text beyond it is an IRI, outside the URI grammar, and !uri refuses it"
+  type-ref: "uri"
+  error: { category: resolver }
+}

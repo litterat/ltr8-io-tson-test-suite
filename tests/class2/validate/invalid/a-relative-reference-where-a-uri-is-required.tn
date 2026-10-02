@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-relative-reference-where-a-uri-is-required.tn"
+!link { href: "https://example.com/"  base: "urn:isbn:0451450523"  home: "foo/bar"  ref: "foo/bar?x=1" }

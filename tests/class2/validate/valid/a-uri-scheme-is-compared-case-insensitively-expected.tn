@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-uri-scheme-is-compared-case-insensitively-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "`schemes: [http https]` given `HTTPS://…`. RFC 3986 §3.1 compares a scheme case-insensitively, so the upper-case spelling is the same scheme."
+  schema: "fixtures/validate-uri-facets.tn"
+  valid: _
+}

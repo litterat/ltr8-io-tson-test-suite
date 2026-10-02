@@ -2,6 +2,6 @@
 !!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
 {
   spec: "§3.3"
-  description: "A directive's argument must be a URI (RFC 3986); an unescaped space is not valid anywhere in a URI"
+  description: "A directive's argument must be an IRI-reference (RFC 3987); an unescaped space is not valid anywhere in one"
   error: { category: parser }
 }
