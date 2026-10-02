@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/refused/a-mixed-script-identifier-value-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §8.2"
+  description: "The same name at a field whose type is an identifier family (`kebab_name`) rather than at a map key. The per-name mechanisms ride the type, not the position, so a field value meets them as a key does."
+  schema: "fixtures/validate-identifier.tn"
+  refused: {
+    mechanism: restriction-level
+    unicode: "16.0"
+  }
+}

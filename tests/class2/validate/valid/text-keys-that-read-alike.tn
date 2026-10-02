@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/text-keys-that-read-alike.tn"
+!labels {
+  pass => a
+  раѕѕ => b
+  аdmin => c
+}
