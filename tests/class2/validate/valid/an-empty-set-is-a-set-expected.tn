@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-empty-set-is-a-set-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3"
+  description: "A set field given no elements. `set_type` refines `array` and bounds it no further, so a set admits `[]` as an array does; a set that must be non-empty states `min_items: 1` on a named entry, which the `set<T>` template does not carry."
+  schema: "fixtures/validate-core-templates.tn"
+  valid: _
+}

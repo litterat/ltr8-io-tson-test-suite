@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-core-templates.tn"
+!!meta:"https://tson.io/2026/37/m/meta.tn"
+!!import:"https://tson.io/2026/37/m/core.tn"
+@doc:"""
+  Fields typed by core's container templates, applied at the field the way an author writes them
+  ([TSON-SCHEMA] §5.10). `set<text>` is a set with no bound of its own: `set_type`'s bounds are
+  `array`'s, so the empty set is a set ([TSON-SCHEMA] §5.3). `tuple1<T>` and `optional_tuple1<T>`
+  are the one-position tuple the bracket sugar cannot spell, `[T]` being an array: one REQUIRED
+  position, and one OPTIONAL position that admits the absent sentinel.
+  """
+{
+  tagged => { tags: set<text> }
+  pinned => { only: tuple1<text> }
+  slot   => { maybe: optional_tuple1<int32> }
+}
