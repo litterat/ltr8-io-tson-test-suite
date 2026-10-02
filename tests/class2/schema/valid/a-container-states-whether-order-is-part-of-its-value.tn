@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-container-states-whether-order-is-part-of-its-value.tn"
+{
+  steps  => !map { key_type: text  value_type: integer  ordered: true }
+  lookup => {text => integer}
+  tags   => !array { element_type: text  ordered: false }
+}
