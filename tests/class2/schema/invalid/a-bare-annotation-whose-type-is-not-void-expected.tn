@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-bare-annotation-whose-type-is-not-void-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §6"
+  description: """
+    A bare annotation is shorthand for `@T:_`, so it is read against its type like a written value. `doc`
+    is text, and text does not admit `_`: the bare form is for a void-typed marker such as `@deprecated`,
+    and here it is a resolver error, as `@doc:_` would be.
+
+    What the vector guards is that the bare form is checked at all. A processor that validates only a
+    written value would accept the mark, and a documentation annotation would carry no documentation.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
