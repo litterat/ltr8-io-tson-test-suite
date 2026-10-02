@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-optional-one-position-tuple-holds-the-absent-sentinel-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §7.6"
+  description: "Core's `optional_tuple1<int32>` given the absent sentinel. The position is OPTIONAL, so `_` occupies it, and the tuple still has its one element."
+  schema: "fixtures/validate-core-templates.tn"
+  valid: _
+}

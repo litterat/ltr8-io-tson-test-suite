@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-one-position-tuple-given-two-elements.tn"
+!pinned { only: [a b] }
