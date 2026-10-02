@@ -14,7 +14,8 @@
   Continue character and admits `content-`.
 
   A value of an identifier family is a name ([TSON-DATA] §8.2), and the keys of `handlers` are one
-  naming scope ([TSON-SCHEMA] §11.4); the keys of `labels` are text, which is data.
+  naming scope ([TSON-SCHEMA] §11.4); the keys of `labels` are text, which is data. The elements of
+  `roles`, a set of names, are one scope too; those of `path`, an array that admits repetition, are not.
   """
 {
   identifier => !identifier_type { continue_add: "-" }
@@ -33,4 +34,6 @@
 
   handlers => { identifier => text }
   labels   => { text => text }
+  roles    => set<identifier>
+  path     => [identifier]
 }

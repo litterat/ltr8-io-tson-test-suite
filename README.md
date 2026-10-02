@@ -137,11 +137,12 @@ an implementation is most likely to miss: an enum member and a group's member la
 a constructor's own vocabulary rather than through a declaration, so a processor that applies a mechanism
 where a name is *read* rather than where a scope is *walked* can pass every other vector and fail those.
 
-`class2/validate/refused/` states the one scope that is data rather than schema: the keys of a map whose key
-type is an identifier family, which §11.4 adds beside the four. A value of such a type is a name, so the
-per-name mechanisms reach it as they reach a field name, and the map's keys are a set skeleton distinctness
-runs over. Its look-alike vector uses two names that are each single-script, since a mixed-script key is
-refused by the restriction level before skeleton distinctness has a pair to compare.
+`class2/validate/refused/` states the scopes that are data rather than schema: the keys of a map whose key
+type is an identifier family, and the elements of an array whose elements are unique (a set, or any array stating
+`unique_items`) and whose element type is one, which §11.4 adds beside the four. A value of such a type is a name, so the per-name mechanisms reach it as they reach a field name, and the
+map's keys and the set's elements are each a set skeleton distinctness runs over; an array, which admits
+repetition, is not. Its look-alike vectors use two names that are each single-script, since a mixed-script
+name is refused by the restriction level before skeleton distinctness has a pair to compare.
 
 So a `refused` sidecar names the mechanism and the **UTS #39 data version** it was computed against.
 §8.2 says two conforming implementations may legitimately disagree and that the version is the only
