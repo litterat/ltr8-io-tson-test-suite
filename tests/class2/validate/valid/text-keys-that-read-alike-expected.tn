@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/text-keys-that-read-alike-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §11.4, [TSON-DATA] §2.6"
+  description: "The pair and the mixed-script key that are refused under an identifier key type, here keyed by text. A text key is a value, which carries whatever its domain does: neither mechanism reaches it, and the map has no scope."
+  schema: "fixtures/validate-identifier.tn"
+  valid: _
+}

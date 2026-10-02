@@ -23,7 +23,7 @@ tests/<class>/<layer>/<bucket>/<slug>-expected.tn   the sidecar
 
 `<class>` is `class1` or `class2`, matching the spec's own two conformance classes ([TSON-DATA]
 §1.5, [TSON-SCHEMA] §1.3). A Class 1 processor runs `class1/` and skips `class2/` — that is what the
-directory is for. `<bucket>` is `valid`, `invalid`, or `schema-document`; it must agree with which
+directory is for. `<bucket>` is `valid`, `invalid`, `refused`, or `schema-document`; it must agree with which
 member of the sidecar's outcome group is present, and `scripts/check_vectors.py` enforces that.
 
 `proposed/` mirrors the same layout and is **not part of a conformance claim** — see below.
