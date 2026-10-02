@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-schemas-own-identifier-does-not-retype-an-enum.tn"
+{
+  identifier => !identifier_type { pattern: "[a-z]+" }
+  shout      => !enum [LOUD QUIET]
+}

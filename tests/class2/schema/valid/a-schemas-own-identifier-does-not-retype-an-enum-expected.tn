@@ -1,0 +1,28 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-schemas-own-identifier-does-not-retype-an-enum-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4"
+  description: """
+    The `identifier` that `enum` pins was written in the governing meta and names the kernel's
+    identifier there. A schema's own `identifier`, here one admitting only lowercase names, is a
+    different type in a different namespace, so it does not retype the enum: `LOUD` and `QUIET` are
+    names, and the enum loads.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        identifier => !type_definition {
+          source: identifier_type
+          body: !identifier_type { pattern: "[a-z]+" }
+        }
+
+        shout => !type_definition {
+          source: enum
+          body: !enum { members: [LOUD QUIET] }
+        }
+      }
+      """
+  }
+}

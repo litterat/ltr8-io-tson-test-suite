@@ -4,7 +4,8 @@
 @doc:"""
   The identifier family ([TSON-SCHEMA] §4.2): `identifier_type` composes `text_type`, so an identifier
   takes the text facets, each applied inside [TSON-DATA] §7.7's grammar. Reached here both ways: by
-  refining core's `identifier`, and by constructing the family directly. A naming convention is a
+  refining an `identifier` this schema declares -- core declares none, leaving the name free to a schema
+  that imports it -- and by constructing the family directly. A naming convention is a
   `pattern` and a closed vocabulary of names is `members`. A value is judged by the grammar first -- a
   token outside it is not an identifier, whatever the facets would say -- and by the facets after.
 
@@ -13,6 +14,7 @@
   Continue character and admits `content-`.
   """
 {
+  identifier => !identifier_type { continue_add: "-" }
   snake_name => !identifier ^ { pattern: "[a-z][a-z0-9_]*" }
   direction  => !identifier_type { members: [north south] }
   kebab_name => !identifier_type { medial: "-" }
