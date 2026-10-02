@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/uri-relative-reference-fails-validation-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    A URI has a scheme (RFC 3986 §3): a relative reference is a URI-reference and not a URI, so
+    !uri refuses it as outside its value space
+    """
+  type-ref: "uri"
+  error: { category: validation }
+}

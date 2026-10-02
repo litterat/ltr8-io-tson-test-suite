@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-relative-reference-where-an-iri-is-required-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "Core's `iri` given a relative reference. An IRI has a scheme (RFC 3987 §2.2); the relative reference is an `iri_reference` and not an `iri`."
+  schema: "fixtures/validate-uri-facets.tn"
+  error: { category: validation  path: "/id" }
+}

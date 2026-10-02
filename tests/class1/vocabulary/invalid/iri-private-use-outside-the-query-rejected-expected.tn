@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/iri-private-use-outside-the-query-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "RFC 3987 admits a private-use character (iprivate) in the query and nowhere else; in the path it is outside the IRI grammar"
+  type-ref: "iri"
+  error: { category: resolver }
+}

@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-uri-refinement-that-restores-relative-references.tn"
+{
+  relaxed => !uri ^ { allow_relative: true }
+}

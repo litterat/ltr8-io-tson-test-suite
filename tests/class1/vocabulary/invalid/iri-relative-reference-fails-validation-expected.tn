@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/iri-relative-reference-fails-validation-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "An IRI has a scheme (RFC 3987 §2.2): a relative reference is an IRI-reference and not an IRI, so !iri refuses it as outside its value space"
+  type-ref: "iri"
+  error: { category: validation }
+}

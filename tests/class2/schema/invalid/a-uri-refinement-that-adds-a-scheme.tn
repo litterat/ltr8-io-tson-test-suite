@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-uri-refinement-that-adds-a-scheme.tn"
+{
+  web   => !uri ^ { schemes: [http https] }
+  wider => !web ^ { schemes: [https ftp] }
+}
