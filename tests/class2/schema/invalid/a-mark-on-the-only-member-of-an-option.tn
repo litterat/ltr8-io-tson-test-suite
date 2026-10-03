@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-mark-on-the-only-member-of-an-option.tn"
+{
+  r => { ( a?: text | b: text ) }
+}

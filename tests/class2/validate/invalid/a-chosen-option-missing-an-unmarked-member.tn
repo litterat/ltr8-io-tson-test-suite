@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-chosen-option-missing-an-unmarked-member.tn"
+!endpoint { port: 80 }

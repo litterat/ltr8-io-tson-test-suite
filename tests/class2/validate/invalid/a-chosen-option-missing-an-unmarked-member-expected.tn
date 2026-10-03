@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-chosen-option-missing-an-unmarked-member-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.11"
+  description: "Writing `port` chooses the option `host: text  port: int32`, and a chosen option must contain every member not marked `?`, so `host` is missing."
+  schema: "fixtures/validate-field-groups.tn"
+  error: {
+    category: validation
+  }
+}

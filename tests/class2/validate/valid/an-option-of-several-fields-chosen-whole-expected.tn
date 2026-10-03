@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-option-of-several-fields-chosen-whole-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.11"
+  description: "Writing `name` chooses the option `name?: text  type?: text`, which needs neither member, so both together conform; the other option, `include`, is not chosen."
+  schema: "fixtures/validate-field-groups.tn"
+  valid: _
+}
