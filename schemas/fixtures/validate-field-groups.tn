@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-field-groups.tn"
+!!meta:"https://tson.io/2026/37/m/meta.tn"
+!!import:"https://tson.io/2026/37/m/core.tn"
+@doc:"""
+  Field groups whose options hold several fields ([TSON-SCHEMA] §5.11). An option is chosen when any
+  of its members is present, a chosen option must contain every member not marked `?`, and the group's
+  state counts chosen options. `+` is at least one of its members.
+
+  `fragment` is exactly one of `include` and at least one of `name` and `type`. `endpoint` is at most
+  one of `host` with `port` and `socket`. `contact` is at least one of `email` and `phone`.
+  """
+{
+  fragment => { ( include: text | name?: text  type?: text ) }
+  endpoint => { ( host: text  port: int32 | socket: text )? }
+  contact  => { ( email: text | phone: text )+ }
+}

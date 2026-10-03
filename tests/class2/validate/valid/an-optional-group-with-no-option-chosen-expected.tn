@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-optional-group-with-no-option-chosen-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.11"
+  description: "`endpoint`'s group is `?`, so choosing no option conforms."
+  schema: "fixtures/validate-field-groups.tn"
+  valid: _
+}
