@@ -53,7 +53,7 @@
     else, and so on -- the correlation the flat `kind` discriminator could state but not enforce.
 
     `absent` and `empty-brace` have no payload, so they are typed `void?` -- `void`, whose only value
-    is the absent sentinel, at a position that admits it: they are written `absent: _` and
+    is the void sentinel, at a position that admits it: they are written `absent: _` and
     `empty-brace: _`. §2.8's empty
     brace is deliberately still unresolved here -- which container it denotes is a reader question,
     not a Tier 3 one.
