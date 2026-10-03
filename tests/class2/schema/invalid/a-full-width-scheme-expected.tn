@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-full-width-scheme-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: """
+    A scheme compares under ASCII_CASEFOLD (RFC 3986 §3.1), which leaves a full-width `HTTP` as it is,
+    so it is not a `scheme_name`: a scheme is ASCII letters, digits, `+`, `-` and `.`.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
