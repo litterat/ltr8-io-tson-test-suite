@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/two-supplementary-characters-are-two-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "Two code points exceed `max_length: 1` -- a range violation, whatever units a host stores them in."
+  schema: "fixtures/validate-text-length.tn"
+  error: {
+    category: validation
+    path: "/g"
+  }
+}
