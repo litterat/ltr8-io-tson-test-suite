@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-field-group-option-holds-several-fields.tn"
+{
+  fragment => { ( include: text | name?: text  type?: text ) }
+  endpoint => { ( host: text  port: int32 | socket: text )? }
+  contact  => { ( email: text | phone: text )+ }
+}
