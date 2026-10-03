@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-text-normalization.tn"
+!!meta:"https://tson.io/2026/37/m/meta.tn"
+!!import:"https://tson.io/2026/37/m/core.tn"
+@doc:"""
+  A text family's `normalization` is the form its value is put into: a value is its token's text in that
+  form, and every facet, pin and comparison judges the value. `NFKC_CASEFOLD` is UAX #31's form for names
+  compared without case, which over ASCII lowercases.
+
+  `header_name` is a profile of lowercase letters, digits and `-` whose values are folded, so it admits a
+  name however it is cased. `charset` lists its members in either case and folds them too.
+  """
+{
+  header_name => !identifier_type { start: NONE  continue: NONE
+    start_add: "abcdefghijklmnopqrstuvwxyz"  continue_add: "abcdefghijklmnopqrstuvwxyz0123456789-"
+    normalization: NFKC_CASEFOLD }
+  charset => !text_type { members: [UTF-8 us-ascii]  normalization: NFKC_CASEFOLD }
+  request => { headers?: {header_name => text}  charset?: charset }
+  idempotent => { header: header_name = Idempotency-Key }
+}

@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/two-members-that-are-one-value.tn"
+{
+  charset => !text_type { members: [UTF-8 utf-8]  normalization: NFKC_CASEFOLD }
+}

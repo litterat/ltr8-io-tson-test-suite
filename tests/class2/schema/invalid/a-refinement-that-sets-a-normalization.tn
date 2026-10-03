@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-that-sets-a-normalization.tn"
+{
+  folded => !text ^ { normalization: NFKC_CASEFOLD }
+}

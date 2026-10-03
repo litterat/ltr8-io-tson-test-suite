@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-pin-matches-any-casing-of-its-value.tn"
+!idempotent { header: IDEMPOTENCY-KEY }

@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-regex-is-never-normalized.tn"
+{
+  folded => !regex_type { normalization: NFKC }
+}
