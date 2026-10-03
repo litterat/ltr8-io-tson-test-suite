@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/a-mixed-script-identifier-key-in-an-annotation-value.tn"
+{
+  orders => @routes:{ аdmin => list } { id: text }
+}
