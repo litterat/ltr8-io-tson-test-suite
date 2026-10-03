@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-folding-profile-admits-a-name-however-it-is-cased-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "`header_name`'s profile lists lowercase letters only, and its values are put into NFKC_CASEFOLD before the profile judges them, so `Content-Type` is the name `content-type`."
+  schema: "fixtures/validate-text-normalization.tn"
+  valid: _
+}

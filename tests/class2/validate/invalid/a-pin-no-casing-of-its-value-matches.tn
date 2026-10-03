@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-pin-no-casing-of-its-value-matches.tn"
+!idempotent { header: request-id }

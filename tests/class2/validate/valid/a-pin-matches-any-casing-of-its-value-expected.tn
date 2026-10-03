@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-pin-matches-any-casing-of-its-value-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.5"
+  description: "A pin compares values under the field type's own equality: `= Idempotency-Key` and `IDEMPOTENCY-KEY` both fold to `idempotency-key`."
+  schema: "fixtures/validate-text-normalization.tn"
+  valid: _
+}
