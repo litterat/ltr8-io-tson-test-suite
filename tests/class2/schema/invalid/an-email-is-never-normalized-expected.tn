@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-email-is-never-normalized-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: """
+    `email_type` fixes its normalization to NONE: a mailbox's local part is case-sensitive (RFC 5321
+    §2.4), so a fold over the whole text could merge two mailboxes, and a construction stating another
+    form contradicts the fixed field.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

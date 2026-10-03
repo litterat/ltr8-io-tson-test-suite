@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-iri-is-never-normalized.tn"
+{
+  folded => !iri_type { normalization: NFKC_CASEFOLD }
+}
