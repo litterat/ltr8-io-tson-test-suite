@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-ascii-fold-leaves-the-kelvin-sign-alone.tn"
+!message { fields: { "\u{212A}eep-Alive" => a } }

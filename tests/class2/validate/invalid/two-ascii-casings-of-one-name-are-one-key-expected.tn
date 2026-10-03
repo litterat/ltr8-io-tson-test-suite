@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/two-ascii-casings-of-one-name-are-one-key-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.6, [TSON-SCHEMA] §5.5"
+  description: "Under a schema a key's identity is its type's value, and both spellings fold to `content-type` under ASCII_CASEFOLD, so the map holds one key twice -- reported at the second."
+  schema: "fixtures/validate-ascii-casefold.tn"
+  error: {
+    category: resolver
+    path: "/fields/content-type"
+  }
+}

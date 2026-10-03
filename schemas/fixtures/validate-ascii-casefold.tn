@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-ascii-casefold.tn"
+!!meta:"https://tson.io/2026/37/m/meta.tn"
+!!import:"https://tson.io/2026/37/m/core.tn"
+@doc:"""
+  `ASCII_CASEFOLD` maps A-Z to a-z and changes nothing else: the comparison of case-insensitive ASCII names
+  such as HTTP field names and URI schemes. `NFKC_CASEFOLD` is UAX #31's fold, which also folds compatibility
+  characters into ASCII.
+
+  `field_name` and `folded_name` are one profile of lowercase letters, digits and `-` under the two forms, so
+  both admit a name however its ASCII letters are cased, and only `folded_name` admits a full-width spelling.
+  """
+{
+  field_name => !identifier_type { start: NONE  continue: NONE
+    start_add: "abcdefghijklmnopqrstuvwxyz"  continue_add: "abcdefghijklmnopqrstuvwxyz0123456789-"
+    normalization: ASCII_CASEFOLD }
+  folded_name => !identifier_type { start: NONE  continue: NONE
+    start_add: "abcdefghijklmnopqrstuvwxyz"  continue_add: "abcdefghijklmnopqrstuvwxyz0123456789-"
+    normalization: NFKC_CASEFOLD }
+  message => { fields?: {field_name => text}  folded?: {folded_name => text} }
+}

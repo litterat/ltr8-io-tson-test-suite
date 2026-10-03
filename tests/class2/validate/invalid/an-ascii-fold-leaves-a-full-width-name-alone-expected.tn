@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-ascii-fold-leaves-a-full-width-name-alone-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "ASCII_CASEFOLD changes only A-Z, so a full-width `C` (U+FF23) is still itself, and a profile of ASCII letters refuses it, as RFC 9110 refuses it in a field name."
+  schema: "fixtures/validate-ascii-casefold.tn"
+  error: { category: resolver  path: "/fields/\u{FF23}ontent-Type" }
+}
