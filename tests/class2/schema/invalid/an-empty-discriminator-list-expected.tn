@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-empty-discriminator-list-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: """
+    A family is member-dispatched exactly where `discriminators` is present, so an empty list would be a
+    second spelling of tag dispatch: `record.discriminators` is `[field_name; 1..]`, and an empty list is not
+    valid data for it.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

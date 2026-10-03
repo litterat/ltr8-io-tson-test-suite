@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-group-of-no-options-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.11, [TSON-SCHEMA] §8.1"
+  description: """
+    A group of no options is a presence rule over no fields: `field_group.members` is
+    `[[field_name; 1..]; 1..]`, and an empty list is not valid data for it.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

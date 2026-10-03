@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-email-is-never-normalized.tn"
+{
+  folded => !email_type { normalization: NFKC_CASEFOLD }
+}
