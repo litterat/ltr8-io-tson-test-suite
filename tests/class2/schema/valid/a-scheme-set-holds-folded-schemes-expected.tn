@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-scheme-set-holds-folded-schemes-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: """
+    `uri_type.schemes` is a set of the kernel's `scheme_name`, an identifier whose value is folded as
+    RFC 3986 §3.1 compares a scheme, so `HTTP` is held as `http`.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        web => !type_definition {
+          source: uri_type
+          supertypes: [uri]
+          body: !uri_type { schemes: [http https]  allow_relative: false }
+        }
+      }
+      """
+  }
+}

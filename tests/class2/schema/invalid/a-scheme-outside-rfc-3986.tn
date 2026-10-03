@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-scheme-outside-rfc-3986.tn"
+{
+  web => !uri ^ { schemes: ["ht tp"] }
+}

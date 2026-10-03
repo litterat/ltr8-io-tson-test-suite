@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-scheme-set-holds-folded-schemes.tn"
+{
+  web => !uri ^ { schemes: [HTTP https] }
+}
