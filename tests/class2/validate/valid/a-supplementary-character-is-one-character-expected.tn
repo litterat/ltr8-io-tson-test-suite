@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-supplementary-character-is-one-character-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "U+1F600 is one code point, so it meets `max_length: 1`, and beside one other character makes `length: 2` -- though each is two UTF-16 units."
+  schema: "fixtures/validate-text-length.tn"
+  valid: _
+}
