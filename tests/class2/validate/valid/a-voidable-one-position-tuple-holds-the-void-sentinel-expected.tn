@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-voidable-one-position-tuple-holds-the-void-sentinel-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §7.6"
+  description: "Core's `voidable_tuple1<int32>` given the void sentinel. The position is voidable, so `_` occupies it, and the tuple still has its one element."
+  schema: "fixtures/validate-core-templates.tn"
+  valid: _
+}

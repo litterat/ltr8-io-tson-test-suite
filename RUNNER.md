@@ -44,7 +44,7 @@ The sidecar is TSON. Parse it with the implementation under test — the circula
 dogfooding, and a broken parser fails loudly rather than quietly agreeing with itself.
 
 Sidecars are written in a conservative subset so a from-scratch implementation can read them before
-its own parser is finished: **records, arrays, the three token forms, the absent sentinel `_`, and
+its own parser is finished: **records, arrays, the three token forms, the void sentinel `_`, and
 the `!!id`/`!!schema` header directives**. No maps, no type-refs, no annotations beyond the `@doc`
 in `schemas/`. A vector that needs more than this subset is a vector in the wrong format.
 

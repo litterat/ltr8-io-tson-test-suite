@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
 {
   spec: "§2.9"
-  description: "The absent sentinel may occupy any data-value position, the document's top-level value included."
+  description: "The void sentinel may occupy any data-value position, the document's top-level value included."
   valid: {
     value: { absent: _ }
   }
