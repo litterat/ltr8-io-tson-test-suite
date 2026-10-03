@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/two-identifier-keys-that-read-alike-in-an-annotation-value.tn"
+{
+  orders => @routes:{ pass => list  раѕѕ => drop } { id: text }
+}
