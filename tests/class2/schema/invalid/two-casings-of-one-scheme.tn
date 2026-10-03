@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/two-casings-of-one-scheme.tn"
+{
+  web => !uri ^ { schemes: [HTTP http] }
+}
