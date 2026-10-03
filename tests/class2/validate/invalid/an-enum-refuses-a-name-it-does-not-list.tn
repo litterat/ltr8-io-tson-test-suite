@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-enum-refuses-a-name-it-does-not-list.tn"
+!screened { h: X-Trace }
