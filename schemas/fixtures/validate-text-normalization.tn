@@ -7,7 +7,8 @@
   compared without case, which over ASCII lowercases.
 
   `header_name` is a profile of lowercase letters, digits and `-` whose values are folded, so it admits a
-  name however it is cased. `charset` lists its members in either case and folds them too.
+  name however it is cased. `charset` lists its members in either case and folds them too. `safe_header`
+  is an enum over `header_name`, so it matches its members in that type's form.
   """
 {
   header_name => !identifier_type { start: NONE  continue: NONE
@@ -16,4 +17,6 @@
   charset => !text_type { members: [UTF-8 us-ascii]  normalization: NFKC_CASEFOLD }
   request => { headers?: {header_name => text}  charset?: charset }
   idempotent => { header: header_name = Idempotency-Key }
+  safe_header => !enum_type { type: header_name  members: [Accept content-type] }
+  screened => { h: safe_header }
 }
