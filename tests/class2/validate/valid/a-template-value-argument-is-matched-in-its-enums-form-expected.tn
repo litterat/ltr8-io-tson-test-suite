@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-template-value-argument-is-matched-in-its-enums-form-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.4"
+  description: "`typed_by<safe_header, Content-Type>` binds the value argument to the member written `content-type`: the argument is read as the enum, in its label type's folding form, so the schema loads and the omitted field takes the default."
+  schema: "fixtures/validate-text-normalization.tn"
+  valid: _
+}
