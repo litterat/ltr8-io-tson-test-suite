@@ -8,7 +8,8 @@
 
   `header_name` is a profile of lowercase letters, digits and `-` whose values are folded, so it admits a
   name however it is cased. `charset` lists its members in either case and folds them too. `safe_header`
-  is an enum over `header_name`, so it matches its members in that type's form.
+  is an enum over `header_name`, so it matches its members in that type's form, and `picked` binds a template's
+  value argument to one of them however it is cased.
   """
 {
   header_name => !identifier_type { start: NONE  continue: NONE
@@ -19,4 +20,6 @@
   idempotent => { header: header_name = Idempotency-Key }
   safe_header => !enum_type { type: header_name  members: [Accept content-type] }
   screened => { h: safe_header }
+  typed_by => <T, N> { w?: T ~ N }
+  picked => { p: typed_by<safe_header, Content-Type> }
 }
