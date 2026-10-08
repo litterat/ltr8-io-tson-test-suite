@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/bare-plus-in-a-data-value-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.2.5"
+  description: "'+' is a special token the schema grammar reserves, and like every reserved special token it is a parse error where a data value is expected"
+  error: { category: parser }
+}

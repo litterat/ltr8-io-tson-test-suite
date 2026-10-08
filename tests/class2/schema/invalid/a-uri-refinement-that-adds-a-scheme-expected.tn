@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-uri-refinement-that-adds-a-scheme-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: """
+    `schemes` is a member set, and a refinement's member set may only shrink. `wider` adds `ftp`, a
+    scheme `web` refuses, so it is not a refinement of `web`.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

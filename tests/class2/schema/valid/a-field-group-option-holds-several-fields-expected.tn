@@ -1,0 +1,49 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-field-group-option-holds-several-fields-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.11"
+  description: "An option of a field group may hold several fields: `|` separates options, and a `?` on a member's name makes it optional once its option is chosen. Each member is an optional field of the record, and the group records its options in `members`, the marked members in `optional_members`, and whether it is optional. `+` is sugar for at least one of its members: the non-optional group of one option whose members are all optional within it."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        fragment => !type_definition {
+          body: !record {
+            fields: [
+              !record_field { name: include  type: text  optional: true }
+              !record_field { name: name     type: text  optional: true }
+              !record_field { name: type     type: text  optional: true }
+            ]
+            groups: [
+              !field_group { members: [[include] [name type]]  optional_members: [name type] }
+            ]
+          }
+        }
+        endpoint => !type_definition {
+          body: !record {
+            fields: [
+              !record_field { name: host    type: text   optional: true }
+              !record_field { name: port    type: int32  optional: true }
+              !record_field { name: socket  type: text   optional: true }
+            ]
+            groups: [
+              !field_group { members: [[host port] [socket]]  optional: true }
+            ]
+          }
+        }
+        contact => !type_definition {
+          body: !record {
+            fields: [
+              !record_field { name: email  type: text  optional: true }
+              !record_field { name: phone  type: text  optional: true }
+            ]
+            groups: [
+              !field_group { members: [[email phone]]  optional_members: [email phone] }
+            ]
+          }
+        }
+      }
+      """
+  }
+}

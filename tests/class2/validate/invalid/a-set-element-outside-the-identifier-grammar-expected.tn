@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-set-element-outside-the-identifier-grammar-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §7.7, [TSON-SCHEMA] §7.5"
+  description: "'2nd' as an element of a set of identifiers: an identifier never begins with a digit, so the element is a token the type cannot read -- a resolver error ([TSON-DATA] §8.1) -- at its own index. A set's duplicate check compares values, and an element that is not one is in no such comparison."
+  schema: "fixtures/validate-identifier.tn"
+  error: {
+    category: resolver
+    path: "/1"
+  }
+}

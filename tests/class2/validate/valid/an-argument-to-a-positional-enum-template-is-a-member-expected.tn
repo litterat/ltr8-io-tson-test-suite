@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-argument-to-a-positional-enum-template-is-a-member-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.6"
+  description: "`M` stands in `members` through the positional form, so the argument `c` is read as a member rather than as a reference to a type named `c`, and `c` is admitted."
+  schema: "fixtures/validate-template-members.tn"
+  valid: _
+}

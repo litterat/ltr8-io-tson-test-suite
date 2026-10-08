@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
-!!meta:"https://tson.io/2026/36/m/meta.tn"
-!!import:"https://tson.io/2026/36/m/core.tn"
+!!meta:"https://tson.io/2026/37/m/meta.tn"
+!!import:"https://tson.io/2026/37/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
   Formal shape of a validate-layer sidecar (tests/class2/validate/**/*-expected.tn) -- a data
@@ -45,7 +45,14 @@
     in a model that has nothing to do with schemas, and restating it here would make a Class 2
     vector fail whenever a tree model changed shape.
     """
+  @doc:"""
+    `refused` is [TSON-DATA] §8.1's fifth outcome at this layer. A value whose type is an identifier
+    family is a name, so §8.2's per-name mechanisms reach it as they reach a field name, and the keys
+    of a map whose key type is one are a naming scope ([TSON-SCHEMA] §11.4) that skeleton distinctness
+    runs over. A refused document is one this processor declines under a policy a deployment may relax
+    in code, not one the schema says is wrong.
+    """
   validate_sidecar => sidecar_common & spliced_header & {
-    ( valid: void? | error: validate_error )
+    ( valid: void? | error: validate_error | refused: vector_refusal )
   }
 }

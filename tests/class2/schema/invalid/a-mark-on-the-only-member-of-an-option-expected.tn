@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-mark-on-the-only-member-of-an-option-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.11"
+  description: "The only member of an option is present exactly when its option is chosen, so a `?` on its name changes nothing, and the grammar refuses it: `( a: text | b: text )` is the group."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

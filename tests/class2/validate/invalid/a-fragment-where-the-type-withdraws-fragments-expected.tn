@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-fragment-where-the-type-withdraws-fragments-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "`allow_fragment: false` given a URI with a fragment. Withdrawn, the permission leaves RFC 3986's absolute-URI (§4.3), which has none."
+  schema: "fixtures/validate-uri-facets.tn"
+  error: { category: validation  path: "/base" }
+}

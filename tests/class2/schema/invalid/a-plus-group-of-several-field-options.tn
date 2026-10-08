@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-plus-group-of-several-field-options.tn"
+{
+  r => { ( a: text  b: text | c: text )+ }
+}

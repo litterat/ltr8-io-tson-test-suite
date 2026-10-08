@@ -1,0 +1,30 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-enum-draws-its-labels-from-a-vocabulary-the-schema-declares-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4"
+  description: """
+    `enum_type` is the constructor `enum` and `text_enum` tighten, and it takes `type` as data: any
+    text family, written by the author and resolved in the author's own namespace. So an ordinary
+    schema, which may not declare a constructor, can still enumerate the labels of a naming
+    vocabulary it declares itself. Each member must be a value of `type` -- here an identifier
+    matching `kebab`'s pattern -- and since `kebab` is an `identifier_type` instance, the members are
+    names and [TSON-DATA] §8.2's hygiene reaches them.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        kebab => !type_definition {
+          source: identifier_type
+          body: !identifier_type { continue_add: "-"  pattern: "[a-z]+(-[a-z]+)*" }
+        }
+
+        steps => !type_definition {
+          source: enum_type
+          body: !enum_type { type: kebab  members: [make-tea drink-tea] }
+        }
+      }
+      """
+  }
+}

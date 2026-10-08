@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-uri-outside-its-scheme-set-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "`schemes: [http https]` given an `ftp` URI. The scheme set is a member set, and a scheme outside it is a value outside the type."
+  schema: "fixtures/validate-uri-facets.tn"
+  error: { category: validation  path: "/href" }
+}

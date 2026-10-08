@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/uri-empty-path-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "RFC 3986 §3: hier-part may be path-empty, so a: is a URI with a scheme and nothing else"
+  type-ref: "uri"
+  valid: {
+    value: { text: "a:" }
+  }
+}

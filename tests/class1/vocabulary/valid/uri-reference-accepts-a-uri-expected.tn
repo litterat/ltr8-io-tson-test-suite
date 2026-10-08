@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/uri-reference-accepts-a-uri-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "!uri_reference accepts a URI: every URI is a URI-reference (RFC 3986 §4.1)"
+  type-ref: "uri_reference"
+  valid: {
+    value: { text: "urn:isbn:0451450523" }
+  }
+}

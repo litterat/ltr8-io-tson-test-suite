@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-enum-over-a-family-that-is-not-text.tn"
+{
+  ports => !enum_type { type: integer  members: ["80" "443"] }
+}

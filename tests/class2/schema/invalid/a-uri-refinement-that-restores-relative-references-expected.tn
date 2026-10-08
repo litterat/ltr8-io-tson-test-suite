@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-uri-refinement-that-restores-relative-references-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: """
+    `allow_relative` is a permission a refinement may withdraw and never grant back. `uri` withdraws
+    it, so a refinement of `uri` restoring it would admit the relative references its source refuses.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

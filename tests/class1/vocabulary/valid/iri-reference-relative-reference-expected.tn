@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/iri-reference-relative-reference-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "!iri_reference accepts a relative reference beyond US-ASCII"
+  type-ref: "iri_reference"
+  valid: {
+    value: { text: "café/menü" }
+  }
+}

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-name-inside-an-identifier-family-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2"
+  description: "An identifier family refined by a pattern and by a member set. A name inside the grammar and inside both facets is admitted."
+  schema: "fixtures/validate-identifier.tn"
+  valid: _
+}

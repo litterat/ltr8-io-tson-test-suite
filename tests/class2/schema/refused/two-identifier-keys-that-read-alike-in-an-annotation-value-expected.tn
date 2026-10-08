@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/two-identifier-keys-that-read-alike-in-an-annotation-value-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §8.2"
+  description: "Latin 'pass' and Cyrillic 'раѕѕ' (U+0440 U+0430 U+0455 U+0455), each single-script, as two keys of one annotation value whose type is an identifier-keyed map. The keys are names and one map is one scope, in a schema's annotation value as in a data document: it is a value of an identifier family wherever it stands."
+  meta: "fixtures/meta-route-annotation.tn"
+  import: ["core.tn"]
+  refused: {
+    mechanism: skeleton-distinctness
+    unicode: "16.0"
+  }
+}

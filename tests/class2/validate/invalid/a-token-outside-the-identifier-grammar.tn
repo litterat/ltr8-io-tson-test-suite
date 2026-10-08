@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-token-outside-the-identifier-grammar.tn"
+!route {
+  name:    "2fast"
+  heading: north
+}

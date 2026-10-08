@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-array-of-names-that-read-alike-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §11.4"
+  description: "Latin 'pass' and Cyrillic 'раѕѕ' as two elements of an array of identifiers. An array admits repetition, so nothing says two of its elements name two things, and it is no naming scope: each element meets the per-name rules, and each passes them."
+  schema: "fixtures/validate-identifier.tn"
+  valid: _
+}

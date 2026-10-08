@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-one-position-tuple-holds-one-element.tn"
+!pinned { only: [a] }

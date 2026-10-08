@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-bounded-template-parameter-is-recorded-with-its-bound-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.1"
+  description: "A type written after a parameter name is read by the kind the parameter's positions give. `T` stands in `record_field.type`, a `type_ref` slot, so it is a type parameter, and `: text` is its bound: an argument must name a type that IS-A `text`. Resolved output records both facts on the parameter, the kind as `type: type_ref` and the restriction as `bound`."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        boxed => !type_definition {
+          source: record
+          body: !template {
+            parameters: [ !template_param { name: T  type: type_ref  bound: text } ]
+            template: "!record { fields: [ { name: a  type: T } ] }"
+            extension: ABSTRACT
+          }
+        }
+      }
+      """
+  }
+}

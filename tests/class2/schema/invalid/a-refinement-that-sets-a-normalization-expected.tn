@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-that-sets-a-normalization-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: """
+    A text family's normalization is fixed where the type is constructed: a refinement restates it or
+    leaves it. Turning folding on in a refinement would not narrow `text`'s values but change what a
+    token means -- `Content-Type` would be one value under the source and another under the refinement.
+    A folding type is a fresh `!text_type { normalization: NFKC_CASEFOLD }`.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

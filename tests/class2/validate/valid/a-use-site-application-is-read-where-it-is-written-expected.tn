@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-use-site-application-is-read-where-it-is-written-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2"
+  description: "`k: box<text>` is a type read where it is written: its value is read against `box<text>` with no tag, and `any`, typed by the family base `box`, takes the declared member `bt`."
+  schema: "fixtures/validate-template-family-members.tn"
+  valid: _
+}

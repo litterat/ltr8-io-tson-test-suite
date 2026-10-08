@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-ascii-fold-leaves-a-full-width-name-alone.tn"
+!message { fields: { "\u{FF23}ontent-Type" => a } }

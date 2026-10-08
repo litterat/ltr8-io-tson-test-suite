@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-bare-annotation-whose-type-is-not-void.tn"
+{
+  @doc
+  thing => int32
+}

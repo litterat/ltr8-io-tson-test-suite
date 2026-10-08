@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-uri-is-never-normalized.tn"
+{
+  folded => !uri_type { normalization: NFKC_CASEFOLD }
+}

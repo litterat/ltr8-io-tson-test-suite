@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-family-base-dispatches-only-over-declared-members.tn"
+!holder { any: { v: 1 }  k: { v: x } }

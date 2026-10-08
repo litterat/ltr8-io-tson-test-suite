@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-relative-reference-where-a-uri-is-required-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "Core's `uri` given a relative reference. A URI has a scheme (RFC 3986 §3); the relative reference is a `uri_reference` and not a `uri`."
+  schema: "fixtures/validate-uri-facets.tn"
+  error: { category: validation  path: "/home" }
+}

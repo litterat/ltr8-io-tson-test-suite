@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-value-argument-outside-its-enum-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.4"
+  description: """
+    A value argument is read as its parameter's type, here the enum `safe_header`, whose members are
+    matched in its label type's form. `X-Trace` folds to `x-trace`, which the enum does not list.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

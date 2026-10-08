@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-one-position-tuple-given-no-element-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3"
+  description: "Core's `tuple1<text>` given `[]`. A tuple's arity is its position count, and a one-position tuple is not an array that happens to be short: the missing position is the failure, at the tuple."
+  schema: "fixtures/validate-core-templates.tn"
+  error: { category: validation  path: "/only" }
+}

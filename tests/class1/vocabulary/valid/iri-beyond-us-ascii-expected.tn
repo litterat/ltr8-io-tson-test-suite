@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/iri-beyond-us-ascii-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "!iri accepts an IRI whose host, path and query carry characters beyond US-ASCII (RFC 3987 ucschar)"
+  type-ref: "iri"
+  valid: {
+    value: { text: "https://例え.jp/パス?q=é" }
+  }
+}

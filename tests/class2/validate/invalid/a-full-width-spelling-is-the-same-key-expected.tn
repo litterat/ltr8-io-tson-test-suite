@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-full-width-spelling-is-the-same-key-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.6, [TSON-SCHEMA] §5.5"
+  description: "NFKC folds the full-width letters to ASCII before the profile judges the value, so the second key is `content-type` again."
+  schema: "fixtures/validate-text-normalization.tn"
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-one-position-tuple-holds-one-element-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §9"
+  description: "Core's `tuple1<text>` given its one element. The bracket sugar spells a tuple of two or more positions and `[T]` is an array, so the one-position tuple is reached through the template, and a value is written as any tuple is."
+  schema: "fixtures/validate-core-templates.tn"
+  valid: _
+}

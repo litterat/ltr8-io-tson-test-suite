@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-scheme-outside-rfc-3986-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: """
+    A scheme is a letter followed by letters, digits, `+`, `-` and `.` (RFC 3986 §3.1); a space is none
+    of them, so `ht tp` is not a `scheme_name`.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

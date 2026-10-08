@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/a-mixed-script-identifier-default.tn"
+{
+  identifier => !identifier_type { continue_add: "-" }
+
+  account => {
+    role?: identifier ~ аdmin
+  }
+}

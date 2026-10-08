@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/refused/a-mixed-script-identifier-key-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §8.2"
+  description: "A key whose 'a' is Cyrillic U+0430 in a map keyed by an identifier, alone, so no pair is involved. A value of an identifier family is a name, and a name mixing Latin and Cyrillic inside one word fails the default Highly Restrictive level."
+  schema: "fixtures/validate-identifier.tn"
+  refused: {
+    mechanism: restriction-level
+    unicode: "16.0"
+  }
+}

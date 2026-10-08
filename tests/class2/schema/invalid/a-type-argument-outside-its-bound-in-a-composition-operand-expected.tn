@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-type-argument-outside-its-bound-in-a-composition-operand-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: "A composition operand is an application like any other, though its fields are absorbed by value and it denotes no entry: `int32` does not IS-A `text`, the bound `boxed` declares for `T`."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

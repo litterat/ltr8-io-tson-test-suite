@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-full-width-spelling-is-the-same-key.tn"
+!request { headers: { content-type => a  "\u{FF23}ontent-\u{FF34}ype" => b } }

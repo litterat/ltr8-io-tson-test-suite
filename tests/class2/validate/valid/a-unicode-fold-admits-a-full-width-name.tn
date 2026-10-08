@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-unicode-fold-admits-a-full-width-name.tn"
+!message { folded: { "\u{FF23}ontent-Type" => a } }

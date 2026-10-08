@@ -1,0 +1,29 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-text-family-states-its-normalization-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: """
+    `normalization` is a facet of `text_type`, so every text family states it: the form a value is put
+    into before any other facet judges it. `short_charset` refines `charset`, restating the form it
+    cannot change and narrowing a length.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        charset => !type_definition {
+          source: text_type
+          subtypes: [short_charset]
+          body: !text_type { members: [UTF-8 us-ascii]  normalization: NFKC_CASEFOLD }
+        }
+
+        short_charset => !type_definition {
+          source: text_type
+          supertypes: [charset]
+          body: !text_type { max_length: 8  members: [UTF-8 us-ascii]  normalization: NFKC_CASEFOLD }
+        }
+      }
+      """
+  }
+}

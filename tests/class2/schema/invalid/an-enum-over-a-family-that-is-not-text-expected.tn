@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-enum-over-a-family-that-is-not-text-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4"
+  description: """
+    An enum's members are labels, equal only to themselves under their type's equality, and its
+    `type` must be a text family -- an atom-family instance whose constructor IS-A `text_type`. So
+    `type: integer` is refused at schema load. A numeric value set is `integer`'s own `members` facet
+    (`!integer ^ { members: [80 443] }`), where `80` and `0x50` are one member; as labels they would
+    be two.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

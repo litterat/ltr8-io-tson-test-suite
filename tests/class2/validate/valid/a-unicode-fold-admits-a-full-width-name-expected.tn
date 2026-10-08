@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-unicode-fold-admits-a-full-width-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "NFKC_CASEFOLD folds a full-width `C` (U+FF23) to `c` before the profile judges the value, so the spelling ASCII_CASEFOLD refuses is the name `content-type` here."
+  schema: "fixtures/validate-ascii-casefold.tn"
+  valid: _
+}

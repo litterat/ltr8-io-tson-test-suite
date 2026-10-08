@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-pin-no-casing-of-its-value-matches-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "`request-id` is a well-formed `header_name`, and a different value from the pinned `idempotency-key` however either is cased."
+  schema: "fixtures/validate-text-normalization.tn"
+  error: {
+    category: validation
+    path: "/header"
+  }
+}

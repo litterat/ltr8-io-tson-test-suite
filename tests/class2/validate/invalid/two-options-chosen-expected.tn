@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/two-options-chosen-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.11"
+  description: "`include` chooses one option and `type` the other, and a bare group admits exactly one chosen option."
+  schema: "fixtures/validate-field-groups.tn"
+  error: {
+    category: validation
+  }
+}

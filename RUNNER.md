@@ -23,7 +23,7 @@ tests/<class>/<layer>/<bucket>/<slug>-expected.tn   the sidecar
 
 `<class>` is `class1` or `class2`, matching the spec's own two conformance classes ([TSON-DATA]
 §1.5, [TSON-SCHEMA] §1.3). A Class 1 processor runs `class1/` and skips `class2/` — that is what the
-directory is for. `<bucket>` is `valid`, `invalid`, or `schema-document`; it must agree with which
+directory is for. `<bucket>` is `valid`, `invalid`, `refused`, or `schema-document`; it must agree with which
 member of the sidecar's outcome group is present, and `scripts/check_vectors.py` enforces that.
 
 `proposed/` mirrors the same layout and is **not part of a conformance claim** — see below.
@@ -44,7 +44,7 @@ The sidecar is TSON. Parse it with the implementation under test — the circula
 dogfooding, and a broken parser fails loudly rather than quietly agreeing with itself.
 
 Sidecars are written in a conservative subset so a from-scratch implementation can read them before
-its own parser is finished: **records, arrays, the three token forms, the absent sentinel `_`, and
+its own parser is finished: **records, arrays, the three token forms, the void sentinel `_`, and
 the `!!id`/`!!schema` header directives**. No maps, no type-refs, no annotations beyond the `@doc`
 in `schemas/`. A vector that needs more than this subset is a vector in the wrong format.
 
@@ -145,7 +145,7 @@ or `schema` field, and the runner splices the real, current directive into the s
 parsing. `meta`/`import` govern a schema-document subject, which is what the `class2/schema/` and
 `class2/link/` layers use; `schema` governs a data-document subject, which is what `class2/validate/`
 uses. Hardcoding
-`https://tson.io/2026/36/m/core.tn` in every such subject would mean editing all of them at each
+`https://tson.io/2026/37/m/core.tn` in every such subject would mean editing all of them at each
 revision bump.
 
 **A short name that is not one of those three is the corpus's own schema**, named by its path under

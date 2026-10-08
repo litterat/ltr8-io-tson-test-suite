@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-token-outside-the-identifier-grammar-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §7.7"
+  description: "An identifier never begins with a digit. The grammar is the family's form, so the failure is a token the type cannot read -- a resolver error ([TSON-DATA] §8.1) -- and no facet is asked, the pattern included."
+  schema: "fixtures/validate-identifier.tn"
+  error: {
+    category: resolver
+    path: "/name"
+  }
+}

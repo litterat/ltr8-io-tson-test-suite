@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-value-argument-outside-its-enum.tn"
+{
+  header_name => !identifier_type { start: NONE  continue: NONE
+    start_add: "abcdefghijklmnopqrstuvwxyz"  continue_add: "abcdefghijklmnopqrstuvwxyz0123456789-"
+    normalization: NFKC_CASEFOLD }
+  safe_header => !enum_type { type: header_name  members: [Accept content-type] }
+  typed_by => <T, N> { w?: T ~ N }
+  picked => { p: typed_by<safe_header, X-Trace> }
+}

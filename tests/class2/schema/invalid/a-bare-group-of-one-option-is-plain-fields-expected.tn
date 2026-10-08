@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-bare-group-of-one-option-is-plain-fields-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.11"
+  description: "A bare group of one option is always chosen, so its unmarked members are required and its marked ones optional: it states `a: text  b?: text`, and the grammar refuses the second spelling."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

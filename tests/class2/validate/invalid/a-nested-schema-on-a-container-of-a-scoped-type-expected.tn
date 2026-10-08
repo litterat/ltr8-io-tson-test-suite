@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-nested-schema-on-a-container-of-a-scoped-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.8"
+  description: "`inbox` is `[extern]`: each element's position is scoped and takes its own `!!schema`, but the array's own position is not, so a `!!schema` on the array itself is §7.8's typed-position restriction, a resolver error at that field."
+  schema: "fixtures/scoped-host.tn"
+  error: {
+    category: resolver
+    path: "/inbox"
+  }
+}

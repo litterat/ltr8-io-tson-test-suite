@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-ascii-fold-leaves-the-kelvin-sign-alone-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "The Kelvin sign U+212A folds to `k` under NFKC_CASEFOLD but is not an ASCII letter, so ASCII_CASEFOLD leaves it and the profile refuses it."
+  schema: "fixtures/validate-ascii-casefold.tn"
+  error: { category: resolver  path: "/fields/\u{212A}eep-Alive" }
+}

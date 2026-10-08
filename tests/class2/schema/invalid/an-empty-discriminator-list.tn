@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-empty-discriminator-list.tn"
+{
+  pet => !record { fields: [ { name: kind  type: text } ]  extension: ABSTRACT  discriminators: [] }
+}

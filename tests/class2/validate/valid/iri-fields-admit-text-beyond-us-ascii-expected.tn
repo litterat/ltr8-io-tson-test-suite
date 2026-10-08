@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/iri-fields-admit-text-beyond-us-ascii-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "Core's `iri` and `iri_reference` given text beyond US-ASCII: an absolute IRI and a relative reference."
+  schema: "fixtures/validate-uri-facets.tn"
+  valid: _
+}

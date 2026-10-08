@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-value-outside-a-positional-enum-template.tn"
+!holder {
+  n: z
+}

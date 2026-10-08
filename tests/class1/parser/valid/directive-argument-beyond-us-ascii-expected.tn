@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/directive-argument-beyond-us-ascii-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§3.3"
+  description: "A directive argument is an IRI-reference (RFC 3987), so a name beyond US-ASCII is written as itself rather than percent-encoded"
+  valid: {
+    document: {
+      id: "https://example.com/données/1042.tn"
+      schema: "https://example.com/schémas/order.tn"
+      root: {
+        annotations: []
+        type-ref: _
+        core: {
+          token: { form: unquoted  text: "Alice" }
+        }
+      }
+    }
+  }
+}

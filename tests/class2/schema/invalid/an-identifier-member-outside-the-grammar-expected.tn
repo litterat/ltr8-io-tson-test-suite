@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-identifier-member-outside-the-grammar-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4, [TSON-DATA] §7.7"
+  description: """
+    The members rule over an identifier family: every member satisfies the facets beside it, and the
+    identifier grammar is one of them. `2nd` begins with a digit, so no value can ever be that member --
+    a value is refused by the grammar before the member set is asked -- and the body is refused when the
+    schema loads rather than admitting a member it can never reach.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

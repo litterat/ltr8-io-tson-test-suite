@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-one-position-tuple-given-two-elements-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3"
+  description: "Core's `tuple1<text>` given two elements. The second has no position to occupy, which is what separates the template from the array `[text]`, where it would be one more element."
+  schema: "fixtures/validate-core-templates.tn"
+  error: { category: validation  path: "/only" }
+}

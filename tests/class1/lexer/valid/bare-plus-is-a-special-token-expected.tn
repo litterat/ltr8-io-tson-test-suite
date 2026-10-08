@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class1/lexer/valid/bare-plus-is-a-special-token-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+{
+  spec: "§7.2.4, §7.2.5"
+  description: "'+' is a special token under the same boundary rule as '-': not followed by an unquoted-continuation character it is emitted on its own, and followed by one it begins an ordinary unquoted token, so '+1' is unaffected"
+  valid: {
+    tokens: [
+      { kind: special-token  text: "(" }
+      { kind: unquoted-token  text: "a" }
+      { kind: special-token  text: ")" }
+      { kind: special-token  text: "+" }
+      { kind: unquoted-token  text: "+1" }
+    ]
+  }
+}

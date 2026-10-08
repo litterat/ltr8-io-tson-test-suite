@@ -117,7 +117,8 @@ name different ones.
 
 ### The fifth outcome
 
-`reader/refused/` and `class2/schema/refused/` are the buckets that are not a verdict on the document. §8.2's name-hygiene
+`reader/refused/`, `class2/schema/refused/` and `class2/validate/refused/` are the buckets that are not a
+verdict on the document. §8.2's name-hygiene
 mechanisms — skeleton distinctness, `Identifier_Status`, and the restriction level — refuse a document
 *without making it invalid*, and §8.1 gives that its own outcome, which MUST NOT be reported in any of
 the four error categories.
@@ -135,6 +136,13 @@ namespace at `!!import` — and `class2/schema/refused/` is where those are stat
 an implementation is most likely to miss: an enum member and a group's member labels reach a schema through
 a constructor's own vocabulary rather than through a declaration, so a processor that applies a mechanism
 where a name is *read* rather than where a scope is *walked* can pass every other vector and fail those.
+
+`class2/validate/refused/` states the scopes that are data rather than schema: the keys of a map whose key
+type is an identifier family, and the elements of an array whose elements are unique (a set, or any array stating
+`unique_items`) and whose element type is one, which §11.4 adds beside the four. A value of such a type is a name, so the per-name mechanisms reach it as they reach a field name, and the
+map's keys and the set's elements are each a set skeleton distinctness runs over; an array, which admits
+repetition, is not. Its look-alike vectors use two names that are each single-script, since a mixed-script
+name is refused by the restriction level before skeleton distinctness has a pair to compare.
 
 So a `refused` sidecar names the mechanism and the **UTS #39 data version** it was computed against.
 §8.2 says two conforming implementations may legitimately disagree and that the version is the only
@@ -187,9 +195,9 @@ directive in before parsing:
 
 | Short name       | Current real identity                      |
 |------------------|--------------------------------------------|
-| `meta-kernel.tn` | `https://tson.io/2026/36/m/meta-kernel.tn` |
-| `meta.tn`        | `https://tson.io/2026/36/m/meta.tn`        |
-| `core.tn`        | `https://tson.io/2026/36/m/core.tn`        |
+| `meta-kernel.tn` | `https://tson.io/2026/37/m/meta-kernel.tn` |
+| `meta.tn`        | `https://tson.io/2026/37/m/meta.tn`        |
+| `core.tn`        | `https://tson.io/2026/37/m/core.tn`        |
 
 Any other short name is the corpus's own schema, named by its path under `schemas/` — so
 `fixtures/link-money.tn` is `https://tson.io/test-suite/schemas/fixtures/link-money.tn`. The three
