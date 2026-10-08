@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/uri-ipvfuture-host-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "RFC 3986 §3.2.2: an IP literal may be IPvFuture, v followed by a hex version, a dot and the address"
+  type-ref: "uri"
+  valid: {
+    value: { text: "http://[v7.abc]/" }
+  }
+}

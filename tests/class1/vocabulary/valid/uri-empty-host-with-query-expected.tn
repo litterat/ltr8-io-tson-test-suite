@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/uri-empty-host-with-query-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "An empty host is a host: https://?q=1 is a URI with an empty authority and a query (RFC 3986 §3.2.2)"
+  type-ref: "uri"
+  valid: {
+    value: { text: "https://?q=1" }
+  }
+}
