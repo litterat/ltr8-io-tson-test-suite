@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-constructor-template-narrowed-by-a-schema-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §3.3.1"
+  description: "A template applying a meta constructor binds its values into the meta's structure, so a written type on its value parameter names a type in the structure namespace. `int8` is core's and is not there."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
