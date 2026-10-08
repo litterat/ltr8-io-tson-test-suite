@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-constructor-templates-value-is-the-metas-type.tn"
+{
+  non_negative_integer => !integer ^ { min: 1 }
+  vec => <N> !array { element_type: text  min_items: N }
+  v0  => vec<0>
+}

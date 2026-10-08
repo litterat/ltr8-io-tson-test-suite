@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-constructor-template-narrowed-by-a-schema-type.tn"
+{
+  vec => <N: int8> !array { element_type: text  max_items: N }
+}

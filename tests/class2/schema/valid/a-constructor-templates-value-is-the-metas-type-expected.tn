@@ -1,0 +1,32 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-constructor-templates-value-is-the-metas-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §3.3.1"
+  description: "`vec` applies the meta's `array`, so `N` stands in `array.min_items` and is the meta's `non_negative_integer`, read and checked in the structure namespace. The schema's own entry under that name is another type and does not stand in for it, so `vec<0>` is a valid application."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        non_negative_integer => !type_definition {
+          source: integer_type
+          supertypes: [integer]
+          body: !integer_type { min: 1 }
+        }
+
+        vec => !type_definition {
+          source: array
+          body: !template {
+            parameters: [ !template_param { name: N  type: non_negative_integer } ]
+            template: "!array { element_type: text  min_items: N }"
+          }
+        }
+
+        v0 => !type_definition {
+          source: { name: vec  arguments: [ { value: 0 } ] }
+          body: !array { element_type: text  min_items: 0 }
+        }
+      }
+      """
+  }
+}
