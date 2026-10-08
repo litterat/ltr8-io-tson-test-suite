@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-extern-of-names-a-fragment.tn"
+{
+  part => extern_of<"https://example.test/orders.tn#part">
+}

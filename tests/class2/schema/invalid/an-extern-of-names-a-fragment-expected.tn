@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-extern-of-names-a-fragment-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §7.8, [TSON-DATA] §2.2.1"
+  description: "No identity carries a fragment ([TSON-DATA] §2.2.1), so `schema_identity => !iri_type { allow_fragment: false }` refuses one, and `extern_of`'s argument, read as its parameter's recorded type `schema_identity`, is refused at the application."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
