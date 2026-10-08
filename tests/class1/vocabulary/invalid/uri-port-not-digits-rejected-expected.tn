@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/uri-port-not-digits-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "RFC 3986 §3.2.3: a port is digits only, so http://a:b/ is not a URI"
+  type-ref: "uri"
+  error: { category: resolver }
+}

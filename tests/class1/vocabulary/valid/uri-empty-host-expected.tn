@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/uri-empty-host-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: "RFC 3986 §3.2.2: a reg-name may be empty, so https:// is a URI with an empty host"
+  type-ref: "uri"
+  valid: {
+    value: { text: "https://" }
+  }
+}
