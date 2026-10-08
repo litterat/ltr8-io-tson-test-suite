@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-extern-of-names-a-path-only-identity-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §7.8, [TSON-DATA] §2.2.1"
+  description: "An identity without a host is its absolute path, naming a library entry ([TSON-DATA] §2.2.1), and `schema_identity` admits it as a key of `scoped.schemas`."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        local => !type_definition {
+          source: { name: extern_of  arguments: [ { value: "/local/orders.tn" } ] }
+          body: !scoped { scope: [EXTERN]  schemas: { "/local/orders.tn" => _ } }
+        }
+      }
+      """
+  }
+}

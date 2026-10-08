@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-extern-of-names-an-iri-identity.tn"
+{
+  wide => extern_of<"https://例え.test/注文.tn">
+}

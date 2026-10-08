@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-extern-of-names-an-iri-identity-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §7.8, [TSON-DATA] §2.2.1"
+  description: "A schema's identity is an IRI-reference ([TSON-DATA] §2.2.1, §3.3), so a host and path beyond US-ASCII name a schema, and meta's `schema_identity`, which types the keys of `scoped.schemas`, admits them: `extern_of` names such a schema as it names any other."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        wide => !type_definition {
+          source: { name: extern_of  arguments: [ { value: "https://例え.test/注文.tn" } ] }
+          body: !scoped { scope: [EXTERN]  schemas: { "https://例え.test/注文.tn" => _ } }
+        }
+      }
+      """
+  }
+}
