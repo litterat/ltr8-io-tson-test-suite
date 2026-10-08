@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-selector-base-applied-inline-is-read-structurally-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2"
+  description: "`shape` declares a selector, and `s: shape<circle>` applies it at a use site: no member, so nothing pins `kind`, and the value is read structurally against `shape<circle>`."
+  schema: "fixtures/validate-template-family-members.tn"
+  valid: _
+}

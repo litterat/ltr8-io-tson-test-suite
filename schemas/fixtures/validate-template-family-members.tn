@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-template-family-members.tn"
+!!meta:"https://tson.io/2026/37/m/meta.tn"
+!!import:"https://tson.io/2026/37/m/core.tn"
+@doc:"""
+  A record-bodied template is a family base, and its members are the applications a declaration names
+  ([TSON-SCHEMA] §5.10). An application written at a use site is a type read where it is written and no
+  member, so a position typed by the template dispatches over the declared members only.
+  """
+{
+  box    => <T> { v: T }
+  bt     => box<int32>
+  holder => { any: box  k: box<text> }
+  circle => { r: int32 }
+  shape  => <T> { kind: text =?  data: T }
+  plot   => { s: shape<circle> }
+}

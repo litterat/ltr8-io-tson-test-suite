@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-use-site-application-is-read-where-it-is-written.tn"
+!holder { any: !bt { v: 1 }  k: { v: x } }

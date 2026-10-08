@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-selector-base-applied-inline-is-read-structurally.tn"
+!plot { s: { kind: anything  data: { r: 2 } } }
