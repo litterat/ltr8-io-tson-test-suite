@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-text-nfc-floor.tn"
+!!meta:"https://tson.io/2026/37/m/meta.tn"
+!!import:"https://tson.io/2026/37/m/core.tn"
+@doc:"""
+  No comparison of two text values goes below NFC ([TSON-SCHEMA] §5.5), whatever the type's
+  normalization: a member written composed is matched by a decomposed spelling of it.
+  """
+{
+  accent   => !text_type { members: ["\u00e9"]  normalization: ASCII_CASEFOLD }
+  accented => !text_enum ["caf\u00e9" tea]
+  order    => { accent?: accent  drink?: accented }
+}

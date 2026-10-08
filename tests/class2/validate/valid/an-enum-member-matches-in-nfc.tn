@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-enum-member-matches-in-nfc.tn"
+!order { drink: "cafe\u0301" }
