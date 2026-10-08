@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-family-base-dispatches-only-over-declared-members-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2"
+  description: "`box` is ABSTRACT, so a value at `any` names its member, and its members are the applications a declaration names: `bt` alone, the use-site `box<text>` being no member. An untagged value names none."
+  schema: "fixtures/validate-template-family-members.tn"
+  error: {
+    category: validation
+  }
+}
