@@ -2,10 +2,10 @@
 !!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §7.8"
-  description: "§7.8's typed-position restriction: cross-schema acceptance is authored intent, so a nested `!!schema` at a position whose type the outer schema constrains is an error. `closed` is typed int32, which admits no scope push, and the failure is at that field rather than at the record."
+  description: "§7.8's typed-position restriction: cross-schema acceptance is authored intent, so a nested `!!schema` at a position whose own type is not a `scoped` instance is a resolver error, there being no cell to refuse it. `closed` is typed int32, and the failure is at that field rather than at the record."
   schema: "fixtures/scoped-host.tn"
   error: {
-    category: validation
+    category: resolver
     path: "/closed"
   }
 }

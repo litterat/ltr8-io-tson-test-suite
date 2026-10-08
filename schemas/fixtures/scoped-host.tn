@@ -8,7 +8,8 @@
 
   One field per cell of core's three named `scoped` instances, plus one ordinary field. `closed` is
   what makes §7.8's typed-position restriction testable -- cross-schema acceptance is authored
-  intent, so a nested `!!schema` at a position the schema did not declare scoped is refused.
+  intent, so a nested `!!schema` at a position the schema did not declare scoped is refused, and
+  `inbox` is a container of a scoped type, whose own position is not scoped.
   """
 {
   note => {
@@ -20,5 +21,6 @@
     foreign: extern
     either:  dynamic
     closed:  int32
+    inbox?:  [extern]
   }
 }

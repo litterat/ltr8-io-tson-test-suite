@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-text-member-matches-in-nfc.tn"
+!order { accent: "e\u0301" }
