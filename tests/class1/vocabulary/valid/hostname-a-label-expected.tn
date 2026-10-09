@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/hostname-a-label-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    An internationalized name is written as its A-labels, which are ordinary letter-digit-hyphen labels
+    """
+  type-ref: "hostname"
+  valid: {
+    value: { text: "xn--bcher-kva.example" }
+  }
+}

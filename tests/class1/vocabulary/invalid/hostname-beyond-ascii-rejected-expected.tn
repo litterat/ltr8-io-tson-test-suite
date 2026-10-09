@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/hostname-beyond-ascii-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    A host name is ASCII. The fold is ASCII_CASEFOLD, which leaves a fullwidth letter as it is,
+    so a spelling only a Unicode fold would bring to ASCII is refused rather than read as example.com
+    """
+  type-ref: "hostname"
+  error: { category: validation }
+}

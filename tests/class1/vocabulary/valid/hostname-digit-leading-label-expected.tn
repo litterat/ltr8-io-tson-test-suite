@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/hostname-digit-leading-label-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    RFC 1123 §2.1 lets a label start with a digit; only the last label must start with a letter
+    """
+  type-ref: "hostname"
+  valid: {
+    value: { text: "3com.example" }
+  }
+}

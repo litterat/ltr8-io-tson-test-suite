@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/hostname-dotted-quad-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    The last label of a host name starts with a letter, so a dotted-quad is never a host name;
+    it is an !ipv4
+    """
+  type-ref: "hostname"
+  error: { category: validation }
+}

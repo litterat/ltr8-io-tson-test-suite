@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-dotted-quad-is-not-a-host-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "A host name's last label starts with a letter, so a dotted-quad is outside `hostname`'s value space."
+  schema: "fixtures/validate-net-hosts.tn"
+  error: {
+    category: validation
+  }
+}

@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/hostname-underscore-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    An underscore is a DNS name character and not a host name one: RFC 1123 labels are letters,
+    digits and hyphens
+    """
+  type-ref: "hostname"
+  error: { category: validation }
+}
