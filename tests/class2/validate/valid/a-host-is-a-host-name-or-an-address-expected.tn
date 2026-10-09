@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-host-is-a-host-name-or-an-address-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "`hostname` is net.tn's: an RFC 1123 host name, read with A-Z folded to a-z."
+  schema: "fixtures/validate-net-hosts.tn"
+  valid: _
+}

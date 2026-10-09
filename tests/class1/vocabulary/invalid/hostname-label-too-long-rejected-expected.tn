@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/hostname-label-too-long-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    RFC 1123 §2.1: a label is at most 63 characters
+    """
+  type-ref: "hostname"
+  error: { category: validation }
+}

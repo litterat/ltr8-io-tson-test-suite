@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-address-is-a-host-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "`ipv4` is net.tn's, and a choice of it beside `hostname` admits an address."
+  schema: "fixtures/validate-net-hosts.tn"
+  valid: _
+}

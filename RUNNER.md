@@ -140,7 +140,7 @@ compares the hashes is testing its own hash function.
 ## Schema-governed vectors
 
 A vector whose subject needs a real `!!meta`/`!!import`/`!!schema` does not hardcode one: the
-*sidecar* names the target by a short, unversioned name (`meta.tn`, `core.tn`) in its `meta`, `import`
+*sidecar* names the target by a short, unversioned name (`meta.tn`, `core.tn`, `net.tn`) in its `meta`, `import`
 or `schema` field, and the runner splices the real, current directive into the subject's header before
 parsing. `meta`/`import` govern a schema-document subject, which is what the `class2/schema/` and
 `class2/link/` layers use; `schema` governs a data-document subject, which is what `class2/validate/`
@@ -148,10 +148,10 @@ uses. Hardcoding
 `https://tson.io/2026/38/m/core.tn` in every such subject would mean editing all of them at each
 revision bump.
 
-**A short name that is not one of those three is the corpus's own schema**, named by its path under
+**A short name that is not one of those four is the corpus's own schema**, named by its path under
 `schemas/` — `fixtures/link-money.tn` resolves to
 `https://tson.io/test-suite/schemas/fixtures/link-money.tn`, which a runner serves from its checkout.
-That is a *rule*, not a table: the three bundled names have to be listed because their identities carry
+That is a *rule*, not a table: the four bundled names have to be listed because their identities carry
 the spec revision and nothing in the name says so, and everything else is derived. A runner that keeps a
 per-fixture table instead has to be edited every time the corpus grows one, in every language — the same
 drift this document exists to stop, once per fixture rather than once.

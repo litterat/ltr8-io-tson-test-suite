@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-core-own-mac.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
+@doc:"""
+  Imports core and not net, and declares `mac` and `hostname` for itself: core declares neither, so neither
+  collides with an imported name.
+  """
+{
+  mac => { vendor: text  model: text }
+  hostname => text
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/hostname-single-label-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    A host name of one label is a host name; only the last label must start with a letter
+    """
+  type-ref: "hostname"
+  valid: {
+    value: { text: "localhost" }
+  }
+}

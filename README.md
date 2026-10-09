@@ -198,9 +198,10 @@ directive in before parsing:
 | `meta-kernel.tn` | `https://tson.io/2026/38/m/meta-kernel.tn` |
 | `meta.tn`        | `https://tson.io/2026/38/m/meta.tn`        |
 | `core.tn`        | `https://tson.io/2026/38/m/core.tn`        |
+| `net.tn`         | `https://tson.io/2026/38/m/net.tn`         |
 
 Any other short name is the corpus's own schema, named by its path under `schemas/` — so
-`fixtures/link-money.tn` is `https://tson.io/test-suite/schemas/fixtures/link-money.tn`. The three
+`fixtures/link-money.tn` is `https://tson.io/test-suite/schemas/fixtures/link-money.tn`. The four
 bundled names are listed because their identities carry the spec revision; everything else is derived,
 which is what lets the corpus grow a fixture without every runner editing a constant to keep up.
 

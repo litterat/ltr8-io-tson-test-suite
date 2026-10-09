@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/hostname-folds-case-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    A host name compares without case: its value is the name with A-Z folded to a-z
+    (ASCII_CASEFOLD), so the value of Api.Example.COM is api.example.com
+    """
+  type-ref: "hostname"
+  valid: {
+    value: { text: "api.example.com" }
+  }
+}

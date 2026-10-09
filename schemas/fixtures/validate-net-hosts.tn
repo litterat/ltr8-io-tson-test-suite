@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-net-hosts.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
+!!import:"https://tson.io/2026/38/m/net.tn"
+@doc:"""
+  A listener's host is a host name or an IPv4 address, both from net.tn. A host name's last label starts with a
+  letter, so the two value spaces do not meet.
+  """
+{
+  listener => { host: ( hostname | ipv4 )  port: uint16 }
+}

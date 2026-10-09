@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/hostname-hyphen-at-label-edge-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    RFC 1123 §2.1: a label neither starts nor ends with a hyphen
+    """
+  type-ref: "hostname"
+  error: { category: validation }
+}
