@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/reader/invalid/type-annotation-naming-a-removed-sign-bound-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§3.2, §5.1"
+  description: "`positive_integer` is not in the built-in vocabulary (§5.6): a sign bound is a refinement a schema declares, so schemalessly the name is a resolver error."
+  error: { category: resolver }
+}
