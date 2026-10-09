@@ -3,10 +3,11 @@
 {
   spec: "§5.5"
   description: """
-    An internationalized name is written as its A-labels, which are ordinary letter-digit-hyphen labels
+    An A-label is one spelling of its U-label: the value is the name, and its canonical text has
+    the U-label
     """
   type-ref: "hostname"
   valid: {
-    value: { text: "xn--bcher-kva.example" }
+    value: { text: "bücher.example" }
   }
 }

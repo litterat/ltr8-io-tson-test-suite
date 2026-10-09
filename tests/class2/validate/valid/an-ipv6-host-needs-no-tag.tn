@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-ipv6-host-needs-no-tag.tn"
+!server { host: "::1" }

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/host-ipv6-uncompressed-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    An address compares by its octets, so the uncompressed spelling is ::1
+    """
+  type-ref: "host"
+  valid: {
+    value: { text: "::1" }
+  }
+}

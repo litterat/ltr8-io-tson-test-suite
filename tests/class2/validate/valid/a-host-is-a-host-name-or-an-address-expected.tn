@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §9"
-  description: "`hostname` is net.tn's: an RFC 1123 host name, read with A-Z folded to a-z."
+  description: "`hostname` is net.tn's: a host name, read with A-Z as a-z."
   schema: "fixtures/validate-net-hosts.tn"
   valid: _
 }

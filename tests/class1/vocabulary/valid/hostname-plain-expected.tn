@@ -3,7 +3,7 @@
 {
   spec: "§5.5"
   description: """
-    !hostname accepts an RFC 1123 host name: letter-digit-hyphen labels joined by dots
+    !hostname accepts a host name: labels of letters, digits and hyphens joined by dots
     """
   type-ref: "hostname"
   valid: {

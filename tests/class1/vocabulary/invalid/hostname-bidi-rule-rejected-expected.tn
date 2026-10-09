@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/hostname-bidi-rule-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    A name holding right-to-left text meets RFC 5893's Bidi rule in every label: 1abc begins with
+    a digit rather than a left-to-right letter
+    """
+  type-ref: "hostname"
+  error: { category: resolver }
+}

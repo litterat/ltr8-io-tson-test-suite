@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/host-ipv4-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    A dotted-quad is a host, as an IPv4 address
+    """
+  type-ref: "host"
+  valid: {
+    value: { text: "192.0.2.1" }
+  }
+}

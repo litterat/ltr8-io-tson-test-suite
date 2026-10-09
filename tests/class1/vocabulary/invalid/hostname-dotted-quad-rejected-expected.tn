@@ -3,9 +3,9 @@
 {
   spec: "§5.5"
   description: """
-    The last label of a host name starts with a letter, so a dotted-quad is never a host name;
-    it is an !ipv4
+    The last label of a host name does not begin with a digit, so a dotted-quad is never a host
+    name; it is an !ipv4
     """
   type-ref: "hostname"
-  error: { category: validation }
+  error: { category: resolver }
 }

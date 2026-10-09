@@ -3,9 +3,9 @@
 {
   spec: "§5.5"
   description: """
-    An underscore is a DNS name character and not a host name one: RFC 1123 labels are letters,
-    digits and hyphens
+    An underscore is a DNS name character and not a host name one: a label is letters, digits
+    and hyphens, or an internationalized label
     """
   type-ref: "hostname"
-  error: { category: validation }
+  error: { category: resolver }
 }

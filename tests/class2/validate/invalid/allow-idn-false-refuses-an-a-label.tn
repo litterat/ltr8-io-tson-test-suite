@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/allow-idn-false-refuses-an-a-label.tn"
+!ascii_site { name: xn--bcher-kva.example }

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/host-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    !host is a host name, an IPv4 address or an IPv6 address; localhost is a host name
+    """
+  type-ref: "host"
+  valid: {
+    value: { text: "localhost" }
+  }
+}
