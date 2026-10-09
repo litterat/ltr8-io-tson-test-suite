@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-json-suffix-admits-a-plus-json-subtype-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "A suffix admits a subtype ending in + and the suffix."
+  schema: "fixtures/validate-net-media.tn"
+  valid: _
+}

@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-net-media.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
+!!import:"https://tson.io/2026/38/m/net.tn"
+@doc:"""
+  A message's content type is a media type with parameters; a document's type is a JSON media type: application
+  and the json suffix.
+  """
+{
+  content_type => !media_type_type { allow_parameters: true }
+  json_type => !media_type_type { types: [application]  suffixes: [json] }
+  message => { content_type: content_type }
+  document => { type: json_type }
+}

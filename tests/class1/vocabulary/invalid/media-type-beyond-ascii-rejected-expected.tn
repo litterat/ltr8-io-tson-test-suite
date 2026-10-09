@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/media-type-beyond-ascii-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    A media type is US-ASCII (RFC 6838 §4.2)
+    """
+  type-ref: "media_type"
+  error: { category: resolver }
+}

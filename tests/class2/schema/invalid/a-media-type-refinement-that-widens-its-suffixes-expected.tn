@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-media-type-refinement-that-widens-its-suffixes-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: "suffixes only shrinks under refinement: adding xml widens the type."
+  meta: "meta.tn"
+  import: ["core.tn" "net.tn"]
+  error: {
+    category: resolver
+  }
+}

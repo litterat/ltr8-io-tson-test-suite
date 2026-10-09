@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-media-type-refinement-that-grants-parameters-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: "allow_parameters is a permission, withdrawn and never granted back: net.tn's media_type refuses it, and a refinement cannot grant it."
+  meta: "meta.tn"
+  import: ["core.tn" "net.tn"]
+  error: {
+    category: resolver
+  }
+}
