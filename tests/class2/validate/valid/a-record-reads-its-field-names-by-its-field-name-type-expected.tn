@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-reads-its-field-names-by-its-field-name-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.5"
+  description: "A field-name position admits any single-line token, and a record's names are values of its field_name_type: node's is json_name, an identifier that may begin with @ or $, so @id and $ref are names of it."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}

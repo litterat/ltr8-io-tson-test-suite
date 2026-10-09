@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-field-name-type.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
+@doc:"""
+  A record's `field_name_type` says which family its field names belong to, an identifier unless it says
+  otherwise. `node` is a JSON-LD translation's record, whose names may begin with `@` or `$`; `row` takes any text
+  as a name; `plain`, held by `holder`, states nothing and so has identifiers for names.
+  """
+{
+  json_name => !identifier_type { start_add: "@$" }
+  node => !record { field_name_type: json_name  fields: [
+    { name: "@id"  type: text }  { name: "$ref"  type: text  optional: true }  { name: label  type: text } ] }
+  row => !record { field_name_type: text  fields: [ { name: "first name"  type: text } ] }
+  plain => { a?: text }
+  holder => !record { field_name_type: json_name  fields: [
+    { name: "@id"  type: text }  { name: inner  type: plain } ] }
+}

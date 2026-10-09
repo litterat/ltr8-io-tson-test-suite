@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-text-field-name-type-admits-any-text-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.5"
+  description: "row's field_name_type is text, so a name with a space in it is a name of row."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}
