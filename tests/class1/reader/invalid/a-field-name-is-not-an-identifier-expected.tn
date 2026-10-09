@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/reader/invalid/a-field-name-is-not-an-identifier-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§2.5, §7.7"
+  description: "A schemaless record's field names are identifiers, and quoting does not change what a name is: '_id' is refused because identifier-Start is XID_Start and '_' is not in it, and '42x' because an identifier never begins with a digit. The grammar admits any single-line token in name position -- what a field name may be is its record's to say -- so the subject parses and the record refuses the names: a resolver error, as a token an atom's contract rejects is. Arbitrary keys are what a map is for."
+  error: { category: resolver }
+}

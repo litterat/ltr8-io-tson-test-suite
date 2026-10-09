@@ -11,8 +11,8 @@ diff, so it always describes the vectors actually present.
 |---|---|--:|--:|--:|--:|--:|
 | class1 | identity | 13 | 15 | 0 | 0 | 28 |
 | class1 | lexer | 10 | 25 | 0 | 0 | 35 |
-| class1 | parser | 21 | 22 | 1 | 0 | 44 |
-| class1 | reader | 11 | 15 | 0 | 5 | 31 |
+| class1 | parser | 21 | 21 | 1 | 0 | 43 |
+| class1 | reader | 11 | 16 | 0 | 5 | 32 |
 | class1 | resolver | 14 | 0 | 0 | 0 | 14 |
 | class1 | vocabulary | 80 | 69 | 0 | 0 | 149 |
 | class2 | link | 10 | 14 | 0 | 0 | 24 |
@@ -88,7 +88,7 @@ A vector naming two sections counts under both, so this column sums to more than
 | [TSON-SCHEMA] §7.5 | 3 | schema, validate |
 | §7.6 | 9 | vocabulary |
 | [TSON-SCHEMA] §7.6 | 2 | validate |
-| §7.7 | 13 | lexer, parser |
+| §7.7 | 13 | lexer, parser, reader |
 | [TSON-DATA] §7.7 | 4 | schema, validate |
 | [TSON-SCHEMA] §7.8 | 9 | schema, validate |
 | [TSON-SCHEMA] §8.1 | 8 | schema |
