@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/identity/invalid/a-reference-encoding-an-unreserved-character-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    An unreserved character is never percent-encoded in an identity
+    """
+  error: {
+    category: resolver
+  }
+}

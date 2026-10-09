@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/identity/invalid/an-id-with-a-lowercase-reserved-encoding-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    A document's own name writes a reserved encoding in uppercase hex
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/identity/valid/a-reference-in-lowercase-hex-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    Hex case in a reference's percent-encoding carries no meaning
+    """
+  valid: {
+    identity: "example.com/schémas/x.tn"
+  }
+}

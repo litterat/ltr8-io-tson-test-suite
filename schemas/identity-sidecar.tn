@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
+@doc:"""
+  Formal shape of an identity-layer sidecar (tests/class1/identity/**/*-expected.tn) -- [TSON-DATA]
+  §2.2.1's canonical identity. See README.md's "The identity layer" and RUNNER.md rule 3e.
+  """
+{
+  @doc:"""
+    The canonical identity the subject's first directive names: the host's canonical text (lowercase
+    U-labels, a dotted-quad, RFC 5952 text in brackets) plus the path, read back from its URI spelling,
+    with no scheme and no query.
+    """
+  identity_valid => {
+    identity: text
+  }
+
+  identity_sidecar => sidecar_common & {
+    ( valid: identity_valid | error: vector_error )
+  }
+}

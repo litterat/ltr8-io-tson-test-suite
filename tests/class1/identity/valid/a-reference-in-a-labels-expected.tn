@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/identity/valid/a-reference-in-a-labels-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    A reference may spell a host in its A-labels; the identity has the U-labels
+    """
+  valid: {
+    identity: "bücher.example/x.tn"
+  }
+}
