@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-json-suffix-refuses-another-suffix.tn"
+!document { type: "application/xml" }

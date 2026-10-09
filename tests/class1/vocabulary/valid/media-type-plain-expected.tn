@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/media-type-plain-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    !media_type is a media type (RFC 6838): a type and a subtype
+    """
+  type-ref: "media_type"
+  valid: {
+    value: { text: "text/html" }
+  }
+}

@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-json-suffix-admits-its-base-type.tn"
+!document { type: "application/json" }

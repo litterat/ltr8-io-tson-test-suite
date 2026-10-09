@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-media-type-refinement-that-widens-its-suffixes.tn"
+{
+  json_type => !media_type_type { suffixes: [json] }
+  wider => !json_type ^ { suffixes: [json xml] }
+}

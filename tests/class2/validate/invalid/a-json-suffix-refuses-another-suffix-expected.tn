@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-json-suffix-refuses-another-suffix-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "suffixes [json] refuses a subtype that is neither json nor ends +json."
+  schema: "fixtures/validate-net-media.tn"
+  error: {
+    category: validation
+  }
+}
