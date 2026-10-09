@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/host-ipv6-bracketed-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    An IPv6 host may be written in the brackets a URI puts around one; the value is the address,
+    written back unbracketed in RFC 5952 text
+    """
+  type-ref: "host"
+  valid: {
+    value: { text: "2001:db8::1" }
+  }
+}

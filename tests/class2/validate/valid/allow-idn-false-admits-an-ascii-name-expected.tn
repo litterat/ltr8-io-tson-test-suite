@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/allow-idn-false-admits-an-ascii-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "`allow_idn: false` admits a name of ASCII labels."
+  schema: "fixtures/validate-net-host.tn"
+  valid: _
+}

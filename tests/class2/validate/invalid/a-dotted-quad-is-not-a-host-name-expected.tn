@@ -2,9 +2,9 @@
 !!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §9"
-  description: "A host name's last label starts with a letter, so a dotted-quad is outside `hostname`'s value space."
+  description: "A host name's last label does not begin with a digit, so a dotted-quad is outside `hostname`'s grammar."
   schema: "fixtures/validate-net-hosts.tn"
   error: {
-    category: validation
+    category: resolver
   }
 }

@@ -3,8 +3,8 @@
 {
   spec: "§5.5"
   description: """
-    A host name compares without case: its value is the name with A-Z folded to a-z
-    (ASCII_CASEFOLD), so the value of Api.Example.COM is api.example.com
+    A host name compares without ASCII case: A-Z read as a-z, so the value of Api.Example.COM is
+    api.example.com
     """
   type-ref: "hostname"
   valid: {

@@ -1,9 +1,9 @@
-!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/hostname-trailing-dot-rejected-expected.tn"
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/hostname-percent-encoded-rejected-expected.tn"
 !!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
 {
   spec: "§5.5"
   description: """
-    A host name carries no trailing dot
+    Percent-encoding is URI syntax, not a host name
     """
   type-ref: "hostname"
   error: { category: resolver }
