@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-ascii-casefold.tn"
-!!meta:"https://tson.io/2026/37/m/meta.tn"
-!!import:"https://tson.io/2026/37/m/core.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
 @doc:"""
   `ASCII_CASEFOLD` maps A-Z to a-z and changes nothing else: the comparison of case-insensitive ASCII names
   such as HTTP field names and URI schemes. `NFKC_CASEFOLD` is UAX #31's fold, which also folds compatibility

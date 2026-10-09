@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-text-enum-class.tn"
-!!meta:"https://tson.io/2026/37/m/meta.tn"
-!!import:"https://tson.io/2026/37/m/core.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
 @doc:"""
   An enum whose type is not an identifier family is string-class whatever its members spell
   ([TSON-SCHEMA] §7.4): `port_label`'s members are the texts "80" and "443", not numbers, and
