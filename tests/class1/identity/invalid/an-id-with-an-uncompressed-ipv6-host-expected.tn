@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/identity/invalid/an-id-with-an-uncompressed-ipv6-host-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    A document's own name writes an IPv6 host in RFC 5952 text
+    """
+  error: {
+    category: resolver
+  }
+}

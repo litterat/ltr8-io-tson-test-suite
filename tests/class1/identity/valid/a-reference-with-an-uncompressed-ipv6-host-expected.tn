@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/identity/valid/a-reference-with-an-uncompressed-ipv6-host-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    An address host compares by its octets
+    """
+  valid: {
+    identity: "[2001:db8::1]/x.tn"
+  }
+}

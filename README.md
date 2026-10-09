@@ -42,6 +42,7 @@ tests/
     resolver/valid/                        §4
     vocabulary/{valid,invalid}/            §5
     reader/{valid,invalid}/                §2.5, §2.6, §2.8, §2.9
+    identity/{valid,invalid}/              §2.2.1
   class2/                      the schema-aware processor ([TSON-SCHEMA] §1.3)
 schemas/                       one sidecar schema per layer
   fixtures/                    schemas the link layer's vectors import
@@ -74,6 +75,21 @@ has two textually distinct keys and one decoded one, so only a reader can see th
 
 An `error` vector here states `category: resolver`, and its subject **must parse** — that is what makes
 it a reader-layer vector rather than a parser-layer one, and `RUNNER.md` requires a runner to check it.
+
+### The identity layer
+
+[TSON-DATA] §2.2.1's canonical identity is how a schema is named, and every processor computes it: a
+reference must name the same identity at every implementation, or a document resolves at one and not at
+another. An identity vector's subject is a header and an empty body. Its first directive is either
+`!!id`, a document's own name, which must be written in canonical form, or `!!schema`, a reference, which
+may name its identity in any spelling of it: a host's other label form or ASCII case, an IPv6 address
+uncompressed, or a path in its URI spelling. A `valid` vector states the canonical identity: the host's
+canonical text plus the path, with no scheme and no query. An `error` vector states `category: resolver`,
+for a reference that names no identity, or an `!!id` written in another spelling.
+
+The host is IDNA2008's, so whether a name beyond US-ASCII is valid depends on the Unicode version. Every
+vector here uses characters that Unicode 12.0 already assigned, so its verdict is the same at every later
+version.
 
 ### The Class 2 layers
 

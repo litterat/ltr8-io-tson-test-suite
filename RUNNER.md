@@ -103,6 +103,15 @@ The distinction is the point of the whole layer. The mechanisms read `confusable
 can change under a routine UCD refresh — and a content-addressed document must mean the same thing
 forever. That is why none of this may decide validity, and why the outcome is its own.
 
+### 3e. At the identity layer, judge the subject's first directive
+
+The subject of an identity vector is a header and an empty body, and the vector is about its first
+directive's argument alone. Nothing is fetched or resolved. If the directive is `!!id`, it is a document's
+own name, and §2.2.1 requires that it be written in canonical form. If it is `!!schema`, it is a reference,
+read in any spelling of its identity. A `valid` vector's `identity` is the canonical identity: host plus
+path, with no scheme or query. The runner compares it byte for byte with the one it computed. An `error`
+vector's `category` is `resolver`.
+
 ### 4. Do not assert position
 
 Sidecars carry no line, column, or byte offset, and a runner must not require one. Implementations

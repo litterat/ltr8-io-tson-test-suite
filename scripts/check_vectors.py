@@ -23,7 +23,7 @@ SCHEMA_PREFIX = IDENTITY_PREFIX + "schemas/"
 
 CLASSES = {"class1", "class2"}
 LAYERS = {
-    "class1": {"lexer", "parser", "resolver", "vocabulary", "reader", "json"},
+    "class1": {"lexer", "parser", "resolver", "vocabulary", "reader", "identity", "json"},
     "class2": {"schema", "link", "validate"},
 }
 # The outcome group member each bucket's sidecars must state. `refused` is TSON-DATA 8.1's fifth
