@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-identifier.tn"
-!!meta:"https://tson.io/2026/37/m/meta.tn"
-!!import:"https://tson.io/2026/37/m/core.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
 @doc:"""
   The identifier family ([TSON-SCHEMA] §4.2): `identifier_type` composes `text_type`, so an identifier
   takes the text facets, each applied inside [TSON-DATA] §7.7's grammar. Reached here both ways: by
