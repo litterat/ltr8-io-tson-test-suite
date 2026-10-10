@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-plain-supertype-takes-the-compositions-name-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8"
+  description: "A supertype with the kernel's default name type states none of its own, so `located` composes the plain `address` with `ld_node` and takes `json_name`: `@id` and `city` are both names of it."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}

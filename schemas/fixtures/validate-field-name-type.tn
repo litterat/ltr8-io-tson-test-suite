@@ -6,7 +6,9 @@
   identifier unless it says otherwise. `node` is a JSON-LD translation's record, whose names may
   begin with `@` or `$`; `row`'s are `words`, which admit a single space between two characters;
   `plain`, held by `holder`, states nothing and so has identifiers for names. `json_record` is a
-  fieldless abstract base that states only a field name type, and `ld_node` takes it by composition.
+  fieldless abstract base that states only a field name type, and `ld_node` takes it by composition;
+  `located` composes it with `address`, a plain record whose names then take `json_name`. `frow`'s names
+  are `folded`, an identifier type that folds case, and are matched in that form.
   """
 {
   json_name => !identifier_type { start_add: "@$" }
@@ -20,4 +22,8 @@
   json_record => !record { name_type: json_name  extension: ABSTRACT  fields: [] }
   ld_node => json_record & { "@id": text  label: text }
   ld_holder => { n: ld_node }
+  address => { city: text }
+  located => ld_node & address
+  folded => !identifier_type { normalization: NFKC_CASEFOLD }
+  frow => !record { name_type: folded  fields: [ { name: name  type: text } ] }
 }
