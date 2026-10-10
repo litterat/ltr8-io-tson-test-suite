@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-plain-supertype-does-not-compose-with-a-translations-record.tn"
+{
+  json_name => !identifier_type { start_add: "@$" }
+  json_record => !record { name_type: json_name  extension: ABSTRACT  fields: [] }
+  address => { city: text }
+  node => json_record & address & { "@id": text }
+}

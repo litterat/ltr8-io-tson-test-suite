@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-plain-supertype-does-not-compose-with-a-translations-record-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8"
+  description: """
+    A record's name type is set where it is declared, the kernel's default included: `address` says
+    nothing, so its names are `field_name`'s, and `json_record`'s are `json_name`'s. A composition takes
+    its supertypes' one name type and cannot change either, so `node` is refused at schema load -- even
+    though `city` happens to be a `json_name` too, since a translation's type need not admit every
+    identifier. `address => json_record & { city: text }` is the record to compose.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
