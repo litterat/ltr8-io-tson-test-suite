@@ -7,6 +7,6 @@
   """
 {
   accent   => !text_type { members: ["\u00e9"]  normalization: ASCII_CASEFOLD }
-  accented => !text_enum ["caf\u00e9" tea]
+  accented => !enum ["caf\u00e9" tea]
   order    => { accent?: accent  drink?: accented }
 }

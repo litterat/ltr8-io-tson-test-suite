@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-enum-over-text-is-refused-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4"
+  description: """
+    An enum's members are names, so its `name_type` is an identifier family, and `text` is a text
+    family that is no identifier family. A closed set of text values is `text`'s own `members` facet,
+    `!text_type { members: ["new york" "los angeles"] }`; an enumeration of words is an `enum_type`
+    over an identifier type whose profile admits the space.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

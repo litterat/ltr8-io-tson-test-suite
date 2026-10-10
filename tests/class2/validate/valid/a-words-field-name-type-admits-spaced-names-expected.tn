@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-words-field-name-type-admits-spaced-names-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.5"
+  description: "row's name_type is words, an identifier type admitting a single space between two characters, so `first name` is a name of row, judged under words' profile."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}

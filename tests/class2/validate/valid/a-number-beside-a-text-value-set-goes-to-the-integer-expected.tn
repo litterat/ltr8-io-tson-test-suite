@@ -1,8 +1,8 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/a-number-beside-a-text-enum-goes-to-the-integer-expected.tn"
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-number-beside-a-text-value-set-goes-to-the-integer-expected.tn"
 !!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §7.4, [TSON-SCHEMA] §5.4"
   description: "The members of `port_label` spell numbers but are texts, so the number 8080 is the `integer` variant's, untagged."
-  schema: "fixtures/validate-text-enum-class.tn"
+  schema: "fixtures/validate-text-value-set-class.tn"
   valid: _
 }
