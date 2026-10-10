@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.2"
-  description: "A record's field_name_type names a text family, as an enum's type does; int32 is not one."
+  description: "A record's name_type names a text family, as an enum's type does; int32 is not one."
   meta: "meta.tn"
   import: ["core.tn"]
   error: {

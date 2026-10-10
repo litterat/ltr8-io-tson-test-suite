@@ -1,4 +1,4 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-field-name-type-that-is-no-text-family.tn"
 {
-  node => !record { field_name_type: int32  fields: [ { name: "1"  type: text } ] }
+  node => !record { name_type: int32  fields: [ { name: "1"  type: text } ] }
 }

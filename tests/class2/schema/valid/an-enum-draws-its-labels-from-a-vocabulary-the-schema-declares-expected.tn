@@ -22,7 +22,7 @@
 
         steps => !type_definition {
           source: enum_type
-          body: !enum_type { type: kebab  members: [make-tea drink-tea] }
+          body: !enum_type { name_type: kebab  members: [make-tea drink-tea] }
         }
       }
       """
