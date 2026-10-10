@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-composition-takes-its-base-records-field-name-type.tn"
+!ld_holder { n: { "@id": "urn:x"  label: "x" } }

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-composition-refuses-a-name-outside-its-base-records-field-name-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8"
+  description: "ld_node's names are json_name's, taken from its base by composition, and 'a b' is no json_name, so it is refused as a resolver error."
+  schema: "fixtures/validate-field-name-type.tn"
+  error: { category: resolver }
+}

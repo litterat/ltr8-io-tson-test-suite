@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-composition-takes-its-base-records-field-name-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8"
+  description: "A composition takes its supertypes' field_name_type: ld_node composes json_record, a fieldless abstract base stating json_name, so @id is a name of it; the base's family asks nothing of a position typed ld_node, which reads untagged."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}
