@@ -1,8 +1,11 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-relaxed-record-does-not-relax-a-record-it-holds-expected.tn"
 !!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-DATA] §2.5"
-  description: "A record's name_type governs its own names only: holder's admits @id, but inner is a plain, which states none and so has identifiers for names, and @a is no identifier."
+  spec: "[TSON-SCHEMA] §7.2"
+  description: "A record's name_type governs its own names only: holder's admits @id, but inner is a plain, which states none and so has identifiers for names, and @a is no identifier, so it is an unrecognised field of plain."
   schema: "fixtures/validate-field-name-type.tn"
-  error: { category: resolver }
+  error: {
+    category: validation
+    path: "/inner/@a"
+  }
 }

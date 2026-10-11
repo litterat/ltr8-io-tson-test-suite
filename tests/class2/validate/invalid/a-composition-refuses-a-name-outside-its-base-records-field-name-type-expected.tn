@@ -2,7 +2,10 @@
 !!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.8"
-  description: "ld_node's names are json_name's, taken from its base by composition, and 'a b' is no json_name, so it is refused as a resolver error."
+  description: "ld_node's names are json_name's, taken from its base by composition, and 'a b' is no json_name, so no declared field can be it: it is an unrecognised field, at its own pointer, like any name the type does not declare."
   schema: "fixtures/validate-field-name-type.tn"
-  error: { category: resolver }
+  error: {
+    category: validation
+    path: "/a b"
+  }
 }

@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-name-type-of-no-normal-form-is-refused.tn"
+{
+  raw => !identifier_type { normalization: NONE }
+  row => !record { name_type: raw  fields: [ { name: a  type: text } ] }
+}

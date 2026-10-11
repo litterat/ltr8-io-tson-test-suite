@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-ascii-fold-name-type-beyond-ascii-is-refused.tn"
+{
+  folded => !identifier_type { normalization: ASCII_CASEFOLD }
+  row => !record { name_type: folded  fields: [ { name: a  type: text } ] }
+}

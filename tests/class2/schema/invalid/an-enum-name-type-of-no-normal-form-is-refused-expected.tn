@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-enum-name-type-of-no-normal-form-is-refused-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4"
+  description: """
+    An enum's members are names on the same terms as a record's fields, matched in its name
+    type's `normalization`, so the same rule holds: a name type whose form does not imply NFC
+    is refused.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

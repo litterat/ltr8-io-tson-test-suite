@@ -1,8 +1,11 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-field-name-outside-its-records-field-name-type-expected.tn"
 !!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-DATA] §2.5"
-  description: "'a b' is no json_name, so node refuses it as a resolver error, as a token an atom's contract rejects is; the refusal stands alone, with no unrecognised-field verdict beside it."
+  spec: "[TSON-SCHEMA] §7.2"
+  description: "'a b' is no json_name, so it can be none of node's fields, which are all json_names: a record is closed under its type, and a name outside its name type is unrecognised there as an undeclared one is -- a validation error at the field's own pointer, never a name-policy refusal, since no name rule reaches what is no name."
   schema: "fixtures/validate-field-name-type.tn"
-  error: { category: resolver }
+  error: {
+    category: validation
+    path: "/a b"
+  }
 }

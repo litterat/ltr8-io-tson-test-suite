@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-name-type-of-no-normal-form-is-refused-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: """
+    A record's names are compared in its name type's `normalization`, and a form that does not
+    imply NFC leaves two canonically equivalent spellings two names that render alike -- the
+    confusion [TSON-DATA] §8.2's rules exist to refuse -- with no form a reader could match a
+    document's name in. `NONE` implies none, so a name type over it is refused.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
