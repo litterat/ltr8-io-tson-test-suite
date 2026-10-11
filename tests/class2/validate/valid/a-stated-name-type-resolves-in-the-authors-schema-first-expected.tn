@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-stated-name-type-resolves-in-the-authors-schema-first-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A name type a record states was written by its author, so it resolves in the author's schema first, as an enum's does: this schema declares its own `field_name`, admitting a leading '@', and `stated` names it. A record stating no name type has the kernel's `field_name` whatever the schema declares."
+  schema: "fixtures/validate-local-field-name.tn"
+  valid: _
+}

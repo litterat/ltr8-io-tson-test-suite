@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-removed-relaxed-field-is-not-declared.tn"
+!trimmed { "@id": "urn:x"  "$ref": "#/a"  label: "y" }

@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-plain-brace-record-refuses-a-name-that-is-no-identifier.tn"
+{
+  row => { "first name": text }
+}

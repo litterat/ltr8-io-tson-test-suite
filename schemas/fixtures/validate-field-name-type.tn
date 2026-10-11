@@ -32,4 +32,18 @@
   page => <T> json_record & { "@id": T }
   jpage => page<text>
   xnode => !record { supertypes: [json_record]  fields: [ { name: "@id"  type: text } ] }
+  jn => json_name
+  jn_record => !record { name_type: jn  extension: ABSTRACT  fields: [] }
+  both => json_record & jn_record & { "@id": text }
+  id_record => !record { name_type: identifier  extension: ABSTRACT  fields: [] }
+  id_plain => id_record & plain
+  ld_pet => abstract json_record & { "@type": text =?  name: text }
+  ld_dog => ld_pet & { "@type"?: = "dog"  breed: text }
+  ld_kennel => { p: ld_pet }
+  fbase => !record { name_type: folded  extension: ABSTRACT  fields: [] }
+  fpet => abstract fbase & { kind: text =?  name: text }
+  fdog => fpet & { kind?: = "dog"  breed: text }
+  fkennel => { p: fpet }
+  tightened => node ^ { "$ref": text }
+  trimmed => node - { "$ref" }
 }

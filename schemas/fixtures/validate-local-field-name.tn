@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-local-field-name.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
+{
+  field_name => !identifier_type { start_add: "@" }
+  stated => !record { name_type: field_name  fields: [ { name: "@id"  type: text } ] }
+}

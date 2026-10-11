@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/two-field-names-one-value-of-a-folding-name-type.tn"
+{
+  folded => !identifier_type { normalization: NFKC_CASEFOLD }
+  row => !record { name_type: folded  fields: [ { name: name  type: text } { name: NAME  type: text } ] }
+}

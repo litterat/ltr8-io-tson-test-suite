@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-plain-brace-record-refuses-a-name-that-is-no-identifier-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    The brace form states no name type, so its fields are `field_name`'s,
+    identifiers: `"first name"` is quoted, which makes it one token and not a name
+    of that type, and it is refused at load. A record of words names a type that
+    admits a medial space.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

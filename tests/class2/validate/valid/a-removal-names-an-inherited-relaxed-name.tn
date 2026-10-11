@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-removal-names-an-inherited-relaxed-name.tn"
+!trimmed { "@id": "urn:x"  label: "y" }
