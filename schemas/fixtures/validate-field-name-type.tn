@@ -27,4 +27,6 @@
   located => ld_node & address
   folded => !identifier_type { normalization: NFKC_CASEFOLD }
   frow => !record { name_type: folded  fields: [ { name: name  type: text } ] }
+  header => !identifier_type { start: ASCII  continue: ASCII  medial: "-"  normalization: ASCII_CASEFOLD }
+  headers => !record { name_type: header  fields: [ { name: "content-type"  type: text } ] }
 }
