@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-enum-over-a-family-that-is-no-identifier-family.tn"
+{
+  ports => !enum_type { name_type: integer  members: ["80" "443"] }
+}

@@ -1,6 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/valid/an-enum-declares-which-kind-of-enumeration-it-is.tn"
-{
-  status => !enum [OPEN ACTIVE DONE]
-
-  activity => !text_enum ["sedentary" "lightly active"]
-}

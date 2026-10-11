@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-field-name-type-of-text-is-refused-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    A record's field names are names, so its `name_type` is an identifier family, as an enum's is,
+    and every field name meets [TSON-DATA] §8.2's per-name rules under its profile. `text` is no
+    identifier family. A key that is no name belongs in a map; a name with a space in it is a value
+    of an identifier type admitting one, such as `!identifier_type { medial: " " }`.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

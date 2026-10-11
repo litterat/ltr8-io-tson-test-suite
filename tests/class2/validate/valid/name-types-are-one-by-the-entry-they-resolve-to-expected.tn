@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/name-types-are-one-by-the-entry-they-resolve-to-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8"
+  description: "`jn` is an alias of `json_name`, so `json_record` and `jn_record` have one name type and compose: two name types are one when their reference chains end at one entry, not when they are spelled alike."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}

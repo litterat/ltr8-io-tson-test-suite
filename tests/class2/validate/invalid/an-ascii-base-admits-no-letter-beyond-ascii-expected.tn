@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-ascii-base-admits-no-letter-beyond-ascii-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.2"
+  description: "`header`'s ASCII base admits no letter beyond ASCII, so `x-\u00e9tag` is no value of it and can be none of `headers`' fields: an unrecognised field at its own pointer."
+  schema: "fixtures/validate-field-name-type.tn"
+  error: {
+    category: validation
+    path: "/x-\u00e9tag"
+  }
+}

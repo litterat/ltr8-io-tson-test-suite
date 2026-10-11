@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-stated-name-type-resolves-in-the-authors-schema-first.tn"
+!stated { "@id": "urn:x" }

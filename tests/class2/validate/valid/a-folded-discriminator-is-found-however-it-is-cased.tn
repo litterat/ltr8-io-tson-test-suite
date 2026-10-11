@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-folded-discriminator-is-found-however-it-is-cased.tn"
+!fkennel { p: { KIND: dog  name: Rex  Breed: corgi } }

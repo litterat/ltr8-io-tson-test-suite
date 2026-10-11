@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/identifier-is-the-default-field-names-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8"
+  description: "The default name type `field_name` is the kernel's alias of `identifier`, so a record stating `identifier` composes with one stating nothing."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}

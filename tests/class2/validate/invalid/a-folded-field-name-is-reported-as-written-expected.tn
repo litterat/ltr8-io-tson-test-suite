@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-folded-field-name-is-reported-as-written-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §8.1"
+  description: "`frow`'s name type folds case, so `NAME` is the field `name`, and a wrong value there is reported at the name as written: RFC 6901 compares exactly, so `/name` would point at nothing in the document."
+  schema: "fixtures/validate-field-name-type.tn"
+  error: {
+    category: validation
+    path: "/NAME"
+  }
+}

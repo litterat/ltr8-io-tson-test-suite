@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-relaxed-record-does-not-relax-a-record-it-holds.tn"
+!holder { "@id": "urn:x"  inner: { "@a": "y" } }

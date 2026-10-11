@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/an-enum-matches-in-its-label-types-form-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
-{
-  spec: "[TSON-SCHEMA] §7.4"
-  description: "An enum's members are labels of its `type`, compared under that type's equality: `header_name` folds case, so `Content-Type` is the member written `content-type`."
-  schema: "fixtures/validate-text-normalization.tn"
-  valid: _
-}

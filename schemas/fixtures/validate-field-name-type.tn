@@ -1,0 +1,49 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-field-name-type.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
+@doc:"""
+  A record's `name_type` says which identifier family its field names belong to, the kernel's
+  identifier unless it says otherwise. `node` is a JSON-LD translation's record, whose names may
+  begin with `@` or `$`; `row`'s are `words`, which admit a single space between two characters;
+  `plain`, held by `holder`, states nothing and so has identifiers for names. `json_record` is a
+  fieldless abstract base that states only a field name type, and `ld_node` takes it by composition;
+  `located` composes it with `address`, declared over `json_name` too, as a composition's supertypes
+  must be. `frow`'s names
+  are `folded`, an identifier type that folds case, and are matched in that form.
+  """
+{
+  json_name => !identifier_type { start_add: "@$" }
+  node => !record { name_type: json_name  fields: [
+    { name: "@id"  type: text }  { name: "$ref"  type: text  optional: true }  { name: label  type: text } ] }
+  words => !identifier_type { continue_add: "-"  medial: " " }
+  row => !record { name_type: words  fields: [ { name: "first name"  type: text } ] }
+  plain => { a?: text }
+  holder => !record { name_type: json_name  fields: [
+    { name: "@id"  type: text }  { name: inner  type: plain } ] }
+  json_record => !record { name_type: json_name  extension: ABSTRACT  fields: [] }
+  ld_node => json_record & { "@id": text  label: text }
+  ld_holder => { n: ld_node }
+  address => json_record & { city: text }
+  located => ld_node & address
+  folded => !identifier_type { normalization: NFKC_CASEFOLD }
+  frow => !record { name_type: folded  fields: [ { name: name  type: text } ] }
+  header => !identifier_type { start: ASCII  continue: ASCII  medial: "-"  normalization: ASCII_CASEFOLD }
+  headers => !record { name_type: header  fields: [ { name: "content-type"  type: text } ] }
+  page => <T> json_record & { "@id": T }
+  jpage => page<text>
+  xnode => !record { supertypes: [json_record]  fields: [ { name: "@id"  type: text } ] }
+  jn => json_name
+  jn_record => !record { name_type: jn  extension: ABSTRACT  fields: [] }
+  both => json_record & jn_record & { "@id": text }
+  id_record => !record { name_type: identifier  extension: ABSTRACT  fields: [] }
+  id_plain => id_record & plain
+  ld_pet => abstract json_record & { "@type": text =?  name: text }
+  ld_dog => ld_pet & { "@type"?: = "dog"  breed: text }
+  ld_kennel => { p: ld_pet }
+  fbase => !record { name_type: folded  extension: ABSTRACT  fields: [] }
+  fpet => abstract fbase & { kind: text =?  name: text }
+  fdog => fpet & { kind?: = "dog"  breed: text }
+  fkennel => { p: fpet }
+  tightened => node ^ { "$ref": text }
+  trimmed => node - { "$ref" }
+}

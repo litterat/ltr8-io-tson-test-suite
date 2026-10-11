@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/a-boolean-beside-a-text-enum-goes-to-boolean-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
-{
-  spec: "[TSON-SCHEMA] §7.4, [TSON-SCHEMA] §5.4"
-  description: "The boolean `true` is `boolean`'s, since `answer` is string-class, untagged."
-  schema: "fixtures/validate-text-enum-class.tn"
-  valid: _
-}

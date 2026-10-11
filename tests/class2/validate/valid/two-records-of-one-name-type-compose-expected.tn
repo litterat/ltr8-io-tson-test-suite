@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/two-records-of-one-name-type-compose-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8"
+  description: "`ld_node` and `address` are both declared over `json_name`, so `located` composes them and takes that one name type: `@id` and `city` are both names of it."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}

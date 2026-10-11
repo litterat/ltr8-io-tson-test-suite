@@ -3,10 +3,10 @@
 {
   spec: "[TSON-SCHEMA] §7.4"
   description: """
-    `enum_type` is the constructor `enum` and `text_enum` tighten, and it takes `type` as data: any
-    text family, written by the author and resolved in the author's own namespace. So an ordinary
+    `enum_type` is the constructor `enum` tightens, and it takes `name_type` as data: any identifier
+    family, written by the author and resolved in the author's own namespace. So an ordinary
     schema, which may not declare a constructor, can still enumerate the labels of a naming
-    vocabulary it declares itself. Each member must be a value of `type` -- here an identifier
+    vocabulary it declares itself. Each member must be a value of `name_type` -- here an identifier
     matching `kebab`'s pattern -- and since `kebab` is an `identifier_type` instance, the members are
     names and [TSON-DATA] §8.2's hygiene reaches them.
     """
@@ -22,7 +22,7 @@
 
         steps => !type_definition {
           source: enum_type
-          body: !enum_type { type: kebab  members: [make-tea drink-tea] }
+          body: !enum_type { name_type: kebab  members: [make-tea drink-tea] }
         }
       }
       """

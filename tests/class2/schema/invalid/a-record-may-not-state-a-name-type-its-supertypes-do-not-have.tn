@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-may-not-state-a-name-type-its-supertypes-do-not-have.tn"
+{
+  json_name => !identifier_type { start_add: "@" }
+  other => !identifier_type { start_add: "$" }
+  json_record => !record { name_type: json_name  extension: ABSTRACT  fields: [] }
+  n => !record { name_type: other  supertypes: [json_record]  fields: [] }
+}

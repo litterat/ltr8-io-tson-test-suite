@@ -1,0 +1,35 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-enum-over-an-identifier-type-of-words-judges-its-members-as-names-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4, [TSON-DATA] §8.2"
+  description: """
+    An enum's members are names of its `name_type`, an identifier family. `enum` pins the kernel's
+    `identifier`; an author who needs names its profile does not admit declares an identifier type
+    of their own and enumerates over it: `words` admits a single space between two characters, so
+    `lightly active` is a member of `activity`. The members are names either way, and meet [TSON-DATA]
+    §8.2's per-name rules under their type's profile, whose added characters are its own -- the space
+    is `words`' medial, not a restricted character.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        status => !type_definition {
+          source: enum
+          body: !enum { members: [OPEN ACTIVE DONE] }
+        }
+
+        words => !type_definition {
+          source: identifier_type
+          body: !identifier_type { continue_add: "-"  medial: " " }
+        }
+
+        activity => !type_definition {
+          source: enum_type
+          body: !enum_type { name_type: words  members: [sedentary "lightly active"] }
+        }
+      }
+      """
+  }
+}

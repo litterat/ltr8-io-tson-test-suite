@@ -3,7 +3,7 @@
   header_name => !identifier_type { start: NONE  continue: NONE
     start_add: "abcdefghijklmnopqrstuvwxyz"  continue_add: "abcdefghijklmnopqrstuvwxyz0123456789-"
     normalization: NFKC_CASEFOLD }
-  safe_header => !enum_type { type: header_name  members: [Accept content-type] }
+  safe_header => !enum_type { name_type: header_name  members: [Accept content-type] }
   typed_by => <T, N> { w?: T ~ N }
   picked => { p: typed_by<safe_header, X-Trace> }
 }

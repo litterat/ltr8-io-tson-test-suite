@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/two-spellings-of-one-field-name-are-one-field.tn"
+!frow { name: "x"  NAME: "y" }

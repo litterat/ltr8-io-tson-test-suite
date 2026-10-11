@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-template-composing-a-translations-base-closes-over-its-names-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: "`page` composes `json_record` and declares '@id', a json_name and no identifier. Held, its body is text in which that name is quoted, so it closes, and `page<text>` is the record its hand-written spelling would be."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}

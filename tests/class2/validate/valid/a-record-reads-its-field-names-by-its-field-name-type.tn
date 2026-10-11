@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-reads-its-field-names-by-its-field-name-type.tn"
+!node { "@id": "urn:x"  "$ref": "#/a"  label: "x" }

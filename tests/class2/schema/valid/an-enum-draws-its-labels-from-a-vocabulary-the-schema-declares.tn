@@ -2,5 +2,5 @@
 {
   kebab => !identifier_type { continue_add: "-"  pattern: "[a-z]+(-[a-z]+)*" }
 
-  steps => !enum_type { type: kebab  members: [make-tea drink-tea] }
+  steps => !enum_type { name_type: kebab  members: [make-tea drink-tea] }
 }
