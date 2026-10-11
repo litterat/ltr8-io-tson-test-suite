@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-group-option-holding-no-field.tn"
 {
-  pick => !record { fields: [ { name: a  type: text  optional: true } { name: b  type: text  optional: true } ]
+  pick => !record { fields: { a => { type: text  optional: true } b => { type: text  optional: true } }
     groups: [ { members: [[a] []] } ] }
 }

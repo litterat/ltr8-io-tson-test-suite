@@ -9,10 +9,10 @@
     resolved: """
       !schema {
         person => !type_definition {
-          body: !record { fields: [
-            !record_field { name: name     type: text }
-            !record_field { name: retired  type: void  optional: true  voidable: true }
-          ] }
+          body: !record { fields: {
+            name    => !record_field { type: text }
+            retired => !record_field { type: void  optional: true  voidable: true }
+          } }
         }
       }
       """

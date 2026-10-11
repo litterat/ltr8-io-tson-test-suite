@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/refused/look-alike-names-of-a-relaxed-name-type.tn"
 {
   json_name => !identifier_type { start_add: "@" }
-  node => !record { name_type: json_name  fields: [ { name: "@id"  type: text } { name: "@\u{456}d"  type: text } ] }
+  node => !record { name_type: json_name  fields: { "@id" => { type: text } "@\u{456}d" => { type: text } } }
 }

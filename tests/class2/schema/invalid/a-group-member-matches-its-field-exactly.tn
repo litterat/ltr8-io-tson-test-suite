@@ -2,6 +2,6 @@
 {
   folded => !identifier_type { normalization: NFKC_CASEFOLD }
   row => !record { name_type: folded
-    fields: [ { name: name  type: text  optional: true } { name: email  type: text  optional: true } ]
+    fields: { name => { type: text  optional: true } email => { type: text  optional: true } }
     groups: [ { members: [ [NAME] [email] ] } ] }
 }

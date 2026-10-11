@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-record-value-names-one-field-twice-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.6, [TSON-SCHEMA] §5.2"
+  description: "A record value's `fields` is a map keyed by the field's name, so a name written twice is a repeated key, reported at the repeat. §8.1 places a duplicate key among the resolver errors, as it does a duplicate field name."
+  schema: "meta.tn"
+  error: {
+    category: resolver
+    path: "/fields/x"
+  }
+}

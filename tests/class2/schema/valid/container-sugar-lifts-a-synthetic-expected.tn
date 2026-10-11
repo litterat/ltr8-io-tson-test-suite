@@ -9,10 +9,10 @@
     resolved: """
       !schema {
         post => !type_definition {
-          body: !record { fields: [
-            !record_field { name: title  type: text }
-            !record_field { name: tags   type: array_text_xxhash }
-          ] }
+          body: !record { fields: {
+            title => !record_field { type: text }
+            tags  => !record_field { type: array_text_xxhash }
+          } }
         }
       
         @synthetic array_text_xxhash => !type_definition {

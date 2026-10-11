@@ -1,0 +1,37 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-explicit-record-states-its-fields-as-a-map-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: """
+    The explicit `!record` form states `fields` as an ordered map from each
+    field's name to its `record_field`, which carries the facts and no name: the
+    name is the key. A name that is no identifier is a quoted key, judged by the
+    record's `name_type` like any other.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        json_name => !type_definition {
+          source: identifier_type
+          body: !identifier_type { start_add: "@" }
+        }
+        point => !type_definition {
+          source: record
+          body: !record { fields: {
+            x => !record_field { type: int32 }
+            y => !record_field { type: int32  optional: true }
+          } }
+        }
+        node => !type_definition {
+          source: record
+          body: !record { name_type: json_name  fields: {
+            "@id" => !record_field { type: text }
+            label => !record_field { type: text }
+          } }
+        }
+      }
+      """
+  }
+}

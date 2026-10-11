@@ -6,6 +6,6 @@
   schema: "meta.tn"
   error: {
     category: validation
-    path: "/name"
+    path: "/type"
   }
 }

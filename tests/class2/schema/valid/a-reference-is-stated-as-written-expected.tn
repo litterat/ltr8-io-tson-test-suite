@@ -14,9 +14,9 @@
         }
 
         user => !type_definition {
-          body: !record { fields: [
-            !record_field { name: key  type: user_id }
-          ] }
+          body: !record { fields: {
+            key => !record_field { type: user_id }
+          } }
         }
       }
       """

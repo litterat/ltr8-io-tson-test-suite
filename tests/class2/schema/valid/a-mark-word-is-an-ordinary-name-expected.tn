@@ -15,22 +15,22 @@
     resolved: """
       !schema {
         abstract => !type_definition {
-          body: !record { fields: [
-            !record_field { name: a  type: text }
-          ] }
+          body: !record { fields: {
+            a => !record_field { type: text }
+          } }
         }
 
         final => !type_definition {
-          body: !record { fields: [
-            !record_field { name: b  type: text }
-          ] }
+          body: !record { fields: {
+            b => !record_field { type: text }
+          } }
         }
 
         holder => !type_definition {
-          body: !record { fields: [
-            !record_field { name: f  type: abstract }
-            !record_field { name: g  type: final }
-          ] }
+          body: !record { fields: {
+            f => !record_field { type: abstract }
+            g => !record_field { type: final }
+          } }
         }
       }
       """

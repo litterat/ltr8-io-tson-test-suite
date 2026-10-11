@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-explicit-record-names-one-field-twice-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.6, [TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: """
+    A field's name is its key in `record.fields`, so one spelling written twice
+    in the explicit form is a map's duplicate key, refused where the constructor's
+    vocabulary reads the body and before any name type is consulted.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

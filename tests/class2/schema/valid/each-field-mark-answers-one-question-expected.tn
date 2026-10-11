@@ -9,15 +9,15 @@
     resolved: """
       !schema {
         entry => !type_definition {
-          body: !record { fields: [
-            !record_field { name: name      type: text }
-            !record_field { name: nickname  type: text   optional: true }
-            !record_field { name: from      type: int32  voidable: true }
-            !record_field { name: note      type: text   optional: true  voidable: true }
-            !record_field { name: timeout   type: int32  optional: true  voidable: true  role: DEFAULT  value: 30 }
-            !record_field { name: version   type: text   role: FIXED  value: "2.0" }
-            !record_field { name: kind      type: text   optional: true  role: FIXED  value: "entry" }
-          ] }
+          body: !record { fields: {
+            name     => !record_field { type: text }
+            nickname => !record_field { type: text   optional: true }
+            from     => !record_field { type: int32  voidable: true }
+            note     => !record_field { type: text   optional: true  voidable: true }
+            timeout  => !record_field { type: int32  optional: true  voidable: true  role: DEFAULT  value: 30 }
+            version  => !record_field { type: text   role: FIXED  value: "2.0" }
+            kind     => !record_field { type: text   optional: true  role: FIXED  value: "entry" }
+          } }
         }
       }
       """

@@ -1,0 +1,35 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-records-fields-keep-their-declaration-order-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §8.1"
+  description: """
+    `record.fields` is an ordered map, so the order fields are declared in is
+    part of the resolved value: neither sorted nor grouped, and a composition
+    takes its supertype's fields first, then its own body's, each in the order
+    written. The same fields in another order are another value.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        base => !type_definition {
+          subtypes: [row]
+          body: !record { fields: {
+            zeta  => !record_field { type: text }
+            alpha => !record_field { type: int32 }
+          } }
+        }
+        row => !type_definition {
+          supertypes: [base]
+          body: !record { supertypes: [base]  fields: {
+            zeta  => !record_field { type: text }
+            alpha => !record_field { type: int32 }
+            mid   => !record_field { type: text  optional: true }
+            beta  => !record_field { type: text }
+          } }
+        }
+      }
+      """
+  }
+}
