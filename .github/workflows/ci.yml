@@ -7,9 +7,9 @@ on:
 
 jobs:
   check-vectors:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: python3 scripts/check_vectors.py
 
       # The corpus describes its own coverage, and a generated file that nobody regenerates is a
