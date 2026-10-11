@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-explicit-record-takes-its-supertypes-name-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "`xnode` is `!record { supertypes: [json_record] ... }` written out, stating no name_type, so it takes its supertypes' one, json_name, as `json_record & { ... }` would: a record's name type is the constructor's rule, not the sugar's."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}

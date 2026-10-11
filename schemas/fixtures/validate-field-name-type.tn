@@ -29,4 +29,7 @@
   frow => !record { name_type: folded  fields: [ { name: name  type: text } ] }
   header => !identifier_type { start: ASCII  continue: ASCII  medial: "-"  normalization: ASCII_CASEFOLD }
   headers => !record { name_type: header  fields: [ { name: "content-type"  type: text } ] }
+  page => <T> json_record & { "@id": T }
+  jpage => page<text>
+  xnode => !record { supertypes: [json_record]  fields: [ { name: "@id"  type: text } ] }
 }

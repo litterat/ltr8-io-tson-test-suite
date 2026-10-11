@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-may-not-state-a-name-type-its-supertypes-do-not-have-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    A record's name type is set where it is declared, the default included, and a
+    subtype cannot change it: one with supertypes takes their one name type, and
+    one that states a name type beside them must state theirs. `n` states `other`
+    over a supertype whose names are `json_name`'s.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

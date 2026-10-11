@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-profile-may-not-add-an-invisible-character-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §8.2"
+  description: """
+    A profile's additions are its own, so the restricted-character rule does not
+    judge them, and a floor holds what an addition may be: a character that
+    renders as nothing (Default_Ignorable_Code_Point, so every Bidi_Control), a
+    control, or a space other than U+0020. A soft hyphen added to Continue would
+    make a name with one in it read as the name without it.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
