@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
-  description: "record_field's one field is type, a type_ref, which is a product, so a bare name in a record_field position is a value by name rather than that field's value, and a record's fields hold no value by name: p => x is refused, where p => { type: x } is the field."
+  description: "In a schema document a bare name at a record position is a value by name, not a positional fill of a product-typed field: record_field's one field is type, a type_ref, a product, so p => x is refused here, where p => { type: x } is the field. A data document, which has no namespace to resolve a name in, still reads the same token positionally."
   meta: "meta.tn"
   import: ["core.tn"]
   error: {
