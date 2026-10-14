@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-dotted-token-at-a-text-slot-is-text.tn"
+{
+  b => !binding { method: orders.methods.place_order  verb: GET  route: orders.methods.place_order }
+}

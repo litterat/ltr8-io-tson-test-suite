@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-value-by-name-whose-first-segment-is-no-entry.tn"
+{
+  b => !binding { method: place_order  verb: POST  route: "/" }
+}

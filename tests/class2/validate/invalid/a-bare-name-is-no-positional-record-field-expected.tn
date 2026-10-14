@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-bare-name-is-no-positional-record-field-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6"
+  description: "record_field's one field is type, a product, so a bare name at a record_field position is a value by name rather than { type: some_type }, and a data document resolves no name: the withdrawn positional spelling is a type mismatch at /f."
+  schema: "fixtures/validate-positional-name.tn"
+  error: {
+    category: validation
+    path: "/f"
+  }
+}

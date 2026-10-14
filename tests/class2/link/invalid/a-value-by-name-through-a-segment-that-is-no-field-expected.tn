@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-value-by-name-through-a-segment-that-is-no-field-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
+  description: "orders is an interface, whose body declares the field methods and no field place_order: a segment after an entry selects a field of its body, and every hop is written."
+  meta: "fixtures/meta-service.tn"
+  import: ["fixtures/link-orders-interface.tn"]
+  error: {
+    category: resolver
+  }
+}

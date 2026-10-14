@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/the-explicit-record-form-writes-no-positional-record-field-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
+  description: "record_field's one field is type, a type_ref, which is a product, so a bare name in a record_field position is a value by name rather than that field's value, and a record's fields hold no value by name: p => x is refused, where p => { type: x } is the field."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

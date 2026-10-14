@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-dotted-token-at-a-text-slot-is-text-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
+  description: "A token at an atom-typed position stays a literal: route is text, so the dotted token there is text and names nothing, and verb is an enum, so GET is its label. Only method, typed by a record, holds a value by name."
+  meta: "fixtures/meta-service.tn"
+  import: ["fixtures/link-orders-interface.tn"]
+  valid: {
+    binds: [b orders]
+  }
+}
