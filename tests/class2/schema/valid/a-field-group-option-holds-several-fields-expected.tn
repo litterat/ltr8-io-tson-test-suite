@@ -10,11 +10,11 @@
       !schema {
         fragment => !type_definition {
           body: !record {
-            fields: [
-              !record_field { name: include  type: text  optional: true }
-              !record_field { name: name     type: text  optional: true }
-              !record_field { name: type     type: text  optional: true }
-            ]
+            fields: {
+              include => !record_field { type: text  optional: true }
+              name    => !record_field { type: text  optional: true }
+              type    => !record_field { type: text  optional: true }
+            }
             groups: [
               !field_group { members: [[include] [name type]]  optional_members: [name type] }
             ]
@@ -22,11 +22,11 @@
         }
         endpoint => !type_definition {
           body: !record {
-            fields: [
-              !record_field { name: host    type: text   optional: true }
-              !record_field { name: port    type: int32  optional: true }
-              !record_field { name: socket  type: text   optional: true }
-            ]
+            fields: {
+              host   => !record_field { type: text   optional: true }
+              port   => !record_field { type: int32  optional: true }
+              socket => !record_field { type: text   optional: true }
+            }
             groups: [
               !field_group { members: [[host port] [socket]]  optional: true }
             ]
@@ -34,10 +34,10 @@
         }
         contact => !type_definition {
           body: !record {
-            fields: [
-              !record_field { name: email  type: text  optional: true }
-              !record_field { name: phone  type: text  optional: true }
-            ]
+            fields: {
+              email => !record_field { type: text  optional: true }
+              phone => !record_field { type: text  optional: true }
+            }
             groups: [
               !field_group { members: [[email phone]]  optional_members: [email phone] }
             ]

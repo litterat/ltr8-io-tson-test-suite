@@ -1,4 +1,4 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-field-name-outside-the-default-field-name-type.tn"
 {
-  node => !record { fields: [ { name: "@id"  type: text } ] }
+  node => !record { fields: { "@id" => { type: text } } }
 }

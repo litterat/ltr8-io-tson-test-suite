@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-record-value-names-one-field-twice.tn"
+!record {
+  fields: {
+    x => { type: int32 }
+    x => { type: text }
+  }
+}

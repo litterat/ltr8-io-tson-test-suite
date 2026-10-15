@@ -6,6 +6,6 @@
   schema: "meta.tn"
   error: {
     category: resolver
-    path: "/name"
+    path: "/type"
   }
 }

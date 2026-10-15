@@ -9,15 +9,15 @@
     resolved: """
       !schema {
         circle => !type_definition {
-          body: !record { fields: [
-            !record_field { name: radius  type: int32 }
-          ] }
+          body: !record { fields: {
+            radius => !record_field { type: int32 }
+          } }
         }
 
         square => !type_definition {
-          body: !record { fields: [
-            !record_field { name: side  type: int32 }
-          ] }
+          body: !record { fields: {
+            side => !record_field { type: int32 }
+          } }
         }
 
         shape => !type_definition {

@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-explicit-record-names-one-field-twice.tn"
+{
+  point => !record { fields: { x => { type: int32 }  x => { type: text } } }
+}

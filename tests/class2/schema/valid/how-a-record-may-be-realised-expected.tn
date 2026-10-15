@@ -10,36 +10,36 @@
       !schema {
         pet => !type_definition {
           subtypes: [dog]
-          body: !record { fields: [
-            !record_field { name: pet_type  type: text }
-            !record_field { name: name      type: text }
-          ]  extension: ABSTRACT  discriminators: [pet_type] }
+          body: !record { fields: {
+            pet_type => !record_field { type: text }
+            name     => !record_field { type: text }
+          }  extension: ABSTRACT  discriminators: [pet_type] }
         }
 
         dog => !type_definition {
           supertypes: [pet]
-          body: !record { supertypes: [pet]  fields: [
-            !record_field { name: pet_type  type: text  optional: true  role: FIXED  value: "dog" }
-            !record_field { name: name      type: text }
-          ] }
+          body: !record { supertypes: [pet]  fields: {
+            pet_type => !record_field { type: text  optional: true  role: FIXED  value: "dog" }
+            name     => !record_field { type: text }
+          } }
         }
 
         shape => !type_definition {
-          body: !record { fields: [
-            !record_field { name: area  type: int32 }
-          ]  extension: ABSTRACT }
+          body: !record { fields: {
+            area => !record_field { type: int32 }
+          }  extension: ABSTRACT }
         }
 
         reading => !type_definition {
-          body: !record { fields: [
-            !record_field { name: sensor  type: text }
-          ]  extension: FINAL }
+          body: !record { fields: {
+            sensor => !record_field { type: text }
+          }  extension: FINAL }
         }
 
         plain => !type_definition {
-          body: !record { fields: [
-            !record_field { name: note  type: text }
-          ] }
+          body: !record { fields: {
+            note => !record_field { type: text }
+          } }
         }
       }
       """

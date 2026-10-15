@@ -1,4 +1,4 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-field-name-type-of-text-is-refused.tn"
 {
-  row => !record { name_type: text  fields: [ { name: "first name"  type: text } ] }
+  row => !record { name_type: text  fields: { "first name" => { type: text } } }
 }

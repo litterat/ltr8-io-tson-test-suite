@@ -12,7 +12,7 @@
           source: record
           body: !template {
             parameters: [ !template_param { name: T  type: type_ref  bound: text } ]
-            template: "!record { fields: [ { name: a  type: T } ] }"
+            template: "!record { fields: { a => { type: T } } }"
             extension: ABSTRACT
           }
         }

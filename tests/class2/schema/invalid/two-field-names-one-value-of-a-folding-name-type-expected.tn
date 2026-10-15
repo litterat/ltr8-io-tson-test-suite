@@ -4,8 +4,9 @@
   spec: "[TSON-SCHEMA] §5.5"
   description: """
     A record's fields are distinct under its name type's equality, which the reader
-    matches a document's names in: under a folding type `name` and `NAME` are one
-    value, so declaring both is a duplicate, refused at load.
+    matches a document's names in. `name` and `NAME` are two keys of
+    `record.fields`, which the map admits; under a folding type they are one
+    value, so declaring both is a duplicate, refused at load by the name type.
     """
   meta: "meta.tn"
   import: ["core.tn"]
