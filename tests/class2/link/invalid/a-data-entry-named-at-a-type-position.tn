@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-data-entry-named-at-a-type-position.tn"
+{
+  api => !interface { methods: { m => { response: orders } } }
+}

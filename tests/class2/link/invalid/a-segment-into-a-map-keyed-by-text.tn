@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-segment-into-a-map-keyed-by-text.tn"
+{
+  order => { sku: text }
+  hs => !header_set { headers: { accept => { response: order } } }
+  b => !binding { method: hs.headers.accept  verb: GET  route: "/" }
+}

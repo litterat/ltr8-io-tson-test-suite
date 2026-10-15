@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-name-as-a-list-element-and-as-a-map-value.tn"
+{
+  order     => { sku: text }
+  not_found => { id: text }
+  conflict  => { id: text }
+  api => !interface { methods: {
+    m => { errors: [not_found conflict]  replies: { ok => order  missing => not_found } }
+  } }
+}

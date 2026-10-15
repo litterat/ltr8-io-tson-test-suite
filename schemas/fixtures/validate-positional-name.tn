@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-positional-name.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/meta-kernel.tn"
+@doc:"""
+  A fixture schema for the class2/validate layer: a record whose fields are typed by the kernel's records, the
+  one way a data document reaches a position whose positional field is a record. `cell`'s one field is an
+  atom, `type_ref`'s is `name`, a `type_name`, and `record_field`'s is `type`, a `type_ref`, a product. A data
+  document has no namespace to resolve a name in, so a bare token fills each of them positionally, the
+  product-typed one included; only a schema document reads a bare name there as a value by name.
+  """
+{
+  cell   => { value: integer }
+  holder => { c?: cell  t?: type_ref  f?: record_field }
+}

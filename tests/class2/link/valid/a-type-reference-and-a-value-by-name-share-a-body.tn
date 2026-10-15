@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-type-reference-and-a-value-by-name-share-a-body.tn"
+{
+  place_order_request => { quantity: int32 }
+  api => !interface { methods: { m => { request: place_order_request  response: uuid } } }
+}

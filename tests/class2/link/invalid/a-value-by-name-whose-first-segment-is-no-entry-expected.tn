@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-value-by-name-whose-first-segment-is-no-entry-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
+  description: "place_order is a key inside the interface orders, not an entry: a member is reached through its entry, and nothing is looked up lexically, so the first segment names no entry and the name is refused."
+  meta: "fixtures/meta-service.tn"
+  import: ["fixtures/link-orders-interface.tn"]
+  error: {
+    category: resolver
+  }
+}

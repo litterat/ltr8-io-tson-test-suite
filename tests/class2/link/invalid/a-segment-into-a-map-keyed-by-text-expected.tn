@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-segment-into-a-map-keyed-by-text-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
+  description: "A segment is judged by the key type of the collection it selects in, and a map keyed by text has keys that are not names, so it cannot be entered by name."
+  meta: "fixtures/meta-service.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

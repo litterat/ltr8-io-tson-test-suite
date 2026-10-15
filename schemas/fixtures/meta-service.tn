@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
+!!meta:"https://tson.io/2026/38/m/meta-kernel.tn"
+!!import:"https://tson.io/2026/38/m/meta.tn"
+@doc:"""
+  A meta layer declaring an interface as a named set of methods, and an HTTP binding naming the method it
+  serves. A method's request, error and reply records are slots typed by the kernel's `record` constructor, so
+  a schema under this meta writes them by name (`request: place_order_request`), and a binding's method is a
+  slot typed by this layer's own `method` record, written by a qualified name that reaches into an interface
+  (`method: orders.methods.place_order`). `rpc_method` composes `method`, so an rpc interface's methods fill a
+  `method` slot through their supertypes; `verb_interface` keys its methods by an enum and `header_set` by text.
+  The constructors composing `data` are not types, and a processor binds each instance to a host class of its
+  own: `interface`, `verb_interface`, `rpc_interface`, `header_set` and `binding`, with the records `method`
+  and `rpc_method` they hold.
+  """
+{
+  method_name    => identifier
+  status_name    => identifier
+  method         => { request?: record  response?: type_ref  errors?: [record]  replies?: {status_name => record} }
+  rpc_method     => method & { idempotent?: boolean }
+  http_verb      => !enum [GET POST]
+  interface      => data & { methods: {method_name => method} }
+  rpc_interface  => data & { methods: {method_name => rpc_method} }
+  verb_interface => data & { methods: {http_verb => method} }
+  header_set     => data & { headers: {text => method} }
+  binding        => data & { method: method  verb: http_verb  route: text }
+}

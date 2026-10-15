@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/the-explicit-record-form-writes-no-positional-record-field.tn"
+{
+  r => !record { fields: { p => x } }
+}

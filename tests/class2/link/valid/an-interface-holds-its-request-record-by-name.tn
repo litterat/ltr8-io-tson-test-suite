@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-interface-holds-its-request-record-by-name.tn"
+{
+  order               => { sku: text  quantity: int32 }
+  place_order_request => { order: order }
+  orders => !interface { methods: {
+    place_order => { request: place_order_request  response: order }
+  } }
+}

@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-value-by-name-follows-an-alias-hop.tn"
+{
+  order_ref => { id: text }
+  req       => order_ref
+  api => !interface { methods: { m => { request: req } } }
+}
