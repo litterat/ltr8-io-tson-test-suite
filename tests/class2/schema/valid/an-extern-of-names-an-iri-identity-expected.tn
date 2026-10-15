@@ -8,10 +8,7 @@
   valid: {
     resolved: """
       !schema {
-        wide => !type_definition {
-          source: { name: extern_of  arguments: [ { value: "https://例え.test/注文.tn" } ] }
-          body: !scoped { scope: [EXTERN]  schemas: { "https://例え.test/注文.tn" => _ } }
-        }
+        wide => !scoped { scope: [EXTERN]  schemas: { "https://例え.test/注文.tn" => _ } }
       }
       """
   }

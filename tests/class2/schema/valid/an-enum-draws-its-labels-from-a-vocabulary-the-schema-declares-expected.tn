@@ -15,15 +15,9 @@
   valid: {
     resolved: """
       !schema {
-        kebab => !type_definition {
-          source: identifier_type
-          body: !identifier_type { continue_add: "-"  pattern: "[a-z]+(-[a-z]+)*" }
-        }
+        kebab => !identifier_type { continue_add: "-"  pattern: "[a-z]+(-[a-z]+)*" }
 
-        steps => !type_definition {
-          source: enum_type
-          body: !enum_type { name_type: kebab  members: [make-tea drink-tea] }
-        }
+        steps => !enum_type { name_type: kebab  members: [make-tea drink-tea] }
       }
       """
   }

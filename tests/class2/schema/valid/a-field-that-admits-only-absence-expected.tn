@@ -8,12 +8,10 @@
   valid: {
     resolved: """
       !schema {
-        person => !type_definition {
-          body: !record { fields: {
-            name    => !record_field { type: text }
-            retired => !record_field { type: void  optional: true  voidable: true }
-          } }
-        }
+        person => !record { fields: {
+          name    => !record_field { type: text }
+          retired => !record_field { type: void  optional: true  voidable: true }
+        } }
       }
       """
   }

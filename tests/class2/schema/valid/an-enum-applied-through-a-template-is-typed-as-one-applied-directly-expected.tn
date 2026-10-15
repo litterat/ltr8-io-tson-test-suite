@@ -13,18 +13,12 @@
   valid: {
     resolved: """
       !schema {
-        names => !type_definition {
-          source: enum
-          body: !template {
-            parameters: [ !template_param { name: M  type: text } ]
-            template: "!enum [a b M]"
-          }
+        names => !template {
+          parameters: [ !template_param { name: M  type: text } ]
+          template: "!enum [a b M]"
         }
 
-        named => !type_definition {
-          source: { name: names  arguments: [ { value: c } ] }
-          body: !enum { members: [a b c] }
-        }
+        named => !enum { members: [a b c] }
       }
       """
   }

@@ -13,22 +13,16 @@
   valid: {
     resolved: """
       !schema {
-        base => !type_definition {
-          subtypes: [row]
-          body: !record { fields: {
-            zeta  => !record_field { type: text }
-            alpha => !record_field { type: int32 }
-          } }
-        }
-        row => !type_definition {
-          supertypes: [base]
-          body: !record { supertypes: [base]  fields: {
-            zeta  => !record_field { type: text }
-            alpha => !record_field { type: int32 }
-            mid   => !record_field { type: text  optional: true }
-            beta  => !record_field { type: text }
-          } }
-        }
+        base => !record { subtypes: [row]  fields: {
+          zeta  => !record_field { type: text }
+          alpha => !record_field { type: int32 }
+        } }
+        row => !record { supertypes: [base]  fields: {
+          zeta  => !record_field { type: text }
+          alpha => !record_field { type: int32 }
+          mid   => !record_field { type: text  optional: true }
+          beta  => !record_field { type: text }
+        } }
       }
       """
   }

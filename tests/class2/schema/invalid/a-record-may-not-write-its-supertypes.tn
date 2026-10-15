@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-may-not-write-its-supertypes.tn"
+{
+  base => { id: text }
+
+  n => !record { supertypes: [base]  fields: { id => { type: text } } }
+}

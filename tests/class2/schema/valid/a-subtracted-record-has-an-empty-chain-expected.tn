@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-subtracted-record-has-an-empty-chain-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.9"
+  description: "Subtraction revokes IS-A for every parent, and keeps nothing in its place: a subtracted record is a record with an empty chain, and the record it was subtracted from does not list it among its subtypes. The fields are the merged set less the removal, flattened like any other record's."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        account => !record { fields: {
+          name     => !record_field { type: text }
+          password => !record_field { type: text }
+        } }
+
+        public_account => !record { fields: {
+          name => !record_field { type: text }
+        } }
+      }
+      """
+  }
+}

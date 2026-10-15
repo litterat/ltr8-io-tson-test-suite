@@ -8,10 +8,7 @@
   valid: {
     resolved: """
       !schema {
-        colour => !type_definition {
-          source: enum
-          body: !enum { members: [RED GREEN BLUE] }
-        }
+        colour => !enum { members: [RED GREEN BLUE] }
       }
       """
   }

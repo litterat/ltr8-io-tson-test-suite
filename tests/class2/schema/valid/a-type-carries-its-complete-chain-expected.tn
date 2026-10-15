@@ -1,0 +1,28 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-type-carries-its-complete-chain-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8"
+  description: "A type carries its own IS-A chain, and in a closed body the chain is complete: `employee` composes `person` and so is IS-A `named` too, each a bare name. `subtypes` is the inverse over this map, so `named` lists both of the records that are IS-A it. An entry is its value -- there is no wrapper around the body to hold the chain."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        named => !record { subtypes: [employee person]  fields: {
+          name => !record_field { type: text }
+        } }
+
+        person => !record { supertypes: [named]  subtypes: [employee]  fields: {
+          name => !record_field { type: text }
+          age  => !record_field { type: int32 }
+        } }
+
+        employee => !record { supertypes: [named person]  fields: {
+          name     => !record_field { type: text }
+          age      => !record_field { type: int32 }
+          staff_id => !record_field { type: text }
+        } }
+      }
+      """
+  }
+}

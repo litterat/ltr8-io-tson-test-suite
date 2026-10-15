@@ -8,16 +8,11 @@
   valid: {
     resolved: """
       !schema {
-        user_id => !type_definition {
-          source: text
-          body: !reference { target: text }
-        }
+        user_id => !reference { target: text }
 
-        user => !type_definition {
-          body: !record { fields: {
-            key => !record_field { type: user_id }
-          } }
-        }
+        user => !record { fields: {
+          key => !record_field { type: user_id }
+        } }
       }
       """
   }

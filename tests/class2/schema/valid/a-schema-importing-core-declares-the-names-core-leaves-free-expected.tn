@@ -13,27 +13,13 @@
   valid: {
     resolved: """
       !schema {
-        identifier => !type_definition {
-          source: identifier_type
-          body: !identifier_type { continue_add: "-" }
-        }
+        identifier => !identifier_type { continue_add: "-" }
 
-        positive_integer => !type_definition {
-          source: integer_type
-          supertypes: [integer]
-          body: !integer_type { min: 1 }
-        }
+        positive_integer => !integer_type { supertypes: [integer]  min: 1 }
 
-        non_empty_text => !type_definition {
-          source: text_type
-          supertypes: [text]
-          body: !text_type { min_length: 1 }
-        }
+        non_empty_text => !text_type { supertypes: [text]  min_length: 1 }
 
-        documentation => @annotation !type_definition {
-          source: text
-          body: !reference { target: text }
-        }
+        documentation => @annotation !reference { target: text }
       }
       """
   }

@@ -8,39 +8,27 @@
   valid: {
     resolved: """
       !schema {
-        pet => !type_definition {
-          subtypes: [dog]
-          body: !record { fields: {
-            pet_type => !record_field { type: text }
-            name     => !record_field { type: text }
-          }  extension: ABSTRACT  discriminators: [pet_type] }
-        }
+        pet => !record { subtypes: [dog]  fields: {
+          pet_type => !record_field { type: text }
+          name     => !record_field { type: text }
+        }  extension: ABSTRACT  discriminators: [pet_type] }
 
-        dog => !type_definition {
-          supertypes: [pet]
-          body: !record { supertypes: [pet]  fields: {
-            pet_type => !record_field { type: text  optional: true  role: FIXED  value: "dog" }
-            name     => !record_field { type: text }
-          } }
-        }
+        dog => !record { supertypes: [pet]  fields: {
+          pet_type => !record_field { type: text  optional: true  role: FIXED  value: "dog" }
+          name     => !record_field { type: text }
+        } }
 
-        shape => !type_definition {
-          body: !record { fields: {
-            area => !record_field { type: int32 }
-          }  extension: ABSTRACT }
-        }
+        shape => !record { fields: {
+          area => !record_field { type: int32 }
+        }  extension: ABSTRACT }
 
-        reading => !type_definition {
-          body: !record { fields: {
-            sensor => !record_field { type: text }
-          }  extension: FINAL }
-        }
+        reading => !record { fields: {
+          sensor => !record_field { type: text }
+        }  extension: FINAL }
 
-        plain => !type_definition {
-          body: !record { fields: {
-            note => !record_field { type: text }
-          } }
-        }
+        plain => !record { fields: {
+          note => !record_field { type: text }
+        } }
       }
       """
   }

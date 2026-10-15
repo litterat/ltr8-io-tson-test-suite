@@ -14,24 +14,18 @@
   valid: {
     resolved: """
       !schema {
-        abstract => !type_definition {
-          body: !record { fields: {
-            a => !record_field { type: text }
-          } }
-        }
+        abstract => !record { fields: {
+          a => !record_field { type: text }
+        } }
 
-        final => !type_definition {
-          body: !record { fields: {
-            b => !record_field { type: text }
-          } }
-        }
+        final => !record { fields: {
+          b => !record_field { type: text }
+        } }
 
-        holder => !type_definition {
-          body: !record { fields: {
-            f => !record_field { type: abstract }
-            g => !record_field { type: final }
-          } }
-        }
+        holder => !record { fields: {
+          f => !record_field { type: abstract }
+          g => !record_field { type: final }
+        } }
       }
       """
   }

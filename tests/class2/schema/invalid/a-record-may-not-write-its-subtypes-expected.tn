@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-may-not-write-its-subtypes-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1"
+  description: """
+    A type's `subtypes` is the inverse of the IS-A chains over the schema map, which the linker
+    derives and a declaration never writes. `base` claims a subtype by writing one, and nothing
+    composes it to make the claim true.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

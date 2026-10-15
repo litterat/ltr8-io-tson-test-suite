@@ -113,9 +113,9 @@ ordinary record body, `type_ref.name` being typed `identifier` and a parameter b
 of such a vector agree as documents and differ as values, and a runner comparing values has nothing it can
 state.
 
-§8.1 does not settle which side should move — it says "no `type_definition` could carry" a held body, and
-then specifies how a parameter reference is read "in any `type_ref`, at any depth ... against the enclosing
-entry's `parameters` list", a rule with no position to apply at if the first sentence holds. What a
+§8.1 does not settle which side should move — it says no constructor's record shape could carry a held body,
+and then specifies how a parameter reference is read "in any `type_ref`, at any depth ... against the
+enclosing entry's `parameters` list", a rule with no position to apply at if the first sentence holds. What a
 template resolves to is stated at the link layer instead, over the entries it mints, until that is
 answered.
 

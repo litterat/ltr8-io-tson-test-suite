@@ -11,11 +11,7 @@
   valid: {
     resolved: """
       !schema {
-        web => !type_definition {
-          source: uri_type
-          supertypes: [uri]
-          body: !uri_type { schemes: [http https]  allow_relative: false }
-        }
+        web => !uri_type { supertypes: [uri]  schemes: [http https]  allow_relative: false }
       }
       """
   }
