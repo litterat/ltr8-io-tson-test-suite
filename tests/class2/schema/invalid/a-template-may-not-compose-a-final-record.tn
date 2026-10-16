@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-may-not-compose-a-final-record.tn"
+{
+  c => final { x: int32 }
+
+  t => <T> c & { v: T }
+}

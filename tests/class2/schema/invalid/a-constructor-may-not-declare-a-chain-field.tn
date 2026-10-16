@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-constructor-may-not-declare-a-chain-field.tn"
+{
+  widget => atom & { chain?: text }
+}

@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-templated-constructor-needs-a-kernel-governed-schema-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.2.2, [TSON-SCHEMA] §4.1"
+  description: """
+    Only a schema chaining directly to the meta-kernel may declare a constructor (§2.2.2), and an entry
+    composing a base kind is one, template or not: `op` composes `data`, so it IS-A `top` as its every
+    application would. This schema is governed by meta.tn, not the meta-kernel.
+    """
+  meta: "meta.tn"
+  import: ["meta.tn"]
+  error: {
+    category: resolver
+  }
+}

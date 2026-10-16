@@ -1,0 +1,29 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-data-entry-closed-from-a-template-states-its-application-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
+  description: """
+    An entry of any kind can be an instantiation, so the application it is the instantiation of sits on its key, as
+    @synthetic does: order_api closes orders<order> to a data constructor's instance, which carries no chain, and its
+    key states @application. A data entry is no type, and the fact is about the entry.
+    """
+  meta: "fixtures/meta-service.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        order => !record { fields: {
+          id => !record_field { type: text }
+        } }
+
+        orders => !template {
+          parameters: [ !template_param { name: T  type: type_ref } ]
+          template: "!interface { methods: { get => { response: T } } }"
+        }
+
+        @application:{ name: orders  arguments: [{ name: order }] }
+        order_api => !interface { methods: { get => { response: order } } }
+      }
+      """
+  }
+}

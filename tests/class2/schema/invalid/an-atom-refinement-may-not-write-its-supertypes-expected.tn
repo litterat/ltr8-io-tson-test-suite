@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-atom-refinement-may-not-write-its-supertypes-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1"
+  description: """
+    An atom refinement's chain is the resolver's too: `!int32 ^ { ... }` already makes `age` IS-A
+    `int32`, and a binding naming the chain is a claim no refinement makes, refused as a binding of a
+    facet the constructor does not offer would be.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

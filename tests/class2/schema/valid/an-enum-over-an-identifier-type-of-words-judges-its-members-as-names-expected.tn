@@ -15,20 +15,11 @@
   valid: {
     resolved: """
       !schema {
-        status => !type_definition {
-          source: enum
-          body: !enum { members: [OPEN ACTIVE DONE] }
-        }
+        status => !enum { members: [OPEN ACTIVE DONE] }
 
-        words => !type_definition {
-          source: identifier_type
-          body: !identifier_type { continue_add: "-"  medial: " " }
-        }
+        words => !identifier_type { continue_add: "-"  medial: " " }
 
-        activity => !type_definition {
-          source: enum_type
-          body: !enum_type { name_type: words  members: [sedentary "lightly active"] }
-        }
+        activity => !enum_type { name_type: words  members: [sedentary "lightly active"] }
       }
       """
   }

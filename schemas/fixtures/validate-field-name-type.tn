@@ -31,7 +31,6 @@
   headers => !record { name_type: header  fields: { "content-type" => { type: text } } }
   page => <T> json_record & { "@id": T }
   jpage => page<text>
-  xnode => !record { supertypes: [json_record]  fields: { "@id" => { type: text } } }
   jn => json_name
   jn_record => !record { name_type: jn  extension: ABSTRACT  fields: {} }
   both => json_record & jn_record & { "@id": text }

@@ -8,13 +8,10 @@
   valid: {
     resolved: """
       !schema {
-        boxed => !type_definition {
-          source: record
-          body: !template {
-            parameters: [ !template_param { name: T  type: type_ref  bound: text } ]
-            template: "!record { fields: { a => { type: T } } }"
-            extension: ABSTRACT
-          }
+        boxed => !template {
+          parameters: [ !template_param { name: T  type: type_ref  bound: text } ]
+          template: "!record { fields: { a => { type: T } } }"
+          extension: ABSTRACT
         }
       }
       """

@@ -1,0 +1,21 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-own-data.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
+@doc:"""
+  A kind is judged by where a base kind is defined, never by its spelling ([TSON-SCHEMA] §4.1): this schema
+  declares a record of its own called `data`, which is not the meta-kernel's base kind, so `payload`
+  composing it is an ordinary record -- a PRODUCT -- and a type a position may name.
+  """
+{
+  data => {
+    x: text
+  }
+
+  payload => data & {
+    y: int32
+  }
+
+  holder => {
+    p: payload
+  }
+}

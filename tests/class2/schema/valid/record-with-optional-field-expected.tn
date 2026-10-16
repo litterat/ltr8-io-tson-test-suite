@@ -8,13 +8,11 @@
   valid: {
     resolved: """
       !schema {
-        point => !type_definition {
-          body: !record { fields: {
-            x     => !record_field { type: int32 }
-            y     => !record_field { type: int32 }
-            label => !record_field { type: text   optional: true  voidable: true }
-          } }
-        }
+        point => !record { fields: {
+          x     => !record_field { type: int32 }
+          y     => !record_field { type: int32 }
+          label => !record_field { type: text   optional: true  voidable: true }
+        } }
       }
       """
   }

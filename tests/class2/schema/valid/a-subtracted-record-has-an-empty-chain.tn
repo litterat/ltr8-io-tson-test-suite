@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-subtracted-record-has-an-empty-chain.tn"
+{
+  account => { name: text  password: text }
+
+  public_account => account - { password }
+}

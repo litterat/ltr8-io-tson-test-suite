@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-atom-construction-may-not-write-its-supertypes-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1"
+  description: """
+    The chain is `chained`'s, which `type` composes, so every type body has the slot, an atom family's
+    instance included -- and no declaration writes it. Construction transfers kind, not IS-A, so `age` built with
+    `!integer_type` has an empty chain; one that IS-A `int32` is written `!int32 ^ { ... }`.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

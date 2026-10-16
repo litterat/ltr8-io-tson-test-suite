@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-may-not-refine-a-final-record.tn"
+{
+  c => final { x: int32  y?: text }
+
+  u => <N> c ^ { y?: text ~ N }
+}
