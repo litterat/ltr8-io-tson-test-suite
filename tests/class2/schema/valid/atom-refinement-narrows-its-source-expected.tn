@@ -2,7 +2,11 @@
 !!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.9"
-  description: "An atom refinement merges with its source rather than replacing it: the resolved body carries every facet the source had settled, not only the ones the refinement restated. Its tag is the atom constructor family's, and its chain is complete: the name it refined, and int32's own supertype integer."
+  description: """
+    An atom refinement merges with its source rather than replacing it: the resolved body carries every facet the source
+    had settled, not only the ones the refinement restated. Its tag is the atom constructor family's, and its chain is
+    complete: the name it refined, and int32's own supertype integer.
+    """
   meta: "meta.tn"
   import: ["core.tn"]
   valid: {

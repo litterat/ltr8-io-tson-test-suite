@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-declaration-may-not-write-its-application.tn"
+{
+  box => <T> { v: T }
+
+  @application:{ name: box  arguments: [{ name: text }] }
+  bx => { v: text }
+}

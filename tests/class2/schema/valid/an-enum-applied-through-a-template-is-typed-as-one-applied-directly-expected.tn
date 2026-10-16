@@ -18,7 +18,8 @@
           template: "!enum [a b M]"
         }
 
-        named => !enum { chain: { application: { name: names  arguments: [{ value: c }] } }  members: [a b c] }
+        @application:{ name: names  arguments: [{ value: c }] }
+        named => !enum { members: [a b c] }
       }
       """
   }

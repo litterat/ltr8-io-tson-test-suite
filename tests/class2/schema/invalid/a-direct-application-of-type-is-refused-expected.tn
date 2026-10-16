@@ -3,9 +3,10 @@
 {
   spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.2"
   description: """
-    `type` is the kind of the kinds that describe a data value, and abstract (SPEC-FEEDBACK.md #15): it has no instances of its own, so a direct
-    application of it is refused as any abstract record's is, the diagnostic naming the subtypes that
-    would satisfy the position.
+    `type` is the kind of the kinds that describe a data value, and abstract (SPEC-FEEDBACK.md #15): it has no
+    instances of its own, so a direct application of it is refused as any abstract record's is, the diagnostic
+    naming the subtypes that would satisfy the position -- only the instantiable ones, an abstract subtype being
+    no answer.
     """
   meta: "meta.tn"
   import: ["core.tn"]

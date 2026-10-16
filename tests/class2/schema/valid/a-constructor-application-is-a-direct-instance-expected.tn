@@ -2,7 +2,11 @@
 !!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.5"
-  description: "The base kinds are abstract, and the constructors beneath them are not: `!record` and `!integer_type` have direct instances, each an entry whose value is the construction, with an empty chain -- construction transfers kind, not IS-A."
+  description: """
+    The base kinds are abstract, and the constructors beneath them are not: `!record` and `!integer_type` have direct
+    instances, each an entry whose value is the construction, with an empty chain -- construction transfers kind, not
+    IS-A.
+    """
   meta: "meta.tn"
   import: ["core.tn"]
   valid: {

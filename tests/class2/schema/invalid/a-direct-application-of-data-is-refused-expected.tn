@@ -4,8 +4,8 @@
   spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.2"
   description: """
     `data` is a base kind, and abstract (SPEC-FEEDBACK.md #15): it has no instances of its own, so a direct
-    application of it is refused as any abstract record's is, the diagnostic naming the subtypes that
-    would satisfy the position.
+    application of it is refused as any abstract record's is. Nothing in scope composes `data`, so the diagnostic
+    says that no constructor does rather than naming an empty list.
     """
   meta: "meta.tn"
   import: ["core.tn"]

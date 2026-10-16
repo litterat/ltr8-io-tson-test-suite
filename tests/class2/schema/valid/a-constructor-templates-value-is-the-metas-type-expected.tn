@@ -15,10 +15,8 @@
           template: "!array { element_type: text  min_items: N }"
         }
 
-        v0 => !array {
-          chain: { application: { name: vec  arguments: [{ value: 0 }] } }
-          element_type: text  min_items: 0
-        }
+        @application:{ name: vec  arguments: [{ value: 0 }] }
+        v0 => !array { element_type: text  min_items: 0 }
       }
       """
   }

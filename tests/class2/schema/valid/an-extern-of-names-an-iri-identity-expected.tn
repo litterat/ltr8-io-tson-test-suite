@@ -8,10 +8,8 @@
   valid: {
     resolved: """
       !schema {
-        wide => !scoped {
-          chain: { application: { name: extern_of  arguments: [{ value: "https://例え.test/注文.tn" }] } }
-          scope: [EXTERN]  schemas: { "https://例え.test/注文.tn" => _ }
-        }
+        @application:{ name: extern_of  arguments: [{ value: "https://例え.test/注文.tn" }] }
+        wide => !scoped { scope: [EXTERN]  schemas: { "https://例え.test/注文.tn" => _ } }
       }
       """
   }

@@ -2,7 +2,11 @@
 !!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §7.2"
-  description: "A chain is complete to a fixed point through applied parents: great composes okt, the declared application ok<text>, and ok composes result<T>, so great is IS-A rt, the entry declared for result<text>, though great holds no application of its own. A position typed rt admits a great."
+  description: """
+    A chain is complete to a fixed point through applied parents: great composes okt, the declared application ok<text>,
+    and ok composes result<T>, so great is IS-A rt, the entry declared for result<text>, though great holds no
+    application of its own. A position typed rt admits a great.
+    """
   schema: "fixtures/validate-complete-chain.tn"
   valid: _
 }
