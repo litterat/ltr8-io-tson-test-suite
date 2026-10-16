@@ -14,9 +14,9 @@
   valid: {
     resolved: """
       !schema {
-        kebab_name => !identifier_type { subtypes: [short_kebab]  medial: "-" }
+        kebab_name => !identifier_type { chain: { subtypes: [short_kebab] }  medial: "-" }
 
-        short_kebab => !identifier_type { supertypes: [kebab_name]  max_length: 12  medial: "-" }
+        short_kebab => !identifier_type { chain: { supertypes: [kebab_name] }  max_length: 12  medial: "-" }
       }
       """
   }

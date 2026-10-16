@@ -3,7 +3,7 @@
 {
   spec: "[TSON-SCHEMA] §4.1"
   description: """
-    A type's `subtypes` is the inverse of the IS-A chains over the schema map, which the linker
+    A chain's `subtypes` is the inverse of the IS-A chains over the schema map, which the linker
     derives and a declaration never writes. `base` claims a subtype by writing one, and nothing
     composes it to make the claim true.
     """

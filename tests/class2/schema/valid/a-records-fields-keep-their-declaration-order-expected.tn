@@ -13,11 +13,11 @@
   valid: {
     resolved: """
       !schema {
-        base => !record { subtypes: [row]  fields: {
+        base => !record { chain: { subtypes: [row] }  fields: {
           zeta  => !record_field { type: text }
           alpha => !record_field { type: int32 }
         } }
-        row => !record { supertypes: [base]  fields: {
+        row => !record { chain: { supertypes: [base] }  fields: {
           zeta  => !record_field { type: text }
           alpha => !record_field { type: int32 }
           mid   => !record_field { type: text  optional: true }

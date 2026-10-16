@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-may-not-write-its-subtypes.tn"
 {
-  base => !record { subtypes: [n]  fields: { id => { type: text } } }
+  base => !record { chain: { subtypes: [n] }  fields: { id => { type: text } } }
 
   n => { id: text }
 }

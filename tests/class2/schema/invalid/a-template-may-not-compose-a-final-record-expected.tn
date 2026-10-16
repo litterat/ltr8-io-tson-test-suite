@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-may-not-compose-a-final-record-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10"
+  description: """
+    `final` admits no subtype, and a template composing a final record is one: it is IS-A its parents as
+    any record is, and every application of it would be. The refusal is the declaration's, where `t`
+    names `c`, not the first application's -- there is none here.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §4.1"
   description: """
-    The chain is `type`'s, so every type body has the slot, an atom family's instance included -- and
-    no declaration writes it. Construction transfers kind, not IS-A, so `age` built with
+    The chain is `chained`'s, which `type` composes, so every type body has the slot, an atom family's
+    instance included -- and no declaration writes it. Construction transfers kind, not IS-A, so `age` built with
     `!integer_type` has an empty chain; one that IS-A `int32` is written `!int32 ^ { ... }`.
     """
   meta: "meta.tn"

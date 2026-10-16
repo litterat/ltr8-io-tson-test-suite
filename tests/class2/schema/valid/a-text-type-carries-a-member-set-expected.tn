@@ -23,9 +23,9 @@
   valid: {
     resolved: """
       !schema {
-        country_code => !text_type { supertypes: [text]  subtypes: [nordic]  pattern: "[A-Z]{2}" }
+        country_code => !text_type { chain: { supertypes: [text]  subtypes: [nordic] }  pattern: "[A-Z]{2}" }
 
-        nordic => !text_type { supertypes: [country_code]  pattern: "[A-Z]{2}"  members: ["SE" "NO" "DK"] }
+        nordic => !text_type { chain: { supertypes: [country_code text] }  pattern: "[A-Z]{2}"  members: ["SE" "NO" "DK"] }
       }
       """
   }

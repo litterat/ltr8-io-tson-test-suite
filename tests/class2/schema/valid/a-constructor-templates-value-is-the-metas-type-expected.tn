@@ -8,14 +8,17 @@
   valid: {
     resolved: """
       !schema {
-        non_negative_integer => !integer_type { supertypes: [integer]  min: 1 }
+        non_negative_integer => !integer_type { chain: { supertypes: [integer] }  min: 1 }
 
         vec => !template {
           parameters: [ !template_param { name: N  type: non_negative_integer } ]
           template: "!array { element_type: text  min_items: N }"
         }
 
-        v0 => !array { element_type: text  min_items: 0 }
+        v0 => !array {
+          chain: { application: { name: vec  arguments: [{ value: 0 }] } }
+          element_type: text  min_items: 0
+        }
       }
       """
   }

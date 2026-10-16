@@ -8,12 +8,12 @@
   valid: {
     resolved: """
       !schema {
-        pet => !record { subtypes: [dog]  fields: {
+        pet => !record { chain: { subtypes: [dog] }  fields: {
           pet_type => !record_field { type: text }
           name     => !record_field { type: text }
         }  extension: ABSTRACT  discriminators: [pet_type] }
 
-        dog => !record { supertypes: [pet]  fields: {
+        dog => !record { chain: { supertypes: [pet] }  fields: {
           pet_type => !record_field { type: text  optional: true  role: FIXED  value: "dog" }
           name     => !record_field { type: text }
         } }

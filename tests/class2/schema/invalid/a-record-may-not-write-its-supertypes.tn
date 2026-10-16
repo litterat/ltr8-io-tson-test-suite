@@ -2,5 +2,5 @@
 {
   base => { id: text }
 
-  n => !record { supertypes: [base]  fields: { id => { type: text } } }
+  n => !record { chain: { supertypes: [base] }  fields: { id => { type: text } } }
 }

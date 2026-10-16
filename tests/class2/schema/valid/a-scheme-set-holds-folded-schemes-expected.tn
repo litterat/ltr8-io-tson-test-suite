@@ -11,7 +11,7 @@
   valid: {
     resolved: """
       !schema {
-        web => !uri_type { supertypes: [uri]  schemes: [http https]  allow_relative: false }
+        web => !uri_type { chain: { supertypes: [uri uri_reference] }  schemes: [http https]  allow_relative: false }
       }
       """
   }

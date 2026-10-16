@@ -8,16 +8,16 @@
   valid: {
     resolved: """
       !schema {
-        named => !record { subtypes: [employee person]  fields: {
+        named => !record { chain: { subtypes: [employee person] }  fields: {
           name => !record_field { type: text }
         } }
 
-        person => !record { supertypes: [named]  subtypes: [employee]  fields: {
+        person => !record { chain: { supertypes: [named]  subtypes: [employee] }  fields: {
           name => !record_field { type: text }
           age  => !record_field { type: int32 }
         } }
 
-        employee => !record { supertypes: [named person]  fields: {
+        employee => !record { chain: { supertypes: [named person] }  fields: {
           name     => !record_field { type: text }
           age      => !record_field { type: int32 }
           staff_id => !record_field { type: text }

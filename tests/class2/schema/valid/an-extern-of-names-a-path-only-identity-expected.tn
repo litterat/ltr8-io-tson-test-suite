@@ -8,7 +8,10 @@
   valid: {
     resolved: """
       !schema {
-        local => !scoped { scope: [EXTERN]  schemas: { "/local/orders.tn" => _ } }
+        local => !scoped {
+          chain: { application: { name: extern_of  arguments: [{ value: "/local/orders.tn" }] } }
+          scope: [EXTERN]  schemas: { "/local/orders.tn" => _ }
+        }
       }
       """
   }
