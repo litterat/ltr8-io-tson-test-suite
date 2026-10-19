@@ -23,18 +23,9 @@
   valid: {
     resolved: """
       !schema {
-        country_code => !type_definition {
-          source: text_type
-          supertypes: [text]
-          subtypes: [nordic]
-          body: !text_type { pattern: "[A-Z]{2}" }
-        }
+        country_code => !text_type { chain: { supertypes: [text]  subtypes: [nordic] }  pattern: "[A-Z]{2}" }
 
-        nordic => !type_definition {
-          source: text_type
-          supertypes: [country_code]
-          body: !text_type { pattern: "[A-Z]{2}"  members: ["SE" "NO" "DK"] }
-        }
+        nordic => !text_type { chain: { supertypes: [country_code text] }  pattern: "[A-Z]{2}"  members: ["SE" "NO" "DK"] }
       }
       """
   }

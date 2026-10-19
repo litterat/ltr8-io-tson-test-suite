@@ -8,10 +8,7 @@
   valid: {
     resolved: """
       !schema {
-        post_orders => !type_definition {
-          source: binding
-          body: !binding { method: orders.methods.place_order  verb: POST  route: "/orders" }
-        }
+        post_orders => !binding { method: orders.methods.place_order  verb: POST  route: "/orders" }
       }
       """
   }

@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-value-is-admitted-through-a-chain-an-applied-parent-completes.tn"
+!h { r: !great { payload: a  note: b  extra: 1 } }

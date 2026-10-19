@@ -8,18 +8,9 @@
   valid: {
     resolved: """
       !schema {
-        steps => !type_definition {
-          source: map
-          body: !map { key_type: text  value_type: integer  ordered: true }
-        }
-        lookup => !type_definition {
-          source: map
-          body: !map { key_type: text  value_type: integer }
-        }
-        tags => !type_definition {
-          source: array
-          body: !array { element_type: text  ordered: false }
-        }
+        steps => !map { key_type: text  value_type: integer  ordered: true }
+        lookup => !map { key_type: text  value_type: integer }
+        tags => !array { element_type: text  ordered: false }
       }
       """
   }

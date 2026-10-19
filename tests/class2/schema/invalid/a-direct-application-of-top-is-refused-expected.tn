@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-direct-application-of-top-is-refused-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.2"
+  description: """
+    `top` is the root, which every entry is IS-A, and abstract (SPEC-FEEDBACK.md #15): it has no instances of its
+    own, so a direct application of it is refused as any abstract record's is, the diagnostic naming the subtypes
+    that would satisfy the position -- only the instantiable ones, an abstract subtype being no answer.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

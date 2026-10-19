@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-atom-refinement-may-not-write-its-supertypes.tn"
+{
+  age => !int32 ^ { chain: { supertypes: [integer] }  min: 0 }
+}

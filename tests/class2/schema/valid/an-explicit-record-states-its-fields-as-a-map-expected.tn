@@ -13,24 +13,15 @@
   valid: {
     resolved: """
       !schema {
-        json_name => !type_definition {
-          source: identifier_type
-          body: !identifier_type { start_add: "@" }
-        }
-        point => !type_definition {
-          source: record
-          body: !record { fields: {
-            x => !record_field { type: int32 }
-            y => !record_field { type: int32  optional: true }
-          } }
-        }
-        node => !type_definition {
-          source: record
-          body: !record { name_type: json_name  fields: {
-            "@id" => !record_field { type: text }
-            label => !record_field { type: text }
-          } }
-        }
+        json_name => !identifier_type { start_add: "@" }
+        point => !record { fields: {
+          x => !record_field { type: int32 }
+          y => !record_field { type: int32  optional: true }
+        } }
+        node => !record { name_type: json_name  fields: {
+          "@id" => !record_field { type: text }
+          label => !record_field { type: text }
+        } }
       }
       """
   }

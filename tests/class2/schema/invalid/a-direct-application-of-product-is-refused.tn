@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-direct-application-of-product-is-refused.tn"
+{
+  x => !product {}
+}
