@@ -1,0 +1,25 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-nothing-declares-is-its-expansion-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
+  description: "An application of a template over any constructor but record, written at a use site and declared nowhere, is its expansion: the position names the closed synthetic its closing produces, the same entry the sugar form written out lands on, and no instantiation entry is minted. rows<text> and [text; 1..] are one entry."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        rows => !template {
+          parameters: [ !template_param { name: T  type: type_ref } ]
+          template: "!array { element_type: T  min_items: 1 }"
+        }
+
+        post => !record { fields: {
+          a => !record_field { type: array_text_1_xxhash }
+          b => !record_field { type: array_text_1_xxhash }
+        } }
+
+        @synthetic array_text_1_xxhash => !array { element_type: text  min_items: 1 }
+      }
+      """
+  }
+}
