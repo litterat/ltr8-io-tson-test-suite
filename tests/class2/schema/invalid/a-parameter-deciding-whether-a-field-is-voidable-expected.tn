@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-deciding-whether-a-field-is-voidable-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    `V` decides whether `v` may be void, so the family base cannot say. A record template's parameters stand only in a
+    field's type, a field's default or fixed value, or an argument of an application.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

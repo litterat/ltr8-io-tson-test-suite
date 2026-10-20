@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-deciding-how-a-record-template-may-be-realised.tn"
+{
+  realised => <E> !record { fields: { v => { type: text } }  extension: E }
+}

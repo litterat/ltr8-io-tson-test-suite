@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-deciding-a-fields-role.tn"
+{
+  roled => <R> !record { fields: { v => { type: text  role: R  value: "x" } } }
+}

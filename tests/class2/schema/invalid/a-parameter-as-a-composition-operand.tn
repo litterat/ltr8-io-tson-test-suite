@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-as-a-composition-operand.tn"
+{
+  named => <T> T & { name: text }
+}

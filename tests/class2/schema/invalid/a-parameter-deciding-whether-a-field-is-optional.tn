@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-deciding-whether-a-field-is-optional.tn"
+{
+  maybe => <B> !record { fields: { v => { type: text  optional: B } } }
+}
