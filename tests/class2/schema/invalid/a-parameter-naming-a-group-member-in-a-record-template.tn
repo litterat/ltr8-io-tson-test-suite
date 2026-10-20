@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-naming-a-group-member-in-a-record-template.tn"
+{
+  grouped => <A> { ( A: text | b: text ) }
+}

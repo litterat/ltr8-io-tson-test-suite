@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-as-a-composition-operand-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    A parameter is never an operand of `&`: composition reads the operand's fields to flatten, and `T` has none
+    until the template is applied. An operand applied to a parameter, `result<T> & { ... }`, is admitted.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-as-a-refinement-source-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    A parameter is never the source of `^`: refinement reads the source's fields to tighten, and `T` has none until
+    the template is applied. A source applied to a parameter, `base<T> ^ { ... }`, is admitted.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
