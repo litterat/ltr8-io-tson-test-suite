@@ -4,8 +4,8 @@
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
   Formal shape of a link-layer sidecar (tests/class2/link/**/*-expected.tn) -- what [TSON-SCHEMA]
-  §2.2.3's import closure, §5.4's derived disjointness and §5.10.1's productivity rule make of a
-  schema that has already resolved. See README.md's "The Class 2 layers" and RUNNER.md.
+  §2.2.3's import closure, §5.4's derived disjointness, a kind's derived members and §5.10.1's
+  productivity rule make of a schema that has already resolved. See README.md's "The Class 2 layers" and RUNNER.md.
 
   Where the schema layer compares a whole resolved document, this layer states individual facts
   about the linked namespace. That is deliberate and not laziness: linking derives three things and
@@ -32,6 +32,17 @@
   }
 
   @doc:"""
+    A kind and the names its derived `members` index must list, in any order: every entry of the
+    linked closure built with the kind's constructor. The index is computed over the closure of the
+    schema being linked, so a kind an import declares is stated here with the members this schema's
+    closure gives it.
+    """
+  membership => {
+    name: text
+    members: [text]
+  }
+
+  @doc:"""
     What the linked namespace must show. `binds` names entries the closure must resolve, which is
     how §2.2.3's "an !!import contributes the imported schema's entire namespace" is stated from
     outside an implementation: a name reachable only through an import's own import is the case
@@ -41,6 +52,7 @@
     binds?: [text]?
     disjoint?: [disjointness]?
     subtypes?: [subtyping]?
+    members?: [membership]?
   }
 
   @doc:"""

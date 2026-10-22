@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-kind-is-computed-over-the-closure-of-the-schema-that-links-it-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §2.2.3"
+  description: """
+    A kind's members are computed over the closure of the schema being linked, an imported kind's included.
+    The kernel's `identifier_kind` reaches this meta layer through meta.tn's import, and here it lists
+    `text_identifier`, which the kernel has never seen, beside the kernel's own identifier families: so the
+    pin `name_type?: = text_identifier` is a member.
+    """
+  meta: "meta-kernel.tn"
+  import: ["meta.tn"]
+  valid: {
+    binds: [text_enum identifier_kind]
+    members: [
+      { name: identifier_kind  members: [field_name identifier param_name scheme_name text_identifier type_name] }
+    ]
+  }
+}

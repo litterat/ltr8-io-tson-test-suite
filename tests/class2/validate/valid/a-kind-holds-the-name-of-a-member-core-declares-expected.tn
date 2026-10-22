@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-kind-holds-the-name-of-a-member-core-declares-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2"
+  description: "A kind's members are every type in the schema's closure built with its constructor, and core's `uuid => !uuid_type {}` is in that closure as much as the schema's own ids are: nobody lists it, and its name is a value of the kind."
+  schema: "fixtures/validate-kind-ids.tn"
+  valid: _
+}
