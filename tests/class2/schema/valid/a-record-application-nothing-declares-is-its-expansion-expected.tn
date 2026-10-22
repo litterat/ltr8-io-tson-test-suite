@@ -10,12 +10,12 @@
       !schema {
         box => !record {
           fields: { v => !record_field { type: T } }
-          parameters: [ !template_param { name: T  type: type_ref } ]
+          parameters: [ !template_param { name: T  type: type_kind } ]
         }
 
         crate => !record {
           fields: { v => !record_field { type: T } }
-          parameters: [ !template_param { name: T  type: type_ref } ]
+          parameters: [ !template_param { name: T  type: type_kind } ]
         }
 
         holder => !record { fields: {

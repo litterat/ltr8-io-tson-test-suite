@@ -3,10 +3,11 @@
 !!import:"https://tson.io/2026/38/m/meta-kernel.tn"
 @doc:"""
   A fixture schema for the class2/validate layer: a record whose fields are typed by the kernel's records, the
-  one way a data document reaches a position whose positional field is a record. `cell`'s one field is an
-  atom, `type_ref`'s is `name`, a `type_name`, and `record_field`'s is `type`, a `type_ref`, a product. A data
-  document has no namespace to resolve a name in, so a bare token fills each of them positionally, the
-  product-typed one included; only a schema document reads a bare name there as a value by name.
+  one way a data document reaches a position whose positional field is the kernel's. `cell`'s one field is an
+  atom, `type_ref`'s is `name`, a `type_name`, and `record_field`'s is `type`, a `type_kind`, the kind whose
+  values are the names of the types. A data document has no namespace of its own, so a bare token fills each of
+  them positionally; the kind-typed one is then judged a member in the governing schema's namespace, where a
+  data document's kind values resolve, and only a schema document reads a bare name as a value by name.
   """
 {
   cell   => { value: integer }

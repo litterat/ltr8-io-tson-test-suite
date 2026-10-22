@@ -1,2 +1,2 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-bare-token-still-fills-an-atom-typed-positional-field.tn"
-!holder { c: 42  t: some_type  f: some_type }
+!holder { c: 42  t: some_type  f: cell }
