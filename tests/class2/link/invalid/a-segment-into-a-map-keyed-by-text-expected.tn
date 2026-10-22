@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
-  description: "A segment is judged by the key type of the collection it selects in, and a map keyed by text has keys that are not names, so it cannot be entered by name."
+  description: "A segment selects a key of a namespace value or a field of a record value, and nothing else: header_set's headers is a plain map, {text => method}, which no qualified name enters."
   meta: "fixtures/meta-service.tn"
   import: ["core.tn"]
   error: {

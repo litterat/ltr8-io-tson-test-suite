@@ -3,24 +3,28 @@
 !!import:"https://tson.io/2026/38/m/meta.tn"
 @doc:"""
   A meta layer declaring an interface as a named set of methods, and an HTTP binding naming the method it
-  serves. A method's request, error and reply records are slots typed `kind<record>`, the names of the record types,
-  so a schema under this meta writes them by name (`request: place_order_request`), and a binding's method is a
-  slot typed by this layer's own `method` record, written by a qualified name that reaches into an interface
-  (`method: orders.methods.place_order`). `rpc_method` composes `method`, so an rpc interface's methods fill a
-  `method` slot through their supertypes; `verb_interface` keys its methods by an enum and `header_set` by text.
-  The constructors composing `data` are not types, and a processor binds each instance to a host class of its
-  own: `interface`, `verb_interface`, `rpc_interface`, `header_set` and `binding`, with the records `method`
-  and `rpc_method` they hold.
+  serves. A method's request, error and reply records are slots typed `kind<record>`, the names of the record
+  types, so a schema under this meta writes them by name (`request: place_order_request`); its response is any
+  type, `type_kind`. An interface's methods are a namespace, `method_map`, so a binding's `method`, a slot typed
+  `ref<method>`, reaches one by a qualified name (`method: orders.methods.place_order`). `rpc_method` composes
+  `method`, so an rpc interface's methods fill a `ref<method>` through their supertypes; `verb_interface` keys
+  its namespace by an enum. `header_set` holds its methods in a plain map, `{text => method}`, which no
+  qualified name enters. The constructors composing `data` are not types, and a processor binds each instance
+  to a host class of its own: `interface`, `verb_interface`, `rpc_interface`, `header_set` and `binding`, with
+  the records `method` and `rpc_method` they hold.
   """
 {
   method_name    => identifier
   status_name    => identifier
-  method         => { request?: kind<record>  response?: type_ref  errors?: [kind<record>]  replies?: {status_name => kind<record>} }
+  method         => { request?: kind<record>  response?: type_kind  errors?: [kind<record>]  replies?: {status_name => kind<record>} }
   rpc_method     => method & { idempotent?: boolean }
   http_verb      => !enum [GET POST]
-  interface      => data & { methods: {method_name => method} }
-  rpc_interface  => data & { methods: {method_name => rpc_method} }
-  verb_interface => data & { methods: {http_verb => method} }
+  method_map     => !namespace { key_type: method_name  value_type: method }
+  rpc_map        => !namespace { key_type: method_name  value_type: rpc_method }
+  verb_map       => !namespace { key_type: http_verb  value_type: method }
+  interface      => data & { methods: method_map }
+  rpc_interface  => data & { methods: rpc_map }
+  verb_interface => data & { methods: verb_map }
   header_set     => data & { headers: {text => method} }
-  binding        => data & { method: method  verb: http_verb  route: text }
+  binding        => data & { method: ref<method>  verb: http_verb  route: text }
 }
