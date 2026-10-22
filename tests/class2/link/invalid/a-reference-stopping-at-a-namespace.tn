@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-reference-stopping-at-a-namespace.tn"
+{
+  b => !binding { method: orders.methods  verb: GET  route: "/orders" }
+}

@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
-  description: "An enum's labels are names, so a map keyed by one is entered by a label: api.methods.GET is the method under the label GET."
+  description: "A namespace keyed by an enum is entered by a label: api.methods.GET is the method under the label GET in the verb_map namespace."
   meta: "fixtures/meta-service.tn"
   import: ["core.tn"]
   valid: {
