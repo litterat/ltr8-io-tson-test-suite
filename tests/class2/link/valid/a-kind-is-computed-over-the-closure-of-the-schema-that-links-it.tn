@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-kind-is-computed-over-the-closure-of-the-schema-that-links-it.tn"
+{
+  text_identifier => !identifier_type { continue_add: " " }
+  text_enum       => enum_type ^ { name_type?: = text_identifier }
+}
