@@ -9,7 +9,7 @@
     resolved: """
       !schema {
         rows => !template {
-          parameters: [ !template_param { name: T  type: type_ref } ]
+          parameters: [ !template_param { name: T  type: type_kind } ]
           template: "!array { element_type: T  min_items: 1 }"
         }
 

@@ -3,8 +3,8 @@
 !!import:"https://tson.io/2026/38/m/meta.tn"
 @doc:"""
   A meta layer declaring an interface as a named set of methods, and an HTTP binding naming the method it
-  serves. A method's request, error and reply records are slots typed by the kernel's `record` constructor, so
-  a schema under this meta writes them by name (`request: place_order_request`), and a binding's method is a
+  serves. A method's request, error and reply records are slots typed `kind<record>`, the names of the record types,
+  so a schema under this meta writes them by name (`request: place_order_request`), and a binding's method is a
   slot typed by this layer's own `method` record, written by a qualified name that reaches into an interface
   (`method: orders.methods.place_order`). `rpc_method` composes `method`, so an rpc interface's methods fill a
   `method` slot through their supertypes; `verb_interface` keys its methods by an enum and `header_set` by text.
@@ -15,7 +15,7 @@
 {
   method_name    => identifier
   status_name    => identifier
-  method         => { request?: record  response?: type_ref  errors?: [record]  replies?: {status_name => record} }
+  method         => { request?: kind<record>  response?: type_ref  errors?: [kind<record>]  replies?: {status_name => kind<record>} }
   rpc_method     => method & { idempotent?: boolean }
   http_verb      => !enum [GET POST]
   interface      => data & { methods: {method_name => method} }

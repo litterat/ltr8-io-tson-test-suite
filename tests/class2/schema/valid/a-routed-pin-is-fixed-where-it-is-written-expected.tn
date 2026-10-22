@@ -25,7 +25,7 @@
           }
           discriminators: [status]
           parameters: [
-            !template_param { name: T  type: type_ref }
+            !template_param { name: T  type: type_kind }
             !template_param { name: S  type: int32 }
           ]
         }
