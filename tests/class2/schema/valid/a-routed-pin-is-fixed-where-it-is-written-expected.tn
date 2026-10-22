@@ -1,0 +1,44 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-routed-pin-is-fixed-where-it-is-written-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: """
+    A modifier whose value is a parameter takes the facts its literal spelling takes, where it is written:
+    `status: int32 = S` is a required FIXED field with the parameter as its value, as `status: int32 = 201` is
+    with `201`. An application substitutes the argument into `value` and changes no other fact. The pin is one
+    value per application, so the field is also the template's selector.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        order => !record {
+          fields: { id => !record_field { type: text } }
+        }
+
+        response => !record {
+          chain: { subtypes: [created] }
+          fields: {
+            status => !record_field { type: int32  role: FIXED  value: S }
+            body => !record_field { type: T }
+          }
+          discriminators: [status]
+          parameters: [
+            !template_param { name: T  type: type_ref }
+            !template_param { name: S  type: int32 }
+          ]
+        }
+
+        @application:{ name: response  arguments: [{ name: order } { value: 201 }] }
+        created => !record {
+          chain: { supertypes: [response] }
+          fields: {
+            status => !record_field { type: int32  role: FIXED  value: 201 }
+            body => !record_field { type: order }
+          }
+        }
+      }
+      """
+  }
+}
