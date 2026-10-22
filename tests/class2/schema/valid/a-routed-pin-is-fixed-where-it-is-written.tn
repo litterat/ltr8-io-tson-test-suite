@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-routed-pin-is-fixed-where-it-is-written.tn"
+{
+  order    => { id: text }
+  response => <T, S> { status: int32 = S  body: T }
+  created  => response<order, 201>
+}

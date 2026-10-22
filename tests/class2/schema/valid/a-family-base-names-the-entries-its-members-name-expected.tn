@@ -20,7 +20,7 @@
         pet => !record {
           chain: { subtypes: [cat] }
           fields: {
-            kind => !record_field { type: integer_type_9_xxhash  value: N }
+            kind => !record_field { type: integer_type_9_xxhash  role: FIXED  value: N }
             name => !record_field { type: text }
           }
           discriminators: [kind]
