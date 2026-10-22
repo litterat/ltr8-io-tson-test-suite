@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-namespace-key-is-judged-by-its-key-type.tn"
+!request { headers: { "1st" => "text/plain" } }
