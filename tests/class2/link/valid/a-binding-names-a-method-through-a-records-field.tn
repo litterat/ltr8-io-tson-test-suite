@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-binding-names-a-method-through-a-records-field.tn"
+{
+  routes => !bindings { post_orders => { method: shop.orders.methods.place_order  verb: POST  route: "/orders" } }
+}

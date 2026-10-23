@@ -10,9 +10,12 @@
   bindings. `rpc_method` composes `method`, so an rpc interface's methods fill a `ref<method>` through their
   supertypes; `verb_interface` keys its methods by `verb_name`, an identifier family whose members are the verbs,
   a namespace's keys being names. A `header_set` holds its methods in a plain map, `{text => method}`, which no
-  qualified name enters, and `header_sets` maps names to header sets. An entry built with a namespace type is a
-  value, not a type, and a processor that binds binds each value of its map to a host class of its own: the
-  records `method`, `rpc_method`, `binding` and `header_set`.
+  qualified name enters, and `header_sets` maps names to header sets. A namespace type declares only its facets,
+  so a `service`, which has fields of its own beside its methods, is a record holding an `interface` in its
+  `methods` field, and `services` maps names to services: a binding reaches a service's method through the
+  record's field (`method: shop.orders.methods.place_order`). An entry built with a namespace type is a value,
+  not a type, and a processor that binds binds each value of its map to a host class of its own: the records
+  `method`, `rpc_method`, `binding`, `header_set` and `service`.
   """
 {
   method_name    => identifier
@@ -26,6 +29,8 @@
   verb_interface => namespace & { key_type: = verb_name  value_type: = method }
   header_set     => { headers: {text => method} }
   header_sets    => namespace & { key_type: = identifier  value_type: = header_set }
+  service        => { extends?: [identifier]  methods: interface }
+  services       => namespace & { key_type: = identifier  value_type: = service }
   binding        => { method: ref<method>  verb: http_verb  route: text }
   bindings       => namespace & { key_type: = identifier  value_type: = binding }
 }
