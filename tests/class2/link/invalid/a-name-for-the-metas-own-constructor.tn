@@ -1,4 +1,4 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-name-for-the-metas-own-constructor.tn"
 {
-  api => !interface { methods: { m => { request: record } } }
+  api => !interface { m => { request: record } }
 }

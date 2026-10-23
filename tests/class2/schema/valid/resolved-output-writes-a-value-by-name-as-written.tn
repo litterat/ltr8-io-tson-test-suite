@@ -1,4 +1,4 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/resolved-output-writes-a-value-by-name-as-written.tn"
 {
-  post_orders => !binding { method: orders.methods.place_order  verb: POST  route: "/orders" }
+  routes => !bindings { post_orders => { method: orders.place_order  verb: POST  route: "/orders" } }
 }

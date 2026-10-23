@@ -1,4 +1,4 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-quoted-token-where-a-name-is-wanted.tn"
 {
-  b => !binding { method: "orders.methods.place_order"  verb: POST  route: "/" }
+  routes => !bindings { b => { method: "orders.place_order"  verb: POST  route: "/" } }
 }

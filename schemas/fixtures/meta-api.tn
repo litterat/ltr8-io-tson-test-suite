@@ -6,9 +6,9 @@
   identifiers to `method` records, so `myapi => !api { get_orders => { ... } }` is an entry whose value is a map
   of methods, and `router` maps identifiers to `route` records, each naming the method it serves at a slot typed
   `ref<method>`, reached through such an entry by a qualified name (`handler: myapi.get_orders`). A method's
-  request, error and reply records are slots typed `kind<record>` and its response any type, `type_kind`. Neither
-  namespace type composes `data`, and an entry built with one is a value, not a type; a processor that binds binds
-  each value of the map to a host class of its own: the records `method` and `route`.
+  request, error and reply records are slots typed `kind<record>` and its response any type, `type_kind`. An entry
+  built with either namespace type is a value, not a type; a processor that binds binds each value of the map to
+  a host class of its own: the records `method` and `route`.
   """
 {
   status_name => identifier

@@ -2,13 +2,13 @@
 !!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12), [TSON-SCHEMA] §8.1"
-  description: "The resolver keeps a value by name as written, and resolved output writes it back as the bare token it was read from, as a reference chain is written (§8.3): the binding's body holds orders.methods.place_order, not the method it names."
+  description: "The resolver keeps a value by name as written, and resolved output writes it back as the bare token it was read from, as a reference chain is written (§8.3): the binding holds orders.place_order, not the method it names."
   meta: "fixtures/meta-service.tn"
   import: ["fixtures/link-orders-interface.tn"]
   valid: {
     resolved: """
       !schema {
-        post_orders => !binding { method: orders.methods.place_order  verb: POST  route: "/orders" }
+        routes => !bindings { post_orders => { method: orders.place_order  verb: POST  route: "/orders" } }
       }
       """
   }

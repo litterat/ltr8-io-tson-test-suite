@@ -1,4 +1,4 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-templated-constructor-needs-a-kernel-governed-schema.tn"
 {
-  op => <T> data & { path: T }
+  ops => <T> namespace & { key_type: = identifier  value_type: = T }
 }

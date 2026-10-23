@@ -1,4 +1,4 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-record-type-named-where-a-method-is-wanted.tn"
 {
-  b => !binding { method: place_order_request  verb: POST  route: "/" }
+  routes => !bindings { b => { method: place_order_request  verb: POST  route: "/" } }
 }

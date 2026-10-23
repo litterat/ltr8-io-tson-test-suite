@@ -1,4 +1,4 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/an-annotated-name.tn"
 {
-  b => !binding { method: @doc:"the order method" orders.methods.place_order  verb: POST  route: "/" }
+  routes => !bindings { b => { method: @doc:"the order method" orders.place_order  verb: POST  route: "/" } }
 }

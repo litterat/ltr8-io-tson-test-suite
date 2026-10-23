@@ -2,17 +2,17 @@
 !!meta:"https://tson.io/2026/38/m/meta-kernel.tn"
 !!import:"https://tson.io/2026/38/m/meta.tn"
 @doc:"""
-  A meta layer declaring an interface as a named set of methods, and an HTTP binding naming the method it
+  A meta layer declaring an interface as a namespace of methods, and an HTTP binding naming the method it
   serves. A method's request, error and reply records are slots typed `kind<record>`, the names of the record
   types, so a schema under this meta writes them by name (`request: place_order_request`); its response is any
-  type, `type_kind`. An interface's methods are a namespace, `method_map`, so a binding's `method`, a slot typed
-  `ref<method>`, reaches one by a qualified name (`method: orders.methods.place_order`). `rpc_method` composes
-  `method`, so an rpc interface's methods fill a `ref<method>` through their supertypes; `verb_interface` keys
-  its namespace by `verb_name`, an identifier family whose members are the verbs, a namespace's keys being names.
-  `header_set` holds its methods in a plain map, `{text => method}`, which no
-  qualified name enters. The constructors composing `data` are not types, and a processor binds each instance
-  to a host class of its own: `interface`, `verb_interface`, `rpc_interface`, `header_set` and `binding`, with
-  the records `method` and `rpc_method` they hold.
+  type, `type_kind`. `interface` maps method names to methods, so a binding's `method`, a slot typed
+  `ref<method>`, reaches one by a qualified name (`method: orders.place_order`), and `bindings` maps names to
+  bindings. `rpc_method` composes `method`, so an rpc interface's methods fill a `ref<method>` through their
+  supertypes; `verb_interface` keys its methods by `verb_name`, an identifier family whose members are the verbs,
+  a namespace's keys being names. A `header_set` holds its methods in a plain map, `{text => method}`, which no
+  qualified name enters, and `header_sets` maps names to header sets. An entry built with a namespace type is a
+  value, not a type, and a processor that binds binds each value of its map to a host class of its own: the
+  records `method`, `rpc_method`, `binding` and `header_set`.
   """
 {
   method_name    => identifier
@@ -21,12 +21,11 @@
   rpc_method     => method & { idempotent?: boolean }
   http_verb      => !enum [GET POST]
   verb_name      => !identifier_type { members: [GET POST] }
-  method_map     => namespace & { key_type: = method_name  value_type: = method }
-  rpc_map        => namespace & { key_type: = method_name  value_type: = rpc_method }
-  verb_map       => namespace & { key_type: = verb_name  value_type: = method }
-  interface      => data & { methods: method_map }
-  rpc_interface  => data & { methods: rpc_map }
-  verb_interface => data & { methods: verb_map }
-  header_set     => data & { headers: {text => method} }
-  binding        => data & { method: ref<method>  verb: http_verb  route: text }
+  interface      => namespace & { key_type: = method_name  value_type: = method }
+  rpc_interface  => namespace & { key_type: = method_name  value_type: = rpc_method }
+  verb_interface => namespace & { key_type: = verb_name  value_type: = method }
+  header_set     => { headers: {text => method} }
+  header_sets    => namespace & { key_type: = identifier  value_type: = header_set }
+  binding        => { method: ref<method>  verb: http_verb  route: text }
+  bindings       => namespace & { key_type: = identifier  value_type: = binding }
 }

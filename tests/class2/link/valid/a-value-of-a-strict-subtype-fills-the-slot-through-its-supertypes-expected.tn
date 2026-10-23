@@ -2,10 +2,10 @@
 !!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
-  description: "A binding's method slot is typed by the meta layer's method record, and rpcs.methods.get is a value of rpc_method, which composes method: its declared type IS-A the slot's through its supertypes (§7.2), not by being the same type."
+  description: "A binding's method slot is typed by the meta layer's method record, and rpcs.get is a value of rpc_method, which composes method: its declared type IS-A the slot's through its supertypes (§7.2), not by being the same type."
   meta: "fixtures/meta-service.tn"
   import: ["core.tn"]
   valid: {
-    binds: [rpcs get_order]
+    binds: [rpcs routes]
   }
 }

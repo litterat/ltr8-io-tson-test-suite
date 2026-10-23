@@ -3,7 +3,7 @@
   order     => { sku: text }
   not_found => { id: text }
   conflict  => { id: text }
-  api => !interface { methods: {
+  api => !interface {
     m => { errors: [not_found conflict]  replies: { ok => order  missing => not_found } }
-  } }
+  }
 }
