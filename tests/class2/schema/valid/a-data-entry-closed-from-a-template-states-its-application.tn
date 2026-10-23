@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/valid/a-data-entry-closed-from-a-template-states-its-application.tn"
-{
-  order => { id: text }
-
-  orders => <T> !interface { methods: { get => { response: T } } }
-
-  order_api => orders<order>
-}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-subtype-slot-behind-a-record-field-naming-no-type.tn"
+{
+  order => { sku: text }
+  shop  => !service_resources {
+    orders => { calls: { get => !typed_call { request: no_such } } }
+  }
+}

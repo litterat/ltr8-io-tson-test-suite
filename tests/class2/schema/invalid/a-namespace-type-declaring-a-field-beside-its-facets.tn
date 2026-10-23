@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-type-declaring-a-field-beside-its-facets.tn"
+{
+  method     => { request?: kind<record> }
+  interfaces => namespace & { key_type: = identifier  value_type: = method  extends?: [type_name] }
+}

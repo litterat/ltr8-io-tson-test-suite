@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/resolved-output-writes-a-namespace-entry-as-written.tn"
+{
+  admin => !api {
+    list_orders => { response: order_list }
+    get_order   => !method { request: order  response: order }
+  }
+}

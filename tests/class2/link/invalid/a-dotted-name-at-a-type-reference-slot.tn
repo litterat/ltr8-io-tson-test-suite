@@ -1,4 +1,4 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-dotted-name-at-a-type-reference-slot.tn"
 {
-  api => !interface { methods: { m => { response: orders.methods.place_order } } }
+  api => !interface { m => { response: orders.place_order } }
 }

@@ -6,6 +6,6 @@
   meta: "fixtures/meta-service.tn"
   import: ["fixtures/link-orders-interface.tn"]
   valid: {
-    binds: [b orders]
+    binds: [routes orders]
   }
 }

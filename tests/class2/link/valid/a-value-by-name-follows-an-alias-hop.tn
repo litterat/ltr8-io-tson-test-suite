@@ -2,5 +2,5 @@
 {
   order_ref => { id: text }
   req       => order_ref
-  api => !interface { methods: { m => { request: req } } }
+  api => !interface { m => { request: req } }
 }

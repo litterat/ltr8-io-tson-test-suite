@@ -1,13 +1,10 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-namespace.tn"
 !!meta:"https://tson.io/2026/38/m/meta.tn"
-!!import:"https://tson.io/2026/38/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-headers.tn"
 @doc:"""
-  A namespace type declared with the kernel's `namespace` constructor: `headers` maps header names, an
-  identifier family admitting `-`, to text. A namespace is a map in every fact, so a value of it is written and
-  read as a map's is, keys judged by `key_type` and values by `value_type`.
+  A record holding a value of the namespace type `headers`, which meta-headers.tn declares and this schema
+  imports: a value of it is a map, keys judged by `key_type` and values by `value_type`.
   """
 {
-  header_name => !identifier_type { continue_add: "-" }
-  headers     => !namespace { key_type: header_name  value_type: text }
-  request     => { headers: headers }
+  request => { headers: headers }
 }

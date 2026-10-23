@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-segment-through-a-list.tn"
 {
-  order => { sku: text }
-  api => !interface { methods: { m => { errors: [order] } } }
-  b => !binding { method: api.methods.m.errors.x  verb: POST  route: "/" }
+  order  => { sku: text }
+  api    => !interface { m => { errors: [order] } }
+  routes => !bindings { b => { method: api.m.errors.x  verb: POST  route: "/" } }
 }

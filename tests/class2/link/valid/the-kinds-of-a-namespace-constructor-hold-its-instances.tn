@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/the-kinds-of-a-namespace-constructor-hold-its-instances.tn"
+{
+  apis       => !kind_type { of: api }
+  namespaces => !kind_type { of: namespace }
+}

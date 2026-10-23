@@ -1,6 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/link/valid/a-map-keyed-by-an-enum-is-entered-by-a-label.tn"
-{
-  order => { sku: text }
-  api => !verb_interface { methods: { GET => { response: order } } }
-  get_orders => !binding { method: api.methods.GET  verb: GET  route: "/orders" }
-}

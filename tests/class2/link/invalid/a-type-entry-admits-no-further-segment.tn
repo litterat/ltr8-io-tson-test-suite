@@ -1,4 +1,4 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-type-entry-admits-no-further-segment.tn"
 {
-  b => !binding { method: order.sku  verb: POST  route: "/" }
+  routes => !bindings { b => { method: order.sku  verb: POST  route: "/" } }
 }

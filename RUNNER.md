@@ -175,14 +175,14 @@ The splice is not a prepend. The header grammar is a fixed sequence — optional
 immediately after it, then `!!import` — so the directives go in right after the subject's own `!!id`
 line, or at the very start when it has none.
 
-## Constructors composing `data`
+## A meta layer's own records
 
-A fixture meta-schema may declare a constructor composing `data` ([TSON-SCHEMA] §4.1): its instances are not
-types, and an implementation reads one only into a representation it supplies itself — in a language that binds,
-a host class. A runner MUST supply one for every such constructor before it runs a vector whose schema applies it;
-lacking one is not a ground for a skip (rule 5). The fixtures say which: a meta-schema under `schemas/fixtures/`
-lists in its `@doc` each constructor composing `data` that it declares, with the records its instances hold, and
-the declaration is the whole of the shape — nothing else about the representation is normative.
+A fixture meta-schema may declare records of its own and namespace types holding them ([TSON-SCHEMA] §4.1): an
+entry built with a namespace type is a value, not a type, and in a language that binds an implementation reads each
+value of its map into a host class it supplies itself. A runner MUST supply one for every such record before it runs
+a vector whose schema applies a namespace type holding it; lacking one is not a ground for a skip (rule 5). The
+fixtures say which: a meta-schema under `schemas/fixtures/` lists in its `@doc` the records its namespace types
+hold, and the declaration is the whole of the shape — nothing else about the representation is normative.
 
 A `class2/schema/` vector's expected resolved output is read under the meta-schema its sidecar's `meta` names. For
 `meta.tn` that is the ordinary reading; a fixture meta-schema imports `meta.tn` and adds its own constructors, and an

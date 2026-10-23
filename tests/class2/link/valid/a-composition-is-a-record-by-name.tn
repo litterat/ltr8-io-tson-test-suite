@@ -2,5 +2,5 @@
 {
   order    => { sku: text }
   order_v2 => order & { note: text }
-  api => !interface { methods: { m => { request: order_v2 } } }
+  api => !interface { m => { request: order_v2 } }
 }

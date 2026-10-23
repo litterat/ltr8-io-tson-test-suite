@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
-  description: "A segment selects a field of a record or a key of a map, never a position: the elements of api.methods.m.errors have no names, so x selects nothing."
+  description: "A segment selects a field of a record or a key of a map, never a position: the elements of api.m.errors have no names, so x selects nothing."
   meta: "fixtures/meta-service.tn"
   import: ["core.tn"]
   error: {

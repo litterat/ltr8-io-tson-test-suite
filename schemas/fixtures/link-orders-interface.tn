@@ -4,12 +4,12 @@
 @doc:"""
   A fixture schema for the class2/link layer, under meta-service.tn: two record types and an interface
   whose one method holds its request record by name. A vector importing it binds that method through the
-  interface by a qualified name, `orders.methods.place_order`.
+  interface by a qualified name, `orders.place_order`.
   """
 {
   order               => { sku: text  quantity: int32 }
   place_order_request => { order: order }
-  orders => !interface { methods: {
+  orders => !interface {
     place_order => { request: place_order_request  response: order }
-  } }
+  }
 }
