@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-reference-to-a-constructor-in-an-ordinary-schema-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §4.2"
+  description: """
+    Core's `ref` refuses a constructor as the kernel's does: `T` is a type of the writer's own namespace, and
+    an ordinary schema's namespace holds no constructor, so `ref<record>` names nothing a value can be of. The
+    names of the types built with `record` are `kind<record>`. Refused where it is written.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}
