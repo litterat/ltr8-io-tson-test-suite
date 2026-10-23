@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-namespace-entry-reads-as-the-map-its-constructor-describes-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.6"
+  description: """
+    An entry built with a namespace type: `!api { ... }` applies `api`, which IS-A `namespace`, and its payload is
+    read as the map `api` describes, each key an identifier and each value a `method` -- an untagged value read as
+    the value type, a tagged one as the type its tag names. The entry is a value of `api`, not a type.
+    """
+  meta: "fixtures/meta-api.tn"
+  import: ["fixtures/link-api-orders.tn"]
+  valid: {
+    binds: [admin myapi routes]
+  }
+}
