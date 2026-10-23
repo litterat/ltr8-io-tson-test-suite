@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/link/valid/a-map-keyed-by-an-enum-is-entered-by-a-label.tn"
+!!id:"https://tson.io/test-suite/class2/link/valid/a-namespace-keyed-by-a-member-set-is-entered-by-a-member.tn"
 {
   order => { sku: text }
   api => !verb_interface { methods: { GET => { response: order } } }

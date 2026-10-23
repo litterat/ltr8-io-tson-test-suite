@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-keyed-by-an-enum-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §7.4"
+  description: """
+    A namespace's keys are names, so its `key_type` is typed `identifier_kind`: the names of the types built
+    with `identifier_type`, which is what a qualified name's segment is. `verb` is built with `enum`, so it is
+    no member, and the meta layer pinning it as a key type fails to load where the pin is written. A closed set
+    of names is an identifier family with `members`.
+    """
+  meta: "meta-kernel.tn"
+  import: ["meta.tn"]
+  error: {
+    category: resolver
+  }
+}

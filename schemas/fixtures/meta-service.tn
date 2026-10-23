@@ -8,7 +8,8 @@
   type, `type_kind`. An interface's methods are a namespace, `method_map`, so a binding's `method`, a slot typed
   `ref<method>`, reaches one by a qualified name (`method: orders.methods.place_order`). `rpc_method` composes
   `method`, so an rpc interface's methods fill a `ref<method>` through their supertypes; `verb_interface` keys
-  its namespace by an enum. `header_set` holds its methods in a plain map, `{text => method}`, which no
+  its namespace by `verb_name`, an identifier family whose members are the verbs, a namespace's keys being names.
+  `header_set` holds its methods in a plain map, `{text => method}`, which no
   qualified name enters. The constructors composing `data` are not types, and a processor binds each instance
   to a host class of its own: `interface`, `verb_interface`, `rpc_interface`, `header_set` and `binding`, with
   the records `method` and `rpc_method` they hold.
@@ -19,9 +20,10 @@
   method         => { request?: kind<record>  response?: type_kind  errors?: [kind<record>]  replies?: {status_name => kind<record>} }
   rpc_method     => method & { idempotent?: boolean }
   http_verb      => !enum [GET POST]
-  method_map     => !namespace { key_type: method_name  value_type: method }
-  rpc_map        => !namespace { key_type: method_name  value_type: rpc_method }
-  verb_map       => !namespace { key_type: http_verb  value_type: method }
+  verb_name      => !identifier_type { members: [GET POST] }
+  method_map     => namespace & { key_type: = method_name  value_type: = method }
+  rpc_map        => namespace & { key_type: = method_name  value_type: = rpc_method }
+  verb_map       => namespace & { key_type: = verb_name  value_type: = method }
   interface      => data & { methods: method_map }
   rpc_interface  => data & { methods: rpc_map }
   verb_interface => data & { methods: verb_map }

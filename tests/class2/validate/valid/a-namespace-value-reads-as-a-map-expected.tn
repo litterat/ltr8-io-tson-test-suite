@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2"
-  description: "`headers` is an instance of the kernel's `namespace`, a map whose keys name its entries. A value of it is a map value: header-name keys, text values."
+  description: "`headers` is a namespace type, IS-A the kernel's `namespace`. A value of it is a map value, never a record of its facets: header-name keys, text values."
   schema: "fixtures/validate-namespace.tn"
   valid: _
 }
