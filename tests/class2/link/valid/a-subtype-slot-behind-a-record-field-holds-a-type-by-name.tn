@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-subtype-slot-behind-a-record-field-holds-a-type-by-name.tn"
+{
+  order => { sku: text }
+  shop  => !service_resources {
+    orders => { calls: { get => !typed_call { request: order  response: order } } }
+  }
+}
