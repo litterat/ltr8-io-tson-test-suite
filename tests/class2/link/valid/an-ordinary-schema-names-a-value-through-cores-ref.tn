@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-ordinary-schema-names-a-value-through-cores-ref.tn"
+{
+  order => { id: text }
+  pick  => { m: ref<order> }
+}
