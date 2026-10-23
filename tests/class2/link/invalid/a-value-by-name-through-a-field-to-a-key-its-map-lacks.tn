@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-value-by-name-through-a-field-to-a-key-its-map-lacks.tn"
+{
+  routes => !bindings { b => { method: shop.orders.methods.cancel_order  verb: POST  route: "/" } }
+}

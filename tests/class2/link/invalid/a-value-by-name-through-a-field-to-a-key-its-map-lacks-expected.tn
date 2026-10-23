@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-value-by-name-through-a-field-to-a-key-its-map-lacks-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
+  description: "shop.orders.methods is the interface the orders service holds in its methods field, and it holds place_order alone, so cancel_order selects nothing. The key is judged against the value the field holds, not against its declared type, which admits any method name."
+  meta: "fixtures/meta-service.tn"
+  import: ["fixtures/link-orders-service.tn"]
+  error: {
+    category: resolver
+  }
+}

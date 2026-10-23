@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-orders-service.tn"
+!!meta:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
+@doc:"""
+  A fixture schema for the class2/link layer, under meta-service.tn: three record types and a namespace of two
+  services, each a record holding its methods in its `methods` field, one also naming the other in its own
+  `extends` field. A vector importing it binds a method through a service's field by a qualified name,
+  `shop.orders.methods.place_order`: an entry, a key of it, a field of the record value there, and a key of the
+  interface that field holds.
+  """
+{
+  order               => { sku: text  quantity: int32 }
+  receipt             => { total: int64 }
+  place_order_request => { order: order }
+  shop => !services {
+    reads  => { methods: { get_order => { response: order } } }
+    orders => { extends: [reads]  methods: { place_order => { request: place_order_request  response: receipt } } }
+  }
+}

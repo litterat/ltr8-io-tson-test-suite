@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-value-by-name-through-a-field-the-record-does-not-declare.tn"
+{
+  routes => !bindings { b => { method: shop.orders.calls.place_order  verb: POST  route: "/" } }
+}
