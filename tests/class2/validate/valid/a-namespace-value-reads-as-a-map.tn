@@ -1,2 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/a-namespace-value-reads-as-a-map.tn"
-!request { headers: { accept => "text/plain"  user-agent => "probe" } }

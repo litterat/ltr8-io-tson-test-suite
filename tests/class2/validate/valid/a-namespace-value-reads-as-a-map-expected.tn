@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/a-namespace-value-reads-as-a-map-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
-{
-  spec: "[TSON-SCHEMA] §4.2"
-  description: "`headers` is a namespace type, IS-A the kernel's `namespace`. A value of it is a map value, never a record of its facets: header-name keys, text values."
-  schema: "fixtures/validate-namespace.tn"
-  valid: _
-}

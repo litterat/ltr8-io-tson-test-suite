@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-meta-layer-importing-an-ordinary-library.tn"
+{
+  priced => { cost: money }
+}

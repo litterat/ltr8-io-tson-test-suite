@@ -8,7 +8,7 @@
     declaring a field of that name is refused where it is declared, rather than when an instance first
     uses it.
     """
-  meta: "meta.tn"
+  meta: "meta-kernel.tn"
   import: ["meta.tn"]
   error: {
     category: resolver

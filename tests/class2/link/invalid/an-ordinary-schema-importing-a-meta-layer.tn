@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-ordinary-schema-importing-a-meta-layer.tn"
+{
+  request => { headers: headers }
+}
