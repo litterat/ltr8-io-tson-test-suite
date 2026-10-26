@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-positional-record-field-names-an-unresolved-type.tn"
+{
+  r => !record { fields: { p => x } }
+}

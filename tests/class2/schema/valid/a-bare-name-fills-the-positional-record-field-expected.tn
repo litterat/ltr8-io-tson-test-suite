@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-bare-name-fills-the-positional-record-field-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §8.1"
+  description: "In a schema document the positional form keeps a bare token where the record's positional field is atom-typed. record_field's positional field is type, a type_kind, so `p => text` and `q => { type: text }` declare the same field, and resolved output writes both in the explicit, tagged form."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        r => !record {
+          fields: {
+            p => !record_field { type: text }
+            q => !record_field { type: text }
+          }
+        }
+      }
+      """
+  }
+}
