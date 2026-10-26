@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-bare-name-fills-the-positional-record-field.tn"
+{
+  r => !record { fields: { p => text  q => { type: text } } }
+}
