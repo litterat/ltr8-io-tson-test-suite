@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-refinement-restates-an-inherited-relaxed-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: "`tightened` restates `$ref`, a json_name `node` declares optional, and makes it required; the brace form takes a relaxed name quoted, and the refinement keeps node's name type."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}

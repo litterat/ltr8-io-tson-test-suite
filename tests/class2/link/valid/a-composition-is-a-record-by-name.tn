@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-composition-is-a-record-by-name.tn"
+{
+  order    => { sku: text }
+  order_v2 => order & { note: text }
+  api => !interface { m => { request: order_v2 } }
+}

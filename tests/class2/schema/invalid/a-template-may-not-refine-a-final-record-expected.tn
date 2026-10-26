@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-may-not-refine-a-final-record-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.10"
+  description: """
+    `final` refuses refinement as it refuses composition, and a template refining a final record is
+    refused at its own declaration: `u` is IS-A `c` through its one written parent, whether or not
+    anything applies it.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

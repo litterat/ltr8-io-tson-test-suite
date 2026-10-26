@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-field-name-outside-the-default-field-name-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A record's field names are values of its name_type, field_name -- an identifier -- unless it states another; '@id' is not one, so the record is refused at schema load."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

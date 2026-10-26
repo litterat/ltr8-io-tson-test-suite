@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/identity/valid/an-id-beyond-us-ascii-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    An identity is an IRI, so a host in U-labels and a path beyond US-ASCII name a
+    document as written
+    """
+  valid: {
+    identity: "bücher.example/schémas/x.tn"
+  }
+}

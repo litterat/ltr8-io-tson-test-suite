@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-net-host.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
+!!import:"https://tson.io/2026/38/m/net.tn"
+@doc:"""
+  A server's host is net.tn's `host`: a host name, an IPv4 address or an IPv6 address in one string-class type,
+  so no value needs a tag. An ASCII site's name is a `hostname` refined to admit no internationalized label.
+  """
+{
+  server => { host: host }
+  ascii_name => !hostname ^ { allow_idn: false }
+  ascii_site => { name: ascii_name }
+}

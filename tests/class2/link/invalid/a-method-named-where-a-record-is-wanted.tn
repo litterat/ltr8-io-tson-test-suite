@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-method-named-where-a-record-is-wanted.tn"
+{
+  api => !interface { m => { request: orders.place_order } }
+}

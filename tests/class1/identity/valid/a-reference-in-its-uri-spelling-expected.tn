@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/identity/valid/a-reference-in-its-uri-spelling-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    A reference's URI spelling names the same identity: the host by its A-labels, the path
+    by its percent-encoded UTF-8
+    """
+  valid: {
+    identity: "bücher.example/schémas/x.tn"
+  }
+}

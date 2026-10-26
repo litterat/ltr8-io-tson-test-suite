@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/host-zone-identifier-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    A zone identifier is local to one machine and not part of a host
+    """
+  type-ref: "host"
+  error: { category: resolver }
+}

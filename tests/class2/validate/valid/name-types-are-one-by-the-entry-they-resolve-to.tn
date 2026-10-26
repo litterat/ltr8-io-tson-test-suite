@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/name-types-are-one-by-the-entry-they-resolve-to.tn"
+!both { "@id": "urn:x" }

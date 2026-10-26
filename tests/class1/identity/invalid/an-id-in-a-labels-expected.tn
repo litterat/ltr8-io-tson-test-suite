@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/identity/invalid/an-id-in-a-labels-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    A document's own name writes an internationalized host in its U-labels
+    """
+  error: {
+    category: resolver
+  }
+}

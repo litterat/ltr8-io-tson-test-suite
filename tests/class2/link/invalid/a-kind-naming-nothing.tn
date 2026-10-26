@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-kind-naming-nothing.tn"
+{
+  os    => !orders { o1 => { id: "abc" } }
+  shape => { a: text }
+  ps    => !picks { p => { t: no_such } }
+}

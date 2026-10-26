@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-discriminator-typed-by-an-application-of-a-parameter-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    `kind`'s type is `bounded<M>`, which varies with `M` as much as a type written `M` would: `pet<9, 3>` and
+    `pet<5, 3>` would read the discriminator at two types. A position typed by the family base reads it before it
+    knows which member it has, so its type is the base's own, and a parameter may not stand in it at any depth.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

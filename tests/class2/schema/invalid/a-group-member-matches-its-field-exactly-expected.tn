@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-group-member-matches-its-field-exactly-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.11"
+  description: """
+    A schema's own references to its fields match the declared names exactly, under
+    a folding name type too: the schema is one author's text, and only a document's
+    names are matched in the type's form. `NAME` names no field of `row`.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

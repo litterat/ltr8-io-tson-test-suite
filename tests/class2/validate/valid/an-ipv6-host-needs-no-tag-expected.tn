@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-ipv6-host-needs-no-tag-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "An IPv6 address at a `host` needs no tag."
+  schema: "fixtures/validate-net-host.tn"
+  valid: _
+}

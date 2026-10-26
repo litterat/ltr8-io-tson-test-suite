@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-discriminator-typed-by-a-parameter-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    A position typed by the family base reads the discriminator before it knows which member it has, so the
+    discriminator's type is the base's own and cannot vary per application. Its pin is what an argument supplies.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

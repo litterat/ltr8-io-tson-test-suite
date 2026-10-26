@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-composition-refuses-a-name-outside-its-base-records-field-name-type.tn"
+!ld_node { "@id": "urn:x"  "a b": 1  label: "x" }

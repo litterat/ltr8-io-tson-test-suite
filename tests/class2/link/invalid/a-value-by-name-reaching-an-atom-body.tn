@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-value-by-name-reaching-an-atom-body.tn"
+{
+  user_id => uuid
+  api => !interface { m => { request: user_id } }
+}

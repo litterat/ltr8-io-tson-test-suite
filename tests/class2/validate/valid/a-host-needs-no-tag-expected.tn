@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-host-needs-no-tag-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "`host` is one string-class type, so a host name needs no tag."
+  schema: "fixtures/validate-net-host.tn"
+  valid: _
+}

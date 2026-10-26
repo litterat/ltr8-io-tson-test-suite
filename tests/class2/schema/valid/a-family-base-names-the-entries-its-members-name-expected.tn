@@ -1,0 +1,43 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-family-base-names-the-entries-its-members-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
+  description: """
+    A field type in a record template that names none of its parameters means the same in every application, so the
+    family base names the entry each member names: `bounded<9>` is its expansion in `pet` as in `cat`, and so is
+    `N`'s derived type. A position typed by `pet` reads the selector at that entry before it knows the member.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        bounded => !template {
+          parameters: [ !template_param { name: M  type: integer } ]
+          template: "!integer_type { max: M }"
+        }
+
+        pet => !record {
+          chain: { subtypes: [cat] }
+          fields: {
+            kind => !record_field { type: integer_type_9_xxhash  role: FIXED  value: N }
+            name => !record_field { type: text }
+          }
+          discriminators: [kind]
+          parameters: [ !template_param { name: N  type: integer_type_9_xxhash } ]
+        }
+
+        @application:{ name: pet  arguments: [{ value: 3 }] }
+        cat => !record {
+          chain: { supertypes: [pet] }
+          fields: {
+            kind => !record_field { type: integer_type_9_xxhash  role: FIXED  value: 3 }
+            name => !record_field { type: text }
+          }
+        }
+
+        @synthetic integer_type_9_xxhash => !integer_type { max: 9 }
+      }
+      """
+  }
+}

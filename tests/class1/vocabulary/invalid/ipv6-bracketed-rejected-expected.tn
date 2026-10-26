@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/ipv6-bracketed-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    The brackets are a host's spelling of an IPv6 address; an !ipv6 is the address alone
+    """
+  type-ref: "ipv6"
+  error: { category: resolver }
+}

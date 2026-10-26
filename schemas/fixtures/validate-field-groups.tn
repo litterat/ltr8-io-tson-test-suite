@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-field-groups.tn"
-!!meta:"https://tson.io/2026/37/m/meta.tn"
-!!import:"https://tson.io/2026/37/m/core.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
 @doc:"""
   Field groups whose options hold several fields ([TSON-SCHEMA] §5.11). An option is chosen when any
   of its members is present, a chosen option must contain every member not marked `?`, and the group's

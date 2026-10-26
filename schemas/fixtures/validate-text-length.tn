@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-text-length.tn"
-!!meta:"https://tson.io/2026/37/m/meta.tn"
-!!import:"https://tson.io/2026/37/m/core.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
 @doc:"""
   `text_type`'s lengths count code points ([TSON-SCHEMA] §5.5). A character outside the Basic
   Multilingual Plane is one character, though a UTF-16 host holds it as two units.

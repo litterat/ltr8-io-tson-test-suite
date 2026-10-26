@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class1/reader/valid/a-schema-bound-documents-field-names-are-the-schemas-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§1.5, §2.5"
+  description: "A schemaless document's field names are identifiers. A document that names a schema has field names of that schema's types ([TSON-SCHEMA] record.name_type), which a processor reading it without the schema cannot know, so it holds them to no name rule: '@id' and 'first name' are read as written, and judging them is the schema's. The pairing vector is a-field-name-is-not-an-identifier, the same names in a document that names no schema."
+  valid: {
+    value: {
+      record: {
+        fields: [
+          { name: "@id"         value: { atom: { string: "x" } } }
+          { name: "first name"  value: { atom: { string: "Ada" } } }
+        ]
+      }
+    }
+  }
+}

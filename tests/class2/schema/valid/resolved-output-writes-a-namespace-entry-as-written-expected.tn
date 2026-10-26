@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/resolved-output-writes-a-namespace-entry-as-written-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.1"
+  description: """
+    An entry built with a namespace type resolves to itself: its tag names the constructor, and its payload is the
+    map, keys in the order written and each value the record it was read as, a type's name at a kind-typed slot
+    written as the name it was.
+    """
+  meta: "fixtures/meta-api.tn"
+  import: ["fixtures/link-api-orders.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        admin => !api {
+          list_orders => { response: order_list }
+          get_order   => { request: order  response: order }
+        }
+      }
+      """
+  }
+}

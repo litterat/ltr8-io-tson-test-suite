@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-reference-to-a-constructor-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §4.2"
+  description: """
+    A reference, `ref<T>`, names a value of the type `T`, so `T` is a type of the writer's own namespace and
+    never a constructor: the names of the types built with a constructor are a kind, and `kind<record>` is
+    that spelling. `ref<record>` is refused where it is written.
+    """
+  meta: "meta-kernel.tn"
+  import: ["meta.tn"]
+  error: {
+    category: resolver
+  }
+}

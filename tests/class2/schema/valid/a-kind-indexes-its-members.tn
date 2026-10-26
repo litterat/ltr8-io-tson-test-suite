@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-kind-indexes-its-members.tn"
+{
+  stock_id    => !uuid_type {}
+  customer_id => !uuid_type {}
+  count       => !integer_type {}
+  any_id      => !kind_type { of: uuid_type }
+}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-repeated-media-type-parameter-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "Parameters are a map, and names compare without case, so a repeated name is outside the grammar."
+  schema: "fixtures/validate-net-media.tn"
+  error: {
+    category: resolver
+  }
+}

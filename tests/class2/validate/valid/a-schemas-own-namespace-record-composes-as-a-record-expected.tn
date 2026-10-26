@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-schemas-own-namespace-record-composes-as-a-record-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1"
+  description: """
+    A schema's own record named namespace is not the meta-kernel's base kind: a kind is judged by where a base kind is
+    defined, never by its spelling, so payload, composing it, is an ordinary record and reads as one.
+    """
+  schema: "fixtures/validate-own-namespace.tn"
+  valid: _
+}

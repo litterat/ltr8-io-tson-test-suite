@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-json-suffix-admits-a-plus-json-subtype.tn"
+!document { type: "application/ld+json" }

@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-kind-naming-a-namespace-entry-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3.2, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.6"
+  description: """
+    `os` is an entry built with the namespace type `orders`: a value, a map of `order` records, and no type,
+    so it is no member of `kind<record>`.
+    """
+  meta: "fixtures/meta-picks.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

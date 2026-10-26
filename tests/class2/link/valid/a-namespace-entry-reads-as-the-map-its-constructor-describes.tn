@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-namespace-entry-reads-as-the-map-its-constructor-describes.tn"
+{
+  admin => !api {
+    list_orders => { response: order_list }
+    get_order   => !method { request: order  response: order }
+  }
+}

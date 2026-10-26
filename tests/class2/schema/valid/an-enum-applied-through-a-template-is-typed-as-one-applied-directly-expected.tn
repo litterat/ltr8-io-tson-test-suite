@@ -3,7 +3,7 @@
 {
   spec: "[TSON-SCHEMA] §7.4, §5.10"
   description: """
-    `enum` pins its `type` to `identifier`, a value written in the governing meta and resolved there,
+    `enum` pins its `name_type` to `identifier`, a value written in the governing meta and resolved there,
     so an enum's labels are names whether or not the schema declares or imports an `identifier`. An
     entry instantiating a template whose held body applies `enum` is typed the same way: its members
     are names under the kernel's identifier.
@@ -13,18 +13,13 @@
   valid: {
     resolved: """
       !schema {
-        names => !type_definition {
-          source: enum
-          body: !template {
-            parameters: [ !template_param { name: M  type: text } ]
-            template: "!enum [a b M]"
-          }
+        names => !template {
+          parameters: [ !template_param { name: M  type: text } ]
+          template: "!enum [a b M]"
         }
 
-        named => !type_definition {
-          source: { name: names  arguments: [ { value: c } ] }
-          body: !enum { members: [a b c] }
-        }
+        @application:{ name: names  arguments: [{ value: c }] }
+        named => !enum { members: [a b c] }
       }
       """
   }

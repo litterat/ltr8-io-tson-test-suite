@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-number-beside-a-text-value-set-goes-to-the-integer.tn"
+!ported { p: 8080 }

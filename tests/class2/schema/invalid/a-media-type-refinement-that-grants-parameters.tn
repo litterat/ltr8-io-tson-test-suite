@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-media-type-refinement-that-grants-parameters.tn"
+{
+  with_parameters => !media_type ^ { allow_parameters: true }
+}

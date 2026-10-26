@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/media-type-with-parameters-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    net.tn's media_type admits no parameters: it is a media type proper, not a Content-Type
+    value
+    """
+  type-ref: "media_type"
+  error: { category: validation }
+}

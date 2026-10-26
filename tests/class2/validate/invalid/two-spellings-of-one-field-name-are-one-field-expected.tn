@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/two-spellings-of-one-field-name-are-one-field-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.5, [TSON-SCHEMA] §5.5"
+  description: "Under `folded` the two spellings are one value, so the record holds one field twice -- reported at the second, as a duplicate field is."
+  schema: "fixtures/validate-field-name-type.tn"
+  error: {
+    category: resolver
+    path: "/NAME"
+  }
+}

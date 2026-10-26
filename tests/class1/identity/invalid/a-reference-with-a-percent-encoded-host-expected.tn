@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/identity/invalid/a-reference-with-a-percent-encoded-host-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    A host's URI spelling is its A-labels; a percent-encoded host is no host name
+    """
+  error: {
+    category: resolver
+  }
+}

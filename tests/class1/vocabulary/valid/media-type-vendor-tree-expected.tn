@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/media-type-vendor-tree-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    A subtype may carry a tree prefix and a structured suffix
+    """
+  type-ref: "media_type"
+  valid: {
+    value: { text: "application/vnd.api+json" }
+  }
+}

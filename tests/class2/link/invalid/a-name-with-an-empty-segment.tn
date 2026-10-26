@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-name-with-an-empty-segment.tn"
+{
+  routes => !bindings { b => { method: orders..place_order  verb: POST  route: "/" } }
+}

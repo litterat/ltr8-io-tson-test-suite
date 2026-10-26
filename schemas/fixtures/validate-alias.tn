@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-alias.tn"
-!!meta:"https://tson.io/2026/37/m/meta.tn"
-!!import:"https://tson.io/2026/37/m/core.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
 @doc:"""
   A type annotation written as an alias. [TSON-SCHEMA] §7.2 compares a value's annotation against the
   position's type "after reference flattening of both", so an alias and its target are one type at either

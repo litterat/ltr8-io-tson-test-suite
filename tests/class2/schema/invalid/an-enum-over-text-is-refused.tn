@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-enum-over-text-is-refused.tn"
+{
+  cities => !enum_type { name_type: text  members: ["new york" "los angeles"] }
+}

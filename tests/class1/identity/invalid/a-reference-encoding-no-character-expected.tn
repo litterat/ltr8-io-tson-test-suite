@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/identity/invalid/a-reference-encoding-no-character-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    A percent-encoding that is not the UTF-8 of a character has no IRI form
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/allow-idn-false-refuses-a-u-label.tn"
+!ascii_site { name: "bücher.example" }

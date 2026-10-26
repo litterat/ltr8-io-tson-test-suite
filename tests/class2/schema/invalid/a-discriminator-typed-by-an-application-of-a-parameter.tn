@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-discriminator-typed-by-an-application-of-a-parameter.tn"
+{
+  bounded => <M> !integer_type { max: M }
+  pet     => <M, N> { kind: bounded<M> = N  name: text }
+  cat     => pet<9, 3>
+}

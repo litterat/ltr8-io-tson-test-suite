@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-folded-discriminator-is-found-however-it-is-cased-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "`fpet`'s name type folds case, so its selector `kind` is found as `KIND`, and the family dispatches to `fdog` as it would on `kind`."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}

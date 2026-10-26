@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-nothing-declares-is-its-expansion.tn"
+{
+  rows => <T> !array { element_type: T  min_items: 1 }
+
+  post => {
+    a: rows<text>
+    b: [text; 1..]
+  }
+}

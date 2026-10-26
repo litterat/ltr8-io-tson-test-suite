@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/hostname-uppercase-beyond-ascii-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    IDNA2008 has no uppercase U-label and maps nothing, so uppercase beyond ASCII is refused
+    rather than folded; bücher.example is the name
+    """
+  type-ref: "hostname"
+  error: { category: resolver }
+}

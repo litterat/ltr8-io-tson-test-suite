@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-template-family-members.tn"
-!!meta:"https://tson.io/2026/37/m/meta.tn"
-!!import:"https://tson.io/2026/37/m/core.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
 @doc:"""
   A record-bodied template is a family base, and its members are the applications a declaration names
   ([TSON-SCHEMA] §5.10). An application written at a use site is a type read where it is written and no

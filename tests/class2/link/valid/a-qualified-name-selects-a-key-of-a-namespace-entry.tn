@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-qualified-name-selects-a-key-of-a-namespace-entry.tn"
+{
+  more_routes => !router {
+    place => { verb: POST  path: "/orders"  handler: myapi.place_order }
+  }
+}

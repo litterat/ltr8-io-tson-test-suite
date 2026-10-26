@@ -42,6 +42,7 @@ tests/
     resolver/valid/                        §4
     vocabulary/{valid,invalid}/            §5
     reader/{valid,invalid}/                §2.5, §2.6, §2.8, §2.9
+    identity/{valid,invalid}/              §2.2.1
   class2/                      the schema-aware processor ([TSON-SCHEMA] §1.3)
 schemas/                       one sidecar schema per layer
   fixtures/                    schemas the link layer's vectors import
@@ -75,6 +76,21 @@ has two textually distinct keys and one decoded one, so only a reader can see th
 An `error` vector here states `category: resolver`, and its subject **must parse** — that is what makes
 it a reader-layer vector rather than a parser-layer one, and `RUNNER.md` requires a runner to check it.
 
+### The identity layer
+
+[TSON-DATA] §2.2.1's canonical identity is how a schema is named, and every processor computes it: a
+reference must name the same identity at every implementation, or a document resolves at one and not at
+another. An identity vector's subject is a header and an empty body. Its first directive is either
+`!!id`, a document's own name, which must be written in canonical form, or `!!schema`, a reference, which
+may name its identity in any spelling of it: a host's other label form or ASCII case, an IPv6 address
+uncompressed, or a path in its URI spelling. A `valid` vector states the canonical identity: the host's
+canonical text plus the path, with no scheme and no query. An `error` vector states `category: resolver`,
+for a reference that names no identity, or an `!!id` written in another spelling.
+
+The host is IDNA2008's, so whether a name beyond US-ASCII is valid depends on the Unicode version. Every
+vector here uses characters that Unicode 12.0 already assigned, so its verdict is the same at every later
+version.
+
 ### The Class 2 layers
 
 A Class 2 processor resolves a schema, links it, and validates data against it, and the three layers are
@@ -97,14 +113,15 @@ ordinary record body, `type_ref.name` being typed `identifier` and a parameter b
 of such a vector agree as documents and differ as values, and a runner comparing values has nothing it can
 state.
 
-§8.1 does not settle which side should move — it says "no `type_definition` could carry" a held body, and
-then specifies how a parameter reference is read "in any `type_ref`, at any depth ... against the enclosing
-entry's `parameters` list", a rule with no position to apply at if the first sentence holds. What a
+§8.1 does not settle which side should move — it says no constructor's record shape could carry a held body,
+and then specifies how a parameter reference is read "in any `type_ref`, at any depth ... against the
+enclosing entry's `parameters` list", a rule with no position to apply at if the first sentence holds. What a
 template resolves to is stated at the link layer instead, over the entries it mints, until that is
 answered.
 
 **`link/` states individual facts** about the linked namespace rather than a whole document: what
-§2.2.3's import closure binds, what §5.4 derives for a choice, what §8.2's `subtypes` index holds.
+§2.2.3's import closure binds, what §5.4 derives for a choice, what §8.2's `subtypes` index holds,
+which names a kind's derived `members` index lists.
 Linking derives a handful of things and merges a namespace, and a vector exercising one of them should
 not have to write out every entry of core.tn to say so.
 
@@ -195,12 +212,13 @@ directive in before parsing:
 
 | Short name       | Current real identity                      |
 |------------------|--------------------------------------------|
-| `meta-kernel.tn` | `https://tson.io/2026/37/m/meta-kernel.tn` |
-| `meta.tn`        | `https://tson.io/2026/37/m/meta.tn`        |
-| `core.tn`        | `https://tson.io/2026/37/m/core.tn`        |
+| `meta-kernel.tn` | `https://tson.io/2026/38/m/meta-kernel.tn` |
+| `meta.tn`        | `https://tson.io/2026/38/m/meta.tn`        |
+| `core.tn`        | `https://tson.io/2026/38/m/core.tn`        |
+| `net.tn`         | `https://tson.io/2026/38/m/net.tn`         |
 
 Any other short name is the corpus's own schema, named by its path under `schemas/` — so
-`fixtures/link-money.tn` is `https://tson.io/test-suite/schemas/fixtures/link-money.tn`. The three
+`fixtures/link-money.tn` is `https://tson.io/test-suite/schemas/fixtures/link-money.tn`. The four
 bundled names are listed because their identities carry the spec revision; everything else is derived,
 which is what lets the corpus grow a fixture without every runner editing a constant to keep up.
 

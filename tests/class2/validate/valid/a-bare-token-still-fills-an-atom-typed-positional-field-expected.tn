@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-bare-token-still-fills-an-atom-typed-positional-field-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6"
+  description: "A data document is untouched by values by name, having no namespace of its own to resolve a name in, so a bare token fills a record's one positional field whatever its type (§5.6): 42 is a cell's value, and cell at a slot's position its type -- a kind-typed fill, the name judged a member of `kind<record>` in the governing schema's namespace, which is where a data document's kind values resolve."
+  schema: "fixtures/validate-positional-name.tn"
+  valid: _
+}

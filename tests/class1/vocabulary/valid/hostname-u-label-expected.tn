@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/hostname-u-label-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    An internationalized name may be written in its U-labels (IDNA2008), and is its own canonical
+    text
+    """
+  type-ref: "hostname"
+  valid: {
+    value: { text: "bücher.example" }
+  }
+}

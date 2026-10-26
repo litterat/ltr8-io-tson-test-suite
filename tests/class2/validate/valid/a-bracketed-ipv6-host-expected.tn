@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-bracketed-ipv6-host-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "A `host` admits an IPv6 address in the brackets a URI writes it in."
+  schema: "fixtures/validate-net-host.tn"
+  valid: _
+}

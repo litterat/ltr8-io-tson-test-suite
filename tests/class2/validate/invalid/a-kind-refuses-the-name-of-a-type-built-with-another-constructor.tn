@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-kind-refuses-the-name-of-a-type-built-with-another-constructor.tn"
+!ledger { named: sku }

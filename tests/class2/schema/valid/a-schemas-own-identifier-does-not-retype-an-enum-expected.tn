@@ -13,15 +13,9 @@
   valid: {
     resolved: """
       !schema {
-        identifier => !type_definition {
-          source: identifier_type
-          body: !identifier_type { pattern: "[a-z]+" }
-        }
+        identifier => !identifier_type { pattern: "[a-z]+" }
 
-        shout => !type_definition {
-          source: enum
-          body: !enum { members: [LOUD QUIET] }
-        }
+        shout => !enum { members: [LOUD QUIET] }
       }
       """
   }

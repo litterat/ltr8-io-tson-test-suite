@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/identity/invalid/an-id-with-an-upper-case-host-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    A document's own name is written in canonical form: a lowercase host
+    """
+  error: {
+    category: resolver
+  }
+}

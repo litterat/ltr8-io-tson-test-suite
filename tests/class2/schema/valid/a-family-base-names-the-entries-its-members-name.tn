@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-family-base-names-the-entries-its-members-name.tn"
+{
+  bounded => <M> !integer_type { max: M }
+  pet     => <N> { kind: bounded<9> = N  name: text }
+  cat     => pet<3>
+}

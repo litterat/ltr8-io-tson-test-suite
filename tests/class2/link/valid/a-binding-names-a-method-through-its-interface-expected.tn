@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-binding-names-a-method-through-its-interface-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
+  description: "A qualified name is an entry, then a key of the namespace value it holds: orders resolves through the import to a namespace entry, a value of interface, and place_order is a key of it, whose value type is method -- the slot's own type. Every hop is written; nothing is looked up lexically."
+  meta: "fixtures/meta-service.tn"
+  import: ["fixtures/link-orders-interface.tn"]
+  valid: {
+    binds: [routes orders]
+  }
+}

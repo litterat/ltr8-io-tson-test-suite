@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/look-alike-names-of-a-relaxed-name-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §8.2"
+  description: """
+    A relaxed name type's names meet the look-alike rule over the record's set as
+    identifiers do: `@id` and `@іd`, with U+0456 CYRILLIC SMALL LETTER
+    BYELORUSSIAN-UKRAINIAN I, render alike, and the added `@` changes nothing.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  refused: {
+    mechanism: skeleton-distinctness
+    unicode: "16.0"
+  }
+}

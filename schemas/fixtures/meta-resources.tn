@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/meta-resources.tn"
+!!meta:"https://tson.io/2026/38/m/meta-kernel.tn"
+!!import:"https://tson.io/2026/38/m/meta.tn"
+@doc:"""
+  A meta layer whose namespace type holds records that hold a record family in a field. `service_call` is an
+  abstract family base declaring no field, and `typed_call` IS-A it and declares a request record, a slot typed
+  `kind<record>`, and a response of any type, `type_kind`. `service_resource` holds calls by name in a plain map
+  field, `{identifier => service_call}`, so a value there is written with its member's tag (`get => !typed_call {
+  request: order }`), and `service_resources` maps names to resources. The slot holding a type's name is the
+  member's alone, one record field below the namespace's value. A processor that binds binds each value to a host
+  class of its own: the records `service_resource`, `service_call` (a family whose one member is `typed_call`) and
+  `typed_call`.
+  """
+{
+  service_call      => abstract {}
+  typed_call        => service_call & { request?: kind<record>  response?: type_kind }
+  service_resource  => { calls: {identifier => service_call} }
+  service_resources => namespace & { key_type: = identifier  value_type: = service_resource }
+}

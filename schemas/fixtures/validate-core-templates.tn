@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-core-templates.tn"
-!!meta:"https://tson.io/2026/37/m/meta.tn"
-!!import:"https://tson.io/2026/37/m/core.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
 @doc:"""
   Fields typed by core's container templates, applied at the field the way an author writes them
   ([TSON-SCHEMA] §5.10). `set<text>` is a set with no bound of its own: `set_type`'s bounds are

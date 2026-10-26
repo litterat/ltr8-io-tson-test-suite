@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-value-by-name-reaching-an-atom-body-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
+  description: "The alias hop is followed and reaches uuid, whose body is built by uuid_type: no record, so the name is refused where a record is wanted, with no bound written anywhere."
+  meta: "fixtures/meta-service.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

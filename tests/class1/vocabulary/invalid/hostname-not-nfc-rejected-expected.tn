@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/hostname-not-nfc-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    A U-label is in Normalization Form C; a decomposed spelling is refused rather than composed
+    """
+  type-ref: "hostname"
+  error: { category: resolver }
+}

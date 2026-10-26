@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-removal-names-an-inherited-relaxed-name-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.9"
+  description: "`trimmed` removes `$ref` from `node` by its relaxed name, quoted in the removal clause."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}

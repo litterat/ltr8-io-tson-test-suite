@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/hostname-not-an-a-label-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    A label beginning xn-- is an A-label only if the rest decodes to an internationalized label
+    """
+  type-ref: "hostname"
+  error: { category: resolver }
+}

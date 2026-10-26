@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-schemas-own-namespace-record-composes-as-a-record.tn"
+!holder { p: { x: a  y: 1 } }

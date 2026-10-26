@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/identity/invalid/a-reference-with-upper-case-beyond-ascii-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    IDNA2008 has no uppercase U-label, and nothing is mapped
+    """
+  error: {
+    category: resolver
+  }
+}

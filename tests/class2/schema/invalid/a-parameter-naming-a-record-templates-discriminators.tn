@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-naming-a-record-templates-discriminators.tn"
+{
+  fam => <D> !record { fields: { kind => { type: text } }  extension: ABSTRACT  discriminators: [D] }
+}

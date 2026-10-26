@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-field-name-is-matched-in-its-name-types-form-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "`frow`'s name type folds case, and a field name is matched in its name type's form as an enum member is, so `NAME` is the field `name`."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}

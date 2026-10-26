@@ -12,16 +12,15 @@
   valid: {
     resolved: """
       !schema {
-        charset => !type_definition {
-          source: text_type
-          subtypes: [short_charset]
-          body: !text_type { members: [UTF-8 us-ascii]  normalization: NFKC_CASEFOLD }
-        }
+        charset => !text_type {
+          chain: { subtypes: [short_charset] }
+          members: [UTF-8 us-ascii]  normalization: NFKC_CASEFOLD }
 
-        short_charset => !type_definition {
-          source: text_type
-          supertypes: [charset]
-          body: !text_type { max_length: 8  members: [UTF-8 us-ascii]  normalization: NFKC_CASEFOLD }
+        short_charset => !text_type {
+          chain: { supertypes: [charset] }
+          max_length: 8
+          members: [UTF-8 us-ascii]
+          normalization: NFKC_CASEFOLD
         }
       }
       """

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/reader/invalid/type-annotation-in-the-wrong-case-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§3.2, §5.1"
+  description: "Annotation names are case-sensitive (§5.1), so `!Uuid` is not `!uuid`: it names no built-in type and is a resolver error rather than a check silently skipped."
+  error: { category: resolver }
+}

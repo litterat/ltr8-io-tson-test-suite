@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-zone-identifier-is-not-a-host-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "A zone identifier is local to one machine and not part of a `host`."
+  schema: "fixtures/validate-net-host.tn"
+  error: {
+    category: resolver
+  }
+}

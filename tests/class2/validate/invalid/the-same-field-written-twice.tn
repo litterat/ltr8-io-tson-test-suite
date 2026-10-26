@@ -1,6 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/the-same-field-written-twice.tn"
 !record_field {
-  name: age
-  name: years
   type: int32
+  type: text
 }

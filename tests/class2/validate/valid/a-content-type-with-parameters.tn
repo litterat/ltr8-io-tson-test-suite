@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-content-type-with-parameters.tn"
+!message { content_type: "text/plain; Charset=\"UTF-8\"" }

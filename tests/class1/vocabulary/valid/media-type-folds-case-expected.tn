@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/media-type-folds-case-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    A media type's type and subtype compare without ASCII case; the canonical text is lowercase
+    """
+  type-ref: "media_type"
+  valid: {
+    value: { text: "application/ld+json" }
+  }
+}

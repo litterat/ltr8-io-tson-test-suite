@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-namespace-entry-key-is-judged-by-its-key-type.tn"
+{
+  bad => !api { "1st" => { response: order } }
+}

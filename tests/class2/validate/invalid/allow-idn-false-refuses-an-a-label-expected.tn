@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/allow-idn-false-refuses-an-a-label-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "`allow_idn: false` refuses an internationalized name in either spelling: an A-label is one."
+  schema: "fixtures/validate-net-host.tn"
+  error: {
+    category: validation
+  }
+}

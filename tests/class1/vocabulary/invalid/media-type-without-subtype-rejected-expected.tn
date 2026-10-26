@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/media-type-without-subtype-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    A media type is a type and a subtype, joined by '/'
+    """
+  type-ref: "media_type"
+  error: { category: resolver }
+}

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-schema-importing-core-alone-may-declare-mac-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "Core declares no network type, so a schema that imports core and not net may declare `mac` for itself (§2.2.3's collision rule has nothing to collide with)."
+  schema: "fixtures/validate-core-own-mac.tn"
+  valid: _
+}

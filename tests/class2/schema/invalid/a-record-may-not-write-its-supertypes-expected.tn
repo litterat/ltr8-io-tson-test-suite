@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-may-not-write-its-supertypes-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1"
+  description: """
+    A type's `chain` is its IS-A order, which the resolver computes from composition and refinement
+    and a declaration never writes, as it never writes `choice.disjoint`. `n` states its supertypes
+    on an explicit `!record`; `n => base & { ... }` is the declaration that means it.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

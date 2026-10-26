@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-json-suffix-refuses-another-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "types [application] refuses the top-level type text."
+  schema: "fixtures/validate-net-media.tn"
+  error: {
+    category: validation
+  }
+}

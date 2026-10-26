@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-ascii-fold-name-type-beyond-ascii-is-refused-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: """
+    `ASCII_CASEFOLD` folds ASCII case and leaves every other character as written, so it implies
+    NFC only of ASCII text. A name type over it whose profile admits characters beyond ASCII --
+    here the XID default -- would compare those names unnormalized, and is refused;
+    `NFKC_CASEFOLD` is the fold for such names.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

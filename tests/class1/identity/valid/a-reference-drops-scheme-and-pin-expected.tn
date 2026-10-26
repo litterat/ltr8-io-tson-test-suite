@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/identity/valid/a-reference-drops-scheme-and-pin-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    The scheme is a transport hint and the pin verification metadata: neither is identity
+    """
+  valid: {
+    identity: "example.com/x.tn"
+  }
+}

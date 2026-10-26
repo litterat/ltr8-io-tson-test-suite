@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-enum-built-with-a-meta-layers-own-constructor-refuses-a-name-it-does-not-list-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4"
+  description: "`Los Angeles` is a name of `text_identifier`, and `city` does not list it: the name type says what may be a member, and the enum says which are."
+  schema: "fixtures/validate-text-enum-cities.tn"
+  error: {
+    category: validation
+    path: ""
+  }
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/reader/invalid/type-annotation-outside-the-vocabulary-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§3.2, §5.1"
+  description: "A schemaless document has no source of type names but the built-in vocabulary (§5), so a type annotation outside it names no type and is a resolver error, wherever it is written."
+  error: { category: resolver }
+}

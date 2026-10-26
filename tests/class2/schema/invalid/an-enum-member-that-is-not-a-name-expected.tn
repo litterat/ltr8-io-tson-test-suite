@@ -3,13 +3,13 @@
 {
   spec: "[TSON-SCHEMA] §7.4, [TSON-DATA] §7.7"
   description: """
-    `enum` pins `type: identifier`, so every member must be an identifier -- a value of [TSON-DATA]
+    `enum` pins `name_type: identifier`, so every member must be an identifier -- a value of [TSON-DATA]
     §7.7's grammar. `lightly active` holds a space, so it is not a name and the enum contradicts its
     own type: a schema-load error, in the family of coherence errors §7.2 makes a compilation concern
     rather than data validation.
 
-    The companion valid vector writes the same member set as a `!text_enum`, whose type is `text`,
-    and resolves. What this one guards is that `enum` is the strict reading: a processor admitting
+    The companion valid vector writes the same member set as an `enum_type` over the author's own
+    identifier type, whose profile admits a single space between words, and resolves. What this one guards is that `enum` is the strict reading: a processor admitting
     any text under `!enum` would accept this document and would, in doing so, have dropped §8.2's
     restricted-character and restricted-script rules from every enum in existence without anything
     being written down.

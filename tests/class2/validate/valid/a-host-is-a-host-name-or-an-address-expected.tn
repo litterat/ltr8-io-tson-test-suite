@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-host-is-a-host-name-or-an-address-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "`hostname` is net.tn's: a host name, read with A-Z as a-z."
+  schema: "fixtures/validate-net-hosts.tn"
+  valid: _
+}

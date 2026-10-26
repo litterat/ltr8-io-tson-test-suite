@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-host-needs-no-tag.tn"
+!server { host: localhost }

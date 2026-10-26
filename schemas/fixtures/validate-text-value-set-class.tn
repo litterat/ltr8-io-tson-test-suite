@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-text-value-set-class.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
+@doc:"""
+  A closed set of text values is the text family's own `members` facet, and is string-class whatever
+  its members spell ([TSON-SCHEMA] §5.4): `port_label`'s members are the texts "80" and "443", not
+  numbers, and `answer`'s are the texts "true" and "false", not booleans. So `port_slot` and `answer_slot` are
+  disjoint and an untagged value goes to the variant of its own class, while `port_text` sets two
+  string-class variants side by side and is not disjoint.
+  """
+{
+  port_label  => !text_type { members: ["80" "443"] }
+  answer      => !text_type { members: ["true" "false"] }
+
+  port_slot   => ( port_label | integer )
+  answer_slot => ( answer | boolean )
+  port_text   => ( port_label | text )
+
+  ported   => { p: port_slot }
+  answered => { a: answer_slot }
+  labelled => { l: port_text }
+}

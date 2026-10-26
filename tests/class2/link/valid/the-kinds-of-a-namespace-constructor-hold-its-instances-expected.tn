@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/the-kinds-of-a-namespace-constructor-hold-its-instances-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.6"
+  description: """
+    A kind's members are the entries built with its constructor, by construction: `myapi` is built with `api`, and
+    `routes` with `router`, both IS-A `namespace`. So `kind<api>` holds `myapi` alone and `kind<namespace>` holds
+    both; neither is a type, and no kind of types holds either.
+    """
+  meta: "fixtures/meta-api.tn"
+  import: ["fixtures/link-api-orders.tn"]
+  valid: {
+    members: [
+      { name: apis        members: [myapi] }
+      { name: namespaces  members: [myapi routes] }
+    ]
+  }
+}

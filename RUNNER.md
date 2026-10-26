@@ -103,6 +103,15 @@ The distinction is the point of the whole layer. The mechanisms read `confusable
 can change under a routine UCD refresh — and a content-addressed document must mean the same thing
 forever. That is why none of this may decide validity, and why the outcome is its own.
 
+### 3e. At the identity layer, judge the subject's first directive
+
+The subject of an identity vector is a header and an empty body, and the vector is about its first
+directive's argument alone. Nothing is fetched or resolved. If the directive is `!!id`, it is a document's
+own name, and §2.2.1 requires that it be written in canonical form. If it is `!!schema`, it is a reference,
+read in any spelling of its identity. A `valid` vector's `identity` is the canonical identity: host plus
+path, with no scheme or query. The runner compares it byte for byte with the one it computed. An `error`
+vector's `category` is `resolver`.
+
 ### 4. Do not assert position
 
 Sidecars carry no line, column, or byte offset, and a runner must not require one. Implementations
@@ -140,18 +149,18 @@ compares the hashes is testing its own hash function.
 ## Schema-governed vectors
 
 A vector whose subject needs a real `!!meta`/`!!import`/`!!schema` does not hardcode one: the
-*sidecar* names the target by a short, unversioned name (`meta.tn`, `core.tn`) in its `meta`, `import`
+*sidecar* names the target by a short, unversioned name (`meta.tn`, `core.tn`, `net.tn`) in its `meta`, `import`
 or `schema` field, and the runner splices the real, current directive into the subject's header before
 parsing. `meta`/`import` govern a schema-document subject, which is what the `class2/schema/` and
 `class2/link/` layers use; `schema` governs a data-document subject, which is what `class2/validate/`
 uses. Hardcoding
-`https://tson.io/2026/37/m/core.tn` in every such subject would mean editing all of them at each
+`https://tson.io/2026/38/m/core.tn` in every such subject would mean editing all of them at each
 revision bump.
 
-**A short name that is not one of those three is the corpus's own schema**, named by its path under
+**A short name that is not one of those four is the corpus's own schema**, named by its path under
 `schemas/` — `fixtures/link-money.tn` resolves to
 `https://tson.io/test-suite/schemas/fixtures/link-money.tn`, which a runner serves from its checkout.
-That is a *rule*, not a table: the three bundled names have to be listed because their identities carry
+That is a *rule*, not a table: the four bundled names have to be listed because their identities carry
 the spec revision and nothing in the name says so, and everything else is derived. A runner that keeps a
 per-fixture table instead has to be edited every time the corpus grows one, in every language — the same
 drift this document exists to stop, once per fixture rather than once.
@@ -165,6 +174,19 @@ resolves on its own — the collisions those vectors are about exist only in the
 The splice is not a prepend. The header grammar is a fixed sequence — optional `!!id`, then `!!meta`
 immediately after it, then `!!import` — so the directives go in right after the subject's own `!!id`
 line, or at the very start when it has none.
+
+## A meta layer's own records
+
+A fixture meta-schema may declare records of its own and namespace types holding them ([TSON-SCHEMA] §4.1): an
+entry built with a namespace type is a value, not a type, and in a language that binds an implementation reads each
+value of its map into a host class it supplies itself. A runner MUST supply one for every such record before it runs
+a vector whose schema applies a namespace type holding it; lacking one is not a ground for a skip (rule 5). The
+fixtures say which: a meta-schema under `schemas/fixtures/` lists in its `@doc` the records its namespace types
+hold, and the declaration is the whole of the shape — nothing else about the representation is normative.
+
+A `class2/schema/` vector's expected resolved output is read under the meta-schema its sidecar's `meta` names. For
+`meta.tn` that is the ordinary reading; a fixture meta-schema imports `meta.tn` and adds its own constructors, and an
+instance of one of them is typed there and nowhere else.
 
 ## `proposed/`
 

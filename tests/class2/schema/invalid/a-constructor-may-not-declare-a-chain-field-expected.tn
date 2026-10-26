@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-constructor-may-not-declare-a-chain-field-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1"
+  description: """
+    Every type constructor composes the kernel's `type`, so it already has a field
+    named `chain`: the IS-A chain the resolver computes, which no declaration writes. A constructor
+    declaring a field of that name is refused where it is declared, rather than when an instance first
+    uses it.
+    """
+  meta: "meta-kernel.tn"
+  import: ["meta.tn"]
+  error: {
+    category: resolver
+  }
+}

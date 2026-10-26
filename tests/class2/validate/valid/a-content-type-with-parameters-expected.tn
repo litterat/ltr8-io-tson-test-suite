@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-content-type-with-parameters-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "An instance with allow_parameters admits parameters, quoted or not, with optional whitespace around ';'."
+  schema: "fixtures/validate-net-media.tn"
+  valid: _
+}

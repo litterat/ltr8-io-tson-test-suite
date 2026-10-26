@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-bracketed-ipv6-host.tn"
+!server { host: "[::1]" }

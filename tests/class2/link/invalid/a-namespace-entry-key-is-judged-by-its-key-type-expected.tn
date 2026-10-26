@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-namespace-entry-key-is-judged-by-its-key-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-DATA] §7.7"
+  description: """
+    Each key of a namespace value is read under the type's `key_type`, as a map's is: `api`'s is `identifier`, and
+    `1st` is no identifier, since an identifier never begins with a digit.
+    """
+  meta: "fixtures/meta-api.tn"
+  import: ["fixtures/link-api-orders.tn"]
+  error: {
+    category: resolver
+  }
+}

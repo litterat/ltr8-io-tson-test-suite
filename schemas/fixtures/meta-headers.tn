@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/meta-headers.tn"
+!!meta:"https://tson.io/2026/38/m/meta-kernel.tn"
+!!import:"https://tson.io/2026/38/m/meta.tn"
+@doc:"""
+  A meta layer declaring a namespace type. A namespace type pins the kernel's `namespace` by composition, and a
+  value of it is a map: `headers` maps header names, an identifier family admitting `-`, to text. It IS-A `top`,
+  so a schema the meta-kernel governs is the one that declares it.
+  """
+{
+  header_name => !identifier_type { continue_add: "-" }
+  headers     => namespace & { key_type: = header_name  value_type: = text }
+}

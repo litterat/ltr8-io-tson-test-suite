@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-host-is-a-host-name-or-an-address.tn"
+!listener { host: !hostname Api.Example.COM  port: 443 }

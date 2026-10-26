@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/hostname-beyond-ascii-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§5.5"
+  description: """
+    IDNA2008 maps nothing: a fullwidth letter is not permitted in a host name, so a spelling
+    only a Unicode fold would bring to ASCII is refused rather than read as example.com
+    """
+  type-ref: "hostname"
+  error: { category: resolver }
+}

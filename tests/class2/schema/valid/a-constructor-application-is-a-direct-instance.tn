@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-constructor-application-is-a-direct-instance.tn"
+{
+  pair => !record { fields: { a => { type: text }  b => { type: int32 } } }
+
+  count => !integer_type { min: 0 }
+}

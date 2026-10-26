@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/identity/valid/an-id-keeps-a-reserved-encoding-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    A percent-encoded reserved character is part of the identity, in uppercase hex
+    """
+  valid: {
+    identity: "example.com/a%2Fb.tn"
+  }
+}

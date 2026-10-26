@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-ascii-base-names-an-http-field-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "`header`'s base is ASCII -- XID's ASCII members, a letter then letters, digits and '_' -- with a medial '-', folded as ASCII: an HTTP field name in one line. ASCII_CASEFOLD implies NFC over ASCII, so it may be a name type's form, and `Content-Type` is the field `content-type`."
+  schema: "fixtures/validate-field-name-type.tn"
+  valid: _
+}
