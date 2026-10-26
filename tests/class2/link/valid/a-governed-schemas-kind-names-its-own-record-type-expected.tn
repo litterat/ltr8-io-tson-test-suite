@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-governed-schemas-kind-names-its-own-record-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3.2, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.6"
+  description: """
+    `pick.t` is typed `kind<record>`, the names of the record types, and `shape` resolves in the governed
+    schema to a type built with `record`. The kind's members are computed over the closure of the schema
+    holding the name.
+    """
+  meta: "fixtures/meta-picks.tn"
+  import: ["core.tn"]
+  valid: {
+    binds: [os shape ps]
+  }
+}

@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/the-reference-constructor-applied-in-an-ordinary-schema-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.2, [TSON-SCHEMA] §3.3.1, [TSON-SCHEMA] §4.2"
+  description: """
+    The structure namespace supplies the kernel's `ref_type` to a schema meta.tn governs, so the constructor
+    can be applied directly where `ref<T>` cannot be named. A reference names an entry holding a value, and an
+    ordinary schema declares only types, so a reference declared in one names nothing and is refused.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

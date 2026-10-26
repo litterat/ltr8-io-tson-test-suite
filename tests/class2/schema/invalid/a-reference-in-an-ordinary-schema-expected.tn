@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-reference-in-an-ordinary-schema-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §3.3.2, [TSON-SCHEMA] §4.2"
+  description: """
+    A reference names an entry holding a value, and only a schema the meta-kernel governs has one, so `ref` is
+    kernel vocabulary: core.tn declares none. An ordinary schema imports no kernel-governed schema (§2.2.3),
+    and its `!!meta` merges nothing into its type-name namespace (§3.3.2), so `ref<order>` here names no
+    template and is refused as an unresolved name.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  error: {
+    category: resolver
+  }
+}

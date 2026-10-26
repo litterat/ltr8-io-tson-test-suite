@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-governed-schemas-kind-names-its-own-record-type.tn"
+{
+  os    => !orders { o1 => { id: "abc" } }
+  shape => { a: text }
+  ps    => !picks { p => { t: shape } }
+}

@@ -1,4 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-reference-to-a-constructor-in-an-ordinary-schema.tn"
-{
-  holder => { r: ref<record> }
-}
