@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/two-spellings-of-one-identity-in-a-set.tn"
+!catalogue {
+  home:    "tson.io/2026/38/m/core.tn"
+  schemas: [ "https://tson.io/2026/38/m/meta.tn" "http://tson.io/2026/38/m/meta.tn" ]
+}

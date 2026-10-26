@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/identity-canonical-text-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    A canonical identity reads back as itself: a host, then its path, with no scheme
+    """
+  type-ref: "identity"
+  valid: {
+    value: { text: "tson.io/2026/38/m/core.tn" }
+  }
+}

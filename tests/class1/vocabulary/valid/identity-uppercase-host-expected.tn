@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/identity-uppercase-host-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    A host compares without ASCII case, so the canonical identity's host is lowercase; the path keeps its case
+    """
+  type-ref: "identity"
+  valid: {
+    value: { text: "example.com/people.tn" }
+  }
+}

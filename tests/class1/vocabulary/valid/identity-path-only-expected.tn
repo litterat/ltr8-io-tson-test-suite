@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/identity-path-only-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    A reference with no host has the absolute path alone as its identity
+    """
+  type-ref: "identity"
+  valid: {
+    value: { text: "/local/orders.tn" }
+  }
+}

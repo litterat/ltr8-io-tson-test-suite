@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/identity-relative-path-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    An identity without a host is an absolute path, so a relative path names none
+    """
+  type-ref: "identity"
+  error: { category: resolver }
+}

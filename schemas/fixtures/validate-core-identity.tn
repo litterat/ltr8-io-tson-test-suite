@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-core-identity.tn"
+!!meta:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/38/m/core.tn"
+@doc:"""
+  A catalogue of schema documents named by core's `identity`, [TSON-DATA] §2.2.1's canonical identity as a value: one
+  string-class type, so no value needs a tag. Every reference naming one identity is one value, so a set of
+  identities holds a document once and a map keyed by identity holds it under one key, however each reference
+  spells it.
+  """
+{
+  identities => set<identity>
+  catalogue => {
+    home:     identity
+    schemas?: identities
+    titles?:  { identity => text }
+  }
+}

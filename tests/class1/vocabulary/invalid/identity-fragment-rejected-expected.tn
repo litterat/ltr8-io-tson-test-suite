@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/invalid/identity-fragment-rejected-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    The fragment is reserved: an identifying URI carries none
+    """
+  type-ref: "identity"
+  error: { category: resolver }
+}

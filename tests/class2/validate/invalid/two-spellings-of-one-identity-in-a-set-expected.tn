@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/two-spellings-of-one-identity-in-a-set-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.5"
+  description: "An identity is compared as a canonical identity ([TSON-DATA] §2.2.1), and the scheme is no part of one, so the two references are one value stated twice in a set -- reported at the second."
+  schema: "fixtures/validate-core-identity.tn"
+  error: {
+    category: validation
+    path: "/schemas/1"
+  }
+}

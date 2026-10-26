@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/two-spellings-of-one-identity-are-one-key-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.6, §2.2.1"
+  description: "Under a schema a key's identity is its type's value, and a reference and its canonical identity are one `identity`, the host compared without case -- so the map holds one key twice, reported at the second."
+  schema: "fixtures/validate-core-identity.tn"
+  error: {
+    category: resolver
+    path: "/titles/example.com~1people.tn"
+  }
+}

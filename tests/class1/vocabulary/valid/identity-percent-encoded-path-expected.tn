@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/identity-percent-encoded-path-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    A path's percent-encoded UTF-8 is read back as the character it encodes, in either hex case
+    """
+  type-ref: "identity"
+  valid: {
+    value: { text: "example.com/schémas/x.tn" }
+  }
+}

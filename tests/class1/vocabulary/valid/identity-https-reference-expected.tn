@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/identity-https-reference-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    A reference names its canonical identity: the scheme is a transport hint and no part of the value
+    """
+  type-ref: "identity"
+  valid: {
+    value: { text: "tson.io/2026/38/m/core.tn" }
+  }
+}

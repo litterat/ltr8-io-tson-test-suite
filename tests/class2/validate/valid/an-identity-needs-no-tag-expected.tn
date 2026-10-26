@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-identity-needs-no-tag-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §9"
+  description: "`identity` is one string-class type, so a reference needs no tag."
+  schema: "fixtures/validate-core-identity.tn"
+  valid: _
+}

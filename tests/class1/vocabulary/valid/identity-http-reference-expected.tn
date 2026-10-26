@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/identity-http-reference-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    http:// and https:// spellings of a reference name one identity
+    """
+  type-ref: "identity"
+  valid: {
+    value: { text: "tson.io/2026/38/m/core.tn" }
+  }
+}

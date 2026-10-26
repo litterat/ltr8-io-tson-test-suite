@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class1/vocabulary/valid/identity-a-label-host-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+{
+  spec: "§2.2.1"
+  description: """
+    An identity's host is a host value, so an A-label and its U-label are one host, written as the U-label
+    """
+  type-ref: "identity"
+  valid: {
+    value: { text: "bücher.example/schemas/x.tn" }
+  }
+}
