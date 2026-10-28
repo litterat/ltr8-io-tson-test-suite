@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-compound-keyed-map-has-no-class.tn"
+{
+  point => {
+    x: int32
+    y: int32
+  }
+
+  by_point => { point => text }
+  by_name  => { text => text }
+
+  keyed_choice => ( by_point | int32 )
+  named_choice => ( by_name | int32 )
+}
