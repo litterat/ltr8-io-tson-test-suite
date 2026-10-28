@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-float-without-specials-beside-text-takes-a-number-untagged-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4"
+  description: "A float whose allow_nan and allow_infinity are both false is number-class, so beside `text` the choice is disjoint and the number `1.5` goes to `strict` untagged."
+  schema: "fixtures/validate-float-class.tn"
+  valid: _
+}

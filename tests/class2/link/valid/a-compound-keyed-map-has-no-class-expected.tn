@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-compound-keyed-map-has-no-class-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4"
+  description: "A map whose key type is not one a single scalar token denotes has no class: no scalar token denotes a record key, so an encoding without a delimiter pair for such a map spells it as an array. A map keyed by an atom is brace-class, so beside int32 it is disjoint where the record-keyed map is not."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    disjoint: [
+      { name: keyed_choice  value: false }
+      { name: named_choice  value: true }
+    ]
+  }
+}
