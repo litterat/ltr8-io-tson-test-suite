@@ -22,13 +22,10 @@
                   }
                 }
                 value: {
-                  schema-ref: _
-                  value: {
-                    annotations: []
-                    type-ref: _
-                    core: {
-                      token: { form: single-line  text: "10%" }
-                    }
+                  annotations: []
+                  type-ref: _
+                  core: {
+                    token: { form: single-line  text: "10%" }
                   }
                 }
               }

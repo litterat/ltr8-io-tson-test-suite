@@ -27,13 +27,10 @@
               {
                 name: "id"
                 value: {
-                  schema-ref: _
-                  value: {
-                    annotations: []
-                    type-ref: _
-                    core: {
-                      token: { form: unquoted  text: "7" }
-                    }
+                  annotations: []
+                  type-ref: _
+                  core: {
+                    token: { form: unquoted  text: "7" }
                   }
                 }
               }

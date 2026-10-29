@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-declared-value-naming-no-type.tn"
+!envelope {
+  local:  { body: "no tag, and a declared position has nothing to infer a type from" }
+  other:  !note { body: b }
+  closed: 1
+}

@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-declared-value-naming-a-type-the-closure-lacks-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.8, [TSON-SCHEMA] §2.2.3"
+  description: "A `declared` value's tag resolves in the governing closure and nowhere else, so a name no schema in the closure declares denotes nothing: a resolver error at that field."
+  schema: "fixtures/declared-host.tn"
+  error: {
+    category: resolver
+    path: "/local"
+  }
+}

@@ -14,33 +14,24 @@
           array: {
             elements: [
               {
-                schema-ref: _
-                value: {
-                  annotations: []
-                  type-ref: _
-                  core: {
-                    token: { form: unquoted  text: "1" }
-                  }
+                annotations: []
+                type-ref: _
+                core: {
+                  token: { form: unquoted  text: "1" }
                 }
               }
               {
-                schema-ref: _
-                value: {
-                  annotations: []
-                  type-ref: _
-                  core: {
-                    token: { form: unquoted  text: "2" }
-                  }
+                annotations: []
+                type-ref: _
+                core: {
+                  token: { form: unquoted  text: "2" }
                 }
               }
               {
-                schema-ref: _
-                value: {
-                  annotations: []
-                  type-ref: _
-                  core: {
-                    token: { form: unquoted  text: "3" }
-                  }
+                annotations: []
+                type-ref: _
+                core: {
+                  token: { form: unquoted  text: "3" }
                 }
               }
             ]

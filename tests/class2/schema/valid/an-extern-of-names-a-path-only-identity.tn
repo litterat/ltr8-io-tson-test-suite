@@ -1,4 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/valid/an-extern-of-names-a-path-only-identity.tn"
-{
-  local => extern_of<"/local/orders.tn">
-}
