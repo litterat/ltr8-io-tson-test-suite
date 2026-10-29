@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-float-class.tn"
-!!meta:"https://tson.io/2026/38/m/meta.tn"
-!!import:"https://tson.io/2026/38/m/core.tn"
+!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   An approximate atom that admits NaN or an infinity has no discrimination class ([TSON-SCHEMA] §5.4):
   core's `float64` as declared straddles the number and string classes, so `loose` is not disjoint and

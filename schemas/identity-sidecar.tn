@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
-!!meta:"https://tson.io/2026/38/m/meta.tn"
-!!import:"https://tson.io/2026/38/m/core.tn"
+!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
   Formal shape of an identity-layer sidecar (tests/class1/identity/**/*-expected.tn) -- [TSON-DATA]

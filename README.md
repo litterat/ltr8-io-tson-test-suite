@@ -212,10 +212,10 @@ directive in before parsing:
 
 | Short name       | Current real identity                      |
 |------------------|--------------------------------------------|
-| `meta-kernel.tn` | `https://tson.io/2026/38/m/meta-kernel.tn` |
-| `meta.tn`        | `https://tson.io/2026/38/m/meta.tn`        |
-| `core.tn`        | `https://tson.io/2026/38/m/core.tn`        |
-| `net.tn`         | `https://tson.io/2026/38/m/net.tn`         |
+| `meta-kernel.tn` | `https://tson.io/2026/39/m/meta-kernel.tn` |
+| `meta.tn`        | `https://tson.io/2026/39/m/meta.tn`        |
+| `core.tn`        | `https://tson.io/2026/39/m/core.tn`        |
+| `net.tn`         | `https://tson.io/2026/39/m/net.tn`         |
 
 Any other short name is the corpus's own schema, named by its path under `schemas/` — so
 `fixtures/link-money.tn` is `https://tson.io/test-suite/schemas/fixtures/link-money.tn`. The four

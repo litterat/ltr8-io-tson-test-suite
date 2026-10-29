@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-field-name-type.tn"
-!!meta:"https://tson.io/2026/38/m/meta.tn"
-!!import:"https://tson.io/2026/38/m/core.tn"
+!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   A record's `name_type` says which identifier family its field names belong to, the kernel's
   identifier unless it says otherwise. `node` is a JSON-LD translation's record, whose names may

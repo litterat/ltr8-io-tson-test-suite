@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/meta-api.tn"
-!!meta:"https://tson.io/2026/38/m/meta-kernel.tn"
-!!import:"https://tson.io/2026/38/m/meta.tn"
+!!meta:"https://tson.io/2026/39/m/meta-kernel.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 @doc:"""
   A meta layer declaring two namespace types whose values stand as entries of a schema it governs. `api` maps
   identifiers to `method` records, so `myapi => !api { get_orders => { ... } }` is an entry whose value is a map

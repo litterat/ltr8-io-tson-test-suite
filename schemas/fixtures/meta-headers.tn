@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/meta-headers.tn"
-!!meta:"https://tson.io/2026/38/m/meta-kernel.tn"
-!!import:"https://tson.io/2026/38/m/meta.tn"
+!!meta:"https://tson.io/2026/39/m/meta-kernel.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 @doc:"""
   A meta layer declaring a namespace type. A namespace type pins the kernel's `namespace` by composition, and a
   value of it is a map: `headers` maps header names, an identifier family admitting `-`, to text. It IS-A `top`,

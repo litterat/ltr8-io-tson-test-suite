@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
-!!meta:"https://tson.io/2026/38/m/meta-kernel.tn"
-!!import:"https://tson.io/2026/38/m/meta.tn"
+!!meta:"https://tson.io/2026/39/m/meta-kernel.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 @doc:"""
   A meta layer declaring an interface as a namespace of methods, and an HTTP binding naming the method it
   serves. A method's request, error and reply records are slots typed `kind<record>`, the names of the record

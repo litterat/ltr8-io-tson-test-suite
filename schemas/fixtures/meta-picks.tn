@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/meta-picks.tn"
-!!meta:"https://tson.io/2026/38/m/meta-kernel.tn"
-!!import:"https://tson.io/2026/38/m/meta.tn"
+!!meta:"https://tson.io/2026/39/m/meta-kernel.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 @doc:"""
   A meta layer holding one slot of each by-name spelling, so a schema it governs is where both are judged. `orders`
   maps identifiers to `order` records; `rpick.m` is typed `ref<order>`, naming a value of `order`, which a governed

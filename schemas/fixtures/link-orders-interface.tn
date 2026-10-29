@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/link-orders-interface.tn"
 !!meta:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
-!!import:"https://tson.io/2026/38/m/core.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   A fixture schema for the class2/link layer, under meta-service.tn: two record types and an interface
   whose one method holds its request record by name. A vector importing it binds that method through the

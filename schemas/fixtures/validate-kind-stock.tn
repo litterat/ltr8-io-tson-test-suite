@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-kind-stock.tn"
-!!meta:"https://tson.io/2026/38/m/meta.tn"
-!!import:"https://tson.io/2026/38/m/core.tn"
+!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   One id built with `uuid_type`, declared here so that validate-kind-ids.tn reaches it through `!!import`. It says
   nothing about kinds: a kind's members are computed over the closure of the schema that applies it, and an
