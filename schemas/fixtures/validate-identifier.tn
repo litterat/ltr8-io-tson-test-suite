@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-identifier.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   The identifier family ([TSON-SCHEMA] §4.2): `identifier_type` composes `text_type`, so an identifier
@@ -17,7 +17,7 @@
   naming scope ([TSON-SCHEMA] §11.4); the keys of `labels` are text, which is data. The elements of
   `roles`, a set of names, are one scope too; those of `path`, an array that admits repetition, are not.
   """
-{
+!schema {
   slug       => !identifier_type { continue_add: "-" }
   snake_name => !slug ^ { pattern: "[a-z][a-z0-9_]*" }
   direction  => !identifier_type { members: [north south] }

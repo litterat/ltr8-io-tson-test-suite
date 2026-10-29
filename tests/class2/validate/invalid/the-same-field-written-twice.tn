@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/the-same-field-written-twice.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !record_field {
   type: int32
   type: text

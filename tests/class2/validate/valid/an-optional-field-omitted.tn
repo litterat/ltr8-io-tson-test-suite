@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/an-optional-field-omitted.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !integer_type {
   size: { bits: 8  signed: true }
 }

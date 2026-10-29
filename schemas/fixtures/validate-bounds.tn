@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-bounds.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   Ordered bounds on the atom families whose values are not numbers ([TSON-SCHEMA] §5.5, §9). A
@@ -13,7 +13,7 @@
   `window` carries all three facets a duration takes, so a document exercises a floor, a ceiling and a
   step against one declaration. `booking` carries a date bound, the same question one family over.
   """
-{
+!schema {
   window  => !duration ^ { min: PT30M  max: PT2H  multiple_of: PT15M }
   booking => !date ^ { min: 2020-01-01 }
 

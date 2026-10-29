@@ -1,10 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-binding-names-a-method-through-a-records-field-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
   description: "A qualified name selects a field of a record value as it selects a key of a namespace value: shop resolves through the import to a namespace entry, a value of services; orders is a key of it, whose value is a service record; methods is a field of that record, holding an interface; and place_order is a key of the interface, whose value type is method -- the slot's own type. The value the name reaches is the one the record's field holds."
-  meta: "fixtures/meta-service.tn"
-  import: ["fixtures/link-orders-service.tn"]
   valid: {
     binds: [routes shop]
   }

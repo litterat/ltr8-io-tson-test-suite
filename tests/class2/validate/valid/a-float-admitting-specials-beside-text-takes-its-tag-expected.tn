@@ -1,8 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-float-admitting-specials-beside-text-takes-its-tag-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.4"
   description: "At a choice that is not disjoint the tag selects the variant, so `( float64 | text )` reads a value tagged `!float64`, a NaN included."
-  schema: "fixtures/validate-float-class.tn"
   valid: _
 }

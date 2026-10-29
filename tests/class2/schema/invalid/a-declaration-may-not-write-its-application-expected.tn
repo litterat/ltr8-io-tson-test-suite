@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-declaration-may-not-write-its-application-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §8.2"
   description: """
@@ -8,8 +8,6 @@
     writes `chain`. `bx` claims to be `box<text>` without being closed from it; `bx => box<text>` is
     the declaration that means it.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   error: {
     category: resolver
   }

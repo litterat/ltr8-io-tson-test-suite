@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-text-family-states-its-normalization.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   charset => !text_type { members: [UTF-8 us-ascii]  normalization: NFKC_CASEFOLD }
 
   short_charset => !charset ^ { max_length: 8  normalization: NFKC_CASEFOLD }

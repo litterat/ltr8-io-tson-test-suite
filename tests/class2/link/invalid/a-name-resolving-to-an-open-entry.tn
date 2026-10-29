@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-name-resolving-to-an-open-entry.tn"
-{
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   box => <T> { v: T }
   api => !interface { m => { request: box } }
 }

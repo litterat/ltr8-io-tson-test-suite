@@ -1,4 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-as-a-composition-operand.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   named => <T> T & { name: text }
 }

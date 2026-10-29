@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/two-field-names-one-value-of-a-folding-name-type-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.5"
   description: """
@@ -8,8 +8,6 @@
     `record.fields`, which the map admits; under a folding type they are one
     value, so declaring both is a duplicate, refused at load by the name type.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   error: {
     category: resolver
   }

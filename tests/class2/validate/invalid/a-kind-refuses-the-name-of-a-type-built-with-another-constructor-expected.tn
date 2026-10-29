@@ -1,9 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-kind-refuses-the-name-of-a-type-built-with-another-constructor-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2"
   description: "`sku` is `text`, whose construction chain passes `text_type` and `atom` and never `uuid_type`, so it is no member of `kind<uuid_type>`: the name resolves, and the kind refuses the type it resolves to."
-  schema: "fixtures/validate-kind-ids.tn"
   error: {
     category: validation
     path: "/named"

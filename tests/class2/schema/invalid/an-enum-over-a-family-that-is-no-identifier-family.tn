@@ -1,4 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/an-enum-over-a-family-that-is-no-identifier-family.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   ports => !enum_type { name_type: integer  members: ["80" "443"] }
 }

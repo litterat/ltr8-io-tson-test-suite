@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-core-templates.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   Fields typed by core's container templates, applied at the field the way an author writes them
@@ -8,7 +8,7 @@
   are the one-position tuple the bracket sugar cannot spell, `[T]` being an array: one position,
   and one voidable position that admits the void sentinel.
   """
-{
+!schema {
   tagged => { tags: set<text> }
   pinned => { only: tuple1<text> }
   slot   => { maybe: voidable_tuple1<int32> }

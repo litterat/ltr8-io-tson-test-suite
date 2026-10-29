@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-profile-may-not-add-an-invisible-character-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-DATA] §8.2"
   description: """
@@ -9,8 +9,6 @@
     control, or a space other than U+0020. A soft hyphen added to Continue would
     make a name with one in it read as the name without it.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   error: {
     category: resolver
   }

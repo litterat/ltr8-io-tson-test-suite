@@ -1,4 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-field-typed-by-a-kernel-type-core-reaches.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   user => { handle: identifier  roles: [field_name] }
 }

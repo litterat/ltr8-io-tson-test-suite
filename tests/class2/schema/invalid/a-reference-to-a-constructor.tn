@@ -1,4 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-reference-to-a-constructor.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta-kernel.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!schema {
   holder => { r: ref<record> }
 }

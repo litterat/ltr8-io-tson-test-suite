@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-kind-holds-the-name-of-a-member-an-import-declares.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-kind-ids.tn"
 !ledger { named: stock_id }

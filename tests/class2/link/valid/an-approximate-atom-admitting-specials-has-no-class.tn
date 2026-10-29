@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-approximate-atom-admitting-specials-has-no-class.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   strict   => !float_type { format: BINARY64  allow_nan: false  allow_infinity: false }
   narrowed => !float64 ^ { allow_nan: false  allow_infinity: false }
 

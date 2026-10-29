@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-constructor-marker-is-not-grammar-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §12.1, [TSON-SCHEMA] §4.1"
   description: """
@@ -14,8 +14,6 @@
     Category is `resolver` even though the failure is a parse one: §8.1 makes every error that stops a
     schema loading a resolver error, however early the phase that caught it.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   error: {
     category: resolver
   }

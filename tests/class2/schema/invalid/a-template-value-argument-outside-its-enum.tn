@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-value-argument-outside-its-enum.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   header_name => !identifier_type { start: NONE  continue: NONE
     start_add: "abcdefghijklmnopqrstuvwxyz"  continue_add: "abcdefghijklmnopqrstuvwxyz0123456789-"
     normalization: NFKC_CASEFOLD }

@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class1/reader/refused/confusable-field-names-across-scripts-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
 {
   spec: "§8.2"
   description: "Two distinct field names that read alike: Latin 'pass' and the same shape spelled in Cyrillic (U+0440 U+0430 U+0455 U+0455). Each name is single-script, so the restriction level admits both and mechanism 1 is the only rule with anything to say -- which is what makes this a test of mechanism 1 rather than of whichever rule happens to fire first. §2.5 makes the pair distinct names, so this is not the duplicate-field rule either."

@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-name-type-pinned-to-a-non-member-is-refused-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §7.4, [TSON-SCHEMA] §5.2"
   description: """
@@ -9,8 +9,6 @@
     declaring `phrase_enum` fails to load where the pin is written -- not at the first schema that applies
     the constructor.
     """
-  meta: "meta-kernel.tn"
-  import: ["meta.tn"]
   error: {
     category: resolver
   }

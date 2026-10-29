@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/resolver-sidecar.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
@@ -10,7 +10,7 @@
   This is the one layer with no `error` outcome and so no field group: §4 never rejects a token, it
   always resolves to something (worst case, string). `valid` is therefore a plain REQUIRED field.
   """
-{
+!schema {
   number_form_sign  => !enum [plus minus]
   number_form_radix => !enum [hex octal binary]
   special_kind      => !enum [nan infinity]

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-importing-schemas-kind-names-its-own-record-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-picks.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  os    => !orders { o1 => { id: "abc" } }
+  shape => { a: text }
+  ps    => !picks { p => { t: shape } }
+}

@@ -1,10 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-container-states-whether-order-is-part-of-its-value-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §7.5"
   description: "A map and an array each state whether order is part of their value, through the kernel's `ordered` facet: a map is unordered unless it says otherwise and an array ordered, so a binding record names the facet only where it departs from that default."
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {

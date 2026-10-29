@@ -1,13 +1,11 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-ordinary-schema-declares-a-reference-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §4.2"
   description: """
     `ref` is the kernel's template, in the closure of every schema reaching core.tn, so `ref<order>` in an
     ordinary schema is a reference to values of `order`, declared as anywhere else.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     binds: [order rpick]
   }

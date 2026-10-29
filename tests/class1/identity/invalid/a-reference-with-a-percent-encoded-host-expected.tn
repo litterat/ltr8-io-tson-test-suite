@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class1/identity/invalid/a-reference-with-a-percent-encoded-host-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/identity-sidecar.tn"
 {
   spec: "§2.2.1"
   description: """

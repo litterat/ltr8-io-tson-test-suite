@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-medial-that-ends-a-name.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-identifier.tn"
 !header {
   name: content-
 }

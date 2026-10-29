@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-relaxed-discriminator-selects-a-family-member.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-field-name-type.tn"
 !ld_kennel { p: { "@type": "dog"  name: "Rex"  breed: "corgi" } }

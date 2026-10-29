@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-discriminator-may-arrive-after-the-fields-it-selects.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-family.tn"
 !holder {
   p: {
     breed:    corgi

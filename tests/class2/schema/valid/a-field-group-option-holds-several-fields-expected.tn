@@ -1,10 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-field-group-option-holds-several-fields-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.11"
   description: "An option of a field group may hold several fields: `|` separates options, and a `?` on a member's name makes it optional once its option is chosen. Each member is an optional field of the record, and the group records its options in `members`, the marked members in `optional_members`, and whether it is optional. `+` is sugar for at least one of its members: the non-optional group of one option whose members are all optional within it."
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {

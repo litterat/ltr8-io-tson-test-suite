@@ -1,10 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-value-by-name-follows-an-alias-hop-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
   description: "The first segment resolves as a type reference does, alias hops followed (§8.3): req is an alias of order_ref, whose body is built by record."
-  meta: "fixtures/meta-service.tn"
-  import: ["core.tn"]
   valid: {
     binds: [api req order_ref]
   }

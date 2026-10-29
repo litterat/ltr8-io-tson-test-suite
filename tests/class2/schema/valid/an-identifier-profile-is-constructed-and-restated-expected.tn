@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-identifier-profile-is-constructed-and-restated-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.7"
   description: """
@@ -9,8 +9,6 @@
     facets are fixed where the profile is constructed, so a refinement restates them or leaves them.
     `medial: "-"` restated is the same profile, and the resolved body carries it once.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {

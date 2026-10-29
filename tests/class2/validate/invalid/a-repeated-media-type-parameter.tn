@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-repeated-media-type-parameter.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-net-media.tn"
 !message { content_type: "text/plain;a=1;A=2" }

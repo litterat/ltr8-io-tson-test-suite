@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-records-fields-keep-their-declaration-order.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   base => { zeta: text  alpha: int32 }
   row => base & { mid?: text  beta: text }
 }

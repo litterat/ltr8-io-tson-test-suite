@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-naming-a-sealed-base.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-family.tn"
 !holder {
   p: !pet {
     pet_type: dog

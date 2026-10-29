@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-mark-word-is-an-ordinary-name-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §12.1, [TSON-DATA] §7.4"
   description: """
@@ -9,8 +9,6 @@
     reserved words would refuse. The one thing a schema declaring them gives up is naming them as a
     whole declaration body, which the companion invalid vector pins.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {

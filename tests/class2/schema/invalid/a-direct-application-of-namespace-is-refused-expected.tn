@@ -1,13 +1,11 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-direct-application-of-namespace-is-refused-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.2"
   description: """
     `namespace` is a base kind, and abstract (SPEC-FEEDBACK.md #15): it has no instances of its own, so a direct
     application of it is refused as any abstract record's is, naming the namespace types that would satisfy it.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   error: {
     category: resolver
   }

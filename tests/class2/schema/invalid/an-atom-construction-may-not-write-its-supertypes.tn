@@ -1,4 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/an-atom-construction-may-not-write-its-supertypes.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   age => !integer_type { chain: { supertypes: [int32] }  min: 0 }
 }

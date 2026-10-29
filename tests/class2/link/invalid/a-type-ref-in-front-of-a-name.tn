@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-type-ref-in-front-of-a-name.tn"
-{
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   place_order_request => { quantity: int32 }
   api => !interface { m => { request: !record place_order_request } }
 }

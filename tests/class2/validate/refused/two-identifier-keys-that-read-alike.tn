@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/refused/two-identifier-keys-that-read-alike.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-identifier.tn"
 !handlers {
   pass => a
   раѕѕ => b

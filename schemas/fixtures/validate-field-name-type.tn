@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-field-name-type.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   A record's `name_type` says which identifier family its field names belong to, the kernel's
@@ -11,7 +11,7 @@
   must be. `frow`'s names
   are `folded`, an identifier type that folds case, and are matched in that form.
   """
-{
+!schema {
   json_name => !identifier_type { start_add: "@$" }
   node => !record { name_type: json_name  fields: {
     "@id" => { type: text }  "$ref" => { type: text  optional: true }  label => { type: text } } }

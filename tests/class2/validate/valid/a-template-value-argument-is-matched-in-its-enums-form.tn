@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-template-value-argument-is-matched-in-its-enums-form.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-text-normalization.tn"
 !picked { p: {} }

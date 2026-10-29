@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-flatten-directive-names-no-type-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §6, [TSON-SCHEMA] §7.2, [TSON-JSON] §6.1.1"
   description: """
@@ -18,8 +18,6 @@
     declaration would resolve the name and park it in the author-annotation channel, where it changes
     nothing -- leaving a schema that reads as though it had asked for a flatten no encoding performs.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   error: {
     category: resolver
   }

@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
@@ -12,7 +12,7 @@
   subject is a schema document and its expected side is the resolved output that document denotes,
   written in the spec's own §8 form.
   """
-{
+!schema {
   @doc:"""
     A resolved schema, as §8.1's ingest form: a `!schema` map from each name to the value its entry
     resolves to -- `name => !record { ... }`, a type body carrying its own `chain` --
@@ -20,7 +20,7 @@
 
     Carried as a multi-line token rather than modelled field by field, which would restate meta.tn
     inside this schema and leave two statements of one shape to drift apart. A runner reads the text
-    with its own meta.tn-governed reader -- so the payload is validated against the spec's own
+    with its own reader for meta.tn's `schema` -- so the payload is validated against the spec's own
     schema, by the implementation under test, rather than against a paraphrase of it here. Nothing
     is escaped on the way: a multi-line token is raw text, which is why this stays inside the
     conservative sidecar subset RUNNER.md rule 2 states.
@@ -43,8 +43,10 @@
     first sentence holds. What a template resolves to is stated at the link layer instead, over the entries it
     mints, until that is answered.
 
-    The resolved document carries no header. Which schema governs it is not the vector's to say --
-    it is meta.tn for every vector at this layer -- and a runner names it when it reads.
+    The resolved document carries no header. Its names are read under the subject's own imports --
+    under the pre-loaded kernel alone when the subject has none -- so an instance of a constructor a
+    fixture schema declares is read against that fixture, and a runner supplies the imports when it
+    reads.
     """
   schema_valid => {
     resolved: text
@@ -72,7 +74,7 @@
     published schemas impossible to write where a skeleton happens to collide. A refused schema is one this
     processor declines, under a policy a deployment may relax in code -- not one the format says is wrong.
     """
-  schema_sidecar => sidecar_common & spliced_header & {
+  schema_sidecar => sidecar_common & {
     ( valid: schema_valid | error: vector_error | refused: vector_refusal )
   }
 }

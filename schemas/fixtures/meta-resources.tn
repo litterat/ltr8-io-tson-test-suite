@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/meta-resources.tn"
-!!meta:"https://tson.io/2026/39/m/meta-kernel.tn"
+!!import:"https://tson.io/2026/39/m/meta-kernel.tn"
 !!import:"https://tson.io/2026/39/m/meta.tn"
 @doc:"""
   A meta layer whose namespace type holds records that hold a record family in a field. `service_call` is an
@@ -11,7 +11,7 @@
   class of its own: the records `service_resource`, `service_call` (a family whose one member is `typed_call`) and
   `typed_call`.
   """
-{
+!schema {
   service_call      => abstract {}
   typed_call        => service_call & { request?: kind<record>  response?: type_kind }
   service_resource  => { calls: {identifier => service_call} }

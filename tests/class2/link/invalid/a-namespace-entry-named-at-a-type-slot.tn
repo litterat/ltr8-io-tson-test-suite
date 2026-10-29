@@ -1,4 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-namespace-entry-named-at-a-type-slot.tn"
-{
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-api.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-api-orders.tn"
+!schema {
   other => !api { m => { response: myapi } }
 }

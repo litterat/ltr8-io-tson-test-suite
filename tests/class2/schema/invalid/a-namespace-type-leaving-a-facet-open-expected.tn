@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-type-leaving-a-facet-open-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2"
   description: """
@@ -8,8 +8,6 @@
     abstract, so nothing else will pin it: the meta layer declaring it fails to load. Declared `abstract`, it
     would be a base for namespace types that pin the rest.
     """
-  meta: "meta-kernel.tn"
-  import: ["meta.tn"]
   error: {
     category: resolver
   }

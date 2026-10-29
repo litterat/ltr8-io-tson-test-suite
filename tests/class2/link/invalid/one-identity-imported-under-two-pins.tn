@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/one-identity-imported-under-two-pins.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-money.tn?sha256=1111111111111111111111111111111111111111111111111111111111111111"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-money.tn?sha256=2222222222222222222222222222222222222222222222222222222222222222"
+!schema {
+  priced => { cost: money }
+}

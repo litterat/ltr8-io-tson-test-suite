@@ -1,9 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-declared-value-naming-no-type-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §7.8"
   description: "A `declared` position is open -- the value names its own type -- so a value naming none is a validation error rather than a vocabulary-only read: there is nothing else to discriminate on."
-  schema: "fixtures/declared-host.tn"
   error: {
     category: validation
     path: "/local"

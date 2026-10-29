@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-importing-schemas-reference-names-a-key-of-its-namespace-entry-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §5.6, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
+  description: """
+    A reference in a schema importing the meta layer: `rpick.m` is typed `ref<order>`, and `os.o1` is an entry
+    built with the namespace type `orders`, then a key of it, whose value type is `order`. The entry holding
+    the value is the importing schema's own, and a reference's first segment resolves in that schema's
+    namespace.
+    """
+  valid: {
+    binds: [os shape rs]
+  }
+}

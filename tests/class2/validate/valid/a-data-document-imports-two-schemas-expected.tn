@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-data-document-imports-two-schemas-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §7.1"
+  description: """
+    A data document imports as a schema does, and may import several: its namespace is the union of their
+    closures, which share meta.tn and core.tn by identity rather than colliding. The root names `entry`, which
+    the second import declares, and conforms to it.
+    """
+  valid: _
+}

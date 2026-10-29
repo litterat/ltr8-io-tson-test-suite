@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-stated-name-type-is-the-one-a-record-gets.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-local-field-name.tn"
 !stated { "@id": "urn:x" }

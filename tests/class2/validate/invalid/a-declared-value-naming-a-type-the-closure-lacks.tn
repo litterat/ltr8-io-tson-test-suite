@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-declared-value-naming-a-type-the-closure-lacks.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/declared-host.tn"
 !envelope {
   local:  !claim { id: CLM-1  amount: 1 }
   other:  !note { body: b }

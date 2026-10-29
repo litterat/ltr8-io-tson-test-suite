@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/link-money.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   A fixture schema for the class2/link layer, declaring one type the vectors import.
@@ -8,7 +8,7 @@
   across every vector, so a name like 'alpha' would be claimed by whichever vector got there first and
   would have to be renamed the moment a second wanted a different 'money'.
   """
-{
+!schema {
   money => {
     amount: int64
     currency: text

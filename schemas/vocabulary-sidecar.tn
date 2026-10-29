@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
@@ -9,7 +9,7 @@
   `type-ref` sits outside the outcome group because both outcomes need it: a runner cannot apply an
   atom's contract without knowing which atom.
   """
-{
+!schema {
   complex_value => {
     real: text
     imaginary: text

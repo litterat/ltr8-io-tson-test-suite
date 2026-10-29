@@ -1,4 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/atom-refinement-narrows-its-source.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   small => !int32 ^ { min: 0  max: 10 }
 }

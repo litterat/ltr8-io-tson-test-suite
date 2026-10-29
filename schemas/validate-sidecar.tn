@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
@@ -9,11 +9,11 @@
 
   This is the layer where [TSON-DATA] §8.1's `validation` category finally has vectors: it is
   "reserved for data checked against a successfully loaded schema", which is exactly what a subject
-  here is. The governing schema is named by the sidecar's `schema` short name and spliced into the
-  subject's header as a real `!!schema`; the subject names its own root type the way any
-  self-describing document does, with a type-ref on its root value.
+  here is. The subject is a complete data document: its header imports the schema whose types it
+  uses, and it names its own root type the way any document under imports does, with a type-ref on
+  its root value.
   """
-{
+!schema {
   @doc:"""
     The neutral half of a diagnostic, and deliberately only that half: §8.1's category, plus the RFC
     6901 pointer into the *data* document naming the value that failed. Never a message (that means
@@ -52,7 +52,7 @@
     runs over. A refused document is one this processor declines under a policy a deployment may relax
     in code, not one the schema says is wrong.
     """
-  validate_sidecar => sidecar_common & spliced_header & {
+  validate_sidecar => sidecar_common & {
     ( valid: void? | error: validate_error | refused: vector_refusal )
   }
 }

@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-supplementary-character-is-one-character.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-text-length.tn"
 !mark { g: "\u{1F600}"  p: "a\u{1F600}" }

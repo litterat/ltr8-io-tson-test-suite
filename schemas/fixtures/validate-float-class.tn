@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-float-class.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   An approximate atom that admits NaN or an infinity has no discrimination class ([TSON-SCHEMA] §5.4):
@@ -7,7 +7,7 @@
   its values carry their tag. `strict` withdraws both permissions and is number-class, so `tight` is
   disjoint and a number goes to `strict` untagged.
   """
-{
+!schema {
   strict => !float_type { format: BINARY64  allow_nan: false  allow_infinity: false }
 
   loose => ( float64 | text )

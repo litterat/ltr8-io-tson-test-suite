@@ -1,10 +1,10 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
-!!meta:"https://tson.io/2026/39/m/meta-kernel.tn"
+!!import:"https://tson.io/2026/39/m/meta-kernel.tn"
 !!import:"https://tson.io/2026/39/m/meta.tn"
 @doc:"""
   A meta layer declaring an interface as a namespace of methods, and an HTTP binding naming the method it
   serves. A method's request, error and reply records are slots typed `kind<record>`, the names of the record
-  types, so a schema under this meta writes them by name (`request: place_order_request`); its response is any
+  types, so a schema importing this one writes them by name (`request: place_order_request`); its response is any
   type, `type_kind`. `interface` maps method names to methods, so a binding's `method`, a slot typed
   `ref<method>`, reaches one by a qualified name (`method: orders.place_order`), and `bindings` maps names to
   bindings. `rpc_method` composes `method`, so an rpc interface's methods fill a `ref<method>` through their
@@ -17,7 +17,7 @@
   not a type, and a processor that binds binds each value of its map to a host class of its own: the records
   `method`, `rpc_method`, `binding`, `header_set` and `service`.
   """
-{
+!schema {
   method_name    => identifier
   status_name    => identifier
   method         => { request?: kind<record>  response?: type_kind  errors?: [kind<record>]  replies?: {status_name => kind<record>} }

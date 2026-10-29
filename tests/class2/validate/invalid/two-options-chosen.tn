@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/two-options-chosen.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-field-groups.tn"
 !fragment { include: a  type: t }

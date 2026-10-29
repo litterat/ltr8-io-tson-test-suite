@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-bare-token-still-fills-an-atom-typed-positional-field.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-positional-name.tn"
 !holder { c: 42  s: cell }

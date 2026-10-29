@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class1/resolver/valid/float-with-exponent-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/resolver-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/resolver-sidecar.tn"
 {
   spec: "§4.3"
   description: "A float with an exponent captures the exponent as its own component"

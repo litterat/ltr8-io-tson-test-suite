@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-required-voidable-key-left-out.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-field-marks.tn"
 !entry {
   name:    Ada
   version: "2.0"

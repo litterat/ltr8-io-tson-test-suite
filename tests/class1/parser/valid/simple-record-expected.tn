@@ -1,12 +1,12 @@
 !!id:"https://tson.io/test-suite/class1/parser/valid/simple-record-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
 {
   spec: "§2.5"
   description: "A record with one field"
   valid: {
     document: {
       id: _
-      schema: _
+      imports: []
       root: {
         annotations: []
         type-ref: _

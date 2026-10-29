@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
@@ -18,7 +18,7 @@
   base value (§4). It carries no annotations -- annotation capture is the parser layer's to state,
   and nothing here needs them.
   """
-{
+!schema {
   @doc:"One field of a record, after §2.5's uniqueness rule has been applied."
   reader_field => {
     name: text

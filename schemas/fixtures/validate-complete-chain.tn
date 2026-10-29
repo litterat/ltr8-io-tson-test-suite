@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-complete-chain.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   A chain is complete: an entry IS-A every entry its supertypes are IS-A ([TSON-SCHEMA] §5.8), including the
@@ -7,7 +7,7 @@
   `result<T>`, so closing `okt` reaches the entry `rt` declares for `result<text>`. `great` composes `okt`
   and holds no application of its own -- it is IS-A `rt` through `okt`, and a position typed `rt` admits it.
   """
-{
+!schema {
   result => <T> {
     payload: T
   }

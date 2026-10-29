@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-text-family-states-its-normalization-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
   description: """
@@ -7,8 +7,6 @@
     into before any other facet judges it. `short_charset` refines `charset`, restating the form it
     cannot change and narrowing a length.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {

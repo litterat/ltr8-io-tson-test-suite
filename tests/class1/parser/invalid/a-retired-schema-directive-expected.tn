@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/a-retired-schema-directive-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.2"
+  description: "A header carries `!!id` and `!!import` and nothing else: a data document names the schema whose types it uses with `!!import`, and `!!schema` is no directive, a parse error."
+  error: { category: parser }
+}

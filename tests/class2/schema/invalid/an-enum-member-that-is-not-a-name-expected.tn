@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/an-enum-member-that-is-not-a-name-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §7.4, [TSON-DATA] §7.7"
   description: """
@@ -14,8 +14,6 @@
     restricted-character and restricted-script rules from every enum in existence without anything
     being written down.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   error: {
     category: resolver
   }

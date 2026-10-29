@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-ports.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   A sparse numeric member set on each exact tier ([TSON-SCHEMA] §5.6). `members` is the spelling for a
@@ -12,7 +12,7 @@
   integer member set compares whole numbers, where a decimal one compares numbers that carry a scale, and
   [TSON-DATA] §4.3 makes `2.50` and `2.5` one value in both.
   """
-{
+!schema {
   port  => !integer ^ { members: [80 443 8080] }
   price => !number ^ { members: [1 2.50] }
 

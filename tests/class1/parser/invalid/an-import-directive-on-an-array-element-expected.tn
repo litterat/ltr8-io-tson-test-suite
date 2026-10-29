@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/an-import-directive-on-an-array-element-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§3.3"
+  description: "A directive stands only in the document header, and `!!import` only there: at an array element it is a name outside its placement, a parse error."
+  error: { category: parser }
+}

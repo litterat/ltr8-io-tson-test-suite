@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-binary-identity.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   The three rules that compare two decoded values, over `bytes` ([TSON-SCHEMA] §7.5's duplicate rule and
@@ -14,7 +14,7 @@
   itself under any contract there could be, which is what makes these safe and what makes them sharp: an
   implementation failing them has no equality at all rather than the wrong one.
   """
-{
+!schema {
   digests => set<bytes>
   by_hash => { bytes => text }
 

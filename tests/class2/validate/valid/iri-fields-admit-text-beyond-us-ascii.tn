@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/iri-fields-admit-text-beyond-us-ascii.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-uri-facets.tn"
 !resource { id: "https://例え.jp/パス"  ref: "café/menü" }

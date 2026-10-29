@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/one-binary-value-twice-in-a-set.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-binary-identity.tn"
 !receipt {
   seen:  [ "SGk=" "SGk=" ]
   named: { "SGVsbG8=" => greeting }

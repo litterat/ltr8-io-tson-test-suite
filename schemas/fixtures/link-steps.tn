@@ -1,10 +1,10 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/link-steps.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   An ordinary library declaring a constructor of its own: `steps` is a namespace type, mapping identifiers to
-  text, declared in a schema meta.tn governs. A schema importing this one applies it.
+  text, declared in a schema that imports meta.tn. A schema importing this one applies it.
   """
-{
+!schema {
   steps => namespace & { key_type: = identifier  value_type: = text }
 }

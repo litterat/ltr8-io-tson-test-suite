@@ -1,8 +1,8 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/link-shipping.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/link-money.tn"
 @doc:"The other half of the diamond: imports the same link-money.tn by a second route."
-{
+!schema {
   parcel => {
     insured: money
   }

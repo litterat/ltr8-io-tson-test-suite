@@ -8,7 +8,7 @@ sidecar.
 
 - **[RUNNER.md](RUNNER.md)** — normative: what a runner must do. Read this before writing one.
 - **[`schemas/`](schemas)** — normative: the shape of a sidecar, one real TSON schema per layer.
-  Every sidecar names its own with `!!schema`.
+  Every sidecar imports its own with `!!import`.
 - **[COVERAGE.md](COVERAGE.md)** — generated: what the corpus currently covers, and so what it does not.
 
 This file is neither. It explains why the corpus is shaped the way it is.
@@ -81,7 +81,7 @@ it a reader-layer vector rather than a parser-layer one, and `RUNNER.md` require
 [TSON-DATA] §2.2.1's canonical identity is how a schema is named, and every processor computes it: a
 reference must name the same identity at every implementation, or a document resolves at one and not at
 another. An identity vector's subject is a header and an empty body. Its first directive is either
-`!!id`, a document's own name, which must be written in canonical form, or `!!schema`, a reference, which
+`!!id`, a document's own name, which must be written in canonical form, or `!!import`, a reference, which
 may name its identity in any spelling of it: a host's other label form or ASCII case, an IPv6 address
 uncompressed, or a path in its URI spelling. A `valid` vector states the canonical identity: the host's
 canonical text plus the path, with no scheme and no query. An `error` vector states `category: resolver`,
@@ -99,8 +99,8 @@ those three answers.
 **`schema/` needs no invented expectation format.** [TSON-SCHEMA] §1.3 makes producing a resolved schema
 value a MUST and §8 fixes its serialization, so a valid vector's subject is a schema document and its
 expected side is the resolved output that document denotes, written in the spec's own §8 form. A runner
-reads that output with its own meta.tn-governed reader before comparing, which makes the expected side
-validated data rather than a transcript of whoever wrote it.
+reads that output with its own reader, under the subject's imports, before comparing, which makes the
+expected side validated data rather than a transcript of whoever wrote it.
 
 The expected side is carried as a multi-line token rather than modelled field by field. Modelling it
 would restate meta.tn inside a sidecar schema and leave two statements of one shape to drift; a
@@ -187,8 +187,8 @@ implementation under test, so a broken parser fails loudly rather than quietly a
 The circularity is the point.
 
 It also means the sidecars are held to their own schemas. `schemas/<layer>-sidecar.tn` is a real TSON
-schema resolving against the bundled meta.tn/core.tn chain, and each layer's sidecars declare it with
-`!!schema`. Each is one **field group** ([TSON-SCHEMA] §5.11) over the layer's outcomes, so exactly
+schema importing the bundled meta.tn/core.tn chain, and each layer's sidecars import it with
+`!!import`. Each is one **field group** ([TSON-SCHEMA] §5.11) over the layer's outcomes, so exactly
 one of `valid`/`error`/`schema-document` is present and the member label *is* the outcome — there is
 no separate `outcome` field that could disagree with the payload beside it. `valid` cannot omit what
 it exists to carry, and `error` cannot carry it. The parser layer's `core_value` is a group over the
@@ -197,30 +197,31 @@ record's `fields`.
 
 **Validation runs in the implementations, not here.** Each runner reads every sidecar against its
 declared schema as part of running the corpus, which is where a real TSON implementation already is.
-This repo's own CI checks only what a schema cannot see — pairing, placement, and that a sidecar names
-the schema and identity its own path implies (`scripts/check_vectors.py`) — deliberately, so that a
+This repo's own CI checks only what a schema cannot see — pairing, placement, and that a sidecar imports
+the schema and carries the identity its own path implies (`scripts/check_vectors.py`) — deliberately, so that a
 corpus meant to be implementation-neutral does not take one of the implementations under test as a
 dependency of its own build.
 
-## Schema-governed vectors
+## Every subject is a whole document
 
-Some vectors need their subject's own `!!meta`/`!!import` to point at a real, working schema, rather
-than the placeholder identities parser-layer vectors use where no resolution ever happens. Hardcoding
-the versioned identity into every such subject would mean editing all of them at each revision bump.
-Instead the *sidecar* names the target by a short, unversioned name and the runner splices the real
-directive in before parsing:
+A subject that needs a real schema imports it in its own header, by the schema's full identity, and is
+classified by its own root: tagged `!schema`, it is a schema document; otherwise it is data. Nothing is
+spliced in by a runner and nothing in a sidecar names a schema for the subject, so what a processor reads is
+exactly what is on disk — the same reason the subject is a standalone file at all.
 
-| Short name       | Current real identity                      |
+The cost is that the four bundled schemas' identities carry the spec revision, so a revision bump rewrites
+them in every subject that imports one, as it rewrites them in the fixtures:
+
+| Bundled schema   | Current identity                           |
 |------------------|--------------------------------------------|
 | `meta-kernel.tn` | `https://tson.io/2026/39/m/meta-kernel.tn` |
 | `meta.tn`        | `https://tson.io/2026/39/m/meta.tn`        |
 | `core.tn`        | `https://tson.io/2026/39/m/core.tn`        |
 | `net.tn`         | `https://tson.io/2026/39/m/net.tn`         |
 
-Any other short name is the corpus's own schema, named by its path under `schemas/` — so
-`fixtures/link-money.tn` is `https://tson.io/test-suite/schemas/fixtures/link-money.tn`. The four
-bundled names are listed because their identities carry the spec revision; everything else is derived,
-which is what lets the corpus grow a fixture without every runner editing a constant to keep up.
+The corpus's own schemas are named by their path under `schemas/` — so `fixtures/link-money.tn` is
+`https://tson.io/test-suite/schemas/fixtures/link-money.tn` — which is what lets the corpus grow a fixture
+without every runner editing a constant to keep up.
 
 ## Two things the sidecars deliberately do not pin
 

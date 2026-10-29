@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-field-the-type-does-not-declare.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !record_field {
   type: int32
   colour: red

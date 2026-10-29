@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-enum-draws-its-labels-from-a-vocabulary-the-schema-declares-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §7.4"
   description: """
@@ -10,8 +10,6 @@
     matching `kebab`'s pattern -- and since `kebab` is an `identifier_type` instance, the members are
     names and [TSON-DATA] §8.2's hygiene reaches them.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {

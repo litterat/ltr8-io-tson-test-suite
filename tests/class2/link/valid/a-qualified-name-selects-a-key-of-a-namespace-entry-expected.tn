@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-qualified-name-selects-a-key-of-a-namespace-entry-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.6, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
   description: """
@@ -7,8 +7,6 @@
     import to a value of `api`, and `place_order` selects a key of that map, whose value type, `method`, is the
     type the slot `ref<method>` wants.
     """
-  meta: "fixtures/meta-api.tn"
-  import: ["fixtures/link-api-orders.tn"]
   valid: {
     binds: [more_routes myapi]
   }

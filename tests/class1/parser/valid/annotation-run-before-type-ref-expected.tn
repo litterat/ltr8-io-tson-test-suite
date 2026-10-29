@@ -1,12 +1,12 @@
 !!id:"https://tson.io/test-suite/class1/parser/valid/annotation-run-before-type-ref-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
 {
   spec: "§3.3"
   description: "Every annotation in a run precedes the type-ref, whatever each one's own value is"
   valid: {
     document: {
       id: _
-      schema: _
+      imports: []
       root: {
         annotations: [
           {

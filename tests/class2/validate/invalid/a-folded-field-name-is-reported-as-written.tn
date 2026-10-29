@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-folded-field-name-is-reported-as-written.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-field-name-type.tn"
 !frow { NAME: [1] }
