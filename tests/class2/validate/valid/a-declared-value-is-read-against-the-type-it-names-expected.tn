@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-declared-value-is-read-against-the-type-it-names-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.8"
+  description: "A `declared` position is open: the value names its own type by its tag, a type of the governing closure, and is read in full against it. `local` and `other` share one declared type and each value chooses a different one."
+  schema: "fixtures/declared-host.tn"
+  valid: _
+}

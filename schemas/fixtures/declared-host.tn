@@ -1,0 +1,25 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/declared-host.tn"
+!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A `declared` position: core's instance of meta's `declared_type`, whose value names its own type by
+  its tag, a type of the governing closure, and is read in full against it. `note` and `memo` are two
+  such types, so a vector can show the value choosing; `closed` is an ordinary field beside the two
+  `declared` ones.
+  """
+{
+  note => {
+    body: text
+  }
+
+  memo => {
+    to:   text
+    body: text
+  }
+
+  envelope => {
+    local:  declared
+    other:  declared
+    closed: int32
+  }
+}

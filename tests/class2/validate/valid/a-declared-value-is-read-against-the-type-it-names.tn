@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-declared-value-is-read-against-the-type-it-names.tn"
+!envelope {
+  local:  !note { body: "resolved in the governing closure" }
+  other:  !memo { to: ops  body: "a second type, chosen by the value" }
+  closed: 1
+}

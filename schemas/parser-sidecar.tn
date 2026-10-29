@@ -6,12 +6,12 @@
   Formal shape of a parser-layer sidecar (tests/class1/parser/**/*-expected.tn) -- see README.md's
   "Valid parser-layer vectors" and "Schema-document vectors" sections, and RUNNER.md.
 
-  document/data_value/sidecar_annotation/scoped_value/core_value mirror the spec's own grammar
+  document/data_value/sidecar_annotation/core_value mirror the spec's own grammar
   vocabulary (§2.3, §7.4), not any implementation's internal AST names, so the schema stays
   language-agnostic the same way the sidecars do.
 
   Field names match the real sidecar's own spelling exactly, hyphens included (`type-ref`,
-  `schema-ref`): a hyphenated field declaration parses and resolves fine, and nothing in the grammar
+  `empty-brace`): a hyphenated field declaration parses and resolves fine, and nothing in the grammar
   requires the snake_case this project uses for *type* names. Type names never appear literally in
   sidecar data, so there is no wire fidelity to preserve for them.
   """
@@ -32,19 +32,19 @@
   }
 
   array_core => {
-    elements: [scoped_value]
+    elements: [data_value]
   }
 
   @doc:"One field of a record core-value."
   record_field_entry => {
     name: text
-    value: scoped_value
+    value: data_value
   }
 
   @doc:"One entry of a map core-value."
   map_entry => {
     key: data_value
-    value: scoped_value
+    value: data_value
   }
 
   @doc:"""
@@ -67,7 +67,7 @@
     | empty-brace: void? )
   }
 
-  @doc:"A data-value (§2.3): zero or more annotations, an optional type-ref, and exactly one core-value."
+  @doc:"A data-value (§2.3): zero or more annotations, an optional type-ref, and exactly one core-value. Every value position holds one: the root, a record field value, a map key or entry value, an array element."
   data_value => {
     annotations: [sidecar_annotation]
     type-ref?: text?
@@ -82,12 +82,6 @@
   sidecar_annotation => {
     name: text
     value?: data_value?
-  }
-
-  @doc:"A value in a position that may carry its own schema-ref (§3.3): record field values, map entry values and array elements are all scoped_value, never a bare data_value."
-  scoped_value => {
-    schema-ref?: text?
-    value: data_value
   }
 
   @doc:"The parsed document (§2.3, §7.4): the header's own !!id/!!schema, absent as `_` when not present, plus the root data-value."

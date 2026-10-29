@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/a-schema-directive-on-an-array-element-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§3.3"
+  description: "A directive stands only in the document header, and `!!schema` only there: at an array element it is a name outside its placement, a parse error."
+  error: { category: parser }
+}

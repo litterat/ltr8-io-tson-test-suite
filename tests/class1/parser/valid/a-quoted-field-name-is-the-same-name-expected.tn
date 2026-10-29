@@ -16,26 +16,20 @@
               {
                 name: "order-id"
                 value: {
-                  schema-ref: _
-                  value: {
-                    annotations: []
-                    type-ref: _
-                    core: {
-                      token: { form: unquoted  text: "1" }
-                    }
+                  annotations: []
+                  type-ref: _
+                  core: {
+                    token: { form: unquoted  text: "1" }
                   }
                 }
               }
               {
                 name: "order-id2"
                 value: {
-                  schema-ref: _
-                  value: {
-                    annotations: []
-                    type-ref: _
-                    core: {
-                      token: { form: unquoted  text: "2" }
-                    }
+                  annotations: []
+                  type-ref: _
+                  core: {
+                    token: { form: unquoted  text: "2" }
                   }
                 }
               }
