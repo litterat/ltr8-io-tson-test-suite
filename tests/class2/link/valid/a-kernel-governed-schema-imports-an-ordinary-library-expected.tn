@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-kernel-governed-schema-imports-an-ordinary-library-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3"
+  description: """
+    An import ties to no governing level: this schema names the meta-kernel as its `!!meta` and imports
+    link-money.tn, an ordinary library under meta.tn, for `money`. Both namespaces are this schema's, and the
+    closure binds `money`.
+    """
+  meta: "meta-kernel.tn"
+  import: ["fixtures/link-money.tn"]
+  valid: {
+    binds: [priced money]
+  }
+}

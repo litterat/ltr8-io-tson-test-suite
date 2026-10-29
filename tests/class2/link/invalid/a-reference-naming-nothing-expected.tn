@@ -1,9 +1,10 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-reference-naming-nothing-expected.tn"
 !!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §3.3.2, [TSON-SCHEMA] §5.6, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §5.6, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
   description: """
-    `whatever` resolves to no entry of the governed schema or its imports, so the reference names nothing.
+    `whatever` resolves to no entry of the governed schema's namespace, its own entries and its imports, the
+    meta layer's among them, so the reference names nothing.
     """
   meta: "fixtures/meta-picks.tn"
   import: ["core.tn"]

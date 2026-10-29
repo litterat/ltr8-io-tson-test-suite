@@ -2,6 +2,6 @@
 {
   post => {
     title: text
-    tags: [text]
+    ids: [uuid]
   }
 }

@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-declares-a-name-its-meta-target-declares.tn"
+{
+  record => { id: text }
+}

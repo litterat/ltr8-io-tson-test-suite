@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-declares-a-name-its-meta-target-declares-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3"
+  description: """
+    A `!!meta` target contributes its namespace as an `!!import` does, and meta.tn's namespace holds the
+    kernel's `record`. A schema it governs therefore cannot declare its own `record`, though it imports nothing:
+    no position partitions the namespace into constructors and types.
+    """
+  meta: "meta.tn"
+  error: {
+    category: resolver
+  }
+}

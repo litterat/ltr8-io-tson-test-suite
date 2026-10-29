@@ -1,5 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-reference-in-an-ordinary-schema.tn"
-{
-  order => { id: text }
-  rpick => { m: ref<order> }
-}

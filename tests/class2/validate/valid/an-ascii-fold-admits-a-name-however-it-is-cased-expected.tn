@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.5"
-  description: "`field_name`'s profile lists lowercase letters only, and its values are put into ASCII_CASEFOLD before the profile judges them, so `Content-Type` is the name `content-type`."
+  description: "`ascii_name`'s profile lists lowercase letters only, and its values are put into ASCII_CASEFOLD before the profile judges them, so `Content-Type` is the name `content-type`."
   schema: "fixtures/validate-ascii-casefold.tn"
   valid: _
 }

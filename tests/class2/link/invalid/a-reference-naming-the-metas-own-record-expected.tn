@@ -1,11 +1,11 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-reference-naming-the-metas-own-record-expected.tn"
 !!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §3.3.2, [TSON-SCHEMA] §5.6, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §5.6, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
   description: """
-    `order` is the meta layer's record, declared where the slot's type is, and a governed schema's names
-    resolve in that schema and its imports only (§3.3.2), where nothing is called `order`. Were it reached, it
-    would be a type, and a reference names a value.
+    `order` is the meta layer's record, and a `!!meta` target contributes its namespace as an `!!import` does,
+    so `order` resolves in the governed schema -- to a type, and a reference names a value: the names of the
+    types are a kind's.
     """
   meta: "fixtures/meta-picks.tn"
   import: ["core.tn"]

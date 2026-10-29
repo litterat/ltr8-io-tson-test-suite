@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-ordinary-schema-applies-the-reference-constructor-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §4.2"
+  description: """
+    The kernel's `ref_type` is in the closure of every schema reaching core.tn, and any schema declares a
+    reference: `oref` names values of `order`, and `rpick.m` is typed by it.
+    """
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    binds: [order oref rpick]
+  }
+}

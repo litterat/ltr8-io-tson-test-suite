@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/link/invalid/a-kind-naming-the-metas-own-record.tn"
+!!id:"https://tson.io/test-suite/class2/link/valid/a-kind-names-a-record-type-its-meta-layer-declares.tn"
 {
   os    => !orders { o1 => { id: "abc" } }
   shape => { a: text }

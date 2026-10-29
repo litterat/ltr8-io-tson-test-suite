@@ -1,11 +1,12 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-governed-schemas-reference-names-a-key-of-its-namespace-entry-expected.tn"
 !!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §3.3.2, [TSON-SCHEMA] §5.6, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §5.6, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
   description: """
     A reference in a schema the meta layer governs: `rpick.m` is typed `ref<order>`, and `os.o1` is an entry
     built with the namespace type `orders`, then a key of it, whose value type is `order`. The entry holding
-    the value is the governed schema's own, which is where a reference's first segment resolves.
+    the value is the governed schema's own, and a reference's first segment resolves in that schema's
+    namespace.
     """
   meta: "fixtures/meta-picks.tn"
   import: ["core.tn"]

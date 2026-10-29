@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-importer-applies-a-constructor-an-ordinary-library-declares.tn"
+{
+  plan => !steps { first => "draft"  second => "review" }
+}

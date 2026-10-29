@@ -9,8 +9,7 @@
 
     What makes an entry a constructor is that it IS-A `top` (§4.1): it composes, transitively, with a base
     kind, which its supertype chain records. Dropping the `~` from this very declaration leaves a valid
-    constructor declaration, refused for a different reason -- §2.2.2, since this subject is governed by
-    meta.tn and not by the meta-kernel.
+    constructor declaration, which any schema may make.
 
     Category is `resolver` even though the failure is a parse one: §8.1 makes every error that stops a
     schema loading a resolver error, however early the phase that caught it.
