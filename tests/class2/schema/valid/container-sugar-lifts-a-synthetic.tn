@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/container-sugar-lifts-a-synthetic.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   post => {
     title: text
     ids: [uuid]

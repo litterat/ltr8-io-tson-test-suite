@@ -1,6 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/link/valid/a-governed-schemas-reference-names-a-key-of-its-namespace-entry.tn"
-{
-  os    => !orders { o1 => { id: "abc" } }
-  shape => { a: text }
-  rs    => !rpicks { r => { m: os.o1 } }
-}

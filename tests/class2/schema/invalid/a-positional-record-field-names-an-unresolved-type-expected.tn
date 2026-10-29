@@ -1,10 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-positional-record-field-names-an-unresolved-type-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §8.1"
   description: "In a schema document a bare name at a record position fills the record's positional field where that field is atom-typed. record_field's positional field is type, a type_kind, an atom, so `p => x` is `p => { type: x }`, and the fill is judged as the name it is: `x` resolves to no entry of the schema or its imports, a resolver error at `r`."
-  meta: "meta.tn"
-  import: ["core.tn"]
   error: {
     category: resolver
   }

@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-voidable-one-position-tuple-holds-the-void-sentinel.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-core-templates.tn"
 !slot { maybe: [_] }

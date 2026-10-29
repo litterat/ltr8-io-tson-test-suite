@@ -1,2 +1,2 @@
-!!schema:"file:///local/orders.tn"
+!!import:"file:///local/orders.tn"
 {}

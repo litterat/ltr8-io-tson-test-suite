@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-name-type-pinned-to-a-non-member-is-refused.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta-kernel.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!schema {
   phrase       => !text_type { normalization: NFC }
   phrase_enum  => enum_type ^ { name_type?: = phrase }
 }

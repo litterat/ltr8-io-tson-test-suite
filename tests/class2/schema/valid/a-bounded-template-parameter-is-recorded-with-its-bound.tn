@@ -1,4 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-bounded-template-parameter-is-recorded-with-its-bound.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   boxed => <T: text> { a: T }
 }

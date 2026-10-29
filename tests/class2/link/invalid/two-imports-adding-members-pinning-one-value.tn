@@ -1,4 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/two-imports-adding-members-pinning-one-value.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-pet-cats.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-pet-kittens.tn"
+!schema {
   home => { p: pet }
 }

@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class1/vocabulary/invalid/media-type-with-parameters-rejected-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
 {
   spec: "§5.5"
   description: """

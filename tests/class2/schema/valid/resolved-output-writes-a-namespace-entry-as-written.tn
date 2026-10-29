@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/resolved-output-writes-a-namespace-entry-as-written.tn"
-{
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-api.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-api-orders.tn"
+!schema {
   admin => !api {
     list_orders => { response: order_list }
     get_order   => !method { request: order  response: order }

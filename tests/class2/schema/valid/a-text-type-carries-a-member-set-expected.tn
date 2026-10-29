@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-text-type-carries-a-member-set-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §7.4, [TSON-SCHEMA] §5.7, [TSON-SCHEMA] §9"
   description: """
@@ -18,8 +18,6 @@
     be narrowed without deciding regular-language containment, so the position takes one rule rather
     than two.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {

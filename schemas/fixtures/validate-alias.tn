@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-alias.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   A type annotation written as an alias. [TSON-SCHEMA] §7.2 compares a value's annotation against the
@@ -17,7 +17,7 @@
   `apart` is unrelated to `base` and `a_of` names it: flattening decides what a name means, never whether
   it is admitted, so this one stays refused.
   """
-{
+!schema {
   base => {
     tag: text
   }

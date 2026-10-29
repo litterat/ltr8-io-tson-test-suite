@@ -1,6 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-declared-value-is-read-against-the-type-it-names.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/declared-host.tn"
 !envelope {
-  local:  !note { body: "resolved in the governing closure" }
+  local:  !note { body: "resolved in the imported closure" }
   other:  !memo { to: ops  body: "a second type, chosen by the value" }
   closed: 1
 }

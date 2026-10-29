@@ -1,5 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-local-declaration-shadowing-an-import.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-money.tn"
+!schema {
   money => {
     amount: int32
   }

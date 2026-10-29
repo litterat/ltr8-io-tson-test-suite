@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/an-id-after-an-import-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.2"
+  description: "The header is a fixed sequence, an optional `!!id` and then any `!!import`s: an `!!id` after an `!!import` is out of place, a parse error."
+  error: { category: parser }
+}

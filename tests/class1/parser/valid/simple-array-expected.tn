@@ -1,12 +1,12 @@
 !!id:"https://tson.io/test-suite/class1/parser/valid/simple-array-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
 {
   spec: "§2.7"
   description: "A whitespace-separated array of three unquoted tokens"
   valid: {
     document: {
       id: _
-      schema: _
+      imports: []
       root: {
         annotations: []
         type-ref: _

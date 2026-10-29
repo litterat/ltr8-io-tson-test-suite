@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/allow-idn-false-admits-an-ascii-name.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-net-host.tn"
 !ascii_site { name: example.com }

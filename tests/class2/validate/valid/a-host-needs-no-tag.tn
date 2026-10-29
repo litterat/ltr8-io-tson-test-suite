@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-host-needs-no-tag.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-net-host.tn"
 !server { host: localhost }

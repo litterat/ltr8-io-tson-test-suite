@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/resolved-output-writes-a-namespace-entry-as-written-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.1"
   description: """
@@ -7,8 +7,6 @@
     map, keys in the order written and each value the record it was read as, a type's name at a kind-typed slot
     written as the name it was.
     """
-  meta: "fixtures/meta-api.tn"
-  import: ["fixtures/link-api-orders.tn"]
   valid: {
     resolved: """
       !schema {

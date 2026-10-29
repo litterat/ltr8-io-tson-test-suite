@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
@@ -15,7 +15,7 @@
   requires the snake_case this project uses for *type* names. Type names never appear literally in
   sidecar data, so there is no wire fidelity to preserve for them.
   """
-{
+!schema {
   core_value_form => !enum [unquoted single-line multi-line]
 
   token_core => {
@@ -84,10 +84,10 @@
     value?: data_value?
   }
 
-  @doc:"The parsed document (§2.3, §7.4): the header's own !!id/!!schema, absent as `_` when not present, plus the root data-value."
+  @doc:"The parsed document (§2.3, §7.4): the header's own `!!id`, absent as `_` when not present, its `!!import`s in order, empty when there are none, plus the root data-value."
   document => {
     id?: text?
-    schema?: text?
+    imports: [text]
     root: data_value
   }
 
@@ -96,7 +96,7 @@
   }
 
   @doc:"""
-    Exactly one of the three outcomes. `schema-document` is a document whose header carries !!meta:
+    Exactly one of the three outcomes. `schema-document` is a document whose root is tagged `!schema`:
     §1.5 makes rejecting it with a categorized diagnostic a Class 1 obligation, and there is nothing
     further for the vector to state, so the member is `void?` and written `schema-document: _`.
     """

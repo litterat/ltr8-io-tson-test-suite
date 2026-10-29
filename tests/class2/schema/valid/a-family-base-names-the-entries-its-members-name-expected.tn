@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-family-base-names-the-entries-its-members-name-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
   description: """
@@ -7,8 +7,6 @@
     family base names the entry each member names: `capped<9>` is its expansion in `pet` as in `cat`, and so is
     `N`'s derived type. A position typed by `pet` reads the selector at that entry before it knows the member.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {

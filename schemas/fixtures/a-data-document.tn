@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/a-data-document.tn"
+@doc:"""
+  A data document, not a schema: its root is an untagged record and it imports nothing. It exists to be
+  imported by a vector that shows an import must name a schema document.
+  """
+{ amount: 5  currency: EUR }

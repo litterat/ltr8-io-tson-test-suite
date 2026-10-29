@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-declaration-may-not-write-its-application.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   box => <T> { v: T }
 
   @application:{ name: box  arguments: [{ name: text }] }

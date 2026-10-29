@@ -9,7 +9,7 @@ a re-encoded string, and over whether an error vector's `category` is checked at
 implementation should not have to guess a third way.
 
 The sidecar's own shape is not described here. It is stated formally, per layer, by the schemas in
-[`schemas/`](schemas), and every sidecar names one with `!!schema`. Read those; this document covers
+[`schemas/`](schemas), and every sidecar imports one with `!!import`. Read those; this document covers
 only what a runner *does*.
 
 ## Discovery
@@ -45,7 +45,7 @@ dogfooding, and a broken parser fails loudly rather than quietly agreeing with i
 
 Sidecars are written in a conservative subset so a from-scratch implementation can read them before
 its own parser is finished: **records, arrays, the three token forms, the void sentinel `_`, and
-the `!!id`/`!!schema` header directives**. No maps, no type-refs, no annotations beyond the `@doc`
+the `!!id`/`!!import` header directives**. No maps, no type-refs, no annotations beyond the `@doc`
 in `schemas/`. A vector that needs more than this subset is a vector in the wrong format.
 
 ### 3. Assert the category on every error vector, at every layer
@@ -76,7 +76,7 @@ Validation errors are reserved for data checked against a successfully loaded sc
 
 So a runner satisfies rule 3 at those layers by establishing that the schema did not load. What it must
 *not* do is read the category off whatever internal code it happens to raise: an implementation that
-catches a schema-authoring mistake through its meta-schema's own reader will have a record-shaped code in
+catches a schema-authoring mistake through the kernel's own readers will have a record-shaped code in
 hand, and it is still a resolver error. The code says which rule; the phase says which category.
 
 `class2/validate/` is the other way round, and is where the `validation` category finally has vectors: the
@@ -107,7 +107,7 @@ forever. That is why none of this may decide validity, and why the outcome is it
 
 The subject of an identity vector is a header and an empty body, and the vector is about its first
 directive's argument alone. Nothing is fetched or resolved. If the directive is `!!id`, it is a document's
-own name, and §2.2.1 requires that it be written in canonical form. If it is `!!schema`, it is a reference,
+own name, and §2.2.1 requires that it be written in canonical form. If it is `!!import`, it is a reference,
 read in any spelling of its identity. A `valid` vector's `identity` is the canonical identity: host plus
 path, with no scheme or query. The runner compares it byte for byte with the one it computed. An `error`
 vector's `category` is `resolver`.
@@ -146,47 +146,44 @@ sides reduce a trailing `_[0-9a-f]{8}` to a fixed placeholder before comparing, 
 appears — as an entry's own key, inside a body, or in a list of names a sidecar states. A runner that
 compares the hashes is testing its own hash function.
 
-## Schema-governed vectors
+## Every subject is a complete document
 
-A vector whose subject needs a real `!!meta`/`!!import`/`!!schema` does not hardcode one: the
-*sidecar* names the target by a short, unversioned name (`meta.tn`, `core.tn`, `net.tn`) in its `meta`, `import`
-or `schema` field, and the runner splices the real, current directive into the subject's header before
-parsing. `meta`/`import` govern a schema-document subject, which is what the `class2/schema/` and
-`class2/link/` layers use; `schema` governs a data-document subject, which is what `class2/validate/`
-uses. Hardcoding
-`https://tson.io/2026/39/m/core.tn` in every such subject would mean editing all of them at each
-revision bump.
+A subject carries its own header: an optional `!!id`, then an `!!import` for each schema it needs, each named
+by its full, unpinned identity (`https://tson.io/2026/39/m/core.tn`). A runner adds nothing to it and feeds it
+as it is on disk (rule 1). The bundled schemas' identities carry the spec revision, so a revision bump rewrites
+them in every subject, as it rewrites them in the fixtures; nothing else in the corpus moves with the revision.
 
-**A short name that is not one of those four is the corpus's own schema**, named by its path under
-`schemas/` — `fixtures/link-money.tn` resolves to
-`https://tson.io/test-suite/schemas/fixtures/link-money.tn`, which a runner serves from its checkout.
-That is a *rule*, not a table: the four bundled names have to be listed because their identities carry
-the spec revision and nothing in the name says so, and everything else is derived. A runner that keeps a
-per-fixture table instead has to be edited every time the corpus grows one, in every language — the same
-drift this document exists to stop, once per fixture rather than once.
+**The corpus's own schemas are named by their path under `schemas/`**: `fixtures/link-money.tn` is
+`https://tson.io/test-suite/schemas/fixtures/link-money.tn`, which a runner serves from its checkout. That is a
+*rule*, not a table, so a runner needs no edit when the corpus grows a fixture. Any other identity a Class 2
+subject imports is one of the bundled schemas, which a processor already holds; a Class 1 subject's imports are
+never fetched.
 
-The link layer's §2.2.3 vectors are what need this: an import closure cannot be exercised with one
-document, and the topology lives in the fixture schemas' own `!!import` headers, so a chain, a diamond or
-a wide fan-in is a matter of which files exist rather than of anything a runner knows. Fixtures are named
-for what they declare rather than for the vector that uses them, the namespace being shared, and each one
-resolves on its own — the collisions those vectors are about exist only in the importer.
+A subject is a schema document exactly when its root is tagged `!schema`, after any root annotations; any other
+root is data. So a `class2/schema/` or `class2/link/` subject is tagged, a `class2/validate/` subject names its
+root's type, and nothing in a sidecar says which kind of document a subject is.
 
-The splice is not a prepend. The header grammar is a fixed sequence — optional `!!id`, then `!!meta`
-immediately after it, then `!!import` — so the directives go in right after the subject's own `!!id`
-line, or at the very start when it has none.
+The link layer's §2.2.3 vectors need this: an import closure cannot be exercised with one document, and the
+topology lives in the fixture schemas' own `!!import` headers, so a chain, a diamond or a wide fan-in is a
+matter of which files exist rather than of anything a runner knows. Fixtures are named for what they declare
+rather than for the vector that uses them, the namespace being shared, and each one resolves on its own — the
+collisions those vectors are about exist only in the importer. The one exception is `fixtures/a-data-document.tn`,
+which is data by design: it is there to be refused as an import.
 
-## A meta layer's own records
+## A fixture schema's own records
 
-A fixture meta-schema may declare records of its own and namespace types holding them ([TSON-SCHEMA] §4.1): an
+A fixture schema may declare records of its own and namespace types holding them ([TSON-SCHEMA] §4.1): an
 entry built with a namespace type is a value, not a type, and in a language that binds an implementation reads each
 value of its map into a host class it supplies itself. A runner MUST supply one for every such record before it runs
 a vector whose schema applies a namespace type holding it; lacking one is not a ground for a skip (rule 5). The
-fixtures say which: a meta-schema under `schemas/fixtures/` lists in its `@doc` the records its namespace types
-hold, and the declaration is the whole of the shape — nothing else about the representation is normative.
+fixtures say which: a fixture under `schemas/fixtures/` whose namespace types a subject imports lists in its
+`@doc` the records those types hold, and the declaration is the whole of the shape — nothing else about the
+representation is normative.
 
-A `class2/schema/` vector's expected resolved output is read under the meta-schema its sidecar's `meta` names. For
-`meta.tn` that is the ordinary reading; a fixture meta-schema imports `meta.tn` and adds its own constructors, and an
-instance of one of them is typed there and nowhere else.
+A `class2/schema/` vector's expected resolved output is read under the subject's own imports, and under the
+pre-loaded kernel alone when the subject has none. For a subject importing `meta.tn` or `core.tn` that is the
+ordinary reading; a fixture that declares constructors of its own imports `meta.tn` and adds them, and an instance
+of one of them is typed there and nowhere else.
 
 ## `proposed/`
 

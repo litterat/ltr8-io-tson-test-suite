@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-folding-profile-admits-a-name-however-it-is-cased.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-text-normalization.tn"
 !request { headers: { Content-Type => a  Accept => b } }

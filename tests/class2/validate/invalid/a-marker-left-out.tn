@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-marker-left-out.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-field-marks.tn"
 !entry {
   name: Ada
   from: 1

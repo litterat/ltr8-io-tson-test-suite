@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/refused/a-mixed-script-identifier-key.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-identifier.tn"
 !handlers {
   аdmin => a
 }

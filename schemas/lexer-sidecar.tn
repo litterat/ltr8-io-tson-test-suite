@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
@@ -7,7 +7,7 @@
   "Valid lexer-layer vectors" section for the worked example this schema formalizes, and RUNNER.md
   for what a runner must do with one.
   """
-{
+!schema {
   @doc:"The nine token kinds, using the spec's own token-stream vocabulary (§7.3), not any implementation's internal type names."
   lexer_token_kind => !enum [
     single-line-token

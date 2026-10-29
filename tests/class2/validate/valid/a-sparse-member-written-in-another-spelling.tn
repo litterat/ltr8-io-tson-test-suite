@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-sparse-member-written-in-another-spelling.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-ports.tn"
 !listing {
   p: 0x50
   q: 1.00

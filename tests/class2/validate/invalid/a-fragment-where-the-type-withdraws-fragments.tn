@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-fragment-where-the-type-withdraws-fragments.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-uri-facets.tn"
 !link { href: "https://example.com/"  base: "https://example.com/a#top"  home: "https://example.com/#top"  ref: "foo/bar?x=1" }

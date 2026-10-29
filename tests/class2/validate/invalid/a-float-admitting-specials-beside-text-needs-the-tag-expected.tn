@@ -1,9 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-float-admitting-specials-beside-text-needs-the-tag-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.4"
   description: "core's float64 admits NaN and the infinities, so it has no class and `( float64 | text )` is not disjoint: an untagged value is refused, a plain number included."
-  schema: "fixtures/validate-float-class.tn"
   error: {
     category: validation
     path: "/v"

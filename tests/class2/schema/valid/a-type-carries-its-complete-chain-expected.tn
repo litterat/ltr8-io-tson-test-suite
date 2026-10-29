@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-type-carries-its-complete-chain-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.8"
   description: """
@@ -7,8 +7,6 @@
     is IS-A `named` too, each a bare name. `subtypes` is the inverse over this map, so `named` lists both of the records
     that are IS-A it. An entry is its value -- there is no wrapper around the body to hold the chain.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {

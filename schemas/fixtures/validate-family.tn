@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-family.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   A subtype family, both ways a position typed by one is read ([TSON-SCHEMA] §5.2).
@@ -24,7 +24,7 @@
   `holder` puts each family at a field position. A document's own root type-ref names the position's type,
   so reading a family at the root would be testing the root convention rather than the family.
   """
-{
+!schema {
   pet => abstract {
     pet_type: text =?
     name: text

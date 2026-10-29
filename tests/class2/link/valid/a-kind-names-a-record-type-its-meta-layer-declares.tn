@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-kind-names-a-record-type-its-meta-layer-declares.tn"
-{
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-picks.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   os    => !orders { o1 => { id: "abc" } }
   shape => { a: text }
   ps    => !picks { p => { t: order } }

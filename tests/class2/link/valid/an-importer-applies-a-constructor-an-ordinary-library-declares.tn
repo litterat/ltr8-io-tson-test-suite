@@ -1,4 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-importer-applies-a-constructor-an-ordinary-library-declares.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-steps.tn"
+!schema {
   plan => !steps { first => "draft"  second => "review" }
 }

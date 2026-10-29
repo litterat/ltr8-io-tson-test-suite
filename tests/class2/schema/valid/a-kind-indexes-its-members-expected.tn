@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-kind-indexes-its-members-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.1"
   description: """
@@ -8,7 +8,6 @@
     members are its two ids and not `count`, which is built with `integer_type`, nor `any_id` itself, which is
     built with `kind_type`. A kind is a set of names and carries no `disjoint`: that is a sum's fact.
     """
-  meta: "meta.tn"
   valid: {
     resolved: """
       !schema {

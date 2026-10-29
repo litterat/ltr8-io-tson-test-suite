@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-boolean-beside-a-text-value-set-goes-to-boolean.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-text-value-set-class.tn"
 !answered { a: true }

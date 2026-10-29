@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/two-records-of-one-name-type-compose.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-field-name-type.tn"
 !located { "@id": "urn:x"  label: "x"  city: "y" }

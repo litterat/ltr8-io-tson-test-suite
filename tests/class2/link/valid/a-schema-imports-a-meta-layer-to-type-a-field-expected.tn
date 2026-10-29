@@ -1,14 +1,12 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-schema-imports-a-meta-layer-to-type-a-field-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §2.2.3"
   description: """
-    This schema is governed by meta.tn and imports meta-headers.tn, a meta layer the meta-kernel governs, to type
-    a field by its namespace type `headers`. An import ties to no governing level, so the layer's namespace is
-    this schema's, and `headers` types the field as any imported type does.
+    This schema imports meta.tn, and imports meta-headers.tn, a meta layer that imports the meta-kernel, to type
+    a field by its namespace type `headers`. The layer's namespace is this schema's, as any import's is, and
+    `headers` types the field as any imported type does.
     """
-  meta: "meta.tn"
-  import: ["fixtures/meta-headers.tn"]
   valid: {
     binds: [request headers]
   }

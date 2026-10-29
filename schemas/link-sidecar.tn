@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/link-sidecar.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
@@ -14,7 +14,7 @@
   a sidecar stating none of them is an empty claim that `check_vectors.py` cannot catch but a
   reviewer can.
   """
-{
+!schema {
   @doc:"""
     A choice entry and the disjointness §5.4 derives for it. The fact is total and two-valued --
     `true` exactly when every variant occupies a distinct discrimination class -- so a vector may
@@ -61,7 +61,7 @@
     or ingest one is a resolver error. A schema that will not link is never a `validation` failure,
     which is reserved for data checked against a schema that did load.
     """
-  link_sidecar => sidecar_common & spliced_header & {
+  link_sidecar => sidecar_common & {
     ( valid: link_valid | error: vector_error )
   }
 }

@@ -1,10 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-discriminator-that-is-a-group-member-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.11"
   description: "A field group's members are mutually exclusive and uniformly optional, so a conforming value may leave one out, and a selector that may be absent selects nothing. §5.11 therefore gives a member no value modifier at all -- neither a default, a pin, nor the discriminator mark '=?' -- so the schema does not load."
-  meta: "meta.tn"
-  import: ["core.tn"]
   error: {
     category: resolver
   }

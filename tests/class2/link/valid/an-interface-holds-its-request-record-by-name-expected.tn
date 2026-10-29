@@ -1,10 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-interface-holds-its-request-record-by-name-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
   description: "A method's request slot is typed by the record constructor, so a bare name there is a value by name, not the positional form of a record: place_order_request resolves in this schema to an entry whose body is built by record, which IS-A the slot's type. The response slot is typed type_ref, whose one field is an atom, so its bare token stays a type reference."
-  meta: "fixtures/meta-service.tn"
-  import: ["core.tn"]
   valid: {
     binds: [orders place_order_request order]
   }

@@ -1,17 +1,15 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/the-kinds-of-a-namespace-constructor-hold-its-instances-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.6"
   description: """
     A kind's members are the entries built with its constructor, by construction: `myapi` is built with `api`, and
     `routes` with `router`, both IS-A `namespace`. A namespace type is a member of its own kind and of the
     namespace kinds, and the meta layer's `api` and `router` and the kernel's `namespace`, `schema` and
-    `field_map` are in the closure, which a `!!meta` target contributes to as an `!!import` does. So `kind<api>`
+    `field_map` are in the closure, which the imported meta layer and the kernel it imports contribute to. So `kind<api>`
     holds `api` and `myapi`, and `kind<namespace>` every namespace type and namespace value of the closure; no kind
     of types holds a namespace value.
     """
-  meta: "fixtures/meta-api.tn"
-  import: ["fixtures/link-api-orders.tn"]
   valid: {
     members: [
       { name: apis        members: [api myapi] }

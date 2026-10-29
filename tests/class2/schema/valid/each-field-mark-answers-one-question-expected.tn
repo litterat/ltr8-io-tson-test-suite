@@ -1,10 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/each-field-mark-answers-one-question-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.2"
   description: "One slot per question, and each resolves to the one fact it answers: `?` on the name is `optional` (the key may be omitted), `?` on the type is `voidable` (a written `_` is admitted), and `~`/`=` give the `role` and its `value`. A pin on an unmarked name is a marker the document must write; on a marked one, omission supplies it. A default beside a voidable type keeps `_` as a way to clear the field. Facts at their defaults are omitted."
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {

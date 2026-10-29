@@ -1,4 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/resolved-output-writes-a-value-by-name-as-written.tn"
-{
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-orders-interface.tn"
+!schema {
   routes => !bindings { post_orders => { method: orders.place_order  verb: POST  route: "/orders" } }
 }

@@ -1,14 +1,12 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-kind-names-a-record-type-its-meta-layer-declares-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.6"
   description: """
-    `order` is the meta layer's record, and a schema's `!!meta` target contributes its namespace as an `!!import`
-    does, so `order` is a type of the governed schema's closure, built with `record`: a member of `kind<record>`,
+    `order` is the meta layer's record, and the meta layer is imported, so its namespace is this schema's:
+    `order` is a type of the schema's closure, built with `record`: a member of `kind<record>`,
     which `pick.t` is typed by.
     """
-  meta: "fixtures/meta-picks.tn"
-  import: ["core.tn"]
   valid: {
     binds: [os shape ps order]
   }

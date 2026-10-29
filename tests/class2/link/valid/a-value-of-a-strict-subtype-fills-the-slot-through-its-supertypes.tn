@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-value-of-a-strict-subtype-fills-the-slot-through-its-supertypes.tn"
-{
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   order  => { sku: text }
   rpcs   => !rpc_interface { get => { response: order  idempotent: true } }
   routes => !bindings { get_order => { method: rpcs.get  verb: GET  route: "/orders" } }

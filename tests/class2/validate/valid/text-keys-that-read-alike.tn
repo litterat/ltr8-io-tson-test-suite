@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/text-keys-that-read-alike.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-identifier.tn"
 !labels {
   pass => a
   раѕѕ => b

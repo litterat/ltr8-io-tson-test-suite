@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-schema-importing-core-declares-the-names-its-closure-leaves-free-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §2.2.3, §9"
   description: """
@@ -9,8 +9,6 @@
     sign bound, a length bound and a documentation annotation are each declared here, in a schema importing
     core.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {

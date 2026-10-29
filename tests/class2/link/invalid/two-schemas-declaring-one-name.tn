@@ -1,5 +1,9 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/two-schemas-declaring-one-name.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-money.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-money-alt.tn"
+!schema {
   order => {
     paid: money
   }

@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-definition-mark-is-not-an-annotation-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §6, [TSON-SCHEMA] §12.1"
   description: """
@@ -16,8 +16,6 @@
     declaration would resolve the name, park it in the author-annotation channel, and leave the record
     OPEN -- silently admitting the values the author wrote the mark to exclude.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   error: {
     category: resolver
   }

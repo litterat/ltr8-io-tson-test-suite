@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-text-normalization.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   A text family's `normalization` is the form its value is put into: a value is its token's text in that
@@ -11,7 +11,7 @@
   is an enum over `header_name`, so it matches its members in that type's form, and `picked` binds a template's
   value argument to one of them however it is cased.
   """
-{
+!schema {
   header_name => !identifier_type { start: NONE  continue: NONE
     start_add: "abcdefghijklmnopqrstuvwxyz"  continue_add: "abcdefghijklmnopqrstuvwxyz0123456789-"
     normalization: NFKC_CASEFOLD }

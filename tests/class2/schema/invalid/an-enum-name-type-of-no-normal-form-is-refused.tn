@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/an-enum-name-type-of-no-normal-form-is-refused.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   raw => !identifier_type { normalization: NONE }
   kinds => !enum_type { name_type: raw  members: [a b] }
 }

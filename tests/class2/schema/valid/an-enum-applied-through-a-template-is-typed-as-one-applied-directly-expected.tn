@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-enum-applied-through-a-template-is-typed-as-one-applied-directly-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §7.4, §5.10"
   description: """
@@ -7,8 +7,6 @@
     none may redeclare, so an enum's labels are names. An entry instantiating a template whose held body
     applies `enum` is typed the same way: its members are names under the kernel's identifier.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {

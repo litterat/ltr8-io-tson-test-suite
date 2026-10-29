@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-schema-reaches-the-kernel-by-two-routes.tn"
+!!import:"https://tson.io/2026/39/m/meta-kernel.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-money.tn"
+!schema {
+  priced => { cost: money }
+}

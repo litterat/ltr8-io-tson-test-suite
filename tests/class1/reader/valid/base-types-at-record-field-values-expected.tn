@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class1/reader/valid/base-types-at-record-field-values-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
 {
   spec: "§4.5"
   description: "Base type resolution runs over an unquoted token in the fixed order boolean, number, string, so true is a boolean and Alice falls through to string."

@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-enum-over-an-identifier-type-of-words-judges-its-members-as-names-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §7.4, [TSON-DATA] §8.2"
   description: """
@@ -10,8 +10,6 @@
     §8.2's per-name rules under their type's profile, whose added characters are its own -- the space
     is `words`' medial, not a restricted character.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {

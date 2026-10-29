@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-kind-ids.tn"
-!!meta:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/validate-kind-stock.tn"
 @doc:"""
@@ -7,7 +7,7 @@
   schema's closure built with `uuid_type` -- `customer_id` declared here, `stock_id` from the import, and core's
   `uuid`. A value there is one of those names, never a uuid. `sku` is text, built with `text_type`, and no member.
   """
-{
+!schema {
   customer_id => !uuid_type {}
   sku         => text
   ledger      => { named: kind<uuid_type> }

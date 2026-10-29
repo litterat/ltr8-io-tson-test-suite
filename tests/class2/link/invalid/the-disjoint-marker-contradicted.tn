@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/the-disjoint-marker-contradicted.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   circle => {
     radius: int32
   }

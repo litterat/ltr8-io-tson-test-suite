@@ -1,14 +1,12 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-importer-applies-a-constructor-an-ordinary-library-declares-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.5"
   description: """
-    Any schema may declare a constructor: link-steps.tn is an ordinary library, governed by meta.tn, and
+    Any schema may declare a constructor: link-steps.tn is an ordinary library, importing meta.tn, and
     declares the namespace type `steps`. This schema imports it, so `steps` is in its namespace, and `plan`
     applies it: an entry holding a map of text under identifier keys.
     """
-  meta: "meta.tn"
-  import: ["fixtures/link-steps.tn"]
   valid: {
     binds: [plan steps]
   }

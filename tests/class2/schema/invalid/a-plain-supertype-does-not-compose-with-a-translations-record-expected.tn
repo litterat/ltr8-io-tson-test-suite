@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-plain-supertype-does-not-compose-with-a-translations-record-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.8"
   description: """
@@ -9,8 +9,6 @@
     though `city` happens to be a `json_name` too, since a translation's type need not admit every
     identifier. `address => json_record & { city: text }` is the record to compose.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   error: {
     category: resolver
   }

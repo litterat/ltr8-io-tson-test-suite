@@ -1,12 +1,12 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/link-api-orders.tn"
-!!meta:"https://tson.io/test-suite/schemas/fixtures/meta-api.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-api.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
-  A fixture schema for the class2 link and schema layers, under meta-api.tn: two types, an entry built with the
+  A fixture schema for the class2 link and schema layers, importing meta-api.tn: two types, an entry built with the
   namespace type `api` holding two methods, one untagged and read as the value type and one tagged with it, and an
   entry built with `router` whose route names a method of the first by a qualified name.
   """
-{
+!schema {
   order      => { sku: text  quantity: int32 }
   order_list => [order]
   myapi      => !api {
