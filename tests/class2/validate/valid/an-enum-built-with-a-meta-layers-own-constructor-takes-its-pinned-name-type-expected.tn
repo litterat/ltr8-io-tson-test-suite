@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §7.4, [TSON-SCHEMA] §4.2"
-  description: "A meta layer pins its own identifier family as `text_enum`'s `name_type`, which the kernel types `identifier_kind`. `text_identifier` is built with `identifier_type`, so it is a member wherever it is judged: at the meta layer's link, where the pin is, and at the schema's, where `!text_enum [...]` resolves the pinned name in the meta's namespace. `New York` is a member of `city`, read as a name of `text_identifier`."
+  description: "A meta layer pins its own identifier family as `text_enum`'s `name_type`, which the kernel types `identifier_kind`. `text_identifier` is built with `identifier_type`, so it is a member wherever it is judged: at the meta layer's link, where the pin is, and at the schema's, where `!text_enum [...]` resolves the pinned name in the schema's namespace, the meta layer's among it. `New York` is a member of `city`, read as a name of `text_identifier`."
   schema: "fixtures/validate-text-enum-cities.tn"
   valid: _
 }

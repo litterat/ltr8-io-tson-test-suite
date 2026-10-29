@@ -10,10 +10,10 @@
       !schema {
         post => !record { fields: {
           title => !record_field { type: text }
-          tags  => !record_field { type: array_text_xxhash }
+          ids   => !record_field { type: array_uuid_xxhash }
         } }
       
-        @synthetic array_text_xxhash => !array { element_type: text }
+        @synthetic array_uuid_xxhash => !array { element_type: uuid }
       }
       """
   }

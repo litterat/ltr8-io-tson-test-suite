@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-reference-naming-a-record-type-expected.tn"
 !!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §3.3.2, [TSON-SCHEMA] §5.6, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §5.6, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
   description: """
     `shape` resolves to a record type of the governed schema. A reference names a value of `order`, and a type
     is no value: the names of the types are a kind's.

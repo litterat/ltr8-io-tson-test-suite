@@ -6,7 +6,8 @@
     `kind<uuid_type>` is core's spelling of `!kind_type { of: uuid_type }`, and a declaration whose body is
     the application is the entry, closed in place under its author's name. Its members are the closure's types
     built with `uuid_type`: the schema's `stock_id` and core's `uuid`. A kind of `identifier_type`, as the
-    kernel's `identifier_kind` is, holds the identifier families of the same closure.
+    kernel's `identifier_kind` is, holds the identifier families of the same closure: the schema's `words`, and
+    the kernel's `identifier`, its aliases and `scheme_name`, which the closure reaches through core.
     """
   meta: "meta.tn"
   import: ["core.tn"]
@@ -20,7 +21,10 @@
         @application:{ name: kind  arguments: [{ value: uuid_type }] }
         ids => !kind_type { of: uuid_type  members: [stock_id uuid] }
 
-        names => !kind_type { of: identifier_type  members: [words] }
+        names => !kind_type {
+          of: identifier_type
+          members: [field_name identifier param_name scheme_name type_name words]
+        }
       }
       """
   }

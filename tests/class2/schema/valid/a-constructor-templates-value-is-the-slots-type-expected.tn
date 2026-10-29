@@ -1,0 +1,21 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-constructor-templates-value-is-the-slots-type-expected.tn"
+!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: "`vec` applies the kernel's `array`, so `N` stands in `array.min_items` and is that slot's type, the kernel's `non_negative_integer`, so `vec<0>` is a valid application."
+  meta: "meta.tn"
+  import: ["core.tn"]
+  valid: {
+    resolved: """
+      !schema {
+        vec => !template {
+          parameters: [ !template_param { name: N  type: non_negative_integer } ]
+          template: "!array { element_type: text  min_items: N }"
+        }
+
+        @application:{ name: vec  arguments: [{ value: 0 }] }
+        v0 => !array { element_type: text  min_items: 0 }
+      }
+      """
+  }
+}

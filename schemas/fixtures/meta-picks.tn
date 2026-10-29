@@ -5,8 +5,9 @@
   A meta layer holding one slot of each by-name spelling, so a schema it governs is where both are judged. `orders`
   maps identifiers to `order` records; `rpick.m` is typed `ref<order>`, naming a value of `order`, which a governed
   schema holds only as a key of an entry built with `orders` (`os.o1`); `pick.t` is typed `kind<record>`, naming a
-  record type of the governed schema's own closure. `order` itself is this layer's record, and no name of a governed
-  schema resolves to it. An entry built with a namespace type is a value, not a type, and a processor that binds
+  record type of the governed schema's own closure, which holds this layer's entries: `order` itself is a record type
+  there, a member of `kind<record>` and no value. An entry built with a namespace type is a value, not a type, and a
+  processor that binds
   binds each value of its map to a host class of its own: the records `order`, `rpick` and `pick`.
   """
 {

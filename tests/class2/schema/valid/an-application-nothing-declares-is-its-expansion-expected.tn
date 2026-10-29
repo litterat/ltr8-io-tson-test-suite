@@ -2,7 +2,7 @@
 !!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
-  description: "An application of a template over any constructor but record, written at a use site and declared nowhere, is its expansion: the position names the closed synthetic its closing produces, the same entry the sugar form written out lands on, and no instantiation entry is minted. rows<text> and [text; 1..] are one entry."
+  description: "An application of a template over any constructor but record, written at a use site and declared nowhere, is its expansion: the position names the closed synthetic its closing produces, the same entry the sugar form written out lands on, and no instantiation entry is minted. rows<uuid> and [uuid; 1..] are one entry."
   meta: "meta.tn"
   import: ["core.tn"]
   valid: {
@@ -14,11 +14,11 @@
         }
 
         post => !record { fields: {
-          a => !record_field { type: array_text_1_xxhash }
-          b => !record_field { type: array_text_1_xxhash }
+          a => !record_field { type: array_uuid_1_xxhash }
+          b => !record_field { type: array_uuid_1_xxhash }
         } }
 
-        @synthetic array_text_1_xxhash => !array { element_type: text  min_items: 1 }
+        @synthetic array_uuid_1_xxhash => !array { element_type: uuid  min_items: 1 }
       }
       """
   }

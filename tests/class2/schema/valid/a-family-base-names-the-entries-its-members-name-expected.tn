@@ -4,7 +4,7 @@
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
   description: """
     A field type in a record template that names none of its parameters means the same in every application, so the
-    family base names the entry each member names: `bounded<9>` is its expansion in `pet` as in `cat`, and so is
+    family base names the entry each member names: `capped<9>` is its expansion in `pet` as in `cat`, and so is
     `N`'s derived type. A position typed by `pet` reads the selector at that entry before it knows the member.
     """
   meta: "meta.tn"
@@ -12,7 +12,7 @@
   valid: {
     resolved: """
       !schema {
-        bounded => !template {
+        capped => !template {
           parameters: [ !template_param { name: M  type: integer } ]
           template: "!integer_type { max: M }"
         }

@@ -3,10 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §7.4, §5.10"
   description: """
-    `enum` pins its `name_type` to `identifier`, a value written in the governing meta and resolved there,
-    so an enum's labels are names whether or not the schema declares or imports an `identifier`. An
-    entry instantiating a template whose held body applies `enum` is typed the same way: its members
-    are names under the kernel's identifier.
+    `enum` pins its `name_type` to the kernel's `identifier`, which every closure reaching core holds and
+    none may redeclare, so an enum's labels are names. An entry instantiating a template whose held body
+    applies `enum` is typed the same way: its members are names under the kernel's identifier.
     """
   meta: "meta.tn"
   import: ["core.tn"]

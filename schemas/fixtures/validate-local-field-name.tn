@@ -2,6 +2,6 @@
 !!meta:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 {
-  field_name => !identifier_type { start_add: "@" }
-  stated => !record { name_type: field_name  fields: { "@id" => { type: text } } }
+  at_name => !identifier_type { start_add: "@" }
+  stated => !record { name_type: at_name  fields: { "@id" => { type: text } } }
 }

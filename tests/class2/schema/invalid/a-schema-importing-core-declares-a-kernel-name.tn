@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-importing-core-declares-a-kernel-name.tn"
+{
+  identifier => !identifier_type { continue_add: "-" }
+}

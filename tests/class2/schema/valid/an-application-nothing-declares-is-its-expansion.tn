@@ -3,7 +3,7 @@
   rows => <T> !array { element_type: T  min_items: 1 }
 
   post => {
-    a: rows<text>
-    b: [text; 1..]
+    a: rows<uuid>
+    b: [uuid; 1..]
   }
 }

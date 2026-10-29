@@ -8,7 +8,7 @@
     is written the same way wherever it is written -- the entries are map keys, so they are data
     rather than names and no identifier rule reaches them.
 
-    The governing meta declares no type named `rest`, so this is the ordinary unresolved-name error of
+    No schema in the closure declares a type named `rest`, so this is the ordinary unresolved-name error of
     §3.3.3. The mark it retired was a representation directive whose class could not be stated: §6
     confines a directive's force to the encodings in its class and offers the text class as the
     example, and this one bound JSON while TSON text declined it, leaving "the encodings that claim

@@ -8,7 +8,7 @@
     -- and this one changes it: erase it and a direct instance becomes readable at every position typed
     by the record.
 
-    The governing meta declares no type of that name, so this is the ordinary unresolved-name error of
+    No schema in the closure declares a type of that name, so this is the ordinary unresolved-name error of
     §3.3.3 -- the footing `@sealed` and `@discriminator` are already on, and there is no name left to
     reserve once the mark is a word the grammar reads.
 
