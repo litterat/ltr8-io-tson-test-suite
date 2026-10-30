@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-open-alias-target-is-a-quoted-reference.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  pair      => <A, B> { first: A  second: B }
+  uuid_pair => <B> pair<uuid, B>
+  up        => uuid_pair<int32>
+}

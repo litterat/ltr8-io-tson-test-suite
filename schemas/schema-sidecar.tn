@@ -33,7 +33,7 @@
     No subject at this layer declares a template, and the reason is about where the comparison happens
     rather than about what §8 admits. A resolver holds an open entry's body as the application as
     written, held unread until materialisation (§5.10); the same declaration written as §8 output and
-    read back binds an ordinary record body, `type_ref.name` being typed `identifier` and a parameter
+    read back binds an ordinary record body, a reference's segment being an `identifier` and a parameter
     being one. So the two sides of a vector agree as documents and differ as values, and a runner
     comparing values -- which is what this layer's expected side is for -- has nothing it can state.
 

@@ -1,0 +1,27 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-value-argument-lands-in-the-body-it-closes-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
+  description: """
+    An argument is typed where it lands: in `maxint<10>` the token `10` binds `N`, whose type is the slot it
+    stands in, `integer_type.max`, and closing substitutes it there and reads the body as the constructor's
+    instance. Written quoted at an element type or at a type position, the application is one and closes to
+    one synthetic `!integer_type { max: 10 }`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        maxint => !template {
+          parameters: [ !template_param { name: N  type: integer } ]
+          template: "!integer_type { max: N }"
+        }
+
+        small => !array { element_type: integer_type_10_xxhash }
+
+        also => !array { element_type: integer_type_10_xxhash }
+
+        @synthetic integer_type_10_xxhash => !integer_type { max: 10 }
+      }
+      """
+  }
+}

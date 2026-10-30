@@ -109,7 +109,7 @@ multi-line token escapes nothing, so this stays inside the conservative subset R
 **No `schema/` subject declares a template**, and the reason is about where the comparison happens rather
 than about what §8 admits. A resolver holds an open entry's body as the application as written, held
 unread until materialisation (§5.10); the same declaration written as §8 output and read back binds an
-ordinary record body, `type_ref.name` being typed `identifier` and a parameter being one. So the two sides
+ordinary record body, a reference's segment being an `identifier` and a parameter being one. So the two sides
 of such a vector agree as documents and differ as values, and a runner comparing values has nothing it can
 state.
 

@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-kind-judges-an-applied-type-by-the-entry-it-denotes.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-kind-applications.tn"
+!holder { t: names  u: "set<text>" }

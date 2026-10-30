@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-kind-applications.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A kind-typed field naming an applied type. `names` is the entry `set<text>` denotes, a declaration whose body is
+  the application; `holder.t` holds the name of any type, and `holder.u` the name of a type built with `uuid_type`.
+  In data an application is a reference written quoted, `"set<text>"`, `<` being reserved there.
+  """
+!schema {
+  names  => set<text>
+  holder => { t: type_kind  u?: kind<uuid_type> }
+}

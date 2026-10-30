@@ -1,0 +1,30 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-open-parent-is-a-quoted-reference-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.1"
+  description: """
+    A record template keeps its parents as written in its chain, and a parent still applied to a parameter is
+    an open application: a reference with an argument list, written quoted as its canonical text. `ok` holds
+    `parents: ["result<T>"]` beside the fields it absorbed, and closes with every other reference it holds.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        result => !record {
+          parameters: [ !template_param { name: T  type: type_kind } ]
+          fields: { value => !record_field { type: T  optional: true } }
+          extension: ABSTRACT
+        }
+
+        ok => !record {
+          chain: { parents: ["result<T>"] }
+          parameters: [ !template_param { name: T  type: type_kind } ]
+          fields: {
+            value => !record_field { type: T  optional: true }
+            done  => !record_field { type: boolean }
+          }
+        }
+      }
+      """
+  }
+}

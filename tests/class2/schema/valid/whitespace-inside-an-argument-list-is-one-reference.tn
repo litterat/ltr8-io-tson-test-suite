@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/whitespace-inside-an-argument-list-is-one-reference.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  box     => <T> { v: T }
+  spelled => !array { element_type: "box< text >" }
+  written => [box<text>]
+}

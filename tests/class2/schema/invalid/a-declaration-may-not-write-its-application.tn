@@ -4,6 +4,6 @@
 !schema {
   box => <T> { v: T }
 
-  @application:{ name: box  arguments: [{ name: text }] }
+  @application:"box<text>"
   bx => { v: text }
 }

@@ -28,7 +28,7 @@
           ]
         }
 
-        @application:{ name: response  arguments: [{ name: order } { value: 201 }] }
+        @application:"response<order 201>"
         created => !record {
           chain: { supertypes: [response] }
           fields: {

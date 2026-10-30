@@ -19,7 +19,7 @@
           template: "!interface { get => { response: T } }"
         }
 
-        @application:{ name: orders  arguments: [{ name: order }] }
+        @application:"orders<order>"
         order_api => !interface { get => { response: order } }
       }
       """
