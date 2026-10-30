@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-operation-contradicting-its-endpoint-shapes-pinned-method.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-http.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-order.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  paged_get   => operation & { method?: = GET }
+  list_orders => !paged_get { method: POST  path: "/orders"  responses: [ { status: 200  body: order } ] }
+}

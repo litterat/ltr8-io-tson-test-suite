@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-paged-get-operation-body-naming-a-value-entry-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §7.4"
+  description: """
+    A response's `body` is a `type_kind` slot, judged by membership over the reading document's closure.
+    `list_orders` is an entry of the imported description, but a value of `paged_get` and no type, so it is no
+    member, and the document is invalid at the response's `body`. The http project relies on a payload name in
+    data being judged as it is in the description.
+    """
+  error: {
+    category: validation
+    path: "/responses/0/body"
+  }
+}

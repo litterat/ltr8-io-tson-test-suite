@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-operation-body-naming-a-value-entry-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §4.2"
+  description: """
+    A response's `body` is a `type_kind` slot, so its name must be a type. `place_order` is an entry of the same
+    schema, but a value of `operation`, not a type, and a value entry is a member of no reference over a
+    constructor, so `get_order` is refused when the schema links. The http project relies on a payload name being
+    judged a member of its kind, whatever else the closure declares under that name.
+    """
+  error: {
+    category: resolver
+  }
+}

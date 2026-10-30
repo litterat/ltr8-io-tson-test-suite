@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-api-description-declares-its-endpoint-shapes-beside-its-operations-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §4.1, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.12"
+  description: """
+    An API description under one level, the shape the http project relies on: one schema imports an HTTP vocabulary
+    and an ordinary schema of records, and declares its own types, its own endpoint shape and its operations side by
+    side, with no meta layer. `paged_get` refines the imported record type `operation` and pins `method`, marked so
+    a value may omit it; `list_orders` is a value entry read against `paged_get`, waiting on it as `paged_get`
+    waits on the import, and writes no `method`, while `place_order` is a value of `operation` itself. A
+    response's `body` is a `type_kind` slot: `order_page`, an alias closed from a template the same schema
+    declares, and `order`, from the import, are both judged members of it. `orders` is a value of the namespace
+    type `api`, and the binding's `ref<method>` resolves into it by a qualified name. `list_orders` fills a
+    `ref<paged_get>` and, through `paged_get`'s IS-A edge, a `ref<operation>` beside `place_order`.
+    """
+  valid: {
+    binds: [page order_page paged_get list_orders place_order orders post_order catalog]
+  }
+}
