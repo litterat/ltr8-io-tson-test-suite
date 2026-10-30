@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-geo-alt.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A second, unrelated schema map named `geo`, declaring a different member. Each fixture is valid on its own; the
+  collision on `geo` exists only in a schema importing both.
+  """
+!schema {
+  geo => !schema {
+    location => { lat: float64  lon: float64 }
+  }
+}

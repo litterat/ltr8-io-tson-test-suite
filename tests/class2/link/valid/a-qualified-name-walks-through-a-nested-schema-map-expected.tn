@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-qualified-name-walks-through-a-nested-schema-map-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.12 (qualified names, proposed)"
+  description: """
+    A value's qualified name walks from the root: its first segment names `geo`, a schema map, which a segment enters
+    by member name, so `geo.home` names the value entry `home` of `geo`, and `geo.home.at` goes on to select the
+    field `at` of that record value. Each referent is judged against its slot's `of`.
+    """
+  valid: {
+    binds: [geo geo.location geo.home chosen]
+    subtypes: [{ name: geo.location  subtypes: [] }]
+  }
+}

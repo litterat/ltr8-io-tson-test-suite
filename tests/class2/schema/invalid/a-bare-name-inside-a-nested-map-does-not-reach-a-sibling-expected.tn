@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-bare-name-inside-a-nested-map-does-not-reach-a-sibling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1 (nested schema maps, proposed)"
+  description: """
+    Every name resolves from the document's root: there is no lexical scope, so inside `geo` a bare `address` names
+    the root's `address`, which this schema does not declare. The sibling is `geo.address`.
+    """
+  error: { category: resolver }
+}

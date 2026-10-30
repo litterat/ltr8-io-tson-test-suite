@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-geo.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A fixture declaring a schema map nested as the entry `geo`, for the vector that imports this and
+  link-geo-alt.tn together.
+  """
+!schema {
+  geo => !schema {
+    address => { street: text }
+  }
+}

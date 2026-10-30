@@ -1,0 +1,32 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-nested-schema-map-declares-its-members-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §8.1 (nested schema maps, proposed)"
+  description: """
+    A value of `schema` nested as an entry declares as the document's root does: its members are records, each named
+    by its path from the root. Every name resolves from the root, so a sibling inside `geo` is written `geo.address`,
+    and a root entry names a member the same way. Resolved output writes the nested map nested, its members in
+    resolved form.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        geo => !schema {
+          address => !record { fields: {
+            street => !record_field { type: text }
+            city   => !record_field { type: text }
+          } }
+
+          location => !record { fields: {
+            at => !record_field { type: geo.address }
+          } }
+        }
+
+        place => !record { fields: {
+          name  => !record_field { type: text }
+          where => !record_field { type: geo.location }
+        } }
+      }
+      """
+  }
+}

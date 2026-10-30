@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-nested-schema-map-declares-its-members.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  geo => !schema {
+    address  => { street: text  city: text }
+    location => { at: geo.address }
+  }
+  place => { name: text  where: geo.location }
+}

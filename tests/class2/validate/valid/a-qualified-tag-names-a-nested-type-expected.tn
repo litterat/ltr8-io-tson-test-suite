@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-qualified-tag-names-a-nested-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §7.4, [TSON-SCHEMA] §7.1 (qualified tags, proposed)"
+  description: """
+    A tag is a qualified name: `!geo.location` names the member `location` of the schema map `geo`, resolved from the
+    root as any name is, and the value validates against it in full.
+    """
+  valid: _
+}

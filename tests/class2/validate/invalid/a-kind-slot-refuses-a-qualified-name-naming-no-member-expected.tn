@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-kind-slot-refuses-a-qualified-name-naming-no-member-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2 (qualified names, proposed)"
+  description: "`geo.region` names no member of `geo`, so it names no type of the closure and is no member of the kind."
+  error: {
+    category: validation
+    path: "/t"
+  }
+}

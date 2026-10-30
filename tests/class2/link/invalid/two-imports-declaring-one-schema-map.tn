@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/two-imports-declaring-one-schema-map.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-geo.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-geo-alt.tn"
+!schema {
+  place => { at: geo.address }
+}

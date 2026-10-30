@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-bare-name-inside-a-nested-map-does-not-reach-a-sibling.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  geo => !schema {
+    address  => { street: text }
+    location => { at: address }
+  }
+}
