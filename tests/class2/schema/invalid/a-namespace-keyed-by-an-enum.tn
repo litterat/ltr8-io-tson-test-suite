@@ -3,5 +3,5 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !schema {
   verb     => !enum [GET POST]
-  verb_map => namespace & { key_type: = verb  value_type: = text }
+  verb_map => !namespace { key_type: verb  value_type: text }
 }

@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-data-document-names-a-type-its-imports-do-not-declare-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §7.1"
+  description: """
+    A data document refers into the namespace its imports bring and nowhere else, so a name at a kind-typed position
+    is judged a member of the kind over that closure, whatever the schema describes. `record_field.type` is typed
+    `type_kind`, and `int32` is core.tn's: meta.tn's closure, which this document imports, holds no `int32`, so it is
+    no member. A schema document is the other side: a name there resolves in the schema being read, its grammar
+    read and its membership judged when that schema links.
+    """
+  error: {
+    category: validation
+  }
+}

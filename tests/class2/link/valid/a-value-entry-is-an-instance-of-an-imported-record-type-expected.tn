@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-value-entry-is-an-instance-of-an-imported-record-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
+  description: """
+    An entry whose tag names an ordinary type is a value of it: `api_pick` is a record type an import declares, so
+    `chosen` is a record value read against it, and a value entry, no type. Its field `pick` is typed `ref<api>`, so
+    it names a value IS-A `api`: `myapi`, a value of the namespace type `api`, reached through the import. A
+    namespace type is a type like any other, so a reference to its values needs no exception.
+    """
+  valid: {
+    binds: [chosen myapi]
+  }
+}

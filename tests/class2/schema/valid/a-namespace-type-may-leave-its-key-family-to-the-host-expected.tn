@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-namespace-type-may-leave-its-key-family-to-the-host-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1"
+  description: """
+    `namespace` is a constructor, IS-A `product`, and a namespace type is an instance of it, as a map type is one
+    of `map`: it resolves to itself. `key_type` is optional, absent meaning the host of a value supplies the key
+    family, as the kernel's `field_map` is keyed by its record's `name_type`; stated, every key is read and judged
+    under it.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        hosted => !namespace { value_type: text }
+        keyed  => !namespace { key_type: identifier  value_type: text  ordered: true }
+      }
+      """
+  }
+}

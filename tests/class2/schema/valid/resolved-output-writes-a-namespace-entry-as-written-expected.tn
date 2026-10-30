@@ -3,7 +3,7 @@
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.1"
   description: """
-    An entry built with a namespace type resolves to itself: its tag names the constructor, and its payload is the
+    An entry holding a value of a namespace type resolves to itself: its tag names the type, and its payload is the
     map, keys in the order written and each value the record it was read as, a type's name at a kind-typed slot
     written as the name it was.
     """

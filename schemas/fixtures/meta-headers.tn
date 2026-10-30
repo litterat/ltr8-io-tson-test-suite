@@ -2,10 +2,10 @@
 !!import:"https://tson.io/2026/39/m/meta-kernel.tn"
 !!import:"https://tson.io/2026/39/m/meta.tn"
 @doc:"""
-  A meta layer declaring a namespace type. A namespace type pins the kernel's `namespace` by composition, and a
-  value of it is a map: `headers` maps header names, an identifier family admitting `-`, to text. It IS-A `top`.
+  A schema declaring a namespace type. A namespace type is an instance of the kernel's `namespace`, and a value of
+  it is a map: `headers` maps header names, an identifier family admitting `-`, to text.
   """
 !schema {
   header_name => !identifier_type { continue_add: "-" }
-  headers     => namespace & { key_type: = header_name  value_type: = text }
+  headers     => !namespace { key_type: header_name  value_type: text }
 }

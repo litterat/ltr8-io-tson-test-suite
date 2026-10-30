@@ -15,5 +15,5 @@
   service_call      => abstract {}
   typed_call        => service_call & { request?: kind<record>  response?: type_kind }
   service_resource  => { calls: {identifier => service_call} }
-  service_resources => namespace & { key_type: = identifier  value_type: = service_resource }
+  service_resources => !namespace { key_type: identifier  value_type: service_resource }
 }

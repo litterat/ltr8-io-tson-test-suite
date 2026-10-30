@@ -3,5 +3,5 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !schema {
   method     => { request?: kind<record> }
-  interfaces => namespace & { key_type: = identifier  value_type: = method  extends?: [type_name] }
+  interfaces => !namespace { key_type: identifier  value_type: method  extends: [method] }
 }

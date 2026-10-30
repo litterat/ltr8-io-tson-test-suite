@@ -1,12 +1,13 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-type-declaring-a-field-beside-its-facets-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §4.2"
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §7.2"
   description: """
-    A value of a namespace type is the map its `key_type` and `value_type` describe, and nothing else.
-    `interfaces` declares `extends` beside those facets, which no value of it can carry: a field there is
-    dead, so the meta layer declaring it fails to load. A construct with fields of its own is a record
-    holding them, held under a key of a namespace type.
+    A namespace type is an instance of the kernel's `namespace`, whose vocabulary is `key_type`, `value_type` and
+    `ordered`: a value of it is the map they describe, and nothing else. `interfaces` writes `extends` beside
+    them, a field `namespace` does not declare, so the construction is refused as any record closed under its
+    type refuses an unknown field. A construct with fields of its own is a record holding them, held under a key
+    of a namespace type.
     """
   error: {
     category: resolver

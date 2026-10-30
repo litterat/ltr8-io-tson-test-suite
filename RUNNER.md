@@ -173,17 +173,18 @@ which is data by design: it is there to be refused as an import.
 ## A fixture schema's own records
 
 A fixture schema may declare records of its own and namespace types holding them ([TSON-SCHEMA] §4.1): an
-entry built with a namespace type is a value, not a type, and in a language that binds an implementation reads each
-value of its map into a host class it supplies itself. A runner MUST supply one for every such record before it runs
-a vector whose schema applies a namespace type holding it; lacking one is not a ground for a skip (rule 5). The
-fixtures say which: a fixture under `schemas/fixtures/` whose namespace types a subject imports lists in its
-`@doc` the records those types hold, and the declaration is the whole of the shape — nothing else about the
-representation is normative.
+entry whose tag names one of them (`myapi => !api { … }`, `chosen => !api_pick { … }`) is a value, not a type, and in
+a language that binds an implementation may read it into a host class it supplies itself, or hold it as a value it
+has no class for; either way the vector's verdict is the same. A runner that binds MUST supply a class for every such
+record before it runs a vector whose schema holds a value of it, and lacking one is not a ground for a skip (rule 5).
+The fixtures say which: a fixture under `schemas/fixtures/` whose types a subject holds values of lists in its `@doc`
+the records involved, and the declaration is the whole of the shape — nothing else about the representation is
+normative.
 
 A `class2/schema/` vector's expected resolved output is read under the subject's own imports, and under the
 pre-loaded kernel alone when the subject has none. For a subject importing `meta.tn` or `core.tn` that is the
-ordinary reading; a fixture that declares constructors of its own imports `meta.tn` and adds them, and an instance
-of one of them is typed there and nowhere else.
+ordinary reading; a fixture that declares types of its own imports `meta.tn` and adds them, and a value of one of
+them is typed there and nowhere else.
 
 ## `proposed/`
 

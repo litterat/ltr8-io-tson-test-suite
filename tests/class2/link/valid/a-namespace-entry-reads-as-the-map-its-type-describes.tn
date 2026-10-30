@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/link/valid/a-namespace-entry-reads-as-the-map-its-constructor-describes.tn"
+!!id:"https://tson.io/test-suite/class2/link/valid/a-namespace-entry-reads-as-the-map-its-type-describes.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/meta-api.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/link-api-orders.tn"
 !schema {

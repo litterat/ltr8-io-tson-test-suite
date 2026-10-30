@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-namespace-type-may-leave-its-key-family-to-the-host.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  hosted => !namespace { value_type: text }
+  keyed  => !namespace { key_type: identifier  value_type: text  ordered: true }
+}

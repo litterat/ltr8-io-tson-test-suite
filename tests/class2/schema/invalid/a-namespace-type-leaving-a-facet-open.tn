@@ -2,5 +2,5 @@
 !!import:"https://tson.io/2026/39/m/meta-kernel.tn"
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !schema {
-  keyed => namespace & { key_type: = identifier }
+  keyed => !namespace { key_type: identifier }
 }

@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-value-entry-is-an-instance-of-an-imported-record-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-api-picks.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-api-orders.tn"
+!schema {
+  chosen => !api_pick { pick: myapi  note: "the orders API" }
+}

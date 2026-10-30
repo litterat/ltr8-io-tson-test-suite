@@ -4,7 +4,7 @@
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.6"
   description: """
     `response` is typed `type_kind`, which holds the names of types, and `myapi` is a value of the namespace type
-    `api`: a map of methods, built with a constructor that is no type constructor, so it is no member of the kind.
+    `api`: a map of methods, built by no constructor, so it is no member of the kind.
     """
   error: {
     category: resolver

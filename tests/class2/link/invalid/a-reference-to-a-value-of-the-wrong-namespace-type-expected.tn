@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-reference-to-a-value-of-the-wrong-namespace-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
+  description: """
+    `ref<api>` names a value IS-A `api`. `routes` is a value of the namespace type `router`, which is no `api`, so
+    the reference is refused when the schema links.
+    """
+  error: {
+    category: resolver
+  }
+}
