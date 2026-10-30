@@ -2,7 +2,7 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.2"
-  description: "An application at a kind-typed slot is judged through the entry it denotes: `\"set<text>\"` resolves to `names`, a set built with `set_type`, which is no member of `kind<uuid_type>`."
+  description: "An application at a kind-typed slot is judged through the entry it denotes: `set<text>` resolves to `names`, a set built with `set_type`, which is no member of `kind<uuid_type>`."
   error: {
     category: validation
     path: "/u"

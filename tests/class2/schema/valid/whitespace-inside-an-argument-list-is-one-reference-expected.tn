@@ -4,7 +4,7 @@
   spec: "[TSON-SCHEMA] §8.2, [TSON-SCHEMA] §12.1"
   description: """
     A reference is compared as its parsed form and never its text, so whitespace inside an argument list is
-    free: the quoted reference `"box< text >"` at an element type and `box<text>` at a type position are one
+    free: the reference `box< text, >` at an element type and `box<text>` at a type position are one
     application, and both close to the one entry its expansion is.
     """
   valid: {

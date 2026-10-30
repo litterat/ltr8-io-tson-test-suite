@@ -1,9 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/an-unbalanced-angle-bracket-is-no-reference-expected.tn"
-!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
-{
-  spec: "[TSON-SCHEMA] §12.1"
-  description: "A quoted token at a type slot is a reference only where it parses as one: `\"box<text\"` opens an argument list it never closes, so it is no reference, and the construction is refused."
-  error: {
-    category: resolver
-  }
-}

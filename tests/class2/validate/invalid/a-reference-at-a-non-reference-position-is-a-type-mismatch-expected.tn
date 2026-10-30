@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-reference-at-a-non-reference-position-is-a-type-mismatch-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §7.4"
+  description: "A reference with arguments is one value of the reference atom, rolled up at a position the atom types; at any other typed position it is a type mismatch. `n` is text, and `set<text>` is no token."
+  error: {
+    category: validation
+    path: "/n"
+  }
+}

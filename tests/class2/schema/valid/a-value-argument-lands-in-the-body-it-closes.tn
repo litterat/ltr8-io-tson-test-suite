@@ -3,6 +3,6 @@
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
   maxint => <N> !integer_type { max: N }
-  small  => !array { element_type: "maxint<10>" }
+  small  => !array { element_type: maxint<10> }
   also   => [maxint<10>]
 }

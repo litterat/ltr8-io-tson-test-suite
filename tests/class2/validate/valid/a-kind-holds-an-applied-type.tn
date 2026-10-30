@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-kind-holds-an-applied-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-kind-applications.tn"
+!holder { t: set<text> }

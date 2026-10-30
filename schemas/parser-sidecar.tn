@@ -35,6 +35,21 @@
     elements: [data_value]
   }
 
+  @doc:"""
+    A reference with arguments (§7.4): its qualified name, as one text, and each argument, a reference
+    of its own or a token. A qualified name without arguments is a token.
+    """
+  reference_core => {
+    name: text
+    arguments: [reference_argument]
+  }
+
+  @doc:"One argument of a reference: a nested reference with arguments, or a token."
+  reference_argument => {
+    ( reference: reference_core
+    | token: token_core )
+  }
+
   @doc:"One field of a record core-value."
   record_field_entry => {
     name: text
@@ -48,7 +63,7 @@
   }
 
   @doc:"""
-    One core-value (§2.3), as exactly one of the six kinds. A REQUIRED field group (§5.11), so a
+    One core-value (§2.3), as exactly one of the seven kinds. A REQUIRED field group (§5.11), so a
     token carries form and text and cannot carry `fields`, a record carries `fields` and nothing
     else, and so on -- the correlation the flat `kind` discriminator could state but not enforce.
 
@@ -60,6 +75,7 @@
     """
   core_value => {
     ( token: token_core
+    | reference: reference_core
     | record: record_core
     | map: map_core
     | array: array_core

@@ -1,0 +1,23 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-quoted-token-in-a-held-body-stays-text-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §7.4, [TSON-SCHEMA] §5.10"
+  description: """
+    A quoted token is never a reference, so a held body's text slot holding `"box<N>"` is text: closing
+    `tagged<3>` substitutes `N` where it stands as a name, in `max_length`, and leaves the pattern as
+    written. Only a reference written unquoted, `box<N>`, would name the parameter.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        tagged => !template {
+          parameters: [ !template_param { name: N  type: non_negative_integer } ]
+          template: "!text_type { max_length: N  pattern: \\"box<N>\\" }"
+        }
+
+        @application:tagged<3>
+        t3 => !text_type { max_length: 3  pattern: "box<N>" }
+      }
+      """
+  }
+}

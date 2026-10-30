@@ -1,11 +1,11 @@
-!!id:"https://tson.io/test-suite/class2/schema/valid/an-open-alias-target-is-a-quoted-reference-expected.tn"
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-open-alias-target-is-a-reference-as-written-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.1"
   description: """
     A partial application is an open alias, and its target is the reference as written: an application is
-    a reference with an argument list, and `<` being reserved in data, its canonical text is quoted, with no
-    whitespace and one space between arguments. `uuid_pair` holds `!alias { target: "pair<uuid B>" }`; the
+    a reference with an argument list, data grammar written unquoted in its canonical text, with no
+    whitespace and one space between arguments. `uuid_pair` holds `!alias { target: pair<uuid B> }`; the
     parameter `B` stands as its name, and `uuid` is the argument the alias already binds. Applied, the argument
     is substituted into the target's argument list and the alias composes: `up` names the expansion of
     `pair<uuid int32>`.
@@ -26,7 +26,7 @@
 
         uuid_pair => !template {
           parameters: [ !template_param { name: B  type: type_kind } ]
-          template: "!alias { target: \\\"pair<uuid B>\\\" }"
+          template: "!alias { target: pair<uuid B> }"
         }
 
         up => !alias { target: record_first_uuid_second_int32_xxhash }

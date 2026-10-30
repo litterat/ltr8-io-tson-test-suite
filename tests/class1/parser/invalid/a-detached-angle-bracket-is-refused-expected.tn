@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/a-detached-angle-bracket-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.4, §7.5"
+  description: "'<' opens a reference's argument list only adjacent to the qualified name it applies; `box <text>` is a token followed by a stray '<'."
+  error: { category: parser }
+}

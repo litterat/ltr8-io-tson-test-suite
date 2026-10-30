@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-quoted-token-in-a-held-body-stays-text.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  tagged => <N> !text_type { max_length: N  pattern: "box<N>" }
+  t3     => tagged<3>
+}
