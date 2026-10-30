@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-api-description-declares-its-endpoint-shapes-beside-its-operations.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-http.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-order.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  page        => <T> { items: [T]  next?: uri  total: int32 }
+  order_page  => page<order>
+  paged_get   => operation & { method?: = GET }
+  list_orders => !paged_get { path: "/orders"  responses: [ !response { status: 200  body: order_page } ] }
+  place_order => !operation { method: POST  path: "/orders"  request: order  responses: [ { status: 201  body: order } ] }
+  orders      => !api {
+    list  => { response: order_page }
+    place => !method { request: order  response: order }
+  }
+  post_order  => !binding { method: orders.place  verb: POST  route: "/orders" }
+  paged_ref   => ref<paged_get>
+  any_ref     => ref<operation>
+  catalog_of  => { gets: [paged_ref]  all: [any_ref] }
+  catalog     => !catalog_of { gets: [list_orders]  all: [list_orders place_order] }
+}

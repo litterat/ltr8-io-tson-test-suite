@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-http.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  An HTTP vocabulary written as an ordinary schema, standing in for the http project's http.tn: no meta layer, so a
+  schema importing it declares its own endpoint shapes beside its operations. An `operation` is a record whose
+  `request` names a record type (`kind<record>`) and whose responses each name a body type (`type_kind`); a `method`
+  holds its request, response, error and reply types by name the same way, `api` is a namespace type mapping
+  identifiers to methods, and a `binding` names the method it serves at a slot typed `ref<method>`. A subject holds
+  values of the records `operation`, `response`, `method` and `binding`.
+  """
+!schema {
+  http_verb     => !enum [GET POST PUT DELETE]
+  path_template => text
+  status_name   => identifier
+  response      => { status: int32  body?: type_kind }
+  operation     => { method: http_verb  path: path_template  request?: kind<record>  responses: [response] }
+  method        => { request?: kind<record>  response?: type_kind  errors?: [kind<record>]  replies?: {status_name => kind<record>} }
+  api           => !namespace { key_type: identifier  value_type: method }
+  binding       => { method: ref<method>  verb: http_verb  route: path_template }
+}

@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-paged-orders.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-http.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-order.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  An API description's own types for a data document to name: a page template closed over `order`, and
+  `paged_get`, an endpoint shape refining the imported record type `operation` with its method pinned, so a value of
+  it may omit `method`. It also holds one operation, `list_orders`, a value entry of `paged_get` and no type. A
+  subject holds values of the records `operation` and `response`.
+  """
+!schema {
+  page        => <T> { items: [T]  next?: uri  total: int32 }
+  order_page  => page<order>
+  paged_get   => operation & { method?: = GET }
+  list_orders => !paged_get { path: "/orders"  responses: [ { status: 200  body: order_page } ] }
+}

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-paged-get-operation-omits-its-pinned-method-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.7, [TSON-SCHEMA] §7.4"
+  description: """
+    `paged_get` is an API description's own endpoint shape, a refinement of the imported record type `operation`
+    pinning `method` to `GET` under a marked name, so an operation read against it in a data document may omit
+    the field. Its response's `body` is a `type_kind` slot, judged by membership over the document's closure:
+    `order_page`, an alias the description closes from its own template, is a type there. The http project relies
+    on a gateway reading operations against a description's endpoint shapes as ordinary data.
+    """
+  valid: _
+}

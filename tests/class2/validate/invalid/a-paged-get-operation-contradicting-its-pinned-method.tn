@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-paged-get-operation-contradicting-its-pinned-method.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-paged-orders.tn"
+!paged_get {
+  method:    POST
+  path:      "/orders"
+  responses: [ { status: 201  body: order } ]
+}
