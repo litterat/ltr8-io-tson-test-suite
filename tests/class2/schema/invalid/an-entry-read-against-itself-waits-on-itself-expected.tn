@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-entry-read-against-itself-waits-on-itself-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed)"
+  description: """
+    `step`'s declaration is read against `step`, so it waits on itself being ready: a wait cycle of one
+    entry, which no order resolves.
+    """
+  error: {
+    category: resolver
+  }
+}

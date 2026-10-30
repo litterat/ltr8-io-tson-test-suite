@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-value-of-a-record-type-declared-in-the-same-schema.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  origin => !line { from: { x: 0  y: 0 }  to: { x: 3  y: 4 } }
+  line   => { from: point  to: point }
+  point  => { x: int32  y: int32 }
+}

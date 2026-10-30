@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-type-annotated-with-itself-waits-on-itself-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §6"
+  description: """
+    An annotation written on a declaration's value is read against the annotation's type as the declaration
+    is read, so `note`, annotating its own value with `@note`, waits on itself being ready.
+    """
+  error: {
+    category: resolver
+  }
+}

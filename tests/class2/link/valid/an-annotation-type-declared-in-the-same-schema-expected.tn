@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-annotation-type-declared-in-the-same-schema-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §6"
+  description: """
+    An annotation's value is read against the type its name resolves to, here `status`, which the same
+    document declares after both uses: on a key and on a value alike, reading the annotation waits on its
+    type being ready.
+    """
+  valid: {
+    binds: [ticket label status]
+  }
+}
