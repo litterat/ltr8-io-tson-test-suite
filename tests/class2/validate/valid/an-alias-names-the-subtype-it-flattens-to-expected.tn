@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3"
-  description: "§7.2 compares after reference flattening of BOTH sides, so an alias of a subtype names that subtype at a position typed by its base. The value carries the subtype's own field, so a processor admitting the tag but reading the base's field set reports it as unrecognised instead."
+  description: "§7.2 compares after alias flattening of BOTH sides, so an alias of a subtype names that subtype at a position typed by its base. The value carries the subtype's own field, so a processor admitting the tag but reading the base's field set reports it as unrecognised instead."
   valid: _
 }
