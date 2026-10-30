@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-qualified-tag-builds-a-value-of-a-nested-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §8.1 (qualified names, proposed)"
+  description: """
+    A `!` head names a type by its path, as any type position does: `!geo.route { … }` is a value of the member
+    `route` of the schema map `geo` the import declares, an entry holding a value, and resolved output writes it
+    under the same qualified tag.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        home => !geo.route { verb: GET  path: "/" }
+      }
+      """
+  }
+}

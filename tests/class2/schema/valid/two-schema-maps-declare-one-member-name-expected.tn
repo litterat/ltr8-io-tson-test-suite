@@ -1,0 +1,27 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/two-schema-maps-declare-one-member-name-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §8.2 (nested schema maps, proposed)"
+  description: """
+    A nested map's member is identified by its path from the root, so two maps may each declare `address` without
+    colliding: `geo.address` and `geo2.address` are two entries, and a field names each by its path.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        geo => !schema {
+          address => !record { fields: { street => !record_field { type: text } } }
+        }
+
+        geo2 => !schema {
+          address => !record { fields: { lines => !record_field { type: array_text_xxhash } } }
+        }
+
+        both => !record { fields: {
+          a => !record_field { type: geo.address }
+          b => !record_field { type: geo2.address }
+        } }
+      }
+      """
+  }
+}

@@ -1,0 +1,35 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-qualified-name-names-a-supertype-a-refinement-source-and-a-subtraction-source-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.9 (qualified names, proposed)"
+  description: """
+    A qualified name stands wherever a type is named: an `&` operand, the source of an atom refinement, and the
+    source of a subtraction. Each resolves from the root to the member of `geo`, and the chain names it by its path.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        geo => !schema {
+          base => !record { chain: { subtypes: [derived] }  fields: {
+            id   => !record_field { type: text }
+            note => !record_field { type: text  optional: true }
+          } }
+
+          small => !integer_type { chain: { supertypes: [int32 integer]  subtypes: [narrower] }  size: { bits: 32  signed: true }  min: 0  max: 100 }
+        }
+
+        derived => !record { chain: { supertypes: [geo.base] }  fields: {
+          id   => !record_field { type: text }
+          note => !record_field { type: text  optional: true }
+          more => !record_field { type: text }
+        } }
+
+        narrower => !integer_type { chain: { supertypes: [geo.small int32 integer] }  size: { bits: 32  signed: true }  min: 0  max: 10 }
+
+        trimmed => !record { fields: {
+          id => !record_field { type: text }
+        } }
+      }
+      """
+  }
+}

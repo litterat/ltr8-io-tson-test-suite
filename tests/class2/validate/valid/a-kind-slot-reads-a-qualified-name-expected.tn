@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-kind-slot-reads-a-qualified-name-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2 (qualified names, proposed)"
+  description: """
+    A slot over a constructor holds a type's name, and a type's name is its path from the root: `geo.location`
+    names the member of the schema map `geo`, a record, so it is a member of `kind<record>`.
+    """
+  valid: _
+}

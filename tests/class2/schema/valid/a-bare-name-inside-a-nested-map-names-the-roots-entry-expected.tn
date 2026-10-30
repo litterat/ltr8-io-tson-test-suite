@@ -1,0 +1,21 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-bare-name-inside-a-nested-map-names-the-roots-entry-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1 (nested schema maps, proposed)"
+  description: """
+    A name's first segment resolves in the document's root namespace, wherever it is written: there is no lexical
+    scope. Inside `geo`, a bare `address` is the root's `address`, and `geo.address` is the member.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        address => !record { fields: { line => !record_field { type: text } } }
+
+        geo => !schema {
+          address  => !record { fields: { street => !record_field { type: text } } }
+          location => !record { fields: { at => !record_field { type: address } } }
+        }
+      }
+      """
+  }
+}

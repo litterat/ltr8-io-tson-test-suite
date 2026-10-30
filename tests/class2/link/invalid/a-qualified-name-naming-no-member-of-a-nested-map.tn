@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-qualified-name-naming-no-member-of-a-nested-map.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  geo => !schema {
+    location => { at: text }
+    home     => !geo.location { at: here }
+  }
+  locations => ref<geo.location>
+  spot_pick => { l: locations }
+  chosen    => !spot_pick { l: geo.away }
+}

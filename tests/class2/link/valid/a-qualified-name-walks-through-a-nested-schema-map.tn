@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-qualified-name-walks-through-a-nested-schema-map.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  geo => !schema {
+    location => { at: text }
+    home     => !geo.location { at: here }
+  }
+  locations => ref<geo.location>
+  texts     => ref<text>
+  spot_pick => { l: locations  t: texts }
+  chosen    => !spot_pick { l: geo.home  t: geo.home.at }
+}

@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-kind-slot-refuses-a-qualified-name-naming-no-member.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-geo.tn"
+!type_pick { t: geo.region }

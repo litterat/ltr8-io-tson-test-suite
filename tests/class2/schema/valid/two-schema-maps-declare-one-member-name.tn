@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/two-schema-maps-declare-one-member-name.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  geo  => !schema { address => { street: text } }
+  geo2 => !schema { address => { lines: [text] } }
+  both => { a: geo.address  b: geo2.address }
+}

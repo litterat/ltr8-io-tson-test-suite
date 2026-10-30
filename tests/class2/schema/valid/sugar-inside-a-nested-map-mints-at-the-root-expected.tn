@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/sugar-inside-a-nested-map-mints-at-the-root-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.2 (nested schema maps, proposed)"
+  description: """
+    A sugar form written inside a nested map lifts to an entry minted at the root, one per form across the whole
+    document (§8.2): `[uuid]` in `geo.tagged` and in `other` is one synthetic, keyed at the root and named bare.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        geo => !schema {
+          tagged => !record { fields: { ids => !record_field { type: array_uuid_xxhash } } }
+        }
+
+        other => !record { fields: { ids => !record_field { type: array_uuid_xxhash } } }
+
+        @synthetic array_uuid_xxhash => !array { element_type: uuid }
+      }
+      """
+  }
+}

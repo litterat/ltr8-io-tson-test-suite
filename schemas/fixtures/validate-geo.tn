@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-geo.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"A fixture declaring records in a schema map nested as the entry `geo`, for the qualified-name vectors."
+!schema {
+  geo => !schema {
+    address  => { street: text }
+    location => { at: geo.address  label?: text }
+  }
+  type_pick => { t: kind<record> }
+}

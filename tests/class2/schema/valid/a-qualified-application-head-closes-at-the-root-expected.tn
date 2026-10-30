@@ -1,0 +1,35 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-qualified-application-head-closes-at-the-root-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (qualified names, proposed)"
+  description: """
+    An application's head and a reference's `of` are qualified names like any other: `geo.box<text>` closes the
+    template `box` of `geo`, and `kind<geo.base>` is `!reference { of: geo.base }`. A closed application is minted at
+    the root, as every synthetic is, whatever map its head is a member of; `@application` states the head by its path.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        geo => !schema {
+          box => !record {
+            chain: { subtypes: [boxed] }
+            parameters: [ !template_param { name: T  type: type_kind } ]
+            fields: { item => !record_field { type: T } }
+          }
+
+          base => !record { fields: { id => !record_field { type: text } } }
+        }
+
+        @application:geo.box<text>
+        boxed => !record { chain: { supertypes: [geo.box] }  fields: { item => !record_field { type: text } } }
+
+        held => !record { fields: { b => !record_field { type: record_item_int32_xxhash } } }
+
+        @application:kind<geo.base>
+        bases => !reference { of: geo.base }
+
+        @synthetic record_item_int32_xxhash => !record { fields: { item => !record_field { type: int32 } } }
+      }
+      """
+  }
+}

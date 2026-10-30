@@ -1,0 +1,32 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/a-qualified-tag-is-kept-as-written-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.4, §4 (qualified tags, proposed)"
+  description: "A tag is a qualified name, segments joined by `.`, each an identifier. A schemaless read resolves nothing and keeps the tag as written, `geo.address`."
+  valid: {
+    document: {
+      id: _
+      imports: []
+      root: {
+        annotations: []
+        type-ref: "geo.address"
+        core: {
+          record: {
+            fields: [
+              {
+                name: "street"
+                value: {
+                  annotations: []
+                  type-ref: _
+                  core: {
+                    token: { form: unquoted  text: "Main" }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

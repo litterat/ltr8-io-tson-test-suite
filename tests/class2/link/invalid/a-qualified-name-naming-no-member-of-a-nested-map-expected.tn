@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-qualified-name-naming-no-member-of-a-nested-map-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.12 (qualified names, proposed)"
+  description: "`geo.away` enters the schema map `geo` and finds no member `away`, so the name reaches no value."
+  error: { category: resolver }
+}

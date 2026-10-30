@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/two-imports-declaring-one-schema-map-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (nested schema maps, proposed)"
+  description: """
+    A schema map nested as an entry is declared in one document, as any entry is: two imports each declaring `geo`
+    collide on `geo` under §2.2.3, though the members they declare differ. Nothing merges two maps of one name.
+    """
+  error: { category: resolver }
+}

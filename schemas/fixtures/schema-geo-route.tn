@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/schema-geo-route.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"A fixture declaring a record in a schema map nested as the entry `geo`, which a value entry's qualified tag names."
+!schema {
+  geo => !schema {
+    route => { verb: text  path: text }
+  }
+}
