@@ -1,6 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-direct-application-of-namespace-is-refused.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
-!schema {
-  x => !namespace {}
-}

@@ -24,13 +24,13 @@
   rpc_method     => method & { idempotent?: boolean }
   http_verb      => !enum [GET POST]
   verb_name      => !identifier_type { members: [GET POST] }
-  interface      => namespace & { key_type: = method_name  value_type: = method }
-  rpc_interface  => namespace & { key_type: = method_name  value_type: = rpc_method }
-  verb_interface => namespace & { key_type: = verb_name  value_type: = method }
+  interface      => !namespace { key_type: method_name  value_type: method }
+  rpc_interface  => !namespace { key_type: method_name  value_type: rpc_method }
+  verb_interface => !namespace { key_type: verb_name  value_type: method }
   header_set     => { headers: {text => method} }
-  header_sets    => namespace & { key_type: = identifier  value_type: = header_set }
+  header_sets    => !namespace { key_type: identifier  value_type: header_set }
   service        => { extends?: [identifier]  methods: interface }
-  services       => namespace & { key_type: = identifier  value_type: = service }
+  services       => !namespace { key_type: identifier  value_type: service }
   binding        => { method: ref<method>  verb: http_verb  route: text }
-  bindings       => namespace & { key_type: = identifier  value_type: = binding }
+  bindings       => !namespace { key_type: identifier  value_type: binding }
 }

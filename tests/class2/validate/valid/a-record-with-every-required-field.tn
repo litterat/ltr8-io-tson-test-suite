@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-record-with-every-required-field.tn"
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !record_field {
-  type: int32
+  type: integer
 }

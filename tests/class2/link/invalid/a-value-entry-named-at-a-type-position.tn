@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-value-entry-named-at-a-type-position.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-api-picks.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-api-orders.tn"
+!schema {
+  chosen => !api_pick { pick: myapi }
+  holder => { x: chosen }
+}

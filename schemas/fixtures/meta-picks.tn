@@ -12,9 +12,9 @@
   """
 !schema {
   order  => { id: text }
-  orders => namespace & { key_type: = identifier  value_type: = order }
+  orders => !namespace { key_type: identifier  value_type: order }
   rpick  => { m: ref<order> }
-  rpicks => namespace & { key_type: = identifier  value_type: = rpick }
+  rpicks => !namespace { key_type: identifier  value_type: rpick }
   pick   => { t: kind<record> }
-  picks  => namespace & { key_type: = identifier  value_type: = pick }
+  picks  => !namespace { key_type: identifier  value_type: pick }
 }

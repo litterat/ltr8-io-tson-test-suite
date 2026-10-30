@@ -13,8 +13,8 @@
 !schema {
   status_name => identifier
   method      => { request?: kind<record>  response?: type_kind  errors?: [kind<record>]  replies?: {status_name => kind<record>} }
-  api         => namespace & { key_type: = identifier  value_type: = method }
+  api         => !namespace { key_type: identifier  value_type: method }
   http_verb   => !enum [GET POST]
   route       => { verb: http_verb  path: text  handler: ref<method> }
-  router      => namespace & { key_type: = identifier  value_type: = route }
+  router      => !namespace { key_type: identifier  value_type: route }
 }

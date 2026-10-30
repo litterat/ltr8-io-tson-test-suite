@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-api-picks.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-api.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A fixture schema importing meta-api.tn: an ordinary record type, `api_pick`, whose one field names a value of the
+  namespace type `api` by reference. A schema importing this one holds a value of `api_pick` as an entry, `chosen =>
+  !api_pick { ... }`: an instance of an ordinary type, and so a value entry and no type.
+  """
+!schema {
+  api_pick => { pick: ref<api>  note?: text }
+}
