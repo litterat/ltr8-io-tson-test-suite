@@ -1,9 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-kind-of-alias-is-refused-expected.tn"
-!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
-{
-  spec: "[TSON-SCHEMA] §4.2"
-  description: "A kind's `of` names a constructor that is `type` or below it. `alias` is a kernel constructor beside `type`, not below it: no value has a type built with it, so `kind<alias>` would name no type a value can have, and is a resolver error at the declaration rather than an empty kind."
-  error: {
-    category: resolver
-  }
-}

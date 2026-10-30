@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-kind-of-a-record-type-names-its-values.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  bar      => { n: text }
+  b1       => !bar { n: one }
+  bars     => kind<bar>
+  bar_pick => { b: bars }
+  bp       => !bar_pick { b: b1 }
+}

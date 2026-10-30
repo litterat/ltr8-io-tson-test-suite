@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-constructor-typed.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A field typed by a constructor. A constructor whose declaration is a record, `uuid_type => atom & { ... }`,
+  is a record type whose instances are declarations, so `spec` holds one as data: a record of `uuid_type`'s
+  fields, read and judged as any record is.
+  """
+!schema {
+  holder => { spec: uuid_type }
+}

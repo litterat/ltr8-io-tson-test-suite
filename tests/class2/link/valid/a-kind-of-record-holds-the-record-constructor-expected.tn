@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-kind-of-record-holds-the-record-constructor-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §4.2 (one reference, proposed)"
+  description: """
+    `request` is typed `kind<record>`: the names of the entries whose value is of `record`. `record`'s own
+    declaration is a record, `record => product & { ... }`, so its value is of `record` and the name is a member.
+    A constructor is a record type whose instances are declarations, and nothing in the predicate sets it apart.
+    """
+  valid: {
+    binds: [api]
+  }
+}

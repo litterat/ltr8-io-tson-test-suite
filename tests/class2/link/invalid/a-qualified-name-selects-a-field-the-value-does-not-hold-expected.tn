@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-qualified-name-selects-a-field-the-value-does-not-hold-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.12"
+  description: """
+    `station` declares `backup`, so the segment selects a field its type fixes, but `st` holds no value there:
+    a record is a namespace whose keys its type fixes, and a key with no value reaches nothing to name.
+    """
+  error: {
+    category: resolver
+  }
+}

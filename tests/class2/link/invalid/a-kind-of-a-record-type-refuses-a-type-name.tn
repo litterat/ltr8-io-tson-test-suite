@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-kind-of-a-record-type-refuses-a-type-name.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  bar      => { n: text }
+  bars     => kind<bar>
+  bar_pick => { b: bars }
+  bp       => !bar_pick { b: bar }
+}

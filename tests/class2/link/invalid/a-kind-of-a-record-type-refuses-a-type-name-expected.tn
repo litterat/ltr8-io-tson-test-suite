@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-kind-of-a-record-type-refuses-a-type-name-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
+  description: """
+    `kind<bar>` admits the names of entries whose value is of `bar`. `bar` itself is a type, whose value is of
+    `record`, which is no `bar`, so the name is refused when the schema links.
+    """
+  error: {
+    category: resolver
+  }
+}

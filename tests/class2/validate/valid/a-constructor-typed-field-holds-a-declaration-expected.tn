@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-constructor-typed-field-holds-a-declaration-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §4.2 (one reference, proposed)"
+  description: "`spec` is typed by the constructor `uuid_type`, whose value is a record, so `spec` holds a value of that record: a declaration's body, `{ version: 4 }`, read as data."
+  valid: _
+}

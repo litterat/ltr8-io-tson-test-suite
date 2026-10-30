@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-constructor-typed-field-refuses-a-field-it-does-not-declare-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §7.2"
+  description: "A declaration read as data is a record of its constructor's fields, closed under its type: `uuid_type` declares no `nope`."
+  error: {
+    category: validation
+  }
+}

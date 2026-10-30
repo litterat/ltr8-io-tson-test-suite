@@ -1,9 +1,9 @@
-!!id:"https://tson.io/test-suite/class2/schema/valid/a-kind-applied-inline-indexes-its-members.tn"
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-kind-applied-inline-is-a-reference.tn"
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
   stock_id => !uuid_type {}
   words    => !identifier_type { continue_add: "-"  medial: " " }
   ids      => kind<uuid_type>
-  names    => !kind_type { of: identifier_type }
+  names    => !reference { of: identifier_type }
 }
