@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-element-outside-a-same-document-instance-element-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §5.5"
+  description: """
+    `tags` is a `counted` of `tag`, text of at most eight code points, which the schema also declares after
+    the instance; an element longer than that is no value of it.
+    """
+  error: {
+    category: validation
+  }
+}

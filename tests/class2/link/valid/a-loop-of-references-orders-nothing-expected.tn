@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-loop-of-references-orders-nothing-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §8.3"
+  description: """
+    A field's type is a name, read by its grammar alone and judged once every entry is ready: it orders
+    nothing. So a record typed through itself, and two records typed through each other, wait on nothing
+    of each other and are no cycle, as a declaration read against one another would be.
+    """
+  valid: {
+    binds: [tree even odd]
+  }
+}

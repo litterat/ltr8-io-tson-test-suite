@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-annotation-type-declared-in-the-same-schema.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  @status:"draft" ticket => { id: int32 }
+  label  => @status:"stable" text
+  status => @annotation text
+}

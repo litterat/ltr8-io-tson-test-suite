@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-same-document-constructor.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A constructor and its instances in one document, each instance written before the constructor it
+  applies: `counted`, an array constructor whose instances are unordered, and `counts` and `tags`
+  built by it. Reading an instance waits on its constructor being ready ([TSON-SCHEMA] §3.4.1's wait
+  order), so the schema loads, and data is read against an instance as against any type.
+  """
+!schema {
+  counts  => !counted { element_type: int32  max_items: 3 }
+  tags    => !counted { element_type: tag }
+  tag     => @kind_note:"a short name" !text ^ { max_length: 8 }
+  counted => array ^ { ordered?: = false }
+  kind_note => @annotation text
+}

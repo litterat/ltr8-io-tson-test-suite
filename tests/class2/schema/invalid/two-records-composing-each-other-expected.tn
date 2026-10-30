@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/two-records-composing-each-other-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §5.8"
+  description: """
+    A declaration waits on each `&` operand being ready, since it starts from their declarations: `a`
+    waits on `b` and `b` on `a`. The wait cycle is the same rule as one through a constructor's head.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-value-of-a-record-type-declared-in-the-same-schema-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §4.1"
+  description: """
+    `origin` is a value of `line`, an ordinary record type the same document declares: its payload is read
+    against `line`, and its fields against `point`, so `origin` waits on both being ready, whichever is
+    written first. It holds no type of its own, and no class is needed to hold it.
+    """
+  valid: {
+    binds: [origin line point]
+  }
+}

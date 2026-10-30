@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/data-read-against-a-same-document-constructors-instance-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §5.5"
+  description: """
+    `counts` is an instance of `counted`, a constructor its schema declares after it; the schema loads, and
+    three integers are a value of `counts`.
+    """
+  valid: _
+}

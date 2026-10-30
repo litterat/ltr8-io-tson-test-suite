@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/data-outside-a-same-document-constructors-instance-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §5.5"
+  description: """
+    `counts` caps its elements at three, a facet of the instance a same-document constructor built: four
+    is no value of it.
+    """
+  error: {
+    category: validation
+  }
+}

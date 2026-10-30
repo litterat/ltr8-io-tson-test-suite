@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/two-entries-read-against-each-other-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed)"
+  description: """
+    Each entry's declaration is read against the other: `c1` waits on `c2` being ready and `c2` on `c1`,
+    a wait cycle neither can leave.
+    """
+  error: {
+    category: resolver
+  }
+}
