@@ -3,5 +3,5 @@
 !!import:"https://tson.io/test-suite/schemas/fixtures/link-orders-interface.tn"
 !schema {
   box => <T> { v: T }
-  api => !interface { m => { request: "box<order>" } }
+  api => !interface { m => { request: box<order> } }
 }

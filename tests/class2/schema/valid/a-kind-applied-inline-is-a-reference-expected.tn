@@ -14,7 +14,7 @@
 
         words => !identifier_type { continue_add: "-"  medial: " " }
 
-        @application:"kind<uuid_type>"
+        @application:kind<uuid_type>
         ids => !reference { of: uuid_type }
 
         names => !reference { of: identifier_type }

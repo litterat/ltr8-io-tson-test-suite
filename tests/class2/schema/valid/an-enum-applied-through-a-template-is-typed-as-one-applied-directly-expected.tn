@@ -15,7 +15,7 @@
           template: "!enum [a b M]"
         }
 
-        @application:"names<c>"
+        @application:names<c>
         named => !enum { members: [a b c] }
       }
       """

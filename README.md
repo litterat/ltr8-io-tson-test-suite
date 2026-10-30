@@ -192,7 +192,7 @@ schema importing the bundled meta.tn/core.tn chain, and each layer's sidecars im
 one of `valid`/`error`/`schema-document` is present and the member label *is* the outcome — there is
 no separate `outcome` field that could disagree with the payload beside it. `valid` cannot omit what
 it exists to carry, and `error` cannot carry it. The parser layer's `core_value` is a group over the
-six core-value kinds for the same reason: a token carries `form` and `text` and cannot carry a
+seven core-value kinds for the same reason: a token carries `form` and `text` and cannot carry a
 record's `fields`.
 
 **Validation runs in the implementations, not here.** Each runner reads every sidecar against its

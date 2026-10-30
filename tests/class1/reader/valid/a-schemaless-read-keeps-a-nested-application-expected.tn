@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/class1/reader/valid/a-schemaless-read-keeps-a-nested-application-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+{
+  spec: "§4, §7.4"
+  description: "A schemaless read keeps a reference with arguments as the structured value it is, resolving nothing: its name's segments and each argument, read as a schemaless read reads a token (`text` a string, `201` a number), a nested application another reference."
+  valid: {
+    value: {
+      record: {
+        fields: [
+          {
+            name: t
+            value: {
+              reference: {
+                segments: [pair]
+                arguments: [
+                  { reference: { segments: [box]  arguments: [ { atom: { string: text } } ] } }
+                  { atom: { number: "201" } }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

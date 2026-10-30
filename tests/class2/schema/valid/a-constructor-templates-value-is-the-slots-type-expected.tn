@@ -11,7 +11,7 @@
           template: "!array { element_type: text  min_items: N }"
         }
 
-        @application:"vec<0>"
+        @application:vec<0>
         v0 => !array { element_type: text  min_items: 0 }
       }
       """

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-quoted-application-is-text-not-a-reference.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  box => <T> { v: T }
+  bad => !array { element_type: "box<text>" }
+}

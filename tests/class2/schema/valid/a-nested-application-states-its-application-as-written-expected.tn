@@ -1,0 +1,46 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-nested-application-states-its-application-as-written-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.2"
+  description: """
+    A nested application closes innermost first: `box<text>` is the entry `inner` declares, and `pair` is
+    applied to it. The entry's `@application` states the reference as written, its nested argument
+    unreduced, `pair<box<text> int32>`, and each level resolves structurally to the entry it closed to:
+    `box<text>` to `inner`, whose own `@application` is `box<text>`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        box => !record {
+          chain: { subtypes: [inner] }
+          parameters: [ !template_param { name: T  type: type_kind } ]
+          fields: { v => !record_field { type: T } }
+        }
+
+        pair => !record {
+          chain: { subtypes: [outer] }
+          parameters: [
+            !template_param { name: A  type: type_kind }
+            !template_param { name: B  type: type_kind }
+          ]
+          fields: {
+            a => !record_field { type: A }
+            b => !record_field { type: B }
+          }
+        }
+
+        @application:box<text>
+        inner => !record { chain: { supertypes: [box] }  fields: { v => !record_field { type: text } } }
+
+        @application:pair<box<text> int32>
+        outer => !record {
+          chain: { supertypes: [pair] }
+          fields: {
+            a => !record_field { type: inner }
+            b => !record_field { type: int32 }
+          }
+        }
+      }
+      """
+  }
+}

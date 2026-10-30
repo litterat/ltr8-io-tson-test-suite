@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-nested-application-resolves-level-by-level-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.2"
+  description: "A nested application in data resolves bottom-up by structural identity against the applications the schema closed: `box<text>` to the entry `boxed`, then `pair<boxed int32>` to `paired`, a type and so a member of `type_kind`. Whitespace and a comma inside the argument list are free."
+  valid: _
+}

@@ -3,6 +3,6 @@
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
   box     => <T> { v: T }
-  spelled => !array { element_type: "box< text >" }
+  spelled => !array { element_type: box< text, > }
   written => [box<text>]
 }

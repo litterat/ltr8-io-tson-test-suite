@@ -45,6 +45,16 @@
     any other unquoted token that matched neither the boolean nor the number rule, and absence is
     not a base type at all: `_` is lexical, and reaches a tree through `absent` below.
     """
+  @doc:"""
+    A reference with arguments a schemaless read keeps as the structured value it is (§4, §7.4): its
+    qualified name's segments, and each argument read as a schemaless read reads it, a nested
+    reference with arguments being another reference.
+    """
+  reader_reference => {
+    segments: [text]
+    arguments: [reader_value]
+  }
+
   reader_atom => {
     ( boolean: boolean
     | string: text
@@ -58,6 +68,7 @@
     """
   reader_value => {
     ( record: reader_record
+    | reference: reader_reference
     | map: reader_map
     | array: reader_array
     | atom: reader_atom

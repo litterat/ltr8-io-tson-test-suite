@@ -5,7 +5,7 @@
   description: """
     An argument is typed where it lands: in `maxint<10>` the token `10` binds `N`, whose type is the slot it
     stands in, `integer_type.max`, and closing substitutes it there and reads the body as the constructor's
-    instance. Written quoted at an element type or at a type position, the application is one and closes to
+    instance. Written at an element type or at a type position, the application is one and closes to
     one synthetic `!integer_type { max: 10 }`.
     """
   valid: {

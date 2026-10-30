@@ -1,0 +1,55 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/a-reference-is-one-core-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.4, §7.5"
+  description: "A qualified name with an adjacent argument list is one core-value, a reference, its arguments nested to any depth: a qualified name is a reference, any other token a value argument. Whitespace and a comma inside the list are free, and a qualified head, `geo.address`, parses."
+  valid: {
+    document: {
+      id: _
+      imports: []
+      root: {
+        annotations: []
+        type-ref: _
+        core: {
+          record: {
+            fields: [
+              {
+                name: t
+                value: {
+                  annotations: []
+                  type-ref: _
+                  core: {
+                    reference: {
+                      name: map
+                      arguments: [
+                        { token: { form: unquoted  text: text } }
+                        { reference: { name: list  arguments: [ { token: { form: unquoted  text: int32 } } ] } }
+                      ]
+                    }
+                  }
+                }
+              }
+              {
+                name: q
+                value: {
+                  annotations: []
+                  type-ref: _
+                  core: {
+                    reference: {
+                      name: geo.address
+                      arguments: [
+                        { token: { form: unquoted  text: T } }
+                        { token: { form: unquoted  text: "201" } }
+                        { token: { form: single-line  text: "a b" } }
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
