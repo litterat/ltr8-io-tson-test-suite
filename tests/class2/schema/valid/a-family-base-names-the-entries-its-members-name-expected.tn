@@ -25,7 +25,7 @@
           parameters: [ !template_param { name: N  type: integer_type_9_xxhash } ]
         }
 
-        @application:{ name: pet  arguments: [{ value: 3 }] }
+        @application:"pet<3>"
         cat => !record {
           chain: { supertypes: [pet] }
           fields: {

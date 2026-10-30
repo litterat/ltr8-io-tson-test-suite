@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/whitespace-inside-an-argument-list-is-one-reference-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §8.2, [TSON-SCHEMA] §12.1"
+  description: """
+    A reference is compared as its parsed form and never its text, so whitespace inside an argument list is
+    free: the quoted reference `"box< text >"` at an element type and `box<text>` at a type position are one
+    application, and both close to the one entry its expansion is.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        box => !record {
+          parameters: [ !template_param { name: T  type: type_kind } ]
+          fields: { v => !record_field { type: T } }
+        }
+
+        spelled => !array { element_type: record_v_text_xxhash }
+
+        written => !array { element_type: record_v_text_xxhash }
+
+        @synthetic record_v_text_xxhash => !record { fields: { v => !record_field { type: text } } }
+      }
+      """
+  }
+}

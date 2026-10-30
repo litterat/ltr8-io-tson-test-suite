@@ -2,7 +2,7 @@
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
-  description: "In one method, response is typed type_ref, whose one field is an atom, so its bare token uuid is a type reference and a uuid is admitted; request is typed by the record constructor, so its bare token is a value by name and must name a record."
+  description: "In one method, response is typed type_kind, a reference over a constructor, so its bare token uuid is a type's name and a uuid is admitted; request is typed by the record constructor, so its bare token is a value by name and must name a record."
   valid: {
     binds: [api place_order_request]
   }

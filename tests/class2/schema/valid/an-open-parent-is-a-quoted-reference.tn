@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-open-parent-is-a-quoted-reference.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  result => abstract <T> { value?: T }
+  ok     => <T> result<T> & { done: boolean }
+}

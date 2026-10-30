@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-application-at-a-kind-typed-slot-of-a-value-body-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §8.2"
+  description: "A kind-typed slot of a value body holds a type's name, one bare token. An application is a reference too, written quoted in data, but nothing lifts or mints in a value body, so \"box<order>\" would have no entry to be the name of; it is refused, and the alias spelling (order_box => box<order>, then request: order_box) gives it one."
+  error: {
+    category: resolver
+  }
+}
