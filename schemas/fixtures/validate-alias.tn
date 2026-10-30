@@ -3,10 +3,10 @@
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   A type annotation written as an alias. [TSON-SCHEMA] §7.2 compares a value's annotation against the
-  position's type "after reference flattening of both", so an alias and its target are one type at either
+  position's type "after alias flattening of both", so an alias and its target are one type at either
   end of that comparison — at the position's own type and at each of its subtypes alike.
 
-  `s_of` is the ordinary case: a REFERENCE entry naming a subtype, written where the subtype's own name
+  `s_of` is the ordinary case: an ALIAS entry naming a subtype, written where the subtype's own name
   would be. An implementation that flattens only the position's side refuses it.
 
   `ok_of` is the case that cannot be written any other way. `ok<text>` closes to an entry the resolver

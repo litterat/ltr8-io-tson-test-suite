@@ -16,7 +16,7 @@
 
         non_empty_text => !text_type { chain: { supertypes: [text] }  min_length: 1 }
 
-        documentation => @annotation !reference { target: text }
+        documentation => @annotation !alias { target: text }
       }
       """
   }
