@@ -1,0 +1,24 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-kind-applied-inline-is-a-reference-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.1"
+  description: """
+    `kind<uuid_type>` is the kernel's spelling of `!reference { of: uuid_type }`, and a declaration whose body
+    is the application is the entry, closed in place under its author's name. The resolved form of either
+    spelling is `of` alone: what each admits is judged when the schema links.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        stock_id => !uuid_type {}
+
+        words => !identifier_type { continue_add: "-"  medial: " " }
+
+        @application:{ name: kind  arguments: [{ value: uuid_type }] }
+        ids => !reference { of: uuid_type }
+
+        names => !reference { of: identifier_type }
+      }
+      """
+  }
+}

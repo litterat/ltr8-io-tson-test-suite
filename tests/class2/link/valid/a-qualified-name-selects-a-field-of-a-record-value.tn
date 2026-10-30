@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-qualified-name-selects-a-field-of-a-record-value.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  endpoint  => { path: text }
+  station   => { main: endpoint  backup?: endpoint }
+  st        => !station { main: { path: "/a" } }
+  endpoints => ref<endpoint>
+  ep_pick   => { e: endpoints }
+  ep        => !ep_pick { e: st.main }
+}

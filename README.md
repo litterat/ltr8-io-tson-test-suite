@@ -121,7 +121,7 @@ answered.
 
 **`link/` states individual facts** about the linked namespace rather than a whole document: what
 §2.2.3's import closure binds, what §5.4 derives for a choice, what §8.2's `subtypes` index holds,
-which names a kind's derived `members` index lists.
+which type names a reference over a constructor admits, derived at link and never written.
 Linking derives a handful of things and merges a namespace, and a vector exercising one of them should
 not have to write out every entry of core.tn to say so.
 

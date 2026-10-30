@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-kind-of-a-namespace-type-names-its-values-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
+  description: """
+    A slot over `T` holds a name exactly when the type of the named entry's value IS-A `T`, and the spelling
+    makes no difference. `api` is a namespace type and no constructor, so the values it admits are values:
+    `kind<api>` is the same reference as `ref<api>`, and `myops`, whose value is of `api`, is a name it holds.
+    """
+  valid: {
+    binds: [apis api_slot api_held]
+  }
+}

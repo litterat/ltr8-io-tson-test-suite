@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-kind-of-alias-is-refused.tn"
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-kind-of-alias-admits-nothing.tn"
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {

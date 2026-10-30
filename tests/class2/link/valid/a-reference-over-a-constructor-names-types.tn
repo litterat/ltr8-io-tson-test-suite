@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-reference-over-a-constructor-names-types.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  widget  => { id: text }
+  records => ref<record>
+  holder  => { r: records }
+  held    => !holder { r: widget }
+}

@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-kind-of-alias-admits-nothing-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2"
+  description: "A reference's `of` may name any type or constructor, and admits the names of entries whose value, past their alias hops, is of it. Past its hops no entry's value is an alias, so `kind<alias>` admits nothing, and a required field typed by it can hold no value: §5.10.1's productivity rule refuses `order`."
+  error: {
+    category: resolver
+  }
+}

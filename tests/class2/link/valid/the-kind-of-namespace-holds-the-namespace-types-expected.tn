@@ -3,10 +3,10 @@
 {
   spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §4.2"
   description: """
-    A kind's members are the entries built with its constructor, by construction. A namespace type is an instance
-    of `namespace`, so the meta layer's `api` and `router` and the kernel's `schema` and `field_map` are members of
-    `kind<namespace>`. `namespace` itself is a constructor, whose instances are types, and is no member. `myapi`
-    and `routes` are values of `api` and `router`, built by no constructor, so no kind holds them.
+    A reference over a constructor holds the entries whose value is of it. A namespace type is an instance of
+    `namespace`, so the meta layer's `api` and `router` and the kernel's `schema` and `field_map` are members of
+    `kind<namespace>`. `namespace` itself is declared as a record, its value of `record`, and is no member.
+    `myapi` and `routes` are values of `api` and `router`, which are no constructors, so they are no members.
     """
   valid: {
     members: [

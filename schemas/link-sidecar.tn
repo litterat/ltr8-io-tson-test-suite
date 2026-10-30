@@ -32,8 +32,8 @@
   }
 
   @doc:"""
-    A kind and the names its derived `members` index must list, in any order: every entry of the
-    linked closure built with the kind's constructor. The index is computed over the closure of the
+    A reference over a constructor (a kind) and the names it must admit, in any order: every entry of
+    the linked closure whose value is of its `of`. The set is computed over the closure of the
     schema being linked, so a kind an import declares is stated here with the members this schema's
     closure gives it.
     """

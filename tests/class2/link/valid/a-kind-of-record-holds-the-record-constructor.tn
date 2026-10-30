@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/link/invalid/a-name-for-the-metas-own-constructor.tn"
+!!id:"https://tson.io/test-suite/class2/link/valid/a-kind-of-record-holds-the-record-constructor.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {

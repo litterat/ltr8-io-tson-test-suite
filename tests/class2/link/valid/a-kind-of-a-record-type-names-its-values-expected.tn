@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-kind-of-a-record-type-names-its-values-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
+  description: """
+    `bar` is a record type and no constructor, so the values a reference over it admits are values of `bar`:
+    `kind<bar>` is the same reference as `ref<bar>`, and `b1`, an entry whose value is of `bar`, is a name it
+    holds.
+    """
+  valid: {
+    binds: [bars bar_pick bp]
+  }
+}
