@@ -13,7 +13,7 @@
     and because the layer a vector exercises is a processing stage, not a category: the vocabulary
     layer raises `resolver` and `validation` errors, never a `vocabulary` one.
     """
-  error_category => !enum [lexer parser resolver validation]
+  error_category => !meta.enum [lexer parser resolver validation]
 
   @doc:"""
     Present only when the subject `.tn` is not plain UTF-8. A runner MUST feed such a subject's
@@ -22,7 +22,7 @@
     a different document than the one on disk. §9.1 permits utf-16/utf-32, so an implementation that
     reads only UTF-8 skips those rather than failing them.
     """
-  encoding_name => !enum [invalid-utf8 utf-16 utf-32]
+  encoding_name => !meta.enum [invalid-utf8 utf-16 utf-32]
 
   @doc:"""
     Fields every sidecar carries, whatever its layer or outcome. `spec` names the section the
@@ -51,7 +51,7 @@
     different rules over three different tables, and an implementation that refused a document by
     the wrong one has not passed the vector.
     """
-  hygiene_mechanism => !enum [skeleton-distinctness identifier-status restriction-level]
+  hygiene_mechanism => !meta.enum [skeleton-distinctness identifier-status restriction-level]
 
   @doc:"""
     The payload of a `refused` outcome -- §8.1's fifth outcome, which §8.2 says MUST NOT be reported

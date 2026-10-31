@@ -2,5 +2,5 @@
 !!import:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  api => !interface { m => { request: record } }
+  api => !interface { m => { request: meta.record } }
 }

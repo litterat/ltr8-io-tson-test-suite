@@ -10,13 +10,13 @@
   valid: {
     resolved: """
       !schema {
-        names => !template {
-          parameters: [ !template_param { name: M  type: text } ]
-          template: "!enum [a b M]"
+        names => !meta.template {
+          parameters: [ !meta.template_param { name: M  type: meta.text } ]
+          template: "!meta.enum [a b M]"
         }
 
-        @application:names<c>
-        named => !enum { members: [a b c] }
+        @meta.application:names<c>
+        named => !meta.enum { members: [a b c] }
       }
       """
   }

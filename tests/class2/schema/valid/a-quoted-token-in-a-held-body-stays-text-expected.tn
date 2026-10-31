@@ -10,13 +10,13 @@
   valid: {
     resolved: """
       !schema {
-        tagged => !template {
-          parameters: [ !template_param { name: N  type: non_negative_integer } ]
-          template: "!text_type { max_length: N  pattern: \\"box<N>\\" }"
+        tagged => !meta.template {
+          parameters: [ !meta.template_param { name: N  type: meta.non_negative_integer } ]
+          template: "!meta.text_type { max_length: N  pattern: \\"box<N>\\" }"
         }
 
-        @application:tagged<3>
-        t3 => !text_type { max_length: 3  pattern: "box<N>" }
+        @meta.application:tagged<3>
+        t3 => !meta.text_type { max_length: 3  pattern: "box<N>" }
       }
       """
   }

@@ -2,7 +2,7 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  rows => <T> !array { element_type: T  min_items: 1 }
+  rows => <T> !meta.array { element_type: T  min_items: 1 }
 
   post => {
     a: rows<uuid>

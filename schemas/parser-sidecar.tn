@@ -16,7 +16,7 @@
   sidecar data, so there is no wire fidelity to preserve for them.
   """
 !schema {
-  core_value_form => !enum [unquoted single-line multi-line]
+  core_value_form => !meta.enum [unquoted single-line multi-line]
 
   token_core => {
     form: core_value_form

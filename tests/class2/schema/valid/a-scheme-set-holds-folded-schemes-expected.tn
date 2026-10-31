@@ -9,7 +9,7 @@
   valid: {
     resolved: """
       !schema {
-        web => !uri_type { chain: { supertypes: [uri uri_reference] }  schemes: [http https]  allow_relative: false }
+        web => !meta.uri_type { chain: { supertypes: [uri uri_reference] }  schemes: [http https]  allow_relative: false }
       }
       """
   }

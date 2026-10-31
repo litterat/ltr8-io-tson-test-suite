@@ -1,11 +1,10 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/meta-headers.tn"
-!!import:"https://tson.io/2026/39/m/meta-kernel.tn"
 !!import:"https://tson.io/2026/39/m/meta.tn"
-@doc:"""
+@meta.doc:"""
   A schema declaring a namespace type. A namespace type is an instance of the kernel's `namespace`, and a value of
   it is a map: `headers` maps header names, an identifier family admitting `-`, to text.
   """
 !schema {
-  header_name => !identifier_type { continue_add: "-" }
-  headers     => !namespace { key_type: header_name  value_type: text }
+  header_name => !meta.identifier_type { continue_add: "-" }
+  headers     => !meta.namespace { key_type: header_name  value_type: meta.text }
 }

@@ -10,25 +10,28 @@
   valid: {
     resolved: """
       !schema {
-        geo => !schema {
-          box => !record {
+        geo => !meta.schema {
+          box => !meta.record {
             chain: { subtypes: [boxed] }
-            parameters: [ !template_param { name: T  type: type_kind } ]
-            fields: { item => !record_field { type: T } }
+            parameters: [ !meta.template_param { name: T  type: meta.type_kind } ]
+            fields: { item => !meta.record_field { type: T } }
           }
 
-          base => !record { fields: { id => !record_field { type: text } } }
+          base => !meta.record { fields: { id => !meta.record_field { type: text } } }
         }
 
-        @application:geo.box<text>
-        boxed => !record { chain: { supertypes: [geo.box] }  fields: { item => !record_field { type: text } } }
+        @meta.application:geo.box<meta.text>
+        boxed => !meta.record {
+          chain: { supertypes: [geo.box] }
+          fields: { item => !meta.record_field { type: meta.text } }
+        }
 
-        held => !record { fields: { b => !record_field { type: record_item_int32_xxhash } } }
+        held => !meta.record { fields: { b => !meta.record_field { type: record_item_int32_xxhash } } }
 
-        @application:kind<geo.base>
-        bases => !reference { of: geo.base }
+        @meta.application:kind<geo.base>
+        bases => !meta.reference { of: geo.base }
 
-        @synthetic record_item_int32_xxhash => !record { fields: { item => !record_field { type: int32 } } }
+        @meta.synthetic record_item_int32_xxhash => !meta.record { fields: { item => !meta.record_field { type: int32 } } }
       }
       """
   }

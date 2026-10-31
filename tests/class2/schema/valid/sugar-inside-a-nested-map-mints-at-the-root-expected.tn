@@ -9,13 +9,13 @@
   valid: {
     resolved: """
       !schema {
-        geo => !schema {
-          tagged => !record { fields: { ids => !record_field { type: array_uuid_xxhash } } }
+        geo => !meta.schema {
+          tagged => !meta.record { fields: { ids => !meta.record_field { type: array_uuid_xxhash } } }
         }
 
-        other => !record { fields: { ids => !record_field { type: array_uuid_xxhash } } }
+        other => !meta.record { fields: { ids => !meta.record_field { type: array_uuid_xxhash } } }
 
-        @synthetic array_uuid_xxhash => !array { element_type: uuid }
+        @meta.synthetic array_uuid_xxhash => !meta.array { element_type: uuid }
       }
       """
   }

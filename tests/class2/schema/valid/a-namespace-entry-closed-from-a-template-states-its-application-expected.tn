@@ -10,16 +10,16 @@
   valid: {
     resolved: """
       !schema {
-        order => !record { fields: {
-          id => !record_field { type: text }
+        order => !meta.record { fields: {
+          id => !meta.record_field { type: text }
         } }
 
-        orders => !template {
-          parameters: [ !template_param { name: T  type: type_kind } ]
+        orders => !meta.template {
+          parameters: [ !meta.template_param { name: T  type: meta.type_kind } ]
           template: "!interface { get => { response: T } }"
         }
 
-        @application:orders<order>
+        @meta.application:orders<order>
         order_api => !interface { get => { response: order } }
       }
       """

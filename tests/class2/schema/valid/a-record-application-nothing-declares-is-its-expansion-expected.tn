@@ -6,22 +6,22 @@
   valid: {
     resolved: """
       !schema {
-        box => !record {
-          fields: { v => !record_field { type: T } }
-          parameters: [ !template_param { name: T  type: type_kind } ]
+        box => !meta.record {
+          fields: { v => !meta.record_field { type: T } }
+          parameters: [ !meta.template_param { name: T  type: meta.type_kind } ]
         }
 
-        crate => !record {
-          fields: { v => !record_field { type: T } }
-          parameters: [ !template_param { name: T  type: type_kind } ]
+        crate => !meta.record {
+          fields: { v => !meta.record_field { type: T } }
+          parameters: [ !meta.template_param { name: T  type: meta.type_kind } ]
         }
 
-        holder => !record { fields: {
-          a => !record_field { type: record_v_int32_xxhash }
-          b => !record_field { type: record_v_int32_xxhash }
+        holder => !meta.record { fields: {
+          a => !meta.record_field { type: record_v_int32_xxhash }
+          b => !meta.record_field { type: record_v_int32_xxhash }
         } }
 
-        @synthetic record_v_int32_xxhash => !record { fields: { v => !record_field { type: int32 } } }
+        @meta.synthetic record_v_int32_xxhash => !meta.record { fields: { v => !meta.record_field { type: int32 } } }
       }
       """
   }

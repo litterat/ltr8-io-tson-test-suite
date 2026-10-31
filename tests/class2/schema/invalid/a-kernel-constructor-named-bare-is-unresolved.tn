@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-kernel-constructor-named-bare-is-unresolved.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  percent => !integer_type { min: 0  max: 100 }
+}

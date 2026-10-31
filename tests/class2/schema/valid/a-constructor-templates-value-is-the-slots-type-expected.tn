@@ -6,13 +6,13 @@
   valid: {
     resolved: """
       !schema {
-        vec => !template {
-          parameters: [ !template_param { name: N  type: non_negative_integer } ]
-          template: "!array { element_type: text  min_items: N }"
+        vec => !meta.template {
+          parameters: [ !meta.template_param { name: N  type: meta.non_negative_integer } ]
+          template: "!meta.array { element_type: text  min_items: N }"
         }
 
-        @application:vec<0>
-        v0 => !array { element_type: text  min_items: 0 }
+        @meta.application:vec<0>
+        v0 => !meta.array { element_type: text  min_items: 0 }
       }
       """
   }

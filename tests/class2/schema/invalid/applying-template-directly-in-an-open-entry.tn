@@ -2,5 +2,5 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  sneaky => <U> !template { parameters: [{ name: U  type: type_kind }]  template: "!array { element_type: U }" }
+  sneaky => <U> !meta.template { parameters: [{ name: U  type: meta.type_kind }]  template: "!meta.array { element_type: U }" }
 }

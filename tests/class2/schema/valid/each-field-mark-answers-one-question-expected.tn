@@ -6,14 +6,14 @@
   valid: {
     resolved: """
       !schema {
-        entry => !record { fields: {
-          name     => !record_field { type: text }
-          nickname => !record_field { type: text   optional: true }
-          from     => !record_field { type: int32  voidable: true }
-          note     => !record_field { type: text   optional: true  voidable: true }
-          timeout  => !record_field { type: int32  optional: true  voidable: true  role: DEFAULT  value: 30 }
-          version  => !record_field { type: text   role: FIXED  value: "2.0" }
-          kind     => !record_field { type: text   optional: true  role: FIXED  value: "entry" }
+        entry => !meta.record { fields: {
+          name     => !meta.record_field { type: text }
+          nickname => !meta.record_field { type: text   optional: true }
+          from     => !meta.record_field { type: int32  voidable: true }
+          note     => !meta.record_field { type: text   optional: true  voidable: true }
+          timeout  => !meta.record_field { type: int32  optional: true  voidable: true  role: DEFAULT  value: 30 }
+          version  => !meta.record_field { type: text   role: FIXED  value: "2.0" }
+          kind     => !meta.record_field { type: text   optional: true  role: FIXED  value: "entry" }
         } }
       }
       """

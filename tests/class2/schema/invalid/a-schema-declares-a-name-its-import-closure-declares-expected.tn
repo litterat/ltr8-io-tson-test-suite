@@ -1,11 +1,11 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-declares-a-name-its-import-closure-declares-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §2.2.3"
+  spec: "[TSON-SCHEMA] §2.2.3 (the kernel under meta, proposed)"
   description: """
-    Imports are transitive: meta.tn imports the kernel, so a schema importing meta.tn has the kernel's `record`
-    in its namespace, and cannot declare its own `record` though it imports nothing else: no position
-    partitions the namespace into constructors and types.
+    A schema importing meta.tn has the kernel's one root entry, `meta`, the schema map every kernel declaration
+    is a member of, in its namespace, and cannot declare its own `meta`: a schema map is declared in one
+    document, and no position partitions the namespace into constructors and types.
     """
   error: {
     category: resolver

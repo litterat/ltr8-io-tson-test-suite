@@ -10,19 +10,19 @@
   valid: {
     resolved: """
       !schema {
-        named => !record { chain: { subtypes: [employee person] }  fields: {
-          name => !record_field { type: text }
+        named => !meta.record { chain: { subtypes: [employee person] }  fields: {
+          name => !meta.record_field { type: text }
         } }
 
-        person => !record { chain: { supertypes: [named]  subtypes: [employee] }  fields: {
-          name => !record_field { type: text }
-          age  => !record_field { type: int32 }
+        person => !meta.record { chain: { supertypes: [named]  subtypes: [employee] }  fields: {
+          name => !meta.record_field { type: text }
+          age  => !meta.record_field { type: int32 }
         } }
 
-        employee => !record { chain: { supertypes: [named person] }  fields: {
-          name     => !record_field { type: text }
-          age      => !record_field { type: int32 }
-          staff_id => !record_field { type: text }
+        employee => !meta.record { chain: { supertypes: [named person] }  fields: {
+          name     => !meta.record_field { type: text }
+          age      => !meta.record_field { type: int32 }
+          staff_id => !meta.record_field { type: text }
         } }
       }
       """

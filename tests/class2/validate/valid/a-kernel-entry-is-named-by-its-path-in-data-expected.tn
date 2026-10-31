@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-kernel-entry-is-named-by-its-path-in-data-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12 (the kernel under meta, proposed)"
+  description: "Every kernel declaration is a member of the schema map `meta`, so a name slot in data names a kernel entry by its path from the root, `meta.text`, exactly as a schema does: one name, one walk."
+  valid: _
+}

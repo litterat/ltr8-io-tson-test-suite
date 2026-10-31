@@ -1,7 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
-!!import:"https://tson.io/2026/39/m/meta-kernel.tn"
 !!import:"https://tson.io/2026/39/m/meta.tn"
-@doc:"""
+@meta.doc:"""
   A meta layer declaring an interface as a namespace of methods, and an HTTP binding naming the method it
   serves. A method's request, error and reply records are slots typed `kind<record>`, the names of the record
   types, so a schema importing this one writes them by name (`request: place_order_request`); its response is any
@@ -18,19 +17,19 @@
   `method`, `rpc_method`, `binding`, `header_set` and `service`.
   """
 !schema {
-  method_name    => identifier
-  status_name    => identifier
-  method         => { request?: kind<record>  response?: type_kind  errors?: [kind<record>]  replies?: {status_name => kind<record>} }
-  rpc_method     => method & { idempotent?: boolean }
-  http_verb      => !enum [GET POST]
-  verb_name      => !identifier_type { members: [GET POST] }
-  interface      => !namespace { key_type: method_name  value_type: method }
-  rpc_interface  => !namespace { key_type: method_name  value_type: rpc_method }
-  verb_interface => !namespace { key_type: verb_name  value_type: method }
-  header_set     => { headers: {text => method} }
-  header_sets    => !namespace { key_type: identifier  value_type: header_set }
-  service        => { extends?: [identifier]  methods: interface }
-  services       => !namespace { key_type: identifier  value_type: service }
-  binding        => { method: ref<method>  verb: http_verb  route: text }
-  bindings       => !namespace { key_type: identifier  value_type: binding }
+  method_name    => meta.identifier
+  status_name    => meta.identifier
+  method         => { request?: meta.kind<meta.record>  response?: meta.type_kind  errors?: [meta.kind<meta.record>]  replies?: {status_name => meta.kind<meta.record>} }
+  rpc_method     => method & { idempotent?: meta.boolean }
+  http_verb      => !meta.enum [GET POST]
+  verb_name      => !meta.identifier_type { members: [GET POST] }
+  interface      => !meta.namespace { key_type: method_name  value_type: method }
+  rpc_interface  => !meta.namespace { key_type: method_name  value_type: rpc_method }
+  verb_interface => !meta.namespace { key_type: verb_name  value_type: method }
+  header_set     => { headers: {meta.text => method} }
+  header_sets    => !meta.namespace { key_type: meta.identifier  value_type: header_set }
+  service        => { extends?: [meta.identifier]  methods: interface }
+  services       => !meta.namespace { key_type: meta.identifier  value_type: service }
+  binding        => { method: meta.ref<method>  verb: http_verb  route: meta.text }
+  bindings       => !meta.namespace { key_type: meta.identifier  value_type: binding }
 }

@@ -3,5 +3,5 @@
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
   box => <T> { v: T }
-  bad => !array { element_type: "box<text>" }
+  bad => !meta.array { element_type: "box<text>" }
 }

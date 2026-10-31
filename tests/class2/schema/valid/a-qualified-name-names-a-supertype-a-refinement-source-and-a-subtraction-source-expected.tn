@@ -9,25 +9,25 @@
   valid: {
     resolved: """
       !schema {
-        geo => !schema {
-          base => !record { chain: { subtypes: [derived] }  fields: {
-            id   => !record_field { type: text }
-            note => !record_field { type: text  optional: true }
+        geo => !meta.schema {
+          base => !meta.record { chain: { subtypes: [derived] }  fields: {
+            id   => !meta.record_field { type: text }
+            note => !meta.record_field { type: text  optional: true }
           } }
 
-          small => !integer_type { chain: { supertypes: [int32 integer]  subtypes: [narrower] }  size: { bits: 32  signed: true }  min: 0  max: 100 }
+          small => !meta.integer_type { chain: { supertypes: [int32 meta.integer]  subtypes: [narrower] }  size: { bits: 32  signed: true }  min: 0  max: 100 }
         }
 
-        derived => !record { chain: { supertypes: [geo.base] }  fields: {
-          id   => !record_field { type: text }
-          note => !record_field { type: text  optional: true }
-          more => !record_field { type: text }
+        derived => !meta.record { chain: { supertypes: [geo.base] }  fields: {
+          id   => !meta.record_field { type: text }
+          note => !meta.record_field { type: text  optional: true }
+          more => !meta.record_field { type: text }
         } }
 
-        narrower => !integer_type { chain: { supertypes: [geo.small int32 integer] }  size: { bits: 32  signed: true }  min: 0  max: 10 }
+        narrower => !meta.integer_type { chain: { supertypes: [geo.small int32 meta.integer] }  size: { bits: 32  signed: true }  min: 0  max: 10 }
 
-        trimmed => !record { fields: {
-          id => !record_field { type: text }
+        trimmed => !meta.record { fields: {
+          id => !meta.record_field { type: text }
         } }
       }
       """

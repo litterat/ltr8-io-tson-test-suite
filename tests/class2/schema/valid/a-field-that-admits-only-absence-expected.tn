@@ -6,9 +6,9 @@
   valid: {
     resolved: """
       !schema {
-        person => !record { fields: {
-          name    => !record_field { type: text }
-          retired => !record_field { type: void  optional: true  voidable: true }
+        person => !meta.record { fields: {
+          name    => !meta.record_field { type: text }
+          retired => !meta.record_field { type: void  optional: true  voidable: true }
         } }
       }
       """

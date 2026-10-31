@@ -11,29 +11,29 @@
   valid: {
     resolved: """
       !schema {
-        order => !record {
-          fields: { id => !record_field { type: text } }
+        order => !meta.record {
+          fields: { id => !meta.record_field { type: text } }
         }
 
-        response => !record {
+        response => !meta.record {
           chain: { subtypes: [created] }
           fields: {
-            status => !record_field { type: int32  role: FIXED  value: S }
-            body => !record_field { type: T }
+            status => !meta.record_field { type: int32  role: FIXED  value: S }
+            body => !meta.record_field { type: T }
           }
           discriminators: [status]
           parameters: [
-            !template_param { name: T  type: type_kind }
-            !template_param { name: S  type: int32 }
+            !meta.template_param { name: T  type: meta.type_kind }
+            !meta.template_param { name: S  type: int32 }
           ]
         }
 
-        @application:response<order 201>
-        created => !record {
+        @meta.application:response<order 201>
+        created => !meta.record {
           chain: { supertypes: [response] }
           fields: {
-            status => !record_field { type: int32  role: FIXED  value: 201 }
-            body => !record_field { type: order }
+            status => !meta.record_field { type: int32  role: FIXED  value: 201 }
+            body => !meta.record_field { type: order }
           }
         }
       }

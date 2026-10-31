@@ -9,11 +9,11 @@
   valid: {
     resolved: """
       !schema {
-        address => !record { fields: { line => !record_field { type: text } } }
+        address => !meta.record { fields: { line => !meta.record_field { type: text } } }
 
-        geo => !schema {
-          address  => !record { fields: { street => !record_field { type: text } } }
-          location => !record { fields: { at => !record_field { type: address } } }
+        geo => !meta.schema {
+          address  => !meta.record { fields: { street => !meta.record_field { type: text } } }
+          location => !meta.record { fields: { at => !meta.record_field { type: address } } }
         }
       }
       """

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-kernel-extension-composes-the-kernel-by-path.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  uuid2_type => meta.atom & meta.atom_specification & {
+    spec?:    = "https://www.rfc-editor.org/rfc/rfc9562"
+    version?: meta.non_negative_integer
+  }
+}

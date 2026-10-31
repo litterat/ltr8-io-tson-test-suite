@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-kernel-paths.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A slot over the kernel's `meta.text_type`, for validate vectors that name core's `text` and the kernel's
+  `meta.text` there: core's root `text` is an alias of `meta.text`, the same entry.
+  """
+!schema {
+  pick => { t: kind<meta.text_type> }
+}

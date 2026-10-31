@@ -6,15 +6,15 @@
   valid: {
     resolved: """
       !schema {
-        circle => !record { fields: {
-          radius => !record_field { type: int32 }
+        circle => !meta.record { fields: {
+          radius => !meta.record_field { type: int32 }
         } }
 
-        square => !record { fields: {
-          side => !record_field { type: int32 }
+        square => !meta.record { fields: {
+          side => !meta.record_field { type: int32 }
         } }
 
-        shape => !choice { variants: [circle square]  disjoint: false }
+        shape => !meta.choice { variants: [circle square]  disjoint: false }
       }
       """
   }

@@ -9,12 +9,12 @@
   values of the records `operation`, `response`, `method` and `binding`.
   """
 !schema {
-  http_verb     => !enum [GET POST PUT DELETE]
+  http_verb     => !meta.enum [GET POST PUT DELETE]
   path_template => text
   status_name   => identifier
-  response      => { status: int32  body?: type_kind }
-  operation     => { method: http_verb  path: path_template  request?: kind<record>  responses: [response] }
-  method        => { request?: kind<record>  response?: type_kind  errors?: [kind<record>]  replies?: {status_name => kind<record>} }
-  api           => !namespace { key_type: identifier  value_type: method }
+  response      => { status: int32  body?: meta.type_kind }
+  operation     => { method: http_verb  path: path_template  request?: kind<meta.record>  responses: [response] }
+  method        => { request?: kind<meta.record>  response?: meta.type_kind  errors?: [kind<meta.record>]  replies?: {status_name => kind<meta.record>} }
+  api           => !meta.namespace { key_type: identifier  value_type: method }
   binding       => { method: ref<method>  verb: http_verb  route: path_template }
 }

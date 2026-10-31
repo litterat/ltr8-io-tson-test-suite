@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.2"
-  description: "A name type a record states is the one its names are read under: this schema declares its own family, `at_name`, admitting a leading '@', and `stated` names it. A record stating no name type has the kernel's `field_name`, which every schema importing core reaches and none may redeclare."
+  description: "A name type a record states is the one its names are read under: this schema declares its own family, `field_name`, admitting a leading '@', and `stated` names it. A record stating no name type has the kernel's `meta.field_name`, a name of the kernel's map, so the schema's own `field_name` collides with nothing."
   valid: _
 }

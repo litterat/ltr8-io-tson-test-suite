@@ -2,8 +2,8 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  stock_id => !uuid_type {}
-  words    => !identifier_type { continue_add: "-"  medial: " " }
-  ids      => kind<uuid_type>
-  names    => !reference { of: identifier_type }
+  stock_id => !meta.uuid_type {}
+  words    => !meta.identifier_type { continue_add: "-"  medial: " " }
+  ids      => kind<meta.uuid_type>
+  names    => !meta.reference { of: meta.identifier_type }
 }

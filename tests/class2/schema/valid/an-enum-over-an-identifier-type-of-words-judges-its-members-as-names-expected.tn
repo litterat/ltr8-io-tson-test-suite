@@ -13,11 +13,11 @@
   valid: {
     resolved: """
       !schema {
-        status => !enum { members: [OPEN ACTIVE DONE] }
+        status => !meta.enum { members: [OPEN ACTIVE DONE] }
 
-        words => !identifier_type { continue_add: "-"  medial: " " }
+        words => !meta.identifier_type { continue_add: "-"  medial: " " }
 
-        activity => !enum_type { name_type: words  members: [sedentary "lightly active"] }
+        activity => !meta.enum_type { name_type: words  members: [sedentary "lightly active"] }
       }
       """
   }

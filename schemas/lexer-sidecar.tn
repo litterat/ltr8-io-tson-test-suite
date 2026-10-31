@@ -9,7 +9,7 @@
   """
 !schema {
   @doc:"The nine token kinds, using the spec's own token-stream vocabulary (§7.3), not any implementation's internal type names."
-  lexer_token_kind => !enum [
+  lexer_token_kind => !meta.enum [
     single-line-token
     multi-line-token
     unquoted-token

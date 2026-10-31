@@ -2,6 +2,6 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  hosted => !namespace { value_type: text }
-  keyed  => !namespace { key_type: identifier  value_type: text  ordered: true }
+  hosted => !meta.namespace { value_type: text }
+  keyed  => !meta.namespace { key_type: identifier  value_type: text  ordered: true }
 }

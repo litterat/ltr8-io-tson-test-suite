@@ -4,37 +4,37 @@
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
   description: """
     A field type in a record template that names none of its parameters means the same in every application, so the
-    family base names the entry each member names: `capped<9>` is its expansion in `pet` as in `cat`, and so is
+    family base names the entry each member names: `bounded<9>` is its expansion in `pet` as in `cat`, and so is
     `N`'s derived type. A position typed by `pet` reads the selector at that entry before it knows the member.
     """
   valid: {
     resolved: """
       !schema {
-        capped => !template {
-          parameters: [ !template_param { name: M  type: integer } ]
-          template: "!integer_type { max: M }"
+        bounded => !meta.template {
+          parameters: [ !meta.template_param { name: M  type: meta.integer } ]
+          template: "!meta.integer_type { max: M }"
         }
 
-        pet => !record {
+        pet => !meta.record {
           chain: { subtypes: [cat] }
           fields: {
-            kind => !record_field { type: integer_type_9_xxhash  role: FIXED  value: N }
-            name => !record_field { type: text }
+            kind => !meta.record_field { type: integer_type_9_xxhash  role: FIXED  value: N }
+            name => !meta.record_field { type: text }
           }
           discriminators: [kind]
-          parameters: [ !template_param { name: N  type: integer_type_9_xxhash } ]
+          parameters: [ !meta.template_param { name: N  type: integer_type_9_xxhash } ]
         }
 
-        @application:pet<3>
-        cat => !record {
+        @meta.application:pet<3>
+        cat => !meta.record {
           chain: { supertypes: [pet] }
           fields: {
-            kind => !record_field { type: integer_type_9_xxhash  role: FIXED  value: 3 }
-            name => !record_field { type: text }
+            kind => !meta.record_field { type: integer_type_9_xxhash  role: FIXED  value: 3 }
+            name => !meta.record_field { type: text }
           }
         }
 
-        @synthetic integer_type_9_xxhash => !integer_type { max: 9 }
+        @meta.synthetic integer_type_9_xxhash => !meta.integer_type { max: 9 }
       }
       """
   }

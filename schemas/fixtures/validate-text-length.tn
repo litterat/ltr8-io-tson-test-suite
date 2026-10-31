@@ -6,7 +6,7 @@
   Multilingual Plane is one character, though a UTF-16 host holds it as two units.
   """
 !schema {
-  glyph => !text_type { max_length: 1 }
-  pair  => !text_type { length: 2 }
+  glyph => !meta.text_type { max_length: 1 }
+  pair  => !meta.text_type { length: 2 }
   mark  => { g?: glyph  p?: pair }
 }

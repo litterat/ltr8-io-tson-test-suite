@@ -11,20 +11,20 @@
   valid: {
     resolved: """
       !schema {
-        geo => !schema {
-          address => !record { fields: {
-            street => !record_field { type: text }
-            city   => !record_field { type: text }
+        geo => !meta.schema {
+          address => !meta.record { fields: {
+            street => !meta.record_field { type: text }
+            city   => !meta.record_field { type: text }
           } }
 
-          location => !record { fields: {
-            at => !record_field { type: geo.address }
+          location => !meta.record { fields: {
+            at => !meta.record_field { type: geo.address }
           } }
         }
 
-        place => !record { fields: {
-          name  => !record_field { type: text }
-          where => !record_field { type: geo.location }
+        place => !meta.record { fields: {
+          name  => !meta.record_field { type: text }
+          where => !meta.record_field { type: geo.location }
         } }
       }
       """

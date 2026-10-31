@@ -2,6 +2,6 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  vec => <N> !array { element_type: text  min_items: N }
+  vec => <N> !meta.array { element_type: text  min_items: N }
   v0  => vec<0>
 }

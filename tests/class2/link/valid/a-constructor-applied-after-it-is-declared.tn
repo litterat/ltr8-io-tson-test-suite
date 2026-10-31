@@ -2,6 +2,6 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  counted => array ^ { ordered?: = false }
+  counted => meta.array ^ { ordered?: = false }
   counts  => !counted { element_type: int32 }
 }

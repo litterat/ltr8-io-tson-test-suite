@@ -11,13 +11,13 @@
   valid: {
     resolved: """
       !schema {
-        stock_id => !uuid_type {}
+        stock_id => !meta.uuid_type {}
 
-        customer_id => !uuid_type {}
+        customer_id => !meta.uuid_type {}
 
-        count => !integer_type {}
+        count => !meta.integer_type {}
 
-        any_id => !reference { of: uuid_type }
+        any_id => !meta.reference { of: meta.uuid_type }
       }
       """
   }

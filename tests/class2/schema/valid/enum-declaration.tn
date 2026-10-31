@@ -2,5 +2,5 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  colour => !enum [RED GREEN BLUE]
+  colour => !meta.enum [RED GREEN BLUE]
 }

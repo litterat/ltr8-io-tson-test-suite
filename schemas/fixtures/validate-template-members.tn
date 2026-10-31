@@ -7,7 +7,7 @@
   the enum with members a, b and c.
   """
 !schema {
-  names => <M> !enum [a b M]
+  names => <M> !meta.enum [a b M]
 
   holder => {
     n: names<c>

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-core-alias-is-the-kernel-entry-it-names-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.3 (the kernel under meta, proposed)"
+  description: "core.tn names the kernel's `meta.text` at its root by alias, `text => meta.text`, and an alias is a hop to the entry it names, not a second type: `text` is a member of `kind<meta.text_type>` because the entry at the end of its chain was built by `meta.text_type`."
+  valid: _
+}

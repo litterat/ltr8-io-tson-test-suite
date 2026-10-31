@@ -3,11 +3,11 @@
 {
   spec: "[TSON-SCHEMA] §2.2.3"
   description: """
-    core.tn imports meta.tn, which imports the meta-kernel, and an import contributes its whole namespace, so
-    a schema importing core types a field by a kernel entry core never declares: `identifier`, and
-    `field_name`, the kernel's alias of it.
+    core.tn imports meta.tn, the kernel, and an import contributes its whole namespace, so a schema importing
+    core types a field by a kernel entry core names nowhere at its root, by its path: `meta.field_name`, the
+    kernel's alias of `meta.identifier`, beside `identifier`, core's alias of the same entry.
     """
   valid: {
-    binds: [user identifier field_name record]
+    binds: [user identifier meta.field_name meta.identifier meta.record]
   }
 }

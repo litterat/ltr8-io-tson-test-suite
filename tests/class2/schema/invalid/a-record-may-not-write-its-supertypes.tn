@@ -4,5 +4,5 @@
 !schema {
   base => { id: text }
 
-  n => !record { chain: { supertypes: [base] }  fields: { id => { type: text } } }
+  n => !meta.record { chain: { supertypes: [base] }  fields: { id => { type: text } } }
 }

@@ -3,5 +3,5 @@
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
   place_order_request => { quantity: int32 }
-  api => !interface { m => { request: !record place_order_request } }
+  api => !interface { m => { request: !meta.record place_order_request } }
 }

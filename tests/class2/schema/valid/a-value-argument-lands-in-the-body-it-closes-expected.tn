@@ -11,16 +11,16 @@
   valid: {
     resolved: """
       !schema {
-        maxint => !template {
-          parameters: [ !template_param { name: N  type: integer } ]
-          template: "!integer_type { max: N }"
+        maxint => !meta.template {
+          parameters: [ !meta.template_param { name: N  type: meta.integer } ]
+          template: "!meta.integer_type { max: N }"
         }
 
-        small => !array { element_type: integer_type_10_xxhash }
+        small => !meta.array { element_type: integer_type_10_xxhash }
 
-        also => !array { element_type: integer_type_10_xxhash }
+        also => !meta.array { element_type: integer_type_10_xxhash }
 
-        @synthetic integer_type_10_xxhash => !integer_type { max: 10 }
+        @meta.synthetic integer_type_10_xxhash => !meta.integer_type { max: 10 }
       }
       """
   }

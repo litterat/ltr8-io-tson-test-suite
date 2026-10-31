@@ -209,15 +209,15 @@ classified by its own root: tagged `!schema`, it is a schema document; otherwise
 spliced in by a runner and nothing in a sidecar names a schema for the subject, so what a processor reads is
 exactly what is on disk — the same reason the subject is a standalone file at all.
 
-The cost is that the four bundled schemas' identities carry the spec revision, so a revision bump rewrites
-them in every subject that imports one, as it rewrites them in the fixtures:
+The cost is that the bundled schemas' identities carry the spec revision, so a revision bump rewrites them
+in every subject that imports one, as it rewrites them in the fixtures. meta.tn is the kernel, every one of its
+declarations under one root entry, `meta`:
 
-| Bundled schema   | Current identity                           |
-|------------------|--------------------------------------------|
-| `meta-kernel.tn` | `https://tson.io/2026/39/m/meta-kernel.tn` |
-| `meta.tn`        | `https://tson.io/2026/39/m/meta.tn`        |
-| `core.tn`        | `https://tson.io/2026/39/m/core.tn`        |
-| `net.tn`         | `https://tson.io/2026/39/m/net.tn`         |
+| Bundled schema | Current identity                     |
+|----------------|--------------------------------------|
+| `meta.tn`      | `https://tson.io/2026/39/m/meta.tn`  |
+| `core.tn`      | `https://tson.io/2026/39/m/core.tn`  |
+| `net.tn`       | `https://tson.io/2026/39/m/net.tn`   |
 
 The corpus's own schemas are named by their path under `schemas/` — so `fixtures/link-money.tn` is
 `https://tson.io/test-suite/schemas/fixtures/link-money.tn` — which is what lets the corpus grow a fixture

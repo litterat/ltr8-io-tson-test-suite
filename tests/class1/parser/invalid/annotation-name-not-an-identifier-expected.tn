@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class1/parser/invalid/annotation-name-not-an-identifier-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
 {
-  spec: "§7.4, §7.7"
-  description: "An annotation names something, so '@' takes an identifier on the same terms a type-ref does. The dot is the case worth pinning: it is a well-formed unquoted-token character, and identifier-Continue leaves it out deliberately to reserve it as a future identifier separator rather than spend it as an identifier character. A processor that keeps '@x.y' as an informational annotation has accepted a name the format reserves."
+  spec: "§7.4, §7.7 (qualified annotation names, proposed)"
+  description: "An annotation names something, so '@' takes a qualified name on the same terms a type-ref does: segments joined by '.', each an identifier. A segment between two dots is empty, so `@x..y` is no name, and a processor that keeps it as an informational annotation has accepted a name the format refuses."
   error: { category: parser }
 }

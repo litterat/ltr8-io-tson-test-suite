@@ -10,14 +10,14 @@
   valid: {
     resolved: """
       !schema {
-        stock_id => !uuid_type {}
+        stock_id => !meta.uuid_type {}
 
-        words => !identifier_type { continue_add: "-"  medial: " " }
+        words => !meta.identifier_type { continue_add: "-"  medial: " " }
 
-        @application:kind<uuid_type>
-        ids => !reference { of: uuid_type }
+        @meta.application:kind<meta.uuid_type>
+        ids => !meta.reference { of: meta.uuid_type }
 
-        names => !reference { of: identifier_type }
+        names => !meta.reference { of: meta.identifier_type }
       }
       """
   }

@@ -6,10 +6,10 @@
   valid: {
     resolved: """
       !schema {
-        r => !record {
+        r => !meta.record {
           fields: {
-            p => !record_field { type: text }
-            q => !record_field { type: text }
+            p => !meta.record_field { type: text }
+            q => !meta.record_field { type: text }
           }
         }
       }

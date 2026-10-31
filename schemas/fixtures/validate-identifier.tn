@@ -18,10 +18,10 @@
   `roles`, a set of names, are one scope too; those of `path`, an array that admits repetition, are not.
   """
 !schema {
-  slug       => !identifier_type { continue_add: "-" }
+  slug       => !meta.identifier_type { continue_add: "-" }
   snake_name => !slug ^ { pattern: "[a-z][a-z0-9_]*" }
-  direction  => !identifier_type { members: [north south] }
-  kebab_name => !identifier_type { medial: "-" }
+  direction  => !meta.identifier_type { members: [north south] }
+  kebab_name => !meta.identifier_type { medial: "-" }
 
   route => {
     name:    snake_name

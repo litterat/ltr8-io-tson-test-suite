@@ -2,5 +2,5 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  point => !record { fields: { x => { type: int32 }  x => { type: text } } }
+  point => !meta.record { fields: { x => { type: int32 }  x => { type: text } } }
 }

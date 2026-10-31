@@ -10,6 +10,6 @@
   """
 !schema {
   cell   => { value: integer }
-  slot   => { type: kind<record> }
+  slot   => { type: kind<meta.record> }
   holder => { c?: cell  s?: slot }
 }

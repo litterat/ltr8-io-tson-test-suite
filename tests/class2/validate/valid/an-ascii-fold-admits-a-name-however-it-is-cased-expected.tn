@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.5"
-  description: "`ascii_name`'s profile lists lowercase letters only, and its values are put into ASCII_CASEFOLD before the profile judges them, so `Content-Type` is the name `content-type`."
+  description: "`field_name`'s profile lists lowercase letters only, and its values are put into ASCII_CASEFOLD before the profile judges them, so `Content-Type` is the name `content-type`."
   valid: _
 }

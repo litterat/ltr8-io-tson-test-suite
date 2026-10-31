@@ -6,9 +6,9 @@
   valid: {
     resolved: """
       !schema {
-        boxed => !record {
-          fields: { a => !record_field { type: T } }
-          parameters: [ !template_param { name: T  type: type_kind  bound: text } ]
+        boxed => !meta.record {
+          fields: { a => !meta.record_field { type: T } }
+          parameters: [ !meta.template_param { name: T  type: meta.type_kind  bound: text } ]
         }
       }
       """

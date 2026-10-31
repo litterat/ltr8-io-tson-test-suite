@@ -2,5 +2,5 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  charset => !text_type { members: [UTF-8 utf-8]  normalization: NFKC_CASEFOLD }
+  charset => !meta.text_type { members: [UTF-8 utf-8]  normalization: NFKC_CASEFOLD }
 }
