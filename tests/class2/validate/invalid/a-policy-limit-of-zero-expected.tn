@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-policy-limit-of-zero-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §9.1 (the processor policy's vocabulary, proposed)"
+  description: "A limit is a `policy.limit`, `!int64 ^ { min: 1 }`: a limit of 0 admits no document at all and is no limit."
+  error: {
+    category: validation
+    path: "/limits/max_depth"
+  }
+}

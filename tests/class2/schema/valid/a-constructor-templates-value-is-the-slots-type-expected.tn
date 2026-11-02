@@ -2,12 +2,12 @@
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.10"
-  description: "`vec` applies the kernel's `array`, so `N` stands in `array.min_items` and is that slot's type, the kernel's `numeric.non_negative_integer`, so `vec<0>` is a valid application."
+  description: "`vec` applies the kernel's `array`, so `N` stands in `array.min_items` and is that slot's type, the kernel's `numeric.count`, so `vec<0>` is a valid application."
   valid: {
     resolved: """
       !schema {
         vec => !meta.template {
-          parameters: [ !meta.template_param { name: N  type: numeric.non_negative_integer } ]
+          parameters: [ !meta.template_param { name: N  type: numeric.count } ]
           template: "!meta.array { element_type: text  min_items: N }"
         }
 

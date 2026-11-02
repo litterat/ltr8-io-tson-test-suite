@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-integer-width-of-zero.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!schema {
+  no_width => !numeric.integer_type { size: { bits: 0  signed: true } }
+}

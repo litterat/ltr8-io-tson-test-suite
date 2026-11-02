@@ -2,7 +2,7 @@
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.10"
-  description: "`N` stands in `array.max_items`, whose type is the kernel's `numeric.non_negative_integer`, and a written type on a value parameter narrows the type of the positions it stands in. `int8` resolves, and is no narrowing of `numeric.non_negative_integer`."
+  description: "`N` stands in `array.max_items`, whose type is the kernel's `numeric.count`, and a written type on a value parameter narrows the type of the positions it stands in. `int8` resolves, and is no narrowing of `numeric.count`."
   error: {
     category: resolver
   }

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-count-facet-past-the-signed-64-bit-range-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (`numeric.count`, proposed)"
+  description: """
+    A count facet is a `numeric.count`, whose range stops at 2^63-1, so `max_length: 2^63` is outside the
+    facet's type and the schema does not load. An implementation reading counts as unbounded integers would
+    accept it; the fixed range is what lets every implementation hold a count in a native type.
+    """
+  error: {
+    category: resolver
+  }
+}

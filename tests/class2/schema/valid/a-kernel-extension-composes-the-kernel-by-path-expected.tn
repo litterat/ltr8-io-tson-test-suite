@@ -18,7 +18,7 @@
             spec    => !meta.record_field {
               type: iri  optional: true  role: FIXED  value: "https://www.rfc-editor.org/rfc/rfc9562"
             }
-            version => !meta.record_field { type: numeric.non_negative_integer  optional: true }
+            version => !meta.record_field { type: numeric.count  optional: true }
           }
         }
       }

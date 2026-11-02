@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-deployments-policy-document-is-a-policy-processor.tn"
+!!import:"https://tson.io/2026/39/m/policy.tn"
+!policy.processor {
+  identifier_policy: { level: HIGHLY_RESTRICTIVE  per_segment: false  skeleton_distinctness: true  permitting: [] }
+  token_policy: { level: UNRESTRICTED  permitting: [] }
+  limits: { max_depth: 128  max_document_size: 9223372036854775807 }
+}
