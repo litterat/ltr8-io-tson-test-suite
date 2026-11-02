@@ -11,7 +11,7 @@
     resolved: """
       !schema {
         tagged => !meta.template {
-          parameters: [ !meta.template_param { name: N  type: numeric.non_negative_integer } ]
+          parameters: [ !meta.template_param { name: N  type: numeric.count } ]
           template: "!unicode.text_type { max_length: N  pattern: \\"box<N>\\" }"
         }
 

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-count-ceiling.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+@doc:"""
+  Count facets at the top of `numeric.count`'s range, 2^63-1 ([TSON-SCHEMA] §5.3, §5.5). A host whose
+  strings or arrays cannot be that long still reads them: a minimum that high is met by no value, and a
+  maximum that high by every value.
+  """
+!schema {
+  vast  => !unicode.text_type { min_length: 9223372036854775807 }
+  roomy => !meta.array { element_type: text  max_items: 9223372036854775807 }
+  hold  => { v?: vast  r?: roomy }
+}

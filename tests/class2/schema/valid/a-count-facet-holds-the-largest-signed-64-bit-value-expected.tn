@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-count-facet-holds-the-largest-signed-64-bit-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.5 (`numeric.count`, proposed)"
+  description: """
+    Every facet that counts something is a `numeric.count`, 0 to 2^63-1: a signed 64-bit integer's
+    non-negative half, which every implementation holds in a native type. The top of that range is a
+    count like any other, on a text length and an item count alike, and resolves as written.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        long_text  => !unicode.text_type { max_length: 9223372036854775807 }
+        long_array => !meta.array { element_type: text  max_items: 9223372036854775807 }
+      }
+      """
+  }
+}

@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-importing-the-kernel-declares-int64-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (the bundled libraries, `numeric.count`, proposed)"
+  description: """
+    `int64` is the kernel's, declared at its root beside `integer` because `numeric.count` refines it, and numeric.tn
+    declares the rest of the sized ladder. A schema importing meta.tn alone has `int64` in its namespace and cannot
+    declare an entry of that name.
+    """
+  error: { category: resolver }
+}

@@ -3,6 +3,6 @@
 !schema {
   uuid2_type => meta.atom & atom.specification & {
     spec?:    = "https://www.rfc-editor.org/rfc/rfc9562"
-    version?: numeric.non_negative_integer
+    version?: numeric.count
   }
 }

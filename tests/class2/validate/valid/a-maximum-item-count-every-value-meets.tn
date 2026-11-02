@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-maximum-item-count-every-value-meets.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-count-ceiling.tn"
+!hold { r: [a b c] }
