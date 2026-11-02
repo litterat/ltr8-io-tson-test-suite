@@ -8,7 +8,7 @@
   disjoint and a number goes to `strict` untagged.
   """
 !schema {
-  strict => !float_type { format: BINARY64  allow_nan: false  allow_infinity: false }
+  strict => !numeric.float_type { format: BINARY64  allow_nan: false  allow_infinity: false }
 
   loose => ( float64 | text )
   tight => ( strict | text )

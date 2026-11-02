@@ -12,17 +12,17 @@
   valid: {
     resolved: """
       !schema {
-        abstract => !record { fields: {
-          a => !record_field { type: text }
+        abstract => !meta.record { fields: {
+          a => !meta.record_field { type: text }
         } }
 
-        final => !record { fields: {
-          b => !record_field { type: text }
+        final => !meta.record { fields: {
+          b => !meta.record_field { type: text }
         } }
 
-        holder => !record { fields: {
-          f => !record_field { type: abstract }
-          g => !record_field { type: final }
+        holder => !meta.record { fields: {
+          f => !meta.record_field { type: abstract }
+          g => !meta.record_field { type: final }
         } }
       }
       """

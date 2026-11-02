@@ -11,6 +11,6 @@
   counts  => !counted { element_type: int32  max_items: 3 }
   tags    => !counted { element_type: tag }
   tag     => @kind_note:"a short name" !text ^ { max_length: 8 }
-  counted => array ^ { ordered?: = false }
-  kind_note => @annotation text
+  counted => meta.array ^ { ordered?: = false }
+  kind_note => @meta.annotation text
 }

@@ -4,6 +4,6 @@
 !schema {
   status => !enum [OPEN ACTIVE DONE]
 
-  words => !identifier_type { continue_add: "-"  medial: " " }
-  activity => !enum_type { name_type: words  members: [sedentary "lightly active"] }
+  words => !unicode.identifier_type { continue_add: "-"  medial: " " }
+  activity => !meta.enum_type { name_type: words  members: [sedentary "lightly active"] }
 }

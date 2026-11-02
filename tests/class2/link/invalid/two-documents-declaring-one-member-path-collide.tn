@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/two-documents-declaring-one-member-path-collide.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-geo.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-geo-address.tn"
+!schema {
+  place => { at: geo.address }
+}

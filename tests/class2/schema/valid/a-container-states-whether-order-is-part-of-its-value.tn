@@ -2,7 +2,7 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  steps  => !map { key_type: text  value_type: integer  ordered: true }
+  steps  => !meta.map { key_type: text  value_type: integer  ordered: true }
   lookup => {text => integer}
-  tags   => !array { element_type: text  ordered: false }
+  tags   => !meta.array { element_type: text  ordered: false }
 }

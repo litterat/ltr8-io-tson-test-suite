@@ -3,10 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §2.2.3"
   description: """
-    Imports are transitive and diamonds resolve by identity: this schema imports the meta-kernel, and imports
-    link-money.tn, an ordinary library, for `money`; link-money.tn imports meta.tn, which imports the
-    kernel. The kernel is one import reached by two routes, not a collision, and the closure binds
-    `money`.
+    Imports are transitive and diamonds resolve by identity: this schema imports meta.tn, and imports
+    link-money.tn, an ordinary library, for `money`, which imports meta.tn too. meta.tn and the kernel it
+    imports are each one import reached by two routes, not a collision, and the closure binds `money`.
     """
   valid: {
     binds: [priced money]

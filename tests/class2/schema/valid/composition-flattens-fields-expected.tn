@@ -6,13 +6,13 @@
   valid: {
     resolved: """
       !schema {
-        named => !record { chain: { subtypes: [person] }  fields: {
-          name => !record_field { type: text }
+        named => !meta.record { chain: { subtypes: [person] }  fields: {
+          name => !meta.record_field { type: text }
         } }
       
-        person => !record { chain: { supertypes: [named] }  fields: {
-          name => !record_field { type: text }
-          age  => !record_field { type: int32 }
+        person => !meta.record { chain: { supertypes: [named] }  fields: {
+          name => !meta.record_field { type: text }
+          age  => !meta.record_field { type: int32 }
         } }
       }
       """

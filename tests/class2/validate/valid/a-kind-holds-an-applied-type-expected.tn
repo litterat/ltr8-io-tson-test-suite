@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.2"
-  description: "A kind-typed slot in data may name an applied type: `set<text>` is a reference like any other, data grammar written unquoted, and it resolves by structural identity to the entry the application denotes, `names`, which is a type and so a member of `type_kind`."
+  description: "A kind-typed slot in data may name an applied type: `set<text>` is a reference like any other, data grammar written unquoted, and it resolves by structural identity to the entry the application denotes, `names`, which is a type and so a member of `meta.type_kind`."
   valid: _
 }

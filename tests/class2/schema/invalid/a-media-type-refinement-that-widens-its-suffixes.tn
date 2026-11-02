@@ -3,6 +3,6 @@
 !!import:"https://tson.io/2026/39/m/core.tn"
 !!import:"https://tson.io/2026/39/m/net.tn"
 !schema {
-  json_type => !media_type_type { suffixes: [json] }
+  json_type => !net.media_type_type { suffixes: [json] }
   wider => !json_type ^ { suffixes: [json xml] }
 }

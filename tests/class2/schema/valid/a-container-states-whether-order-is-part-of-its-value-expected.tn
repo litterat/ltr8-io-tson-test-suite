@@ -6,9 +6,9 @@
   valid: {
     resolved: """
       !schema {
-        steps => !map { key_type: text  value_type: integer  ordered: true }
-        lookup => !map { key_type: text  value_type: integer }
-        tags => !array { element_type: text  ordered: false }
+        steps => !meta.map { key_type: text  value_type: integer  ordered: true }
+        lookup => !meta.map { key_type: text  value_type: integer }
+        tags => !meta.array { element_type: text  ordered: false }
       }
       """
   }

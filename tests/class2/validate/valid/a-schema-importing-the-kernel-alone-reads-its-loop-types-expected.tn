@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-schema-importing-the-kernel-alone-reads-its-loop-types-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4 (the kernel's constructors under meta, proposed)"
+  description: "meta.tn is the kernel's one wait cycle and what it names, and resolves on its own, so a schema importing it alone types fields by the loop's `integer`, `text`, `boolean` and `meta.identifier`, written bare at the kernel's root, and a document of that schema validates."
+  valid: _
+}

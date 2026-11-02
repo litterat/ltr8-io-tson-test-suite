@@ -2,5 +2,5 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  pet => !record { fields: { kind => { type: text } }  extension: ABSTRACT  discriminators: [] }
+  pet => !meta.record { fields: { kind => { type: text } }  extension: ABSTRACT  discriminators: [] }
 }

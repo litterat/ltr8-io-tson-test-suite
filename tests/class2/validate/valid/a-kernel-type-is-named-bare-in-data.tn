@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-kernel-type-is-named-bare-in-data.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-kernel-paths.tn"
+!pick { t: text }

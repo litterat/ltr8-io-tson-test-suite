@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.5"
-  description: "`schemes: [http https]` given `HTTPS://…`. RFC 3986 §3.1 compares a scheme case-insensitively, and the set's elements are `scheme_name` values, folded, so the upper-case spelling is the same scheme."
+  description: "`schemes: [http https]` given `HTTPS://…`. RFC 3986 §3.1 compares a scheme case-insensitively, and the set's elements are `net.scheme_name` values, folded, so the upper-case spelling is the same scheme."
   valid: _
 }

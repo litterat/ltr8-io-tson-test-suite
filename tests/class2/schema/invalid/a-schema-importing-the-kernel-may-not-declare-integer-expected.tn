@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-importing-the-kernel-may-not-declare-integer-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (the kernel's constructors under meta, proposed)"
+  description: """
+    The kernel declares its constructors under `meta` and its types at its root, so `integer`, `boolean` and
+    `text` are root names of every closure holding the kernel, and a schema importing it may not declare one:
+    this schema's `integer` collides with the kernel's.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,27 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-kernel-extension-composes-the-kernel-by-path-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.8 (the kernel under meta, proposed)"
+  description: """
+    A kernel extension is an ordinary declaration composing a kernel constructor by its path and a kernel
+    type bare, wherever it lives: here a constructor declared at the schema's own root, composing `meta.atom`
+    and `atom.specification`. Declaring it is valid; an instance of an atom constructor no processor backs is
+    a new form, a processor's extension rather than a verdict.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        uuid2_type => !meta.record {
+          chain: { supertypes: [meta.atom atom.specification meta.top meta.type] }
+          fields: {
+            chain   => !meta.record_field { type: meta.type_chain  optional: true }
+            spec    => !meta.record_field {
+              type: iri  optional: true  role: FIXED  value: "https://www.rfc-editor.org/rfc/rfc9562"
+            }
+            version => !meta.record_field { type: numeric.non_negative_integer  optional: true }
+          }
+        }
+      }
+      """
+  }
+}

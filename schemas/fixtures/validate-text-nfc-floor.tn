@@ -6,7 +6,7 @@
   normalization: a member written composed is matched by a decomposed spelling of it.
   """
 !schema {
-  accent   => !text_type { members: ["\u00e9"]  normalization: ASCII_CASEFOLD }
+  accent   => !unicode.text_type { members: ["\u00e9"]  normalization: ASCII_CASEFOLD }
   accented => !enum ["caf\u00e9" tea]
   order    => { accent?: accent  drink?: accented }
 }

@@ -2,16 +2,16 @@
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.2"
-  description: "A container sugar form written at a field position lifts to its own closed entry, referenced by name; the entry carries the derived @synthetic marker at its key and its trailing hash is not normative."
+  description: "A container sugar form written at a field position lifts to its own closed entry, referenced by name; the entry carries the derived @meta.synthetic marker at its key and its trailing hash is not normative."
   valid: {
     resolved: """
       !schema {
-        post => !record { fields: {
-          title => !record_field { type: text }
-          ids   => !record_field { type: array_uuid_xxhash }
+        post => !meta.record { fields: {
+          title => !meta.record_field { type: text }
+          ids   => !meta.record_field { type: array_uuid_xxhash }
         } }
       
-        @synthetic array_uuid_xxhash => !array { element_type: uuid }
+        @meta.synthetic array_uuid_xxhash => !meta.array { element_type: uuid }
       }
       """
   }

@@ -4,13 +4,13 @@
 @doc:"""
   The identifier family ([TSON-SCHEMA] §4.2): `identifier_type` composes `text_type`, so an identifier
   takes the text facets, each applied inside [TSON-DATA] §7.7's grammar. Reached here both ways: by
-  refining `slug`, a family this schema declares under a name of its own -- the kernel's `identifier` is
+  refining `slug`, a family this schema declares under a name of its own -- the kernel's `meta.identifier` is
   in every closure reaching core -- and by constructing the family directly. A naming convention is a
   `pattern` and a closed vocabulary of names is `members`. A value is judged by the grammar first -- a
   token outside it is not an identifier, whatever the facets would say -- and by the facets after.
 
   `identifier_type` is a UAX #31 profile, and `kebab_name` constructs another one: `-` is medial, so it
-  joins two words and never leads, trails or doubles, where the kernel's `identifier` holds `-` as a
+  joins two words and never leads, trails or doubles, where the kernel's `meta.identifier` holds `-` as a
   Continue character and admits `content-`.
 
   A value of an identifier family is a name ([TSON-DATA] §8.2), and the keys of `handlers` are one
@@ -18,10 +18,10 @@
   `roles`, a set of names, are one scope too; those of `path`, an array that admits repetition, are not.
   """
 !schema {
-  slug       => !identifier_type { continue_add: "-" }
+  slug       => !unicode.identifier_type { continue_add: "-" }
   snake_name => !slug ^ { pattern: "[a-z][a-z0-9_]*" }
-  direction  => !identifier_type { members: [north south] }
-  kebab_name => !identifier_type { medial: "-" }
+  direction  => !unicode.identifier_type { members: [north south] }
+  kebab_name => !unicode.identifier_type { medial: "-" }
 
   route => {
     name:    snake_name

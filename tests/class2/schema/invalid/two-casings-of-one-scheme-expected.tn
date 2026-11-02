@@ -3,7 +3,7 @@
 {
   spec: "[TSON-SCHEMA] §5.5"
   description: """
-    `HTTP` and `http` are one `scheme_name`, so the set lists one scheme twice.
+    `HTTP` and `http` are one `net.scheme_name`, so the set lists one scheme twice.
     """
   error: {
     category: resolver

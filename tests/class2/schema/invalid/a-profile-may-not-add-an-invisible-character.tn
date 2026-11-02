@@ -2,5 +2,5 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  zw => !identifier_type { continue_add: "\u{AD}" }
+  zw => !unicode.identifier_type { continue_add: "\u{AD}" }
 }

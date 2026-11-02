@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §2.2.3"
   description: """
-    This schema imports meta.tn, and imports meta-headers.tn, a meta layer that imports the meta-kernel, to type
-    a field by its namespace type `headers`. The layer's namespace is this schema's, as any import's is, and
+    This schema imports meta.tn, and imports meta-headers.tn, a library that imports the kernel, to type a
+    field by its namespace type `headers`. The layer's namespace is this schema's, as any import's is, and
     `headers` types the field as any imported type does.
     """
   valid: {

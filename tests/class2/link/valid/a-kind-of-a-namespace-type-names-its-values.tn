@@ -3,7 +3,7 @@
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
   myops    => !api { get => { response: text } }
-  apis     => kind<api>
+  apis     => meta.kind<api>
   api_slot => { a: apis }
   api_held => !api_slot { a: myops }
 }

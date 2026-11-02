@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-required-field-omitted.tn"
 !!import:"https://tson.io/2026/39/m/meta.tn"
-!record_field {
+!meta.record_field {
   optional: true
 }

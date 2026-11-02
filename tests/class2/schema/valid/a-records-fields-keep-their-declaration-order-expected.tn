@@ -11,15 +11,15 @@
   valid: {
     resolved: """
       !schema {
-        base => !record { chain: { subtypes: [row] }  fields: {
-          zeta  => !record_field { type: text }
-          alpha => !record_field { type: int32 }
+        base => !meta.record { chain: { subtypes: [row] }  fields: {
+          zeta  => !meta.record_field { type: text }
+          alpha => !meta.record_field { type: int32 }
         } }
-        row => !record { chain: { supertypes: [base] }  fields: {
-          zeta  => !record_field { type: text }
-          alpha => !record_field { type: int32 }
-          mid   => !record_field { type: text  optional: true }
-          beta  => !record_field { type: text }
+        row => !meta.record { chain: { supertypes: [base] }  fields: {
+          zeta  => !meta.record_field { type: text }
+          alpha => !meta.record_field { type: int32 }
+          mid   => !meta.record_field { type: text  optional: true }
+          beta  => !meta.record_field { type: text }
         } }
       }
       """

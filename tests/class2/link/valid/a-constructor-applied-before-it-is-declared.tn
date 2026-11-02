@@ -3,5 +3,5 @@
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
   counts  => !counted { element_type: int32 }
-  counted => array ^ { ordered?: = false }
+  counted => meta.array ^ { ordered?: = false }
 }

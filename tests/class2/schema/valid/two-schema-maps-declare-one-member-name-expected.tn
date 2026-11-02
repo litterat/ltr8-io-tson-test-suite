@@ -9,18 +9,20 @@
   valid: {
     resolved: """
       !schema {
-        geo => !schema {
-          address => !record { fields: { street => !record_field { type: text } } }
+        geo => !meta.schema {
+          address => !meta.record { fields: { street => !meta.record_field { type: text } } }
         }
 
-        geo2 => !schema {
-          address => !record { fields: { lines => !record_field { type: array_text_xxhash } } }
+        geo2 => !meta.schema {
+          address => !meta.record { fields: { lines => !meta.record_field { type: array_text_xxhash } } }
         }
 
-        both => !record { fields: {
-          a => !record_field { type: geo.address }
-          b => !record_field { type: geo2.address }
+        both => !meta.record { fields: {
+          a => !meta.record_field { type: geo.address }
+          b => !meta.record_field { type: geo2.address }
         } }
+
+        @meta.synthetic array_text_xxhash => !meta.array { element_type: text }
       }
       """
   }

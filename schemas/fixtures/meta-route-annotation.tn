@@ -1,5 +1,4 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/meta-route-annotation.tn"
-!!import:"https://tson.io/2026/39/m/meta-kernel.tn"
 !!import:"https://tson.io/2026/39/m/meta.tn"
 @doc:"""
   A meta layer declaring an annotation whose value is an identifier-keyed map. A schema importing this one
@@ -8,6 +7,6 @@
   one map are one naming scope.
   """
 !schema {
-  method_name => identifier
-  routes      => @annotation {method_name => text}
+  method_name => meta.identifier
+  routes      => @meta.annotation {method_name => text}
 }

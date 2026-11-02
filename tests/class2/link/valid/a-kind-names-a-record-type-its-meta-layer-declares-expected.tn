@@ -4,7 +4,7 @@
   spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.6"
   description: """
     `order` is the meta layer's record, and the meta layer is imported, so its namespace is this schema's:
-    `order` is a type of the schema's closure, built with `record`: a member of `kind<record>`,
+    `order` is a type of the schema's closure, built with `record`: a member of `meta.kind<record>`,
     which `pick.t` is typed by.
     """
   valid: {

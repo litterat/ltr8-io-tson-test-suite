@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/two-documents-contribute-to-one-schema-map-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (open schema maps, proposed)"
+  description: """
+    A schema map of one path declared by several documents of a closure is one map, the union of their members,
+    as the root namespace is across imports: link-geo.tn contributes `address` to `geo` and link-geo-alt.tn
+    contributes `location`, so a schema importing both names `geo.address` and `geo.location`. Each member's
+    identity is its declaring document and its path.
+    """
+  valid: {
+    binds: [place geo.address geo.location]
+  }
+}

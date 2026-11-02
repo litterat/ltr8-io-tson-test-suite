@@ -4,13 +4,14 @@
   spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §4.2"
   description: """
     A reference over a constructor holds the entries whose value is of it. A namespace type is an instance of
-    `namespace`, so the meta layer's `api` and `router` and the kernel's `schema` and `field_map` are members of
-    `kind<namespace>`. `namespace` itself is declared as a record, its value of `record`, and is no member.
+    `meta.namespace`, so the fixture's `api` and `router` and the kernel's `meta.schema` and `meta.field_map` are
+    members of `meta.kind<meta.namespace>`. `meta.namespace` itself is declared as a record, its value of
+    `meta.record`, and is no member.
     `myapi` and `routes` are values of `api` and `router`, which are no constructors, so they are no members.
     """
   valid: {
     members: [
-      { name: namespaces  members: [api field_map router schema] }
+      { name: namespaces  members: [api meta.field_map meta.schema router] }
     ]
   }
 }

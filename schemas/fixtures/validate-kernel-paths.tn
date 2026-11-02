@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-kernel-paths.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  Slots over the kernel's constructors, for validate vectors that name the kernel's entries in data: its types
+  stand at its root, `text`, and its constructors under `meta`, `numeric.integer_type`.
+  """
+!schema {
+  pick => { t: meta.kind<unicode.text_type>  c?: meta.kind<meta.record> }
+}

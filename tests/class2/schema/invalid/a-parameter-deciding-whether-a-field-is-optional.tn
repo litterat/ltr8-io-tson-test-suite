@@ -2,5 +2,5 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  maybe => <B> !record { fields: { v => { type: text  optional: B } } }
+  maybe => <B> !meta.record { fields: { v => { type: text  optional: B } } }
 }

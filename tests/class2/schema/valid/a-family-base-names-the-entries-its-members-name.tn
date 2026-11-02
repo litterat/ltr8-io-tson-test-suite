@@ -2,7 +2,7 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  capped => <M> !integer_type { max: M }
-  pet     => <N> { kind: capped<9> = N  name: text }
+  bounded => <M> !numeric.integer_type { max: M }
+  pet     => <N> { kind: bounded<9> = N  name: text }
   cat     => pet<3>
 }

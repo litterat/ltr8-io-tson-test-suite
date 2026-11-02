@@ -13,6 +13,6 @@
   pair     => <A, B> { a: A  b: B }
   boxed    => box<text>
   paired   => pair<box<text> int32>
-  holder   => { t: type_kind  u?: kind<uuid_type> }
+  holder   => { t: meta.type_kind  u?: meta.kind<net.uuid_type> }
   labelled => { n: text }
 }

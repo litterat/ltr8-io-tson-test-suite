@@ -6,10 +6,10 @@
   valid: {
     resolved: """
       !schema {
-        point => !record { fields: {
-          x     => !record_field { type: int32 }
-          y     => !record_field { type: int32 }
-          label => !record_field { type: text   optional: true  voidable: true }
+        point => !meta.record { fields: {
+          x     => !meta.record_field { type: int32 }
+          y     => !meta.record_field { type: int32 }
+          label => !meta.record_field { type: text   optional: true  voidable: true }
         } }
       }
       """

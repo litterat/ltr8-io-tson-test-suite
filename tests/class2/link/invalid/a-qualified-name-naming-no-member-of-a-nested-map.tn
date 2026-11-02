@@ -6,7 +6,7 @@
     location => { at: text }
     home     => !geo.location { at: here }
   }
-  locations => ref<geo.location>
+  locations => meta.ref<geo.location>
   spot_pick => { l: locations }
   chosen    => !spot_pick { l: geo.away }
 }

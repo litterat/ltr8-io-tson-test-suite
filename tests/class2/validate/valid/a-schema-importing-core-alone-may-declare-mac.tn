@@ -1,3 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/a-schema-importing-core-alone-may-declare-mac.tn"
-!!import:"https://tson.io/test-suite/schemas/fixtures/validate-core-own-mac.tn"
-!mac { vendor: acme  model: m1 }

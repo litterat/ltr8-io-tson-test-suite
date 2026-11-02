@@ -10,6 +10,6 @@
     side: int32
   }
 
-  @disjoint
+  @meta.disjoint
   shapes => ( circle | square )
 }

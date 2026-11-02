@@ -3,13 +3,13 @@
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   A fixture schema for the class2/validate layer: records with one field each, so a data document fills that field
-  positionally. `cell`'s one field is an atom; `slot`'s is `type`, a `kind<record>` through core.tn's own `kind`,
+  positionally. `cell`'s one field is an atom; `slot`'s is `type`, a `meta.kind<record>` through the kernel's own `meta.kind`,
   whose values are the names of the record types in this schema's closure. A data document has no namespace of its
   own, so a bare token fills each of them positionally; the kind-typed one is then judged a member in the namespace
   of the schema the document imports, where a data document's kind values resolve.
   """
 !schema {
   cell   => { value: integer }
-  slot   => { type: kind<record> }
+  slot   => { type: meta.kind<meta.record> }
   holder => { c?: cell  s?: slot }
 }

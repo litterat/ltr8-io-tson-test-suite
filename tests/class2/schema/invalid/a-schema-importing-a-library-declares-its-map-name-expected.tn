@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-importing-a-library-declares-its-map-name-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (the bundled libraries, proposed)"
+  description: """
+    numeric.tn declares its constructors under `numeric`, a map the kernel also declares, so a schema importing it
+    has `numeric` in its namespace and cannot declare an entry of that name that is no schema map.
+    """
+  error: { category: resolver }
+}

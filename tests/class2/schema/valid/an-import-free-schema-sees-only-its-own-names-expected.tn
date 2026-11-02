@@ -11,11 +11,11 @@
   valid: {
     resolved: """
       !schema {
-        a => !record { fields: {
-          b => !record_field { type: b }
+        a => !meta.record { fields: {
+          b => !meta.record_field { type: b }
         } }
 
-        b => !record { fields: {} }
+        b => !meta.record { fields: {} }
       }
       """
   }

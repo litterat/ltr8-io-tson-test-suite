@@ -2,5 +2,5 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  user => { handle: identifier  roles: [field_name] }
+  user => { handle: meta.identifier  roles: [meta.field_name] }
 }

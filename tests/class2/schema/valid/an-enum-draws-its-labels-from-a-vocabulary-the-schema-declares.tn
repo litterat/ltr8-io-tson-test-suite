@@ -2,7 +2,7 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  kebab => !identifier_type { continue_add: "-"  pattern: "[a-z]+(-[a-z]+)*" }
+  kebab => !unicode.identifier_type { continue_add: "-"  pattern: "[a-z]+(-[a-z]+)*" }
 
-  steps => !enum_type { name_type: kebab  members: [make-tea drink-tea] }
+  steps => !meta.enum_type { name_type: kebab  members: [make-tea drink-tea] }
 }

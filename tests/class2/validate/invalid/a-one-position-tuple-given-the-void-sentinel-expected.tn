@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §7.6"
-  description: "Core's `tuple1<text>` given `[_]`. The position is not voidable, so the void sentinel does not fill it; `voidable_tuple1` is the template whose position admits it."
+  description: "Core's `meta.tuple1<text>` given `[_]`. The position is not voidable, so the void sentinel does not fill it; `meta.voidable_tuple1` is the template whose position admits it."
   error: { category: validation  path: "/only/0" }
 }

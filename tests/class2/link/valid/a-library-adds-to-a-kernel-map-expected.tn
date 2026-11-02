@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-library-adds-to-a-kernel-map-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (open schema maps, proposed)"
+  description: """
+    The kernel declares `numeric.integer_type` under its map `numeric`, and numeric.tn adds its own constructors to
+    the same map, so a schema importing numeric.tn applies the kernel's `numeric.integer_type` and numeric.tn's
+    `numeric.decimal_type` through one `numeric`.
+    """
+  valid: {
+    binds: [count price order]
+  }
+}

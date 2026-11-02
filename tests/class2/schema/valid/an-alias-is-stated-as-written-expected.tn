@@ -6,10 +6,10 @@
   valid: {
     resolved: """
       !schema {
-        user_id => !alias { target: text }
+        user_id => !meta.alias { target: text }
 
-        user => !record { fields: {
-          key => !record_field { type: user_id }
+        user => !meta.record { fields: {
+          key => !meta.record_field { type: user_id }
         } }
       }
       """

@@ -4,5 +4,5 @@
 !schema {
   @status:"draft" ticket => { id: int32 }
   label  => @status:"stable" text
-  status => @annotation text
+  status => @meta.annotation text
 }

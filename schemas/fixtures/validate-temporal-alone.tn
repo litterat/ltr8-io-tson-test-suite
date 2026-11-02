@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-temporal-alone.tn"
+!!import:"https://tson.io/2026/39/m/temporal.tn"
+@doc:"A schema importing temporal.tn alone: the kernel's vocabulary and temporal.tn's, and nothing of numeric.tn's."
+!schema {
+  event => { at: date  label: text  length?: duration }
+}

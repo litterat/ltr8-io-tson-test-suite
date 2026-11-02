@@ -1,22 +1,36 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-schema-importing-core-declares-the-names-its-closure-leaves-free-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §2.2.3, §9"
+  spec: "[TSON-SCHEMA] §2.2.3, §9 (the kernel under meta, proposed)"
   description: """
-    A local declaration may not reuse a name its import closure binds, so every name core declares, and every
-    name of meta.tn and the meta-kernel core imports, is one no schema importing core may declare. Core keeps to
-    the types a schema cannot do without, and the names a schema would use for its own types are left free: a
-    sign bound, a length bound and a documentation annotation are each declared here, in a schema importing
-    core.
+    A local declaration may not reuse a name its import closure binds. The bundled documents keep their
+    roots to the vocabulary an author writes and their machinery under `meta` and `core`, so a schema
+    importing core reserves `meta`, `core` and those roots' names, and the names a schema would use for its
+    own types are left free: a sign bound, a length bound, a documentation annotation, and `record`,
+    `bounded`, `template`, `namespace` and `type_kind`, each a bundled name only by its path
+    (`meta.record`, `atom.bounded`, `meta.type_kind`), are each declared here, in a schema importing core.
     """
   valid: {
     resolved: """
       !schema {
-        positive_integer => !integer_type { chain: { supertypes: [integer] }  min: 1 }
+        positive_integer => !numeric.integer_type { chain: { supertypes: [integer] }  min: 1 }
 
-        non_empty_text => !text_type { chain: { supertypes: [text] }  min_length: 1 }
+        non_empty_text => !unicode.text_type { chain: { supertypes: [text] }  min_length: 1 }
 
-        documentation => @annotation !alias { target: text }
+        documentation => @meta.annotation !meta.alias { target: text }
+
+        record => !meta.record { fields: {
+          id      => !meta.record_field { type: uuid }
+          bounded => !meta.record_field { type: boolean }
+        } }
+
+        bounded => !numeric.integer_type { chain: { supertypes: [integer] }  min: 0  max: 9 }
+
+        type_kind => !meta.record { fields: { k => !meta.record_field { type: text } } }
+
+        template => !meta.record { fields: { body => !meta.record_field { type: text } } }
+
+        namespace => !meta.array { element_type: text }
       }
       """
   }

@@ -6,26 +6,26 @@
   valid: {
     resolved: """
       !schema {
-        pet => !record { chain: { subtypes: [dog] }  fields: {
-          pet_type => !record_field { type: text }
-          name     => !record_field { type: text }
+        pet => !meta.record { chain: { subtypes: [dog] }  fields: {
+          pet_type => !meta.record_field { type: text }
+          name     => !meta.record_field { type: text }
         }  extension: ABSTRACT  discriminators: [pet_type] }
 
-        dog => !record { chain: { supertypes: [pet] }  fields: {
-          pet_type => !record_field { type: text  optional: true  role: FIXED  value: "dog" }
-          name     => !record_field { type: text }
+        dog => !meta.record { chain: { supertypes: [pet] }  fields: {
+          pet_type => !meta.record_field { type: text  optional: true  role: FIXED  value: "dog" }
+          name     => !meta.record_field { type: text }
         } }
 
-        shape => !record { fields: {
-          area => !record_field { type: int32 }
+        shape => !meta.record { fields: {
+          area => !meta.record_field { type: int32 }
         }  extension: ABSTRACT }
 
-        reading => !record { fields: {
-          sensor => !record_field { type: text }
+        reading => !meta.record { fields: {
+          sensor => !meta.record_field { type: text }
         }  extension: FINAL }
 
-        plain => !record { fields: {
-          note => !record_field { type: text }
+        plain => !meta.record { fields: {
+          note => !meta.record_field { type: text }
         } }
       }
       """

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-importing-temporal-alone-does-not-see-numerics-types-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (the bundled libraries, proposed)"
+  description: """
+    temporal.tn imports the kernel alone, so a schema importing temporal.tn has `date` and nothing numeric.tn
+    declares: `int32` names no entry of its closure, and the schema does not load.
+    """
+  error: { category: resolver }
+}

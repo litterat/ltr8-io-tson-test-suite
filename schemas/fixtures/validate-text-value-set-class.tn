@@ -9,8 +9,8 @@
   string-class variants side by side and is not disjoint.
   """
 !schema {
-  port_label  => !text_type { members: ["80" "443"] }
-  answer      => !text_type { members: ["true" "false"] }
+  port_label  => !unicode.text_type { members: ["80" "443"] }
+  answer      => !unicode.text_type { members: ["true" "false"] }
 
   port_slot   => ( port_label | integer )
   answer_slot => ( answer | boolean )

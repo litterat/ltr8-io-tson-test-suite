@@ -10,12 +10,12 @@
   valid: {
     resolved: """
       !schema {
-        pair => !record { fields: {
-          a => !record_field { type: text }
-          b => !record_field { type: int32 }
+        pair => !meta.record { fields: {
+          a => !meta.record_field { type: text }
+          b => !meta.record_field { type: int32 }
         } }
 
-        count => !integer_type { min: 0 }
+        count => !numeric.integer_type { min: 0 }
       }
       """
   }

@@ -2,6 +2,6 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  pick => !record { fields: { a => { type: text  optional: true } b => { type: text  optional: true } }
+  pick => !meta.record { fields: { a => { type: text  optional: true } b => { type: text  optional: true } }
     groups: [ { members: [] } ] }
 }

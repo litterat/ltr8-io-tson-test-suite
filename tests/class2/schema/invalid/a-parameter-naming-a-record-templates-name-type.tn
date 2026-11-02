@@ -2,5 +2,5 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  named => <I> !record { fields: { v => { type: text } }  name_type: I }
+  named => <I> !meta.record { fields: { v => { type: text } }  name_type: I }
 }

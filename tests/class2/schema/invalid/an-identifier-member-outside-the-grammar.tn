@@ -2,7 +2,7 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  heading => !identifier ^ {
+  heading => !meta.identifier ^ {
     members: [north "2nd"]
   }
 }

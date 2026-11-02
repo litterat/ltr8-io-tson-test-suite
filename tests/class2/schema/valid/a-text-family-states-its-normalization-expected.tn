@@ -10,11 +10,11 @@
   valid: {
     resolved: """
       !schema {
-        charset => !text_type {
+        charset => !unicode.text_type {
           chain: { subtypes: [short_charset] }
           members: [UTF-8 us-ascii]  normalization: NFKC_CASEFOLD }
 
-        short_charset => !text_type {
+        short_charset => !unicode.text_type {
           chain: { supertypes: [charset] }
           max_length: 8
           members: [UTF-8 us-ascii]
