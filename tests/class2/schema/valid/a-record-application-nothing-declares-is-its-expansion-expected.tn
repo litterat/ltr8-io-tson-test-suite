@@ -2,7 +2,7 @@
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
-  description: "An application of a record template, written at a use site and declared nowhere, is its expansion: a closed synthetic record keyed on its content, @synthetic at its key, with no instantiation entry and no @application. box<int32> and crate<int32>, over two templates with one field list, are one entry."
+  description: "An application of a record template, written at a use site and declared nowhere, is its expansion: a closed synthetic record keyed on its content, @meta.synthetic at its key, with no instantiation entry and no @meta.application. box<int32> and crate<int32>, over two templates with one field list, are one entry."
   valid: {
     resolved: """
       !schema {

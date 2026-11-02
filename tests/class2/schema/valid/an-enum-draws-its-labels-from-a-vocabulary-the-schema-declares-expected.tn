@@ -13,7 +13,7 @@
   valid: {
     resolved: """
       !schema {
-        kebab => !meta.identifier_type { continue_add: "-"  pattern: "[a-z]+(-[a-z]+)*" }
+        kebab => !unicode.identifier_type { continue_add: "-"  pattern: "[a-z]+(-[a-z]+)*" }
 
         steps => !meta.enum_type { name_type: kebab  members: [make-tea drink-tea] }
       }

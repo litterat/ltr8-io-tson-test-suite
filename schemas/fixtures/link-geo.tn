@@ -2,8 +2,8 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
-  A fixture declaring a schema map nested as the entry `geo`, for the vector that imports this and
-  link-geo-alt.tn together.
+  A fixture contributing `address` to the schema map `geo`, for the vectors that import this beside
+  link-geo-alt.tn, which contributes another member, or link-geo-address.tn, which contributes the same one.
   """
 !schema {
   geo => !schema {

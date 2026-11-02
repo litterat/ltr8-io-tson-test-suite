@@ -7,5 +7,5 @@
   fields, read and judged as any record is.
   """
 !schema {
-  holder => { spec: meta.uuid_type }
+  holder => { spec: net.uuid_type }
 }

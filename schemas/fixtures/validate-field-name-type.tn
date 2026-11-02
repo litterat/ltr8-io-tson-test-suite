@@ -12,10 +12,10 @@
   are `folded`, an identifier type that folds case, and are matched in that form.
   """
 !schema {
-  json_name => !meta.identifier_type { start_add: "@$" }
+  json_name => !unicode.identifier_type { start_add: "@$" }
   node => !meta.record { name_type: json_name  fields: {
     "@id" => { type: text }  "$ref" => { type: text  optional: true }  label => { type: text } } }
-  words => !meta.identifier_type { continue_add: "-"  medial: " " }
+  words => !unicode.identifier_type { continue_add: "-"  medial: " " }
   row => !meta.record { name_type: words  fields: { "first name" => { type: text } } }
   plain => { a?: text }
   holder => !meta.record { name_type: json_name  fields: {
@@ -25,16 +25,16 @@
   ld_holder => { n: ld_node }
   address => json_record & { city: text }
   located => ld_node & address
-  folded => !meta.identifier_type { normalization: NFKC_CASEFOLD }
+  folded => !unicode.identifier_type { normalization: NFKC_CASEFOLD }
   frow => !meta.record { name_type: folded  fields: { name => { type: text } } }
-  header => !meta.identifier_type { start: ASCII  continue: ASCII  medial: "-"  normalization: ASCII_CASEFOLD }
+  header => !unicode.identifier_type { start: ASCII  continue: ASCII  medial: "-"  normalization: ASCII_CASEFOLD }
   headers => !meta.record { name_type: header  fields: { "content-type" => { type: text } } }
   page => <T> json_record & { "@id": T }
   jpage => page<text>
   jn => json_name
   jn_record => !meta.record { name_type: jn  extension: ABSTRACT  fields: {} }
   both => json_record & jn_record & { "@id": text }
-  id_record => !meta.record { name_type: identifier  extension: ABSTRACT  fields: {} }
+  id_record => !meta.record { name_type: meta.identifier  extension: ABSTRACT  fields: {} }
   id_plain => id_record & plain
   ld_pet => abstract json_record & { "@type": text =?  name: text }
   ld_dog => ld_pet & { "@type"?: = "dog"  breed: text }

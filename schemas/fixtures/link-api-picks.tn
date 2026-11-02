@@ -7,5 +7,5 @@
   !api_pick { ... }`: an instance of an ordinary type, and so a value entry and no type.
   """
 !schema {
-  api_pick => { pick: ref<api>  note?: text }
+  api_pick => { pick: meta.ref<api>  note?: text }
 }

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-schema-importing-numeric-and-net-has-both-libraries-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (the bundled libraries, proposed)"
+  description: """
+    numeric.tn and net.tn each import the kernel, and their closures meet there by identity rather than
+    colliding, so a schema importing both has each library's root types and machinery, and the kernel's once.
+    """
+  valid: {
+    binds: [device uuid ipv4 float64 uint16 numeric.float_type net.uuid_type meta.record]
+  }
+}

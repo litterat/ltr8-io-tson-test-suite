@@ -11,9 +11,9 @@
   always resolves to something (worst case, string). `valid` is therefore a plain REQUIRED field.
   """
 !schema {
-  number_form_sign  => !meta.enum [plus minus]
-  number_form_radix => !meta.enum [hex octal binary]
-  special_kind      => !meta.enum [nan infinity]
+  number_form_sign  => !enum [plus minus]
+  number_form_radix => !enum [hex octal binary]
+  special_kind      => !enum [nan infinity]
 
   exponent => {
     sign?: number_form_sign?

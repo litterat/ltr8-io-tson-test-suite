@@ -2,7 +2,7 @@
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.4"
-  description: "The author's @disjoint assertion is checked against the derived fact at schema load. The derivation is two-valued, so a marker on a choice that is not disjoint is an error and there is no third outcome."
+  description: "The author's @meta.disjoint assertion is checked against the derived fact at schema load. The derivation is two-valued, so a marker on a choice that is not disjoint is an error and there is no third outcome."
   error: {
     category: resolver
   }

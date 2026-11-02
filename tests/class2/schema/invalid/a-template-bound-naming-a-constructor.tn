@@ -2,5 +2,5 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  boxed => <T: meta.text_type> { a: T }
+  boxed => <T: unicode.text_type> { a: T }
 }

@@ -3,7 +3,7 @@
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
   widget  => { id: text }
-  records => ref<meta.record>
+  records => meta.ref<meta.record>
   holder  => { r: records }
   held    => !holder { r: widget }
 }

@@ -7,5 +7,5 @@
   imported entry is in that closure as any other is.
   """
 !schema {
-  stock_id => !meta.uuid_type {}
+  stock_id => !net.uuid_type {}
 }

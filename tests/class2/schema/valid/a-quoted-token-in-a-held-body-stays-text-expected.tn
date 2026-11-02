@@ -11,12 +11,12 @@
     resolved: """
       !schema {
         tagged => !meta.template {
-          parameters: [ !meta.template_param { name: N  type: meta.non_negative_integer } ]
-          template: "!meta.text_type { max_length: N  pattern: \\"box<N>\\" }"
+          parameters: [ !meta.template_param { name: N  type: numeric.non_negative_integer } ]
+          template: "!unicode.text_type { max_length: N  pattern: \\"box<N>\\" }"
         }
 
         @meta.application:tagged<3>
-        t3 => !meta.text_type { max_length: 3  pattern: "box<N>" }
+        t3 => !unicode.text_type { max_length: 3  pattern: "box<N>" }
       }
       """
   }

@@ -4,8 +4,8 @@
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
   description: """
     An entry of any kind can be an instantiation, so the application it is the instantiation of sits on its key, as
-    @synthetic does: order_api closes orders<order> to an instance of the namespace type interface, which carries
-    no chain, and its key states @application. A namespace entry is no type, and the fact is about the entry.
+    @meta.synthetic does: order_api closes orders<order> to an instance of the namespace type interface, which carries
+    no chain, and its key states @meta.application. A namespace entry is no type, and the fact is about the entry.
     """
   valid: {
     resolved: """

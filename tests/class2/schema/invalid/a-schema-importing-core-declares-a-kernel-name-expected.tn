@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §2.2.3"
   description: """
-    core.tn names the kernel's `meta.identifier` at its root by alias, `identifier`, and an import contributes
-    its whole namespace, so `identifier` is bound in this schema's closure. A local declaration may not reuse a
+    core.tn's closure holds the kernel, which declares `meta.identifier` under `meta`, and an import contributes
+    its whole namespace, so `meta.identifier` is bound in this schema's closure. A local declaration may not reuse a
     name the closure binds, and a schema's own identifier profile is declared under a name of its own.
     """
   error: {

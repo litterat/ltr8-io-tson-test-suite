@@ -7,5 +7,5 @@
   of it.
   """
 !schema {
-  steps => !meta.namespace { key_type: identifier  value_type: text }
+  steps => !meta.namespace { key_type: meta.identifier  value_type: text }
 }

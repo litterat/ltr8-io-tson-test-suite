@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-constructor-a-schema-contributes-to-meta-pins-its-facet.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-meta-contribution.tn"
+!tagged { c: abcde }

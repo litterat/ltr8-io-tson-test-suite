@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §2.2.3"
-  description: "`stock_id` is declared in an import, which contributes its whole namespace to the closure a kind's members are computed over. The schema applying `kind<uuid_type>` never names it, and its name is a value of the kind."
+  description: "`stock_id` is declared in an import, which contributes its whole namespace to the closure a kind's members are computed over. The schema applying `meta.kind<uuid_type>` never names it, and its name is a value of the kind."
   valid: _
 }

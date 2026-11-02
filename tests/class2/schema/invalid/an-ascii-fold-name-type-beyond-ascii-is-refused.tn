@@ -2,6 +2,6 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  folded => !meta.identifier_type { normalization: ASCII_CASEFOLD }
+  folded => !unicode.identifier_type { normalization: ASCII_CASEFOLD }
   row => !meta.record { name_type: folded  fields: { a => { type: text } } }
 }

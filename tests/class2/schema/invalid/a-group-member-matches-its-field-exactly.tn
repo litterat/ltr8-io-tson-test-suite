@@ -2,7 +2,7 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  folded => !meta.identifier_type { normalization: NFKC_CASEFOLD }
+  folded => !unicode.identifier_type { normalization: NFKC_CASEFOLD }
   row => !meta.record { name_type: folded
     fields: { name => { type: text  optional: true } email => { type: text  optional: true } }
     groups: [ { members: [ [NAME] [email] ] } ] }

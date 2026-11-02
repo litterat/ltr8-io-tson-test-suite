@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-constructor-a-schema-contributes-to-meta-builds-a-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §5.7 (open schema maps, proposed)"
+  description: "A schema may contribute a constructor to the kernel's open namespace `meta`, and apply it by its path: `meta.code_type` tightens `unicode.text_type` with `max_length` pinned to 4, so `code`, its instance, admits `abcd`."
+  valid: _
+}

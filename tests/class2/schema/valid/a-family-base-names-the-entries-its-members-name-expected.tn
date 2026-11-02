@@ -11,30 +11,30 @@
     resolved: """
       !schema {
         bounded => !meta.template {
-          parameters: [ !meta.template_param { name: M  type: meta.integer } ]
-          template: "!meta.integer_type { max: M }"
+          parameters: [ !meta.template_param { name: M  type: integer } ]
+          template: "!numeric.integer_type { max: M }"
         }
 
         pet => !meta.record {
           chain: { subtypes: [cat] }
           fields: {
-            kind => !meta.record_field { type: integer_type_9_xxhash  role: FIXED  value: N }
+            kind => !meta.record_field { type: numeric_integer_type_9_xxhash  role: FIXED  value: N }
             name => !meta.record_field { type: text }
           }
           discriminators: [kind]
-          parameters: [ !meta.template_param { name: N  type: integer_type_9_xxhash } ]
+          parameters: [ !meta.template_param { name: N  type: numeric_integer_type_9_xxhash } ]
         }
 
         @meta.application:pet<3>
         cat => !meta.record {
           chain: { supertypes: [pet] }
           fields: {
-            kind => !meta.record_field { type: integer_type_9_xxhash  role: FIXED  value: 3 }
+            kind => !meta.record_field { type: numeric_integer_type_9_xxhash  role: FIXED  value: 3 }
             name => !meta.record_field { type: text }
           }
         }
 
-        @meta.synthetic integer_type_9_xxhash => !meta.integer_type { max: 9 }
+        @meta.synthetic numeric_integer_type_9_xxhash => !numeric.integer_type { max: 9 }
       }
       """
   }

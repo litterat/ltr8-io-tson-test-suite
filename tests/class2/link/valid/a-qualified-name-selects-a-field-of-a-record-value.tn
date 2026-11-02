@@ -5,7 +5,7 @@
   endpoint  => { path: text }
   station   => { main: endpoint  backup?: endpoint }
   st        => !station { main: { path: "/a" } }
-  endpoints => ref<endpoint>
+  endpoints => meta.ref<endpoint>
   ep_pick   => { e: endpoints }
   ep        => !ep_pick { e: st.main }
 }

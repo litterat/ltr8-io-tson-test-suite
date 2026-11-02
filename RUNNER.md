@@ -182,9 +182,9 @@ the records involved, and the declaration is the whole of the shape — nothing 
 normative.
 
 A `class2/schema/` vector's expected resolved output is read under the subject's own imports, and under the
-pre-loaded kernel alone when the subject has none. For a subject importing `meta.tn` or `core.tn` that is the
-ordinary reading; a fixture that declares types of its own imports `meta.tn` and adds them, and a value of one of
-them is typed there and nowhere else.
+pre-loaded kernel alone when the subject has none. For a subject importing `meta.tn`, a library or `core.tn` that is
+the ordinary reading; a fixture that declares types of its own imports what it builds on and adds them, and a value of
+one of them is typed there and nowhere else.
 
 ## `proposed/`
 

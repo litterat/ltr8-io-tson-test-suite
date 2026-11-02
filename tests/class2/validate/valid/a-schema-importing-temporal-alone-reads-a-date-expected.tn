@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-schema-importing-temporal-alone-reads-a-date-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (the bundled libraries, proposed)"
+  description: """
+    temporal.tn imports the kernel alone and declares `date`, `duration` and the other temporal types at its root,
+    so a schema importing it alone types fields by them and by the kernel's `text`, and a document of that
+    schema validates.
+    """
+  valid: _
+}

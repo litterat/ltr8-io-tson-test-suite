@@ -3,7 +3,7 @@
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-DATA] §7.7"
   description: """
-    Each key of a namespace value is read under the type's `key_type`, as a map's is: `api`'s is `identifier`, and
+    Each key of a namespace value is read under the type's `key_type`, as a map's is: `api`'s is `meta.identifier`, and
     `1st` is no identifier, since an identifier never begins with a digit.
     """
   error: {

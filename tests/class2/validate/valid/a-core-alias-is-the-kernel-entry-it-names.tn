@@ -1,3 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/a-core-alias-is-the-kernel-entry-it-names.tn"
-!!import:"https://tson.io/test-suite/schemas/fixtures/validate-kernel-paths.tn"
-!pick { t: text }

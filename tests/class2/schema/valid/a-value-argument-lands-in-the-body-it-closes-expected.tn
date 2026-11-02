@@ -12,15 +12,15 @@
     resolved: """
       !schema {
         maxint => !meta.template {
-          parameters: [ !meta.template_param { name: N  type: meta.integer } ]
-          template: "!meta.integer_type { max: N }"
+          parameters: [ !meta.template_param { name: N  type: integer } ]
+          template: "!numeric.integer_type { max: N }"
         }
 
-        small => !meta.array { element_type: integer_type_10_xxhash }
+        small => !meta.array { element_type: numeric_integer_type_10_xxhash }
 
-        also => !meta.array { element_type: integer_type_10_xxhash }
+        also => !meta.array { element_type: numeric_integer_type_10_xxhash }
 
-        @meta.synthetic integer_type_10_xxhash => !meta.integer_type { max: 10 }
+        @meta.synthetic numeric_integer_type_10_xxhash => !numeric.integer_type { max: 10 }
       }
       """
   }

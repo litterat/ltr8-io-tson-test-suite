@@ -1,12 +1,12 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/meta-text-enum.tn"
 !!import:"https://tson.io/2026/39/m/meta.tn"
-@meta.doc:"""
+@doc:"""
   A meta layer declaring an enum constructor whose members may contain a space. `text_identifier` is a second
-  identifier family, and `text_enum` pins it as `name_type`, a slot the kernel types `identifier_kind`: the names
+  identifier family, and `text_enum` pins it as `name_type`, a slot the kernel types `meta.identifier_kind`: the names
   of the types built with `identifier_type`. `text_identifier` is one, in this schema's closure, so the pin is a
   member and the meta layer loads.
   """
 !schema {
-  text_identifier => !meta.identifier_type { continue_add: " " }
+  text_identifier => !unicode.identifier_type { continue_add: " " }
   text_enum       => meta.enum_type ^ { name_type?: = text_identifier }
 }

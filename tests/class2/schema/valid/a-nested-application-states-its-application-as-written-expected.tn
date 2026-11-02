@@ -4,9 +4,9 @@
   spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.2"
   description: """
     A nested application closes innermost first: `box<text>` is the entry `inner` declares, and `pair` is
-    applied to it. The entry's `@application` states the reference as written, its nested argument
+    applied to it. The entry's `@meta.application` states the reference as written, its nested argument
     unreduced, `pair<box<text> int32>`, and each level resolves structurally to the entry it closed to:
-    `box<text>` to `inner`, whose own `@application` is `box<text>`.
+    `box<text>` to `inner`, whose own `@meta.application` is `box<text>`.
     """
   valid: {
     resolved: """
@@ -29,10 +29,10 @@
           }
         }
 
-        @meta.application:box<meta.text>
-        inner => !meta.record { chain: { supertypes: [box] }  fields: { v => !meta.record_field { type: meta.text } } }
+        @meta.application:box<text>
+        inner => !meta.record { chain: { supertypes: [box] }  fields: { v => !meta.record_field { type: text } } }
 
-        @meta.application:pair<box<meta.text> int32>
+        @meta.application:pair<box<text> int32>
         outer => !meta.record {
           chain: { supertypes: [pair] }
           fields: {

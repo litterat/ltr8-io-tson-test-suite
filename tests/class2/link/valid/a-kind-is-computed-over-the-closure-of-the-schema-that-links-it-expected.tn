@@ -12,7 +12,7 @@
     binds: [text_enum meta.identifier_kind]
     members: [
       { name: meta.identifier_kind
-        members: [meta.field_name meta.identifier meta.param_name meta.scheme_name meta.type_name text_identifier] }
+        members: [meta.field_name meta.identifier meta.param_name net.scheme_name meta.type_name text_identifier] }
     ]
   }
 }

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-meta-contribution.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A schema contributing a constructor to the kernel's open namespace `meta`: `meta.code_type` tightens
+  `unicode.text_type`, pinning `max_length` to 4, and `code` is its instance, named by its path.
+  """
+!schema {
+  meta => !schema {
+    code_type => unicode.text_type ^ { max_length?: = 4 }
+  }
+  code   => !meta.code_type {}
+  tagged => { c: code }
+}

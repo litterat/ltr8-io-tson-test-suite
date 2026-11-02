@@ -10,7 +10,7 @@
   Where the schema layer compares a whole resolved document, this layer states individual facts
   about the linked namespace. That is deliberate and not laziness: linking derives three things and
   merges a fourth, and a vector that exercises one of them should not have to write out every
-  entry of core.tn to say so. Each list is optional, so a vector states only what it is about, and
+  entry of the closure to say so. Each list is optional, so a vector states only what it is about, and
   a sidecar stating none of them is an empty claim that `check_vectors.py` cannot catch but a
   reviewer can.
   """

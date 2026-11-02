@@ -2,6 +2,6 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  names => <M> !meta.enum [a b M]
+  names => <M> !enum [a b M]
   named => names<c>
 }

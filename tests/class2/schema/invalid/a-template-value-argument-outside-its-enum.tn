@@ -2,7 +2,7 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  header_name => !meta.identifier_type { start: NONE  continue: NONE
+  header_name => !unicode.identifier_type { start: NONE  continue: NONE
     start_add: "abcdefghijklmnopqrstuvwxyz"  continue_add: "abcdefghijklmnopqrstuvwxyz0123456789-"
     normalization: NFKC_CASEFOLD }
   safe_header => !meta.enum_type { name_type: header_name  members: [Accept content-type] }

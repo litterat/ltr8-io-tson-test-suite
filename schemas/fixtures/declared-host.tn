@@ -18,8 +18,8 @@
   }
 
   envelope => {
-    local:  declared
-    other:  declared
+    local:  meta.declared
+    other:  meta.declared
     closed: int32
   }
 }

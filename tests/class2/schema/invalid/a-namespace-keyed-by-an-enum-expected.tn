@@ -3,7 +3,7 @@
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §7.4"
   description: """
-    A namespace's keys are names, so its `key_type` is typed `identifier_kind`: the names of the types built
+    A namespace's keys are names, so its `key_type` is typed `meta.identifier_kind`: the names of the types built
     with `identifier_type`, which is what a qualified name's segment is. `verb` is built with `enum`, so it is
     no member, and the schema stating it as a key type fails to load where it is written. A closed set
     of names is an identifier family with `members`.

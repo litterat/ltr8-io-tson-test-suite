@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-constructor-a-schema-contributes-to-meta-pins-its-facet-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7 (open schema maps, proposed)"
+  description: "`code` is an instance of `meta.code_type`, the constructor this schema contributes to `meta`, which pins `max_length` to 4, so `abcde`, five code points, is refused."
+  error: {
+    category: validation
+  }
+}

@@ -16,7 +16,7 @@
   sidecar data, so there is no wire fidelity to preserve for them.
   """
 !schema {
-  core_value_form => !meta.enum [unquoted single-line multi-line]
+  core_value_form => !enum [unquoted single-line multi-line]
 
   token_core => {
     form: core_value_form
@@ -92,8 +92,8 @@
 
   @doc:"""
     One annotation (§3.1) -- a name and an optional value, itself a full data-value. Named
-    sidecar_annotation rather than annotation because core.tn's namespace already binds that name
-    (its own @annotation-tagged marker atom), and an import may not shadow one.
+    sidecar_annotation rather than annotation because the closure of core.tn, which this imports, already binds
+    that name (the kernel's `meta.annotation`), and an import may not shadow one.
     """
   sidecar_annotation => {
     name: text

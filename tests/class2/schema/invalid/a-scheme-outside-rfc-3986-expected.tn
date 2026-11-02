@@ -4,7 +4,7 @@
   spec: "[TSON-SCHEMA] §5.5"
   description: """
     A scheme is a letter followed by letters, digits, `+`, `-` and `.` (RFC 3986 §3.1); a space is none
-    of them, so `ht tp` is not a `scheme_name`.
+    of them, so `ht tp` is not a `net.scheme_name`.
     """
   error: {
     category: resolver

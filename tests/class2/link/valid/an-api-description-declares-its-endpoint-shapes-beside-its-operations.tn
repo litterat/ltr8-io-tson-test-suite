@@ -13,8 +13,8 @@
     place => !method { request: order  response: order }
   }
   post_order  => !binding { method: orders.place  verb: POST  route: "/orders" }
-  paged_ref   => ref<paged_get>
-  any_ref     => ref<operation>
+  paged_ref   => meta.ref<paged_get>
+  any_ref     => meta.ref<operation>
   catalog_of  => { gets: [paged_ref]  all: [any_ref] }
   catalog     => !catalog_of { gets: [list_orders]  all: [list_orders place_order] }
 }

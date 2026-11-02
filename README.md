@@ -109,7 +109,7 @@ multi-line token escapes nothing, so this stays inside the conservative subset R
 **No `schema/` subject declares a template**, and the reason is about where the comparison happens rather
 than about what §8 admits. A resolver holds an open entry's body as the application as written, held
 unread until materialisation (§5.10); the same declaration written as §8 output and read back binds an
-ordinary record body, a reference's segment being an `identifier` and a parameter being one. So the two sides
+ordinary record body, a reference's segment being an `meta.identifier` and a parameter being one. So the two sides
 of such a vector agree as documents and differ as values, and a runner comparing values has nothing it can
 state.
 
@@ -187,7 +187,7 @@ implementation under test, so a broken parser fails loudly rather than quietly a
 The circularity is the point.
 
 It also means the sidecars are held to their own schemas. `schemas/<layer>-sidecar.tn` is a real TSON
-schema importing the bundled meta.tn/core.tn chain, and each layer's sidecars import it with
+schema importing the bundled core.tn, and through it every bundled document, and each layer's sidecars import it with
 `!!import`. Each is one **field group** ([TSON-SCHEMA] §5.11) over the layer's outcomes, so exactly
 one of `valid`/`error`/`schema-document` is present and the member label *is* the outcome — there is
 no separate `outcome` field that could disagree with the payload beside it. `valid` cannot omit what
@@ -210,14 +210,19 @@ spliced in by a runner and nothing in a sidecar names a schema for the subject, 
 exactly what is on disk — the same reason the subject is a standalone file at all.
 
 The cost is that the bundled schemas' identities carry the spec revision, so a revision bump rewrites them
-in every subject that imports one, as it rewrites them in the fixtures. meta.tn is the kernel, every one of its
-declarations under one root entry, `meta`:
+in every subject that imports one, as it rewrites them in the fixtures. meta.tn is the kernel; numeric.tn,
+temporal.tn and net.tn are the data-format libraries, each importing the kernel alone; and core.tn imports the
+three, so one import has every bundled type, and declares the author annotations. Each keeps its root to the
+vocabulary an author writes and its machinery under a nested map of its own name, `meta` (open), `numeric`,
+`temporal` or `net`:
 
-| Bundled schema | Current identity                     |
-|----------------|--------------------------------------|
-| `meta.tn`      | `https://tson.io/2026/39/m/meta.tn`  |
-| `core.tn`      | `https://tson.io/2026/39/m/core.tn`  |
-| `net.tn`       | `https://tson.io/2026/39/m/net.tn`   |
+| Bundled schema | Current identity                        |
+|----------------|-----------------------------------------|
+| `meta.tn`      | `https://tson.io/2026/39/m/meta.tn`     |
+| `numeric.tn`   | `https://tson.io/2026/39/m/numeric.tn`  |
+| `temporal.tn`  | `https://tson.io/2026/39/m/temporal.tn` |
+| `net.tn`       | `https://tson.io/2026/39/m/net.tn`      |
+| `core.tn`      | `https://tson.io/2026/39/m/core.tn`     |
 
 The corpus's own schemas are named by their path under `schemas/` — so `fixtures/link-money.tn` is
 `https://tson.io/test-suite/schemas/fixtures/link-money.tn` — which is what lets the corpus grow a fixture

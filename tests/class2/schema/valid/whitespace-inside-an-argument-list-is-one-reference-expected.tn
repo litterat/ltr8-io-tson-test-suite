@@ -19,7 +19,7 @@
 
         written => !meta.array { element_type: record_v_text_xxhash }
 
-        @meta.synthetic record_v_text_xxhash => !meta.record { fields: { v => !meta.record_field { type: meta.text } } }
+        @meta.synthetic record_v_text_xxhash => !meta.record { fields: { v => !meta.record_field { type: text } } }
       }
       """
   }

@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-schema-importing-numeric-and-temporal-may-declare-mac.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-own-mac.tn"
+!mac { vendor: acme  model: m1  since: 2026-01-01  ports: 4 }

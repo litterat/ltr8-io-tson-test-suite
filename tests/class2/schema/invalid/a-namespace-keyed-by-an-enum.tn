@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-keyed-by-an-enum.tn"
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !schema {
-  verb     => !meta.enum [GET POST]
-  verb_map => !meta.namespace { key_type: verb  value_type: meta.text }
+  verb     => !enum [GET POST]
+  verb_map => !meta.namespace { key_type: verb  value_type: text }
 }

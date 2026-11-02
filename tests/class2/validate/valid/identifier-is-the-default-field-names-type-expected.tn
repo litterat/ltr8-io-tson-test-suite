@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.8"
-  description: "The default name type `field_name` is the kernel's alias of `identifier`, so a record stating `identifier` composes with one stating nothing."
+  description: "The default name type `meta.field_name` is the kernel's alias of `meta.identifier`, so a record stating `meta.identifier` composes with one stating nothing."
   valid: _
 }

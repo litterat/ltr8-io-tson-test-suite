@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-schema-importing-numeric-and-temporal-may-declare-mac-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (the bundled libraries, proposed)"
+  description: "numeric.tn and temporal.tn each import the kernel alone and declare no network type, so a schema importing them and not net.tn may declare `mac` for itself, typing its fields by both libraries' instances: the collision rule has nothing to collide with."
+  valid: _
+}

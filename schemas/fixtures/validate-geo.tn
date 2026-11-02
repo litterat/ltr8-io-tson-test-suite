@@ -7,5 +7,5 @@
     address  => { street: text }
     location => { at: geo.address  label?: text }
   }
-  type_pick => { t: kind<meta.record> }
+  type_pick => { t: meta.kind<meta.record> }
 }

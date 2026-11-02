@@ -16,11 +16,12 @@
   @doc:"""
     A resolved schema, as §8.1's ingest form: a `!schema` map from each name to the value its entry
     resolves to -- `name => !record { ... }`, a type body carrying its own `chain` --
-    exactly what `spec/m/*-resolved.tn` carry and what §8.2 keys identity on.
+    exactly what the spec's resolver-output fixtures (`*-resolved.tn`) carry and what §8.2 keys
+    identity on.
 
     Carried as a multi-line token rather than modelled field by field, which would restate meta.tn
     inside this schema and leave two statements of one shape to drift apart. A runner reads the text
-    with its own reader for meta.tn's `schema` -- so the payload is validated against the spec's own
+    with its own reader for meta.tn's `meta.schema` -- so the payload is validated against the spec's own
     schema, by the implementation under test, rather than against a paraphrase of it here. Nothing
     is escaped on the way: a multi-line token is raw text, which is why this stays inside the
     conservative sidecar subset RUNNER.md rule 2 states.
@@ -33,7 +34,7 @@
     No subject at this layer declares a template, and the reason is about where the comparison happens
     rather than about what §8 admits. A resolver holds an open entry's body as the application as
     written, held unread until materialisation (§5.10); the same declaration written as §8 output and
-    read back binds an ordinary record body, a reference's segment being an `identifier` and a parameter
+    read back binds an ordinary record body, a reference's segment being an `meta.identifier` and a parameter
     being one. So the two sides of a vector agree as documents and differ as values, and a runner
     comparing values -- which is what this layer's expected side is for -- has nothing it can state.
 

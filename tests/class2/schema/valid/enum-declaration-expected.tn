@@ -6,7 +6,7 @@
   valid: {
     resolved: """
       !schema {
-        colour => !meta.enum { members: [RED GREEN BLUE] }
+        colour => !enum { members: [RED GREEN BLUE] }
       }
       """
   }

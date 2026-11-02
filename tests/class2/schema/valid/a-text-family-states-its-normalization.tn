@@ -2,7 +2,7 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  charset => !meta.text_type { members: [UTF-8 us-ascii]  normalization: NFKC_CASEFOLD }
+  charset => !unicode.text_type { members: [UTF-8 us-ascii]  normalization: NFKC_CASEFOLD }
 
   short_charset => !charset ^ { max_length: 8  normalization: NFKC_CASEFOLD }
 }

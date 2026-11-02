@@ -3,5 +3,5 @@
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
   hosted => !meta.namespace { value_type: text }
-  keyed  => !meta.namespace { key_type: identifier  value_type: text  ordered: true }
+  keyed  => !meta.namespace { key_type: meta.identifier  value_type: text  ordered: true }
 }

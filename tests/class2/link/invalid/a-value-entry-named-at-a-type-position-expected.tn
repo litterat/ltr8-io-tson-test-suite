@@ -4,8 +4,8 @@
   spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §4.2"
   description: """
     An entry is a type exactly when its value is built by a constructor IS-A `type`. `chosen` is a value of the
-    record type `api_pick`, built by no constructor, so it is no member of `type_kind`, unmarked: the field `x`,
-    whose type slot is typed `type_kind`, names a value, and the schema is refused.
+    record type `api_pick`, built by no constructor, so it is no member of `meta.type_kind`, unmarked: the field `x`,
+    whose type slot is typed `meta.type_kind`, names a value, and the schema is refused.
     """
   error: {
     category: resolver

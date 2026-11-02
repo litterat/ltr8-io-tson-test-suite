@@ -10,7 +10,7 @@
   valid: {
     resolved: """
       !schema {
-        small => !meta.integer_type { chain: { supertypes: [int32 meta.integer] }  size: { bits: 32  signed: true }  min: 0  max: 10 }
+        small => !numeric.integer_type { chain: { supertypes: [int32 integer] }  size: { bits: 32  signed: true }  min: 0  max: 10 }
       }
       """
   }

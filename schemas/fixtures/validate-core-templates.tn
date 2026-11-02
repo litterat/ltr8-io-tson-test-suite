@@ -4,12 +4,12 @@
 @doc:"""
   Fields typed by core's container templates, applied at the field the way an author writes them
   ([TSON-SCHEMA] §5.10). `set<text>` is a set with no bound of its own: `set_type`'s bounds are
-  `array`'s, so the empty set is a set ([TSON-SCHEMA] §5.3). `tuple1<T>` and `voidable_tuple1<T>`
+  `array`'s, so the empty set is a set ([TSON-SCHEMA] §5.3). `meta.tuple1<T>` and `meta.voidable_tuple1<T>`
   are the one-position tuple the bracket sugar cannot spell, `[T]` being an array: one position,
   and one voidable position that admits the void sentinel.
   """
 !schema {
   tagged => { tags: set<text> }
-  pinned => { only: tuple1<text> }
-  slot   => { maybe: voidable_tuple1<int32> }
+  pinned => { only: meta.tuple1<text> }
+  slot   => { maybe: meta.voidable_tuple1<int32> }
 }

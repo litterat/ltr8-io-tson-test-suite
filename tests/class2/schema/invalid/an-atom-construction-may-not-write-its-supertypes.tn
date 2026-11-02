@@ -2,5 +2,5 @@
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
-  age => !meta.integer_type { chain: { supertypes: [int32] }  min: 0 }
+  age => !numeric.integer_type { chain: { supertypes: [int32] }  min: 0 }
 }

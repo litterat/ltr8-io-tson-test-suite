@@ -3,5 +3,5 @@
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
   order => { id: text }
-  rpick => { m: ref<order> }
+  rpick => { m: meta.ref<order> }
 }

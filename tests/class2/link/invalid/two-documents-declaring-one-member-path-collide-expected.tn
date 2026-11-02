@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/two-documents-declaring-one-member-path-collide-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (open schema maps, proposed)"
+  description: """
+    Two documents may contribute to one schema map, and a member path both declare is the ordinary collision:
+    link-geo.tn and link-geo-address.tn each declare `geo.address`, two entries of one name in the closure,
+    whatever their bodies, so a schema importing both does not load.
+    """
+  error: { category: resolver }
+}

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-geo-address.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A third document contributing to the schema map `geo`, declaring the member link-geo.tn declares,
+  `geo.address`. Each fixture is valid on its own; the collision on `geo.address` exists only in a schema
+  importing both.
+  """
+!schema {
+  geo => !schema {
+    address => { zip: text }
+  }
+}

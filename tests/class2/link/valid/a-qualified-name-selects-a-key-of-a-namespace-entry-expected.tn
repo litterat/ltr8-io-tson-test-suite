@@ -5,7 +5,7 @@
   description: """
     A qualified name whose first segment is an entry built with a namespace type: `myapi` resolves through the
     import to a value of `api`, and `place_order` selects a key of that map, whose value type, `method`, is the
-    type the slot `ref<method>` wants.
+    type the slot `meta.ref<method>` wants.
     """
   valid: {
     binds: [more_routes myapi]

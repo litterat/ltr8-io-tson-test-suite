@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-constructor-a-schema-contributes-to-meta-builds-a-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-meta-contribution.tn"
+!tagged { c: abcd }

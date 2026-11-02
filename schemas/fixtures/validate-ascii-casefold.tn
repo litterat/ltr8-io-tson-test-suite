@@ -10,10 +10,10 @@
   both admit a name however its ASCII letters are cased, and only `folded_name` admits a full-width spelling.
   """
 !schema {
-  field_name => !meta.identifier_type { start: NONE  continue: NONE
+  field_name => !unicode.identifier_type { start: NONE  continue: NONE
     start_add: "abcdefghijklmnopqrstuvwxyz"  continue_add: "abcdefghijklmnopqrstuvwxyz0123456789-"
     normalization: ASCII_CASEFOLD }
-  folded_name => !meta.identifier_type { start: NONE  continue: NONE
+  folded_name => !unicode.identifier_type { start: NONE  continue: NONE
     start_add: "abcdefghijklmnopqrstuvwxyz"  continue_add: "abcdefghijklmnopqrstuvwxyz0123456789-"
     normalization: NFKC_CASEFOLD }
   message => { fields?: {field_name => text}  folded?: {folded_name => text} }

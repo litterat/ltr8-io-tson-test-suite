@@ -3,22 +3,22 @@
 {
   spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.5, [TSON-DATA] §3.1 (the kernel under meta, proposed)"
   description: """
-    Every kernel declaration is a member of the schema map `meta`, the kernel document's one root entry, and
-    every name resolves from the root: a schema importing meta.tn applies `meta.integer_type`, types a field
-    `meta.text` and annotates with `@meta.doc`, each by its path. Resolved output tags each body by its
-    constructor's path.
+    The kernel declares its constructors as members of the schema map `meta` and its types at its root, and
+    every name resolves from the root: a schema importing meta.tn alone applies `numeric.integer_type`
+    and `unicode.text_type` by their paths, types fields `text` and `boolean` and annotates with `@doc`, each
+    a type of the kernel's loop, bare. Resolved output tags each body by its constructor's path.
     """
   valid: {
     resolved: """
       !schema {
-        percent => !meta.integer_type { min: 0  max: 100 }
+        percent => !numeric.integer_type { min: 0  max: 100 }
 
-        code => !meta.text_type { length: 2 }
+        code => !unicode.text_type { length: 2 }
 
         reading => !meta.record { fields: {
           at    => !meta.record_field { type: percent }
-          label => !meta.record_field { type: meta.text }
-          ok    => !meta.record_field { type: meta.boolean }
+          label => !meta.record_field { type: text }
+          ok    => !meta.record_field { type: boolean }
         } }
       }
       """
