@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/meta-forms.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+@doc:"""
+  A meta layer whose records hold a record's fields and name one of them. `form.fields` is typed by the kernel's
+  `meta.field_map`, an ordered map keyed by text, and `field_ref.field` is typed `meta.ref<meta.record_field>`, naming
+  a value of the kernel's `record_field`. An entry built with `forms` or `field_refs` is a value, and a processor
+  that binds binds each value of its map to a host class of its own: the records `form` and `field_ref`.
+  """
+!schema {
+  form       => { fields: meta.field_map }
+  forms      => !meta.namespace { key_type: meta.identifier  value_type: form }
+  field_ref  => { field: meta.ref<meta.record_field> }
+  field_refs => !meta.namespace { key_type: meta.identifier  value_type: field_ref }
+}

@@ -5,8 +5,7 @@
   description: """
     A namespace type is an instance of the kernel's `namespace`, and a value of it is a map from its `key_type` to
     its `value_type`. `value_type` is a required field of `namespace`, and `keyed` leaves it out, so the
-    construction is refused: it describes no map. `key_type` may be left out, the host of a value supplying the
-    family, as a record's fields are keyed by its `name_type`.
+    construction is refused: it describes no map.
     """
   error: {
     category: resolver

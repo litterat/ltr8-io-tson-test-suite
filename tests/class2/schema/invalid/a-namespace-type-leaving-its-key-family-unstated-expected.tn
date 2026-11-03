@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-type-leaving-its-key-family-unstated-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §7.2"
+  description: """
+    A namespace type is an instance of the kernel's `namespace`, and its keys are names of the family `key_type`
+    states. `key_type` is a required field of `namespace`, and `hosted` leaves it out, so the construction is
+    refused: no host supplies a namespace's key family. A record's fields are no namespace: `field_map` is an ordered
+    map keyed by text, each key judged by the record's `name_type`.
+    """
+  error: {
+    category: resolver
+  }
+}
