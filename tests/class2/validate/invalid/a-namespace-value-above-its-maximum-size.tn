@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-namespace-value-above-its-maximum-size.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-namespace-bounds.tn"
+!request {
+  headers: { accept => "text/plain"  user-agent => "probe"  host => "example.test" }
+}

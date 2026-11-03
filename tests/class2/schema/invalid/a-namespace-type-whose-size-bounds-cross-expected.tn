@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-type-whose-size-bounds-cross-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.7"
+  description: "A namespace type's `min_items` above its `max_items` admits no value of any size, as a map type's does: the pair is the map's, and its coherence rule comes with it."
+  error: {
+    category: resolver
+  }
+}

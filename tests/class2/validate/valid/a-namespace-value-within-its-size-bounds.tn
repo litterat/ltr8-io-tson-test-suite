@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-namespace-value-within-its-size-bounds.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-namespace-bounds.tn"
+!request {
+  headers: { accept => "text/plain"  user-agent => "probe" }
+}

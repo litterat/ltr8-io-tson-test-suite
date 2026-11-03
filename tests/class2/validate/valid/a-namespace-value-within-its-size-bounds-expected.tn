@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-namespace-value-within-its-size-bounds-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.7"
+  description: "Two entries, at `small`'s ceiling: a namespace type's size bounds are its map's, inclusive at both ends."
+  valid: _
+}
