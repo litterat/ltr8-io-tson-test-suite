@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-refinement-narrows-a-field-to-a-subtype-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §7.2"
+  description: """
+    A restated field's type may narrow to a type IS-A the inherited one. `employee` IS-A `person` by
+    composition and `count` IS-A `integer` by atom refinement, so `staffed` and `counted` narrow `team`'s
+    `lead` and `size` and IS-A `team`; `label` is a reference to `text`, the same type under another name, so
+    restating `title` with it is the identity restatement.
+    """
+  valid: {
+    subtypes: [
+      { name: team  subtypes: [staffed counted] }
+    ]
+  }
+}
