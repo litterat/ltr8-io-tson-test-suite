@@ -3,9 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
   description: """
-    What `of` names decides what a reference holds, never the template that spelled it. `record` is a
-    constructor, so `meta.ref<record>` is the same reference as `meta.kind<record>`: its values are types' names, and
-    `widget`, whose value is of `record`, is one.
+    What `of` names decides what a reference holds, never its spelling, which is one. `record` is a
+    constructor, so the values `meta.ref<record>` admits are types' names, and `widget`, whose value is of `record`,
+    is one.
     """
   valid: {
     binds: [records holder held]

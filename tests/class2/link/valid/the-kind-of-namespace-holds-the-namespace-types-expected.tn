@@ -5,7 +5,7 @@
   description: """
     A reference over a constructor holds the entries whose value is of it. A namespace type is an instance of
     `meta.namespace`, so the fixture's `api` and `router` and the kernel's `meta.schema` are members of
-    `meta.kind<meta.namespace>`, and so is the kernel root's `schema`, an alias of `meta.schema`, as a kind holds
+    `meta.ref<meta.namespace>`, and so is the kernel root's `schema`, an alias of `meta.schema`, as a kind holds
     every alias of a member. `meta.namespace` itself is declared as a record, its value of `meta.record`, and is no
     member, and `meta.field_map` is an ordered map keyed by text, an instance of `meta.map`, and no member either.
     `myapi` and `routes` are values of `api` and `router`, which are no constructors, so they are no members.

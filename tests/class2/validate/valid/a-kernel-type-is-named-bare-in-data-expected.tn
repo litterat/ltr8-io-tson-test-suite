@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12 (the kernel's constructors under meta, proposed)"
-  description: "The kernel declares its types at its root and its constructors under `meta`, so a name slot in data names the kernel's `text` bare, as a schema does: `text` is a member of `meta.kind<unicode.text_type>` because `unicode.text_type` built it."
+  description: "The kernel declares its types at its root and its constructors under `meta`, so a name slot in data names the kernel's `text` bare, as a schema does: `text` is a member of `meta.ref<unicode.text_type>` because `unicode.text_type` built it."
   valid: _
 }

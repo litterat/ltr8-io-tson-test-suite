@@ -4,7 +4,7 @@
   spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.6"
   description: """
     `os` is an entry built with the namespace type `orders`: a value, a map of `order` records, and no type,
-    so it is no member of `meta.kind<record>`.
+    so it is no member of `meta.ref<record>`.
     """
   error: {
     category: resolver

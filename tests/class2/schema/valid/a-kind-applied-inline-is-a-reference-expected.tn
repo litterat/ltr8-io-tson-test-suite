@@ -3,7 +3,7 @@
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.1"
   description: """
-    `meta.kind<uuid_type>` is the kernel's spelling of `!reference { of: uuid_type }`, and a declaration whose body
+    `meta.ref<uuid_type>` is the kernel's spelling of `!reference { of: uuid_type }`, and a declaration whose body
     is the application is the entry, closed in place under its author's name. The resolved form of either
     spelling is `of` alone: what each admits is judged when the schema links.
     """
@@ -14,7 +14,7 @@
 
         words => !unicode.identifier_type { continue_add: "-"  medial: " " }
 
-        @meta.application:meta.kind<net.uuid_type>
+        @meta.application:meta.ref<net.uuid_type>
         ids => !meta.reference { of: net.uuid_type }
 
         names => !meta.reference { of: unicode.identifier_type }

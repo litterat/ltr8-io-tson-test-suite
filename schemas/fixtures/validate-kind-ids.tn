@@ -3,12 +3,12 @@
 !!import:"https://tson.io/2026/39/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/validate-kind-stock.tn"
 @doc:"""
-  A kind-typed field: `ledger.named` is `meta.kind<uuid_type>`, whose values are the names of the types in this
+  A kind-typed field: `ledger.named` is `meta.ref<uuid_type>`, whose values are the names of the types in this
   schema's closure built with `uuid_type` -- `customer_id` declared here, `stock_id` from the import, and core's
   `uuid`. A value there is one of those names, never a uuid. `sku` is text, built with `text_type`, and no member.
   """
 !schema {
   customer_id => !net.uuid_type {}
   sku         => text
-  ledger      => { named: meta.kind<net.uuid_type> }
+  ledger      => { named: meta.ref<net.uuid_type> }
 }

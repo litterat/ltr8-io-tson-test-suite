@@ -7,7 +7,7 @@
   documentation    => @meta.annotation text
   record           => { id: uuid  bounded: boolean }
   bounded          => !integer ^ { min: 0  max: 9 }
-  type_kind        => { k: text }
+  type_ref        => { k: text }
   template         => { body: text }
   namespace        => [text]
 }

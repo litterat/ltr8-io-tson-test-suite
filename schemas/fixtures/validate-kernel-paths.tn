@@ -5,5 +5,5 @@
   stand at its root, `text`, and its constructors under `meta`, `numeric.integer_type`.
   """
 !schema {
-  pick => { t: meta.kind<unicode.text_type>  c?: meta.kind<meta.record> }
+  pick => { t: meta.ref<unicode.text_type>  c?: meta.ref<meta.record> }
 }

@@ -7,8 +7,8 @@
     roots to the vocabulary an author writes and their machinery under `meta` and `core`, so a schema
     importing core reserves `meta`, `core` and those roots' names, and the names a schema would use for its
     own types are left free: a sign bound, a length bound, a documentation annotation, and `record`,
-    `bounded`, `template`, `namespace` and `type_kind`, each a bundled name only by its path
-    (`meta.record`, `atom.bounded`, `meta.type_kind`), are each declared here, in a schema importing core.
+    `bounded`, `template`, `namespace` and `type_ref`, each a bundled name only by its path
+    (`meta.record`, `atom.bounded`, `meta.type_ref`), are each declared here, in a schema importing core.
     """
   valid: {
     resolved: """
@@ -26,7 +26,7 @@
 
         bounded => !numeric.integer_type { chain: { supertypes: [integer] }  min: 0  max: 9 }
 
-        type_kind => !meta.record { fields: { k => !meta.record_field { type: text } } }
+        type_ref => !meta.record { fields: { k => !meta.record_field { type: text } } }
 
         template => !meta.record { fields: { body => !meta.record_field { type: text } } }
 

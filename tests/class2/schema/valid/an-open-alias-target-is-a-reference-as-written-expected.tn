@@ -15,8 +15,8 @@
       !schema {
         pair => !meta.record {
           parameters: [
-            !meta.template_param { name: A  type: meta.type_kind }
-            !meta.template_param { name: B  type: meta.type_kind }
+            !meta.template_param { name: A  type: meta.type_ref }
+            !meta.template_param { name: B  type: meta.type_ref }
           ]
           fields: {
             first  => !meta.record_field { type: A }
@@ -25,7 +25,7 @@
         }
 
         uuid_pair => !meta.template {
-          parameters: [ !meta.template_param { name: B  type: meta.type_kind } ]
+          parameters: [ !meta.template_param { name: B  type: meta.type_ref } ]
           template: "!meta.alias { target: pair<uuid B> }"
         }
 

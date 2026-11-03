@@ -8,7 +8,7 @@
     side, with no meta layer. `paged_get` refines the imported record type `operation` and pins `method`, marked so
     a value may omit it; `list_orders` is a value entry read against `paged_get`, waiting on it as `paged_get`
     waits on the import, and writes no `method`, while `place_order` is a value of `operation` itself. A
-    response's `body` is a `meta.type_kind` slot: `order_page`, an alias closed from a template the same schema
+    response's `body` is a `meta.type_ref` slot: `order_page`, an alias closed from a template the same schema
     declares, and `order`, from the import, are both judged members of it. `orders` is a value of the namespace
     type `api`, and the binding's `meta.ref<method>` resolves into it by a qualified name. `list_orders` fills a
     `meta.ref<paged_get>` and, through `paged_get`'s IS-A edge, a `meta.ref<operation>` beside `place_order`.

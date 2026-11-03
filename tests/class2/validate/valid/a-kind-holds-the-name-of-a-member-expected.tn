@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-DATA] §7.7"
-  description: "A kind is an atom whose values are type names: `meta.kind<uuid_type>` holds the name of a type in the schema's closure built with `uuid_type`. `customer_id` is one, so the name is a value of the kind."
+  description: "A kind is an atom whose values are type names: `meta.ref<uuid_type>` holds the name of a type in the schema's closure built with `uuid_type`. `customer_id` is one, so the name is a value of the kind."
   valid: _
 }
