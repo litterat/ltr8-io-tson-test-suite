@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-number-bound-in-based-integer-form.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/numeric.tn"
+!schema {
+  at_least_sixteen => !number ^ { min: 0x10 }
+}

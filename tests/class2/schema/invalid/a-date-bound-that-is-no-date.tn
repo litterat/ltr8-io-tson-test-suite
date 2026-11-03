@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-date-bound-that-is-no-date.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/temporal.tn"
+!schema {
+  after_launch => !date ^ { min: "not-a-date" }
+}

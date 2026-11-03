@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-network-list-entry-with-host-bits-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (a network list typed by its family's network instance, proposed)"
+  description: """
+    `net.ipv4_type`'s `within` is typed `[cidr4]`, so each entry is read by `cidr4`'s reader. A network
+    has zero host bits beyond its prefix, and `10.0.0.1/8` does not, so the entry is no `cidr4` and the schema
+    does not load.
+    """
+  error: {
+    category: resolver
+  }
+}
