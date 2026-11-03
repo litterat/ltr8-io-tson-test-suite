@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-reference-spelled-meta-kind-is-unresolved-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2 (one reference spelling, proposed)"
+  description: """
+    A reference has one spelling, `meta.ref<T>`, whatever `T` names: over a constructor it holds the names of
+    the types built with it, and otherwise the names of values of `T`. The kernel declares no `kind` template
+    beside it, so `meta.kind<net.uuid_type>` applies a head that resolves to nothing, a resolver error at `ids`;
+    `meta.ref<net.uuid_type>` is the spelling.
+    """
+  error: {
+    category: resolver
+  }
+}

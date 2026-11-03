@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12 (the kernel's constructors under meta, proposed)"
-  description: "A kernel constructor is a member of the schema map `meta`, so a name slot in data names it by its path from the root, `numeric.integer_type`, exactly as a schema does: one name, one walk. `numeric.integer_type` is a record type, its declaration built with `meta.record`, so a member of `meta.kind<meta.record>`."
+  description: "A kernel constructor is a member of the schema map `meta`, so a name slot in data names it by its path from the root, `numeric.integer_type`, exactly as a schema does: one name, one walk. `numeric.integer_type` is a record type, its declaration built with `meta.record`, so a member of `meta.ref<meta.record>`."
   valid: _
 }

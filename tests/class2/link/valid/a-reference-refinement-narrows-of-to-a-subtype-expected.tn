@@ -13,7 +13,7 @@
     subtypes: [
       { name: products  subtypes: [maps namespaces] }
       { name: maps      subtypes: [namespaces] }
-      { name: meta.type_kind  subtypes: [meta.identifier_kind] }
+      { name: meta.type_ref  subtypes: [meta.identifier_ref] }
     ]
     members: [
       { name: namespaces  members: [api meta.schema schema] }

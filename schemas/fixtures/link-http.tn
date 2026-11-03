@@ -3,7 +3,7 @@
 @doc:"""
   An HTTP vocabulary written as an ordinary schema, standing in for the http project's http.tn: no meta layer, so a
   schema importing it declares its own endpoint shapes beside its operations. An `operation` is a record whose
-  `request` names a record type (`meta.kind<record>`) and whose responses each name a body type (`meta.type_kind`); a `method`
+  `request` names a record type (`meta.ref<record>`) and whose responses each name a body type (`meta.type_ref`); a `method`
   holds its request, response, error and reply types by name the same way, `api` is a namespace type mapping
   identifiers to methods, and a `binding` names the method it serves at a slot typed `meta.ref<method>`. A subject holds
   values of the records `operation`, `response`, `method` and `binding`.
@@ -12,9 +12,9 @@
   http_verb     => !enum [GET POST PUT DELETE]
   path_template => text
   status_name   => meta.identifier
-  response      => { status: int32  body?: meta.type_kind }
-  operation     => { method: http_verb  path: path_template  request?: meta.kind<meta.record>  responses: [response] }
-  method        => { request?: meta.kind<meta.record>  response?: meta.type_kind  errors?: [meta.kind<meta.record>]  replies?: {status_name => meta.kind<meta.record>} }
+  response      => { status: int32  body?: meta.type_ref }
+  operation     => { method: http_verb  path: path_template  request?: meta.ref<meta.record>  responses: [response] }
+  method        => { request?: meta.ref<meta.record>  response?: meta.type_ref  errors?: [meta.ref<meta.record>]  replies?: {status_name => meta.ref<meta.record>} }
   api           => !meta.namespace { key_type: meta.identifier  value_type: method }
   binding       => { method: meta.ref<method>  verb: http_verb  route: path_template }
 }

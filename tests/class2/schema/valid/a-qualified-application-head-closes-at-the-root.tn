@@ -8,5 +8,5 @@
   }
   boxed => geo.box<text>
   held  => { b: geo.box<int32> }
-  bases => meta.kind<geo.base>
+  bases => meta.ref<geo.base>
 }

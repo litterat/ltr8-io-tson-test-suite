@@ -4,8 +4,7 @@
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
   description: """
     `bar` is a record type and no constructor, so the values a reference over it admits are values of `bar`:
-    `meta.kind<bar>` is the same reference as `meta.ref<bar>`, and `b1`, an entry whose value is of `bar`, is a name it
-    holds.
+    `meta.ref<bar>` names values, and `b1`, an entry whose value is of `bar`, is a name it holds.
     """
   valid: {
     binds: [bars bar_pick bp]

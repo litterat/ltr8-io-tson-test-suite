@@ -13,15 +13,15 @@
       !schema {
         box => !meta.record {
           chain: { subtypes: [inner] }
-          parameters: [ !meta.template_param { name: T  type: meta.type_kind } ]
+          parameters: [ !meta.template_param { name: T  type: meta.type_ref } ]
           fields: { v => !meta.record_field { type: T } }
         }
 
         pair => !meta.record {
           chain: { subtypes: [outer] }
           parameters: [
-            !meta.template_param { name: A  type: meta.type_kind }
-            !meta.template_param { name: B  type: meta.type_kind }
+            !meta.template_param { name: A  type: meta.type_ref }
+            !meta.template_param { name: B  type: meta.type_ref }
           ]
           fields: {
             a => !meta.record_field { type: A }

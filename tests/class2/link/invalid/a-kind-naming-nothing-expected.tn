@@ -5,7 +5,7 @@
   description: """
     `no_such` resolves to no entry of the schema's namespace, its own entries and its import closure's, the
     meta layer's among them, so it is no member of
-    `meta.kind<record>`.
+    `meta.ref<record>`.
     """
   error: {
     category: resolver

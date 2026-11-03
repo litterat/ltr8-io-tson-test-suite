@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6"
-  description: "A data document is untouched by values by name, having no namespace of its own to resolve a name in, so a bare token fills a record's one positional field whatever its type (§5.6): 42 is a cell's value, and cell at a slot's position its type -- a kind-typed fill, the name judged a member of `meta.kind<record>` in the imported schema's namespace, which is where a data document's kind values resolve."
+  description: "A data document is untouched by values by name, having no namespace of its own to resolve a name in, so a bare token fills a record's one positional field whatever its type (§5.6): 42 is a cell's value, and cell at a slot's position its type -- a kind-typed fill, the name judged a member of `meta.ref<record>` in the imported schema's namespace, which is where a data document's kind values resolve."
   valid: _
 }

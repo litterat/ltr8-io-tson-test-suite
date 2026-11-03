@@ -3,6 +3,6 @@
 !schema {
   stock_id => !net.uuid_type {}
   words    => !unicode.identifier_type { continue_add: "-"  medial: " " }
-  ids      => meta.kind<net.uuid_type>
+  ids      => meta.ref<net.uuid_type>
   names    => !meta.reference { of: unicode.identifier_type }
 }

@@ -23,7 +23,7 @@
           }
           discriminators: [status]
           parameters: [
-            !meta.template_param { name: T  type: meta.type_kind }
+            !meta.template_param { name: T  type: meta.type_ref }
             !meta.template_param { name: S  type: int32 }
           ]
         }
