@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-namespace-value-below-its-minimum-size-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.7"
+  description: "`small` states `min_items: 1`, a map's facet its refinement `meta.namespace` keeps, so an empty namespace value is refused as an empty map of that type would be."
+  error: {
+    category: validation
+    path: "/headers"
+  }
+}

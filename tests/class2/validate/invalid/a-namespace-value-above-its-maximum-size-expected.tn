@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-namespace-value-above-its-maximum-size-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.7"
+  description: "Three entries against `small`'s `max_items: 2`: the ceiling is the map's, and a namespace value above it is refused."
+  error: {
+    category: validation
+    path: "/headers"
+  }
+}

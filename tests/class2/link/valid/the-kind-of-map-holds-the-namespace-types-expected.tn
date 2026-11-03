@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/the-kind-of-map-holds-the-namespace-types-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.7"
+  description: """
+    `meta.namespace` is a refinement of `meta.map` and IS-A it, so a namespace type, an instance of
+    `meta.namespace`, is a member of `meta.kind<meta.map>` beside the plain map types: the fixture's `headers`,
+    the kernel's `meta.schema` and its root alias `schema`, then `labels` and the kernel's `meta.field_map`,
+    instances of `meta.map` itself.
+    """
+  valid: {
+    members: [
+      { name: maps  members: [headers labels meta.field_map meta.schema schema] }
+    ]
+  }
+}
