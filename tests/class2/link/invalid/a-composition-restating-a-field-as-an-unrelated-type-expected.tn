@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-composition-restating-a-field-as-an-unrelated-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.8"
+  description: """
+    A composition body's field that names an inherited field is a tightening entry and follows §5.7's
+    refinement rules, its type among them: `int32` is neither `text` nor IS-A it, so `sample`, which IS-A
+    `reading`, cannot restate `value` with it. The new field `taken` is admitted; the restatement is not.
+    """
+  error: {
+    category: resolver
+  }
+}
