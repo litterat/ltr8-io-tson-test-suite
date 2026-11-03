@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-huge-width-reads-a-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6, §9 (`numeric.integer_size`)"
+  description: "A width of three billion bits loads and reads: a value of sixty digits is inside the signed width, and 42 inside the unsigned one. The width's range is never built; membership is the value's bit length."
+  valid: _
+}

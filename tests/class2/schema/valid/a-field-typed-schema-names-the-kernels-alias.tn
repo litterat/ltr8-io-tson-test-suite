@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-field-typed-schema-names-the-kernels-alias.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!schema {
+  bundle => { name: text  types: schema }
+}

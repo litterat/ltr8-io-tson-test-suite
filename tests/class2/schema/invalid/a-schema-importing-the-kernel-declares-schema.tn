@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-importing-the-kernel-declares-schema.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!schema {
+  schema => { name: text  version: integer }
+}

@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/widening-a-wide-width-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, §9 (`numeric.integer_size`)"
+  description: """
+    A refinement may only tighten, and a 6000-bit unsigned width admits values a 5000-bit one does not, so refining
+    one to the other widens it, as refining `uint8` to 16 bits would. Two widths compare by their bits, however
+    many.
+    """
+  error: { category: resolver }
+}

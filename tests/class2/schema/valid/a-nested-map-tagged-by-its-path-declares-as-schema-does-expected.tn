@@ -1,0 +1,27 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-nested-map-tagged-by-its-path-declares-as-schema-does-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §8.1 (nested schema maps, proposed)"
+  description: """
+    The kernel root's `schema` is an alias of `meta.schema`, so a nested map tagged by the target's path,
+    `!meta.schema { … }`, as resolved output writes one, declares exactly as one tagged `!schema` does: its members
+    are entries named by their path from the root. Resolved output writes it `!meta.schema`, as it writes every
+    nested map.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        geo => !meta.schema {
+          address => !meta.record { fields: {
+            street => !meta.record_field { type: text }
+            city   => !meta.record_field { type: text }
+          } }
+        }
+
+        place => !meta.record { fields: {
+          where => !meta.record_field { type: geo.address }
+        } }
+      }
+      """
+  }
+}

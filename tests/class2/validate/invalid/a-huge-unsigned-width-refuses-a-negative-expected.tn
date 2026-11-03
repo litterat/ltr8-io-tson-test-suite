@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-huge-unsigned-width-refuses-a-negative-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6, §9 (`numeric.integer_size`)"
+  description: "An unsigned width admits no negative value however many bits it has, so `-1` is outside a three-billion-bit unsigned width."
+  error: {
+    category: validation
+  }
+}

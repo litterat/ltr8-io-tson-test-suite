@@ -1,0 +1,29 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-import-free-schema-declares-schema-and-nests-a-map-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §4.1 (the kernel's root names, nested schema maps, proposed)"
+  description: """
+    The kernel's names enter a schema only by import, so a schema importing nothing may declare `schema`, as it may
+    declare `int64`. A tag still names the pre-loaded kernel's: the root's `!schema` and a nested map's are the
+    kernel root's `schema`, an alias of `meta.schema`, whatever the document imports or declares, so `geo` is a
+    nested map and no declaration captures its tag. Everywhere else the name is the schema's own: `geo.point.of`
+    is typed by the local record `schema`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        schema => !meta.record { fields: {
+          title => !meta.record_field { type: label }
+        } }
+
+        label => !meta.record { fields: {} }
+
+        geo => !meta.schema {
+          point => !meta.record { fields: {
+            of => !meta.record_field { type: schema }
+          } }
+        }
+      }
+      """
+  }
+}

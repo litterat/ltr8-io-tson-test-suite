@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-import-free-schema-declares-schema-and-nests-a-map.tn"
+!schema {
+  schema => { title: label }
+  label  => {}
+  geo    => !schema {
+    point => { of: schema }
+  }
+}
