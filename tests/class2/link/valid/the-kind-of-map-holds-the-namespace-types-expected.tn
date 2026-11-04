@@ -5,12 +5,12 @@
   description: """
     `meta.namespace` is a refinement of `meta.map` and IS-A it, so a namespace type, an instance of
     `meta.namespace`, is a member of `meta.ref<meta.map>` beside the plain map types: the fixture's `headers`,
-    the kernel's `meta.schema` and its root alias `schema`, then `labels` and the kernel's `meta.field_map`,
-    instances of `meta.map` itself.
+    the kernel's `meta.schema` and its root alias `schema`, then `labels` and the kernel's `meta.field_map` and
+    `meta.record_template_field_map`, instances of `meta.map` itself.
     """
   valid: {
     members: [
-      { name: maps  members: [headers labels meta.field_map meta.schema schema] }
+      { name: maps  members: [headers labels meta.field_map meta.record_template_field_map meta.schema schema] }
     ]
   }
 }

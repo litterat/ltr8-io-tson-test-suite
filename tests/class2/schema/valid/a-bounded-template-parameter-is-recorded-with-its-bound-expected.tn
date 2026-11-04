@@ -2,12 +2,12 @@
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.1"
-  description: "A type written after a parameter name is read by the kind the parameter's positions give. `T` stands in `meta.record_field.type`, a `meta.type_ref` slot, so it is a type parameter, and `: text` is its bound: an argument must name a type that IS-A `text`. Resolved output is the record template itself, a `record` with `parameters`, and records both facts on the parameter, the kind as `type: meta.type_ref` and the restriction as `bound`."
+  description: "A type written after a parameter name is read by the kind the parameter's positions give. `T` stands for a field's type, a `meta.type_ref` slot, so it is a type parameter, and `: text` is its bound: an argument must name a type that IS-A `text`. Resolved output is the record template itself, a `record_template` whose field names `T` as its `type_param`, and records both facts on the parameter, the kind as `type: meta.type_ref` and the restriction as `bound`."
   valid: {
     resolved: """
       !schema {
-        boxed => !meta.record {
-          fields: { a => !meta.record_field { type: T } }
+        boxed => !meta.record_template {
+          fields: { a => !meta.record_template_field { type_param: T } }
           parameters: [ !meta.template_param { name: T  type: meta.type_ref  bound: text } ]
         }
       }
