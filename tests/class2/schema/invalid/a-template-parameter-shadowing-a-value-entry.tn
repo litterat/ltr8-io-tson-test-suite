@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-parameter-shadowing-a-value-entry.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  point  => { x: int32  y: int32 }
+  origin => !point { x: 0  y: 0 }
+  boxed  => <origin> { v: origin }
+}
