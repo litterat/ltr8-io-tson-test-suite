@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-inherited-literal-spelled-like-a-parameter-stays-a-literal.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  base => { kind?: text = T }
+  fam  => <T> base & { v: T }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-literal-value-on-a-field-typed-by-a-parameter-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    A literal value needs a closed type: what a token means is decided by the type it is read as, and `v` has a
+    different type in every application of `box`. A field typed by a parameter takes a value parameter or no value.
+    """
+  error: {
+    category: resolver
+  }
+}

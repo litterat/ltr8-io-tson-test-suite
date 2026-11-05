@@ -15,11 +15,11 @@
           template: "!numeric.integer_type { max: M }"
         }
 
-        pet => !meta.record {
+        pet => !meta.record_template {
           chain: { subtypes: [cat] }
           fields: {
-            kind => !meta.record_field { type: numeric_integer_type_9_xxhash  role: FIXED  value: N }
-            name => !meta.record_field { type: text }
+            kind => !meta.record_template_field { type: numeric_integer_type_9_xxhash  role: FIXED  value_param: N }
+            name => !meta.record_template_field { type: text }
           }
           discriminators: [kind]
           parameters: [ !meta.template_param { name: N  type: numeric_integer_type_9_xxhash } ]

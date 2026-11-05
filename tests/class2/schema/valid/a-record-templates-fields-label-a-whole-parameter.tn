@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-record-templates-fields-label-a-whole-parameter.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  box  => <X> { v: X }
+  slot => <T, V, N> { a: T  b: box<T>  c?: T ~ V  d?: int32 ~ N  e?: text ~ "x" }
+}

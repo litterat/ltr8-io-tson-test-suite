@@ -10,18 +10,18 @@
   valid: {
     resolved: """
       !schema {
-        result => !meta.record {
+        result => !meta.record_template {
           parameters: [ !meta.template_param { name: T  type: meta.type_ref } ]
-          fields: { value => !meta.record_field { type: T  optional: true } }
+          fields: { value => !meta.record_template_field { type_param: T  optional: true } }
           extension: ABSTRACT
         }
 
-        ok => !meta.record {
+        ok => !meta.record_template {
           chain: { parents: [result<T>] }
           parameters: [ !meta.template_param { name: T  type: meta.type_ref } ]
           fields: {
-            value => !meta.record_field { type: T  optional: true }
-            done  => !meta.record_field { type: boolean }
+            value => !meta.record_template_field { type_param: T  optional: true }
+            done  => !meta.record_template_field { type: boolean }
           }
         }
       }
