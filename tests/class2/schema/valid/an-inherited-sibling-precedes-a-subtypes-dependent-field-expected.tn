@@ -1,0 +1,23 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-inherited-sibling-precedes-a-subtypes-dependent-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.8"
+  description: """
+    The sibling rules are checked against the flattened record, and flattening puts inherited fields first: `kind`,
+    declared in `base`, precedes `cell`'s own `v`, so `v` may depend on it.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        base => !meta.record { chain: { subtypes: [cell] }  fields: {
+          kind => !meta.record_field { type: meta.type_ref }
+        } }
+
+        cell => !meta.record { chain: { supertypes: [base] }  fields: {
+          kind => !meta.record_field { type: meta.type_ref }
+          v    => !meta.record_field { type: kind!  optional: true }
+        } }
+      }
+      """
+  }
+}

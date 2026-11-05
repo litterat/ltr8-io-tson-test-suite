@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-default-on-a-dependent-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    A dependent field carries no default: its type is not fixed at its declaration, so neither is the type a default
+    would be read against. `5` may be a value of the type one instance's `kind` names and not of another's.
+    """
+  error: {
+    category: resolver
+  }
+}

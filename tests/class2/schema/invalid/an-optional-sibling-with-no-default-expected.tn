@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-optional-sibling-with-no-default-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    A sibling must always be there to read: required, defaulted or pinned. `kind` may be missing with nothing supplied
+    in its place, and a `v` written without it would have no type.
+    """
+  error: {
+    category: resolver
+  }
+}

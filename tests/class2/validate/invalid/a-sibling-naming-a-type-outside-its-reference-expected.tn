@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-sibling-naming-a-type-outside-its-reference-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §4.2"
+  description: """
+    `shaped.kind` is a `meta.ref<meta.record>`, and `int32` is built with `integer_type`: the sibling's own reference
+    refuses the name, an ordinary reference error, and `v` is not read.
+    """
+  error: {
+    category: validation
+    path: "/kind"
+  }
+}

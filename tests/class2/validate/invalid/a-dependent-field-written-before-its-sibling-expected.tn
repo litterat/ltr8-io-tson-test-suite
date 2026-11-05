@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-dependent-field-written-before-its-sibling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.5, [TSON-SCHEMA] §5.2"
+  description: """
+    A record's field order is insignificant but for one exception: a free sibling, neither pinned nor a discriminator,
+    precedes the field that depends on it, as a `!tag` precedes the value it types, so a reader never holds a value it
+    cannot yet type. `cell.kind` is free, and `v` is written before it, so `v` is refused, naming both.
+    """
+  error: {
+    category: validation
+    path: "/v"
+  }
+}

@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-discriminator-sibling-may-follow-its-dependent-field.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-dependent-fields.tn"
+!rack { s: { v: 5  kind: int32 } }

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-reference-followed-by-an-adjacent-token-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §7.5, [TSON-SCHEMA] §12.3"
+  description: """
+    A postfix `!` is followed by whitespace, which is what keeps it apart from a prefix `!`, itself adjacent to the
+    token after it: `a!b` could be read either way, as a sibling reference to `a` or a tag on `b`, so it does not
+    parse.
+    """
+  error: {
+    category: resolver
+  }
+}

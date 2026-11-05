@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-reference-as-a-refinement-source-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.7"
+  description: """
+    A sibling reference stands only at a record field's type. In sugar it parses wherever a reference does, written
+    with the whitespace its `!` needs, and desugaring refuses it anywhere else: the source of `^` is no record field's
+    type, and an entry has no siblings, so `kind! ^ {}` is refused.
+    """
+  error: {
+    category: resolver
+  }
+}

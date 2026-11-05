@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-dependent-field-restated-with-a-named-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.7"
+  description: """
+    A dependent field may be restated only as itself. `int_cell` pins `kind` to `int32`, which already makes every
+    `int_cell`'s `v` an `int32`, and restating `v` as `int32` besides is refused: the field stays `kind!` on every
+    member of the family, and the pin is what fixes its type.
+    """
+  error: {
+    category: resolver
+  }
+}

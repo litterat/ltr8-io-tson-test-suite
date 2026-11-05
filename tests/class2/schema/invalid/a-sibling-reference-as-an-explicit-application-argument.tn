@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-reference-as-an-explicit-application-argument.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  box  => <T> { item: T }
+  cell => !meta.record { fields: { kind => meta.type_ref  v => box< kind! > } }
+}

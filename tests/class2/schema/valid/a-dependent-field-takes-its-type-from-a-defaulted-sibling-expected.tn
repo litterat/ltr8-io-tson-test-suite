@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-dependent-field-takes-its-type-from-a-defaulted-sibling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    A sibling need not be written, only always there to read: `kind` defaults to `int32`, so an instance that omits it
+    reads `v` as an `int32`. The default is a type's name, a value of `meta.type_ref`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        cell => !meta.record { fields: {
+          kind => !meta.record_field { type: meta.type_ref  optional: true  role: DEFAULT  value: int32 }
+          v    => !meta.record_field { type: kind!  optional: true }
+        } }
+      }
+      """
+  }
+}

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-dependent-value-mismatching-the-type-its-sibling-names-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    `v` is typed per instance: `5` is an `int32` where the first cell's `kind` says so, and is no `point` where the
+    second's does.
+    """
+  error: {
+    category: validation
+    path: "/cells/1/v"
+  }
+}

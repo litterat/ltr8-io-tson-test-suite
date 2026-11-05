@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-dependent-field-restated-with-a-named-type.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  cell     => { kind: meta.type_ref  v?: kind! }
+  int_cell => cell ^ { kind?: = int32  v?: int32 }
+}

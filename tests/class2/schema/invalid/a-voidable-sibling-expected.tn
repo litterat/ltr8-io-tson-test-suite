@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-voidable-sibling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    A voidable sibling may hold `_`, which names no type, so a `v` written beside it would have none to be read
+    against.
+    """
+  error: {
+    category: resolver
+  }
+}

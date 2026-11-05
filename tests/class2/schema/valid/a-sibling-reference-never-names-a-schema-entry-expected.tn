@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-sibling-reference-never-names-a-schema-entry-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §4.2"
+  description: """
+    The `!` keeps a sibling apart from a schema entry of the same name: a field named `text` does not capture the type
+    `text`. `w: text` names the entry and `v?: text!` names the field, in source and in resolved output alike.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        cell => !meta.record { fields: {
+          text => !meta.record_field { type: meta.type_ref }
+          v    => !meta.record_field { type: text!  optional: true }
+          w    => !meta.record_field { type: text }
+        } }
+      }
+      """
+  }
+}

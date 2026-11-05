@@ -1,0 +1,23 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-sibling-typed-by-a-narrower-reference-types-a-dependent-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §4.2"
+  description: """
+    A sibling may be typed by any reference whose `of` lies within `meta.type`, so that every value it holds names a
+    type: `records` holds the names of the types built with `record`, and `v` is read against whichever one an
+    instance names.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        @meta.application:meta.ref<meta.record>
+        records => !meta.reference { of: meta.record }
+
+        shape => !meta.record { fields: {
+          kind => !meta.record_field { type: records }
+          v    => !meta.record_field { type: kind!  optional: true }
+        } }
+      }
+      """
+  }
+}

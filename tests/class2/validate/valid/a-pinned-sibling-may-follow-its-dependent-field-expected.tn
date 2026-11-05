@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-pinned-sibling-may-follow-its-dependent-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.5, [TSON-SCHEMA] §5.2"
+  description: """
+    A pinned sibling fixes the dependent field's type when the schema compiles, so the order rule does not reach it:
+    `int_cell` reads `v` as an `int32` before it meets the `kind` that restates the pin.
+    """
+  valid: _
+}

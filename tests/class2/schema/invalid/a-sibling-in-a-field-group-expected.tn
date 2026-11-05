@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-in-a-field-group-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.11"
+  description: """
+    A field group's member is present only when its option is chosen, and is never supplied: whenever `name` is the
+    option written, `v` would have no type. A group member is refused as a sibling, as an optional field with no
+    default is.
+    """
+  error: {
+    category: resolver
+  }
+}
