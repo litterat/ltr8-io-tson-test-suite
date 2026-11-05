@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-parameter-spelled-like-an-operands-argument.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  mode => !enum [T U]
+  two  => <A, M> { a: A  m?: mode ~ M }
+  pair => <V> { z: two<V, T> }
+  t3   => <T> pair<T> & { x: T }
+}
