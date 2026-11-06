@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-dependent-fields-record-value-is-read-against-the-type-its-sibling-names-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §4.1"
+  description: """
+    A value entry's dependent field may hold a value of any form, here a record, read against the type its sibling
+    names: `web`'s `kind` names `endpoint`, so `{ port: 8080  host: example }` is read by `endpoint`'s fields, and the
+    entry resolves to itself, the record as written.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        web => !setting { kind: endpoint  value: { port: 8080  host: example } }
+      }
+      """
+  }
+}

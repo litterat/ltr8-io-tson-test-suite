@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-qualified-name-goes-on-into-a-dependent-fields-record-value.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  setting  => { kind: meta.type_ref  value?: kind! }
+  server   => { port: int32  host?: text }
+  web      => !setting { kind: server  value: { port: 8080  host: example } }
+  ints     => meta.ref<int32>
+  int_pick => { i: ints }
+  chosen   => !int_pick { i: web.value.port }
+}
