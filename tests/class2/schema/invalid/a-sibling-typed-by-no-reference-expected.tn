@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-typed-by-no-reference-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    A sibling must be typed by a reference that names types -- `meta.type_ref`, a `meta.ref<C>`, or a refinement of
+    either -- so that every value it holds names a type to read the dependent field against. An `int32` names none.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-sibling-reference-is-no-value-of-a-type-reference-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    A sibling reference stands only at a record field's type, `record_field.type` in the kernel, typed
+    `meta.field_type_ref`. A user field typed `meta.type_ref` holds the name of a type: the reference atom reads
+    `kind!`, and `meta.type_ref`'s `allow_sibling: false` refuses it, a constraint the value breaks, as NaN breaks a
+    `float_type` that withdraws `allow_nan`.
+    """
+  error: {
+    category: validation
+    path: "/kind"
+  }
+}

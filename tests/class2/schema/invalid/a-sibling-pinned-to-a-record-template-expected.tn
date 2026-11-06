@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-pinned-to-a-record-template-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    A sibling's pin names a type a value can be read against, and a template is not one until it is applied: `box`
+    names no type to read `v` by, and reading never starts a materialisation. Refused at the declaration.
+    """
+  error: {
+    category: resolver
+  }
+}

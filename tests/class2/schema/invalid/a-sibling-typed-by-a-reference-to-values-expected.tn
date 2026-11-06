@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-typed-by-a-reference-to-values-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §4.2"
+  description: """
+    A reference's `of` decides what its values name, and a sibling's `of` must lie within `meta.type`.
+    `meta.ref<method>` holds the names of values of `method`, not of types, so `v` would have no type to be read
+    against.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,30 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-family-may-discriminate-on-a-dependent-fields-sibling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.8"
+  description: """
+    A sibling may be a discriminator, since dispatch reads it first in any case. `cell` is selected on `kind`, and
+    each member pins it to a distinct type's name, so each member reads `v` with a fixed reader while the base reads
+    it against whatever `kind` names.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        cell => !meta.record { chain: { subtypes: [int_cell text_cell] }  fields: {
+          kind => !meta.record_field { type: meta.type_ref }
+          v    => !meta.record_field { type: kind!  optional: true }
+        }  extension: ABSTRACT  discriminators: [kind] }
+
+        int_cell => !meta.record { chain: { supertypes: [cell] }  fields: {
+          kind => !meta.record_field { type: meta.type_ref  optional: true  role: FIXED  value: int32 }
+          v    => !meta.record_field { type: kind!  optional: true }
+        } }
+
+        text_cell => !meta.record { chain: { supertypes: [cell] }  fields: {
+          kind => !meta.record_field { type: meta.type_ref  optional: true  role: FIXED  value: text }
+          v    => !meta.record_field { type: kind!  optional: true }
+        } }
+      }
+      """
+  }
+}

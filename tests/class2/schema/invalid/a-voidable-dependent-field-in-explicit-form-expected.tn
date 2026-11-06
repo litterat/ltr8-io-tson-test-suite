@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-voidable-dependent-field-in-explicit-form-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: """
+    A dependent field is never voidable, and the explicit form, which can state the fact, is refused for stating it:
+    `voidable: true` beside `type: kind!` admits a `_` that is no value of the type `kind` names.
+    """
+  error: {
+    category: resolver
+  }
+}

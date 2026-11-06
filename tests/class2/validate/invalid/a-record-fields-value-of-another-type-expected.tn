@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-record-fields-value-of-another-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: """
+    The kernel's `record_field.value` is typed `type!`, so read as data a record field's `value` is read against the
+    type its own `type` names: `5` is no member of `boolean`, an ordinary validation error at the value.
+    """
+  error: {
+    category: validation
+    path: "/value"
+  }
+}

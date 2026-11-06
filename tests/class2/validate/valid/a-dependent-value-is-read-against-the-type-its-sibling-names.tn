@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-dependent-value-is-read-against-the-type-its-sibling-names.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-dependent-fields.tn"
+!sheet {
+  cells: [
+    { kind: int32  v: 5 }
+    { kind: point  v: { x: 1  y: 2 } }
+    { kind: text   v: hello }
+  ]
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-reference-is-one-segment-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §7.4, [TSON-SCHEMA] §5.2"
+  description: """
+    A sibling reference is one unquoted token of one segment. `a.b!` would project through the value of `a`, a chained
+    projection that is no part of the grammar, so it is refused.
+    """
+  error: {
+    category: resolver
+  }
+}

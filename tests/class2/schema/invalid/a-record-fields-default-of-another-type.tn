@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-fields-default-of-another-type.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  config => !meta.record { fields: {
+    port => !meta.record_field { type: int32  optional: true  role: DEFAULT  value: "nope" }
+  } }
+}

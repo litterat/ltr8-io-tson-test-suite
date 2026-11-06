@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-sibling-reference-is-no-value-of-a-type-reference.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-dependent-fields.tn"
+!cell { kind: kind!  v: 5 }

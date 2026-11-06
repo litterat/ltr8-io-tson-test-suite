@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-dependent-field-takes-its-type-from-a-required-sibling.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  cell => { kind: meta.type_ref  v?: kind!  w: kind! }
+}

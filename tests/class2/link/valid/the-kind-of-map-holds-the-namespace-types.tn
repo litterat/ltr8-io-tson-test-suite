@@ -2,5 +2,5 @@
 !!import:"https://tson.io/test-suite/schemas/fixtures/meta-headers.tn"
 !schema {
   labels => !meta.map { key_type: meta.identifier  value_type: text }
-  maps   => !meta.reference { of: meta.map }
+  maps   => !meta.reference_type { of: meta.map }
 }

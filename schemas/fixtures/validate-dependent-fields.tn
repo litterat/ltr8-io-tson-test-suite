@@ -1,0 +1,24 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-dependent-fields.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  Dependent fields: `cell.v` is typed `kind!`, so each cell's `v` is read against the type its own `kind` names.
+  `defaulted.kind` defaults to `int32` and `int_cell` pins it, so either supplies the type when `kind` is absent.
+  `shaped.kind` is a `meta.ref<meta.record>`, which holds the names of the types built with `record`, such as
+  `point`, and of no other type. `box` is a record template, which no value is read against until it is applied.
+  `slot` is a family discriminated on its sibling `kind`, each member pinning it.
+  """
+!schema {
+  point     => { x: int32  y: int32 }
+  records   => meta.ref<meta.record>
+  cell      => { kind: meta.type_ref  v?: kind! }
+  int_cell  => cell ^ { kind?: = int32 }
+  defaulted => { kind?: meta.type_ref ~ int32  v?: kind! }
+  shaped    => { kind: records  v?: kind! }
+  sheet     => { cells: [cell] }
+  box       => <T> { item: T }
+  slot      => abstract { kind: meta.type_ref =?  v?: kind! }
+  int_slot  => slot & { kind?: = int32 }
+  text_slot => slot & { kind?: = text }
+  rack      => { s: slot }
+}

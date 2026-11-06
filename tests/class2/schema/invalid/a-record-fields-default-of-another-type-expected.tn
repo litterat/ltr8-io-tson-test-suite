@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-fields-default-of-another-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: """
+    The kernel's `record_field.value` is typed `type!`, a dependent field over the record field's own `type`: a
+    default is read against the type its field names, so `"nope"` beside `type: int32` is an ordinary type mismatch
+    found while reading the schema, with no prose rule to apply. Category is `resolver`, as every error that stops a
+    schema loading is.
+    """
+  error: {
+    category: resolver
+  }
+}

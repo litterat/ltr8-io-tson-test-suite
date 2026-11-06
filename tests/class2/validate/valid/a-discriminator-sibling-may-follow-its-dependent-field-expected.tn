@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-discriminator-sibling-may-follow-its-dependent-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.5, [TSON-SCHEMA] §5.2"
+  description: """
+    Only a free sibling orders the fields of a document. `slot` is selected on `kind`, and member dispatch finds the
+    discriminator before any field is read, wherever it is written: `int_slot` is chosen and pins `kind`, so `v` has a
+    fixed reader when the reader reaches it.
+    """
+  valid: _
+}

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-defaulted-sibling-types-a-mismatching-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    `kind` is omitted, so its default `int32` types `v`, and `3000000000` is outside `int32`'s range, a validation
+    error. A reader that left the default out would have nothing to judge `v` by.
+    """
+  error: {
+    category: validation
+    path: "/v"
+  }
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-record-template-field-may-take-its-type-from-a-sibling.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  pair => <T> { kind: meta.type_ref  v?: kind!  w: T }
+  p    => pair<text>
+}

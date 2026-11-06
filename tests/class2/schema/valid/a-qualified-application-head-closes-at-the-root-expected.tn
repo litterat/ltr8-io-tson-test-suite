@@ -4,8 +4,9 @@
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (qualified names, proposed)"
   description: """
     An application's head and a reference's `of` are qualified names like any other: `geo.box<text>` closes the
-    template `box` of `geo`, and `meta.ref<geo.base>` is `!reference { of: geo.base }`. A closed application is minted at
-    the root, as every synthetic is, whatever map its head is a member of; `@meta.application` states the head by its path.
+    template `box` of `geo`, and `meta.ref<geo.base>` is `!reference_type { of: geo.base  allow_sibling: false }`.
+    A closed application is minted at the root, as every synthetic is, whatever map its head is a member of;
+    `@meta.application` states the head by its path.
     """
   valid: {
     resolved: """
@@ -29,7 +30,7 @@
         held => !meta.record { fields: { b => !meta.record_field { type: record_item_int32_xxhash } } }
 
         @meta.application:meta.ref<geo.base>
-        bases => !meta.reference { of: geo.base }
+        bases => !meta.reference_type { of: geo.base  allow_sibling: false }
 
         @meta.synthetic record_item_int32_xxhash => !meta.record { fields: { item => !meta.record_field { type: int32 } } }
       }

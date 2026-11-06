@@ -1,0 +1,24 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-reference-refinement-may-withdraw-allow-sibling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.1"
+  description: """
+    `allow_sibling` is a permission of `meta.reference_type`, as `allow_nan` is of `float_type`: true by default,
+    the widest reading, and a refinement may withdraw it. `slot_type` written straight from the constructor admits a
+    sibling reference, `kind!`, and `record_ref` narrows it to the type references alone; the resolved form writes
+    the facet where it is withdrawn and leaves it out at its default.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        slot_type => !meta.reference_type { chain: { subtypes: [record_ref] }  of: meta.record }
+
+        record_ref => !meta.reference_type {
+          chain: { supertypes: [slot_type] }
+          of: meta.record
+          allow_sibling: false
+        }
+      }
+      """
+  }
+}
