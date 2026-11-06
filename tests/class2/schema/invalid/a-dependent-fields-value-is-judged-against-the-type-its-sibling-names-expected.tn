@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-dependent-fields-value-is-judged-against-the-type-its-sibling-names-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-DATA] §8.1"
+  description: """
+    A value entry's dependent field is read against the type its sibling names, as in a data document. `limit`'s
+    `kind` names `int32`, and `abc` is no value of `int32`, so the schema does not load: a resolver error, the value
+    being judged while the schema is resolved.
+    """
+  error: {
+    category: resolver
+  }
+}

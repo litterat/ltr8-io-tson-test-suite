@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-dependent-fields-record-value-is-read-against-the-type-its-sibling-names.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-settings.tn"
+!schema {
+  web => !setting { kind: endpoint  value: { port: 8080  host: example } }
+}

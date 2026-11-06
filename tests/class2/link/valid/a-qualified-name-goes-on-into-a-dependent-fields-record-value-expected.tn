@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-qualified-name-goes-on-into-a-dependent-fields-record-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12"
+  description: """
+    A qualified name goes on through a dependent field into the value it holds. `web`'s `kind` names `server`, so
+    `web.value` is a value of `server`, the record `{ port: 8080  host: example }`, and `web.value.port` is its
+    `port`, a value of `int32`, filling a slot typed `meta.ref<int32>`.
+    """
+  valid: {
+    binds: [web chosen]
+  }
+}

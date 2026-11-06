@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-dependent-fields-record-value-is-judged-by-the-named-types-fields.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  setting => { kind: meta.type_ref  value?: kind! }
+  server  => { port: int32 }
+  web     => !setting { kind: server  value: { port: 8080  host: example } }
+}

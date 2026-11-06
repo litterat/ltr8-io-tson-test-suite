@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-dependent-fields-record-value-is-judged-by-the-named-types-fields-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-DATA] §8.1"
+  description: """
+    A record held at a value entry's dependent field is read by the fields of the type its sibling names. `server`
+    declares no `host`, and a record is closed under its type, so the schema does not load.
+    """
+  error: {
+    category: resolver
+  }
+}
