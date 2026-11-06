@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-qualified-name-goes-on-through-a-dependent-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12"
+  description: """
+    A segment selecting a dependent field reaches a value of the type its sibling names in the same record
+    value. `port` is a value of `setting` whose `kind` names `text`, so `port.value` is a value of `text` and
+    fills a slot typed `meta.ref<text>`.
+    """
+  valid: {
+    binds: [port chosen]
+  }
+}

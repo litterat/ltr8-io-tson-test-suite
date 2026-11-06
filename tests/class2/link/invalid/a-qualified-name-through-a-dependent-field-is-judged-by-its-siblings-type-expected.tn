@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-qualified-name-through-a-dependent-field-is-judged-by-its-siblings-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12"
+  description: """
+    A dependent field's value is of the type its sibling names in the same record value, and a name reaching
+    it is judged by that type. `port`'s `kind` names `int32`, so `port.value` is a value of `int32`, which is
+    no `text`, at a slot typed `meta.ref<text>`.
+    """
+  error: {
+    category: resolver
+  }
+}

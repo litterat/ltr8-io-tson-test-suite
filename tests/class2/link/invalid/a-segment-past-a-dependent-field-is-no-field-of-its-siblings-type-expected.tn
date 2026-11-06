@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-segment-past-a-dependent-field-is-no-field-of-its-siblings-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12"
+  description: """
+    Past a dependent field a segment selects a field of the type its sibling names in the same record value.
+    `defaults`' `kind` names `server`, which declares the field `port` and no field `host`, so
+    `defaults.value.host` names nothing, whatever the value holds.
+    """
+  error: {
+    category: resolver
+  }
+}

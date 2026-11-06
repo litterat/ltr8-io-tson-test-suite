@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-qualified-name-through-a-dependent-field-is-judged-by-its-siblings-type.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  setting   => { kind: meta.type_ref  value?: kind! }
+  port      => !setting { kind: int32  value: 8080 }
+  texts     => meta.ref<text>
+  text_pick => { t: texts }
+  chosen    => !text_pick { t: port.value }
+}
