@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §5.2"
   description: """
-    `kind` is omitted, so its default `int32` types `v`, and `hello` is no `int32`. A reader that left the default out
-    would have nothing to judge `v` by.
+    `kind` is omitted, so its default `int32` types `v`, and `3000000000` is outside `int32`'s range, a validation
+    error. A reader that left the default out would have nothing to judge `v` by.
     """
   error: {
     category: validation

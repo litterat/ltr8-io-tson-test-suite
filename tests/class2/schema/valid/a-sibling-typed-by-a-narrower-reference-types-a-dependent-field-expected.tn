@@ -11,7 +11,7 @@
     resolved: """
       !schema {
         @meta.application:meta.ref<meta.record>
-        records => !meta.reference { of: meta.record }
+        records => !meta.reference_type { of: meta.record  allow_sibling: false }
 
         shape => !meta.record { fields: {
           kind => !meta.record_field { type: records }

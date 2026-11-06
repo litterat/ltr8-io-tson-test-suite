@@ -4,5 +4,5 @@
   stock_id => !net.uuid_type {}
   words    => !unicode.identifier_type { continue_add: "-"  medial: " " }
   ids      => meta.ref<net.uuid_type>
-  names    => !meta.reference { of: unicode.identifier_type }
+  names    => !meta.reference_type { of: unicode.identifier_type  allow_sibling: false }
 }
