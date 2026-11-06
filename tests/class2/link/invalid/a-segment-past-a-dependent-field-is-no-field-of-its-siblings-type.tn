@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-segment-past-a-dependent-field-is-no-field-of-its-siblings-type.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  server     => { port: int32 }
+  setting    => { kind: meta.type_ref  value?: kind! }
+  defaults   => !setting { kind: server }
+  ports      => meta.ref<int32>
+  port_pick  => { p: ports }
+  chosen     => !port_pick { p: defaults.value.host }
+}
