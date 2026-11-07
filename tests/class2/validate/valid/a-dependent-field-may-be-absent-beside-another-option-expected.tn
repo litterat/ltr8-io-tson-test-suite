@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-dependent-field-may-be-absent-beside-another-option-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.11"
+  description: """
+    The group chooses `name`, so the sibling `kind` is absent, and `v` is absent with it: nothing is read against the
+    sibling, and nothing is checked.
+    """
+  valid: _
+}

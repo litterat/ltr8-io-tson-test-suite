@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-in-a-group-made-required-by-a-refinement-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.7"
+  description: """
+    The sibling's rules are checked against the flattened record, so a refinement that makes an optional dependent
+    field required answers to them as a declaration does: `must.v` is required beside a sibling in a field group.
+    """
+  error: {
+    category: resolver
+  }
+}

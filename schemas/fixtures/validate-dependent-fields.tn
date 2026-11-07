@@ -6,7 +6,9 @@
   `defaulted.kind` defaults to `int32` and `int_cell` pins it, so either supplies the type when `kind` is absent.
   `shaped.kind` is a `meta.ref<meta.record>`, which holds the names of the types built with `record`, such as
   `point`, and of no other type. `box` is a record template, which no value is read against until it is applied.
-  `slot` is a family discriminated on its sibling `kind`, each member pinning it.
+  `slot` is a family discriminated on its sibling `kind`, each member pinning it. `grouped.kind` is a field group's
+  member, absent when `name` is chosen, and `labelled.v` is a dependent field that is a group's member itself. `spec`
+  holds a kernel `meta.record_template_field`, whose `value` is typed `type!`.
   """
 !schema {
   point     => { x: int32  y: int32 }
@@ -21,4 +23,7 @@
   int_slot  => slot & { kind?: = int32 }
   text_slot => slot & { kind?: = text }
   rack      => { s: slot }
+  grouped   => { ( kind: meta.type_ref | name: text )  v?: kind! }
+  labelled  => { ( kind: meta.type_ref | name: text )  ( v: kind! | w: text )? }
+  spec      => { field: meta.record_template_field }
 }

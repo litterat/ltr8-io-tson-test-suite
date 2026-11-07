@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-group-member-sibling-types-its-dependent-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.11"
+  description: """
+    `kind` is a member of a field group, chosen here and written first, so `v` is read against the type it names.
+    """
+  valid: _
+}
