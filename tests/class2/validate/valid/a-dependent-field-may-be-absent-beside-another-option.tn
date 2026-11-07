@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-dependent-field-may-be-absent-beside-another-option.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-dependent-fields.tn"
+!grouped { name: x }

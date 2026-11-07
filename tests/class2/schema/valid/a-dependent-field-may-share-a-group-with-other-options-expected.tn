@@ -1,0 +1,28 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-dependent-field-may-share-a-group-with-other-options-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.11, [TSON-SCHEMA] §8.1"
+  description: """
+    A group's member is declared optional, so a dependent field that is a member counts as optional and may take its
+    type from a sibling in another group. This is `meta.record_template_field`'s shape: `( type | type_param )` beside
+    `( value: type! | value_param )?`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        cell => !meta.record {
+          fields: {
+            kind => !meta.record_field { type: meta.type_ref  optional: true }
+            name => !meta.record_field { type: text  optional: true }
+            v    => !meta.record_field { type: kind!  optional: true }
+            w    => !meta.record_field { type: text  optional: true }
+          }
+          groups: [
+            !meta.field_group { members: [[kind] [name]] }
+            !meta.field_group { members: [[v] [w]]  optional: true }
+          ]
+        }
+      }
+      """
+  }
+}

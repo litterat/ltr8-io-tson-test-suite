@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-in-a-field-group.tn"
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-sibling-may-be-a-field-group-member.tn"
 !!import:"https://tson.io/2026/39/m/meta.tn"
 !!import:"https://tson.io/2026/39/m/core.tn"
 !schema {
