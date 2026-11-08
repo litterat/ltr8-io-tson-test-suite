@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-order-picks.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A schema whose record `order_pick` holds a value by name: its field `which` is typed `order_ref`,
+  `meta.ref<order>`, a reference over a record type, so it names a value of `order` ([TSON-SCHEMA] §4.2, §5.12);
+  `defaulted_pick`'s field writes the same reference inline and defaults to `o1`. The schema holds such values as
+  entries: `o1`, a value of `order`; `r1`, a value of `rush_order`, a subtype of `order`; `c1`, a value of
+  `customer`, which is no `order`; and `book`, a value of the namespace type `orders`, whose keys hold values of
+  `order`, so `book.first` names one. An entry built with a record type or a namespace type is a value, not a type,
+  and a processor that binds binds each to a host class of its own: the records `order`, `rush_order` and
+  `customer`.
+  """
+!schema {
+  order          => { id: text }
+  rush_order     => order & { by: text }
+  customer       => { name: text }
+  orders         => !meta.namespace { key_type: meta.identifier  value_type: order }
+  order_ref      => meta.ref<order>
+  order_pick     => { which: order_ref }
+  defaulted_pick => { which?: meta.ref<order> ~ o1 }
+  o1             => !order { id: "A-1" }
+  r1             => !rush_order { id: "R-1"  by: noon }
+  c1             => !customer { name: Ada }
+  book           => !orders { first => { id: "B-1" } }
+}

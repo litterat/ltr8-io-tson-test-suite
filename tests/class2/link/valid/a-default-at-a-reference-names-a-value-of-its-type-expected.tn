@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-default-at-a-reference-names-a-value-of-its-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12"
+  description: """
+    A field's default is a value of the field's own type (§5.2). `order_ref` names values of `order`, so its value is
+    a value's name, judged by what it reaches as a value body's names are: `o1` is a value of `order`.
+    """
+  valid: {
+    binds: [defaulted_pick]
+  }
+}

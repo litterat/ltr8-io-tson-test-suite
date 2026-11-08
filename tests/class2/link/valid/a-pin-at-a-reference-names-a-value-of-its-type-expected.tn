@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-pin-at-a-reference-names-a-value-of-its-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12"
+  description: """
+    A pin is judged as a default is: `o1` is an entry whose value is of `order`, so it is a value of
+    `meta.ref<order>`.
+    """
+  valid: {
+    binds: [defaulted_pick]
+  }
+}

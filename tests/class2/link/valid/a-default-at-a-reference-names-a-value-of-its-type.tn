@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-default-at-a-reference-names-a-value-of-its-type.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  order          => { id: text }
+  customer       => { name: text }
+  o1             => !order { id: A-1 }
+  c1             => !customer { name: Ada }
+  order_ref      => meta.ref<order>
+  defaulted_pick => { which?: order_ref ~ o1 }
+}

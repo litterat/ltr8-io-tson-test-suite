@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-inline-reference-slot-refuses-a-value-of-another-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-order-picks.tn"
+!defaulted_pick { which: c1 }

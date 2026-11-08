@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-reference-slot-refuses-a-qualified-name-to-a-missing-key-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12 (qualified names, proposed)"
+  description: """
+    `book` holds the key `first` and no `second`, so `book.second` reaches no value.
+    """
+  error: {
+    category: validation
+    path: "/which"
+  }
+}
