@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-reference-of-applying-an-unresolved-argument-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.10"
+  description: "An application in a reference's `of` closes as one at any type position does, so its arguments are judged as that application's are: `nope` names nothing in scope, `box<nope>` denotes no type, and `r` refers to none."
+  error: {
+    category: resolver
+  }
+}
