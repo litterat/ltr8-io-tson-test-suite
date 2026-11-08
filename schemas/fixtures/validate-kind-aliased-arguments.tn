@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-kind-aliased-arguments.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A kind-typed field naming an application whose arguments are aliases. `user_id` is an alias of `uuid`, and `uid` an
+  alias of `user_id`, so each is `uuid` under another name; `order_id` refines `uuid`, a type of its own. The schema
+  closes `box<uuid>` as `boxed` and `box<box<uuid>>` as `nested`, and closes no application over `order_id`.
+  `holder.t` holds the name of any type.
+  """
+!schema {
+  box      => <T> { v: T }
+  user_id  => uuid
+  uid      => user_id
+  order_id => !uuid ^ {}
+  boxed    => box<uuid>
+  nested   => box<box<uuid>>
+  holder   => { t: meta.type_ref }
+}

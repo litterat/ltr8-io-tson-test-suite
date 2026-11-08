@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-kind-compares-a-nested-applications-arguments-past-their-aliases.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-kind-aliased-arguments.tn"
+!holder { t: box<box<uid>> }
