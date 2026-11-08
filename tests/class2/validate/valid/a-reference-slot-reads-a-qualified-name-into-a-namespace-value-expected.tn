@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-reference-slot-reads-a-qualified-name-into-a-namespace-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12 (qualified names, proposed)"
+  description: """
+    A data document's name resolves in the governing schema as a schema's own does: `book` is a value of the
+    namespace type `orders`, its further segment selects the key `first`, and the value there is of `orders`'s
+    `value_type`, `order`.
+    """
+  valid: _
+}

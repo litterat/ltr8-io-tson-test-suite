@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-reference-slot-reads-a-name-reaching-a-value-of-a-subtype.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-order-picks.tn"
+!order_pick { which: r1 }

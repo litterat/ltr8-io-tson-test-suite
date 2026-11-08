@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-inline-reference-slot-refuses-a-value-of-another-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
+  description: """
+    `defaulted_pick`'s field is typed by `meta.ref<order>` written inline, which names values of `order` as the named
+    `order_ref` does, and `c1` is a value of `customer`.
+    """
+  error: {
+    category: validation
+    path: "/which"
+  }
+}

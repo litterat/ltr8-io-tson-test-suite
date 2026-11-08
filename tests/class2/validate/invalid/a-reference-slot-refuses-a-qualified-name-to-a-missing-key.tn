@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-reference-slot-refuses-a-qualified-name-to-a-missing-key.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-order-picks.tn"
+!order_pick { which: book.second }

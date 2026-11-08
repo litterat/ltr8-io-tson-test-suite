@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-inline-reference-default-is-a-value-the-data-may-omit.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-order-picks.tn"
+!defaulted_pick { }

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-inline-reference-default-is-a-value-the-data-may-omit-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12"
+  description: """
+    `defaulted_pick`'s field is typed by `meta.ref<order>` written inline and defaults to `o1`, a value of `order`. The
+    application closes to its entry when the schema loads, and a document omitting the field holds the default.
+    """
+  valid: _
+}

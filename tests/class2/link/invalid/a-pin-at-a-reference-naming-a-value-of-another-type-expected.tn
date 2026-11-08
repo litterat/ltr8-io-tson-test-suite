@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-pin-at-a-reference-naming-a-value-of-another-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12"
+  description: """
+    `c1` is a value of `customer`, which is no `order`, so the pin is no value of `meta.ref<order>`.
+    """
+  error: {
+    category: resolver
+  }
+}

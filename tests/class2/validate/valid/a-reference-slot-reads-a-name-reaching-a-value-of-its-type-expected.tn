@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-reference-slot-reads-a-name-reaching-a-value-of-its-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
+  description: """
+    `order_ref` is `meta.ref<order>`, a reference over a record type and no constructor, so it names values of
+    `order`. `o1` is an entry of the governing schema whose value is of `order`, so the name is one the slot holds.
+    """
+  valid: _
+}
