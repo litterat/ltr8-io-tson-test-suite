@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-alias-chain-of-two-hops-reaches-a-record.tn"
-{
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   order_ref => { id: text }
   mid       => order_ref
   req       => mid

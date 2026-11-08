@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-schema-importing-temporal-alone-reads-a-date.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-temporal-alone.tn"
+!event { at: 2026-11-02  label: launch  length: PT90M }

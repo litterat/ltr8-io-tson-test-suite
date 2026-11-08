@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-parameter-spelled-like-an-operands-argument-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10"
+  description: """
+    An operand's own parameters are replaced by what the absorbing template writes; every other name it writes
+    stays the operand's. `pair`'s `z: two<V, T>` fills `two`'s `M` with `mode`'s member `T`, so a parameter of
+    `t3` spelled `T` would change the type of the field `t3` absorbs: a resolver error at `t3`. `pair` itself is
+    valid.
+    """
+  error: {
+    category: resolver
+  }
+}

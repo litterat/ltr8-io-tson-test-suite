@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-field-typed-by-a-kernel-type-core-reaches-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3"
+  description: """
+    core.tn imports the three libraries, each of which imports the kernel, and an import contributes its whole namespace, so a
+    schema importing core types a field by a type core never declares, by the path the kernel names it with:
+    `meta.identifier`, and `meta.field_name`, the kernel's alias of it.
+    """
+  valid: {
+    binds: [user meta.identifier meta.field_name meta.record]
+  }
+}

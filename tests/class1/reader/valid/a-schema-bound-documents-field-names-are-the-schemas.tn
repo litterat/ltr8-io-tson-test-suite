@@ -1,2 +1,2 @@
-!!schema:"https://tson.io/test-suite/schemas/fixtures/not-supplied.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/not-supplied.tn"
 { "@id": "x"  "first name": "Ada" }

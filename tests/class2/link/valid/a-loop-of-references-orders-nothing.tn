@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-loop-of-references-orders-nothing.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  tree => { label: text  children?: [tree] }
+  even => { next?: odd }
+  odd  => { next?: even }
+}

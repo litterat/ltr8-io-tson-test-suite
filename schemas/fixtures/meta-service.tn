@@ -1,13 +1,12 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
-!!meta:"https://tson.io/2026/38/m/meta-kernel.tn"
-!!import:"https://tson.io/2026/38/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
 @doc:"""
   A meta layer declaring an interface as a namespace of methods, and an HTTP binding naming the method it
-  serves. A method's request, error and reply records are slots typed `kind<record>`, the names of the record
-  types, so a schema under this meta writes them by name (`request: place_order_request`); its response is any
-  type, `type_kind`. `interface` maps method names to methods, so a binding's `method`, a slot typed
-  `ref<method>`, reaches one by a qualified name (`method: orders.place_order`), and `bindings` maps names to
-  bindings. `rpc_method` composes `method`, so an rpc interface's methods fill a `ref<method>` through their
+  serves. A method's request, error and reply records are slots typed `meta.ref<record>`, the names of the record
+  types, so a schema importing this one writes them by name (`request: place_order_request`); its response is any
+  type, `meta.type_ref`. `interface` maps method names to methods, so a binding's `method`, a slot typed
+  `meta.ref<method>`, reaches one by a qualified name (`method: orders.place_order`), and `bindings` maps names to
+  bindings. `rpc_method` composes `method`, so an rpc interface's methods fill a `meta.ref<method>` through their
   supertypes; `verb_interface` keys its methods by `verb_name`, an identifier family whose members are the verbs,
   a namespace's keys being names. A `header_set` holds its methods in a plain map, `{text => method}`, which no
   qualified name enters, and `header_sets` maps names to header sets. A namespace type declares only its facets,
@@ -17,20 +16,20 @@
   not a type, and a processor that binds binds each value of its map to a host class of its own: the records
   `method`, `rpc_method`, `binding`, `header_set` and `service`.
   """
-{
-  method_name    => identifier
-  status_name    => identifier
-  method         => { request?: kind<record>  response?: type_kind  errors?: [kind<record>]  replies?: {status_name => kind<record>} }
+!schema {
+  method_name    => meta.identifier
+  status_name    => meta.identifier
+  method         => { request?: meta.ref<meta.record>  response?: meta.type_ref  errors?: [meta.ref<meta.record>]  replies?: {status_name => meta.ref<meta.record>} }
   rpc_method     => method & { idempotent?: boolean }
   http_verb      => !enum [GET POST]
-  verb_name      => !identifier_type { members: [GET POST] }
-  interface      => namespace & { key_type: = method_name  value_type: = method }
-  rpc_interface  => namespace & { key_type: = method_name  value_type: = rpc_method }
-  verb_interface => namespace & { key_type: = verb_name  value_type: = method }
+  verb_name      => !unicode.identifier_type { members: [GET POST] }
+  interface      => !meta.namespace { key_type: method_name  value_type: method }
+  rpc_interface  => !meta.namespace { key_type: method_name  value_type: rpc_method }
+  verb_interface => !meta.namespace { key_type: verb_name  value_type: method }
   header_set     => { headers: {text => method} }
-  header_sets    => namespace & { key_type: = identifier  value_type: = header_set }
-  service        => { extends?: [identifier]  methods: interface }
-  services       => namespace & { key_type: = identifier  value_type: = service }
-  binding        => { method: ref<method>  verb: http_verb  route: text }
-  bindings       => namespace & { key_type: = identifier  value_type: = binding }
+  header_sets    => !meta.namespace { key_type: meta.identifier  value_type: header_set }
+  service        => { extends?: [meta.identifier]  methods: interface }
+  services       => !meta.namespace { key_type: meta.identifier  value_type: service }
+  binding        => { method: meta.ref<method>  verb: http_verb  route: text }
+  bindings       => !meta.namespace { key_type: meta.identifier  value_type: binding }
 }

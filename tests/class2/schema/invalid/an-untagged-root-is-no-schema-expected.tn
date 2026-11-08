@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-untagged-root-is-no-schema-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.2, [TSON-SCHEMA] §2.2.3"
+  description: """
+    A document is a schema exactly when its root is tagged `!schema`. This one's root is an untagged map and it
+    imports nothing, so it is schemaless data, however much its entries read like declarations; handed to a
+    schema load it fails to load, refused as no schema document at all before anything is resolved.
+    """
+  error: {
+    category: resolver
+  }
+}

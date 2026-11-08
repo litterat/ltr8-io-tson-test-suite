@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/two-spellings-of-one-field-name-are-one-field.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-field-name-type.tn"
 !frow { name: "x"  NAME: "y" }

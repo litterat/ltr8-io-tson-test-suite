@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-group-member-sibling-types-its-dependent-field.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-dependent-fields.tn"
+!grouped { kind: int32  v: 5 }

@@ -1,9 +1,9 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-text-enum-cities.tn"
-!!meta:"https://tson.io/test-suite/schemas/fixtures/meta-text-enum.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-text-enum.tn"
 @doc:"""
   An enum built with meta-text-enum.tn's `text_enum`, whose pinned name type admits a space: `New York` is a
   member, judged a name under `text_identifier`'s profile.
   """
-{
+!schema {
   city => !text_enum [ "New York" "Sydney" ]
 }

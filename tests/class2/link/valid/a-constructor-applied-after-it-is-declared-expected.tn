@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-constructor-applied-after-it-is-declared-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §5.5"
+  description: """
+    The same constructor and instance as `a-constructor-applied-before-it-is-declared`, written the other
+    way round. Both orders give one verdict.
+    """
+  valid: {
+    binds: [counts counted]
+  }
+}

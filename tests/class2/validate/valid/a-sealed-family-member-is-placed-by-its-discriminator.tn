@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-sealed-family-member-is-placed-by-its-discriminator.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-family.tn"
 !holder {
   p: {
     pet_type: dog

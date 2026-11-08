@@ -2,11 +2,12 @@
 """Layout checks for the conformance corpus.
 
 Deliberately narrow: this checks only what a schema cannot. The *shape* of a sidecar is stated by
-schemas/<layer>-sidecar.tn and every sidecar names one with !!schema, so field-level checking belongs
+schemas/<layer>-sidecar.tn and every sidecar imports one with !!import, so field-level checking belongs
 there and is done by the implementations, which read every sidecar against its schema as part of
 running the corpus (see RUNNER.md). What no schema can see is the filesystem: that a subject and a
 sidecar are paired, that they sit under a recognised class/layer/bucket, that the bucket agrees with
-the outcome the sidecar states, and that a sidecar names the schema and identity its own path implies.
+the outcome the sidecar states, and that a sidecar imports the schema and carries the identity its own
+path implies.
 
 Stdlib only, and no TSON parser: this repo stays implementation-neutral, so it does not take one of
 the implementations under test as a dependency.
@@ -84,7 +85,7 @@ def check_sidecar_header(errors: list[str]) -> None:
         if not text.startswith(expected_id):
             errors.append(f"tests/{rel}: !!id must be {expected_id}, matching its own path")
 
-        expected_schema = f'!!schema:"{SCHEMA_PREFIX}{layer}-sidecar.tn"'
+        expected_schema = f'!!import:"{SCHEMA_PREFIX}{layer}-sidecar.tn"'
         if expected_schema not in text:
             errors.append(f"tests/{rel}: must declare {expected_schema}")
 
@@ -115,7 +116,7 @@ def main() -> int:
         return 1
 
     count = len([p for p in TESTS.rglob("*.tn") if not is_sidecar(p)])
-    print(f"OK: {count} vector(s), all paired, placed, and naming their own schema.")
+    print(f"OK: {count} vector(s), all paired, placed, and importing their own schema.")
     return 0
 
 

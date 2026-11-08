@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/an-option-whose-marked-members-are-left-out.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-field-groups.tn"
 !fragment { type: t }

@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/data-outside-a-same-document-constructors-instance.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-same-document-constructor.tn"
+!counts [1 2 3 4]

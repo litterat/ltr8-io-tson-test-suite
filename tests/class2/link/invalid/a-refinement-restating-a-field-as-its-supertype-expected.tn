@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-refinement-restating-a-field-as-its-supertype-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §7.2"
+  description: """
+    Refinement only restricts, so a restated field's type is the inherited type or a type IS-A it. `person` is
+    the supertype of `employee`, not a subtype, so `loose` would admit a `lead` that `team` refuses, and a
+    `loose` value standing at a `team` position would break the field `team` promises. Every field state is
+    unchanged, so a processor comparing only states admits it.
+    """
+  error: {
+    category: resolver
+  }
+}

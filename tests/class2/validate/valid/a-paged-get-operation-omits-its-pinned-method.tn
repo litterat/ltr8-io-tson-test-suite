@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-paged-get-operation-omits-its-pinned-method.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-paged-orders.tn"
+!paged_get {
+  path:      "/orders/archived"
+  responses: [ { status: 200  body: order_page } ]
+}

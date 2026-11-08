@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-interface-holds-its-request-record-by-name.tn"
-{
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   order               => { sku: text  quantity: int32 }
   place_order_request => { order: order }
   orders => !interface {

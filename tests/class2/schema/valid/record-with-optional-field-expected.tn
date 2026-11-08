@@ -1,17 +1,15 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/record-with-optional-field-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.2"
   description: "A record declaration resolves to a !record body whose fields carry their declared facts; `?` makes a field optional and voidable, and a bare field states none of them."
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {
-        point => !record { fields: {
-          x     => !record_field { type: int32 }
-          y     => !record_field { type: int32 }
-          label => !record_field { type: text   optional: true  voidable: true }
+        point => !meta.record { fields: {
+          x     => !meta.record_field { type: int32 }
+          y     => !meta.record_field { type: int32 }
+          label => !meta.record_field { type: text   optional: true  voidable: true }
         } }
       }
       """

@@ -1,8 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/an-enum-member-matches-in-nfc-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.5"
   description: "An enum's member `caf\\u00e9`, a name under the kernel's identifier, is matched in NFC (§5.5), so a decomposed spelling of it is the member."
-  schema: "fixtures/validate-text-nfc-floor.tn"
   valid: _
 }

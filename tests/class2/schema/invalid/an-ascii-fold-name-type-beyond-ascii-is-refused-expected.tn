@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/an-ascii-fold-name-type-beyond-ascii-is-refused-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.5"
   description: """
@@ -8,8 +8,6 @@
     here the XID default -- would compare those names unnormalized, and is refused;
     `NFKC_CASEFOLD` is the fold for such names.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   error: {
     category: resolver
   }

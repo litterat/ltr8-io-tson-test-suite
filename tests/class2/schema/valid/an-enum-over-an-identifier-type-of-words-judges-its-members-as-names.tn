@@ -1,7 +1,9 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-enum-over-an-identifier-type-of-words-judges-its-members-as-names.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   status => !enum [OPEN ACTIVE DONE]
 
-  words => !identifier_type { continue_add: "-"  medial: " " }
-  activity => !enum_type { name_type: words  members: [sedentary "lightly active"] }
+  words => !unicode.identifier_type { continue_add: "-"  medial: " " }
+  activity => !meta.enum_type { name_type: words  members: [sedentary "lightly active"] }
 }

@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-order.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  An ordinary schema declaring one record type, `order`, for an API description to name at its kind- and
+  type-typed slots. It knows nothing of HTTP.
+  """
+!schema {
+  order => { id: text }
+}

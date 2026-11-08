@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-reference-slot-refuses-the-name-of-a-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
+  description: """
+    `order` is a type: its value is of `meta.record`, which is no `order`. A reference over a type that is no
+    constructor names values of it, and the names of types are a kind's.
+    """
+  error: {
+    category: validation
+    path: "/which"
+  }
+}

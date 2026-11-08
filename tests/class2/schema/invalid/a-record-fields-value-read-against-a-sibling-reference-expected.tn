@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-fields-value-read-against-a-sibling-reference-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: """
+    The kernel's `record_field.value` is typed `type!`, and `record_field.type` may hold a sibling reference, which
+    names no type. Where `value` is absent nothing is read against `type`; where one is written, as here, the sibling
+    names no type a value can be read against, and the field is refused naming `type`. This is what keeps the kernel's
+    own dependent field sound.
+    """
+  error: {
+    category: resolver
+  }
+}

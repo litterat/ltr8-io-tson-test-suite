@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-qualified-name-naming-no-member-is-unresolved-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1 (qualified names, proposed)"
+  description: "`geo.location` walks into `geo` and finds no member `location`: the name resolves to nothing."
+  error: { category: resolver }
+}

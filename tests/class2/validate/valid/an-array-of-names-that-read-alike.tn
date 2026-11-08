@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/an-array-of-names-that-read-alike.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-identifier.tn"
 !path [ pass раѕѕ ]

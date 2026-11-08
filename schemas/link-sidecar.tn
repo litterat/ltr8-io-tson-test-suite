@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/link-sidecar.tn"
-!!meta:"https://tson.io/2026/38/m/meta.tn"
-!!import:"https://tson.io/2026/38/m/core.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
   Formal shape of a link-layer sidecar (tests/class2/link/**/*-expected.tn) -- what [TSON-SCHEMA]
@@ -10,11 +10,11 @@
   Where the schema layer compares a whole resolved document, this layer states individual facts
   about the linked namespace. That is deliberate and not laziness: linking derives three things and
   merges a fourth, and a vector that exercises one of them should not have to write out every
-  entry of core.tn to say so. Each list is optional, so a vector states only what it is about, and
+  entry of the closure to say so. Each list is optional, so a vector states only what it is about, and
   a sidecar stating none of them is an empty claim that `check_vectors.py` cannot catch but a
   reviewer can.
   """
-{
+!schema {
   @doc:"""
     A choice entry and the disjointness §5.4 derives for it. The fact is total and two-valued --
     `true` exactly when every variant occupies a distinct discrimination class -- so a vector may
@@ -32,8 +32,8 @@
   }
 
   @doc:"""
-    A kind and the names its derived `members` index must list, in any order: every entry of the
-    linked closure built with the kind's constructor. The index is computed over the closure of the
+    A reference over a constructor (a kind) and the names it must admit, in any order: every entry of
+    the linked closure whose value is of its `of`. The set is computed over the closure of the
     schema being linked, so a kind an import declares is stated here with the members this schema's
     closure gives it.
     """
@@ -61,7 +61,7 @@
     or ingest one is a resolver error. A schema that will not link is never a `validation` failure,
     which is reserved for data checked against a schema that did load.
     """
-  link_sidecar => sidecar_common & spliced_header & {
+  link_sidecar => sidecar_common & {
     ( valid: link_valid | error: vector_error )
   }
 }

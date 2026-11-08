@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-quoted-sibling-reference-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §7.4, [TSON-SCHEMA] §5.2"
+  description: """
+    A quoted token is never a reference, so `"kind"!` is no sibling reference even where the field it spells exists. A
+    field whose name needs quoting cannot be a sibling.
+    """
+  error: {
+    category: resolver
+  }
+}

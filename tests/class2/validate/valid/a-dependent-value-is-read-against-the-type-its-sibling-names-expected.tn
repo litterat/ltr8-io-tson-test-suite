@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-dependent-value-is-read-against-the-type-its-sibling-names-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    Each instance's `v` is read against the type its own `kind` names -- an `int32`, a `point`, a `text` -- so one
+    field of one record type holds values of three types across the elements of an array.
+    """
+  valid: _
+}

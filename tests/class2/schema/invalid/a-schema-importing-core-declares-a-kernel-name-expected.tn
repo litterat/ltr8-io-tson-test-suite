@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-importing-core-declares-a-kernel-name-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3"
+  description: """
+    core.tn's closure holds the kernel, which declares `meta.identifier` under `meta`, and an import contributes
+    its whole namespace, so `meta.identifier` is bound in this schema's closure. A local declaration may not reuse a
+    name the closure binds, and a schema's own identifier profile is declared under a name of its own.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-discriminator-that-is-a-group-member.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   pet => abstract {
     name: text
     ( pet_type: text =? | legacy_kind: text )

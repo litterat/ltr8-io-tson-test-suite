@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/subtraction-from-a-final-record-keeps-no-is-a-edge.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   reading => final {
     sensor: text
     celsius: int32

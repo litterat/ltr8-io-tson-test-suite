@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/an-alias-is-the-only-name-a-template-instantiation-has.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-alias.tn"
 !holder {
   b: {
     tag: plain

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-deployments-policy-document-is-a-policy-processor-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §8.2, §9.1 (the processor policy's vocabulary, proposed)"
+  description: "A deployment that writes its policy down writes a `policy.processor`, leaving out the data version and any limit it does not raise. Every limit is a `policy.limit`, a positive `int64`, so the widest is 2^63-1."
+  valid: _
+}

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-member-path-the-kernel-declares-collides-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (open schema maps, proposed)"
+  description: """
+    Any schema may contribute members to the kernel's open namespace `meta`, and a member path the closure
+    already holds collides as any name does: this schema's `meta.record` is a second entry of the path the
+    kernel declares.
+    """
+  error: {
+    category: resolver
+  }
+}

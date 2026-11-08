@@ -1,33 +1,31 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/how-a-record-may-be-realised-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.2"
   description: "How a record may be realised is a fact of the resolved body and not an annotation: the marks are consumed and `record.extension` carries what they said, so a resolver that preserved them instead would show them in the annotation channel and leave every record OPEN. Each of the three members appears once here. **How a record may be realised and how its members are selected are two facts**: `pet` and `shape` are both ABSTRACT, and what makes `pet` dispatch on its members rather than on the tag is the non-empty `record.discriminators` beside it. A base names those fields in the order their pins are compared as a tuple: which fields select is the base's own statement about its family, not a property of each field in isolation. A member inherits the base's fields by §5.8 flattening and states no discriminators of its own, so it restates the selector to pin the value and never to claim a family. OPEN and false are the defaults and are omitted, as every default is."
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {
-        pet => !record { chain: { subtypes: [dog] }  fields: {
-          pet_type => !record_field { type: text }
-          name     => !record_field { type: text }
+        pet => !meta.record { chain: { subtypes: [dog] }  fields: {
+          pet_type => !meta.record_field { type: text }
+          name     => !meta.record_field { type: text }
         }  extension: ABSTRACT  discriminators: [pet_type] }
 
-        dog => !record { chain: { supertypes: [pet] }  fields: {
-          pet_type => !record_field { type: text  optional: true  role: FIXED  value: "dog" }
-          name     => !record_field { type: text }
+        dog => !meta.record { chain: { supertypes: [pet] }  fields: {
+          pet_type => !meta.record_field { type: text  optional: true  role: FIXED  value: "dog" }
+          name     => !meta.record_field { type: text }
         } }
 
-        shape => !record { fields: {
-          area => !record_field { type: int32 }
+        shape => !meta.record { fields: {
+          area => !meta.record_field { type: int32 }
         }  extension: ABSTRACT }
 
-        reading => !record { fields: {
-          sensor => !record_field { type: text }
+        reading => !meta.record { fields: {
+          sensor => !meta.record_field { type: text }
         }  extension: FINAL }
 
-        plain => !record { fields: {
-          note => !record_field { type: text }
+        plain => !meta.record { fields: {
+          note => !meta.record_field { type: text }
         } }
       }
       """

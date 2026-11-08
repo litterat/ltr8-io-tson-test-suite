@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-chosen-option-missing-an-unmarked-member.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-field-groups.tn"
 !endpoint { port: 80 }

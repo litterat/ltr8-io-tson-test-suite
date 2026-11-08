@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-reference-refinement-may-not-grant-allow-sibling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.1"
+  description: """
+    A refinement only narrows, and `allow_sibling` is a permission: `meta.type_ref` withdraws it, so a refinement of
+    `meta.type_ref` setting it back to `true` would admit a sibling reference its source refuses, and is refused, as
+    re-enabling `allow_nan` under a source that forbids NaN is.
+    """
+  error: {
+    category: resolver
+  }
+}

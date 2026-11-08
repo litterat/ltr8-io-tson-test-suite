@@ -1,2 +1,2 @@
-!!schema:"https://[v1.x]/x.tn"
+!!import:"https://[v1.x]/x.tn"
 {}

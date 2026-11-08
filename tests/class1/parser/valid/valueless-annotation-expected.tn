@@ -1,12 +1,12 @@
 !!id:"https://tson.io/test-suite/class1/parser/valid/valueless-annotation-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
 {
   spec: "§3.1"
   description: "An annotation with no ':' has no value, and annotates the following core-value"
   valid: {
     document: {
       id: _
-      schema: _
+      imports: []
       root: {
         annotations: [
           { name: "deprecated"  value: _ }

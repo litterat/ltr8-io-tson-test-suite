@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-sibling-typed-by-a-narrower-reference-names-a-record-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §4.2"
+  description: """
+    `shaped.kind` is a `meta.ref<meta.record>`, and `point` is built with `record`, so the sibling admits the name and
+    `v` is read as a `point`.
+    """
+  valid: _
+}

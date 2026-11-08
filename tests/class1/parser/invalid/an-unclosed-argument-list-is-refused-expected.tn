@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/an-unclosed-argument-list-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.4, §7.5"
+  description: "An argument list closes with '>': `box<text` opens one it never closes."
+  error: { category: parser }
+}

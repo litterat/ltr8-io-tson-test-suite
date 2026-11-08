@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-qualified-tag-builds-a-value-of-a-nested-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/schema-geo-route.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  home => !geo.route { verb: GET  path: "/" }
+}

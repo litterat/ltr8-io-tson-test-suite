@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-flatten-directive-names-no-type-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §6, [TSON-SCHEMA] §7.2, [TSON-JSON] §6.1.1"
   description: """
@@ -8,7 +8,7 @@
     is written the same way wherever it is written -- the entries are map keys, so they are data
     rather than names and no identifier rule reaches them.
 
-    The governing meta declares no type named `rest`, so this is the ordinary unresolved-name error of
+    No schema in the closure declares a type named `rest`, so this is the ordinary unresolved-name error of
     §3.3.3. The mark it retired was a representation directive whose class could not be stated: §6
     confines a directive's force to the encodings in its class and offers the text class as the
     example, and this one bound JSON while TSON text declined it, leaving "the encodings that claim
@@ -18,8 +18,6 @@
     declaration would resolve the name and park it in the author-annotation channel, where it changes
     nothing -- leaving a schema that reads as though it had asked for a flatten no encoding performs.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   error: {
     category: resolver
   }

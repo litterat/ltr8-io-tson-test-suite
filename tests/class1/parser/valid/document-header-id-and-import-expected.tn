@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class1/parser/valid/document-header-id-and-import-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.2"
+  description: "A header is an optional `!!id` followed by any number of `!!import`s; the parsed document carries both"
+  valid: {
+    document: {
+      id: "https://example.com/orders/1042.tn1"
+      imports: ["https://example.com/order.tn1"]
+      root: {
+        annotations: []
+        type-ref: _
+        core: {
+          token: { form: unquoted  text: "Alice" }
+        }
+      }
+    }
+  }
+}

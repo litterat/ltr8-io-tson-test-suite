@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-importing-the-kernel-declares-schema-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (the kernel's root names, proposed)"
+  description: """
+    `schema` is a root name of the kernel, an alias of `meta.schema`: the name a schema document's root tag and a
+    nested map's tag spell. A schema importing meta.tn has it in its namespace and cannot declare an entry of that
+    name, as it cannot declare `int64`.
+    """
+  error: { category: resolver }
+}

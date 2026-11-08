@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-family.tn"
-!!meta:"https://tson.io/2026/38/m/meta.tn"
-!!import:"https://tson.io/2026/38/m/core.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
 @doc:"""
   A subtype family, both ways a position typed by one is read ([TSON-SCHEMA] §5.2).
 
@@ -13,7 +13,7 @@
   — which holds of every instantiation identically, so closing `outcome<text>` yields an abstract entry and
   `won<text>` is its one member. Both are entries the resolver minted, and §8.2 makes such a name
   implementation-chosen, so the aliases are the only spellings a document has for either: this is the family
-  where §7.2's "after reference flattening of both" is the difference between a readable family and one
+  where §7.2's "after alias flattening of both" is the difference between a readable family and one
   nothing can name. `abstract` and `final` are refused on a template, having no set of subtypes to range
   over, and no vector states that here — it is a schema-layer refusal.
 
@@ -24,7 +24,7 @@
   `holder` puts each family at a field position. A document's own root type-ref names the position's type,
   so reading a family at the root would be testing the root convention rather than the family.
   """
-{
+!schema {
   pet => abstract {
     pet_type: text =?
     name: text

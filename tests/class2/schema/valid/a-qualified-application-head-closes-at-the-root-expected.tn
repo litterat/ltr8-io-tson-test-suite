@@ -1,0 +1,39 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-qualified-application-head-closes-at-the-root-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (qualified names, proposed)"
+  description: """
+    An application's head and a reference's `of` are qualified names like any other: `geo.box<text>` closes the
+    template `box` of `geo`, and `meta.ref<geo.base>` is `!reference_type { of: geo.base  allow_sibling: false }`.
+    A closed application is minted at the root, as every synthetic is, whatever map its head is a member of;
+    `@meta.application` states the head by its path.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        geo => !meta.schema {
+          box => !meta.record_template {
+            chain: { subtypes: [boxed] }
+            parameters: [ !meta.template_param { name: T  type: meta.type_ref } ]
+            fields: { item => !meta.record_template_field { type_param: T } }
+          }
+
+          base => !meta.record { fields: { id => !meta.record_field { type: text } } }
+        }
+
+        @meta.application:geo.box<text>
+        boxed => !meta.record {
+          chain: { supertypes: [geo.box] }
+          fields: { item => !meta.record_field { type: text } }
+        }
+
+        held => !meta.record { fields: { b => !meta.record_field { type: record_item_int32_xxhash } } }
+
+        @meta.application:meta.ref<geo.base>
+        bases => !meta.reference_type { of: geo.base  allow_sibling: false }
+
+        @meta.synthetic record_item_int32_xxhash => !meta.record { fields: { item => !meta.record_field { type: int32 } } }
+      }
+      """
+  }
+}

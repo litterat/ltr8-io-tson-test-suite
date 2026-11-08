@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class1/reader/valid/absent-array-element-occupies-a-slot-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
 {
   spec: "§2.9"
   description: "Absent elements occupy positional slots, so this array has three elements rather than two."

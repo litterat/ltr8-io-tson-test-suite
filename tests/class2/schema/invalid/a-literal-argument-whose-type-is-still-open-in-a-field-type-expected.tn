@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-literal-argument-whose-type-is-still-open-in-a-field-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    The same application at a field's type rather than an operand: `3` is a value of `X`, which no application of
+    `w` has fixed yet. A literal needs a closed type wherever the application stands, so this is refused at `w` as
+    the operand form is, and not left to each application of `w` to judge.
+    """
+  error: {
+    category: resolver
+  }
+}

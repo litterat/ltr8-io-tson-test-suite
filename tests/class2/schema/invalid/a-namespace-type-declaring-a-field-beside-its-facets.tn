@@ -1,5 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-type-declaring-a-field-beside-its-facets.tn"
-{
-  method     => { request?: kind<record> }
-  interfaces => namespace & { key_type: = identifier  value_type: = method  extends?: [type_name] }
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!schema {
+  method     => { request?: meta.ref<meta.record> }
+  interfaces => !meta.namespace { key_type: meta.identifier  value_type: method  extends: [method] }
 }

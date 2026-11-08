@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-float-admitting-specials-beside-text-needs-the-tag.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-float-class.tn"
 !loosely { v: 1.5 }

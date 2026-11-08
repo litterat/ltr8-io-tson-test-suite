@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-qualified-tag-naming-no-member-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §7.4, [TSON-SCHEMA] §7.1 (qualified tags, proposed)"
+  description: "`!geo.region` walks into `geo` and finds no member `region`: the tag names no type of the closure."
+  error: {
+    category: resolver
+  }
+}

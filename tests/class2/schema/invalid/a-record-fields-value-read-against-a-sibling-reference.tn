@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-fields-value-read-against-a-sibling-reference.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  cell => !meta.record { fields: {
+    kind => !meta.record_field { type: meta.type_ref }
+    v    => !meta.record_field { type: kind!  optional: true  role: DEFAULT  value: 5 }
+  } }
+}

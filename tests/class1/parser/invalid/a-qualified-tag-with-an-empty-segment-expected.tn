@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/a-qualified-tag-with-an-empty-segment-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.4, §7.7 (qualified tags, proposed)"
+  description: "Each segment of a qualified tag is an identifier, and the one between the two dots is empty."
+  error: { category: parser }
+}

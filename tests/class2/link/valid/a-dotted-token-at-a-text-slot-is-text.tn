@@ -1,4 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-dotted-token-at-a-text-slot-is-text.tn"
-{
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-orders-interface.tn"
+!schema {
   routes => !bindings { b => { method: orders.place_order  verb: GET  route: orders.place_order } }
 }

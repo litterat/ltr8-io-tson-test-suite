@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-kernel-constructor-is-applied-by-its-path-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.5, [TSON-DATA] §3.1 (the kernel under meta, proposed)"
+  description: """
+    The kernel declares its constructors as members of the schema map `meta` and its types at its root, and
+    every name resolves from the root: a schema importing meta.tn alone applies `numeric.integer_type`
+    and `unicode.text_type` by their paths, types fields `text` and `boolean` and annotates with `@doc`, each
+    a type of the kernel's loop, bare. Resolved output tags each body by its constructor's path.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        percent => !numeric.integer_type { min: 0  max: 100 }
+
+        code => !unicode.text_type { length: 2 }
+
+        reading => !meta.record { fields: {
+          at    => !meta.record_field { type: percent }
+          label => !meta.record_field { type: text }
+          ok    => !meta.record_field { type: boolean }
+        } }
+      }
+      """
+  }
+}

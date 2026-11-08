@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/a-restricted-character-in-a-record-templates-fixed-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §8.2, [TSON-SCHEMA] §5.10"
+  description: "A record template's literal value is every application's, so it is judged as a name at the template, whether or not anything applies it. U+0132 LATIN CAPITAL LIGATURE IJ is XID_Continue, so the value reads as a slug, and §8.2's mechanism 2 refuses it, narrowing a name to Identifier_Status=Allowed."
+  refused: {
+    mechanism: identifier-status
+    unicode: "16.0"
+  }
+}

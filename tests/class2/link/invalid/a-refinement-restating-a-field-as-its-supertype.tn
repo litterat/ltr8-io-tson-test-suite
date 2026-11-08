@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-refinement-restating-a-field-as-its-supertype.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  person   => { name: text }
+  employee => person & { badge: text }
+  team     => { lead: employee }
+  loose    => team ^ { lead: person }
+}

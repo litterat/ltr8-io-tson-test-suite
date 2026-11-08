@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-operation-body-naming-a-value-entry.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-http.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-order.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  place_order => !operation { method: POST  path: "/orders"  request: order  responses: [ { status: 201  body: order } ] }
+  get_order   => !operation { method: GET  path: "/orders/{id}"  responses: [ { status: 200  body: place_order } ] }
+}

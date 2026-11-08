@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/an-at-least-one-group-with-every-member.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-field-groups.tn"
 !contact { email: e  phone: p }

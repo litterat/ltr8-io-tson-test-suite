@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-minimum-length-no-value-reaches-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (`numeric.count`, proposed)"
+  description: "`min_length: 2^63-1` is a valid count that no text reaches, so a three-character value is too short: a validation error at the value, never a failure to load or to bind the schema."
+  error: {
+    category: validation
+    path: "/v"
+  }
+}

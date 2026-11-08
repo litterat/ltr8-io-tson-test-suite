@@ -1,2 +1,2 @@
-!!schema:"https://example.com/%FF.tn"
+!!import:"https://example.com/%FF.tn"
 {}

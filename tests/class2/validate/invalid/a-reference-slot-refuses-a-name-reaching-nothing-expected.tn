@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-reference-slot-refuses-a-name-reaching-nothing-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
+  description: """
+    `nope` is no entry of the governing schema or its imports, so the name reaches no value and the slot over `order`
+    refuses it.
+    """
+  error: {
+    category: validation
+    path: "/which"
+  }
+}

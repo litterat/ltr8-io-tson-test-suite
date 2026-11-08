@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-reference-over-a-constructor-names-types-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
+  description: """
+    What `of` names decides what a reference holds, never its spelling, which is one. `record` is a
+    constructor, so the values `meta.ref<record>` admits are types' names, and `widget`, whose value is of `record`,
+    is one.
+    """
+  valid: {
+    binds: [records holder held]
+  }
+}

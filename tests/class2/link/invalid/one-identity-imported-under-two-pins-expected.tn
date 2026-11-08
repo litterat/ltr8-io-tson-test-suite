@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/one-identity-imported-under-two-pins-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-DATA] §2.2.1"
+  description: """
+    A pin is verification metadata, not identity, so both directives name the one schema link-money.tn -- and
+    two different pins of one identity in one closure are a collision, refused at the importer that joins them.
+    Neither pin is the document's real hash, and need not be: two pins of one identity cannot both hold, so the
+    load fails whether a processor reports the disagreement between them or a pin's disagreement with the
+    content.
+    """
+  error: {
+    category: resolver
+  }
+}

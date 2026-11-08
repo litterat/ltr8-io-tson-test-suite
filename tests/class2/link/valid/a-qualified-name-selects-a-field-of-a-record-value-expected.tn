@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-qualified-name-selects-a-field-of-a-record-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.12"
+  description: """
+    A qualified name's further segment selects a key of a value of a named product: a namespace value's key,
+    or a record value's field, the record being a namespace whose keys its type fixes. `st` is a record
+    value of `station`, so `st.main` selects its field `main`, a value of `endpoint`.
+    """
+  valid: {
+    binds: [st ep]
+  }
+}

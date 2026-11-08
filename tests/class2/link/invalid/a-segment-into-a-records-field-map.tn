@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-segment-into-a-records-field-map.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-forms.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  point => !forms { p => { fields: { x => { type: int64 } } } }
+  look  => !field_refs { a => { field: point.p.fields.x } }
+}

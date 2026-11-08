@@ -1,4 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-namespace-entry-key-is-judged-by-its-key-type.tn"
-{
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-api.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-api-orders.tn"
+!schema {
   bad => !api { "1st" => { response: order } }
 }

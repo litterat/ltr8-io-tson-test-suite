@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-reference-at-a-non-reference-position-is-a-type-mismatch.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-kind-applications.tn"
+!labelled { n: set<text> }

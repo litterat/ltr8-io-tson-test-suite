@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-quoted-application-is-text-not-a-reference-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §7.4, [TSON-SCHEMA] §4.2"
+  description: "A reference is data grammar and a quoted token is never one: `\"box<text>\"` at a type slot is text, no type's name, and the construction is refused. Written unquoted, `box<text>` is the application."
+  error: {
+    category: resolver
+  }
+}

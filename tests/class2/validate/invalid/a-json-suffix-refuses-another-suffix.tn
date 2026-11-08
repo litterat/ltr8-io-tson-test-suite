@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-json-suffix-refuses-another-suffix.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-net-media.tn"
 !document { type: "application/xml" }

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-application-nothing-closed-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.2"
+  description: "A schema loads only when every application in it closes, so data never creates one: `set<int32>`, which nothing in the closure applies, names no type the schema closes, and the kind refuses it."
+  error: {
+    category: validation
+    path: "/t"
+  }
+}

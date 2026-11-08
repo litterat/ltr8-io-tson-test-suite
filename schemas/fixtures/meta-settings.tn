@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/meta-settings.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A meta layer declaring a record with a dependent field, whose values stand as entries of a schema that imports it.
+  `setting.value` is typed `kind!`, so each setting's `value` is read against the type its own `kind` names, which may
+  be a record: `endpoint` is one, so `web => !setting { kind: endpoint  value: { port: 8080 } }` holds a record read
+  by `endpoint`'s fields. An entry built with `setting` is a value, not a type; a processor that binds binds it to a
+  host class of its own: the record `setting`, whose `value` holds the value as written, of whichever type `kind`
+  names.
+  """
+!schema {
+  setting  => { kind: meta.type_ref  value?: kind! }
+  endpoint => { port: int32  host?: text }
+}

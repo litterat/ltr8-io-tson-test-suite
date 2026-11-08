@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-pin-matches-any-casing-of-its-value.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-text-normalization.tn"
 !idempotent { header: IDEMPOTENCY-KEY }

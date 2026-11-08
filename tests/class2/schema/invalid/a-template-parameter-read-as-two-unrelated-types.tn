@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-parameter-read-as-two-unrelated-types.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   clash => <N> {
     a?: text  ~ N
     b?: int32 ~ N

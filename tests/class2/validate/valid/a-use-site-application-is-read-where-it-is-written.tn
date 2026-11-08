@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-use-site-application-is-read-where-it-is-written.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-template-family-members.tn"
 !holder { any: !bt { v: 1 }  k: { v: x } }

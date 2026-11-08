@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-kind-refuses-an-application-over-a-refinement-of-a-closed-argument-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.2, [TSON-SCHEMA] §8.3"
+  description: "Only an alias is the same type under another name. `order_id` refines `uuid`, an entry of its own whose chain ends at itself, so `box<order_id>` is not `box<uuid>`, and nothing in the closure closes it: data never creates an application, so the name is refused."
+  error: {
+    category: validation
+    path: "/t"
+  }
+}

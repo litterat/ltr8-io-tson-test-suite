@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-type-leaving-a-facet-open.tn"
-{
-  keyed => namespace & { key_type: = identifier }
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!schema {
+  keyed => !meta.namespace { key_type: meta.identifier }
 }

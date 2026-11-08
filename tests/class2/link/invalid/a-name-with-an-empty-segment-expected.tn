@@ -1,10 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-name-with-an-empty-segment-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-DATA] §7.2, [TSON-SCHEMA] §5.6 (values by name, proposed as §5.12)"
   description: "A qualified name has no empty segment, and cannot be written with one: consecutive dots never appear inside an unquoted token ([TSON-DATA] §7.2), so orders..place_order lexes as orders, a range token and place_order -- adjacent values, and the schema does not parse."
-  meta: "fixtures/meta-service.tn"
-  import: ["fixtures/link-orders-interface.tn"]
   error: {
     category: resolver
   }

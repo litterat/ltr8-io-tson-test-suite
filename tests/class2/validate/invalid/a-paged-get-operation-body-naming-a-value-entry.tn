@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-paged-get-operation-body-naming-a-value-entry.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-paged-orders.tn"
+!paged_get {
+  path:      "/orders/latest"
+  responses: [ { status: 200  body: list_orders } ]
+}

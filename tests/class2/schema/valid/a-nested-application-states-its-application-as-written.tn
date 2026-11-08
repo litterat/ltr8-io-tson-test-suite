@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-nested-application-states-its-application-as-written.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  box   => <T> { v: T }
+  pair  => <A, B> { a: A  b: B }
+  inner => box<text>
+  outer => pair<box<text> int32>
+}

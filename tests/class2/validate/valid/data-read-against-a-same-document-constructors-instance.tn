@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/data-read-against-a-same-document-constructors-instance.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-same-document-constructor.tn"
+!counts [3 1 2]

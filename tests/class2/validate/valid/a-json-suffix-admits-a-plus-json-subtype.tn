@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-json-suffix-admits-a-plus-json-subtype.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-net-media.tn"
 !document { type: "application/ld+json" }

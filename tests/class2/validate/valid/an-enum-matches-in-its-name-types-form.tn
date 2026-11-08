@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/an-enum-matches-in-its-name-types-form.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-text-normalization.tn"
 !screened { h: Content-Type }

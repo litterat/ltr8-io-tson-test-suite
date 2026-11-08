@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-field-name-outside-its-records-field-name-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-field-name-type.tn"
 !node { "@id": "urn:x"  "a b": 1  label: "x" }

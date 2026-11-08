@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-value-is-admitted-through-a-chain-an-applied-parent-completes-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §7.2"
   description: """
@@ -7,6 +7,5 @@
     and ok composes result<T>, so great is IS-A rt, the entry declared for result<text>, though great holds no
     application of its own. A position typed rt admits a great.
     """
-  schema: "fixtures/validate-complete-chain.tn"
   valid: _
 }

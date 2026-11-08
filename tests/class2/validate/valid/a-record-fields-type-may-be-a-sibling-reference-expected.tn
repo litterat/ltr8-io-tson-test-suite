@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-fields-type-may-be-a-sibling-reference-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: """
+    A schema read as data against the kernel: `record_field.type` is typed `meta.field_type_ref`, the one reference
+    whose `allow_sibling` is left at its default, so `kind!` is a value there, and the record is valid data. Whether
+    `kind!` names a field declared before it is the schema's rule, judged where a schema resolves, not this read's.
+    """
+  valid: _
+}

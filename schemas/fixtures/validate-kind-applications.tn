@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-kind-applications.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A kind-typed field naming an applied type. `names` is the entry `set<text>` denotes, a declaration whose body is
+  the application; `paired` is the nested `pair<box<text> int32>`, over `boxed`, which `box<text>` denotes.
+  `holder.t` holds the name of any type, and `holder.u` the name of a type built with `uuid_type`.
+  In data an application is a reference, data grammar written unquoted: `set<text>`.
+  """
+!schema {
+  names    => set<text>
+  box      => <T> { v: T }
+  pair     => <A, B> { a: A  b: B }
+  boxed    => box<text>
+  paired   => pair<box<text> int32>
+  holder   => { t: meta.type_ref  u?: meta.ref<net.uuid_type> }
+  labelled => { n: text }
+}

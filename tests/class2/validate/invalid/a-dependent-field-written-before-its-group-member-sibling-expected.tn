@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-dependent-field-written-before-its-group-member-sibling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.5, [TSON-SCHEMA] §5.2"
+  description: """
+    A group member sibling is free, so it precedes the field that depends on it, as any free sibling does. `kind` is
+    chosen here, and written after `v`, so `v` is refused.
+    """
+  error: {
+    category: validation
+    path: "/v"
+  }
+}

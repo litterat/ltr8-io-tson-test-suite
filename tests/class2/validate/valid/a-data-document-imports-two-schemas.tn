@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-data-document-imports-two-schemas.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-money.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-field-marks.tn"
+!entry {
+  name:    Ada
+  from:    1
+  version: "2.0"
+}

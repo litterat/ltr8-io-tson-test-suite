@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/an-ascii-fold-admits-a-name-however-it-is-cased.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-ascii-casefold.tn"
 !message { fields: { Content-Type => a  ACCEPT => b } }

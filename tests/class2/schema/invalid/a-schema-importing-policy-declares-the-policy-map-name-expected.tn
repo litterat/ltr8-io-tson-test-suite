@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-importing-policy-declares-the-policy-map-name-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (the processor policy's vocabulary, proposed)"
+  description: """
+    policy.tn declares its entries under `policy`, a schema map nested in its root, so a schema importing it has
+    `policy` in its namespace and cannot declare an entry of that name that is no schema map.
+    """
+  error: { category: resolver }
+}

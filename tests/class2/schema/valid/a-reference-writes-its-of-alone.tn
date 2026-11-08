@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-reference-writes-its-of-alone.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  stock_id    => !net.uuid_type {}
+  customer_id => !net.uuid_type {}
+  count       => !numeric.integer_type {}
+  any_id      => !meta.reference_type { of: net.uuid_type }
+}

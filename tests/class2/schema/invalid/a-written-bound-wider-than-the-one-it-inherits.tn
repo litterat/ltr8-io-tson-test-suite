@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-written-bound-wider-than-the-one-it-inherits.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   boxed => <T: text> { a: T }
   wrong => <T: int32> boxed<T>
 }

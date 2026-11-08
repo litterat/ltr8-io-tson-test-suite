@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-text-family-states-its-normalization-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
   description: """
@@ -7,16 +7,14 @@
     into before any other facet judges it. `short_charset` refines `charset`, restating the form it
     cannot change and narrowing a length.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {
-        charset => !text_type {
+        charset => !unicode.text_type {
           chain: { subtypes: [short_charset] }
           members: [UTF-8 us-ascii]  normalization: NFKC_CASEFOLD }
 
-        short_charset => !text_type {
+        short_charset => !unicode.text_type {
           chain: { supertypes: [charset] }
           max_length: 8
           members: [UTF-8 us-ascii]

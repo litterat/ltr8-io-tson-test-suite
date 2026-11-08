@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-template-fields-literal-value-is-read-against-its-closed-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.1"
+  description: """
+    `meta.record_template_field.value` is typed `type!`, a dependent field whose sibling is a member of the group
+    `( type | type_param )`, so a literal is read against the closed type its own `type` names.
+    """
+  valid: _
+}

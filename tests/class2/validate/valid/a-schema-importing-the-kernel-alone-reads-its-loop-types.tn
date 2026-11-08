@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-schema-importing-the-kernel-alone-reads-its-loop-types.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-kernel-alone.tn"
+!point { x: 3  label: "a point"  shown: true  tag: north }

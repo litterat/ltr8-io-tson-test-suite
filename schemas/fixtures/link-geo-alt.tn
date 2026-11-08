@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-geo-alt.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  A second document contributing to the schema map `geo`, a member link-geo.tn does not declare. A schema
+  importing both reaches one `geo` holding both members.
+  """
+!schema {
+  geo => !schema {
+    location => { lat: float64  lon: float64 }
+  }
+}

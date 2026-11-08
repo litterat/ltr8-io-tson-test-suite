@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-constructor-typed-field-holds-a-declaration.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-constructor-typed.tn"
+!holder { spec: { version: 4 } }

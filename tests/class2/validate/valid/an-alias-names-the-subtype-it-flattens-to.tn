@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/an-alias-names-the-subtype-it-flattens-to.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-alias.tn"
 !holder {
   b: !s_of {
     tag:   base-field

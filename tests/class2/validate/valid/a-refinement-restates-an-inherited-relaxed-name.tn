@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-refinement-restates-an-inherited-relaxed-name.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-field-name-type.tn"
 !tightened { "@id": "urn:x"  "$ref": "#/a"  label: "y" }

@@ -1,10 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-alias-chain-of-two-hops-reaches-a-record-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
   description: "The first segment follows every alias hop (§8.3) to the entry at the end of the chain: req is an alias of mid, which is an alias of order_ref, whose body is built by record."
-  meta: "fixtures/meta-service.tn"
-  import: ["core.tn"]
   valid: {
     binds: [api req mid order_ref]
   }

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-in-a-field-group-beside-a-required-dependent-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.11"
+  description: """
+    A field group's member is present only when its option is chosen, and is never supplied. `v` is required, so
+    whenever `name` is the option written `v` must be there with no type to read it against. A group member is a
+    sibling only of an optional dependent field.
+    """
+  error: {
+    category: resolver
+  }
+}

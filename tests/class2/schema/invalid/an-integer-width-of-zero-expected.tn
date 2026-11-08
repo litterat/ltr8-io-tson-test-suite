@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-integer-width-of-zero-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.6 (`numeric.integer_size`, proposed)"
+  description: """
+    `integer_size.bits` is an `integer` rather than a count, since `numeric.count` states its own range
+    through a size, and that a width is above zero is a schema-load coherence check. A width of zero
+    describes no representation, and the schema does not load.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-reference-slot-reads-a-name-reaching-a-value-of-a-subtype-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
+  description: """
+    `r1` is a value of `rush_order`, a composition onto `order`, so its type IS-A `order` (§7.2) and the slot over
+    `order` holds its name.
+    """
+  valid: _
+}

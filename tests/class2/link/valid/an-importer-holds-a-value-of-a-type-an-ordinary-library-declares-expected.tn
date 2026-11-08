@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-importer-holds-a-value-of-a-type-an-ordinary-library-declares-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.5"
+  description: """
+    Any schema may declare a namespace type: link-steps.tn is an ordinary library, importing meta.tn, and
+    declares `steps`, an instance of the kernel's `namespace`. This schema imports it, so `steps` is in its
+    namespace, and `plan` holds a value of it: an entry holding a map of text under identifier keys.
+    """
+  valid: {
+    binds: [plan steps]
+  }
+}

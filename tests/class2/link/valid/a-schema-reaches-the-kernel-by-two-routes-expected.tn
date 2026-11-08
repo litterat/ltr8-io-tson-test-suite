@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-schema-reaches-the-kernel-by-two-routes-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3"
+  description: """
+    Imports are transitive and diamonds resolve by identity: this schema imports meta.tn, and imports
+    link-money.tn, an ordinary library, for `money`, which imports meta.tn too. meta.tn and the kernel it
+    imports are each one import reached by two routes, not a collision, and the closure binds `money`.
+    """
+  valid: {
+    binds: [priced money]
+  }
+}

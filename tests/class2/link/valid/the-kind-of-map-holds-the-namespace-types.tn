@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/the-kind-of-map-holds-the-namespace-types.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-headers.tn"
+!schema {
+  labels => !meta.map { key_type: meta.identifier  value_type: text }
+  maps   => !meta.reference_type { of: meta.map }
+}

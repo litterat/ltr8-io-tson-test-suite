@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/schema-document/a-root-tagged-schema-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§1.5, §2.2"
+  description: "A document whose root is tagged `!schema` is a schema document, whatever its header carries -- this one has none -- and a Class 1 processor must recognise it and reject it with a categorized diagnostic, not read it as data. The tag is the one token beyond the header that classification reads."
+  schema-document: _
+}

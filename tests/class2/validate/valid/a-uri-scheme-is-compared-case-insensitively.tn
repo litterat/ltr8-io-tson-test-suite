@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-uri-scheme-is-compared-case-insensitively.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-uri-facets.tn"
 !link { href: "HTTPS://example.com/"  base: "urn:isbn:0451450523"  home: "https://example.com/#top"  ref: "foo/bar?x=1" }

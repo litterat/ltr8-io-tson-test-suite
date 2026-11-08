@@ -1,0 +1,25 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-reference-writes-its-of-alone-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.1"
+  description: """
+    A reference's resolved form is its authored facets alone: `of`, and `allow_sibling` where it is withdrawn,
+    left out here at its default. The names it admits -- here the entries whose value is of `uuid_type`, the two
+    ids and not `count` -- are the linker's judgement over the closure of the schema that links it, derived and
+    never written, so nothing beside the facets is a fact of the body. A reference is a set of names and carries
+    no `disjoint`: that is a sum's fact.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        stock_id => !net.uuid_type {}
+
+        customer_id => !net.uuid_type {}
+
+        count => !numeric.integer_type {}
+
+        any_id => !meta.reference_type { of: net.uuid_type }
+      }
+      """
+  }
+}

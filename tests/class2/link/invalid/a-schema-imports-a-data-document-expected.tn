@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-schema-imports-a-data-document-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3"
+  description: """
+    Every import names a schema document, one whose root is tagged `!schema`. a-data-document.tn is data -- its
+    root is an untagged record -- so it declares nothing to import, and naming it refuses the importer's load,
+    by the same test that classifies a document.
+    """
+  error: {
+    category: resolver
+  }
+}

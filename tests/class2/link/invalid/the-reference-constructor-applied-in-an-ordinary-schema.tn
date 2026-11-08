@@ -1,6 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/link/invalid/the-reference-constructor-applied-in-an-ordinary-schema.tn"
-{
-  order => { id: text }
-  oref  => !ref_type { of: order }
-  rpick => { m: oref }
-}

@@ -1,10 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-namespace-keyed-by-a-member-set-is-entered-by-a-member-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
   description: "A namespace's keys are names of an identifier family, here one whose members are the verbs: api.GET is the method under the key GET in the verb_interface namespace value."
-  meta: "fixtures/meta-service.tn"
-  import: ["core.tn"]
   valid: {
     binds: [api routes]
   }

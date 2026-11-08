@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/allow-idn-false-refuses-a-u-label.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-net-host.tn"
 !ascii_site { name: "bücher.example" }

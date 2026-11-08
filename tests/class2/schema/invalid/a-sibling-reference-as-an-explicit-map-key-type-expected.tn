@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-reference-as-an-explicit-map-key-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: """
+    The reference atom reads a sibling reference wherever a reference stands, and the position rule refuses it at
+    every slot but a record field's type, naming the slot: `map.key_type` is not one.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-marked-name-cannot-be-applied-as-a-body-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.1"
   description: """
@@ -14,8 +14,6 @@
     Declaring the template is fine, and so is referencing it at any type position; naming it as an entire
     declaration body is the single thing the marks reserve.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   error: {
     category: resolver
   }

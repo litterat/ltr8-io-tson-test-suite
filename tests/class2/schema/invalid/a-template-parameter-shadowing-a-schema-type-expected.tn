@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-parameter-shadowing-a-schema-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    A parameter that shadows a schema type is a resolver error, within a held template's body or a record
+    template's: inside the template the type `T` would be unreachable, so `ts` is refused at its declaration.
+    """
+  error: {
+    category: resolver
+  }
+}

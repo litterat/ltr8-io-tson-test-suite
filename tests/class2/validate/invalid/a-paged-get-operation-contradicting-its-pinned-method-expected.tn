@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-paged-get-operation-contradicting-its-pinned-method-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.7"
+  description: """
+    `paged_get` pins `method` to `GET`. A data document may omit the field, but a written value at a FIXED
+    field is verified against the pinned one, and `POST` contradicts it. The http project relies on an endpoint
+    shape's pin holding for every value read against it, in data as in the description.
+    """
+  error: {
+    category: validation
+    path: "/method"
+  }
+}

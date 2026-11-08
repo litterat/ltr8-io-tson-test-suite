@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-dependent-group-member-takes-its-type-from-a-sibling-in-another-group-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.11"
+  description: """
+    `v` is itself a member of an optional group, and takes its type from `kind`, a member of another.
+    """
+  valid: _
+}

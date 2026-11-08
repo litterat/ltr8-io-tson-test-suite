@@ -1,5 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-field-that-admits-only-absence.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
   person => {
     name:     text
     retired?: void?

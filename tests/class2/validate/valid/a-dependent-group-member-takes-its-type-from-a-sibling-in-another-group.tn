@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-dependent-group-member-takes-its-type-from-a-sibling-in-another-group.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-dependent-fields.tn"
+!labelled { kind: text  v: hello }

@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/reader-sidecar.tn"
-!!meta:"https://tson.io/2026/38/m/meta.tn"
-!!import:"https://tson.io/2026/38/m/core.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
 !!import:"https://tson.io/test-suite/schemas/sidecar-common.tn"
 @doc:"""
   Formal shape of a reader-layer sidecar (tests/class1/reader/**/*-expected.tn) -- see README.md's
@@ -18,7 +18,7 @@
   base value (§4). It carries no annotations -- annotation capture is the parser layer's to state,
   and nothing here needs them.
   """
-{
+!schema {
   @doc:"One field of a record, after §2.5's uniqueness rule has been applied."
   reader_field => {
     name: text
@@ -45,6 +45,16 @@
     any other unquoted token that matched neither the boolean nor the number rule, and absence is
     not a base type at all: `_` is lexical, and reaches a tree through `absent` below.
     """
+  @doc:"""
+    A reference with arguments a schemaless read keeps as the structured value it is (§4, §7.4): its
+    qualified name's segments, and each argument read as a schemaless read reads it, a nested
+    reference with arguments being another reference.
+    """
+  reader_reference => {
+    segments: [text]
+    arguments: [reader_value]
+  }
+
   reader_atom => {
     ( boolean: boolean
     | string: text
@@ -58,6 +68,7 @@
     """
   reader_value => {
     ( record: reader_record
+    | reference: reader_reference
     | map: reader_map
     | array: reader_array
     | atom: reader_atom

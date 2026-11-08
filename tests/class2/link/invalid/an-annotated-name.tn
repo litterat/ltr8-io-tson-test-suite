@@ -1,4 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/an-annotated-name.tn"
-{
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-orders-interface.tn"
+!schema {
   routes => !bindings { b => { method: @doc:"the order method" orders.place_order  verb: POST  route: "/" } }
 }

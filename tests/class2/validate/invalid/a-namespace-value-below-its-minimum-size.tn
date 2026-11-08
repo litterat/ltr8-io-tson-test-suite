@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-namespace-value-below-its-minimum-size.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-namespace-bounds.tn"
+!request {
+  headers: {}
+}

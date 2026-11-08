@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-schema-importing-temporal-alone-may-declare-numerics-names-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3 (the bundled libraries, proposed)"
+  description: """
+    A schema reserves the names of its import closure and no others. temporal.tn's closure is the kernel and
+    temporal.tn, so a schema importing it alone may declare `int32` and `float64`, numeric.tn's root entries, as
+    ordinary entries of its own. `numeric` it may not: the kernel declares that map.
+    """
+  valid: {
+    binds: [int32 float64 date integer]
+  }
+}

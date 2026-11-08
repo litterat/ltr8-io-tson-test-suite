@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/refused/a-mixed-script-identifier-set-element.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-identifier.tn"
 !roles [ admin аdmin ]

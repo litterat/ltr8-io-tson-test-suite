@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/an-abstract-position-reads-the-tagged-subtype.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-family.tn"
 !holder {
   p: {
     pet_type: cat

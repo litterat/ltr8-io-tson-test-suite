@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-fields-value-is-read-against-its-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: """
+    The kernel's `record_field.value` is typed `type!`: read as data, a record field's `value` is read against the
+    type its own `type` names, so `5` beside `type: integer` is an integer and the record field is valid.
+    """
+  valid: _
+}

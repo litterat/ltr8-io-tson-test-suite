@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-relative-reference-where-an-iri-is-required.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-uri-facets.tn"
 !resource { id: "café/menü"  ref: "café/menü" }

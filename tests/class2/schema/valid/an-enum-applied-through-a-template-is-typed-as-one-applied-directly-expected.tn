@@ -1,24 +1,21 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-enum-applied-through-a-template-is-typed-as-one-applied-directly-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §7.4, §5.10"
   description: """
-    `enum` pins its `name_type` to `identifier`, a value written in the governing meta and resolved there,
-    so an enum's labels are names whether or not the schema declares or imports an `identifier`. An
-    entry instantiating a template whose held body applies `enum` is typed the same way: its members
-    are names under the kernel's identifier.
+    `enum` pins its `name_type` to the kernel's `meta.identifier`, which every closure reaching core holds and
+    none may redeclare, so an enum's labels are names. An entry instantiating a template whose held body
+    applies `enum` is typed the same way: its members are names under the kernel's identifier.
     """
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {
-        names => !template {
-          parameters: [ !template_param { name: M  type: text } ]
+        names => !meta.template {
+          parameters: [ !meta.template_param { name: M  type: text } ]
           template: "!enum [a b M]"
         }
 
-        @application:{ name: names  arguments: [{ value: c }] }
+        @meta.application:names<c>
         named => !enum { members: [a b c] }
       }
       """

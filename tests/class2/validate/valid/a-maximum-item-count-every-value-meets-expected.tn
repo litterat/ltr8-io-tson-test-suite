@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-maximum-item-count-every-value-meets-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3 (`numeric.count`, proposed)"
+  description: "`max_items: 2^63-1` is a valid count that every array meets, whatever the most elements a host's arrays can hold."
+  valid: _
+}

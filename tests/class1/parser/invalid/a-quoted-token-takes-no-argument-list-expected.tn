@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/a-quoted-token-takes-no-argument-list-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.4, §7.5"
+  description: "A quoted token is never a reference, so no argument list applies it, adjacent or not."
+  error: { category: parser }
+}

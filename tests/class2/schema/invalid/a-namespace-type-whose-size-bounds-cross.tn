@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-type-whose-size-bounds-cross.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!schema {
+  crossed => !meta.namespace { key_type: meta.identifier  value_type: meta.identifier  min_items: 3  max_items: 1 }
+}

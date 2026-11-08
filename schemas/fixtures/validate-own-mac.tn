@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-own-mac.tn"
+!!import:"https://tson.io/2026/39/m/numeric.tn"
+!!import:"https://tson.io/2026/39/m/temporal.tn"
+@doc:"""
+  Imports numeric.tn and temporal.tn and not net.tn, and declares `mac` and `hostname` for itself: neither
+  library declares them, so neither collides with an imported name.
+  """
+!schema {
+  mac => { vendor: text  model: text  since: date  ports: uint8 }
+  hostname => text
+}

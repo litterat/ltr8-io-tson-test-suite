@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-value-entry-writes-a-dependent-field-without-its-group-member-sibling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    A schema document holds a dependent field's value as written, but it is still a record read against its type: the
+    instance writes `v` beside `name`, its sibling `kind` is absent, and `v` has no type to be read against. The schema
+    does not load: a resolver error, the value being read while the schema is resolved.
+    """
+  error: {
+    category: resolver
+  }
+}

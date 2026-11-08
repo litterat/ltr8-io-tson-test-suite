@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/schema-document/a-root-tagged-schema-after-root-annotations-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§1.5, §2.2"
+  description: "A root's annotations come before its type-ref (`*annotation [type-ref] core-value`), so a schema document's `@doc` stands before the `!schema` tag, and classification reads past the annotations to the tag: this is a schema document."
+  schema-document: _
+}

@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-schema-importing-numeric-and-net-has-both-libraries.tn"
+!!import:"https://tson.io/2026/39/m/numeric.tn"
+!!import:"https://tson.io/2026/39/m/net.tn"
+!schema {
+  device => { id: uuid  address: ipv4  load: float64  ports: [uint16] }
+}

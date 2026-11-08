@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class1/lexer/invalid/utf8-truncated-sequence-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
 {
   spec: "§9.1"
   description: "A two-byte sequence whose continuation byte is missing because the document ends"

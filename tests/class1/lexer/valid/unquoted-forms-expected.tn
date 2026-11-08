@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class1/lexer/valid/unquoted-forms-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/lexer-sidecar.tn"
 {
   spec: "§7.1"
   description: "Several unquoted-token shapes (plain integer, based integer, date-like, dotted version, hyphenated identifier) all lex as unquoted-token, unchanged from source text -- the lexer does not interpret them"

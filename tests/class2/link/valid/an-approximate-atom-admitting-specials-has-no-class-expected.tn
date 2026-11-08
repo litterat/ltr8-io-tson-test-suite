@@ -1,10 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-approximate-atom-admitting-specials-has-no-class-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §5.5"
   description: "An approximate atom whose allow_nan or allow_infinity is true has no class, a NaN or an infinity having a number spelling in some encodings and a string one in others, so core's float64 beside text is not disjoint. Withdrawing both permissions makes the float number-class, whether it is constructed so or refines float64."
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     disjoint: [
       { name: loose   value: false }

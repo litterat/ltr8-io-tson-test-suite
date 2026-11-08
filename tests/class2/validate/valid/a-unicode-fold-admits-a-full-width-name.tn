@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-unicode-fold-admits-a-full-width-name.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-ascii-casefold.tn"
 !message { folded: { "\u{FF23}ontent-Type" => a } }

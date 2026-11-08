@@ -1,8 +1,10 @@
 !!id:"https://tson.io/test-suite/class2/schema/refused/a-mixed-script-identifier-default.tn"
-{
-  identifier => !identifier_type { continue_add: "-" }
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  slug => !unicode.identifier_type { continue_add: "-" }
 
   account => {
-    role?: identifier ~ аdmin
+    role?: slug ~ аdmin
   }
 }

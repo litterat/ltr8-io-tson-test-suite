@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-wide-integer.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+@doc:"""
+  Integer widths far past any host integer. `numeric.integer_size.bits` is an `integer`, so a width of three
+  billion bits is a valid width whose range no host can materialise: a value's membership is decided by its bit
+  length, a signed `n`-bit width admitting a value of fewer than `n` bits beside its sign and an unsigned one a
+  non-negative value of at most `n`.
+  """
+!schema {
+  wide       => !integer ^ { size: { bits: 3000000000  signed: true } }
+  wide_plain => !integer ^ { size: { bits: 3000000000  signed: false } }
+  reading    => { big: wide  plain: wide_plain }
+}

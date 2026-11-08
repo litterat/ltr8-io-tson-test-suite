@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-tag-list.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+@doc:"""
+  Writes `[text]` and imports only the kernel, as link-label-list.tn does: each mints the one synthetic
+  entry `[text]` lifts to, neither importing the other, and each resolves on its own.
+  """
+!schema {
+  tag_list => {
+    tags: [text]
+  }
+}

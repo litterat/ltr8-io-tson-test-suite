@@ -1,4 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-duration-off-its-declared-step.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-bounds.tn"
 !reservation {
   span: PT40M
   on:   2024-06-01

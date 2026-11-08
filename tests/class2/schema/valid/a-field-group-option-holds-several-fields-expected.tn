@@ -1,40 +1,38 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-field-group-option-holds-several-fields-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.11"
   description: "An option of a field group may hold several fields: `|` separates options, and a `?` on a member's name makes it optional once its option is chosen. Each member is an optional field of the record, and the group records its options in `members`, the marked members in `optional_members`, and whether it is optional. `+` is sugar for at least one of its members: the non-optional group of one option whose members are all optional within it."
-  meta: "meta.tn"
-  import: ["core.tn"]
   valid: {
     resolved: """
       !schema {
-        fragment => !record {
+        fragment => !meta.record {
           fields: {
-            include => !record_field { type: text  optional: true }
-            name    => !record_field { type: text  optional: true }
-            type    => !record_field { type: text  optional: true }
+            include => !meta.record_field { type: text  optional: true }
+            name    => !meta.record_field { type: text  optional: true }
+            type    => !meta.record_field { type: text  optional: true }
           }
           groups: [
-            !field_group { members: [[include] [name type]]  optional_members: [name type] }
+            !meta.field_group { members: [[include] [name type]]  optional_members: [name type] }
           ]
         }
-        endpoint => !record {
+        endpoint => !meta.record {
           fields: {
-            host   => !record_field { type: text   optional: true }
-            port   => !record_field { type: int32  optional: true }
-            socket => !record_field { type: text   optional: true }
+            host   => !meta.record_field { type: text   optional: true }
+            port   => !meta.record_field { type: int32  optional: true }
+            socket => !meta.record_field { type: text   optional: true }
           }
           groups: [
-            !field_group { members: [[host port] [socket]]  optional: true }
+            !meta.field_group { members: [[host port] [socket]]  optional: true }
           ]
         }
-        contact => !record {
+        contact => !meta.record {
           fields: {
-            email => !record_field { type: text  optional: true }
-            phone => !record_field { type: text  optional: true }
+            email => !meta.record_field { type: text  optional: true }
+            phone => !meta.record_field { type: text  optional: true }
           }
           groups: [
-            !field_group { members: [[email phone]]  optional_members: [email phone] }
+            !meta.field_group { members: [[email phone]]  optional_members: [email phone] }
           ]
         }
       }

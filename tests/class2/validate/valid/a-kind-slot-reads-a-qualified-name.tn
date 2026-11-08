@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-kind-slot-reads-a-qualified-name.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-geo.tn"
+!type_pick { t: geo.location }

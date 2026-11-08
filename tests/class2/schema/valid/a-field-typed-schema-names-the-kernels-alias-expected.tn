@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-field-typed-schema-names-the-kernels-alias-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §8.3 (the kernel's root names, proposed)"
+  description: """
+    `schema` is an ordinary root name of the kernel, an alias of `meta.schema`, so a schema importing meta.tn
+    writes it bare at a type position as it writes `text`. Resolved output keeps the reference as written: an
+    alias is a hop, not a rewrite.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        bundle => !meta.record { fields: {
+          name  => !meta.record_field { type: text }
+          types => !meta.record_field { type: schema }
+        } }
+      }
+      """
+  }
+}

@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-pinned-sibling-types-its-dependent-field-when-absent-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.7"
+  description: """
+    `int_cell` pins `kind` to `int32`, so an omitted `kind` is supplied by the pin and `v` reads `7` as an `int32`.
+    """
+  valid: _
+}

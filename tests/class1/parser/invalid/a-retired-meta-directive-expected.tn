@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/a-retired-meta-directive-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.2"
+  description: "A header carries `!!id` and `!!import` and nothing else: `!!meta` is no directive, so a header naming it is a parse error rather than a schema document, which is classified by its root tag."
+  error: { category: parser }
+}

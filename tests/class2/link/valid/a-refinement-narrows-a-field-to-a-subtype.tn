@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-refinement-narrows-a-field-to-a-subtype.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  person   => { name: text }
+  employee => person & { badge: text }
+  count    => !integer ^ { min: 0 }
+  label    => text
+  team     => { lead: person  size: integer  title: text }
+  staffed  => team ^ { lead: employee  title: label }
+  counted  => team & { size: count  note: text }
+}

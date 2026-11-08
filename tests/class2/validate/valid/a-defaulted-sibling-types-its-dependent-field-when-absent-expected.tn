@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-defaulted-sibling-types-its-dependent-field-when-absent-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    An absent sibling's default applies before the dependent field is read: `kind` is omitted, so it is `int32`, and
+    `v` reads `7` as one.
+    """
+  valid: _
+}

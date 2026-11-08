@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-free-sibling-naming-a-template-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    Where the dependent field is present, its sibling's value must name a type a value can be read against. `box` is a
+    record template, which no value is read against until it is applied, and reading never starts a materialisation,
+    so the sibling is refused.
+    """
+  error: {
+    category: validation
+    path: "/kind"
+  }
+}

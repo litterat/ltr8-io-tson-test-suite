@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class1/parser/invalid/directive-argument-not-a-uri-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
 {
   spec: "§3.3"
   description: "A directive's argument must be an IRI-reference (RFC 3987); an unescaped space is not valid anywhere in one"

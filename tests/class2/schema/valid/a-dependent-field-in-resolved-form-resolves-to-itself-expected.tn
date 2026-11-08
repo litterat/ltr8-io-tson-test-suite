@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-dependent-field-in-resolved-form-resolves-to-itself-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §8.1, [TSON-DATA] §7.4"
+  description: """
+    A sibling reference is data grammar, read by the reference atom wherever one stands, so resolved output is also
+    source: `record_field.type` written explicitly as `kind!` is the dependent field, and it resolves to itself.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        cell => !meta.record { fields: {
+          kind => !meta.record_field { type: meta.type_ref }
+          v    => !meta.record_field { type: kind!  optional: true }
+        } }
+      }
+      """
+  }
+}

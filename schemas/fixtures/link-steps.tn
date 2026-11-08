@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-steps.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+@doc:"""
+  An ordinary library declaring a namespace type of its own: `steps`, an instance of the kernel's `namespace`,
+  mapping identifiers to text, declared in a schema that imports meta.tn. A schema importing this one holds a value
+  of it.
+  """
+!schema {
+  steps => !meta.namespace { key_type: meta.identifier  value_type: text }
+}

@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/an-enum-built-with-a-meta-layers-own-constructor-takes-its-pinned-name-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-text-enum-cities.tn"
 !city "New York"

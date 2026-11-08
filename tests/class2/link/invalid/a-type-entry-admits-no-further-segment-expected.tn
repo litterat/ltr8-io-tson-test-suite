@@ -1,10 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-type-entry-admits-no-further-segment-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
   description: "order is a type entry: a further segment would select in a declaration rather than in a value, which values by name does not do, so order.sku is refused."
-  meta: "fixtures/meta-service.tn"
-  import: ["fixtures/link-orders-interface.tn"]
   error: {
     category: resolver
   }

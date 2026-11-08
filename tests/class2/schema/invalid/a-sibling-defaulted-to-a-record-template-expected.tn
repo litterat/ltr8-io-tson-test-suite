@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-defaulted-to-a-record-template-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    A sibling's default names a type a value can be read against, as its pin does: `box` is a template, which names no
+    type until it is applied, so an instance omitting `kind` would have no type to read `v` by. Refused at the
+    declaration.
+    """
+  error: {
+    category: resolver
+  }
+}

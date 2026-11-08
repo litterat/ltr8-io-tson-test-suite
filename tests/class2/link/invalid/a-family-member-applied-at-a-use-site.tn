@@ -1,4 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-family-member-applied-at-a-use-site.tn"
-{
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-pet-base.tn"
+!schema {
   kennel => { k: dog_of<text> }
 }

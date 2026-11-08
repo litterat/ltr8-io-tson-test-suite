@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-date-bound-that-is-no-date-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (a bound typed by its family's instance, proposed)"
+  description: """
+    `temporal.date_type`'s bounds are typed `date`, the instance declared beside it, so `min` is read by
+    `date`'s reader like any date in a document. `"not-a-date"` is not one, and the schema does not load.
+    """
+  error: {
+    category: resolver
+  }
+}

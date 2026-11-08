@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-literal-value-on-a-field-typed-by-an-application-of-a-parameter.tn"
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  bounded => <M> !numeric.integer_type { max: M }
+  capped  => <M> { v?: bounded<M> ~ 5 }
+}

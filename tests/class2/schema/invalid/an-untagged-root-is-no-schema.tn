@@ -1,0 +1,2 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-untagged-root-is-no-schema.tn"
+{ a => { b: b }  b => {} }

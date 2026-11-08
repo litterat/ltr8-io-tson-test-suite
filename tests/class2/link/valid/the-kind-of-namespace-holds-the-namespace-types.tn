@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/the-kind-of-namespace-holds-the-namespace-types.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-api.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-api-orders.tn"
+!schema {
+  namespaces => !meta.reference_type { of: meta.namespace }
+}

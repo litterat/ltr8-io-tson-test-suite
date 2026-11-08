@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/two-ascii-casings-of-one-name-are-one-key.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-ascii-casefold.tn"
 !message { fields: { Content-Type => a  content-type => b } }

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-group-member-sibling-types-a-mismatching-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.11"
+  description: """
+    Written first, a group member sibling types `v` as any sibling does: `300` is no `int8`.
+    """
+  error: {
+    category: validation
+    path: "/v"
+  }
+}

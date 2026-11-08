@@ -1,7 +1,9 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-group-member-matches-its-field-exactly.tn"
-{
-  folded => !identifier_type { normalization: NFKC_CASEFOLD }
-  row => !record { name_type: folded
+!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!schema {
+  folded => !unicode.identifier_type { normalization: NFKC_CASEFOLD }
+  row => !meta.record { name_type: folded
     fields: { name => { type: text  optional: true } email => { type: text  optional: true } }
     groups: [ { members: [ [NAME] [email] ] } ] }
 }

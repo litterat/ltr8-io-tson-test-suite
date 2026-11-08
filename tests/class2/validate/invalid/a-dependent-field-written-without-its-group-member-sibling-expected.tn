@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-dependent-field-written-without-its-group-member-sibling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.11"
+  description: """
+    A group member is absent when another option is chosen. `name` is chosen, so `kind` is absent and supplies no type,
+    and the `v` written beside it has none to be read against: `v` is refused.
+    """
+  error: {
+    category: validation
+    path: "/v"
+  }
+}

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-reference-refinement-that-widens-its-of-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.7"
+  description: """
+    A refinement narrows: the refined `of` is the source's or IS-A it, so every name the refinement admits the
+    source admits too. `meta.product` is no subtype of `meta.map` but its supertype, so `wide` would admit the
+    record and array types `maps` refuses. Judged where both names resolve, over the schema's namespace.
+    """
+  error: {
+    category: resolver
+  }
+}

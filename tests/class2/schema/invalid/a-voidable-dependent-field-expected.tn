@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-voidable-dependent-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.3"
+  description: """
+    A dependent field is never voidable: it may be optional, and when present it has a value, read against the type
+    its sibling names. There is no spelling for one either: `kind!?` puts `?` against the `!`, which must be followed
+    by whitespace, so it does not parse.
+    """
+  error: {
+    category: resolver
+  }
+}

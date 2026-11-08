@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-operation-contradicting-its-endpoint-shapes-pinned-method-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.7"
+  description: """
+    `paged_get` refines the imported record type `operation` and pins `method` to `GET`, so an operation read
+    against it may omit the field and may not contradict it. `list_orders` writes `POST`, and a written value at a
+    FIXED field is checked against the pinned one, so the value entry is no value of `paged_get` and the schema
+    does not load. The http project relies on an application's own endpoint shape constraining every operation
+    built with it.
+    """
+  error: {
+    category: resolver
+  }
+}

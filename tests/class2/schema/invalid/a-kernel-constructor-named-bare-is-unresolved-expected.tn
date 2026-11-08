@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-kernel-constructor-named-bare-is-unresolved-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3.1, [TSON-SCHEMA] §5.12 (the kernel under meta, proposed)"
+  description: """
+    The kernel's constructors are members of its schema map `meta`, and no document of core's closure declares
+    one at its root, so a bare `integer_type` in a schema importing core names nothing: every name resolves
+    from the root, with no lexical scope to reach into `meta`. The constructor is applied by its path,
+    `!numeric.integer_type`.
+    """
+  error: {
+    category: resolver
+  }
+}

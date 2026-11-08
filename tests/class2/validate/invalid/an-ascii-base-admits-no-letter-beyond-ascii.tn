@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/an-ascii-base-admits-no-letter-beyond-ascii.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-field-name-type.tn"
 !headers { "content-type": "text/plain"  "x-\u00e9tag": "1" }

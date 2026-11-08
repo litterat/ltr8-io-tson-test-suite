@@ -1,0 +1,3 @@
+!!import:"https://example.com/s.tn"
+!!id:"https://example.com/d.tn"
+!t { x: 1 }

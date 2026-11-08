@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-schema-imports-a-data-document.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/a-data-document.tn"
+!schema {
+  priced => { cost: int64 }
+}

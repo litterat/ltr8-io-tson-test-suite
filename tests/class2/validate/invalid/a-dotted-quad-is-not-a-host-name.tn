@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-dotted-quad-is-not-a-host-name.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-net-hosts.tn"
 !listener { host: !hostname "192.0.2.1"  port: 443 }

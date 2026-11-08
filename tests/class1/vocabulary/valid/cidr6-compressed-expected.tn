@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class1/vocabulary/valid/cidr6-compressed-expected.tn"
-!!schema:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
+!!import:"https://tson.io/test-suite/schemas/vocabulary-sidecar.tn"
 {
   spec: "§5.5"
   description: "!cidr6 accepts an RFC 4291 §2.2 address followed by a prefix length, compression included; the subject is authored in RFC 5952 canonical form, which is the form the expected value states"

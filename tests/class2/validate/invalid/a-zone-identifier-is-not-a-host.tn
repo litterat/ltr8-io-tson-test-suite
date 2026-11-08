@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-zone-identifier-is-not-a-host.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-net-host.tn"
 !server { host: "fe80::1%eth0" }

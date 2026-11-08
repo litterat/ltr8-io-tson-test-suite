@@ -1,0 +1,24 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-sibling-may-be-a-field-group-member-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.11"
+  description: """
+    A sibling may be a member of a field group where its dependent field is optional. A member is absent when another
+    option is chosen, and `v` may then be absent with it, so the declaration stands; a `v` written beside `name`,
+    with no `kind` to type it, is refused where it is read.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        cell => !meta.record {
+          fields: {
+            kind => !meta.record_field { type: meta.type_ref  optional: true }
+            name => !meta.record_field { type: text  optional: true }
+            v    => !meta.record_field { type: kind!  optional: true }
+          }
+          groups: [ !meta.field_group { members: [[kind] [name]] } ]
+        }
+      }
+      """
+  }
+}

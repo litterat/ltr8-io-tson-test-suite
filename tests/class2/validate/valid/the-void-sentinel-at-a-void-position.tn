@@ -1,2 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/the-void-sentinel-at-a-void-position.tn"
+!!import:"https://tson.io/2026/39/m/core.tn"
 !void _
