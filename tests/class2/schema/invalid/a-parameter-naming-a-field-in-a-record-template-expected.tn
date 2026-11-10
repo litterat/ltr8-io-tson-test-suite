@@ -3,9 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.10"
   description: """
-    A record template's parameters stand only in a field's type, a field's default or fixed value, or an argument of
-    an application. `K` names the field, so the family base cannot list it: the declaration is refused, whether or
-    not anything applies it.
+    A parameter is a type, and stands only at a field's type or as an argument of an application there or in a
+    parent. `K` names the field, so the family base cannot list it: the declaration is refused, whether or not
+    anything applies it.
     """
   error: {
     category: resolver

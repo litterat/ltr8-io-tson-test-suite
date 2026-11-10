@@ -2,7 +2,7 @@
 !!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
 {
   spec: "§7.4, §7.5"
-  description: "A qualified name with an adjacent argument list is one core-value, a reference, its arguments nested to any depth: a qualified name is a reference, any other token a value argument. Whitespace and a comma inside the list are free, and a qualified head, `geo.address`, parses."
+  description: "A qualified name with an adjacent argument list is one core-value, a reference, its arguments nested to any depth: each argument a reference, a qualified name or an application. Whitespace and a comma inside the list are free, and a qualified head, `geo.address`, parses."
   valid: {
     document: {
       id: _
@@ -39,8 +39,10 @@
                       name: geo.address
                       arguments: [
                         { token: { form: unquoted  text: T } }
-                        { token: { form: unquoted  text: "201" } }
-                        { token: { form: single-line  text: "a b" } }
+                        { reference: { name: pair  arguments: [
+                          { token: { form: unquoted  text: text } }
+                          { token: { form: unquoted  text: int32 } }
+                        ] } }
                       ]
                     }
                   }

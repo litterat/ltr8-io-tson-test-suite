@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-at-a-facet-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    A parameter is a type, and stands only at a field's type or as an argument of an application there or in a
+    parent. `N` stands at `array.min_items`, a count, which names no type: the declaration is refused, naming the
+    slot, whether or not anything applies it.
+    """
+  error: {
+    category: resolver
+  }
+}

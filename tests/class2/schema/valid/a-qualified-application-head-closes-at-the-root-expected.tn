@@ -14,7 +14,7 @@
         geo => !meta.schema {
           box => !meta.record_template {
             chain: { subtypes: [boxed] }
-            parameters: [ !meta.template_param { name: T  type: meta.type_ref } ]
+            parameters: [ !meta.template_param { name: T } ]
             fields: { item => !meta.record_template_field { type_param: T } }
           }
 

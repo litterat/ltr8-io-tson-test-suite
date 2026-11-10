@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/a-number-is-no-reference-argument-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.4"
+  description: "A reference's argument is a reference, a qualified name or an application: `10` is a literal token and no argument, so `maxint<10>` is no reference."
+  error: { category: parser }
+}

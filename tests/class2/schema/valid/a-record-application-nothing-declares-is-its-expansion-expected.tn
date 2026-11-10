@@ -8,12 +8,12 @@
       !schema {
         box => !meta.record_template {
           fields: { v => !meta.record_template_field { type_param: T } }
-          parameters: [ !meta.template_param { name: T  type: meta.type_ref } ]
+          parameters: [ !meta.template_param { name: T } ]
         }
 
         crate => !meta.record_template {
           fields: { v => !meta.record_template_field { type_param: T } }
-          parameters: [ !meta.template_param { name: T  type: meta.type_ref } ]
+          parameters: [ !meta.template_param { name: T } ]
         }
 
         holder => !meta.record { fields: {

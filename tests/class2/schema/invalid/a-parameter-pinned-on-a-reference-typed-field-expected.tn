@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-pinned-on-a-reference-typed-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    A field's value is never a parameter, whatever the field's type. `element_type` is typed `meta.type_ref`, so `T`
+    would be a type there, and the pin is a value all the same: the refinement template is refused, naming the slot.
+    """
+  error: {
+    category: resolver
+  }
+}

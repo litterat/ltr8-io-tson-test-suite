@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-at-a-size-bound-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3"
+  description: """
+    A size bound is a count, and a parameter is a type: `[T; N]` puts `N` at the lifted array's `min_items` and
+    `max_items`, so the declaration is refused, naming the slot. A size is written as a number where the form is
+    written.
+    """
+  error: {
+    category: resolver
+  }
+}
