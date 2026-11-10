@@ -5,7 +5,8 @@
   description: """
     A value that differs per application is written where the application is declared, a field's value never being a
     parameter: `created` composes `response<order>` and restates `status` FIXED to `201`, as a hand-written member
-    pins a field it inherits. The operand mints no entry, and `created` is IS-A `response`.
+    pins a field it inherits. The operand mints no entry, and `created` is not IS-A `response`: a template is no type,
+    and `response` writes no parent for an application to inherit.
     """
   valid: {
     resolved: """
@@ -15,7 +16,6 @@
         }
 
         response => !meta.record_template {
-          chain: { subtypes: [created] }
           fields: {
             status => !meta.record_template_field { type: int32 }
             body   => !meta.record_template_field { type_param: T }
@@ -24,7 +24,6 @@
         }
 
         created => !meta.record {
-          chain: { supertypes: [response] }
           fields: {
             status => !meta.record_field { type: int32  optional: true  role: FIXED  value: 201 }
             body   => !meta.record_field { type: order }

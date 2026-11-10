@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-abstract-templates-application-dispatches-over-its-members.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-family-through-a-template.tn"
+!holder {
+  p: {
+    kind: cat
+    name: Tom
+    pet:  { indoor: true }
+  }
+  t: {
+    kind:   cat
+    name:   Tom
+    indoor: true
+  }
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-abstract-templates-application-dispatches-over-its-members-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10"
+  description: "`abstract` on a template is each application's `extension`, so `tpet<text>` is an abstract record that dispatches on `kind`. `tcat` composes that application and pins `kind`, so it IS-A the entry `tpet<text>` denotes, and the value at `t` is placed by its selector: `tcat`, whose `indoor` field the base does not declare."
+  valid: _
+}

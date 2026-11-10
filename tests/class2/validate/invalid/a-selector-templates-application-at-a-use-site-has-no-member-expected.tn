@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-selector-templates-application-at-a-use-site-has-no-member-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10"
+  description: "`shape` states a selector, and a template's selectors and `abstract` are each application's, so `s: shape<circle>` is an abstract base dispatching on `kind`. Nothing composes `shape<circle>`, so no member pins `anything` and the value at `s` selects nothing. A processor that reads an application of a selector template as an ordinary record accepts it."
+  error: {
+    category: validation
+    path: "/s"
+  }
+}

@@ -3,9 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10"
   description: """
-    `final` admits no subtype, and a template composing a final record is one: it is IS-A its parents as
-    any record is, and every application of it would be. The refusal is the declaration's, where `t`
-    names `c`, not the first application's -- there is none here.
+    `final` admits no subtype, and a template composing a final record writes one into every application: an
+    application's IS-A edges are its template's written parents', so each application of `t` would be IS-A `c`. The
+    refusal is the declaration's, where `t` names `c`, not the first application's -- there is none here.
     """
   error: {
     category: resolver

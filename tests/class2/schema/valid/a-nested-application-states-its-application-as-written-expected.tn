@@ -12,13 +12,11 @@
     resolved: """
       !schema {
         box => !meta.record_template {
-          chain: { subtypes: [inner] }
           parameters: [ !meta.template_param { name: T } ]
           fields: { v => !meta.record_template_field { type_param: T } }
         }
 
         pair => !meta.record_template {
-          chain: { subtypes: [outer] }
           parameters: [
             !meta.template_param { name: A }
             !meta.template_param { name: B }
@@ -30,11 +28,10 @@
         }
 
         @meta.application:box<text>
-        inner => !meta.record { chain: { supertypes: [box] }  fields: { v => !meta.record_field { type: text } } }
+        inner => !meta.record { fields: { v => !meta.record_field { type: text } } }
 
         @meta.application:pair<box<text> int32>
         outer => !meta.record {
-          chain: { supertypes: [pair] }
           fields: {
             a => !meta.record_field { type: inner }
             b => !meta.record_field { type: int32 }

@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-application-is-a-subtype-of-its-templates-parent-and-not-of-the-template-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
+  description: """
+    An application's IS-A edges are its template's written parents', and never the template's own name: a template
+    is no type. `bt` declares `box<int32>` and `dog` composes `box<text>`, so each is IS-A `base`, the parent `box`
+    writes, and `base` indexes both. `box` indexes nothing, though both are its applications.
+    """
+  valid: {
+    subtypes: [
+      { name: base  subtypes: [bt dog] }
+      { name: box  subtypes: [] }
+    ]
+  }
+}

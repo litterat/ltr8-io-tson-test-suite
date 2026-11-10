@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-abstract-templates-application-with-no-selector-written.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-family-through-a-template.tn"
+!holder {
+  p: {
+    kind: cat
+    name: Tom
+    pet:  { indoor: true }
+  }
+  t: {
+    name:   Tom
+    indoor: true
+  }
+}

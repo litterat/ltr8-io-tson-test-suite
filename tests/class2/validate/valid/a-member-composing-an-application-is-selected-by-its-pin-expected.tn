@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-member-composing-an-application-is-selected-by-its-pin-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10"
+  description: "`dog` composes `pet_of<dog_type>` and pins `kind`, and `pet_of` composes `pet`, so `dog` IS-A `pet` through its template's written parent. The value at `p` is placed by its selector: `dog`, whose `pet` field is a `dog_type`. A processor that gives a member no edge through an applied operand's template finds no member pinning `dog`."
+  valid: _
+}

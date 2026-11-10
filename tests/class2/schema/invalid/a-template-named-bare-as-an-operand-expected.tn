@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-named-bare-as-an-operand-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10"
+  description: """
+    `&` composes the fields of a record, and a template is not a type: its fields exist once its parameters are
+    bound. `box & { … }` is a resolver error at `dog`; `box<text> & { … }` composes, and `dog` is then IS-A what
+    `box`'s written parents reach, and never `box`.
+    """
+  error: {
+    category: resolver
+  }
+}

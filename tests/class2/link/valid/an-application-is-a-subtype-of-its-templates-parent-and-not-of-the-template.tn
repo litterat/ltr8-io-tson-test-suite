@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-application-is-a-subtype-of-its-templates-parent-and-not-of-the-template.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  base => abstract { name: text }
+  box  => <T> base & { v: T }
+  bt   => box<int32>
+  dog  => box<text> & { bark: boolean }
+}
