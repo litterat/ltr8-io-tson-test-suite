@@ -3,7 +3,7 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3"
   description: """
-    A size bound is a count, and a parameter is a type: `[T; N]` puts `N` at the lifted array's `min_items` and
+    A size bound is a count, and a parameter is a type: `[text; N]` puts `N` at the array's `min_items` and
     `max_items`, so the declaration is refused, naming the slot. A size is written as a number where the form is
     written.
     """

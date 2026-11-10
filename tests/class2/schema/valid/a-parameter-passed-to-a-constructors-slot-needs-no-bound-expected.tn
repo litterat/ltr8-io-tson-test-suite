@@ -10,9 +10,9 @@
   valid: {
     resolved: """
       !schema {
-        keyed => !meta.record_template {
-          fields: { m => !meta.record_template_field { type: meta.namespace<K text> } }
-          parameters: [ !meta.template_param { name: K } ]
+        keyed => !meta.record {
+          fields: { m => !meta.record_field { type: meta.namespace<K text> } }
+          parameters: [ !meta.param { name: K } ]
         }
       }
       """

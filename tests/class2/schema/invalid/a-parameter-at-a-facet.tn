@@ -1,6 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-at-a-facet.tn"
-!!import:"https://tson.io/2026/40/m/meta.tn"
-!!import:"https://tson.io/2026/40/m/core.tn"
-!schema {
-  vec => <N> !meta.array { element_type: text  min_items: N }
-}

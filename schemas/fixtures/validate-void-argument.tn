@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-void-argument.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  An open record applied to `void` ([TSON-SCHEMA] §5.10): `void` is a type and an admissible argument, so
+  `box<void>`'s field `v`, written `v: T?`, is the field `v: void?`, which must be written and as the void sentinel
+  ([TSON-SCHEMA] §5.2), exactly as if `void` had been written there.
+  """
+!schema {
+  box     => <T> { v: T? }
+  nothing => box<void>
+}

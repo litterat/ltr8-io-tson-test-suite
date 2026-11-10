@@ -3,9 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.10"
   description: """
-    `E` decides each member's extensibility. A record template's own extension is its family base's, ABSTRACT by
-    construction, and a parameter is a type, and stands only at a field's type or as an argument of an application
-    there or in a parent.
+    `E` would decide each application's extensibility, which an open record states as written for every application.
+    A parameter is a type, and stands only at a field's type or as an argument of an application there or in a parent,
+    so a parameter at `meta.record.extension` is refused at the declaration, naming the slot.
     """
   error: {
     category: resolver

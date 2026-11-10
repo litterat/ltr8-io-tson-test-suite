@@ -3,10 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.10"
   description: """
-    §5.10's shadowing rule classifies what a template writes, and nothing it absorbs: `base` pins `kind` to the
-    literal `T`, and `fam`, declaring a parameter spelled `T`, takes the field as it is -- a literal `value`, a
-    field's value never being a parameter -- so every application of `fam` keeps `base`'s pin. Only `v`, which `fam`
-    writes, names the parameter.
+    A parameter stands at a field's type or as an argument, and a field's value is never one: `base` pins `kind` to
+    the literal `T`, and `fam`, declaring a parameter spelled `T`, takes the field as it is -- a literal `value` --
+    so every application of `fam` keeps `base`'s pin. Only `v`'s type, which `fam` writes, is the parameter.
     """
   valid: {
     resolved: """
@@ -15,13 +14,13 @@
           fields: { kind => !meta.record_field { type: text  optional: true  role: FIXED  value: T } }
         }
 
-        fam => !meta.record_template {
+        fam => !meta.record {
           chain: { parents: [base]  supertypes: [base] }
           fields: {
-            kind => !meta.record_template_field { type: text  optional: true  role: FIXED  value: T }
-            v    => !meta.record_template_field { type_param: T }
+            kind => !meta.record_field { type: text  optional: true  role: FIXED  value: T }
+            v    => !meta.record_field { type: T }
           }
-          parameters: [ !meta.template_param { name: T } ]
+          parameters: [ !meta.param { name: T } ]
         }
       }
       """

@@ -12,19 +12,19 @@
       !schema {
         non_empty_text => !unicode.text_type { chain: { supertypes: [text] }  min_length: 1 }
 
-        boxed => !meta.record_template {
-          fields: { v => !meta.record_template_field { type_param: T } }
-          parameters: [ !meta.template_param { name: T  bound: text } ]
+        boxed => !meta.record {
+          fields: { v => !meta.record_field { type: T } }
+          parameters: [ !meta.param { name: T  bound: text } ]
         }
 
-        rebox => !meta.record_template {
-          fields: { b => !meta.record_template_field { type: boxed<T> } }
-          parameters: [ !meta.template_param { name: T  bound: text } ]
+        rebox => !meta.record {
+          fields: { b => !meta.record_field { type: boxed<T> } }
+          parameters: [ !meta.param { name: T  bound: text } ]
         }
 
-        narrow => !meta.record_template {
-          fields: { b => !meta.record_template_field { type: boxed<T> } }
-          parameters: [ !meta.template_param { name: T  bound: non_empty_text } ]
+        narrow => !meta.record {
+          fields: { b => !meta.record_field { type: boxed<T> } }
+          parameters: [ !meta.param { name: T  bound: non_empty_text } ]
         }
       }
       """

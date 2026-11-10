@@ -106,18 +106,14 @@ The expected side is carried as a multi-line token rather than modelled field by
 would restate meta.tn inside a sidecar schema and leave two statements of one shape to drift; a
 multi-line token escapes nothing, so this stays inside the conservative subset RUNNER.md rule 2 states.
 
-**No `schema/` subject declares a template**, and the reason is about where the comparison happens rather
-than about what §8 admits. A resolver holds an open entry's body as the application as written, held
-unread until materialisation (§5.10); the same declaration written as §8 output and read back binds an
-ordinary record body, a reference's segment being an `meta.identifier` and a parameter being one. So the two sides
-of such a vector agree as documents and differ as values, and a runner comparing values has nothing it can
-state.
-
-§8.1 does not settle which side should move — it says no constructor's record shape could carry a held body,
-and then specifies how a parameter reference is read "in any `type_ref`, at any depth ... against the
-enclosing entry's `parameters` list", a rule with no position to apply at if the first sentence holds. What a
-template resolves to is stated at the link layer instead, over the entries it mints, until that is
-answered.
+**A template's resolved output is an ordinary record**, so a `schema/` subject may declare one and state
+it. A template is an open record (§5.10): a `!meta.record` carrying `parameters`, read against `record`'s
+own vocabulary as any record is, each parameter written where it stands as its name, a reference value
+looked up in the record's `parameters` before the namespace. Read back, it binds the value the resolver
+built, so the two sides compare as values like any other entry. An application closes to a `!meta.record`
+without `parameters`, stating the application it is the instantiation of on its key as
+`@meta.application`; a construction (`set<text>`, `meta.ref<order>`) states its constructor and carries
+none.
 
 **`link/` states individual facts** about the linked namespace rather than a whole document: what
 §2.2.3's import closure binds, what §5.4 derives for a choice, what §8.2's `subtypes` index holds,

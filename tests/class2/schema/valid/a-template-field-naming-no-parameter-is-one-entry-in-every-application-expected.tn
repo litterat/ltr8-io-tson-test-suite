@@ -3,24 +3,24 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
   description: """
-    A field type in a record template that names none of its parameters means the same in every application, so it is
+    A field type in an open record that names none of its parameters means the same in every application, so it is
     closed in the template and names the entry every application names: `box<text>` is its expansion in `pet` as in
     `cat`, one minted record named for its content. `cat` is not IS-A `pet`: a template is no type.
     """
   valid: {
     resolved: """
       !schema {
-        box => !meta.record_template {
-          fields: { v => !meta.record_template_field { type_param: T } }
-          parameters: [ !meta.template_param { name: T } ]
+        box => !meta.record {
+          fields: { v => !meta.record_field { type: T } }
+          parameters: [ !meta.param { name: T } ]
         }
 
-        pet => !meta.record_template {
+        pet => !meta.record {
           fields: {
-            tag  => !meta.record_template_field { type: record_v_text_xxhash }
-            name => !meta.record_template_field { type_param: V }
+            tag  => !meta.record_field { type: record_v_text_xxhash }
+            name => !meta.record_field { type: V }
           }
-          parameters: [ !meta.template_param { name: V } ]
+          parameters: [ !meta.param { name: V } ]
         }
 
         @meta.application:pet<text>

@@ -1,0 +1,31 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-declared-application-of-an-open-record-closes-to-a-record-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.2"
+  description: """
+    An application of an open record substitutes its arguments for the parameters and closes to a `!meta.record`
+    without `parameters`. A declaration naming the application is that record under its author's name, and carries
+    `@meta.application` on its key, the one fact the record does not state. The held `meta.array<T>` becomes
+    `meta.array<text>`, a construction, and closes to the content-keyed entry `[text]` lifts to, which the import
+    closure already holds (core reaches net, whose own `[text]` it is), so nothing is minted here.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        page => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: {
+            items => !meta.record_field { type: meta.array<T> }
+            total => !meta.record_field { type: int32 }
+          }
+        }
+
+        @meta.application:page<text>
+        text_page => !meta.record { fields: {
+          items => !meta.record_field { type: array_text_xxhash }
+          total => !meta.record_field { type: int32 }
+        } }
+      }
+      """
+  }
+}

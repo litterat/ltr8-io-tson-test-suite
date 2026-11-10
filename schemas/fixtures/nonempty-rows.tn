@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/nonempty-rows.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  A refined constructor: `rows` refines `meta.array`, pinning `min_items` to 1, a named kind of array as the kernel's
+  `set_type` is ([TSON-SCHEMA] §5.7). `rows<T>` constructs it ([TSON-SCHEMA] §5.3).
+  """
+!schema {
+  rows => meta.array ^ { min_items?: = 1 }
+}

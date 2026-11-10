@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-construction-stating-parameters-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.1"
+  description: """
+    An open record's parameters are the list written before its body, `<T> { ... }` or `<T> !meta.record { ... }`,
+    which is what puts them in scope for the declaration's checks. A construction of `record` writing `parameters`
+    as a binding states what no declaration writes, as a construction stating `chain` does, and is a resolver error.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,31 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-open-records-field-is-typed-by-a-parameter-whole-or-as-an-argument-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.1"
+  description: """
+    An open record's field is a `meta.record_field` whatever its type: a parameter standing for the whole type is
+    the field's `type`, written as its name, and one standing as an argument of an application stays in that
+    application, `box<T>`. Either is recognised because its name resolves into the record's `parameters`, looked up
+    before the namespace; no label says which a `type` is. A literal on a closed type stays a `value`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        box => !meta.record {
+          fields: { v => !meta.record_field { type: X } }
+          parameters: [ !meta.param { name: X } ]
+        }
+
+        slot => !meta.record {
+          fields: {
+            a => !meta.record_field { type: T }
+            b => !meta.record_field { type: box<T> }
+            c => !meta.record_field { type: T  optional: true }
+            e => !meta.record_field { type: text  optional: true  role: DEFAULT  value: "x" }
+          }
+          parameters: [ !meta.param { name: T } ]
+        }
+      }
+      """
+  }
+}

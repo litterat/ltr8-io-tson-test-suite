@@ -2,13 +2,13 @@
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.1"
-  description: "A type written after a parameter name is its bound: an argument must name a type that IS-A `text`. Resolved output is the record template itself, a `record_template` whose field names `T` as its `type_param`, and records the parameter as its name and the bound it is written with, and nothing else."
+  description: "A type written after a parameter name is its bound: an argument must name a type that IS-A `text`. Resolved output is the open record itself, a `!meta.record` whose field is typed `T`, the parameter written as its name, and whose `parameters` record the parameter as its name and the bound it is written with, and nothing else."
   valid: {
     resolved: """
       !schema {
-        boxed => !meta.record_template {
-          fields: { a => !meta.record_template_field { type_param: T } }
-          parameters: [ !meta.template_param { name: T  bound: text } ]
+        boxed => !meta.record {
+          fields: { a => !meta.record_field { type: T } }
+          parameters: [ !meta.param { name: T  bound: text } ]
         }
       }
       """

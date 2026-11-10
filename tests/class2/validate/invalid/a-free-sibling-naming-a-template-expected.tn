@@ -3,9 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.2"
   description: """
-    Where the dependent field is present, its sibling's value must name a type a value can be read against. `box` is a
-    record template, which no value is read against until it is applied, and reading never starts a materialisation,
-    so the sibling is refused.
+    Where the dependent field is present, its sibling's value must name a type a value can be read against. `box` is an
+    open record, a template, which no value is read against until it is applied, and reading never starts a
+    materialisation, so the sibling is refused.
     """
   error: {
     category: validation

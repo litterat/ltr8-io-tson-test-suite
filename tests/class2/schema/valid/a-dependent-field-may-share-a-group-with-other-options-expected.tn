@@ -4,8 +4,7 @@
   spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.11, [TSON-SCHEMA] §8.1"
   description: """
     A group's member is declared optional, so a dependent field that is a member counts as optional and may take its
-    type from a sibling in another group. This is `meta.record_template_field`'s shape: `( type | type_param )` beside
-    `( value: type! | value_param )?`.
+    type from a sibling in another group: `( kind | name )` beside `( v: kind! | w )?`.
     """
   valid: {
     resolved: """
