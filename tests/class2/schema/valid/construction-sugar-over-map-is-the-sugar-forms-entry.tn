@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/construction-sugar-over-map-is-the-sugar-forms-entry.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  post => {
+    a: meta.map<text int32>
+    b: {text => int32}
+  }
+}

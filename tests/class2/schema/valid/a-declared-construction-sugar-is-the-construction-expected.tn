@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-declared-construction-sugar-is-the-construction-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3 (construction sugar, proposed for Revision 40), [TSON-SCHEMA] §8.2"
+  description: """
+    A declaration whose body is construction sugar is the construction: `uuid_list => meta.array<uuid>` resolves
+    to `!meta.array { element_type: uuid }`, exactly as `written` spells it out. It is an instance of
+    `meta.array`, not IS-A it, and its key carries no `@meta.application`: its value already states its
+    constructor and its arguments, and nothing was substituted.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        uuid_list  => !meta.array { element_type: uuid }
+        uuid_index => !meta.map { key_type: text  value_type: uuid }
+        written    => !meta.array { element_type: uuid }
+      }
+      """
+  }
+}

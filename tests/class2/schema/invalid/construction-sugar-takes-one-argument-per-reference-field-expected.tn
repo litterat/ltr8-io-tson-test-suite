@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/construction-sugar-takes-one-argument-per-reference-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3 (construction sugar, proposed for Revision 40)"
+  description: """
+    Construction sugar gives one argument to each of the constructor's required fields typed by a reference
+    naming types. `meta.map` has two, `key_type` and `value_type`, so `meta.map<text>` supplies too few and is
+    refused.
+    """
+  error: {
+    category: resolver
+  }
+}

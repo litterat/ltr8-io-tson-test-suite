@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/construction-sugar-argument-is-judged-by-its-fields-of-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3 (construction sugar, proposed for Revision 40), [TSON-SCHEMA] §4.2"
+  description: """
+    An argument of construction sugar lands in its field and is judged by that field's own reference:
+    `meta.namespace<int32 text>` is `!meta.namespace { key_type: int32  value_type: text }`, and `key_type` is a
+    `meta.identifier_ref`, whose members are the identifier families. `int32` is none, so the construction is
+    refused as the same construction written in braces is.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/construction-sugar-leaves-a-required-field-unwritten-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3 (construction sugar, proposed for Revision 40), [TSON-SCHEMA] §5.2"
+  description: """
+    `meta.enum_type` has one required field typed by a reference naming types, `name_type`, and a second
+    required field, `members`, a set of values, which no argument fills. `meta.enum_type<meta.identifier>` is
+    therefore `!meta.enum_type { name_type: meta.identifier }`, an incomplete construction, refused as that
+    construction written in braces is: construction sugar completes only a constructor whose other fields are
+    optional.
+    """
+  error: {
+    category: resolver
+  }
+}

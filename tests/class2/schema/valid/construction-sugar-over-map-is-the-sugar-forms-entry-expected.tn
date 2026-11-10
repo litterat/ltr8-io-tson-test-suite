@@ -1,0 +1,23 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/construction-sugar-over-map-is-the-sugar-forms-entry-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3 (construction sugar, proposed for Revision 40), [TSON-SCHEMA] §8.2"
+  description: """
+    `meta.map`'s required fields typed by a reference naming types are `key_type` and `value_type`, in that
+    order, so `meta.map<text int32>` is `!meta.map { key_type: text  value_type: int32 }`, an argument for each
+    field in declaration order -- the construction `{text => int32}` is spelled for. Both name one closed
+    synthetic.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        post => !meta.record { fields: {
+          a => !meta.record_field { type: map_text_int32_xxhash }
+          b => !meta.record_field { type: map_text_int32_xxhash }
+        } }
+
+        @meta.synthetic map_text_int32_xxhash => !meta.map { key_type: text  value_type: int32 }
+      }
+      """
+  }
+}
