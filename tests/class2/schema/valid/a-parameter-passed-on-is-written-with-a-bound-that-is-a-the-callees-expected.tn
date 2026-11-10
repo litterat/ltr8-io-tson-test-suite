@@ -1,0 +1,32 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-parameter-passed-on-is-written-with-a-bound-that-is-a-the-callees-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.1"
+  description: """
+    A parameter passed as an argument to a bounded parameter is written with a bound that IS-A that one: the same
+    bound, as `rebox` writes `T: text`, or a narrower one, as `narrow` writes `T: non_empty_text`, which IS-A
+    `text`. Each parameter records the bound its own declaration wrote, and nothing it inherits from `boxed`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        non_empty_text => !unicode.text_type { chain: { supertypes: [text] }  min_length: 1 }
+
+        boxed => !meta.record_template {
+          fields: { v => !meta.record_template_field { type_param: T } }
+          parameters: [ !meta.template_param { name: T  bound: text } ]
+        }
+
+        rebox => !meta.record_template {
+          fields: { b => !meta.record_template_field { type: boxed<T> } }
+          parameters: [ !meta.template_param { name: T  bound: text } ]
+        }
+
+        narrow => !meta.record_template {
+          fields: { b => !meta.record_template_field { type: boxed<T> } }
+          parameters: [ !meta.template_param { name: T  bound: non_empty_text } ]
+        }
+      }
+      """
+  }
+}

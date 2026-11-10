@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-written-bound-outside-the-bound-it-is-passed-to-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: "`wrong` passes `T` to `boxed`, whose parameter is bounded by `text`, so `T` must be written with a bound that IS-A `text`. It is written `T: int32`, which does not, so no argument could satisfy both, and the declaration is refused before anything applies it."
+  error: {
+    category: resolver
+  }
+}

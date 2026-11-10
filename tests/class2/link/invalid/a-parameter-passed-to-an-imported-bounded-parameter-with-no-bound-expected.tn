@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-parameter-passed-to-an-imported-bounded-parameter-with-no-bound-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.1"
+  description: "An imported template's recorded bound is the one its author wrote, and binds a parameter passed to it as a local template's does. `boxed` is imported with `T: text`, so `rebox`, passing its own `T` to it, must write a bound that IS-A `text`; written with none, it is refused at its declaration."
+  error: { category: resolver }
+}

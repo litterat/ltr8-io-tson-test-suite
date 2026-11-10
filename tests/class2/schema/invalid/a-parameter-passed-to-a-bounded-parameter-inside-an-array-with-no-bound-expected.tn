@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-passed-to-a-bounded-parameter-inside-an-array-with-no-bound-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, §5.10"
+  description: "The rule holds wherever a parameter is an argument, an application nested in a field's type included. `[boxed<T>]` is an array of `boxed<T>`, so `rebox` passes `T` to `boxed`'s parameter bounded by `text`, and `T` is written with no bound: `rebox` is refused at its declaration."
+  error: {
+    category: resolver
+  }
+}

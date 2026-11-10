@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-parameter-passed-to-a-constructors-slot-needs-no-bound-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10"
+  description: """
+    A bound is asked of a parameter passed to a bounded parameter, and a constructor's slot is no parameter.
+    `meta.namespace<K text>` constructs a namespace over `K`, whose `key_type` admits an identifier family; that slot
+    judges the argument that arrives when `keyed` is applied, so `K` needs no bound, and none is recorded.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        keyed => !meta.record_template {
+          fields: { m => !meta.record_template_field { type: meta.namespace<K text> } }
+          parameters: [ !meta.template_param { name: K } ]
+        }
+      }
+      """
+  }
+}
