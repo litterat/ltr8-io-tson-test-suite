@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-number-is-no-type-argument-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §12.1"
+  description: """
+    An argument is a type, written as a reference: a name or an application. `10` is a literal token, no reference,
+    so `box<10>` is no application and the schema does not load.
+    """
+  error: {
+    category: resolver
+  }
+}

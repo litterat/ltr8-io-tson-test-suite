@@ -4,8 +4,8 @@
   spec: "[TSON-SCHEMA] §5.10"
   description: """
     `D` decides which field the members are selected by, so a position typed by the family base could not dispatch.
-    A record template's parameters stand only in a field's type, a field's default or fixed value, or an argument
-    of an application.
+    A parameter is a type, and stands only at a field's type or as an argument of an application there or in a
+    parent.
     """
   error: {
     category: resolver

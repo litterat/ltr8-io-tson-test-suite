@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-default-restated-over-an-application-is-matched-in-its-enums-form-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.4"
+  description: "`safe_typed` restates `w`'s default as `Content-Type` over `typed_by<safe_header>`, so the default is a value of the enum, matched in its label type's folding form to the member written `content-type`: the schema loads and the omitted field takes the default."
+  valid: _
+}

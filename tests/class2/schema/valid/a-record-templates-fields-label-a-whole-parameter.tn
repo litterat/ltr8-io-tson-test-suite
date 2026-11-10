@@ -3,5 +3,5 @@
 !!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   box  => <X> { v: X }
-  slot => <T, V, N> { a: T  b: box<T>  c?: T ~ V  d?: int32 ~ N  e?: text ~ "x" }
+  slot => <T> { a: T  b: box<T>  c?: T  e?: text ~ "x" }
 }

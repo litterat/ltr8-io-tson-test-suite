@@ -7,7 +7,7 @@
     resolved: """
       !schema {
         rows => !meta.template {
-          parameters: [ !meta.template_param { name: T  type: meta.type_ref } ]
+          parameters: [ !meta.template_param { name: T } ]
           template: "!meta.array { element_type: T  min_items: 1 }"
         }
 

@@ -2,7 +2,5 @@
 !!import:"https://tson.io/2026/40/m/meta.tn"
 !!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
-  bounded => <M> !numeric.integer_type { max: M }
-  pet     => <M, N> { kind: bounded<M> = N  name: text }
-  cat     => pet<9, 3>
+  pet => <M> { kind: meta.ref<M> =?  name: text }
 }

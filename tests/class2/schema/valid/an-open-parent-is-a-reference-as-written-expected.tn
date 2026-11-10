@@ -11,14 +11,14 @@
     resolved: """
       !schema {
         result => !meta.record_template {
-          parameters: [ !meta.template_param { name: T  type: meta.type_ref } ]
+          parameters: [ !meta.template_param { name: T } ]
           fields: { value => !meta.record_template_field { type_param: T  optional: true } }
           extension: ABSTRACT
         }
 
         ok => !meta.record_template {
           chain: { parents: [result<T>] }
-          parameters: [ !meta.template_param { name: T  type: meta.type_ref } ]
+          parameters: [ !meta.template_param { name: T } ]
           fields: {
             value => !meta.record_template_field { type_param: T  optional: true }
             done  => !meta.record_template_field { type: boolean }

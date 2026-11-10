@@ -37,14 +37,14 @@
 
   @doc:"""
     A reference with arguments (§7.4): its qualified name, as one text, and each argument, a reference
-    of its own or a token. A qualified name without arguments is a token.
+    with arguments of its own or a qualified name. A qualified name without arguments is a token.
     """
   reference_core => {
     name: text
     arguments: [reference_argument]
   }
 
-  @doc:"One argument of a reference: a nested reference with arguments, or a token."
+  @doc:"One argument of a reference: a nested reference with arguments, or a qualified name as a token."
   reference_argument => {
     ( reference: reference_core
     | token: token_core )

@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-pinned-on-a-reference-typed-field.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  my_set => <T> meta.array ^ { element_type?: = T  ordered?: = false  unique_items?: = true }
+}

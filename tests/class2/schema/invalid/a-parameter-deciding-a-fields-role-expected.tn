@@ -4,8 +4,7 @@
   spec: "[TSON-SCHEMA] §5.10"
   description: """
     `R` decides whether `v`'s value is a default or fixed, so the family base cannot say what its members admit. A
-    record template's parameters stand only in a field's type, a field's default or fixed value, or an argument of
-    an application.
+    parameter is a type, and stands only at a field's type or as an argument of an application there or in a parent.
     """
   error: {
     category: resolver

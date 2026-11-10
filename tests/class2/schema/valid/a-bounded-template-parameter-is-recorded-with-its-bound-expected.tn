@@ -8,7 +8,7 @@
       !schema {
         boxed => !meta.record_template {
           fields: { a => !meta.record_template_field { type_param: T } }
-          parameters: [ !meta.template_param { name: T  type: meta.type_ref  bound: text } ]
+          parameters: [ !meta.template_param { name: T  bound: text } ]
         }
       }
       """

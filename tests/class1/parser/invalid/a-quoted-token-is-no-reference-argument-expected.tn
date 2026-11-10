@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/a-quoted-token-is-no-reference-argument-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.4"
+  description: "A reference's argument is a reference, a qualified name or an application: a quoted token is never a reference, so `box<\"a b\">` is no reference."
+  error: { category: parser }
+}

@@ -4,37 +4,36 @@
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
   description: """
     A field type in a record template that names none of its parameters means the same in every application, so the
-    family base names the entry each member names: `bounded<9>` is its expansion in `pet` as in `cat`, and so is
-    `N`'s derived type. A position typed by `pet` reads the selector at that entry before it knows the member.
+    family base names the entry each member names: `box<text>` is its expansion in `pet` as in `cat`, one minted
+    record named for its content.
     """
   valid: {
     resolved: """
       !schema {
-        bounded => !meta.template {
-          parameters: [ !meta.template_param { name: M  type: integer } ]
-          template: "!numeric.integer_type { max: M }"
+        box => !meta.record_template {
+          fields: { v => !meta.record_template_field { type_param: T } }
+          parameters: [ !meta.template_param { name: T } ]
         }
 
         pet => !meta.record_template {
           chain: { subtypes: [cat] }
           fields: {
-            kind => !meta.record_template_field { type: numeric_integer_type_9_xxhash  role: FIXED  value_param: N }
-            name => !meta.record_template_field { type: text }
+            tag  => !meta.record_template_field { type: record_v_text_xxhash }
+            name => !meta.record_template_field { type_param: V }
           }
-          discriminators: [kind]
-          parameters: [ !meta.template_param { name: N  type: numeric_integer_type_9_xxhash } ]
+          parameters: [ !meta.template_param { name: V } ]
         }
 
-        @meta.application:pet<3>
+        @meta.application:pet<text>
         cat => !meta.record {
           chain: { supertypes: [pet] }
           fields: {
-            kind => !meta.record_field { type: numeric_integer_type_9_xxhash  role: FIXED  value: 3 }
+            tag  => !meta.record_field { type: record_v_text_xxhash }
             name => !meta.record_field { type: text }
           }
         }
 
-        @meta.synthetic numeric_integer_type_9_xxhash => !numeric.integer_type { max: 9 }
+        @meta.synthetic record_v_text_xxhash => !meta.record { fields: { v => !meta.record_field { type: text } } }
       }
       """
   }

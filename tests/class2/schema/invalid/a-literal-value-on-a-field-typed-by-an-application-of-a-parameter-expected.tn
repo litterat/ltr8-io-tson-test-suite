@@ -4,8 +4,9 @@
   spec: "[TSON-SCHEMA] §5.10"
   description: """
     A literal value needs a closed type, and a field typed by an application over a parameter has a different type
-    in every application, as one typed by the parameter itself does: `bounded<M>` admits `5` for some `M` and not
-    for others. Such a field takes a value parameter or no value.
+    in every application, as one typed by the parameter itself does: `meta.ref<M>` admits `text` for some `M` and
+    not for others. The field takes no value; one that differs per application is written where the application is
+    declared.
     """
   error: {
     category: resolver

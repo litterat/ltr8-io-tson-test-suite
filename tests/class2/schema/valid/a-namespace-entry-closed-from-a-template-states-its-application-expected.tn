@@ -15,7 +15,7 @@
         } }
 
         orders => !meta.template {
-          parameters: [ !meta.template_param { name: T  type: meta.type_ref } ]
+          parameters: [ !meta.template_param { name: T } ]
           template: "!interface { get => { response: T } }"
         }
 
