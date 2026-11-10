@@ -1,3 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/invalid/a-kind-refuses-an-application-over-a-refinement-of-a-closed-argument.tn"
-!!import:"https://tson.io/test-suite/schemas/fixtures/validate-kind-aliased-arguments.tn"
-!holder { t: box<order_id> }

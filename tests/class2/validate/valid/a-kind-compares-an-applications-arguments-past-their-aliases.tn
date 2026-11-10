@@ -1,3 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/a-kind-compares-an-applications-arguments-past-their-aliases.tn"
-!!import:"https://tson.io/test-suite/schemas/fixtures/validate-kind-aliased-arguments.tn"
-!holder { t: box<user_id> }

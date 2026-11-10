@@ -2,10 +2,10 @@
 !!import:"https://tson.io/2026/40/m/meta.tn"
 !!import:"https://tson.io/2026/40/m/core.tn"
 @doc:"""
-  A kind-typed field naming an applied type. `names` is the entry `set<text>` denotes, a declaration whose body is
-  the application; `paired` is the nested `pair<box<text> int32>`, over `boxed`, which `box<text>` denotes.
+  A kind-typed field naming a declared application. `names` is the entry `set<text>` denotes, a declaration whose
+  body is the application; `paired` is the nested `pair<box<text> int32>`, over `boxed`, which `box<text>` denotes.
   `holder.t` holds the name of any type, and `holder.u` the name of a type built with `uuid_type`.
-  In data an application is a reference, data grammar written unquoted: `set<text>`.
+  In data a reference is a name: data names `names`, and an application written there, `set<text>`, is refused.
   """
 !schema {
   names    => set<text>
