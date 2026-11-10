@@ -10,8 +10,7 @@
   valid: {
     resolved: """
       !schema {
-        @meta.application:meta.ref<meta.record>
-        records => !meta.reference_type { of: meta.record  allow_sibling: false }
+        records => !meta.ref { of: meta.record }
 
         shape => !meta.record { fields: {
           kind => !meta.record_field { type: records }

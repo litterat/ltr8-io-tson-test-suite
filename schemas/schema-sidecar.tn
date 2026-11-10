@@ -31,18 +31,12 @@
     composes with says so here. What §2.2.3's import closure makes of a *namespace* is the link layer's,
     which is why nothing at this layer states an imported name.
 
-    No subject at this layer declares a template, and the reason is about where the comparison happens
-    rather than about what §8 admits. A resolver holds an open entry's body as the application as
-    written, held unread until materialisation (§5.10); the same declaration written as §8 output and
-    read back binds an ordinary record body, a reference's segment being an `meta.identifier` and a parameter
-    being one. So the two sides of a vector agree as documents and differ as values, and a runner
-    comparing values -- which is what this layer's expected side is for -- has nothing it can state.
-
-    §8.1 does not settle which side should move: it says no constructor's record shape could carry a held
-    body, and then specifies how a parameter reference is read "in any `type_ref`, at any depth ...
-    against the enclosing entry's `parameters` list", which is a rule with no position to apply at if the
-    first sentence holds. What a template resolves to is stated at the link layer instead, over the entries it
-    mints, until that is answered.
+    A template's resolved output is an ordinary record: an open record, a `!meta.record` carrying
+    `parameters` (§5.10), each parameter written where it stands as its name, a reference value looked up
+    in the record's `parameters` before the namespace. Read back, it binds the value the resolver built,
+    so the two sides of a vector compare as values like any other entry's. An application closes to a
+    `!meta.record` without `parameters` and states its application on its key as `@meta.application`; a
+    construction states its constructor and carries none.
 
     The resolved document carries no header. Its names are read under the subject's own imports --
     under the pre-loaded kernel alone when the subject has none -- so an instance of a constructor a

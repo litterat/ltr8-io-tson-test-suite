@@ -1,3 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/a-template-fields-literal-value-is-read-against-its-closed-type.tn"
-!!import:"https://tson.io/test-suite/schemas/fixtures/validate-dependent-fields.tn"
-!spec { field: { type: int32  optional: true  role: DEFAULT  value: 5 } }

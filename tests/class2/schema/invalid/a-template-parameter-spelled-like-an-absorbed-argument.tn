@@ -2,8 +2,8 @@
 !!import:"https://tson.io/2026/40/m/meta.tn"
 !!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
-  mode => !enum [T U]
-  pick => <M> { m?: mode ~ M }
+  T    => { q: int32 }
+  pick => <M> { m: M }
   base => { f: pick<T> }
   t2   => <T> base & { x: T }
 }

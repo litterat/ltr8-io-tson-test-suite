@@ -15,12 +15,12 @@
           fields: { id => !meta.record_field { type: text } }
         }
 
-        response => !meta.record_template {
+        response => !meta.record {
           fields: {
-            status => !meta.record_template_field { type: int32 }
-            body   => !meta.record_template_field { type_param: T }
+            status => !meta.record_field { type: int32 }
+            body   => !meta.record_field { type: T }
           }
-          parameters: [ !meta.template_param { name: T } ]
+          parameters: [ !meta.param { name: T } ]
         }
 
         created => !meta.record {

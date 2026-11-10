@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-open-record-states-its-parameters-and-holds-its-references-as-written.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box  => <T> { v: T }
+  page => <T> box<T> & { items: [T]  first: box<T>  total: int32 }
+}

@@ -3,9 +3,10 @@
 {
   spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10"
   description: """
-    Inside a template a parameter's name is read before the schema's, and the shadowing rule classifies what the
-    template writes, never what it absorbs. `base`'s `f: pick<T>` applies `pick` to `mode`'s member `T`, so a
-    parameter of `t2` spelled `T` would change the type of the field `t2` absorbs: a resolver error at `t2`.
+    Inside an open record a reference's name is read in its `parameters` before the namespace, so a parameter may not
+    shadow a schema entry. `base`'s `f: pick<T>` applies `pick` to the entry `T`, and an argument is always a
+    reference, so a parameter of `t2` spelled `T` shadows that entry and would change the type of the field `t2`
+    absorbs: the shadowing rule refuses it, a resolver error at `t2`.
     """
   error: {
     category: resolver

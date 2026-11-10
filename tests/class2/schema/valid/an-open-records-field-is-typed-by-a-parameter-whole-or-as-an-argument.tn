@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-open-records-field-is-typed-by-a-parameter-whole-or-as-an-argument.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box  => <X> { v: X }
+  slot => <T> { a: T  b: box<T>  c?: T  e?: text ~ "x" }
+}

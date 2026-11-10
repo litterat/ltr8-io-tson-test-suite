@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/void-as-an-argument-types-the-field-void-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2"
+  description: "`void` is a type and an admissible argument: `box<void>` closes `box`'s field `v: T?` to `v: void?`, which must be written and as the void sentinel, exactly as if `void` had been written there."
+  valid: _
+}

@@ -9,9 +9,9 @@
   valid: {
     resolved: """
       !schema {
-        box => !meta.record_template {
-          parameters: [ !meta.template_param { name: T } ]
-          fields: { v => !meta.record_template_field { type_param: T } }
+        box => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: T } }
         }
 
         api => !meta.namespace { key_type: meta.identifier  value_type: record_v_text_xxhash }

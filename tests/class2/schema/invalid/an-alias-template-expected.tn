@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-alias-template-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    A template's body is a record body, so a body that is a bare reference -- a partial application, `<B> pair<uuid,
+    B>` -- is refused at the declaration: there are no alias templates. A use site writes the application it means,
+    `pair<uuid, int32>`, or the body is restated as a record.
+    """
+  error: {
+    category: resolver
+  }
+}

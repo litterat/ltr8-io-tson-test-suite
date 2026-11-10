@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-over-a-value.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order => { id: text }
+
+  orders => <T> !interface { get => { response: T } }
+
+  order_api => orders<order>
+}

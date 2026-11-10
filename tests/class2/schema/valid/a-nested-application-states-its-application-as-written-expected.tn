@@ -11,19 +11,19 @@
   valid: {
     resolved: """
       !schema {
-        box => !meta.record_template {
-          parameters: [ !meta.template_param { name: T } ]
-          fields: { v => !meta.record_template_field { type_param: T } }
+        box => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: T } }
         }
 
-        pair => !meta.record_template {
+        pair => !meta.record {
           parameters: [
-            !meta.template_param { name: A }
-            !meta.template_param { name: B }
+            !meta.param { name: A }
+            !meta.param { name: B }
           ]
           fields: {
-            a => !meta.record_template_field { type_param: A }
-            b => !meta.record_template_field { type_param: B }
+            a => !meta.record_field { type: A }
+            b => !meta.record_field { type: B }
           }
         }
 

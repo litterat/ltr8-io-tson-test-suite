@@ -1,0 +1,21 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/set-and-meta-ref-applied-are-constructions-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.2"
+  description: """
+    The kernel declares no template. The root's `set` is an alias of `meta.set_type`, so `set<text>` constructs through
+    it, `!meta.set_type { element_type: text }`; `meta.ref` is the refined constructor `meta.reference_type ^ {
+    allow_sibling?: = false }`, so `meta.ref<meta.record>` is `!meta.ref { of: meta.record }`. Each declaration is the
+    construction under its author's name and carries no `@meta.application`: a construction states its constructor
+    and its arguments, and substitutes nothing.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        tags => !meta.set_type { element_type: text }
+
+        records => !meta.ref { of: meta.record }
+      }
+      """
+  }
+}

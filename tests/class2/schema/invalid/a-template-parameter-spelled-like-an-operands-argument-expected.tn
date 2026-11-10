@@ -4,9 +4,9 @@
   spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10"
   description: """
     An operand's own parameters are replaced by what the absorbing template writes; every other name it writes
-    stays the operand's. `pair`'s `z: two<V, T>` fills `two`'s `M` with `mode`'s member `T`, so a parameter of
-    `t3` spelled `T` would change the type of the field `t3` absorbs: a resolver error at `t3`. `pair` itself is
-    valid.
+    stays the operand's. `pair`'s `z: two<V, T>` fills `two`'s `M` with the entry `T`, so a parameter of `t3`
+    spelled `T` shadows that entry and would change the type of the field `t3` absorbs: the shadowing rule refuses
+    it, a resolver error at `t3`. `pair` itself is valid.
     """
   error: {
     category: resolver

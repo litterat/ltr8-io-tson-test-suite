@@ -3,5 +3,5 @@
 !!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   T  => { q: int32 }
-  ts => <T> [T]
+  ts => <T> { items: [T] }
 }

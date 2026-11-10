@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-over-a-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §4.1"
+  description: """
+    A template's body is a record body. `!interface { ... }` is a value of the namespace type `interface`, no type and
+    no record, so a parameter list before it is refused at the declaration. Each instantiation is declared as the
+    value it is, `order_api => !interface { get => { response: order } }`.
+    """
+  error: {
+    category: resolver
+  }
+}

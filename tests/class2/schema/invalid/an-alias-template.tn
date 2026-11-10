@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-alias-template.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  pair      => <A, B> { first: A  second: B }
+  uuid_pair => <B> pair<uuid, B>
+  up        => uuid_pair<int32>
+}

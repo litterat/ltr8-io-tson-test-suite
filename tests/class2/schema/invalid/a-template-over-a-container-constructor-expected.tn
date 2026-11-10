@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-over-a-container-constructor-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3"
+  description: """
+    A template's body is a record body: braces, a composition or a refinement. Only `record` carries `parameters`,
+    so a parameter list before a construction of `meta.array` is refused at the declaration, whether or not anything
+    applies it. The application is written where it is used, `meta.array<T>` or `[T]`, or a refined constructor is
+    declared and applied, `nonempty_type => meta.array ^ { min_items?: = 1 }`.
+    """
+  error: {
+    category: resolver
+  }
+}

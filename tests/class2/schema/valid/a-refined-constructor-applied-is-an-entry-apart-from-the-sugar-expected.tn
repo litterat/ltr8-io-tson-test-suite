@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refined-constructor-applied-is-an-entry-apart-from-the-sugar-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.2"
+  description: """
+    The fixture's `rows` refines `meta.array`, pinning `min_items`: a refined constructor, a named kind of array as the
+    kernel's `set_type` is. `rows<uuid>` is construction sugar, `!rows { element_type: uuid }`, a content-keyed
+    synthetic built with `rows`; `[uuid; 1..]` is `!meta.array { element_type: uuid  min_items: 1 }`, built with
+    `array`. They admit the same data and are two entries, neither IS-A the other, since identity is the binding record
+    and its constructor. Neither records an application: a construction substitutes nothing.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        post => !meta.record { fields: {
+          a => !meta.record_field { type: rows_uuid_xxhash }
+          b => !meta.record_field { type: array_uuid_1_xxhash }
+        } }
+
+        @meta.synthetic rows_uuid_xxhash => !rows { element_type: uuid }
+
+        @meta.synthetic array_uuid_1_xxhash => !meta.array { element_type: uuid  min_items: 1 }
+      }
+      """
+  }
+}

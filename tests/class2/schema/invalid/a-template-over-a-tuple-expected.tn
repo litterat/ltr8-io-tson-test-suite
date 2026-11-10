@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-over-a-tuple-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3"
+  description: """
+    A template's body is a record body, and a tuple is not one: its positions are a list of records, not reference
+    fields a construction fills. The declaration is refused; the positions are named as the fields of an open record,
+    `<A, B> { first: A  second: B }`, or a tuple is declared for each type it holds.
+    """
+  error: {
+    category: resolver
+  }
+}

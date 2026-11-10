@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-construction-stating-parameters.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  sneaky => !meta.record {
+    parameters: [{ name: T }]
+    fields: { v => { type: T } }
+  }
+}

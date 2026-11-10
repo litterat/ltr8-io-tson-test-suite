@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/void-as-an-argument-refuses-any-other-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2"
+  description: "`box<void>` closes `box`'s field `v: T?` to `v: void?`, and `void` admits nothing but the void sentinel: `1` is no value of it."
+  error: { category: validation  path: "/v" }
+}

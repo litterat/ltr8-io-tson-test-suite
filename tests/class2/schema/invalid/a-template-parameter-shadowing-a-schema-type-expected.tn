@@ -3,8 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.10"
   description: """
-    A parameter that shadows a schema type is a resolver error, within a held template's body or a record
-    template's: inside the template the type `T` would be unreachable, so `ts` is refused at its declaration.
+    A parameter that shadows a schema type is a resolver error: inside an open record a reference's name is looked up
+    in the record's `parameters` before the namespace, so the type `T` would be unreachable there, and `ts` is
+    refused at its declaration.
     """
   error: {
     category: resolver

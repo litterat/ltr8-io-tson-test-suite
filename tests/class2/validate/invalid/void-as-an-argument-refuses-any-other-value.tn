@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/void-as-an-argument-refuses-any-other-value.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-void-argument.tn"
+!nothing { v: 1 }

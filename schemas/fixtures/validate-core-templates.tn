@@ -2,14 +2,16 @@
 !!import:"https://tson.io/2026/40/m/meta.tn"
 !!import:"https://tson.io/2026/40/m/core.tn"
 @doc:"""
-  Fields typed by core's container templates, applied at the field the way an author writes them
-  ([TSON-SCHEMA] §5.10). `set<text>` is a set with no bound of its own: `set_type`'s bounds are
-  `array`'s, so the empty set is a set ([TSON-SCHEMA] §5.3). `meta.tuple1<T>` and `meta.voidable_tuple1<T>`
-  are the one-position tuple the bracket sugar cannot spell, `[T]` being an array: one position,
-  and one voidable position that admits the void sentinel.
+  Fields typed by core's container constructors the way an author writes them. `set<text>` constructs
+  through the root's `set`, an alias of `meta.set_type` ([TSON-SCHEMA] §5.3): a set with no bound of its
+  own, `set_type`'s bounds being `array`'s, so the empty set is a set. A one-position tuple is the one the
+  bracket sugar cannot spell, `[T]` being an array, so it is declared with `meta.tuple` in its positional
+  form ([TSON-SCHEMA] §5.6): one position, and one voidable position that admits the void sentinel.
   """
 !schema {
-  tagged => { tags: set<text> }
-  pinned => { only: meta.tuple1<text> }
-  slot   => { maybe: meta.voidable_tuple1<int32> }
+  one_text  => !meta.tuple [{ element_type: text }]
+  maybe_int => !meta.tuple [{ element_type: int32  voidable: true }]
+  tagged    => { tags: set<text> }
+  pinned    => { only: one_text }
+  slot      => { maybe: maybe_int }
 }

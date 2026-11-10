@@ -2,8 +2,8 @@
 !!import:"https://tson.io/2026/40/m/meta.tn"
 !!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
-  mode => !enum [T U]
-  two  => <A, M> { a: A  m?: mode ~ M }
+  T    => { q: int32 }
+  two  => <A, M> { a: A  m: M }
   pair => <V> { z: two<V, T> }
   t3   => <T> pair<T> & { x: T }
 }
