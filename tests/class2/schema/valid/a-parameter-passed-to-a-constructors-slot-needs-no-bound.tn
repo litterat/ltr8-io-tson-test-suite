@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-parameter-passed-to-a-constructors-slot-needs-no-bound.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  keyed => <K> { m: meta.namespace<K text> }
+}

@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-parameter-passed-on-is-written-with-a-bound-that-is-a-the-callees.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  non_empty_text => !text ^ { min_length: 1 }
+  boxed          => <T: text> { v: T }
+  rebox          => <T: text> { b: boxed<T> }
+  narrow         => <T: non_empty_text> { b: boxed<T> }
+}

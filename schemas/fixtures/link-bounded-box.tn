@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-bounded-box.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"A template whose parameter is written with a bound: `boxed<T: text>`."
+!schema {
+  boxed => <T: text> { v: T }
+}
