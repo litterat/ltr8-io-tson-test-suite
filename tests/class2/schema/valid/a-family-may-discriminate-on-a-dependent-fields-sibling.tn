@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-family-may-discriminate-on-a-dependent-fields-sibling.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   cell      => abstract { kind: meta.type_ref =?  v?: kind! }
   int_cell  => cell & { kind?: = int32 }

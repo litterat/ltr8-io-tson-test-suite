@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-kind-aliased-arguments.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 @doc:"""
   A kind-typed field naming an application whose arguments are aliases. `user_id` is an alias of `uuid`, and `uid` an
   alias of `user_id`, so each is `uuid` under another name; `order_id` refines `uuid`, a type of its own. The schema

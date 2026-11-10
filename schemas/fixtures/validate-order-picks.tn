@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-order-picks.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 @doc:"""
   A schema whose record `order_pick` holds a value by name: its field `which` is typed `order_ref`,
   `meta.ref<order>`, a reference over a record type, so it names a value of `order` ([TSON-SCHEMA] §4.2, §5.12);

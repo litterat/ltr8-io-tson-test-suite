@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-reference-as-an-alias-target.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   cell => { kind: meta.type_ref  v?: kind! }
   x    => kind!

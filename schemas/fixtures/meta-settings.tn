@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/meta-settings.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 @doc:"""
   A meta layer declaring a record with a dependent field, whose values stand as entries of a schema that imports it.
   `setting.value` is typed `kind!`, so each setting's `value` is read against the type its own `kind` names, which may

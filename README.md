@@ -218,11 +218,11 @@ vocabulary an author writes and its machinery under a nested map of its own name
 
 | Bundled schema | Current identity                        |
 |----------------|-----------------------------------------|
-| `meta.tn`      | `https://tson.io/2026/39/m/meta.tn`     |
-| `numeric.tn`   | `https://tson.io/2026/39/m/numeric.tn`  |
-| `temporal.tn`  | `https://tson.io/2026/39/m/temporal.tn` |
-| `net.tn`       | `https://tson.io/2026/39/m/net.tn`      |
-| `core.tn`      | `https://tson.io/2026/39/m/core.tn`     |
+| `meta.tn`      | `https://tson.io/2026/40/m/meta.tn`     |
+| `numeric.tn`   | `https://tson.io/2026/40/m/numeric.tn`  |
+| `temporal.tn`  | `https://tson.io/2026/40/m/temporal.tn` |
+| `net.tn`       | `https://tson.io/2026/40/m/net.tn`      |
+| `core.tn`      | `https://tson.io/2026/40/m/core.tn`     |
 
 The corpus's own schemas are named by their path under `schemas/` — so `fixtures/link-money.tn` is
 `https://tson.io/test-suite/schemas/fixtures/link-money.tn` — which is what lets the corpus grow a fixture

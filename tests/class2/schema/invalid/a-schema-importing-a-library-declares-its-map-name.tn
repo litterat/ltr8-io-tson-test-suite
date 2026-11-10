@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-importing-a-library-declares-its-map-name.tn"
-!!import:"https://tson.io/2026/39/m/numeric.tn"
+!!import:"https://tson.io/2026/40/m/numeric.tn"
 !schema {
   numeric => { value: number }
 }

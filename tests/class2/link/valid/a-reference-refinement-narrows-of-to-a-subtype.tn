@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-reference-refinement-narrows-of-to-a-subtype.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   api        => !meta.namespace { key_type: meta.identifier  value_type: text }
   labels     => !meta.map { key_type: meta.identifier  value_type: text }

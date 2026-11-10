@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-network-list-entry-with-host-bits.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/net.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/net.tn"
 !schema {
   private_hosts => !ipv4 ^ { within: ["10.0.0.1/8"] }
 }

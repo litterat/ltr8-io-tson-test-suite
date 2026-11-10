@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-library-adds-to-a-kernel-map.tn"
-!!import:"https://tson.io/2026/39/m/numeric.tn"
+!!import:"https://tson.io/2026/40/m/numeric.tn"
 !schema {
   count => !numeric.integer_type { min: 1 }
   price => !numeric.decimal_type { fraction_digits: 2 }

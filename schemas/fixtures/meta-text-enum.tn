@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/meta-text-enum.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
 @doc:"""
   A meta layer declaring an enum constructor whose members may contain a space. `text_identifier` is a second
   identifier family, and `text_enum` pins it as `name_type`, a slot the kernel types `meta.identifier_ref`: the names

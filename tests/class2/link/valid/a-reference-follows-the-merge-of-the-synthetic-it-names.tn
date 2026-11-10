@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-reference-follows-the-merge-of-the-synthetic-it-names.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   box    => <T> { v: T }
   boxes  => meta.ref<[box<text>]>

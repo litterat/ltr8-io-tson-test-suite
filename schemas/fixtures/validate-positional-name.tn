@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-positional-name.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 @doc:"""
   A fixture schema for the class2/validate layer: records with one field each, so a data document fills that field
   positionally. `cell`'s one field is an atom; `slot`'s is `type`, a `meta.ref<record>` through the kernel's own `meta.ref`,

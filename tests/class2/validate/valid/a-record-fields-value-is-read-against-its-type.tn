@@ -1,3 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-record-fields-value-is-read-against-its-type.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
 !meta.record_field { type: integer  optional: true  role: DEFAULT  value: 5 }

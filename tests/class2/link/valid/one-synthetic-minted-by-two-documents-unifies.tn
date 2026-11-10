@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/one-synthetic-minted-by-two-documents-unifies.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/link-tag-list.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/link-label-list.tn"
 !schema {

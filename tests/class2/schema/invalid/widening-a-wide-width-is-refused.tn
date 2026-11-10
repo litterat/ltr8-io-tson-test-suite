@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/widening-a-wide-width-is-refused.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
 !schema {
   w5000 => !integer ^ { size: { bits: 5000  signed: false } }
   w6000 => !w5000 ^ { size: { bits: 6000  signed: false } }

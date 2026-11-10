@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/link-http.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 @doc:"""
   An HTTP vocabulary written as an ordinary schema, standing in for the http project's http.tn: no meta layer, so a
   schema importing it declares its own endpoint shapes beside its operations. An `operation` is a record whose

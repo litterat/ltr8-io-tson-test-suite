@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/declared-host.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 @doc:"""
   A `declared` position: core's instance of meta's `declared_type`, whose value names its own type by
   its tag, a type of the closure the document imports, and is read in full against it. `note` and `memo` are two

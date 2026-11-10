@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/applying-record-template-directly.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   sneaky => !meta.record_template {
     fields: { v => !meta.record_template_field { type_param: T } }

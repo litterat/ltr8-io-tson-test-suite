@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-namespace-bounds.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 @doc:"""
   A namespace type with size bounds. `meta.namespace` refines `meta.map`, so `ordered` and `min_items`/
   `max_items` are a map's facets and bound a value as a map's do: `small` holds one or two header names.

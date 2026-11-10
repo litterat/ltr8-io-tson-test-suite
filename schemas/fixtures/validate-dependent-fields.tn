@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-dependent-fields.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 @doc:"""
   Dependent fields: `cell.v` is typed `kind!`, so each cell's `v` is read against the type its own `kind` names.
   `defaulted.kind` defaults to `int32` and `int_cell` pins it, so either supplies the type when `kind` is absent.

@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-application-nothing-declares-is-its-expansion.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   rows => <T> !meta.array { element_type: T  min_items: 1 }
 

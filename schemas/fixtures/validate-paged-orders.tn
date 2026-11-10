@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-paged-orders.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/link-http.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/link-order.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 @doc:"""
   An API description's own types for a data document to name: a page template closed over `order`, and
   `paged_get`, an endpoint shape refining the imported record type `operation` with its method pinned, so a value of

@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-count-facet-holds-the-largest-signed-64-bit-value.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
 !schema {
   long_text  => !unicode.text_type { max_length: 9223372036854775807 }
   long_array => !meta.array { element_type: text  max_items: 9223372036854775807 }

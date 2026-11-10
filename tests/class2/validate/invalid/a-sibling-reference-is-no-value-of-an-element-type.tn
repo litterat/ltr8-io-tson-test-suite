@@ -1,3 +1,3 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-sibling-reference-is-no-value-of-an-element-type.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
 !meta.array { element_type: kind! }

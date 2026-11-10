@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-kind-applied-inline-is-a-reference.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   stock_id => !net.uuid_type {}
   words    => !unicode.identifier_type { continue_add: "-"  medial: " " }

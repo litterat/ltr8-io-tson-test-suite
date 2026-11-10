@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-ordinary-schema-applies-the-reference-constructor.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   order => { id: text }
   oref  => !meta.reference_type { of: order }

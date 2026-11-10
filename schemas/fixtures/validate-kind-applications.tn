@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-kind-applications.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 @doc:"""
   A kind-typed field naming an applied type. `names` is the entry `set<text>` denotes, a declaration whose body is
   the application; `paired` is the nested `pair<box<text> int32>`, over `boxed`, which `box<text>` denotes.

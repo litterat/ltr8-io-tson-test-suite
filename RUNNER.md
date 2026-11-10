@@ -149,7 +149,7 @@ compares the hashes is testing its own hash function.
 ## Every subject is a complete document
 
 A subject carries its own header: an optional `!!id`, then an `!!import` for each schema it needs, each named
-by its full, unpinned identity (`https://tson.io/2026/39/m/core.tn`). A runner adds nothing to it and feeds it
+by its full, unpinned identity (`https://tson.io/2026/40/m/core.tn`). A runner adds nothing to it and feeds it
 as it is on disk (rule 1). The bundled schemas' identities carry the spec revision, so a revision bump rewrites
 them in every subject, as it rewrites them in the fixtures; nothing else in the corpus moves with the revision.
 
