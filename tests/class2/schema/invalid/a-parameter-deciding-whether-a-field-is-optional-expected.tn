@@ -3,8 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.10"
   description: """
-    `B` decides whether `v` may be missing, so the family base cannot say. A parameter is a type, and stands only at
-    a field's type or as an argument of an application there or in a parent; `optional` is none of them.
+    `B` decides whether `v` may be missing, which an open record states as written for every application. A parameter
+    is a type, and stands only at a field's type or as an argument of an application there or in a parent; `optional`
+    is none of them.
     """
   error: {
     category: resolver

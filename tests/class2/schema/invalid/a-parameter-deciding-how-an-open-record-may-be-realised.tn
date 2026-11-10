@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-deciding-how-a-record-template-may-be-realised.tn"
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-deciding-how-an-open-record-may-be-realised.tn"
 !!import:"https://tson.io/2026/40/m/meta.tn"
 !!import:"https://tson.io/2026/40/m/core.tn"
 !schema {

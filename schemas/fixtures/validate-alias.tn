@@ -12,7 +12,7 @@
   `ok_of` is the case that cannot be written any other way. `ok<text>` closes to an entry the resolver
   minted, whose name is implementation-chosen and non-normative (§8.2) — so no document can name it, and an
   alias is the only spelling there is. A processor that does not flatten the subtype side cannot admit any
-  member of a subtype-template family at all.
+  member that is an application at all.
 
   `apart` is unrelated to `base` and `a_of` names it: flattening decides what a name means, never whether
   it is admitted, so this one stays refused.

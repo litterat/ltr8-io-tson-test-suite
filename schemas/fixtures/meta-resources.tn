@@ -2,7 +2,7 @@
 !!import:"https://tson.io/2026/40/m/meta.tn"
 @doc:"""
   A meta layer whose namespace type holds records that hold a record family in a field. `service_call` is an
-  abstract family base declaring no field, and `typed_call` IS-A it and declares a request record, a slot typed
+  abstract base declaring no field, and `typed_call` IS-A it and declares a request record, a slot typed
   `meta.ref<record>`, and a response of any type, `meta.type_ref`. `service_resource` holds calls by name in a plain map
   field, `{meta.identifier => service_call}`, so a value there is written with its member's tag (`get => !typed_call {
   request: order }`), and `service_resources` maps names to resources. The slot holding a type's name is the

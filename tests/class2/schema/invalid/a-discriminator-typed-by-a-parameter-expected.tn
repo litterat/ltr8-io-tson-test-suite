@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §5.10"
   description: """
-    A position typed by the family base reads the discriminator before it knows which member it has, so the
-    discriminator's type is the base's own and cannot vary per application. Its pin is what an argument supplies.
+    A selector, like a literal, needs a type closed in every application, so the discriminator's type cannot vary
+    per application. A pin is written by each member, never supplied by an argument.
     """
   error: {
     category: resolver

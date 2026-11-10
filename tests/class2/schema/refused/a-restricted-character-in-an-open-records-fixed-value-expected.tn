@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/schema/refused/a-restricted-character-in-a-record-templates-fixed-value-expected.tn"
+!!id:"https://tson.io/test-suite/class2/schema/refused/a-restricted-character-in-an-open-records-fixed-value-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-DATA] §8.2, [TSON-SCHEMA] §5.10"

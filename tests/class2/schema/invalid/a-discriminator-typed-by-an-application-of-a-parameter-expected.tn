@@ -4,8 +4,8 @@
   spec: "[TSON-SCHEMA] §5.10"
   description: """
     `kind`'s type is `meta.ref<M>`, which varies with `M` as much as a type written `M` would: two applications
-    would read the discriminator at two types. A position typed by the family base reads it before it knows which
-    member it has, so its type is the base's own, and a parameter may not stand in it at any depth.
+    would read the discriminator at two types. A selector, like a literal, needs a type closed in every application,
+    so a parameter may not stand in it at any depth.
     """
   error: {
     category: resolver
