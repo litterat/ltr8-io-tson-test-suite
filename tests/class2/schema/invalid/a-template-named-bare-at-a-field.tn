@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-named-bare-at-a-field.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  pet    => abstract <V> { kind: text =?  value: V }
+  dogpet => pet<text> & { kind?: = "dog" }
+  holder => { p: pet }
+}

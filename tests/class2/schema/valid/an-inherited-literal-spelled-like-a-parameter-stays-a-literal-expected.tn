@@ -12,7 +12,6 @@
     resolved: """
       !schema {
         base => !meta.record {
-          chain: { subtypes: [fam] }
           fields: { kind => !meta.record_field { type: text  optional: true  role: FIXED  value: T } }
         }
 

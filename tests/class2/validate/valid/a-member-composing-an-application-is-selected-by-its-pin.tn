@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-member-composing-an-application-is-selected-by-its-pin.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-family-through-a-template.tn"
+!holder {
+  p: {
+    kind: dog
+    name: Rex
+    pet:  { breed: lab }
+  }
+}

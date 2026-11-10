@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-named-bare-as-an-array-element-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    A template is not a type, so no position names one bare, an array's element included: `[box]` is a resolver
+    error at `holder`. Write the application, `[box<text>]`, or name a record its applications compose.
+    """
+  error: {
+    category: resolver
+  }
+}

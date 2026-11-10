@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-named-bare-as-an-argument-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10"
+  description: """
+    An argument is a type, and a template is not one: `wrap<box>` binds `T` to a name that denotes no type until it
+    is applied, so it is a resolver error at `holder`. `wrap<box<text>>` is the application that closes.
+    """
+  error: {
+    category: resolver
+  }
+}

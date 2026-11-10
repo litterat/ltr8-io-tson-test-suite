@@ -1,0 +1,34 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-family-through-a-template.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  A family whose members compose an application and pin the selector there ([TSON-SCHEMA] §5.2, §5.8, §5.10). A
+  template is not a type, so a family is declared with records, and an application's IS-A edges are its template's
+  written parents'.
+
+  `pet` is the base: an abstract record stating the selector and the field every member shares. `pet_of` composes it,
+  and each member composes an application of `pet_of` and pins `kind`. `dog` reaches `pet` through `pet_of`'s written
+  parent, never through `pet_of` itself, so a position typed `pet` dispatches over `dog` and `cat` by the selector.
+
+  `tpet` is an abstract template, and `abstract` on a template is each application's `extension`: `tpet<text>` is an
+  abstract record with the selector `kind`, a family base in its own right. `tdog` and `tcat` compose that application
+  and pin `kind`, so each IS-A the entry `tpet<text>` denotes, and a position typed `tpet<text>` dispatches over them.
+  """
+!schema {
+  dog_type => { breed: text }
+  cat_type => { indoor: boolean }
+
+  pet    => abstract { kind: text =?  name: text }
+  pet_of => <T> pet & { pet: T }
+  dog    => pet_of<dog_type> & { kind?: = "dog" }
+  cat    => pet_of<cat_type> & { kind?: = "cat" }
+
+  tpet => abstract <B> { kind: text =?  name: text  extra?: B }
+  tdog => tpet<text> & { kind?: = "dog"  breed: text }
+  tcat => tpet<text> & { kind?: = "cat"  indoor: boolean }
+
+  holder => {
+    p: pet
+    t?: tpet<text>?
+  }
+}

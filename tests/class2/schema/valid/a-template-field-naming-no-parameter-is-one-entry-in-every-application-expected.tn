@@ -1,11 +1,11 @@
-!!id:"https://tson.io/test-suite/class2/schema/valid/a-family-base-names-the-entries-its-members-name-expected.tn"
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-template-field-naming-no-parameter-is-one-entry-in-every-application-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
   description: """
-    A field type in a record template that names none of its parameters means the same in every application, so the
-    family base names the entry each member names: `box<text>` is its expansion in `pet` as in `cat`, one minted
-    record named for its content.
+    A field type in a record template that names none of its parameters means the same in every application, so it is
+    closed in the template and names the entry every application names: `box<text>` is its expansion in `pet` as in
+    `cat`, one minted record named for its content. `cat` is not IS-A `pet`: a template is no type.
     """
   valid: {
     resolved: """
@@ -16,7 +16,6 @@
         }
 
         pet => !meta.record_template {
-          chain: { subtypes: [cat] }
           fields: {
             tag  => !meta.record_template_field { type: record_v_text_xxhash }
             name => !meta.record_template_field { type_param: V }
@@ -26,7 +25,6 @@
 
         @meta.application:pet<text>
         cat => !meta.record {
-          chain: { supertypes: [pet] }
           fields: {
             tag  => !meta.record_field { type: record_v_text_xxhash }
             name => !meta.record_field { type: text }

@@ -5,13 +5,12 @@
   description: """
     A record template's field may be typed by a sibling: `v`'s sibling is `kind`, an ordinary field. A parameter is
     spelled bare and a sibling with `!`, so substitution cannot confuse the two: `pair<text>` closes `w` to `text` and
-    leaves `v` as written, in the template and in its member alike.
+    leaves `v` as written, in the template and in the declared application alike.
     """
   valid: {
     resolved: """
       !schema {
         pair => !meta.record_template {
-          chain: { subtypes: [p] }
           fields: {
             kind => !meta.record_template_field { type: meta.type_ref }
             v    => !meta.record_template_field { type: kind!  optional: true }
@@ -22,7 +21,6 @@
 
         @meta.application:pair<text>
         p => !meta.record {
-          chain: { supertypes: [pair] }
           fields: {
             kind => !meta.record_field { type: meta.type_ref }
             v    => !meta.record_field { type: kind!  optional: true }

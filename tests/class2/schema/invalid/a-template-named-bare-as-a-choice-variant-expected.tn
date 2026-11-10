@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-named-bare-as-a-choice-variant-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §5.10"
+  description: """
+    A template is not a type, so no position names one bare, a choice's variant included: `( box | text )` is a
+    resolver error at `either`.
+    """
+  error: {
+    category: resolver
+  }
+}

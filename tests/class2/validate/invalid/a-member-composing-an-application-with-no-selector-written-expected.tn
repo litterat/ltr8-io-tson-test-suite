@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-member-composing-an-application-with-no-selector-written-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10"
+  description: "`pet` is abstract and dispatches on `kind`, which each member pins. A value at `p` that writes no `kind` selects no member, and the base has no values of its own. Located at the selector, as any omitted required field is."
+  error: {
+    category: validation
+    path: "/p/kind"
+  }
+}
