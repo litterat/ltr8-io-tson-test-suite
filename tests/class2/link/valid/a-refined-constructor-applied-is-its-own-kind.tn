@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-refined-constructor-applied-is-its-own-kind.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  nonempty_type => meta.array ^ { min_items?: = 1 }
+  nonempties    => meta.ref<nonempty_type>
+
+  post => {
+    a: nonempty_type<uuid>
+    b: [uuid; 1..]
+  }
+}

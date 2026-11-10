@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-refined-constructor-applied-is-its-own-kind-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3 (construction sugar, proposed for Revision 40), [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.2"
+  description: """
+    `nonempty_type` refines `meta.array`, pinning `min_items`, so it is a constructor, and construction sugar
+    applies it over its one remaining required field typed by a reference naming types: `nonempty_type<uuid>` is
+    `!nonempty_type { element_type: uuid }`. That is an instance of `nonempty_type`, its own kind, and a different
+    entry from `[uuid; 1..]`, which is `!meta.array { element_type: uuid  min_items: 1 }`: the two admit the same
+    data and neither is rewritten to the other. So the kind over `nonempty_type` admits the first and not the
+    second.
+    """
+  valid: {
+    binds: [nonempty_type_uuid_xxhash array_uuid_1_xxhash]
+    members: [
+      { name: nonempties  members: [nonempty_type_uuid_xxhash] }
+    ]
+  }
+}

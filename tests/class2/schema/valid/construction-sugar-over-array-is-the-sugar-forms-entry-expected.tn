@@ -1,0 +1,23 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/construction-sugar-over-array-is-the-sugar-forms-entry-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3 (construction sugar, proposed for Revision 40), [TSON-SCHEMA] §8.2"
+  description: """
+    `meta.array` is a constructor with no parameters, and its one required field typed by a reference naming types
+    is `element_type`, so `meta.array<uuid>` is construction sugar for `!meta.array { element_type: uuid }` -- the
+    construction `[uuid]` is spelled for. Written at a use site, both are one closed synthetic: one entry, named by
+    its content, marked `@meta.synthetic`, and carrying no `@meta.application`, since nothing was substituted.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        post => !meta.record { fields: {
+          a => !meta.record_field { type: array_uuid_xxhash }
+          b => !meta.record_field { type: array_uuid_xxhash }
+        } }
+
+        @meta.synthetic array_uuid_xxhash => !meta.array { element_type: uuid }
+      }
+      """
+  }
+}

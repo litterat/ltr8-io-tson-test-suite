@@ -1,0 +1,24 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/construction-sugar-through-an-alias-of-a-constructor-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3 (construction sugar, proposed for Revision 40), [TSON-SCHEMA] §8.3"
+  description: """
+    An application's head is read past its alias hops (§8.3), so `list<uuid>` over `list => meta.array` is
+    construction sugar over `meta.array`: the construction `!meta.array { element_type: uuid }`, the same closed
+    synthetic `[uuid]` lifts to. The alias is a hop and keeps its own entry.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        list => !meta.alias { target: meta.array }
+
+        post => !meta.record { fields: {
+          a => !meta.record_field { type: array_uuid_xxhash }
+          b => !meta.record_field { type: array_uuid_xxhash }
+        } }
+
+        @meta.synthetic array_uuid_xxhash => !meta.array { element_type: uuid }
+      }
+      """
+  }
+}
