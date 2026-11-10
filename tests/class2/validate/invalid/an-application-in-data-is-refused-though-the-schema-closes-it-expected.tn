@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-application-in-data-is-refused-though-the-schema-closes-it-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-DATA] §7.4"
+  description: "In a data document a reference is a name, so an application at a reference-typed slot is a validation error even where the schema closes it: the schema declares `names => set<text>`, and `t` still refuses `set<text>`. The grammar reads it as a reference, so the refusal is no parse error; the data names the declared entry, `names`, instead."
+  error: {
+    category: validation
+    path: "/t"
+  }
+}

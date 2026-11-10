@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-kind-holds-the-name-of-a-declared-application-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.10"
+  description: "A kind-typed slot in data holds a name, and a declaration whose body is an application names a type like any other: `names => set<text>` is a set, so `names` is a member of `meta.type_ref`. Data names the application by the entry the schema declares for it."
+  valid: _
+}

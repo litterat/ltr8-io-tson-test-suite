@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-kind-judges-a-declared-applications-name-by-its-entry-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2"
+  description: "A declared application's name is judged by the entry it names: `names => set<text>` is a set built with `set_type`, a member of `meta.type_ref` at `t` and no member of `meta.ref<net.uuid_type>` at `u`."
+  error: {
+    category: validation
+    path: "/u"
+  }
+}
