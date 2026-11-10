@@ -11,7 +11,7 @@
   parent, never through `pet_of` itself, so a position typed `pet` dispatches over `dog` and `cat` by the selector.
 
   `tpet` is an abstract template, and `abstract` on a template is each application's `extension`: `tpet<text>` is an
-  abstract record with the selector `kind`, a family base in its own right. `tdog` and `tcat` compose that application
+  abstract record with the selector `kind`, an abstract base in its own right. `tdog` and `tcat` compose that application
   and pin `kind`, so each IS-A the entry `tpet<text>` denotes, and a position typed `tpet<text>` dispatches over them.
   """
 !schema {

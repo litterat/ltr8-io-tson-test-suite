@@ -5,8 +5,8 @@
   description: """
     A template is not a type, so no position names one bare: `p: pet` is a resolver error at `holder`, though `pet`
     is abstract and states a selector. A family is declared with records: an abstract record states the selector,
-    and a position names that record. A processor that reads a template named at a position as a family base
-    over the declarations composing its applications accepts this schema.
+    and a position names that record. A processor that reads a template named at a position as an abstract base
+    dispatching over the declarations composing its applications accepts this schema.
     """
   error: {
     category: resolver

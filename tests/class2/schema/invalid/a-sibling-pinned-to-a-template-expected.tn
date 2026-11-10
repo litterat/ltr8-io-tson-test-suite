@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-pinned-to-a-record-template-expected.tn"
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-pinned-to-a-template-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.2"

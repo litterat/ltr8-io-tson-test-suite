@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/validate/invalid/a-family-base-dispatches-only-over-declared-members-expected.tn"
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-abstract-base-dispatches-only-over-declared-members-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2"

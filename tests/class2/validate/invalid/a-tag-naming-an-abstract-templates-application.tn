@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-naming-an-abstract-templates-base.tn"
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-naming-an-abstract-templates-application.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/validate-family.tn"
 !holder {
   p: {

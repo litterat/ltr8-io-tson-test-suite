@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-naming-an-open-records-name-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    `I` decides what the field names are, and an open record's field names are read at its declaration, as any
+    record's are. A parameter is a type, and stands only at a field's type or as an argument of an application there
+    or in a parent.
+    """
+  error: {
+    category: resolver
+  }
+}

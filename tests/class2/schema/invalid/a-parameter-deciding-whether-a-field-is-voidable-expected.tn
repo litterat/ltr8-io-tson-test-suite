@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §5.10"
   description: """
-    `V` decides whether `v` may be void, so the family base cannot say. A parameter is a type, and stands only at a
-    field's type or as an argument of an application there or in a parent.
+    `V` decides whether `v` may be void, which an open record states as written for every application. A parameter
+    is a type, and stands only at a field's type or as an argument of an application there or in a parent.
     """
   error: {
     category: resolver

@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-defaulted-to-a-record-template.tn"
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-defaulted-to-a-template.tn"
 !!import:"https://tson.io/2026/40/m/meta.tn"
 !!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
