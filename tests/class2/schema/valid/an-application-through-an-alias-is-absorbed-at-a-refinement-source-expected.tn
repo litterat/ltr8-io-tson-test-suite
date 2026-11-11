@@ -1,0 +1,32 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-through-an-alias-is-absorbed-at-a-refinement-source-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.3 (inline types, proposed for Revision 40)"
+  description: """
+    An application whose head is an alias of an open record applies the open record, the alias being the same entry
+    under another name, and at a refinement source it is absorbed by value as the open record's own application is:
+    `fixed` refines the substituted record, adding no entry, and is IS-A the declaration `text_box` that names
+    `box<text>`, never the open record `box` or its alias.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        box => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: T } }
+        }
+
+        box_of => !meta.alias { target: box }
+
+        @meta.application:box<text>
+        text_box => !meta.record { chain: { subtypes: [fixed] }  fields: {
+          v => !meta.record_field { type: text }
+        } }
+
+        fixed => !meta.record { chain: { supertypes: [text_box] }  fields: {
+          v => !meta.record_field { type: text  optional: true  role: FIXED  value: a }
+        } }
+      }
+      """
+  }
+}

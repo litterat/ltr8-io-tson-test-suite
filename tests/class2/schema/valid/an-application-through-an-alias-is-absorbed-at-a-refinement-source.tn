@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-through-an-alias-is-absorbed-at-a-refinement-source.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box      => <T> { v: T }
+  box_of   => box
+  text_box => box<text>
+  fixed    => box_of<text> ^ { v?: = a }
+}
