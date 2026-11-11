@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/sized-and-voidable-sugar-at-a-field-is-written-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40)"
+  description: """
+    A size and an element's `?` are facets of the construction and resolve in place with it: `[text; 1..3]` is
+    `!meta.array { element_type: text min_items: 1 max_items: 3 }` and `[text?]` is an array whose elements may be
+    void. A `?` on a field's type is the field's, not the construction's: `maybe?: [text]?` is a voidable optional
+    field holding the plain array construction.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        post => !meta.record { fields: {
+          some  => !meta.record_field { type: { of: !meta.array { element_type: text  min_items: 1  max_items: 3 } } }
+          holes => !meta.record_field { type: { of: !meta.array { element_type: text  voidable: true } } }
+          maybe => !meta.record_field {
+            type: { of: !meta.array { element_type: text } }
+            optional: true
+            voidable: true
+          }
+        } }
+      }
+      """
+  }
+}

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-wrong-element-at-an-array-written-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §7.2 (inline types, proposed for Revision 40)"
+  description: """
+    An element at an array written in place, itself nested in a map written in place, is read against the element
+    type: `99999999999` is outside `int32`'s range, a validation error at that element.
+    """
+  error: {
+    category: validation
+    path: "/prices/small/1"
+  }
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-reference-over-an-open-records-application-is-refused.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box   => <T> { v: T }
+  boxes => meta.ref<box<text>>
+}

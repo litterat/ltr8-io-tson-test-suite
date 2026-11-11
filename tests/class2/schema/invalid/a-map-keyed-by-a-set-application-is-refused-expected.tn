@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-map-keyed-by-a-set-application-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40)"
+  description: """
+    A map's `key_type` holds a name, never a type written in place, so `{set<text> => int32}` is refused; the set is
+    declared, `labels => set<text>`, and the key named.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,32 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-argument-naming-a-declared-construction-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  description: """
+    An argument of an open record's application is a name or a parameter, so a construction passed as one is
+    declared first: `orders => [order]`, then `page<orders>`, whose substituted field names the declaration.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        order => !meta.record { fields: { id => !meta.record_field { type: text } } }
+
+        orders => !meta.array { element_type: order }
+
+        page => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: {
+            items => !meta.record_field { type: T }
+            total => !meta.record_field { type: int32 }
+          }
+        }
+
+        @meta.application:page<orders>
+        orders_page => !meta.record { fields: {
+          items => !meta.record_field { type: orders }
+          total => !meta.record_field { type: int32 }
+        } }
+      }
+      """
+  }
+}

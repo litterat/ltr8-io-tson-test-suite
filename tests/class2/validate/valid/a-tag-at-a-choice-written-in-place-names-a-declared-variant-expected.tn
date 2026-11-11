@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-at-a-choice-written-in-place-names-a-declared-variant-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2 (inline types, proposed for Revision 40)"
+  description: """
+    A choice written in place has no name for a tag to give, but its variants may: a tag at it still names a
+    declared variant, so `!order` selects `order`.
+    """
+  valid: _
+}

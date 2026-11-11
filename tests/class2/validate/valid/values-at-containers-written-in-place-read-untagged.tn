@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/values-at-containers-written-in-place-read-untagged.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-inline-types.tn"
+!holder {
+  tags:   [red green]
+  prices: { small => [1 2]  large => [] }
+}

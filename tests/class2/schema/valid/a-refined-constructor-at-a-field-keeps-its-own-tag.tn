@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refined-constructor-at-a-field-keeps-its-own-tag.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order => { id: text }
+  post  => {
+    labels: set<text>
+    target: meta.ref<order>
+  }
+}

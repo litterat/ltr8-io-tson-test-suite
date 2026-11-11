@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-tagged-array-construction-at-a-field-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40)"
+  description: """
+    An author's `!` construction is not admitted at a field position, whatever its constructor: only a sugar form or
+    an application of a constructor writes a type in place. `!meta.array { element_type: uuid }` at `ids` is
+    refused, though `[uuid]` and `meta.array<uuid>` there resolve to that construction; declared, `ids_list =>
+    !meta.array { element_type: uuid }`, it is an entry like any other.
+    """
+  error: {
+    category: resolver
+  }
+}

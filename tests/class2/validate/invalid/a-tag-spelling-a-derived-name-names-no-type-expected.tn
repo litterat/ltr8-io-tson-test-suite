@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-spelling-a-derived-name-names-no-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.1, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
+  description: """
+    A form written in place adds no entry, so no name is derived from its content: a tag spelled as a processor's
+    derived name for `[text]` names no type of the closure.
+    """
+  error: {
+    category: resolver
+  }
+}

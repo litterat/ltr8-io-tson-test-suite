@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-reference-over-a-construction-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40)"
+  description: """
+    A reference's `of` holds a name, so a construction there is refused: `meta.ref<[order]>` is written
+    `meta.ref<orders>` over the declaration `orders => [order]`.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,21 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-inline-types.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  Types written in place at a field ([TSON-SCHEMA] §4.2, §5.3): an array, a map nesting an array, a tuple, and a
+  choice disjoint by form, a record variant being brace-class, a list bracket-class and an integer number-class
+  (§5.4). A type written in place has no name and is IS-A nothing, so a value at one is read by the type's own form
+  and admits no tag (§7.2). `text_list` declares the same array as `tags` writes, for a tag that names a declared
+  type at a position whose type is written in place.
+  """
+!schema {
+  order     => { id: text }
+  text_list => [text]
+
+  holder => {
+    tags?:   [text]
+    prices?: {text => [int32]}
+    pair?:   [text, int32]
+    either?: ( order | [text] | int32 )
+  }
+}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-untagged-list-at-a-disjoint-choice-is-recovered-by-its-bracket-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4 (inline types, proposed for Revision 40)"
+  description: """
+    `( order | [text] | int32 )` is disjoint by form, so an untagged bracket is the list variant `[text]`, a type
+    written in place inside a choice written in place.
+    """
+  valid: _
+}

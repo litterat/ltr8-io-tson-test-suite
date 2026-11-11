@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/choice-sugar-at-a-field-is-written-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.4 (inline types, proposed for Revision 40)"
+  description: """
+    The choice sugar `( text | int32 )` at a field resolves in place to the choice construction, carrying the
+    disjointness §5.4 derives for it wherever it is written: text is string-class and int32 number-class, so it is
+    disjoint.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        post => !meta.record { fields: {
+          either => !meta.record_field { type: { of: !meta.choice { variants: [text int32]  disjoint: true } } }
+        } }
+      }
+      """
+  }
+}

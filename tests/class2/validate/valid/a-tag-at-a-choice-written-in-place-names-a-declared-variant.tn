@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-at-a-choice-written-in-place-names-a-declared-variant.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-inline-types.tn"
+!holder { either: !order { id: A1 } }

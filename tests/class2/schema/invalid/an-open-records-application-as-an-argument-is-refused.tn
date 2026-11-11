@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-open-records-application-as-an-argument-is-refused.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box    => <T> { v: T }
+  pair   => <A, B> { a: A  b: B }
+  paired => pair<box<text> int32>
+}
