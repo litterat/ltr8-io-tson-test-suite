@@ -1,8 +1,13 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-declared-application-is-the-entry-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
-  description: "A declaration whose body is a fully-bound application is the instantiation entry itself, not a reference to a separately named one: text_box is the closed record, carrying the application in its own source. §8.2 gives a declared entry its name as its identity, so an application a declaration names needs no content-derived name; one a use site writes still gets one. A template is no type, so text_box is not IS-A box and box indexes nothing."
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
+  description: """
+    A declaration whose body is a fully-bound application is the closed record itself, under its author's name, and
+    carries the application on its key: `text_box` is the record `{ value: text }`. It is the one name the
+    application has, an application never being looked up at a slot. An open record is no type, so `text_box` is
+    not IS-A `box` and `box` indexes nothing.
+    """
   valid: {
     binds: [box text_box]
     subtypes: [

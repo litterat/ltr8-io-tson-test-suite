@@ -2,7 +2,6 @@
 !!import:"https://tson.io/2026/40/m/meta.tn"
 !!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
-  box     => <T> { v: T }
-  spelled => !meta.array { element_type: box< text, > }
-  written => [box<text>]
+  spelled => !meta.array { element_type: meta.map< text, int32 > }
+  written => [{text => int32}]
 }

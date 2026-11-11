@@ -1,12 +1,11 @@
-!!id:"https://tson.io/test-suite/class2/schema/valid/a-nested-application-states-its-application-as-written-expected.tn"
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-over-a-declared-application-states-it-as-written-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.2"
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
   description: """
-    A nested application closes innermost first: `box<text>` is the entry `inner` declares, and `pair` is
-    applied to it. The entry's `@meta.application` states the reference as written, its nested argument
-    unreduced, `pair<box<text> int32>`, and each level resolves structurally to the entry it closed to:
-    `box<text>` to `inner`, whose own `@meta.application` is `box<text>`.
+    An argument of an open record's application is a name, so an application of another open record is declared
+    before it is passed: `inner => box<text>`, then `pair<inner int32>`. Each declaration's `@meta.application`
+    states its application as written, and the substituted field names the declaration: `outer.a` is `inner`.
     """
   valid: {
     resolved: """
@@ -30,7 +29,7 @@
         @meta.application:box<text>
         inner => !meta.record { fields: { v => !meta.record_field { type: text } } }
 
-        @meta.application:pair<box<text> int32>
+        @meta.application:pair<inner int32>
         outer => !meta.record {
           fields: {
             a => !meta.record_field { type: inner }

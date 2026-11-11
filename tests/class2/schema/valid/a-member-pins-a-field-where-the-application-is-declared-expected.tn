@@ -5,7 +5,7 @@
   description: """
     A value that differs per application is written where the application is declared, a field's value never being a
     parameter: `created` composes `response<order>` and restates `status` FIXED to `201`, as a hand-written member
-    pins a field it inherits. The operand mints no entry, and `created` is not IS-A `response`: a template is no type,
+    pins a field it inherits. The operand adds no entry, and `created` is not IS-A `response`: a template is no type,
     and `response` writes no parent for an application to inherit.
     """
   valid: {

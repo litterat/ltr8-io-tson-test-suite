@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/container-sugar-is-written-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.1 (inline types, proposed for Revision 40)"
+  description: """
+    A container sugar form written at a field resolves in place: the field's `type` holds the construction the sugar
+    denotes, in the untagged wrapper `meta.type_inline`, and no entry is added to the schema.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        post => !meta.record { fields: {
+          title => !meta.record_field { type: text }
+          ids   => !meta.record_field { type: { of: !meta.array { element_type: uuid } } }
+        } }
+      }
+      """
+  }
+}

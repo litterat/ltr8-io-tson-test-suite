@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/schema/valid/container-sugar-lifts-a-synthetic.tn"
+!!id:"https://tson.io/test-suite/class2/schema/valid/container-sugar-is-written-in-place.tn"
 !!import:"https://tson.io/2026/40/m/meta.tn"
 !!import:"https://tson.io/2026/40/m/core.tn"
 !schema {

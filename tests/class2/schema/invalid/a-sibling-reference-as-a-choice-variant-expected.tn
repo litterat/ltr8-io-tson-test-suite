@@ -1,12 +1,12 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-reference-as-a-choice-variant-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.4"
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.4 (inline types, proposed for Revision 40)"
   description: """
-    A sibling reference stands only at a record field's type. In sugar it parses wherever a reference does, written
-    with the whitespace its `!` needs, and desugaring refuses it anywhere else: `( kind! | text )` lifts to a choice
-    entry outside `cell`, which has no sibling to read, so `kind!` is refused where it is written even though `cell`
-    declares `kind`.
+    A sibling reference stands only at a record field's type. In sugar it parses wherever a reference does, written with
+    the whitespace its `!` needs, and desugaring refuses it anywhere else: `( kind! | text )` resolves in place to a
+    choice construction, and its slot, a choice's `variants`, is a `meta.type_expr`, which has no sibling form, so
+    `kind!` is refused where it is written even though `cell` declares `kind`.
     """
   error: {
     category: resolver

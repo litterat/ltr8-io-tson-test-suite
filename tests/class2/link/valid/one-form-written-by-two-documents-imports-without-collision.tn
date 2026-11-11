@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/link/valid/one-synthetic-minted-by-two-documents-unifies.tn"
+!!id:"https://tson.io/test-suite/class2/link/valid/one-form-written-by-two-documents-imports-without-collision.tn"
 !!import:"https://tson.io/2026/40/m/meta.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/link-tag-list.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/link-label-list.tn"

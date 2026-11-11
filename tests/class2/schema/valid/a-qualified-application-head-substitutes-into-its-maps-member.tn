@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/schema/valid/a-qualified-application-head-closes-at-the-root.tn"
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-qualified-application-head-substitutes-into-its-maps-member.tn"
 !!import:"https://tson.io/2026/40/m/meta.tn"
 !!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
@@ -7,6 +7,5 @@
     base => { id: text }
   }
   boxed => geo.box<text>
-  held  => { b: geo.box<int32> }
   bases => meta.ref<geo.base>
 }

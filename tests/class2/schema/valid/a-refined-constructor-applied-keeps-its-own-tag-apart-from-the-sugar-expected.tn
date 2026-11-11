@@ -1,0 +1,23 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refined-constructor-applied-keeps-its-own-tag-apart-from-the-sugar-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.1 (inline types, proposed for Revision 40)"
+  description: """
+    The fixture's `rows` refines `meta.array`, pinning `min_items`: a refined constructor, a named kind of array as the
+    kernel's `set_type` is. `rows<uuid>` is construction sugar, and written at a field it resolves in place to
+    `!rows { element_type: uuid }`, keeping its own constructor's tag; `[uuid; 1..]` resolves in place to
+    `!meta.array { element_type: uuid  min_items: 1 }`. They admit the same data and are two types, neither IS-A the
+    other, since an inline type's identity is its constructor and its fields. Neither records an application: a
+    construction substitutes nothing.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        post => !meta.record { fields: {
+          a => !meta.record_field { type: { of: !rows { element_type: uuid } } }
+          b => !meta.record_field { type: { of: !meta.array { element_type: uuid  min_items: 1 } } }
+        } }
+      }
+      """
+  }
+}

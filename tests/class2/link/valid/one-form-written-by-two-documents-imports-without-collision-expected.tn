@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/one-form-written-by-two-documents-imports-without-collision-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40)"
+  description: """
+    Two imports that each write `[text]`, neither importing the other, each hold the construction in place at the
+    field that writes it, and the subject writes it a third time. A form written in place adds no entry, so the
+    closure has nothing to merge and no name to collide on: the importer binds both imports' records and its own.
+    """
+  valid: {
+    binds: [catalogue tag_list label_list]
+  }
+}

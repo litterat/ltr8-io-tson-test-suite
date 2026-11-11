@@ -3,11 +3,11 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.1"
   description: """
-    A template is an open record: a `!meta.record` carrying `parameters`, read against `record`'s own vocabulary as
-    any record is. A parameter is a reference value, written where it stands as its name: whole at a field's `type`,
-    as an argument of an application there (`box<T>`), and in an applied parent (`chain.parents`). `[T]` over a
-    parameter is the reference it spells, `meta.array<T>`, held as written until the record is applied; nothing is
-    lifted for it. A field type naming no parameter, `int32`, is closed in the open record.
+    A template is an open record: a `!meta.record` carrying `parameters`, read against `record`'s own vocabulary as any
+    record is. A parameter is a reference value, written where it stands as its name: whole at a field's `type`, as an
+    argument of an application there (`box<T>`), and in an applied parent (`chain.parents`). `[T]` over a parameter is
+    the application it spells, `meta.array<T>`, held as written until the record is applied, when it closes in place to
+    the construction it denotes. A field type naming no parameter, `int32`, is closed in the open record.
     """
   valid: {
     resolved: """
