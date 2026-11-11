@@ -110,10 +110,16 @@ multi-line token escapes nothing, so this stays inside the conservative subset R
 it. A template is an open record (§5.10): a `!meta.record` carrying `parameters`, read against `record`'s
 own vocabulary as any record is, each parameter written where it stands as its name, a reference value
 looked up in the record's `parameters` before the namespace. Read back, it binds the value the resolver
-built, so the two sides compare as values like any other entry. An application closes to a `!meta.record`
-without `parameters`, stating the application it is the instantiation of on its key as
+built, so the two sides compare as values like any other entry. A declaration naming an application of one
+is the closed `!meta.record`, without `parameters`, stating on its key the application it closes as
 `@meta.application`; a construction (`set<text>`, `meta.ref<order>`) states its constructor and carries
 none.
+
+**A type written at a slot stays there.** Sugar or an applied constructor at a type slot (`tags: [text]`,
+`set<text>`) resolves in place to the construction it denotes, held in the untagged wrapper
+`meta.type_inline`: `type: { of: !meta.array { element_type: text } }`. Nothing is added to the schema
+for it, so the expected side holds only the entries the subject declares, and the two sides compare as
+written.
 
 **`link/` states individual facts** about the linked namespace rather than a whole document: what
 §2.2.3's import closure binds, what §5.4 derives for a choice, what §8.2's `subtypes` index holds,

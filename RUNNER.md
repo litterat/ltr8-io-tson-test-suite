@@ -137,15 +137,6 @@ why. Exactly three grounds are legitimate:
 Anything else — a vector the implementation cannot currently pass — is a failure. Recording it as a
 skip is how a corpus stops measuring anything.
 
-### 6. Normalise a resolver-minted name before comparing (Class 2)
-
-The entries a resolver mints for itself — a synthetic lifted from a sugar form, an instantiation closed
-from a template application — carry a name ending in an implementation-chosen content hash.
-[TSON-SCHEMA] §8.2 keys identity on structure, not on that spelling, so it is **not normative**: both
-sides reduce a trailing `_[0-9a-f]{8}` to a fixed placeholder before comparing, wherever such a name
-appears — as an entry's own key, inside a body, or in a list of names a sidecar states. A runner that
-compares the hashes is testing its own hash function.
-
 ## Every subject is a complete document
 
 A subject carries its own header: an optional `!!id`, then an `!!import` for each schema it needs, each named
