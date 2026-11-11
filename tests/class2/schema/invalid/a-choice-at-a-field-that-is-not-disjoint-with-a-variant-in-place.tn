@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-choice-at-a-field-that-is-not-disjoint-with-a-variant-in-place.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  post => { v: ( [text] | [int32] ) }
+}

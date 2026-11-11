@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-open-record-named-bare-as-a-refinement-source-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  description: """
+    An open record has fields only once its parameters are bound, so it is never a refinement source bare: `box ^ {
+    … }` is refused, and `box<text> ^ { … }` refines the application.
+    """
+  error: {
+    category: resolver
+  }
+}

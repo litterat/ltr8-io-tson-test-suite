@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-application-at-a-refinement-source-is-is-a-its-declaration-in-either-order-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  description: """
+    A refinement of an application is IS-A its open record's written parents and the declaration naming the
+    application, wherever that declaration stands: `early` and `late` are each IS-A `base` and `text_box`, and
+    nothing is IS-A `box`, an open record being no type.
+    """
+  valid: {
+    subtypes: [
+      { name: base  subtypes: [text_box early late] }
+      { name: text_box  subtypes: [early late] }
+      { name: box  subtypes: [] }
+    ]
+  }
+}

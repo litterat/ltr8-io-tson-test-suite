@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-default-at-an-inline-reference-names-a-value-by-its-path-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12 (inline types, proposed for Revision 40)"
+  description: """
+    A default on a field typed by a reference written in place is read against that reference and judged at link:
+    `orders.place_order`, a qualified name, reaches a value of `action`, so it is a value of `meta.ref<action>`.
+    """
+  valid: {
+    binds: [handler orders.place_order]
+  }
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-open-record-named-bare-as-a-refinement-source.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box   => <T> { v: T }
+  fixed => box ^ { v?: = a }
+}

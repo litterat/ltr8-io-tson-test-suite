@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-default-at-an-inline-reference-naming-a-value-of-another-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12 (inline types, proposed for Revision 40)"
+  description: """
+    A default on a field typed by a reference written in place is judged against it at link: `c1` is a value of
+    `customer`, which is no `order`, so it is outside `meta.ref<order>`.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-default-on-a-field-typed-by-an-array-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2 (inline types, proposed for Revision 40)"
+  description: """
+    A value modifier is admitted on a field typed by an atom, an enum or a reference, and on nothing else: a field
+    typed by an array written in place, `tags?: [text] ~ red`, is refused as one typed by a declared container is.
+    """
+  error: {
+    category: resolver
+  }
+}

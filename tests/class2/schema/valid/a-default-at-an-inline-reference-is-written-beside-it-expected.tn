@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-default-at-an-inline-reference-is-written-beside-it-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.2 (inline types, proposed for Revision 40)"
+  description: """
+    A reference is the one type written in place a value modifier is admitted on: `which?: meta.ref<meta.array> ~
+    texts` holds the reference in the wrapper and the default beside it, a name read against that reference and
+    judged at link, `texts` being a type built with `meta.array`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        texts => !meta.array { element_type: text }
+
+        picker => !meta.record { fields: {
+          which => !meta.record_field {
+            type: { of: !meta.ref { of: meta.array } }
+            optional: true
+            role: DEFAULT
+            value: texts
+          }
+        } }
+      }
+      """
+  }
+}

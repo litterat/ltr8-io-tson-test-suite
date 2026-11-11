@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-default-at-an-inline-reference-names-a-value-by-its-path.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  action  => { verb: text }
+  orders  => !schema {
+    place_order => !action { verb: POST }
+  }
+  handler => { call?: meta.ref<action> ~ orders.place_order }
+}

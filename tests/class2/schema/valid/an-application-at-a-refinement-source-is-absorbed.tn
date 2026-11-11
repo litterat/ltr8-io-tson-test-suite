@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-at-a-refinement-source-is-absorbed.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box      => <T> { v: T }
+  text_box => box<text>
+  fixed    => box<text> ^ { v?: = a }
+}

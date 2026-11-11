@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-default-at-an-inline-reference-is-written-beside-it.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  texts  => [text]
+  picker => { which?: meta.ref<meta.array> ~ texts }
+}

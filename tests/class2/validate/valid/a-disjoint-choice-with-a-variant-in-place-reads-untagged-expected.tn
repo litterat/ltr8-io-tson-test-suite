@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-disjoint-choice-with-a-variant-in-place-reads-untagged-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4 (inline types, proposed for Revision 40)"
+  description: """
+    `( [text] | text )` is disjoint, so an untagged bracket is the array variant written in place.
+    """
+  valid: _
+}

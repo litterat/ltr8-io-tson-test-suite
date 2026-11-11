@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-construction-restated-as-an-equal-name-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
+  description: """
+    A name and a construction are never the same type, in either direction: `tags: [text]` restated as `text_list`,
+    a declaration of the same shape, is refused, `text_list` being no subtype of a type written in place.
+    """
+  error: {
+    category: resolver
+  }
+}

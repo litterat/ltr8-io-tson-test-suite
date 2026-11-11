@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-choice-at-a-field-that-is-not-disjoint-with-a-variant-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4 (inline types, proposed for Revision 40)"
+  description: """
+    A choice written in place at a field is judged as a declared one is: `( [text] | [int32] )` is not disjoint, its
+    variants sharing the bracket class, and a variant written in place has no name for a tag, so it is refused.
+    """
+  error: {
+    category: resolver
+  }
+}
