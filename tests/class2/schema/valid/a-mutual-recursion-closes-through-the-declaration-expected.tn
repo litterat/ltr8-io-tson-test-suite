@@ -1,0 +1,36 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-mutual-recursion-closes-through-the-declaration-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
+  description: """
+    Mutual recursion ends at the declaration being closed: closing `a_text => a<text>` closes `b: b<text>` in place,
+    and the `a<text>` that record holds is the application `a_text` is closing, so it names `a_text`. Nothing is
+    expanded without end, and nothing but the declaration records an application.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        a => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: {
+            v => !meta.record_field { type: T }
+            b => !meta.record_field { type: b<T> }
+          }
+        }
+
+        b => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { a => !meta.record_field { type: a<T>  optional: true } }
+        }
+
+        @meta.application:a<text>
+        a_text => !meta.record { fields: {
+          v => !meta.record_field { type: text }
+          b => !meta.record_field { type: { of: !meta.record { fields: {
+            a => !meta.record_field { type: a_text  optional: true }
+          } } } }
+        } }
+      }
+      """
+  }
+}

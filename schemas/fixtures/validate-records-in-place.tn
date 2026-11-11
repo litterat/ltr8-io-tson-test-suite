@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-records-in-place.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  Records in place ([TSON-SCHEMA] §5.10): `p: page<order>` closes in place to the record `page` states with `T` bound
+  to `order`, a type with no name read where it is written, untagged, with the open record's field states. `ps` holds
+  one as an array's element and `byName` as a map's value. `order_page` declares the same application, a nominal type
+  of the same shape, for a tag that names a declared type at a position whose type is in place (§7.2).
+  """
+!schema {
+  order      => { id: text }
+  page       => <T> { items: [T]  size?: int32 ~ 10 }
+  order_page => page<order>
+
+  holder => {
+    p:       page<order>
+    ps?:     [page<order>]
+    byName?: {text => page<order>}
+  }
+}

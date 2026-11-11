@@ -1,0 +1,24 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-closes-in-place-at-a-map-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
+  description: """
+    A map's `value_type` is a type slot, so an application of an open record there closes in place: `{text =>
+    box<text>}` is the map in place whose value is the record `box<text>` closes to, with no name and no entry. A
+    map's key is a name, and an application there is refused.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        box => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: T } }
+        }
+
+        holder => !meta.record { fields: {
+          byName => !meta.record_field { type: { of: !meta.map { key_type: text  value_type: { of: !meta.record { fields: { v => !meta.record_field { type: text } } } } } } }
+        } }
+      }
+      """
+  }
+}

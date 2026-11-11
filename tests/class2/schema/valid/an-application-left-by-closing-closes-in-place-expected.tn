@@ -1,0 +1,32 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-left-by-closing-closes-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
+  description: """
+    An application an open record holds over its parameter is closed when the record is applied, where it stands:
+    `cursor: box<T>` in `page` becomes `box<order>` in `order_page => page<order>`, and closes in place there to the
+    record `box<order>` closes to. Nothing is minted for it, and only the declaration records an application.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        order => !meta.record { fields: { id => !meta.record_field { type: text } } }
+
+        box => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: T } }
+        }
+
+        page => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { cursor => !meta.record_field { type: box<T> } }
+        }
+
+        @meta.application:page<order>
+        order_page => !meta.record { fields: {
+          cursor => !meta.record_field { type: { of: !meta.record { fields: { v => !meta.record_field { type: order } } } } }
+        } }
+      }
+      """
+  }
+}

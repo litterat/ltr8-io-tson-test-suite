@@ -1,0 +1,38 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-abstract-open-record-applied-in-place-is-an-abstract-record-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  description: """
+    `abstract` and a selector on an open record are each application's, so `s: shape<circle>` closes in place to an
+    abstract record dispatching on `kind`. A member reaches a family only through a declared application, so nothing
+    is a member of the record in place: it carries no chain and no `subtypes`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        circle => !meta.record { fields: { r => !meta.record_field { type: int32 } } }
+
+        shape => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: {
+            kind => !meta.record_field { type: text }
+            data => !meta.record_field { type: T }
+          }
+          extension: ABSTRACT
+          discriminators: [kind]
+        }
+
+        plot => !meta.record { fields: {
+          s => !meta.record_field { type: { of: !meta.record {
+            fields: {
+              kind => !meta.record_field { type: text }
+              data => !meta.record_field { type: circle }
+            }
+            extension: ABSTRACT
+            discriminators: [kind]
+          } } }
+        } }
+      }
+      """
+  }
+}

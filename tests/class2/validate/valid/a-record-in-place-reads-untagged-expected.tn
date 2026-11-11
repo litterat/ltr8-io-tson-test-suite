@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-in-place-reads-untagged-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.2 (inline types, proposed for Revision 40)"
+  description: """
+    `p: page<order>` closes in place to a record with no name, and a value at `p` is read against it untagged, its
+    fields as the open record states them with `T` bound to `order`.
+    """
+  valid: _
+}

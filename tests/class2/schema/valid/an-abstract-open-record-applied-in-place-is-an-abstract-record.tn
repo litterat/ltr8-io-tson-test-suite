@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-abstract-open-record-applied-in-place-is-an-abstract-record.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  circle => { r: int32 }
+  shape  => <T> { kind: text =?  data: T }
+  plot   => { s: shape<circle> }
+}

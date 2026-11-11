@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-application-in-place-restated-as-its-declaration-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
+  description: """
+    The same two types the other way round: an inherited `f: page<order>`, a record in place, restated as `f:
+    page_order` names a declared type that is not the one in place and is IS-A nothing in place, and is refused.
+    """
+  error: {
+    category: resolver
+  }
+}

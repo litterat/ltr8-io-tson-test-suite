@@ -1,0 +1,23 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-closes-in-place-at-an-array-element-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
+  description: """
+    An application of an open record at an array's `element_type` closes in place, as at a field: `[box<text>]` is the
+    array in place whose element is the record `box<text>` closes to, in place in turn, with no name and no entry.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        box => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: T } }
+        }
+
+        holder => !meta.record { fields: {
+          items => !meta.record_field { type: { of: !meta.array { element_type: { of: !meta.record { fields: { v => !meta.record_field { type: text } } } } } } }
+        } }
+      }
+      """
+  }
+}

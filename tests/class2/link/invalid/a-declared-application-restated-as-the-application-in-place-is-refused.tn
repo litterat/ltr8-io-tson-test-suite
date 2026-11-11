@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-declared-application-restated-as-the-application-in-place-is-refused.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order      => { id: text }
+  page       => <T> { items: [T] }
+  page_order => page<order>
+  base       => { f: page_order }
+  sub        => base ^ { f: page<order> }
+}

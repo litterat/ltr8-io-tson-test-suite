@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-in-place-holds-sugar-and-a-constructors-application.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order  => { id: text }
+  page   => <T> { items: [T]  ids: set<T> }
+  holder => { p: page<order> }
+}

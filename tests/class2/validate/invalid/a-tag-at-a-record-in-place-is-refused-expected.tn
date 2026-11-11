@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-at-a-record-in-place-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.2 (inline types, proposed for Revision 40)"
+  description: """
+    A record in place has no name and nothing is IS-A it, so a value at its position admits no tag: `!order_page`
+    names a declared record of the same shape, and is still a validation error at `p`.
+    """
+  error: {
+    category: validation
+    path: "/p"
+  }
+}

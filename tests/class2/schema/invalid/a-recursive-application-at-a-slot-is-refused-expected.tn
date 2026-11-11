@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-recursive-application-at-a-slot-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
+  description: """
+    A recursive application at a type slot with no declaration closing it has nothing to tie to: closing `node<text>`
+    in place reaches `node<text>` again at `next`, and an application at a slot is never looked up, so `node_text`
+    does not tie it. It is a resolver error at `holder`; the fix is `f: node_text`.
+    """
+  error: {
+    category: resolver
+  }
+}

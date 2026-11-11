@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-in-place-in-a-list-reads-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.2 (inline types, proposed for Revision 40)"
+  description: """
+    `ps?: [page<order>]` is an array in place whose element is a record in place, so each element is read against the
+    record untagged.
+    """
+  valid: _
+}
