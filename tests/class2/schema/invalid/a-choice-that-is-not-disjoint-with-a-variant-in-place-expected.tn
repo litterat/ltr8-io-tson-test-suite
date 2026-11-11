@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-choice-that-is-not-disjoint-with-a-variant-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4 (inline types, proposed for Revision 40)"
+  description: """
+    A choice that is not disjoint is read by its tag, and a tag names a variant by its name: `[text]` and `[int32]`
+    share the bracket class, so the choice is not disjoint, and a variant written in place has no name to tag. It is
+    a resolver error at the declaration; declared, `texts => [text]` and `ints => [int32]`, the choice `( texts |
+    ints )` is valid and read tagged.
+    """
+  error: {
+    category: resolver
+  }
+}

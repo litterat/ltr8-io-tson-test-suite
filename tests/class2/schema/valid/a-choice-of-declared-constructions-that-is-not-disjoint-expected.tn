@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-choice-of-declared-constructions-that-is-not-disjoint-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4 (inline types, proposed for Revision 40)"
+  description: """
+    A choice that is not disjoint is valid when every variant is a name: `texts` and `ints` are both bracket-class,
+    so `( texts | ints )` is not disjoint and a value at it is read by its tag.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        texts => !meta.array { element_type: text }
+
+        ints => !meta.array { element_type: int32 }
+
+        lists => !meta.choice { variants: [texts ints]  disjoint: false }
+      }
+      """
+  }
+}

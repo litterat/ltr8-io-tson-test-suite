@@ -1,13 +1,13 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-declared-application-of-an-open-record-closes-to-a-record-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.2"
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.1 (inline types, proposed for Revision 40)"
   description: """
     An application of an open record substitutes its arguments for the parameters and closes to a `!meta.record`
     without `parameters`. A declaration naming the application is that record under its author's name, and carries
     `@meta.application` on its key, the one fact the record does not state. The held `meta.array<T>` becomes
-    `meta.array<text>`, a construction, and closes to the content-keyed entry `[text]` lifts to, which the import
-    closure already holds (core reaches net, whose own `[text]` it is), so nothing is minted here.
+    `meta.array<text>`, a constructor's application, and closes in place to the construction it denotes, in the
+    wrapper: nothing is added to the schema.
     """
   valid: {
     resolved: """
@@ -22,7 +22,7 @@
 
         @meta.application:page<text>
         text_page => !meta.record { fields: {
-          items => !meta.record_field { type: array_text_xxhash }
+          items => !meta.record_field { type: { of: !meta.array { element_type: text } } }
           total => !meta.record_field { type: int32 }
         } }
       }

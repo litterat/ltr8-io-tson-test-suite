@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-recursive-application.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  A recursive open record closed by a declaration ([TSON-SCHEMA] §5.10): the nested `node<int32>` that substituting
+  `next` leaves is the application `node_int` is closing, so `next` names `node_int` and a list of any length reads
+  through the one declaration.
+  """
+!schema {
+  node     => <T> { value: T  next?: node<T> }
+  node_int => node<int32>
+}

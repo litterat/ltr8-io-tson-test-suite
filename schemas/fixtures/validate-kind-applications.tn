@@ -3,7 +3,8 @@
 !!import:"https://tson.io/2026/40/m/core.tn"
 @doc:"""
   A kind-typed field naming a declared application. `names` is the entry `set<text>` denotes, a declaration whose
-  body is the application; `paired` is the nested `pair<box<text> int32>`, over `boxed`, which `box<text>` denotes.
+  body is the application; `paired` is `pair<boxed int32>`, an application whose argument names the declaration
+  `boxed => box<text>`, an argument being a name and never an application.
   `holder.t` holds the name of any type, and `holder.u` the name of a type built with `uuid_type`.
   In data a reference is a name: data names `names`, and an application written there, `set<text>`, is refused.
   """
@@ -12,7 +13,7 @@
   box      => <T> { v: T }
   pair     => <A, B> { a: A  b: B }
   boxed    => box<text>
-  paired   => pair<box<text> int32>
+  paired   => pair<boxed int32>
   holder   => { t: meta.type_ref  u?: meta.ref<net.uuid_type> }
   labelled => { n: text }
 }

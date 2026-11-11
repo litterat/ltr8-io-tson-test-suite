@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-in-place-supplies-its-default-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.2 (inline types, proposed for Revision 40)"
+  description: """
+    A record in place keeps its open record's field states: `size?: int32 ~ 10` may be left out, and the default is
+    supplied, as in a declared record.
+    """
+  valid: _
+}

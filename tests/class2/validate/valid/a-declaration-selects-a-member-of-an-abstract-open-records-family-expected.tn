@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-declaration-selects-a-member-of-an-abstract-open-records-family-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.2 (inline types, proposed for Revision 40)"
+  description: """
+    An abstract open record's application is abstract, so the tag is the only selector at a position typed
+    `outcome_of`, the declaration of `outcome<text>`. Each member of the family is declared, `won_of => won<text>`,
+    and is IS-A `outcome_of` through the applied parent's edge; the declaration is the one name the member has, so
+    the tag `!won_of` selects it.
+    """
+  valid: _
+}

@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-reference-over-a-declared-construction-names-it-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40)"
+  description: """
+    A reference's `of` is a name, so a reference over a construction names its declaration: `orders => [order]` is
+    an entry, and `meta.ref<orders>` is `!meta.ref { of: orders }`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        order => !meta.record { fields: { id => !meta.record_field { type: text } } }
+
+        orders => !meta.array { element_type: order }
+
+        orders_ref => !meta.ref { of: orders }
+      }
+      """
+  }
+}

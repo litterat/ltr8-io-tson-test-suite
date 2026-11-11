@@ -1,7 +1,11 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-family-member-applied-at-a-use-site-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §3.3.4, [TSON-SCHEMA] §8.2"
-  description: "`dog_of<text>` composes onto `pet`, so applying it at a use site would add a member to pet's family under a minted name -- one a read would report, a tag could not name and a binding could not map. A family member is declared: `dogs => dog_of<text>`."
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  description: """
+    `dog_of<text>` composes onto `pet`, so closing it at a use site would put a record with no name into `pet`'s
+    family: a member a tag could not name and a binding could not map. An undeclared expansion whose chain would
+    name a declared type is refused (§5.2); a family member is declared, `dogs => dog_of<text>`.
+    """
   error: { category: resolver }
 }

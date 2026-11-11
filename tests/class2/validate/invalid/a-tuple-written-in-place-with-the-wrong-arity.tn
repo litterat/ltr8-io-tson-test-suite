@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tuple-written-in-place-with-the-wrong-arity.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-inline-types.tn"
+!holder { pair: [red, 3, 4] }

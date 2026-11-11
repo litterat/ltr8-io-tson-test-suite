@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/nested-sugar-at-a-field-nests-in-place.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  post => {
+    prices: {text => [int32]}
+    grid:   [[text]]
+  }
+}

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-construction-restated-as-an-equal-name-is-refused.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  text_list => [text]
+  base      => { tags: [text] }
+  sub       => base ^ { tags: text_list }
+}

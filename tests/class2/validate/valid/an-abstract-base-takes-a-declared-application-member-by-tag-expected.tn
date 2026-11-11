@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-abstract-base-takes-a-declared-application-member-by-tag-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2"
+  description: "`any`, typed by the abstract record `boxed`, takes the declared member `bt` by its tag: `bt` declares `box<int32>`, and reaches `boxed` through `box`'s written parent."
+  valid: _
+}

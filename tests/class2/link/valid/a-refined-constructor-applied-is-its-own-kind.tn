@@ -5,6 +5,9 @@
   nonempty_type => meta.array ^ { min_items?: = 1 }
   nonempties    => meta.ref<nonempty_type>
 
+  uuids => nonempty_type<uuid>
+  plain => [uuid; 1..]
+
   post => {
     a: nonempty_type<uuid>
     b: [uuid; 1..]

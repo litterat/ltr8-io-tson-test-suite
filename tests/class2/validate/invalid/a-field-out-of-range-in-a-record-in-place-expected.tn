@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-field-out-of-range-in-a-record-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.2 (inline types, proposed for Revision 40)"
+  description: """
+    A field of a record in place is read against its type as in a declared record: `size` is an `int32`, so
+    4294967296 is a range violation located by its path, `/p/size`.
+    """
+  error: {
+    category: validation
+    path: "/p/size"
+  }
+}

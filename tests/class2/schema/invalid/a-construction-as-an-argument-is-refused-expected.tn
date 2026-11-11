@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-construction-as-an-argument-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  description: """
+    An argument of an open record's application is a name or a parameter, so a construction passed as one is
+    refused: `page<[order]>` is written `page<orders>` over the declaration `orders => [order]`.
+    """
+  error: {
+    category: resolver
+  }
+}

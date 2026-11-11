@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/values-at-containers-written-in-place-read-untagged-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §7.2 (inline types, proposed for Revision 40)"
+  description: """
+    A value at a field whose type is written in place is read against that type by its own form, with no tag: `tags`
+    against the array construction, and `prices` against the map whose values are the nested array construction.
+    """
+  valid: _
+}

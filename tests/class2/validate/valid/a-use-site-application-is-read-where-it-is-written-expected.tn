@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2"
-  description: "`k: plain<text>` is a type read where it is written: its value is read against `plain<text>` with no tag. `any`, typed by the abstract record `boxed`, takes the declared member `bt`, an application of `box`, which composes `boxed`."
+  description: "`k: plain<text>` closes in place to a record with no name, a type read where it is written: its value is read against that record with no tag."
   valid: _
 }

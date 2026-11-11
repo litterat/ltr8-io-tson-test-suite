@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/nested-sugar-at-a-field-nests-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40)"
+  description: """
+    A sugar form nested in another resolves in place at the slot that holds it, all the way down: `{text =>
+    [int32]}` is a map construction whose `value_type` holds the array construction, and `[[text]]` an array whose
+    `element_type` holds another. Each inner slot is a type slot too, so each holds the wrapper; a map's `key_type`
+    is a name.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        post => !meta.record { fields: {
+          prices => !meta.record_field { type: { of: !meta.map {
+            key_type: text
+            value_type: { of: !meta.array { element_type: int32 } }
+          } } }
+          grid => !meta.record_field { type: { of: !meta.array {
+            element_type: { of: !meta.array { element_type: text } }
+          } } }
+        } }
+      }
+      """
+  }
+}

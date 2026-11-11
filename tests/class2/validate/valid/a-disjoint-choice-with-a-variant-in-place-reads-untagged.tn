@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-disjoint-choice-with-a-variant-in-place-reads-untagged.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-inline-types.tn"
+!holder { words: [red green] }

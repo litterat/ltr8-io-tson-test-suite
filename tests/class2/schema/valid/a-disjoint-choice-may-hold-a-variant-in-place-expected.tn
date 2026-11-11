@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-disjoint-choice-may-hold-a-variant-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4 (inline types, proposed for Revision 40)"
+  description: """
+    A disjoint choice is read untagged, so a variant in it needs no name: `( [text] | text )` holds the array
+    construction in the wrapper beside the name `text`, a bracket and a string never being one class.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        words => !meta.choice {
+          variants: [{ of: !meta.array { element_type: text } } text]
+          disjoint: true
+        }
+      }
+      """
+  }
+}

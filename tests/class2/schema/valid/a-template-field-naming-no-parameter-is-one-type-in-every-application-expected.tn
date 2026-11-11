@@ -1,0 +1,37 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-template-field-naming-no-parameter-is-one-type-in-every-application-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
+  description: """
+    A field type in an open record that names none of its parameters means the same in every application, so it is
+    closed in the open record and every application holds the same type: `tag: box<text>` closes in place to the
+    record `{ v: text }`, in `pet` as in `cat`, with no name and no entry. `cat` is not IS-A `pet`: an open record is
+    no type.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        box => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: T } }
+        }
+
+        pet => !meta.record {
+          parameters: [ !meta.param { name: V } ]
+          fields: {
+            tag  => !meta.record_field { type: { of: !meta.record { fields: { v => !meta.record_field { type: text } } } } }
+            name => !meta.record_field { type: V }
+          }
+        }
+
+        @meta.application:pet<text>
+        cat => !meta.record {
+          fields: {
+            tag  => !meta.record_field { type: { of: !meta.record { fields: { v => !meta.record_field { type: text } } } } }
+            name => !meta.record_field { type: text }
+          }
+        }
+      }
+      """
+  }
+}

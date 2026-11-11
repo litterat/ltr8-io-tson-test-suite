@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-open-records-application-as-a-sole-argument-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  description: """
+    An argument of an open record's application is a name or a parameter, whichever position it holds:
+    `wrap<box<text>>` is refused, and written `wrap<text_box>` over the declaration `text_box => box<text>`.
+    """
+  error: {
+    category: resolver
+  }
+}

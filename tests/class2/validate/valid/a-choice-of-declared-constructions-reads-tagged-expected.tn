@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-choice-of-declared-constructions-reads-tagged-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4 (inline types, proposed for Revision 40)"
+  description: """
+    `( texts | ints )` is not disjoint, both variants being bracket-class, so its value carries a tag, and the tag
+    names the declared variant.
+    """
+  valid: _
+}

@@ -4,7 +4,8 @@
   spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10"
   description: """
     An argument is a type, and a template is not one: `wrap<box>` binds `T` to a name that denotes no type until it
-    is applied, so it is a resolver error at `holder`. `wrap<box<text>>` is the application that closes.
+    is applied, so it is a resolver error at `holder`. The application is declared first, `text_box => box<text>`,
+    and `wrap<text_box>` is written.
     """
   error: {
     category: resolver

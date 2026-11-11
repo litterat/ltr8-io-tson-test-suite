@@ -12,10 +12,10 @@
   `outcome` is a **template** marked ABSTRACT, and `abstract` on a template is each application's `extension`
   ([TSON-SCHEMA] §5.10), so `outcome<text>` is an abstract record, declared as `outcome_of`. `won` composes
   `outcome<T>`, so `won<text>`, declared as `won_of`, IS-A the entry `outcome<text>` denotes and is its one
-  member; neither is IS-A a template, a template being no type. A document names each by its declaration:
-  this is the family where §7.2's "after alias flattening of both" is the difference between a tag that
-  selects and one that does not. `final` is refused on a template, and no vector states that here — it is a
-  schema-layer refusal.
+  member; neither is IS-A a template, a template being no type. A document names each by its declaration,
+  the one name an application has: a tag naming `won_of` selects the member, and one naming `outcome_of`
+  selects nothing. `final` is refused on a template, and no vector states that here — it is a schema-layer
+  refusal.
 
   `frame` pins with `= 0xFF` where the documents write `255`, which is the case a processor comparing
   tokens rather than values gets wrong while passing everything else here: §4.3 makes those one integer,

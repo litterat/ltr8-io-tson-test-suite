@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-declaration-selects-a-member-of-an-abstract-open-records-family.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-family.tn"
+!holder {
+  p: {
+    pet_type: cat
+    name:     Tom
+    indoor:   true
+  }
+  o: !won_of {
+    code:  drawn
+    prize: cup
+  }
+}

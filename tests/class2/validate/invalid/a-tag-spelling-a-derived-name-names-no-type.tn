@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-spelling-a-derived-name-names-no-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-inline-types.tn"
+!array_text_5d41402a [red green]

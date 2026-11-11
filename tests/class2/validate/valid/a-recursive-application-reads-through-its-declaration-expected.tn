@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-recursive-application-reads-through-its-declaration-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
+  description: """
+    `node_int => node<int32>` ties the nested application to itself, so each `next` is read against `node_int`, to
+    any depth, untagged.
+    """
+  valid: _
+}

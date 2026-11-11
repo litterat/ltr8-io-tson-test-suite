@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-application-at-a-refinement-source-nothing-declares.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  base  => { id: text }
+  box   => <T> base & { v: T }
+  fixed => box<text> ^ { v?: = a }
+}

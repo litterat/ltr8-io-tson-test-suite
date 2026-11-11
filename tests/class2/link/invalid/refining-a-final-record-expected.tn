@@ -2,7 +2,7 @@
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.2"
-  description: "Refinement mints an IS-A edge as composition does, so FINAL refuses it on the same terms. A processor checking only composition admits half of what the mark forbids."
+  description: "Refinement adds an IS-A edge as composition does, so FINAL refuses it on the same terms. A processor checking only composition admits half of what the mark forbids."
   error: {
     category: resolver
   }

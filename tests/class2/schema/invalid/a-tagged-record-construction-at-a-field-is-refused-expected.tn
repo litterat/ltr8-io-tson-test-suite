@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-tagged-record-construction-at-a-field-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40)"
+  description: """
+    A record is nominal and is introduced by a named declaration: a `!meta.record { … }` construction at a field is
+    refused, a `!` construction never being admitted at a field position. The one record in place is the one an
+    application of an open record closes to.
+    """
+  error: {
+    category: resolver
+  }
+}

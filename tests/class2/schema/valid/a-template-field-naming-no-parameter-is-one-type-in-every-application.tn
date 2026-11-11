@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-template-field-naming-no-parameter-is-one-type-in-every-application.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box     => <T> { v: T }
+  pet     => <V> { tag: box<text>  name: V }
+  cat     => pet<text>
+}

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-mutually-recursive-application-at-a-slot-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
+  description: """
+    Mutual recursion with no declaration closing it has nothing to tie to: `f: b<text>` closes in place, its `a<text>`
+    closes in place in turn, and that record's `b<text>` is the application already closing in place. `a_text` closes
+    `a<text>` only where it is the declaration being closed, never at a slot, so `holder` is a resolver error.
+    """
+  error: {
+    category: resolver
+  }
+}

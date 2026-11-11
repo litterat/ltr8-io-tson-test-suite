@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-mutually-recursive-application-at-a-slot-is-refused.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  a      => <T> { v: T  b: b<T> }
+  b      => <T> { a?: a<T> }
+  a_text => a<text>
+  holder => { f: b<text> }
+}

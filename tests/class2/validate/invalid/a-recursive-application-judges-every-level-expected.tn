@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-recursive-application-judges-every-level-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
+  description: """
+    Each level of `node_int` is `node_int`, so a value two levels down is read against `int32` as the first is:
+    `99999999999` is out of range at `/next/next/value`.
+    """
+  error: {
+    category: validation
+    path: "/next/next/value"
+  }
+}

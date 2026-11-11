@@ -1,10 +1,10 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-default-at-an-inline-reference-naming-nothing-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12"
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12 (inline types, proposed for Revision 40)"
   description: """
-    The reference written inline closes to its entry, and the default is judged against it as against `order_ref`:
-    `nope` reaches no value.
+    The default is read against the reference written in place and judged at link as against the declared
+    `order_ref`: `nope` reaches no value.
     """
   error: {
     category: resolver

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-map-keyed-by-a-reference-application-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40)"
+  description: """
+    A map's `key_type` holds a name, never a type written in place, so an application of a constructor at a key is
+    refused: `{meta.ref<method> => int32}` is written `{method_ref => int32}` over the declaration `method_ref =>
+    meta.ref<method>`.
+    """
+  error: {
+    category: resolver
+  }
+}

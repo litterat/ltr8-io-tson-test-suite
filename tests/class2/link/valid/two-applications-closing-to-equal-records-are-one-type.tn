@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/two-applications-closing-to-equal-records-are-one-type.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box   => <T> { v: T }
+  crate => <T> { v: T }
+  base  => { f: box<int32> }
+  sub   => base ^ { f: crate<int32> }
+}

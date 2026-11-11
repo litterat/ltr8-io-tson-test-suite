@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-declared-application-restated-as-the-application-in-place-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
+  description: """
+    `page_order` and `page<order>` written in place are two types of one shape, the first nominal and the second
+    structural, and an application at a slot is never looked up to a declaration: restating an inherited `f:
+    page_order` as `f: page<order>` is no narrowing, and is refused.
+    """
+  error: {
+    category: resolver
+  }
+}

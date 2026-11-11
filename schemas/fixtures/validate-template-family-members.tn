@@ -5,19 +5,10 @@
   A template is not a type, so a family whose members are applications is based on a record ([TSON-SCHEMA] §5.10).
   `boxed` is the abstract base, `box` composes it, and `bt` declares an application of `box`, which IS-A `boxed`
   through `box`'s written parent. A position typed `boxed` dispatches by tag over the declared members.
-
-  An application written at a use site of a template composing no declared type is a type read where it is written:
-  `k: plain<text>` is read against `plain<text>`. `shape` states a selector, and `abstract` and a selector on a
-  template are each application's, so `s: shape<circle>` is an abstract base whose members would be the declarations
-  composing `shape<circle>`, and here there are none.
   """
 !schema {
   boxed  => abstract { }
   box    => <T> boxed & { v: T }
   bt     => box<int32>
-  plain  => <T> { v: T }
-  holder => { any: boxed  k: plain<text> }
-  circle => { r: int32 }
-  shape  => <T> { kind: text =?  data: T }
-  plot   => { s: shape<circle> }
+  holder => { any: boxed }
 }

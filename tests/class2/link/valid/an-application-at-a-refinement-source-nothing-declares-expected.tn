@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-application-at-a-refinement-source-nothing-declares-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  description: """
+    Where no declaration names the application, a refinement of it is IS-A its open record's written parents alone:
+    `fixed` is IS-A `base`, and nothing is added for `box<text>`.
+    """
+  valid: {
+    binds: [fixed]
+    subtypes: [
+      { name: base  subtypes: [fixed] }
+    ]
+  }
+}

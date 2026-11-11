@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-construction-restated-as-an-equal-construction-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
+  description: """
+    Two equal forms written in place are one type, identity being structural: restating an inherited `tags: [text]`
+    as `[text]` restates the inherited type and is accepted.
+    """
+  valid: {
+    binds: [sub]
+    subtypes: [
+      { name: base  subtypes: [sub] }
+    ]
+  }
+}

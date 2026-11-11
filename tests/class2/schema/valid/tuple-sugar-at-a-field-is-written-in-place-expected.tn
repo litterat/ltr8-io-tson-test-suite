@@ -1,0 +1,21 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/tuple-sugar-at-a-field-is-written-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40)"
+  description: """
+    The tuple sugar `[text, int32]` at a field resolves in place to the tuple construction it denotes, one
+    `meta.tuple_element` per position, held in the wrapper; no entry is added.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        post => !meta.record { fields: {
+          pair => !meta.record_field { type: { of: !meta.tuple { elements: [
+            { element_type: text }
+            { element_type: int32 }
+          ] } } }
+        } }
+      }
+      """
+  }
+}

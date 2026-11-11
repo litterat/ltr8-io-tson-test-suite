@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tuple-written-in-place-with-the-wrong-arity-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §7.2 (inline types, proposed for Revision 40)"
+  description: """
+    A tuple has a fixed number of positions: `[text, int32]` written in place admits two values, and three is a
+    validation error at the field.
+    """
+  error: {
+    category: validation
+    path: "/pair"
+  }
+}

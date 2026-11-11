@@ -1,0 +1,29 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-declared-recursive-application-ties-to-its-declaration-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
+  description: """
+    A recursive open record closes through the declaration that applies it: in `node_text => node<text>` the nested
+    `node<text>` left by substituting `next` is the application the declaration is closing, so it names that
+    declaration, `next: node_text`, and nothing is expanded without end or added to the schema.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        node => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: {
+            value => !meta.record_field { type: T }
+            next  => !meta.record_field { type: node<T>  optional: true }
+          }
+        }
+
+        @meta.application:node<text>
+        node_text => !meta.record { fields: {
+          value => !meta.record_field { type: text }
+          next  => !meta.record_field { type: node_text  optional: true }
+        } }
+      }
+      """
+  }
+}

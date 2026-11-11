@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-over-a-declared-application-states-it-as-written.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box   => <T> { v: T }
+  pair  => <A, B> { a: A  b: B }
+  inner => box<text>
+  outer => pair<inner int32>
+}

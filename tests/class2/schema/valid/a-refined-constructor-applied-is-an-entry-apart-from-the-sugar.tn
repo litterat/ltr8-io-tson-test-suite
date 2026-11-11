@@ -1,9 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/valid/a-refined-constructor-applied-is-an-entry-apart-from-the-sugar.tn"
-!!import:"https://tson.io/test-suite/schemas/fixtures/nonempty-rows.tn"
-!!import:"https://tson.io/2026/40/m/core.tn"
-!schema {
-  post => {
-    a: rows<uuid>
-    b: [uuid; 1..]
-  }
-}

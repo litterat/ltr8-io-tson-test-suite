@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-reference-over-a-declared-construction-names-it.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order      => { id: text }
+  orders     => [order]
+  orders_ref => meta.ref<orders>
+}

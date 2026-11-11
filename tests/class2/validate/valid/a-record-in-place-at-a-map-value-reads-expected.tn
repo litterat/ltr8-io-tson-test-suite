@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-in-place-at-a-map-value-reads-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.2 (inline types, proposed for Revision 40)"
+  description: """
+    `byName?: {text => page<order>}` is a map in place whose value is a record in place, so each value is read against
+    the record untagged.
+    """
+  valid: _
+}

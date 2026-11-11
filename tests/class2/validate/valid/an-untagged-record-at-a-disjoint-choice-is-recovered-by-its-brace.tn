@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-untagged-record-at-a-disjoint-choice-is-recovered-by-its-brace.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-inline-types.tn"
+!holder { either: { id: A1 } }

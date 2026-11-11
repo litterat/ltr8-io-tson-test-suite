@@ -14,15 +14,15 @@
         }
 
         geo2 => !meta.schema {
-          address => !meta.record { fields: { lines => !meta.record_field { type: array_text_xxhash } } }
+          address => !meta.record { fields: {
+            lines => !meta.record_field { type: { of: !meta.array { element_type: text } } }
+          } }
         }
 
         both => !meta.record { fields: {
           a => !meta.record_field { type: geo.address }
           b => !meta.record_field { type: geo2.address }
         } }
-
-        @meta.synthetic array_text_xxhash => !meta.array { element_type: text }
       }
       """
   }

@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-untagged-record-at-a-disjoint-choice-is-recovered-by-its-brace-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4 (inline types, proposed for Revision 40)"
+  description: """
+    `( order | [text] | int32 )` is disjoint by form, so a value at it may omit the tag and is recovered by the
+    encoding's form resolution plus the delimiter: an untagged brace is the record variant `order`. A reader that
+    gives an untagged value to a scalar-class variant only refuses it.
+    """
+  valid: _
+}

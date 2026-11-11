@@ -1,10 +1,10 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-default-at-an-inline-reference-names-a-value-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12"
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12 (inline types, proposed for Revision 40)"
   description: """
-    The reference written inline at the field closes to its entry when the schema loads, and the default is judged
-    against it as against `order_ref`. `p` omits the field, so it holds the default.
+    The reference written in place at the field is a type with no name, and the default is read against it and
+    judged at link as against the declared `order_ref`. `p` omits the field, so it holds the default.
     """
   valid: {
     binds: [defaulted_pick p]

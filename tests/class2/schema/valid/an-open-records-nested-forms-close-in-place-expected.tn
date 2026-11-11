@@ -1,0 +1,33 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-open-records-nested-forms-close-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  description: """
+    Inside an open record a form over a parameter is the application it spells, held as written: `{text => [T]}` is
+    `meta.map<text meta.array<T>>` and `[T]` is `meta.array<T>`. Applying the record closes each in place: the
+    declared `text_index` holds a map construction whose `value_type` is the array construction, nested, and an
+    array construction beside it, each in the wrapper.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        index => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: {
+            by_key => !meta.record_field { type: meta.map<text meta.array<T>> }
+            all    => !meta.record_field { type: meta.array<T> }
+          }
+        }
+
+        @meta.application:index<text>
+        text_index => !meta.record { fields: {
+          by_key => !meta.record_field { type: { of: !meta.map {
+            key_type: text
+            value_type: { of: !meta.array { element_type: text } }
+          } } }
+          all => !meta.record_field { type: { of: !meta.array { element_type: text } } }
+        } }
+      }
+      """
+  }
+}

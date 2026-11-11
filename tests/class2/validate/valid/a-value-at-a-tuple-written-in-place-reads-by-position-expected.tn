@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-value-at-a-tuple-written-in-place-reads-by-position-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §7.2 (inline types, proposed for Revision 40)"
+  description: """
+    A value at a field typed by a tuple written in place is read position by position, `red` against `text` and `3`
+    against `int32`.
+    """
+  valid: _
+}

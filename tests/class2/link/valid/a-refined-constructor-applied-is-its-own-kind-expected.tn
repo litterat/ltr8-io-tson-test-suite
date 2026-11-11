@@ -1,19 +1,20 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-refined-constructor-applied-is-its-own-kind-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.3 (construction sugar, proposed for Revision 40), [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.2"
+  spec: "[TSON-SCHEMA] §5.3 (construction sugar and inline types, proposed for Revision 40), [TSON-SCHEMA] §4.2"
   description: """
     `nonempty_type` refines `meta.array`, pinning `min_items`, so it is a constructor, and construction sugar
-    applies it over its one remaining required field typed by a reference naming types: `nonempty_type<uuid>` is
-    `!nonempty_type { element_type: uuid }`. That is an instance of `nonempty_type`, its own kind, and a different
-    entry from `[uuid; 1..]`, which is `!meta.array { element_type: uuid  min_items: 1 }`: the two admit the same
-    data and neither is rewritten to the other. So the kind over `nonempty_type` admits the first and not the
-    second.
+    applies it over its one remaining required field typed by a type slot: `nonempty_type<uuid>` is
+    `!nonempty_type { element_type: uuid }`. Declared as `uuids`, that is an instance of `nonempty_type`, its own
+    kind, and a different entry from `plain`, which is `!meta.array { element_type: uuid  min_items: 1 }`: the two
+    admit the same data and neither is rewritten to the other. So the kind over `nonempty_type` has `uuids` as a
+    member and not `plain`. The same two forms written at `post`'s fields are constructions in place, which are
+    entries of nothing and so members of no kind.
     """
   valid: {
-    binds: [nonempty_type_uuid_xxhash array_uuid_1_xxhash]
+    binds: [uuids plain post]
     members: [
-      { name: nonempties  members: [nonempty_type_uuid_xxhash] }
+      { name: nonempties  members: [uuids] }
     ]
   }
 }

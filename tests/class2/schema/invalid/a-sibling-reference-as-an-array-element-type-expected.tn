@@ -1,12 +1,12 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-reference-as-an-array-element-type-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.3"
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40)"
   description: """
-    A sibling reference stands only at a record field's type. In sugar it parses wherever a reference does, written
-    with the whitespace its `!` needs, and desugaring refuses it anywhere else: `[ kind! ]` lifts to an array entry
-    outside `cell`, which has no sibling to read, so `kind!` is refused where it is written even though `cell`
-    declares `kind`.
+    A sibling reference stands only at a record field's type. In sugar it parses wherever a reference does, written with
+    the whitespace its `!` needs, and desugaring refuses it anywhere else: `[ kind! ]` resolves in place to an array
+    construction, and its slot, an array's `element_type`, is a `meta.type_expr`, which has no sibling form, so `kind!`
+    is refused where it is written even though `cell` declares `kind`.
     """
   error: {
     category: resolver

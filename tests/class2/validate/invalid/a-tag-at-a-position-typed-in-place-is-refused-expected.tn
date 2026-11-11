@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-at-a-position-typed-in-place-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.2 (inline types, proposed for Revision 40)"
+  description: """
+    A type written in place has no name and nothing is IS-A it, so a value at its position admits no tag:
+    `!text_list` names a declared array of the same shape, and is still a validation error at `tags`, the declared
+    type being no subtype of the one written in place.
+    """
+  error: {
+    category: validation
+    path: "/tags"
+  }
+}

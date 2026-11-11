@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-default-at-an-inline-reference-naming-a-value-of-another-type.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order          => { id: text }
+  customer       => { name: text }
+  c1             => !customer { name: Ada }
+  defaulted_pick => { which?: meta.ref<order> ~ c1 }
+}

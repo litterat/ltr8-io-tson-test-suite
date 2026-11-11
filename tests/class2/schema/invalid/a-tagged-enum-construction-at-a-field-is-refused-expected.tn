@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-tagged-enum-construction-at-a-field-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40)"
+  description: """
+    An enum construction is nominal and is introduced by a named declaration: `!enum [OPEN DONE]` at a field is
+    refused, a `!` construction never being admitted at a field position.
+    """
+  error: {
+    category: resolver
+  }
+}

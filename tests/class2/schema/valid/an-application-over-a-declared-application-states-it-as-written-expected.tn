@@ -1,0 +1,42 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-over-a-declared-application-states-it-as-written-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  description: """
+    An argument of an open record's application is a name, so an application of another open record is declared
+    before it is passed: `inner => box<text>`, then `pair<inner int32>`. Each declaration's `@meta.application`
+    states its application as written, and the substituted field names the declaration: `outer.a` is `inner`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        box => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: T } }
+        }
+
+        pair => !meta.record {
+          parameters: [
+            !meta.param { name: A }
+            !meta.param { name: B }
+          ]
+          fields: {
+            a => !meta.record_field { type: A }
+            b => !meta.record_field { type: B }
+          }
+        }
+
+        @meta.application:box<text>
+        inner => !meta.record { fields: { v => !meta.record_field { type: text } } }
+
+        @meta.application:pair<inner int32>
+        outer => !meta.record {
+          fields: {
+            a => !meta.record_field { type: inner }
+            b => !meta.record_field { type: int32 }
+          }
+        }
+      }
+      """
+  }
+}
