@@ -6,7 +6,8 @@
     An application's head and a reference's `of` are qualified names like any other: `geo.box<text>` substitutes into
     the open record `box` of `geo`, and `meta.ref<geo.base>` constructs `!meta.ref { of: geo.base }`. The declaration
     closing the application is its record wherever it is declared, and its `@meta.application` states the head by its
-    path; the construction carries none.
+    path; written at a field, `geo.box<int32>` closes in place to its record, with no name. The construction carries
+    no `@meta.application`.
     """
   valid: {
     resolved: """
@@ -24,6 +25,10 @@
         boxed => !meta.record {
           fields: { item => !meta.record_field { type: text } }
         }
+
+        held => !meta.record { fields: {
+          b => !meta.record_field { type: { of: !meta.record { fields: { item => !meta.record_field { type: int32 } } } } }
+        } }
 
         bases => !meta.ref { of: geo.base }
       }

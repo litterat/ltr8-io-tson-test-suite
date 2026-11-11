@@ -1,0 +1,31 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-nothing-declares-closes-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
+  description: """
+    An application of an open record written at a type slot closes in place: `a: box<int32>` holds the substituted
+    record in the wrapper, `{ of: !meta.record { … } }`, with no name, no chain and no `@meta.application`, and
+    nothing is added to the schema for it. `box<int32>` and `crate<int32>`, over two open records with one field
+    list, close to equal records, one type by §8.2's structural identity.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        box => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: T } }
+        }
+
+        crate => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: T } }
+        }
+
+        holder => !meta.record { fields: {
+          a => !meta.record_field { type: { of: !meta.record { fields: { v => !meta.record_field { type: int32 } } } } }
+          b => !meta.record_field { type: { of: !meta.record { fields: { v => !meta.record_field { type: int32 } } } } }
+        } }
+      }
+      """
+  }
+}

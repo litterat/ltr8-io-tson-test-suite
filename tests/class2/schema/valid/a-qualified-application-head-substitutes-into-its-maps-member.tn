@@ -7,5 +7,6 @@
     base => { id: text }
   }
   boxed => geo.box<text>
+  held  => { b: geo.box<int32> }
   bases => meta.ref<geo.base>
 }
