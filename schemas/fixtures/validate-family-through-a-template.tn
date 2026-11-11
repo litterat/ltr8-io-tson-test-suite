@@ -10,9 +10,11 @@
   and each member composes an application of `pet_of` and pins `kind`. `dog` reaches `pet` through `pet_of`'s written
   parent, never through `pet_of` itself, so a position typed `pet` dispatches over `dog` and `cat` by the selector.
 
-  `tpet` is an abstract template, and `abstract` on a template is each application's `extension`: `tpet<text>` is an
-  abstract record with the selector `kind`, an abstract base in its own right. `tdog` and `tcat` compose that application
-  and pin `kind`, so each IS-A the entry `tpet<text>` denotes, and a position typed `tpet<text>` dispatches over them.
+  `tpet` is an abstract template, and `abstract` on a template is each application's `extension`: `tpet<text>`,
+  declared as `tpet_text`, is an abstract record with the selector `kind`, an abstract base in its own right. `tdog`
+  and `tcat` compose that application and pin `kind`, so each IS-A `tpet_text`, the declaration the applied parent
+  denotes, and a position typed `tpet_text` dispatches over them. An application is never looked up at a slot, so the
+  position names the declaration.
   """
 !schema {
   dog_type => { breed: text }
@@ -23,12 +25,13 @@
   dog    => pet_of<dog_type> & { kind?: = "dog" }
   cat    => pet_of<cat_type> & { kind?: = "cat" }
 
-  tpet => abstract <B> { kind: text =?  name: text  extra?: B }
+  tpet      => abstract <B> { kind: text =?  name: text  extra?: B }
+  tpet_text => tpet<text>
   tdog => tpet<text> & { kind?: = "dog"  breed: text }
   tcat => tpet<text> & { kind?: = "cat"  indoor: boolean }
 
   holder => {
     p: pet
-    t?: tpet<text>?
+    t?: tpet_text?
   }
 }

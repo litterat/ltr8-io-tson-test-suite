@@ -2,7 +2,7 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10"
-  description: "`tpet<text>` is abstract, its template being marked so, and dispatches on `kind`. A value at `t` that writes no `kind` selects no member, and is refused at the selector. A processor that closes an abstract template's application to an ordinary record reads the value structurally and refuses it for a different reason, or not at all."
+  description: "`tpet<text>`, declared as `tpet_text`, is abstract, its template being marked so, and dispatches on `kind`. A value at `t` that writes no `kind` selects no member, and is refused at the selector. A processor that closes an abstract template's application to an ordinary record reads the value structurally and refuses it for a different reason, or not at all."
   error: {
     category: validation
     path: "/t/kind"

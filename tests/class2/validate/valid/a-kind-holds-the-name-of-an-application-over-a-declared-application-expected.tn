@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-kind-holds-the-name-of-an-application-over-a-declared-application-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  description: """
+    An application whose argument names another declared application closes in the schema, and data names the
+    result by its declaration: `paired => pair<boxed int32>`, over `boxed => box<text>`, is a record type, so
+    `paired` is a member of `meta.type_ref`.
+    """
+  valid: _
+}

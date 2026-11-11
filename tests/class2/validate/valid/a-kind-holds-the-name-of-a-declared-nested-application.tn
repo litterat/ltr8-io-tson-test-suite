@@ -1,3 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/a-kind-holds-the-name-of-a-declared-nested-application.tn"
-!!import:"https://tson.io/test-suite/schemas/fixtures/validate-kind-applications.tn"
-!holder { t: paired }

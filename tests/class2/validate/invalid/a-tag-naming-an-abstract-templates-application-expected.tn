@@ -1,8 +1,13 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-naming-an-abstract-templates-application-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.2"
-  description: "§8.1 admits a tag restating a position's own type, but an abstract base has no direct instances, so naming it selects nothing. Here the base is an abstract template's application, outcome<text>, which is a minted entry, so the refusal has to reach its alias outcome_of: a processor comparing the base's own name alone lets this document through."
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.2"
+  description: """
+    §7.2 admits a tag restating a position's own type, but an abstract base has no direct instances, so naming it
+    selects nothing. Here the base is an abstract open record's application declared as `outcome_of`, abstract
+    because `outcome` is: the tag `!outcome_of` names the base itself and is refused. A processor that judges
+    abstractness by the open record's name alone, not by the declaration closing it, lets this document through.
+    """
   error: {
     category: validation
     path: "/o"

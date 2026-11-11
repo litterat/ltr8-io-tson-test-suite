@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/an-alias-selects-a-member-of-an-abstract-template-family.tn"
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-declaration-selects-a-member-of-an-abstract-open-records-family.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/validate-family.tn"
 !holder {
   p: {

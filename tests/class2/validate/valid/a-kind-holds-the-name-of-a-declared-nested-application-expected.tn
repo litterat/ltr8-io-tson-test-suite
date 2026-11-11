@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/a-kind-holds-the-name-of-a-declared-nested-application-expected.tn"
-!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
-{
-  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.10"
-  description: "An application whose argument is itself an application closes in the schema, level by level, and data names the result by its declaration: `paired => pair<box<text> int32>` is a record type, so `paired` is a member of `meta.type_ref`."
-  valid: _
-}

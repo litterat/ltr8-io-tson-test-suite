@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-declaration-is-the-only-name-an-open-records-application-has-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.2, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  description: """
+    `ok_of => ok<text>` is the closed record under its author's name, the one name the application has: an
+    application is never looked up, so a document tags the member with its declaration. `ok_of` IS-A `result_of`
+    through the applied parent's edge, so the tag selects a subtype at a position typed `result_of`.
+    """
+  valid: _
+}

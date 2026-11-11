@@ -1,4 +1,4 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/an-alias-is-the-only-name-a-template-instantiation-has.tn"
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-declaration-is-the-only-name-an-open-records-application-has.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/validate-alias.tn"
 !holder {
   b: {
