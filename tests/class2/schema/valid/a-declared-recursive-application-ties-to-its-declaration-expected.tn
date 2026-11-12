@@ -14,11 +14,11 @@
           parameters: [ !meta.param { name: T } ]
           fields: {
             value => !meta.record_field { type: T }
-            next  => !meta.record_field { type: node<T>  optional: true }
+            next  => !meta.record_field { type: { of: !meta.apply { head: node  arguments: [T] } }  optional: true }
           }
         }
 
-        @meta.application:node<text>
+        @meta.application:{ head: node  arguments: [text] }
         node_text => !meta.record { fields: {
           value => !meta.record_field { type: text }
           next  => !meta.record_field { type: node_text  optional: true }

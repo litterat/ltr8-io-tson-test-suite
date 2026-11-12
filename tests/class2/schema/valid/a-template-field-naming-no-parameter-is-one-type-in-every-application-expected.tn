@@ -24,7 +24,7 @@
           }
         }
 
-        @meta.application:pet<text>
+        @meta.application:{ head: pet  arguments: [text] }
         cat => !meta.record {
           fields: {
             tag  => !meta.record_field { type: { of: !meta.record { fields: { v => !meta.record_field { type: text } } } } }

@@ -4,6 +4,6 @@
 !schema {
   box => <T> { v: T }
 
-  @meta.application:box<text>
+  @meta.application:{ head: box  arguments: [text] }
   bx => { v: text }
 }

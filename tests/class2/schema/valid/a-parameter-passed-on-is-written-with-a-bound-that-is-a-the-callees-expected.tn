@@ -18,12 +18,12 @@
         }
 
         rebox => !meta.record {
-          fields: { b => !meta.record_field { type: boxed<T> } }
+          fields: { b => !meta.record_field { type: { of: !meta.apply { head: boxed  arguments: [T] } } } }
           parameters: [ !meta.param { name: T  bound: text } ]
         }
 
         narrow => !meta.record {
-          fields: { b => !meta.record_field { type: boxed<T> } }
+          fields: { b => !meta.record_field { type: { of: !meta.apply { head: boxed  arguments: [T] } } } }
           parameters: [ !meta.param { name: T  bound: non_empty_text } ]
         }
       }

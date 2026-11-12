@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/meta-apply-is-final-and-composes-onto-nothing-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2 (an application is a construction, proposed for Revision 40)"
+  description: """
+    `meta.apply` is final: nothing composes onto it, so no constructor is built on the application.
+    """
+  error: {
+    category: resolver
+  }
+}

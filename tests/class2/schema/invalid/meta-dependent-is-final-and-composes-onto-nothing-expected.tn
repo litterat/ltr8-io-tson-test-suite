@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/meta-dependent-is-final-and-composes-onto-nothing-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2 (an application is a construction, proposed for Revision 40)"
+  description: """
+    `meta.dependent` is final: nothing composes onto it, so the position rule is the one constructor's.
+    """
+  error: {
+    category: resolver
+  }
+}

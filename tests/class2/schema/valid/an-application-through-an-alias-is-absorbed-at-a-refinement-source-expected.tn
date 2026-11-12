@@ -18,7 +18,7 @@
 
         box_of => !meta.alias { target: box }
 
-        @meta.application:box<text>
+        @meta.application:{ head: box  arguments: [text] }
         text_box => !meta.record { chain: { subtypes: [fixed] }  fields: {
           v => !meta.record_field { type: text }
         } }

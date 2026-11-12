@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-argument-list-in-a-schema-values-payload-is-refused.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box => <T> { v: T }
+  r   => !meta.record { fields: { f => !meta.record_field { type: box<text> } } }
+}

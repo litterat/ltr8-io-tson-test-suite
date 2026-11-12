@@ -19,7 +19,7 @@
           parameters: [ !meta.param { name: T } ]
         }
 
-        @meta.application:pair<text>
+        @meta.application:{ head: pair  arguments: [text] }
         p => !meta.record {
           fields: {
             kind => !meta.record_field { type: meta.type_ref }

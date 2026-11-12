@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-open-record-named-at-a-reference-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §4.2 (an application is a construction, proposed for Revision 40)"
+  description: """
+    An open record is named only as an application's head: a reference's `of` naming one bare is refused, as a field
+    typed by one bare is.
+    """
+  error: {
+    category: resolver
+  }
+}

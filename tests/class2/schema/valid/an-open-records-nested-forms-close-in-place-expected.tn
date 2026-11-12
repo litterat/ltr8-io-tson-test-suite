@@ -22,7 +22,7 @@
           }
         }
 
-        @meta.application:index<text>
+        @meta.application:{ head: index  arguments: [text] }
         text_index => !meta.record { fields: {
           by_key => !meta.record_field { type: { of: !meta.map {
             key_type: text

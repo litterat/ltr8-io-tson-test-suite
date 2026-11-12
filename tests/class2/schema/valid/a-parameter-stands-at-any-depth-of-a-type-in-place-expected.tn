@@ -17,7 +17,7 @@
           } } } } } } }
         }
 
-        @meta.application:deep<text>
+        @meta.application:{ head: deep  arguments: [text] }
         text_deep => !meta.record { fields: {
           d => !meta.record_field { type: { of: !meta.array { element_type: { of: !meta.record { fields: {
             at   => !meta.record_field { type: text }

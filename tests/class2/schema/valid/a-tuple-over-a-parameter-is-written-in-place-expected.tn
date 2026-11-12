@@ -17,7 +17,7 @@
           ] } } } }
         }
 
-        @meta.application:slot<int32>
+        @meta.application:{ head: slot  arguments: [int32] }
         int_slot => !meta.record { fields: {
           at => !meta.record_field { type: { of: !meta.tuple { elements: [
             { element_type: int32 }

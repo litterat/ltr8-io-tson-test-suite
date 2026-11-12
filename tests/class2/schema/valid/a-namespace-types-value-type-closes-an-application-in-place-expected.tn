@@ -3,8 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
   description: """
-    A namespace type's `value_type` is a type slot like a map type's, so an application standing there closes in
-    place: `box<text>` is the record `{ v: text }` held in the wrapper at `value_type`, with no name and no entry.
+    A namespace type's `value_type` is a type slot like a map type's, so an application written there in place,
+    `{ of: !meta.apply { head: box  arguments: [text] } }`, closes where it stands: it is the record `{ v: text }`
+    held in the wrapper at `value_type`, with no name and no entry, as `box<text>` written in source is.
     """
   valid: {
     resolved: """

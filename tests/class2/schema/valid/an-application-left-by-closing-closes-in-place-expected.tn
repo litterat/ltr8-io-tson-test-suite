@@ -19,10 +19,10 @@
 
         page => !meta.record {
           parameters: [ !meta.param { name: T } ]
-          fields: { cursor => !meta.record_field { type: box<T> } }
+          fields: { cursor => !meta.record_field { type: { of: !meta.apply { head: box  arguments: [T] } } } }
         }
 
-        @meta.application:page<order>
+        @meta.application:{ head: page  arguments: [order] }
         order_page => !meta.record { fields: {
           cursor => !meta.record_field { type: { of: !meta.record { fields: { v => !meta.record_field { type: order } } } } }
         } }

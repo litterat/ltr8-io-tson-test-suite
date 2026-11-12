@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-argument-list-in-a-schema-values-payload-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.6 (an application is a construction, proposed for Revision 40)"
+  description: """
+    A reference is a name, in a schema value as in data: `type: box<text>` in a construction's payload is a value carrying
+    an argument list, and is refused. The application is written in place, `{ of: !meta.apply { head: box  arguments:
+    [text] } }`, or as `box<text>` at a type slot of schema source.
+    """
+  error: {
+    category: resolver
+  }
+}

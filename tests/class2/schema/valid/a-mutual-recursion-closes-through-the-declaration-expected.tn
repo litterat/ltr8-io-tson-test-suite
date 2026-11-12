@@ -14,16 +14,16 @@
           parameters: [ !meta.param { name: T } ]
           fields: {
             v => !meta.record_field { type: T }
-            b => !meta.record_field { type: b<T> }
+            b => !meta.record_field { type: { of: !meta.apply { head: b  arguments: [T] } } }
           }
         }
 
         b => !meta.record {
           parameters: [ !meta.param { name: T } ]
-          fields: { a => !meta.record_field { type: a<T>  optional: true } }
+          fields: { a => !meta.record_field { type: { of: !meta.apply { head: a  arguments: [T] } }  optional: true } }
         }
 
-        @meta.application:a<text>
+        @meta.application:{ head: a  arguments: [text] }
         a_text => !meta.record { fields: {
           v => !meta.record_field { type: text }
           b => !meta.record_field { type: { of: !meta.record { fields: {

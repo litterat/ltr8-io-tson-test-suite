@@ -19,7 +19,7 @@
           fields: { body => !meta.record_field { type: { of: !meta.choice { variants: [T problem]  disjoint: false } } } }
         }
 
-        @meta.application:reply<text>
+        @meta.application:{ head: reply  arguments: [text] }
         text_reply => !meta.record { fields: {
           body => !meta.record_field { type: { of: !meta.choice { variants: [text problem]  disjoint: true } } }
         } }

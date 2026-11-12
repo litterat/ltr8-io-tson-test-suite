@@ -5,7 +5,7 @@
   description: """
     An open record's field is a `meta.record_field` whatever its type: a parameter standing for the whole type is
     the field's `type`, written as its name, and one standing as an argument of an application stays in that
-    application, `box<T>`. Either is recognised because its name resolves into the record's `parameters`, looked up
+    application, `box<T>`, written in place as `{ of: !meta.apply { head: box  arguments: [T] } }`. Either is recognised because its name resolves into the record's `parameters`, looked up
     before the namespace; no label says which a `type` is. A literal on a closed type stays a `value`.
     """
   valid: {
@@ -19,7 +19,7 @@
         slot => !meta.record {
           fields: {
             a => !meta.record_field { type: T }
-            b => !meta.record_field { type: box<T> }
+            b => !meta.record_field { type: { of: !meta.apply { head: box  arguments: [T] } } }
             c => !meta.record_field { type: T  optional: true }
             e => !meta.record_field { type: text  optional: true  role: DEFAULT  value: "x" }
           }
