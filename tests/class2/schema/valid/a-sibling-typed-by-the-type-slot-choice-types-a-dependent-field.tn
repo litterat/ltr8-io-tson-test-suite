@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-sibling-typed-by-the-type-slot-choice-types-a-dependent-field.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  slot => { type: meta.type_expr  value?: type! }
+}

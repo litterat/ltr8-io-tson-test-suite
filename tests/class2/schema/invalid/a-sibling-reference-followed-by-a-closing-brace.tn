@@ -1,6 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-reference-followed-by-a-closing-brace.tn"
-!!import:"https://tson.io/2026/40/m/meta.tn"
-!!import:"https://tson.io/2026/40/m/core.tn"
-!schema {
-  cell => { kind: meta.type_ref  v?: kind!}
-}

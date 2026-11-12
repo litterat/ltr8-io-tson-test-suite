@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-reference-as-a-template-argument.tn"
-!!import:"https://tson.io/2026/40/m/meta.tn"
-!!import:"https://tson.io/2026/40/m/core.tn"
-!schema {
-  box  => <T> { item: T }
-  cell => { kind: meta.type_ref  v?: box< kind! > }
-}

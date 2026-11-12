@@ -12,17 +12,17 @@
       !schema {
         cell => !meta.record { chain: { subtypes: [int_cell text_cell] }  fields: {
           kind => !meta.record_field { type: meta.type_ref }
-          v    => !meta.record_field { type: kind!  optional: true }
+          v    => !meta.record_field { type: { of: !meta.dependent { on: kind } }  optional: true }
         }  extension: ABSTRACT  discriminators: [kind] }
 
         int_cell => !meta.record { chain: { supertypes: [cell] }  fields: {
           kind => !meta.record_field { type: meta.type_ref  optional: true  role: FIXED  value: int32 }
-          v    => !meta.record_field { type: kind!  optional: true }
+          v    => !meta.record_field { type: { of: !meta.dependent { on: kind } }  optional: true }
         } }
 
         text_cell => !meta.record { chain: { supertypes: [cell] }  fields: {
           kind => !meta.record_field { type: meta.type_ref  optional: true  role: FIXED  value: text }
-          v    => !meta.record_field { type: kind!  optional: true }
+          v    => !meta.record_field { type: { of: !meta.dependent { on: kind } }  optional: true }
         } }
       }
       """

@@ -3,11 +3,10 @@
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.1"
   description: """
-    A reference's resolved form is its authored facets alone: `of`, and `allow_sibling` where it is withdrawn,
-    left out here at its default. The names it admits -- here the entries whose value is of `uuid_type`, the two
-    ids and not `count` -- are the linker's judgement over the closure of the schema that links it, derived and
-    never written, so nothing beside the facets is a fact of the body. A reference is a set of names and carries
-    no `disjoint`: that is a sum's fact.
+    A reference's resolved form is its authored facets alone, here `of`. The names it admits -- the entries whose
+    value is of `uuid_type`, the two ids and not `count` -- are the linker's judgement over the closure of the
+    schema that links it, derived and never written, so nothing beside the facets is a fact of the body. A reference
+    is a set of names and carries no `disjoint`: that is a sum's fact.
     """
   valid: {
     resolved: """

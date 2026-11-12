@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-dependent-type-followed-by-an-adjacent-token-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §12.1, [TSON-SCHEMA] §12.3"
+  description: """
+    A dependent type's `!` is followed by whitespace, which is what keeps it apart from a tag's `!`, itself adjacent to
+    the token after it: `a!b` could be read either way, as a dependent type on `a` or a tag on `b`, so it does not
+    parse.
+    """
+  error: {
+    category: resolver
+  }
+}

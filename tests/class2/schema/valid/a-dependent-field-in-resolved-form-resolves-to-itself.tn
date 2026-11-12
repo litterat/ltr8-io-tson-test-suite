@@ -4,6 +4,6 @@
 !schema {
   cell => !meta.record { fields: {
     kind => !meta.record_field { type: meta.type_ref }
-    v    => !meta.record_field { type: kind!  optional: true }
+    v    => !meta.record_field { type: { of: !meta.dependent { on: kind } }  optional: true }
   } }
 }

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-default-on-a-dependent-field-in-explicit-form-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: """
+    A dependent field carries no default, and the explicit form, which can state one, is refused for stating it: its
+    type is not fixed at its declaration, so neither is the type `value: 5` would be read against.
+    """
+  error: {
+    category: resolver
+  }
+}

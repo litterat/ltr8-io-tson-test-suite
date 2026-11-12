@@ -3,7 +3,7 @@
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.1"
   description: """
-    `meta.ref` is the kernel's refined constructor `meta.reference_type ^ { allow_sibling?: = false }`, so
+    `meta.ref` is the kernel's empty refinement of `meta.reference_type`, `meta.reference_type ^ {}`, so
     `meta.ref<net.uuid_type>` is construction sugar for `!meta.ref { of: net.uuid_type }`, and a declaration whose
     body is the application is that construction under its author's name. A construction substitutes nothing, so it
     carries no `@meta.application`: its value states its constructor and its arguments. The resolved form of either
@@ -18,7 +18,7 @@
 
         ids => !meta.ref { of: net.uuid_type }
 
-        names => !meta.reference_type { of: unicode.identifier_type  allow_sibling: false }
+        names => !meta.reference_type { of: unicode.identifier_type }
       }
       """
   }
