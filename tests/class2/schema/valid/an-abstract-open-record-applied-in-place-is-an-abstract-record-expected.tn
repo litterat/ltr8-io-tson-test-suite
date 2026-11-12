@@ -3,9 +3,10 @@
 {
   spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
   description: """
-    `abstract` and a selector on an open record are each application's, so `s: shape<circle>` closes in place to an
+    `abstract` and a selector on an open record are each application's, so `s?: shape<circle>` closes in place to an
     abstract record dispatching on `kind`. A member reaches a family only through a declared application, so nothing
-    is a member of the record in place: it carries no chain and no `subtypes`.
+    is a member of the record in place: it carries no chain and no `subtypes`, and it is empty, so `s` is optional --
+    required, it would leave `plot` unsatisfiable.
     """
   valid: {
     resolved: """
@@ -23,7 +24,7 @@
         }
 
         plot => !meta.record { fields: {
-          s => !meta.record_field { type: { of: !meta.record {
+          s => !meta.record_field { optional: true  type: { of: !meta.record {
             fields: {
               kind => !meta.record_field { type: text }
               data => !meta.record_field { type: circle }

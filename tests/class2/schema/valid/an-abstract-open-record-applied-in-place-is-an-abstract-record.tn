@@ -4,5 +4,5 @@
 !schema {
   circle => { r: int32 }
   shape  => <T> { kind: text =?  data: T }
-  plot   => { s: shape<circle> }
+  plot   => { s?: shape<circle> }
 }

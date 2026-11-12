@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-optional-field-typed-by-an-abstract-record-in-place-may-be-missing-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.10.1"
+  description: "`at` is typed by an abstract record written in place, an empty type, and is optional, so a document leaving it out is valid. A processor that refuses the schema for the abstract record in place refuses this document too."
+  valid: _
+}
