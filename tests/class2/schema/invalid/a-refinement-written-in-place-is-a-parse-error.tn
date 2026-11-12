@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-written-in-place-is-a-parse-error.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  point => { x: int32  y: int32 }
+  order => { at: point ^ { x?: = 0 } }
+}

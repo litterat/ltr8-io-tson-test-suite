@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-record-body-at-a-tuple-element-is-a-record-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.2 (a record written in place, proposed for Revision 40)"
+  description: """
+    A record body at a tuple's position is written in place, the position's `element_type` holding the record.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        pair => !meta.tuple { elements: [
+          !meta.tuple_element { element_type: { of: !meta.record { fields: { a => !meta.record_field { type: int32 } } } } }
+          !meta.tuple_element { element_type: text }
+        ] }
+      }
+      """
+  }
+}

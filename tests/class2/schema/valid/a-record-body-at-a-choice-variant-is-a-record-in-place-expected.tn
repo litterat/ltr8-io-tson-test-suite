@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-record-body-at-a-choice-variant-is-a-record-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.4 (a record written in place, proposed for Revision 40)"
+  description: """
+    A record body may be a choice's variant: beside `text` the choice is disjoint, a string and a brace never being one
+    class, so the variant in place needs no name a tag could give.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        by => !meta.choice {
+          variants: [text { of: !meta.record { fields: {
+            name  => !meta.record_field { type: text }
+            email => !meta.record_field { type: text }
+          } } }]
+          disjoint: true
+        }
+      }
+      """
+  }
+}

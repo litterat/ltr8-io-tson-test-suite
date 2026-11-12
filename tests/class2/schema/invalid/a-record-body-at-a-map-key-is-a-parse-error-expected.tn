@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-body-at-a-map-key-is-a-parse-error-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §12.1 (a record written in place, proposed for Revision 40)"
+  description: """
+    A map's key is a name, so a record body there does not parse: a brace after the map's opening brace opens neither a
+    key nor a record field.
+    """
+  error: {
+    category: resolver
+  }
+}

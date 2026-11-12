@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-written-in-place-reads-at-each-slot-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §7.2 (a record written in place, proposed for Revision 40)"
+  description: """
+    A value at a record written in place is read untagged against it, at a field, an array's element, a map's value
+    and a choice's variant.
+    """
+  valid: _
+}

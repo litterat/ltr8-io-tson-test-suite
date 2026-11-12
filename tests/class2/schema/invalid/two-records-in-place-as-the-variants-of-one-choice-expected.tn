@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/two-records-in-place-as-the-variants-of-one-choice-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.4 (a record written in place, proposed for Revision 40)"
+  description: """
+    Two records are one class, so the choice is not disjoint and a value selects its variant by a tag, which names a
+    variant by its name; a record written in place has none. Declare each and name it.
+    """
+  error: {
+    category: resolver
+  }
+}

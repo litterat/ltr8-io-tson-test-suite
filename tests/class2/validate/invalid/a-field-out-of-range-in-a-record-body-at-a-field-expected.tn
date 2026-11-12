@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-field-out-of-range-in-a-record-body-at-a-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §7.2 (a record written in place, proposed for Revision 40)"
+  description: """
+    A field of a record written in place is read against its type: `x` is `int32`, so `4294967296` is a validation
+    error at `/at/x`.
+    """
+  error: {
+    category: validation
+    path: "/at/x"
+  }
+}

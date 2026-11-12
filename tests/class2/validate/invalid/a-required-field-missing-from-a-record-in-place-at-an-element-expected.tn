@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-required-field-missing-from-a-record-in-place-at-an-element-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §7.2 (a record written in place, proposed for Revision 40)"
+  description: """
+    Each element of `lines` is read against the record in place: the second omits the required `qty`.
+    """
+  error: {
+    category: validation
+    path: "/lines/1/qty"
+  }
+}

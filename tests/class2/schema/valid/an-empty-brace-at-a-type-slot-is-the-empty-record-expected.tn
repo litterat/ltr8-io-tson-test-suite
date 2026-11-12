@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-empty-brace-at-a-type-slot-is-the-empty-record-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.2 (a record written in place, proposed for Revision 40)"
+  description: """
+    `{}` at a type slot is the empty record, as at a declaration's body: the brace dispatch is one rule at both.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        order => !meta.record { fields: {
+          meta => !meta.record_field { type: { of: !meta.record { fields: {} } }  optional: true }
+        } }
+      }
+      """
+  }
+}

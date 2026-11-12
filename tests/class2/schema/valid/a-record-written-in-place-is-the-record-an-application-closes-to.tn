@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-record-written-in-place-is-the-record-an-application-closes-to.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  xy    => <T> { x: T  y: T }
+  order => { at: { x: int32  y: int32 }  closed: xy<int32> }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-required-field-typed-by-a-record-in-place-with-a-selector-is-unsatisfiable-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10.1 (a record written in place, proposed for Revision 40)"
+  description: """
+    A selector makes the record in place abstract, and nothing can be its member, so it is empty: a required field typed
+    by it leaves `order` with no value, a resolver error at `order`.
+    """
+  error: {
+    category: resolver
+  }
+}

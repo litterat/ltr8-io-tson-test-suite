@@ -1,0 +1,21 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-record-body-at-a-field-is-a-record-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.2 (a record written in place, proposed for Revision 40)"
+  description: """
+    A record body at a field's type is a record written in place: `at` holds `{ of: !meta.record { … } }`, the record
+    with no name, its fields' marks as a declared record's are, and the schema holds no entry for it.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        order => !meta.record { fields: {
+          at => !meta.record_field { type: { of: !meta.record { fields: {
+            x => !meta.record_field { type: int32 }
+            y => !meta.record_field { type: int32  optional: true }
+          } } } }
+        } }
+      }
+      """
+  }
+}

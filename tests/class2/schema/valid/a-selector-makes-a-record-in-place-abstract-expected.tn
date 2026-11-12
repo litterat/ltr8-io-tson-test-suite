@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-selector-makes-a-record-in-place-abstract-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10.1 (a record written in place, proposed for Revision 40)"
+  description: """
+    `=?` implies ABSTRACT, in place as at a declaration, and an abstract record written in place is empty: nothing can
+    name it as a parent. Optional, `at` loads and can only be missing.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        order => !meta.record { fields: {
+          at => !meta.record_field { type: { of: !meta.record {
+            fields: { kind => !meta.record_field { type: text }  x => !meta.record_field { type: int32 } }
+            extension: ABSTRACT
+            discriminators: [kind]
+          } }  optional: true }
+        } }
+      }
+      """
+  }
+}

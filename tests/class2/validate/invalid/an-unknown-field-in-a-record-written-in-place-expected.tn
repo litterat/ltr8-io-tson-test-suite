@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-unknown-field-in-a-record-written-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §7.2 (a record written in place, proposed for Revision 40)"
+  description: """
+    A record written in place is closed under its type as any record is: `z` is no field of `{ x: int32  y: int32 }`.
+    """
+  error: {
+    category: validation
+    path: "/at/z"
+  }
+}
