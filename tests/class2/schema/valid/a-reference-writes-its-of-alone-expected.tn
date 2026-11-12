@@ -17,7 +17,7 @@
 
         count => !numeric.integer_type {}
 
-        any_id => !meta.reference_type { of: net.uuid_type }
+        any_id => !meta.ref { of: net.uuid_type }
       }
       """
   }

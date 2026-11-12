@@ -3,5 +3,5 @@
 !!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   box => <T> { v: T }
-  r   => !meta.reference_type { of: box<nope> }
+  r   => !meta.ref { of: box<nope> }
 }
