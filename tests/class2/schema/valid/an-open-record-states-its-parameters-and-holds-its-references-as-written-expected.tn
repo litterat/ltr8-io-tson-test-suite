@@ -5,8 +5,8 @@
   description: """
     A template is an open record: a `!meta.record` carrying `parameters`, read against `record`'s own vocabulary as any
     record is. A parameter is a reference value, written where it stands as its name: whole at a field's `type`, as an
-    argument of an application there (`box<T>`), at a slot of a type written in place there (`[T]`, the array with `T`
-    at its element), and in an applied parent (`chain.parents`). A field type naming no parameter, `int32`, is closed
+    argument of an application there (`box<T>`, the construction `meta.apply` written in place), at a slot of a type
+    written in place there (`[T]`, the array with `T` at its element), and in an applied parent (`chain.parents`). A field type naming no parameter, `int32`, is closed
     in the open record.
     """
   valid: {
@@ -18,12 +18,12 @@
         }
 
         page => !meta.record {
-          chain: { parents: [box<T>] }
+          chain: { parents: [{ of: !meta.apply { head: box  arguments: [T] } }] }
           parameters: [ !meta.param { name: T } ]
           fields: {
             v     => !meta.record_field { type: T }
             items => !meta.record_field { type: { of: !meta.array { element_type: T } } }
-            first => !meta.record_field { type: box<T> }
+            first => !meta.record_field { type: { of: !meta.apply { head: box  arguments: [T] } } }
             total => !meta.record_field { type: int32 }
           }
         }

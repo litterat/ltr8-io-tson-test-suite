@@ -1,0 +1,34 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-apply-nested-in-a-container-in-place-stays-until-applied-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3 (an application is a construction, proposed for Revision 40)"
+  description: """
+    Inside an open record an application over a parameter is written in place, at any depth of a type written there:
+    `[box<T>]` is the array whose element is `{ of: !meta.apply { head: box  arguments: [T] } }`. Applying the record
+    substitutes `text` and closes the application where it stands, to the record in place.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        box => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: T } }
+        }
+
+        rows => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { rows => !meta.record_field { type: { of: !meta.array {
+            element_type: { of: !meta.apply { head: box  arguments: [T] } }
+          } } } }
+        }
+
+        @meta.application:{ head: rows  arguments: [text] }
+        text_rows => !meta.record { fields: {
+          rows => !meta.record_field { type: { of: !meta.array {
+            element_type: { of: !meta.record { fields: { v => !meta.record_field { type: text } } } }
+          } } }
+        } }
+      }
+      """
+  }
+}

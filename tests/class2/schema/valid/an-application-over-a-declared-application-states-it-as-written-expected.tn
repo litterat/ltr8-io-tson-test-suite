@@ -26,10 +26,10 @@
           }
         }
 
-        @meta.application:box<text>
+        @meta.application:{ head: box  arguments: [text] }
         inner => !meta.record { fields: { v => !meta.record_field { type: text } } }
 
-        @meta.application:pair<inner int32>
+        @meta.application:{ head: pair  arguments: [inner int32] }
         outer => !meta.record {
           fields: {
             a => !meta.record_field { type: inner }

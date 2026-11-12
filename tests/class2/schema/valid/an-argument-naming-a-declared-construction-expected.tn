@@ -21,7 +21,7 @@
           }
         }
 
-        @meta.application:page<orders>
+        @meta.application:{ head: page  arguments: [orders] }
         orders_page => !meta.record { fields: {
           items => !meta.record_field { type: orders }
           total => !meta.record_field { type: int32 }

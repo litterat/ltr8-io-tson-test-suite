@@ -20,7 +20,7 @@
           } } } } }
         }
 
-        @meta.application:page<order>
+        @meta.application:{ head: page  arguments: [order] }
         order_page => !meta.record { fields: {
           meta => !meta.record_field { type: { of: !meta.record { fields: {
             cursor => !meta.record_field { type: order }

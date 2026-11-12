@@ -21,7 +21,7 @@
           base => !meta.record { fields: { id => !meta.record_field { type: text } } }
         }
 
-        @meta.application:geo.box<text>
+        @meta.application:{ head: geo.box  arguments: [text] }
         boxed => !meta.record {
           fields: { item => !meta.record_field { type: text } }
         }

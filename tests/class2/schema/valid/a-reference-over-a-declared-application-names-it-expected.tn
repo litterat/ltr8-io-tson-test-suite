@@ -16,7 +16,7 @@
           fields: { v => !meta.record_field { type: T } }
         }
 
-        @meta.application:box<text>
+        @meta.application:{ head: box  arguments: [text] }
         text_box => !meta.record { fields: { v => !meta.record_field { type: text } } }
 
         written => !meta.reference_type { of: text_box }

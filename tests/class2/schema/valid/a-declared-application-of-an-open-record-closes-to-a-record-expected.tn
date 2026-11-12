@@ -20,7 +20,7 @@
           }
         }
 
-        @meta.application:page<text>
+        @meta.application:{ head: page  arguments: [text] }
         text_page => !meta.record { fields: {
           items => !meta.record_field { type: { of: !meta.array { element_type: text } } }
           total => !meta.record_field { type: int32 }

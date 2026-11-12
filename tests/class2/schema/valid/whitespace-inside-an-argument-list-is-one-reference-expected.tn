@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40), [TSON-SCHEMA] §12.1"
   description: """
-    An application is read as its parsed form and never its text, so whitespace and a separating comma inside an
-    argument list are free: `meta.map< text, int32 >` at an element type is the construction
+    An application in schema source is read as its parsed form and never its text, so whitespace and a separating
+    comma inside an argument list are free: `meta.map< text, int32 >` at an element type is the construction
     `!meta.map { key_type: text  value_type: int32 }`, the one `{text => int32}` writes, and each closes in place
     in the wrapper.
     """
