@@ -1,10 +1,13 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/an-application-nothing-closed-is-refused-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §4.2"
-  description: "In a data document a reference is a name, so `set<int32>`, an application, is a validation error at the kind-typed slot. That nothing in the closure applies it changes nothing: data never names an application, closed or not."
+  spec: "[TSON-SCHEMA] §4.2, [TSON-DATA] §7.2.5"
+  description: """
+    In a data document a reference is a name, so `set<int32>` does not parse at the kind-typed slot, an argument
+    list being no data grammar. That nothing in the closure applies it changes nothing: data never names an
+    application, closed or not.
+    """
   error: {
-    category: validation
-    path: "/t"
+    category: parser
   }
 }

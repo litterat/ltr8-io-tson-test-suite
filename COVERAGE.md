@@ -11,8 +11,8 @@ diff, so it always describes the vectors actually present.
 |---|---|--:|--:|--:|--:|--:|
 | class1 | identity | 13 | 15 | 0 | 0 | 28 |
 | class1 | lexer | 10 | 25 | 0 | 0 | 35 |
-| class1 | parser | 23 | 34 | 2 | 0 | 59 |
-| class1 | reader | 13 | 16 | 0 | 5 | 34 |
+| class1 | parser | 22 | 36 | 2 | 0 | 60 |
+| class1 | reader | 12 | 16 | 0 | 5 | 33 |
 | class1 | resolver | 14 | 0 | 0 | 0 | 14 |
 | class1 | vocabulary | 80 | 69 | 0 | 0 | 149 |
 | class2 | link | 70 | 75 | 0 | 0 | 145 |
@@ -37,11 +37,11 @@ A vector naming two sections counts under both, so this column sums to more than
 | [TSON-SCHEMA] §2.2.3 (the processor policy's vocabulary | 1 | schema |
 | [TSON-SCHEMA] §2.2.3 (the kernel's root names | 1 | schema |
 | [TSON-SCHEMA] §2.2.3 (the kernel's constructors under meta | 1 | schema |
-| §2.3 | 2 | parser |
+| §2.3 | 3 | parser |
 | §2.4 | 4 | parser |
 | §2.5 | 10 | parser, reader |
 | [TSON-DATA] §2.5 | 9 | validate |
-| §2.6 | 10 | parser, reader |
+| §2.6 | 11 | parser, reader |
 | [TSON-DATA] §2.6 | 7 | schema, validate |
 | §2.7 | 2 | parser |
 | §2.8 | 3 | parser, reader |
@@ -55,7 +55,6 @@ A vector naming two sections counts under both, so this column sums to more than
 | [TSON-SCHEMA] §3.4 (the kernel's constructors under meta | 1 | validate |
 | [TSON-SCHEMA] §3.4.1 (the wait order | 13 | link, schema, validate |
 | §4 (qualified tags | 1 | parser |
-| §4 | 1 | reader |
 | [TSON-SCHEMA] §4.1 | 41 | link, schema, validate |
 | [TSON-SCHEMA] §4.1 (nested schema maps | 2 | schema |
 | [TSON-SCHEMA] §4.1 (qualified names | 1 | schema |
@@ -100,7 +99,6 @@ A vector naming two sections counts under both, so this column sums to more than
 | [TSON-SCHEMA] §5.6 | 59 | link, schema, validate |
 | [TSON-SCHEMA] §5.6 (values by name | 1 | link |
 | [TSON-SCHEMA] §5.6 (a bound typed by its family's instance | 1 | schema |
-| [TSON-SCHEMA] §5.6 (an application is a construction | 1 | schema |
 | [TSON-SCHEMA] §5.6 (`numeric.integer_size` | 1 | schema |
 | [TSON-SCHEMA] §5.6 (`numeric.integer_type` | 1 | schema |
 | [TSON-SCHEMA] §5.7 | 50 | link, schema, validate |
@@ -142,14 +140,15 @@ A vector naming two sections counts under both, so this column sums to more than
 | §7.2.2 | 9 | lexer |
 | §7.2.3 | 1 | lexer |
 | §7.2.4 | 1 | lexer |
-| §7.2.5 | 2 | lexer, parser |
+| §7.2.5 | 9 | lexer, parser |
+| [TSON-DATA] §7.2.5 | 4 | schema, validate |
 | §7.2.6 | 1 | lexer |
 | [TSON-SCHEMA] §7.3 | 2 | validate |
-| §7.4 | 15 | parser, reader |
+| §7.4 | 8 | parser |
 | §7.4 (qualified annotation names | 1 | parser |
-| [TSON-DATA] §7.4 | 7 | schema, validate |
+| [TSON-DATA] §7.4 | 5 | schema, validate |
 | [TSON-SCHEMA] §7.4 | 24 | schema, validate |
-| §7.5 | 6 | parser |
+| §7.5 | 2 | parser |
 | [TSON-DATA] §7.5 | 1 | schema |
 | [TSON-SCHEMA] §7.5 | 3 | schema, validate |
 | §7.6 | 9 | vocabulary |
@@ -189,7 +188,7 @@ A vector naming two sections counts under both, so this column sums to more than
 | [TSON-SCHEMA] §12.1 (a record written in place | 1 | schema |
 | [TSON-SCHEMA] §12.2 (a record written in place | 3 | schema |
 | [TSON-SCHEMA] §12.3 | 3 | schema |
-| proposed for Revision 40) | 163 | link, schema, validate |
+| proposed for Revision 40) | 162 | link, schema, validate |
 | proposed) | 75 | link, parser, schema, validate |
 | `numeric.count` | 1 | schema |
 | nested schema maps | 1 | schema |

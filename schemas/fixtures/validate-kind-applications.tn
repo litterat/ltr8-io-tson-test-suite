@@ -6,7 +6,7 @@
   body is the application; `paired` is `pair<boxed int32>`, an application whose argument names the declaration
   `boxed => box<text>`, an argument being a name and never an application.
   `holder.t` holds the name of any type, and `holder.u` the name of a type built with `uuid_type`.
-  In data a reference is a name: data names `names`, and an application written there, `set<text>`, is refused.
+  In data a reference is a name: data names `names`, and an application written there, `set<text>`, does not parse.
   """
 !schema {
   names    => set<text>

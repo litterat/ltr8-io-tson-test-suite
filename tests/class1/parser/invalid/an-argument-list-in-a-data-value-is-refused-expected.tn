@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/an-argument-list-in-a-data-value-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.3, §7.2.5"
+  description: """
+    An argument list is schema grammar, no part of a value: `<` has no role in a data value, so `set<text>` does not
+    parse. A value names a type by a qualified name, the name a declaration gives the application.
+    """
+  error: { category: parser }
+}
