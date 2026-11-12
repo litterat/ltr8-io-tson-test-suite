@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-unapplied-open-record-holding-a-recursive-one-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
+  description: """
+    An open record that could never be closed is refused at its declaration whether or not anything applies it:
+    nothing applies `wrap`, and it is still a resolver error, since its `n: node<T>` closes in place and reaches
+    `node<T>` again with no declaration closing it. `node` itself, on its own cycle, is not refused.
+    """
+  error: {
+    category: resolver
+  }
+}

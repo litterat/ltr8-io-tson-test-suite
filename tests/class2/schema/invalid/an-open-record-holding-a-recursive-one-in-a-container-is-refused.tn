@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-open-record-holding-a-recursive-one-in-a-container-is-refused.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  node  => <T> { value: T  next?: node<T> }
+  index => <T> { label: text  nodes: {text => [node<T>]} }
+}

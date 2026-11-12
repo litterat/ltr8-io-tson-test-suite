@@ -1,0 +1,43 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-recursive-record-taken-as-a-parameter-closes-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
+  description: """
+    A record that would hold a recursive open record's application takes the closed type as a parameter instead, and
+    is applied to a declared one: `wrap_text => wrap<node_text>` substitutes the name `node_text` for `N`, so
+    `n` holds that name, the recursion having tied at `node_text`'s own declaration, and nothing closes in place.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        node => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: {
+            value => !meta.record_field { type: T }
+            next  => !meta.record_field { type: node<T>  optional: true }
+          }
+        }
+
+        @meta.application:node<text>
+        node_text => !meta.record { fields: {
+          value => !meta.record_field { type: text }
+          next  => !meta.record_field { type: node_text  optional: true }
+        } }
+
+        wrap => !meta.record {
+          parameters: [ !meta.param { name: N } ]
+          fields: {
+            label => !meta.record_field { type: text }
+            n     => !meta.record_field { type: N }
+          }
+        }
+
+        @meta.application:wrap<node_text>
+        wrap_text => !meta.record { fields: {
+          label => !meta.record_field { type: text }
+          n     => !meta.record_field { type: node_text }
+        } }
+      }
+      """
+  }
+}
