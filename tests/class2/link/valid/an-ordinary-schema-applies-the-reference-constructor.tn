@@ -3,6 +3,6 @@
 !!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   order => { id: text }
-  oref  => !meta.reference_type { of: order }
+  oref  => !meta.ref { of: order }
   rpick => { m: oref }
 }

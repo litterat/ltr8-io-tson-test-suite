@@ -4,6 +4,6 @@
 !schema {
   box      => <T> { v: T }
   text_box => box<text>
-  written  => !meta.reference_type { of: text_box }
+  written  => !meta.ref { of: text_box }
   applied  => meta.ref<text_box>
 }
