@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-field-out-of-range-in-a-record-body-at-a-field.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-records-written-in-place.tn"
+!shipment { at: { x: 4294967296  y: 2 } }

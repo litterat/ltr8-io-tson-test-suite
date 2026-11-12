@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-in-place-names-one-field-twice-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.11 (a record written in place, proposed for Revision 40)"
+  description: """
+    A field name is unique across a record's fields and its groups' members, in a record written in place as in a
+    declared one.
+    """
+  error: {
+    category: resolver
+  }
+}

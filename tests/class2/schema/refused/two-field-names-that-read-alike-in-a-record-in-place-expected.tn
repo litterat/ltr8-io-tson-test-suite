@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/two-field-names-that-read-alike-in-a-record-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §8.2, [TSON-SCHEMA] §5.2, [TSON-SCHEMA] §11.4 (a record written in place, proposed for Revision 40)"
+  description: """
+    The field names of a record written in place are a scope of their own, as a declared record's are: `comer` and
+    `corner` share a skeleton through `m → rn`, so the record in place `at` holds is refused at `order`.
+    """
+  refused: {
+    mechanism: skeleton-distinctness
+    unicode: "16.0"
+  }
+}

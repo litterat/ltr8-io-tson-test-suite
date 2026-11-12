@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-default-on-a-field-typed-by-a-record-in-place.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order => { at?: { x: int32 } ~ origin }
+}

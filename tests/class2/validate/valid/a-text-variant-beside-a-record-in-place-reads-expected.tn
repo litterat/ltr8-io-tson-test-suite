@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-text-variant-beside-a-record-in-place-reads-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4 (a record written in place, proposed for Revision 40)"
+  description: """
+    `by` is `( text | { name: text  email: text } )`, disjoint, so a string reads as its `text` variant.
+    """
+  valid: _
+}

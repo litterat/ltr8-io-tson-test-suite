@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-field-out-of-range-in-a-record-body-at-a-map-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §7.2 (a record written in place, proposed for Revision 40)"
+  description: """
+    A map's value written as a record in place is read against it: `n` is `int32`.
+    """
+  error: {
+    category: validation
+    path: "/by_name/k/n"
+  }
+}

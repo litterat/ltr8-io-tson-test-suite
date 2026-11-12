@@ -1,0 +1,32 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-record-in-place-holds-what-a-declared-body-holds-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.11 (a record written in place, proposed for Revision 40)"
+  description: """
+    A record written in place holds what a declared record's body holds: marks and modifiers, a dependent field whose
+    sibling is a field of the same record in place, a field group, and records written in place inside it, each nested
+    one in its own wrapper.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        setting => !meta.record { fields: {
+          at => !meta.record_field { type: { of: !meta.record {
+            fields: {
+              kind  => !meta.record_field { type: meta.type_ref }
+              value => !meta.record_field { type: { of: !meta.dependent { on: kind } }  optional: true }
+              note  => !meta.record_field { type: text  optional: true  voidable: true  role: DEFAULT  value: "none" }
+              level => !meta.record_field { type: int32  role: FIXED  value: 3 }
+              inner => !meta.record_field { type: { of: !meta.record { fields: {
+                deep => !meta.record_field { type: { of: !meta.record { fields: { leaf => !meta.record_field { type: text } } } } }
+              } } } }
+              a     => !meta.record_field { type: int32  optional: true }
+              b     => !meta.record_field { type: text  optional: true }
+            }
+            groups: [ !meta.field_group { members: [[a] [b]]  optional: true } ]
+          } } }
+        } }
+      }
+      """
+  }
+}

@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-records-written-in-place.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  Records written in place ([TSON-SCHEMA] §5.2): a record body at a type slot is a record with no name, read where it
+  is written, untagged. `at` holds one at a field, `lines` as an array's element, `by_name` as a map's value and `by`
+  as a choice's variant beside `text`, which a string and a brace never confuse.
+  """
+!schema {
+  shipment => {
+    at:       { x: int32  y: int32 }
+    lines?:   [{ sku: text  qty: int32 }]
+    by_name?: {text => { n: int32 }}
+    by?:      ( text | { name: text  email: text } )
+  }
+}

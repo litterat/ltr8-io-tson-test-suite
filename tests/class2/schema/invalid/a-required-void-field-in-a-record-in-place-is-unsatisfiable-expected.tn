@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-required-void-field-in-a-record-in-place-is-unsatisfiable-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10.1 (a record written in place, proposed for Revision 40)"
+  description: """
+    A record written in place is judged at the declaration that writes it as a declared record is: `a: void` admits no
+    value, so the record in place is empty and the required field `at` empties `order`.
+    """
+  error: {
+    category: resolver
+  }
+}

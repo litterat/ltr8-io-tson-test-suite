@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-record-body-at-a-group-member-is-a-record-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.11 (a record written in place, proposed for Revision 40)"
+  description: """
+    A field group's member is a field, so its type may be a record written in place: `post` holds the record `{ street:
+    text }` in place, optional as every member is.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        contact => !meta.record {
+          fields: {
+            post  => !meta.record_field { type: { of: !meta.record { fields: { street => !meta.record_field { type: text } } } }  optional: true }
+            phone => !meta.record_field { type: text  optional: true }
+          }
+          groups: [ !meta.field_group { members: [[post] [phone]] } ]
+        }
+      }
+      """
+  }
+}

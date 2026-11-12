@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-record-body-at-a-group-member-is-a-record-in-place.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  contact => { ( post: { street: text } | phone: text ) }
+}

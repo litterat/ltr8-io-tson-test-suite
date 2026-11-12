@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-default-on-a-field-typed-by-a-record-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.2 (a record written in place, proposed for Revision 40)"
+  description: """
+    A field's value is a token, available on a field typed by an atom, an enum or a reference: a field typed by a record
+    written in place takes no default, as one typed by a declared record takes none.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,21 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-record-body-at-an-array-element-is-a-record-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.2 (a record written in place, proposed for Revision 40)"
+  description: """
+    A record body at an array's element is written in place inside the array in place: `[{ sku: text  qty: int32 }]`
+    is the array whose `element_type` holds the record, in its wrapper.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        order => !meta.record { fields: {
+          lines => !meta.record_field { type: { of: !meta.array { element_type: { of: !meta.record { fields: {
+            sku => !meta.record_field { type: text }
+            qty => !meta.record_field { type: int32 }
+          } } } } } }
+        } }
+      }
+      """
+  }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-at-a-record-written-in-place-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §7.2 (a record written in place, proposed for Revision 40)"
+  description: """
+    A record written in place has no name, so no tag names it: a tagged value at `at` is refused, whatever the tag.
+    """
+  error: {
+    category: validation
+    path: "/at"
+  }
+}

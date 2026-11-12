@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-body-as-an-argument-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (a record written in place, proposed for Revision 40)"
+  description: """
+    An argument of an open record's application is a name or a parameter: a record body there parses and is refused,
+    to be declared first and passed by its name.
+    """
+  error: {
+    category: resolver
+  }
+}

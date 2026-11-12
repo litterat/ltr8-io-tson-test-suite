@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-composition-written-in-place-is-a-parse-error-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.2 (a record written in place, proposed for Revision 40)"
+  description: """
+    Composition is declared, never written in place: `point & { z: int32 }` at a field's type is a parse error, and
+    the form to write is `point_3d => point & { z: int32 }`, then `at: point_3d`.
+    """
+  error: {
+    category: resolver
+  }
+}
