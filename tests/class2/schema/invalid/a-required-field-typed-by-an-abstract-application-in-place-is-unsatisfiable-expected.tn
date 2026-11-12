@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-required-field-typed-by-an-abstract-application-in-place-is-unsatisfiable-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.10.1"
+  description: """
+    `shape` states a selector, so each application is abstract, and `s: shape<circle>` closes in place to an abstract
+    record nothing can be a member of: an empty type. `s` is required, so `plot` is unsatisfiable, a resolver error
+    by the productivity rule. The closing loads, as an abstract record written in place does; it is the required
+    field that is refused. `circle_shape => shape<circle>`, declared, is a base its members compose.
+    """
+  error: {
+    category: resolver
+  }
+}

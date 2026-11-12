@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-optional-field-typed-by-an-abstract-record-in-place-loads.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order => !meta.record { fields: {
+    at => !meta.record_field { optional: true  type: { of: !meta.record {
+      fields: { x => !meta.record_field { type: int32 } }
+      extension: ABSTRACT
+    } } }
+  } }
+}

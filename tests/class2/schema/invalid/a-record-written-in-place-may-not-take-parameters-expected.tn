@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-written-in-place-may-not-take-parameters-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.10"
+  description: """
+    An open record is applied by its name, the head of an application, and a record written in place has none, so
+    one carrying `parameters` could never be applied. The record `at` holds in place declares `T`, a resolver
+    error at `order`; `page => <T> { … }`, declared, is applied as `page<int32>`.
+    """
+  error: {
+    category: resolver
+  }
+}

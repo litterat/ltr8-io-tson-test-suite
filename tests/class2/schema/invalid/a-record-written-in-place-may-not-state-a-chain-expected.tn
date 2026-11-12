@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-written-in-place-may-not-state-a-chain-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2"
+  description: """
+    A type written in place carries no `chain`: it has no name, so it is IS-A nothing and nothing composes it. The
+    record `at` holds in place states `base` as a supertype, a resolver error at `order` stating that rule. A
+    processor that refuses it only where its own model is built, with that model's message, has the verdict and
+    not the rule.
+    """
+  error: {
+    category: resolver
+  }
+}

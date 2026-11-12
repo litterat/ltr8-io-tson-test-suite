@@ -5,12 +5,13 @@
   An application of an open record written at a use site closes in place ([TSON-SCHEMA] §5.10): a type with no name,
   read where it is written. `k: plain<text>` is read against the record `plain<text>` closes to. `shape` states a
   selector, and `abstract` and a selector on a template are each application's, so `s: shape<circle>` is an abstract
-  base whose members would be the declarations composing `shape<circle>`, and here there are none.
+  base whose members would be the declarations composing `shape<circle>`, and here there are none: it is empty,
+  so `s` is optional and can only be missing.
   """
 !schema {
   plain  => <T> { v: T }
   holder => { k: plain<text> }
   circle => { r: int32 }
   shape  => <T> { kind: text =?  data: T }
-  plot   => { s: shape<circle> }
+  plot   => { s?: shape<circle> }
 }

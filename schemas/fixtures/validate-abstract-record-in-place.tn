@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-abstract-record-in-place.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  An abstract record written in place, in canonical form ([TSON-SCHEMA] §4.2, §5.10.1). It has no direct instances
+  and, having no name, no member any schema could add: it is empty, so `at`, the optional field it types, can only
+  be missing.
+  """
+!schema {
+  order => !meta.record { fields: {
+    id => !meta.record_field { type: text }
+    at => !meta.record_field { optional: true  type: { of: !meta.record {
+      fields: { x => !meta.record_field { type: int32 } }
+      extension: ABSTRACT
+    } } }
+  } }
+}
