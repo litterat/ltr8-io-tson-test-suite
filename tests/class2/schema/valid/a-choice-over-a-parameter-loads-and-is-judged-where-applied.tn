@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-choice-over-a-parameter-loads-and-is-judged-where-applied.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  problem    => { code: text }
+  reply      => <T> { body: ( T | problem ) }
+  text_reply => reply<text>
+}

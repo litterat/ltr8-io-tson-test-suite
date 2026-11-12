@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-literal-on-a-parameter-typed-field-of-a-record-in-place-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2 (a parameter in a type written in place, proposed for Revision 40)"
+  description: """
+    A literal value needs a closed type, inside a record written in place as at the open record's own field: `w` is
+    typed by the parameter, which differs in every application, so `~ 5` is refused at `page`.
+    """
+  error: {
+    category: resolver
+  }
+}

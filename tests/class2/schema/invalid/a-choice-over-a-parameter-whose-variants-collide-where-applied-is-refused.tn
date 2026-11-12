@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-choice-over-a-parameter-whose-variants-collide-where-applied-is-refused.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  pick => <T> { v: ( T | int32 ) }
+  p    => pick<int32>
+}

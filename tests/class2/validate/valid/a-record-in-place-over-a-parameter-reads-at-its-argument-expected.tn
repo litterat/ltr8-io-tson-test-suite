@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-in-place-over-a-parameter-reads-at-its-argument-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.2 (a parameter in a type written in place, proposed for Revision 40)"
+  description: """
+    `p: page<order>` closes in place with `order` at every slot `T` stood at -- a record in place's field, an array of
+    records' field, a map's value inside it -- so each reads an `order`.
+    """
+  valid: _
+}

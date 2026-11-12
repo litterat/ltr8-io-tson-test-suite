@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-recursive-application-in-a-sized-array-at-a-slot-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10.1, [TSON-SCHEMA] §5.10 (a parameter in a type written in place, proposed for Revision 40)"
+  description: """
+    A sized array over a parameter is written in place, `tree<T>` at its element. `t: tree<text>` closes in place, and
+    closing it reaches `tree<text>` again inside its own closing with no declaration to tie to, so `use` is refused;
+    `tree_text => tree<text>`, written where it is used, is the remedy.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -4,14 +4,15 @@
   spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10"
   description: """
     A bound is asked of a parameter passed to a bounded parameter, and a constructor's slot is no parameter.
-    `{K => text}` over a parameter is `meta.map<K text>`, held as written, whose `key_type` admits a type's name; that
-    slot judges the argument that arrives when `keyed` is applied, so `K` needs no bound, and none is recorded.
+    `{K => text}` over a parameter is the map written in place with `K` at its `key_type`, a slot that admits a type's
+    name; that slot judges the argument that arrives when `keyed` is applied, so `K` needs no bound, and none is
+    recorded.
     """
   valid: {
     resolved: """
       !schema {
         keyed => !meta.record {
-          fields: { m => !meta.record_field { type: meta.map<K text> } }
+          fields: { m => !meta.record_field { type: { of: !meta.map { key_type: K  value_type: text } } } }
           parameters: [ !meta.param { name: K } ]
         }
       }

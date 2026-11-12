@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-record-in-place-over-a-parameter-closes-with-its-open-record.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order      => { id: text }
+  page       => <T> { meta: { cursor: T  total: int32 } }
+  order_page => page<order>
+  holder     => { p: page<order> }
+}
