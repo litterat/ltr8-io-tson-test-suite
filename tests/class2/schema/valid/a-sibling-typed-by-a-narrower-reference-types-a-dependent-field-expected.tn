@@ -14,7 +14,7 @@
 
         shape => !meta.record { fields: {
           kind => !meta.record_field { type: records }
-          v    => !meta.record_field { type: kind!  optional: true }
+          v    => !meta.record_field { type: { of: !meta.dependent { on: kind } }  optional: true }
         } }
       }
       """

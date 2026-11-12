@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-dependent-type-is-one-segment-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.1"
+  description: """
+    A dependent type is one unquoted identifier of one segment, the name of a field of the same record. `a.b!` would
+    project through the value of `a`, a chained projection that is no part of the grammar, so it does not parse.
+    """
+  error: {
+    category: resolver
+  }
+}

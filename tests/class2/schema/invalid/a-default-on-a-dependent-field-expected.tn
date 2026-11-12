@@ -4,7 +4,9 @@
   spec: "[TSON-SCHEMA] §5.2"
   description: """
     A dependent field carries no default: its type is not fixed at its declaration, so neither is the type a default
-    would be read against. `5` may be a value of the type one instance's `kind` names and not of another's.
+    would be read against. `5` may be a value of the type one instance's `kind` names and not of another's. A dependent
+    type is also a type written in place that is no reference, and only a field typed by an atom, an enum or a
+    reference carries a value, so the default is refused on either ground.
     """
   error: {
     category: resolver

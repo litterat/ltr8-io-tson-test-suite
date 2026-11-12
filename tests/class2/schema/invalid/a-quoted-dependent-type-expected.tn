@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-quoted-dependent-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.1"
+  description: """
+    A dependent type's `!` follows one unquoted identifier, the name of a field of the same record, and a quoted token
+    is none: `"kind"!` does not parse, even where the field it spells exists. A field whose name needs quoting cannot be
+    a sibling.
+    """
+  error: {
+    category: resolver
+  }
+}

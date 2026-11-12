@@ -5,7 +5,7 @@
   description: """
     A reference's `of` holds a name, so a reference over an application of an open record names the declaration that
     closes it: `text_box => box<text>` is the record `{ v: text }` under its author's name, and both
-    `!meta.reference_type { of: text_box … }` and `meta.ref<text_box>` refer to it. The two spellings resolve to one
+    `!meta.reference_type { of: text_box }` and `meta.ref<text_box>` refer to it. The two spellings resolve to one
     reference over one entry; a construction substitutes nothing and carries no `@meta.application`.
     """
   valid: {
@@ -19,7 +19,7 @@
         @meta.application:box<text>
         text_box => !meta.record { fields: { v => !meta.record_field { type: text } } }
 
-        written => !meta.reference_type { of: text_box  allow_sibling: false }
+        written => !meta.reference_type { of: text_box }
 
         applied => !meta.ref { of: text_box }
       }

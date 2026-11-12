@@ -1,6 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-reference-as-an-explicit-map-value-type.tn"
-!!import:"https://tson.io/2026/40/m/meta.tn"
-!!import:"https://tson.io/2026/40/m/core.tn"
-!schema {
-  x => !meta.map { key_type: text  value_type: key_type! }
-}

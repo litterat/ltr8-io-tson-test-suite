@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-declared-dependent-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.2"
+  description: """
+    A dependent type is never declared: its `on` names a field of the record whose field's type it is, and an entry has
+    no record to bind it, so `x => !meta.dependent { on: kind }` is refused at the declaration, though `meta.dependent`
+    is a constructor the kernel declares.
+    """
+  error: {
+    category: resolver
+  }
+}

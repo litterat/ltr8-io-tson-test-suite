@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-sibling-typed-by-the-type-slot-choice-types-a-dependent-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §4.2"
+  description: """
+    A sibling may be typed by the type-slot choice, `meta.type_expr`, whose names are a reference's naming types and
+    whose other variant is a type written in place: `slot` has the kernel's own `record_field` shape, a `type` and a
+    `value` read against it, and `value` is read against the type an instance's `type` names or holds in place.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        slot => !meta.record { fields: {
+          type  => !meta.record_field { type: meta.type_expr }
+          value => !meta.record_field { type: { of: !meta.dependent { on: type } }  optional: true }
+        } }
+      }
+      """
+  }
+}

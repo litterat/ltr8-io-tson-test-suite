@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-dependent-type-naming-no-field-in-explicit-form.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  kind => { a: text }
+  cell => !meta.record { fields: {
+    v => !meta.record_field { type: { of: !meta.dependent { on: kind } }  optional: true }
+  } }
+}

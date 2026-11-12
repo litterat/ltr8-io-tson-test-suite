@@ -1,8 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-fields-type-may-be-a-sibling-reference.tn"
-!!import:"https://tson.io/2026/40/m/meta.tn"
-!meta.record {
-  fields: {
-    kind  => { type: meta.type_ref }
-    value => { type: kind!  optional: true }
-  }
-}
