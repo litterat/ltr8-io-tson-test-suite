@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-applied-open-record-holding-a-recursive-one-is-refused-where-declared.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  node      => <T> { value: T  next?: node<T> }
+  node_text => node<text>
+  wrap      => <T> { n: node<T> }
+  wrap_text => wrap<text>
+}

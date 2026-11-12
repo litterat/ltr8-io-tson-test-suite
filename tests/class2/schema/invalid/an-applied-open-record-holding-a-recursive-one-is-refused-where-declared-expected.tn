@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-applied-open-record-holding-a-recursive-one-is-refused-where-declared-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
+  description: """
+    An open record holding an application of a recursive open record it is not on a cycle of could never be closed,
+    and is refused at its own declaration: `wrap` holds `n: node<T>`, which closes in place wherever `wrap` is
+    applied, and `node`'s recursion ties only to a declaration closing `node` itself, never to `node_text` or to
+    `wrap_text`. The resolver error is `wrap`'s; `wrap_text`, which applies it, carries none.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-open-record-holding-a-recursive-one-in-a-container-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
+  description: """
+    An application held inside a constructor's is held where it closes in place: `{text => [node<T>]}` is
+    `meta.map<text meta.array<node<T>>>`, whose value type holds the array in place and the array's element type
+    `node<T>` in place in turn. `node` is recursive and `index` is on no cycle of it, so `index` could never be
+    closed and is a resolver error at its declaration.
+    """
+  error: {
+    category: resolver
+  }
+}

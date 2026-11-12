@@ -2,7 +2,5 @@
 !!import:"https://tson.io/2026/40/m/meta.tn"
 !!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
-  post => {
-    a: meta.namespace<int32 text>
-  }
+  post => meta.namespace<int32 text>
 }

@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-written-in-place-in-a-container-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.2 (inline types, proposed for Revision 40)"
+  description: """
+    An application of a constructor nested in a container form closes at the container's type slot, and a
+    namespace type closes nowhere in place: `[meta.namespace<meta.identifier method>]` holds the array in place, whose
+    element would be the namespace in place, and that is a resolver error at `r`, the namespace type being declared
+    and named.
+    """
+  error: {
+    category: resolver
+  }
+}

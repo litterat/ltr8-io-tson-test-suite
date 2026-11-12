@@ -5,7 +5,7 @@
   description: """
     An argument of construction sugar lands in its field and is judged by that field's own reference:
     `meta.namespace<int32 text>` is `!meta.namespace { key_type: int32  value_type: text }`, and `key_type` is a
-    `meta.identifier_ref`, whose members are the identifier families. `int32` is none, so the construction is
+    `meta.identifier_ref`, whose members are the identifier families. `int32` is none, so the declaration is
     refused as the same construction written in braces is.
     """
   error: {
