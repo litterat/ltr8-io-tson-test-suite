@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-written-in-place-at-a-field-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.2 (inline types, proposed for Revision 40)"
+  description: """
+    A namespace value carries its type's name as its tag, and a type written in place has none, so a namespace
+    type is declared and named, as a record and an enum are: `meta.namespace<meta.identifier method>` at a field
+    constructs one where it is used and is a resolver error at `r`. The declaration it asks for is
+    `api => !meta.namespace { key_type: meta.identifier  value_type: method }`, and the field names it.
+    """
+  error: {
+    category: resolver
+  }
+}
