@@ -1,0 +1,30 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-tuple-over-a-parameter-is-written-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3 (a parameter in a type written in place, proposed for Revision 40)"
+  description: """
+    A tuple over a parameter is written in place, the parameter at its position's `element_type`, and applying the
+    record substitutes the argument there.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        slot => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { at => !meta.record_field { type: { of: !meta.tuple { elements: [
+            { element_type: T }
+            { element_type: text }
+          ] } } } }
+        }
+
+        @meta.application:slot<int32>
+        int_slot => !meta.record { fields: {
+          at => !meta.record_field { type: { of: !meta.tuple { elements: [
+            { element_type: int32 }
+            { element_type: text }
+          ] } } }
+        } }
+      }
+      """
+  }
+}

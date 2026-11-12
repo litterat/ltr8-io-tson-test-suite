@@ -1,0 +1,29 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-choice-over-a-parameter-loads-and-is-judged-where-applied-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.4 (a parameter in a type written in place, proposed for Revision 40)"
+  description: """
+    A choice over a parameter loads at its open record: whether its variants are distinct and whether it is disjoint
+    depend on the argument, so both are judged where each application closes. `reply<text>` holds `text` beside the
+    record `problem`, two classes, so the choice it closes to is disjoint and the declaration loads. In the open record
+    the derivation is total and a parameter has no class, so the choice there states `disjoint: false`, which nothing
+    at the open record judges.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        problem => !meta.record { fields: { code => !meta.record_field { type: text } } }
+
+        reply => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { body => !meta.record_field { type: { of: !meta.choice { variants: [T problem]  disjoint: false } } } }
+        }
+
+        @meta.application:reply<text>
+        text_reply => !meta.record { fields: {
+          body => !meta.record_field { type: { of: !meta.choice { variants: [text problem]  disjoint: true } } }
+        } }
+      }
+      """
+  }
+}

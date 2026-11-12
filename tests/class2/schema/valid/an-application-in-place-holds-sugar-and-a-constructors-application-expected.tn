@@ -3,9 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
   description: """
-    A record in place holds what its open record holds, closed: `items: [T]` and `ids: set<T>` in `page` close, when
-    `p: page<order>` closes in place, to the array and the set in place over `order`, each tagged by its own
-    constructor inside the record in place.
+    A record in place holds what its open record holds, closed: `items: [T]` and `ids: set<T>` are the array and the
+    set written in place in `page`, `T` at each element, a constructor's application over a parameter being its
+    construction, and when `p: page<order>` closes in place they hold `order`, each tagged by its own constructor.
     """
   valid: {
     resolved: """
@@ -15,8 +15,8 @@
         page => !meta.record {
           parameters: [ !meta.param { name: T } ]
           fields: {
-            items => !meta.record_field { type: meta.array<T> }
-            ids   => !meta.record_field { type: set<T> }
+            items => !meta.record_field { type: { of: !meta.array { element_type: T } } }
+            ids   => !meta.record_field { type: { of: !meta.set_type { element_type: T } } }
           }
         }
 

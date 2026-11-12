@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sugar-form-over-a-parameter-as-a-constructors-argument-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (a parameter in a type written in place, proposed for Revision 40)"
+  description: """
+    An argument is a name or a parameter, whatever the head: a sugar form written as an argument of a constructor's
+    application is refused over a parameter as over a name, the nested form being written in place itself, `[[T]]`.
+    """
+  error: {
+    category: resolver
+  }
+}

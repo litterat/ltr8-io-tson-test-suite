@@ -3,10 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.4"
   description: """
-    A template's body is a record body, and a choice is not one: its variants are a list, not reference fields, and
-    an untagged sum over a parameter could be judged disjoint only once applied. The declaration is refused; a result
-    family is declared with records -- an abstract base with a selector, a template composing it, members pinning it
-    -- or the alternative is a field group inside an open record.
+    A template's body is a record body, and a choice is not one. The declaration is refused; a result family is
+    declared with records -- an abstract base with a selector, a template composing it, members pinning it -- or the
+    alternative is a field group inside an open record.
     """
   error: {
     category: resolver

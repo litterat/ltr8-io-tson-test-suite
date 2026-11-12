@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-recursive-application-in-a-sized-array-at-a-slot-is-refused.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  tree => <T> { value: T  children?: [tree<T>; 1..] }
+  use  => { t: tree<text> }
+}

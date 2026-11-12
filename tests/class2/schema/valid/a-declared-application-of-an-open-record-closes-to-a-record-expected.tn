@@ -5,9 +5,9 @@
   description: """
     An application of an open record substitutes its arguments for the parameters and closes to a `!meta.record`
     without `parameters`. A declaration naming the application is that record under its author's name, and carries
-    `@meta.application` on its key, the one fact the record does not state. The held `meta.array<T>` becomes
-    `meta.array<text>`, a constructor's application, and closes in place to the construction it denotes, in the
-    wrapper: nothing is added to the schema.
+    `@meta.application` on its key, the one fact the record does not state. `[T]` is the array written in place
+    with `T` at its element, and substituting `text` there gives the array over `text`, still in the wrapper: nothing
+    is added to the schema.
     """
   valid: {
     resolved: """
@@ -15,7 +15,7 @@
         page => !meta.record {
           parameters: [ !meta.param { name: T } ]
           fields: {
-            items => !meta.record_field { type: meta.array<T> }
+            items => !meta.record_field { type: { of: !meta.array { element_type: T } } }
             total => !meta.record_field { type: int32 }
           }
         }

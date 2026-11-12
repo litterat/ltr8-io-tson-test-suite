@@ -3,10 +3,10 @@
 {
   spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
   description: """
-    Inside an open record a form over a parameter is the application it spells, held as written: `{text => [T]}` is
-    `meta.map<text meta.array<T>>` and `[T]` is `meta.array<T>`. Applying the record closes each in place: the
-    declared `text_index` holds a map construction whose `value_type` is the array construction, nested, and an
-    array construction beside it, each in the wrapper.
+    Inside an open record a form over a parameter is written in place like any other, the parameter at its slot:
+    `{text => [T]}` is a map whose `value_type` holds the array in place, and `[T]` an array. Applying the record
+    substitutes `text` at each slot: the declared `text_index` holds the same constructions over `text`, each in the
+    wrapper.
     """
   valid: {
     resolved: """
@@ -14,8 +14,11 @@
         index => !meta.record {
           parameters: [ !meta.param { name: T } ]
           fields: {
-            by_key => !meta.record_field { type: meta.map<text meta.array<T>> }
-            all    => !meta.record_field { type: meta.array<T> }
+            by_key => !meta.record_field { type: { of: !meta.map {
+              key_type: text
+              value_type: { of: !meta.array { element_type: T } }
+            } } }
+            all    => !meta.record_field { type: { of: !meta.array { element_type: T } } }
           }
         }
 

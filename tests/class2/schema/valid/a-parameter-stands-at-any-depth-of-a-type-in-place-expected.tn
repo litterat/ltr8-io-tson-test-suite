@@ -1,0 +1,30 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-parameter-stands-at-any-depth-of-a-type-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3 (a parameter in a type written in place, proposed for Revision 40)"
+  description: """
+    A parameter stands at a slot of a type written in place at any depth: here at a record's field inside an array's
+    element, and at a map's value inside that record. Applying the record replaces it at each.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        deep => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { d => !meta.record_field { type: { of: !meta.array { element_type: { of: !meta.record { fields: {
+            at   => !meta.record_field { type: T }
+            tags => !meta.record_field { type: { of: !meta.map { key_type: text  value_type: T } } }
+          } } } } } } }
+        }
+
+        @meta.application:deep<text>
+        text_deep => !meta.record { fields: {
+          d => !meta.record_field { type: { of: !meta.array { element_type: { of: !meta.record { fields: {
+            at   => !meta.record_field { type: text }
+            tags => !meta.record_field { type: { of: !meta.map { key_type: text  value_type: text } } }
+          } } } } } }
+        } }
+      }
+      """
+  }
+}

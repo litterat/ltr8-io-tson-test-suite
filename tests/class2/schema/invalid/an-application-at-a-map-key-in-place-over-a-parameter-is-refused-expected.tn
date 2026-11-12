@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-application-at-a-map-key-in-place-over-a-parameter-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §4.2 (a parameter in a type written in place, proposed for Revision 40)"
+  description: """
+    A map's key holds a name, and an application closes nowhere there. Inside an open record the key of a map written
+    in place is judged at the declaration, as `{box<text> => text}` is anywhere: `keyed` is refused whether or not
+    anything applies it.
+    """
+  error: {
+    category: resolver
+  }
+}

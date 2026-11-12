@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-records-in-place-over-a-parameter.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  An open record holding its parameter inside types written in place -- a record, an array of records, a map's value
+  ([TSON-SCHEMA] §5.10) -- applied at a slot of `holder`, where it closes to the substituted record in place.
+  """
+!schema {
+  order  => { id: text }
+  page   => <T> { meta: { cursor: T  total: int32 }  rows?: [{ at: T  tags?: {text => T} }] }
+  holder => { p: page<order> }
+}

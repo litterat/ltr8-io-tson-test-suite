@@ -1,0 +1,25 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-sized-array-over-a-parameter-is-written-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3 (a parameter in a type written in place, proposed for Revision 40)"
+  description: """
+    Inside an open record a form over a parameter is written in place like any other, a size included: `[T; 1..]` is
+    the array with `T` at its element and `min_items` beside it, and applying the record substitutes `text` there,
+    the size unchanged.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        page => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { items => !meta.record_field { type: { of: !meta.array { element_type: T  min_items: 1 } } } }
+        }
+
+        @meta.application:page<text>
+        text_page => !meta.record { fields: {
+          items => !meta.record_field { type: { of: !meta.array { element_type: text  min_items: 1 } } }
+        } }
+      }
+      """
+  }
+}

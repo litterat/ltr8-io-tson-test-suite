@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-record-in-place-over-a-parameter-refuses-a-value-of-another-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.2 (a parameter in a type written in place, proposed for Revision 40)"
+  description: """
+    A map's value inside a record in place inside an array, over the parameter, is `order` once `page<order>` closes
+    at `p`: a value there with a field `order` does not declare is a validation error at that field.
+    """
+  error: {
+    category: validation
+    path: "/p/rows/0/tags/k/colour"
+  }
+}

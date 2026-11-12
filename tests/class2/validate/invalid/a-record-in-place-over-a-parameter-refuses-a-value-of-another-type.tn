@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-record-in-place-over-a-parameter-refuses-a-value-of-another-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-records-in-place-over-a-parameter.tn"
+!holder {
+  p: {
+    meta: { cursor: { id: a }  total: 1 }
+    rows: [ { at: { id: b }  tags: { k => { id: c  colour: red } } } ]
+  }
+}
