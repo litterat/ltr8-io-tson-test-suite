@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-payload-of-the-kernels-constructor-constructs-the-documents-own-refined-one.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  post => !meta.record { fields: {
+    tags   => { type: { of: !rows { element_type: text } } }
+    matrix => { type: { of: !meta.array { element_type: { of: !rows { element_type: int32 } } } } }
+  } }
+  rows => meta.array ^ { min_items?: = 1 }
+}

@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-payload-constructing-the-documents-own-refined-constructor-keeps-its-pin.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  rows => meta.array ^ { min_items?: = 1 }
+  post => !meta.record { fields: {
+    tags => { type: { of: !rows { element_type: text  min_items: 0 } } }
+  } }
+}

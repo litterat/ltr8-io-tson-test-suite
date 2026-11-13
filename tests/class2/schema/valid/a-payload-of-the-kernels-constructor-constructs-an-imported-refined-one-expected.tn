@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-payload-of-the-kernels-constructor-constructs-an-imported-refined-one-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3, [TSON-SCHEMA] §3.3.4, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.7"
+  description: """
+    A construction's payload is read in the closure of the schema that writes it, not the closure of the schema that
+    declared its head. `meta.record` is the kernel's, and the field's type in place is a construction of the fixture's
+    `rows`, a refined constructor the kernel never sees: `rows` IS-A `meta.array`, so `!rows { … }` is a value at a
+    `meta.type` position in this schema's closure, and the record resolves holding it under its own tag.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        post => !meta.record { fields: {
+          tags => !meta.record_field { type: { of: !rows { element_type: text } } }
+        } }
+      }
+      """
+  }
+}

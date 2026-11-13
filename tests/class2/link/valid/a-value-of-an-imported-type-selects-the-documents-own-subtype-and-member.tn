@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-value-of-an-imported-type-selects-the-documents-own-subtype-and-member.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-handler-api.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  orders     => !api { h: !my_handler { name: orders  queue: 4 } }
+  posts      => !routed { r: { kind: post  path: "/posts" } }
+  my_handler => handler & { queue: int32 }
+  post       => route & { kind?: = "post" }
+}

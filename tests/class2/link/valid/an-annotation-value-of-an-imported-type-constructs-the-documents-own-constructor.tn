@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-annotation-value-of-an-imported-type-constructs-the-documents-own-constructor.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-handler-api.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  post => @slot:{ of: !rows { element_type: text } } { title: text }
+  rows => meta.array ^ { min_items?: = 1 }
+}
