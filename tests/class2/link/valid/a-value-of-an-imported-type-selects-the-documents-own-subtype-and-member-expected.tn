@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-value-of-an-imported-type-selects-the-documents-own-subtype-and-member-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3.4, [TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.2"
+  description: """
+    A value entry's payload is read in the closure of the schema that writes it, so it may hold a value of a subtype
+    that schema declares of an imported base. `orders` is a value of the fixture's `api`, whose `h` is the abstract
+    `handler`: the tag names `my_handler`, this schema's subtype. `posts` is a value of `routed`, whose `r` is the
+    family `route`: no tag is written, and the pin `post` selects this schema's member `post`, a family being open
+    across schemas. Both values are written before the subtypes they hold, and each waits on its subtype being ready.
+    """
+  valid: {
+    binds: [orders posts]
+    subtypes: [
+      { name: handler  subtypes: [my_handler] }
+      { name: route  subtypes: [get post] }
+    ]
+  }
+}

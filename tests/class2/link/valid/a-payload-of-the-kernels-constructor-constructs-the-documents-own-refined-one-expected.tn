@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-payload-of-the-kernels-constructor-constructs-the-documents-own-refined-one-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3, [TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.7"
+  description: """
+    A construction's payload is read in the namespace of the schema that writes it, its own entries included. `rows`
+    refines `meta.array`, so it IS-A `meta.type`, and a construction of it is a value at each `meta.type` position the
+    kernel's `meta.record` payload has: a field's type in place, and an element type in place inside another
+    construction. `post` is written first: reading its payload selects `rows` by its tag and waits on it being ready.
+    """
+  valid: {
+    binds: [post rows]
+  }
+}

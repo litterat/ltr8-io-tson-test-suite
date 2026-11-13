@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-payload-of-the-kernels-constructor-constructs-an-imported-refined-one.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/nonempty-rows.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  post => !meta.record { fields: {
+    tags => { type: { of: !rows { element_type: text } } }
+  } }
+}

@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-handler-api.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  Two families and records holding a member of each. `handler` is abstract and selects its members by tag; `route`
+  selects its members by the pin on `kind` ([TSON-SCHEMA] §5.2), and declares one, `get`. An importing schema adds
+  members of either and holds values of `api` and `routed`; a processor that binds binds each to a host class of its
+  own: the records `api` and `routed`. `slot` is an annotation whose value is a type written in place.
+  """
+!schema {
+  handler => abstract { name: text }
+  route   => { kind: text =?  path: text }
+  get     => route & { kind?: = "get" }
+  api     => { h: handler }
+  routed  => { r: route }
+  slot    => @meta.annotation meta.type_inline
+}

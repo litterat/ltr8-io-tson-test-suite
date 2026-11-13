@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-payload-constructing-the-documents-own-refined-constructor-keeps-its-pin-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.7"
+  description: """
+    `rows` pins `min_items` to 1. A construction of it inside the kernel's `meta.record` payload is read against
+    `rows` itself, the pin included, so writing `min_items: 0` there is refused as a fixed field given another value.
+    """
+  error: {
+    category: resolver
+  }
+}

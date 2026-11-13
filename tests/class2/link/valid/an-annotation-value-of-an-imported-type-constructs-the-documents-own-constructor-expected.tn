@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-annotation-value-of-an-imported-type-constructs-the-documents-own-constructor-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3.3, [TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §6"
+  description: """
+    An annotation's value is read against its type in the annotating schema's namespace. The fixture's `slot` holds a
+    type written in place, and the value constructs `rows`, a refined constructor the annotating schema declares after
+    it: `rows` IS-A `meta.type`, so its construction is a value at that position, and reading it waits on `rows`.
+    """
+  valid: {
+    binds: [post rows]
+  }
+}
