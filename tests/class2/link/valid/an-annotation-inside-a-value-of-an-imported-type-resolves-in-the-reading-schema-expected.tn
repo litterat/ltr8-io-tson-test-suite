@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-annotation-inside-a-value-of-an-imported-type-resolves-in-the-reading-schema-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3.3, [TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §6"
+  description: """
+    An annotation in a value is resolved in the namespace of the schema that writes it, whatever schema declared the
+    value's type. `bookmark` is declared by a fixture importing meta.tn alone, whose closure holds no `title`; this
+    schema imports core.tn, which declares it, so `@title` on the bookmark's `url` names a type and its value is read
+    against it.
+    """
+  valid: {
+    binds: [home title]
+  }
+}
