@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-annotation-in-a-construction-payload-names-the-schemas-own-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3.3, [TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §6"
+  description: """
+    An annotation in a construction's payload is resolved in the namespace of the schema that writes it, as one written
+    on a declared field is, whatever schema declared the constructor. `@note` names this schema's own `note`, declared
+    after `before` and before `after`.
+    """
+  valid: {
+    binds: [before note after]
+  }
+}

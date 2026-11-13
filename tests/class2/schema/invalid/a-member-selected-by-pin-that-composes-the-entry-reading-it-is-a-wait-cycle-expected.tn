@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-member-selected-by-pin-that-composes-the-entry-reading-it-is-a-wait-cycle-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §5.2"
+  description: """
+    `reader`'s annotation is read at `feed`'s selector, and its pin `podcast` is stated by no ready member, so the
+    read waits on `podcast_feed`, which composes `feed` and writes that pin. `podcast_feed` composes `reader` as
+    well, so it waits on `reader` being ready: a wait cycle, which no order resolves.
+    """
+  error: {
+    category: resolver
+  }
+}

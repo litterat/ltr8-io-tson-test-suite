@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-tag-inside-a-held-value-orders-nothing-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §5.2, [TSON-SCHEMA] §6"
+  description: """
+    A held value orders nothing, whatever it is tagged with. `bounded`'s field `level` defaults to a value tagged
+    `!level`, and `level`'s annotation is a value of `bounded`, so `level` waits on `bounded`; the default is held as
+    written and judged when the schema links, so `bounded` waits on nothing for it and there is no cycle. A processor
+    that binds binds `bounded` to a host class of its own.
+    """
+  valid: {
+    binds: [bounded level]
+  }
+}

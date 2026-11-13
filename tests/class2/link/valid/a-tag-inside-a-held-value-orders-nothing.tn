@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-tag-inside-a-held-value-orders-nothing.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!schema {
+  bounded => !meta.record { fields: { level => { type: level  optional: true  role: DEFAULT  value: !level 5 } } }
+  level   => @bounded:{} !integer ^ { min: 0 }
+}
