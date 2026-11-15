@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-extern-into-a-schema-importing-nothing.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  free_node => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-import-free.tn"  type: node }
+  holder => { n: free_node  kind?: meta.ref<meta.record> ~ free_node }
+}

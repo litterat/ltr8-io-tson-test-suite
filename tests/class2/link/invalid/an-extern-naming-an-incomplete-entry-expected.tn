@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-extern-naming-an-incomplete-entry-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  description: """
+    An extern names a type a value can have, declared anywhere in its schema's closure; `enum` is an incomplete
+    entry, which is no type until it is completed, so the extern is refused, and with it the schema declaring
+    it.
+    """
+  error: { category: resolver }
+}

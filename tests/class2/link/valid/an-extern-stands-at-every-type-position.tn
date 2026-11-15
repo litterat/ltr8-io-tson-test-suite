@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-extern-stands-at-every-type-position.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order_v1 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"  type: order }
+  count_x => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: count }
+  order_alias => order_v1
+  page        => <T> { items: [T] }
+  bounded     => <T: order_v1> { item: T }
+  orders      => page<order_v1>
+  one_order   => bounded<order_v1>
+  holder      => {
+    field:  order_v1
+    list:   [order_v1]
+    keyed:  { count_x => order_v1 }
+    pair:   [order_v1, count_x]
+    choice: (order_v1 | text)
+    hop:    order_alias
+  }
+}

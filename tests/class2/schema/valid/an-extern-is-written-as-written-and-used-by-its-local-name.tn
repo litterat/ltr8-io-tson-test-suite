@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-extern-is-written-as-written-and-used-by-its-local-name.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order_v1 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"  type: order }
+  order_v2 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-2.tn"  type: order }
+  latest   => order_v2
+  envelope => { id: text  body: (order_v1 | order_v2)  copies: [order_v1] }
+}

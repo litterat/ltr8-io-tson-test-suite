@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-extern-in-a-nested-schema-map-is-a-prefix.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  v1 => !schema {
+    order => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"  type: order }
+  }
+  v2 => !schema {
+    order => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-2.tn"  type: order }
+  }
+  envelope => { body: (v1.order | v2.order) }
+}

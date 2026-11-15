@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-extern-stands-at-every-type-position-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  description: """
+    An extern stands wherever a type's name does: a field, an element, a map key and value, a tuple element, a
+    choice variant, a type argument, a parameter's bound and an alias target.
+    """
+  valid: {
+    binds: [holder orders one_order order_alias]
+  }
+}

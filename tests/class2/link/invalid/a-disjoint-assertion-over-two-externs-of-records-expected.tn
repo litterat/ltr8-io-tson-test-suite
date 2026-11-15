@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-disjoint-assertion-over-two-externs-of-records-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  description: """
+    Both externs land on records, one discrimination class, so the choice is not disjoint and its
+    `@meta.disjoint` is refuted.
+    """
+  error: { category: resolver }
+}

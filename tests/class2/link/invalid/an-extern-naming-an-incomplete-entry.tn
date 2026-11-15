@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-extern-naming-an-incomplete-entry.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  x => !meta.extern { schema: "https://tson.io/2026/40/m/meta.tn"  type: enum }
+  use => { f: x }
+}

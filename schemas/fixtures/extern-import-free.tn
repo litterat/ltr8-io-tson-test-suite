@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/extern-import-free.tn"
+@doc:"""
+  A fixture schema importing nothing ([TSON-SCHEMA] §3.3.2): its closure holds no kernel, its forms are the
+  processor's own kernel's, and an extern of one of its entries ([TSON-SCHEMA] §5.13) is admitted.
+  """
+!schema {
+  node => { next?: node }
+}

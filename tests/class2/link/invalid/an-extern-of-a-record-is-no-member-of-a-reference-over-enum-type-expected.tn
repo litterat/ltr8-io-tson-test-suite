@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-extern-of-a-record-is-no-member-of-a-reference-over-enum-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  description: """
+    Membership through an extern is judged at the foreign entry: a record is no value of `meta.enum_type`, so
+    the default names no member of the reference.
+    """
+  error: { category: resolver }
+}

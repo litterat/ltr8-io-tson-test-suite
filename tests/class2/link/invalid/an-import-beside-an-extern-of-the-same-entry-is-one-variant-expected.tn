@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-import-beside-an-extern-of-the-same-entry-is-one-variant-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  description: """
+    An extern's identity is the foreign entry's, its declaring schema and path, so the same entry reached by an
+    import and by an extern is one type, and a choice listing both lists it twice.
+    """
+  error: { category: resolver }
+}

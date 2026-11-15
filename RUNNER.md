@@ -148,7 +148,8 @@ them in every subject, as it rewrites them in the fixtures; nothing else in the 
 `https://tson.io/test-suite/schemas/fixtures/link-money.tn`, which a runner serves from its checkout. That is a
 *rule*, not a table, so a runner needs no edit when the corpus grows a fixture. Any other identity a Class 2
 subject imports is one of the bundled schemas, which a processor already holds; a Class 1 subject's imports are
-never fetched.
+never fetched. The schema an extern names ([TSON-SCHEMA] §5.13) is served by the same rule, being a dependency of
+the subject as an import is.
 
 A subject is a schema document exactly when its root is tagged `!schema`, after any root annotations; any other
 root is data. So a `class2/schema/` or `class2/link/` subject is tagged, a `class2/validate/` subject names its

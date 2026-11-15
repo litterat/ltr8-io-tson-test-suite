@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-extern-in-a-nested-schema-map-is-a-prefix-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  description: """
+    A prefix is a nested schema map of externs: each member's head is written `!meta.extern`, so it is found
+    with the document's imports, and `v1.order` and `v2.order` name the two foreign `order`s.
+    """
+  valid: {
+    binds: [v1.order v2.order envelope]
+  }
+}

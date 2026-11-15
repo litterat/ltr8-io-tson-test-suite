@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-schema-importing-one-with-externs-has-the-extern-names.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-envelope.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  batch => { items: [order_v1]  envelopes: [envelope]  either: (order_v1 | order_v2) }
+}
