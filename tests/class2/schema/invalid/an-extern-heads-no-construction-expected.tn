@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-extern-heads-no-construction-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  description: """
+    An extern is sealed: it names another schema's type as that schema declares it, so it is never a
+    construction head.
+    """
+  error: { category: resolver }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-extern-into-a-schema-importing-nothing-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  description: """
+    A schema importing nothing holds no kernel, and its forms are the processor's own kernel's, so an extern
+    into it is admitted and its record is of the importer's `meta.record`.
+    """
+  valid: {
+    binds: [free_node holder]
+  }
+}

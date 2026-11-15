@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-disjoint-assertion-over-two-externs-of-records.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order_v1 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"  type: order }
+  order_v2 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-2.tn"  type: order }
+  either => @meta.disjoint (order_v1 | order_v2)
+}

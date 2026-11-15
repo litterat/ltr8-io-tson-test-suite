@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-extern-of-a-record-is-a-member-of-a-reference-over-record.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order_v1 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"  type: order }
+  count_x => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: count }
+  holder => {
+    record?:  meta.ref<meta.record> ~ order_v1
+    type?:    meta.type_ref ~ order_v1
+    integer?: meta.ref<numeric.integer_type> ~ count_x
+  }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/extern-envelope.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  A fixture schema declaring two externs ([TSON-SCHEMA] §5.13), `order_v1` and `order_v2`, each naming the
+  `order` of one of two schemas, and a record using them. A schema importing it has the extern names and none
+  of the names of the schemas they name.
+  """
+!schema {
+  order_v1 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"  type: order }
+  order_v2 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-2.tn"  type: order }
+  envelope => { id: text  body: (order_v1 | order_v2) }
+}

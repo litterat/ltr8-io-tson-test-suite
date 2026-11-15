@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  One of two fixture schemas that both declare `order` and `card`, the case an extern ([TSON-SCHEMA] §5.13)
+  exists for: importing both is a collision, and an extern of each names them side by side.
+  """
+!schema {
+  order => { id: text  payment: card }
+  card  => { number: text }
+}

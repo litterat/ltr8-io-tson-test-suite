@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-extern-whose-pin-does-not-match-its-schema.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order_v1 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn?sha256=0000000000000000000000000000000000000000000000000000000000000000"  type: order }
+}

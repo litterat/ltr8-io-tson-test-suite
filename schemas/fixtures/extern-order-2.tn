@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/extern-order-2.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  The second of two fixture schemas that both declare `order` and `card` ([TSON-SCHEMA] §5.13), with an
+  `order` of another shape than extern-order-1.tn's.
+  """
+!schema {
+  order => { ref: text  lines: [line]  payment: card }
+  line  => { sku: text  qty: int32 }
+  card  => { pan: text }
+}

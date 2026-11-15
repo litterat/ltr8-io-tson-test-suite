@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-extern-names-any-type-of-its-schemas-closure.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  x_rec => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: rec }
+  x_pet => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: pet }
+  x_count => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: count }
+  x_colour => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: colour }
+  x_either => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: either }
+  x_names => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: names }
+  x_lookup => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: lookup }
+  x_pair => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: pair }
+  x_rec_alias => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: rec_alias }
+  x_text_box => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: text_box }
+  x_geo_address => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: geo.address }
+  x_ext_card => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: ext_card }
+  x_order => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: order }
+  x_int32 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: int32 }
+  use => { x: x_rec  y: x_geo_address }
+}
