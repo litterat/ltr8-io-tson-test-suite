@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-choice-of-externs-of-two-records-needs-the-tag-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  description: """
+    `(order_v1 | order_v2)` is classified at the targets, two records, so it is not disjoint and an untagged value
+    selects no variant.
+    """
+  error: {
+    category: validation
+    path: "/body"
+  }
+}

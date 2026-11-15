@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-naming-an-extern-of-an-abstract-record-selects-nothing.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!all { p: !pet_x { name: rex } }

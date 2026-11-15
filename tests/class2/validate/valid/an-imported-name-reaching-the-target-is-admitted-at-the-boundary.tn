@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-imported-name-reaching-the-target-is-admitted-at-the-boundary.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-importing.tn"
+!bearer { r: !rec { a: x } }

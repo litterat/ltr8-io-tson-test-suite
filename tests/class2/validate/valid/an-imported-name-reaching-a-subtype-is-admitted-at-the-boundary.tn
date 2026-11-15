@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-imported-name-reaching-a-subtype-is-admitted-at-the-boundary.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-importing.tn"
+!bearer { p: !dog { name: rex  barks: true } }

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-extern-of-each-sort-of-type-reads.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!all {
+  c: 3
+  col: green
+  e: 4
+  n: [a b]
+  l: { x => 1 }
+  t: [a 1]
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-inner-scopes-boundary-is-read-in-the-scope-enclosing-it-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  description: """
+    The value at `th` is a foreign value of extern-nested-mid.tn's extern `thing_x`; its tag is read in extern-
+    nested-mid.tn's scope, which holds no `thing`.
+    """
+  error: {
+    category: resolver
+  }
+}

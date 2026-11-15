@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-foreign-value-at-the-root.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!rec_x { a: x  memo: { note: n } }

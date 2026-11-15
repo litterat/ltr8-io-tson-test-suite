@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-annotation-named-through-an-extern-is-read-against-its-target.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!schema {
+  @label_x:"hello" y => { a: text }
+  z => @rec_x:{ a: x  memo: !memo { note: n } } { b: text }
+}

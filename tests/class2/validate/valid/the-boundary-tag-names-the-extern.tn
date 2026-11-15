@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/the-boundary-tag-names-the-extern.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!all { r: !rec_x { a: x } }

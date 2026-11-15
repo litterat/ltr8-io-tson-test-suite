@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-untagged-value-at-an-extern-of-a-member-dispatched-base-is-placed-by-its-selector-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  description: """
+    An untagged value is read as at a position of the target: `shape` is abstract and names a selector, so the value
+    is placed by reading it, at `circle`.
+    """
+  valid: _
+}

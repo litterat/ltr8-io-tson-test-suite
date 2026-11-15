@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/extern-nested-inner.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  The innermost of three fixture schemas whose externs nest ([TSON-SCHEMA] §7.9): extern-nested-mid.tn names its
+  `thing` through an extern, and extern-holder.tn names extern-nested-mid.tn's `holder` through another.
+  """
+!schema {
+  thing => { t: text }
+  memo  => { inner: text }
+}

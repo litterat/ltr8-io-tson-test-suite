@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/scopes-nest-through-a-foreign-schemas-own-extern.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!all { nest: { th: { t: x }  any: !memo { mid: m } } }

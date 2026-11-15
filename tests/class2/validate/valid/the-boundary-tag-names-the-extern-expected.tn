@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/the-boundary-tag-names-the-extern-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  description: """
+    The tag in front of a foreign value is read in the enclosing scope, where `rec_x` is the extern itself.
+    """
+  valid: _
+}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/scopes-nest-through-a-foreign-schemas-own-extern-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  description: """
+    extern-nested-mid.tn's `holder` holds a value through its own extern: each boundary is read in the scope that
+    encloses it, and `!memo` names extern-nested-mid.tn's.
+    """
+  valid: _
+}
