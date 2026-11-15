@@ -1,0 +1,36 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  A fixture schema reading values through externs ([TSON-SCHEMA] §5.13, §7.9): an extern of each entry of
+  extern-foreign.tn, an extern of extern-nested-mid.tn's `holder`, an alias of an extern, and `all`, whose fields
+  put an extern at every position a type's name stands: a field, an element, a map value, a map key, a tuple
+  position, a variant of a disjoint choice, a type argument closed in place and one a declaration names. Its own
+  `memo` has another shape than extern-foreign.tn's, and it declares no `label`: a value read through an extern
+  names the foreign schema's, and the tag in front of one names this schema's.
+  """
+!schema {
+  rec_x    => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: rec }
+  pet_x    => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: pet }
+  dog_x    => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: dog }
+  shape_x  => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: shape }
+  circle_x => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: circle }
+  count_x  => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: count }
+  colour_x => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: colour }
+  either_x => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: either }
+  names_x  => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: names }
+  lookup_x => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: lookup }
+  pair_x   => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: pair }
+  holder_x => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: holder }
+  label_x  => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: label }
+  nest_x   => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-nested-mid.tn"  type: holder }
+  rec_alias => rec_x
+  memo      => { other: int32 }
+  page      => <T> { items: [T] }
+  paged     => page<rec_x>
+  all       => {
+    r?: rec_x  p?: pet_x  d?: dog_x  s?: shape_x  c?: count_x  col?: colour_x  e?: either_x  n?: names_x
+    l?: lookup_x  t?: pair_x  h?: holder_x  ra?: rec_alias  nest?: nest_x
+    els?: [rec_x]  m?: { text => rec_x }  keys?: { count_x => text }  tup?: [rec_x, text]
+    dis?: (rec_x | int32)  any?: meta.declared  pg?: page<rec_x>  pd?: paged
+  }
+}

@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/extern-nested-mid.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  The middle of three fixture schemas whose externs nest ([TSON-SCHEMA] §7.9): `holder` holds a value of
+  extern-nested-inner.tn's `thing` through the extern `thing_x`, and a declared position.
+  """
+!schema {
+  thing_x => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-nested-inner.tn"  type: thing }
+  holder  => { th: thing_x  any?: meta.declared }
+  memo    => { mid: text }
+}

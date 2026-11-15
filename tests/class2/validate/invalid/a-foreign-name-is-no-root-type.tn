@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-foreign-name-is-no-root-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!rec { a: x }

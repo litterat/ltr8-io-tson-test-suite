@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-value-in-a-nested-scope-is-judged-by-the-innermost-schema-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  description: """
+    The value at `th` is read against extern-nested-inner.tn's `thing`, which declares no `u`.
+    """
+  error: {
+    category: validation
+    path: "/nest/th/u"
+  }
+}

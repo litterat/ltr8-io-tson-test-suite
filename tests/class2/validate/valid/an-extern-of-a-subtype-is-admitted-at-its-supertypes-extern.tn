@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-extern-of-a-subtype-is-admitted-at-its-supertypes-extern.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!all { p: !dog_x { name: rex  barks: true } }

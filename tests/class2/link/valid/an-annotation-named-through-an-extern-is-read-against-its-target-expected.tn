@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-annotation-named-through-an-extern-is-read-against-its-target-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §6, [TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  description: """
+    `@label_x` and `@rec_x` name externs of the declaring schema's namespace, and each value is read against the
+    target in the foreign schema's scope: `!memo` inside it is extern-foreign.tn's, with a `note`, and not the
+    `memo` extern-holder.tn declares.
+    """
+  valid: { binds: [y z] }
+}

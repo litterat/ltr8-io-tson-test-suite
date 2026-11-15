@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  A fixture schema whose entries extern-holder.tn names through externs ([TSON-SCHEMA] §5.13), one of each sort a
+  value read through an extern can have: a record holding a record of its own, an abstract record selected by tag
+  and one selected by its members, an atom instance, an enum, two choices, named collections, a record with a
+  declared position, and a text type for an annotation. It declares `memo` and `label`, which extern-holder.tn's
+  namespace either declares otherwise or lacks, so a name inside a value read through an extern is seen to resolve
+  here.
+  """
+!schema {
+  rec     => { a: text  memo?: memo }
+  memo    => { note: text }
+  pet     => abstract { name: text }
+  dog     => pet & { barks: boolean }
+  shape   => abstract { kind: text =?  size: int32 }
+  circle  => shape & { kind?: = "circle" }
+  count   => !integer ^ { min: 0 }
+  colour  => !enum [red green]
+  either  => (text | int32)
+  names   => [text]
+  lookup  => { text => int32 }
+  pair    => [text, int32]
+  holder  => { any: meta.declared }
+  label   => text
+}

@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/the-scope-example-reads-its-body-in-the-foreign-schema.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-envelope.tn"
+!envelope {
+  id: a
+  body: !order_v2 { ref: r  lines: [{ sku: A  qty: 1 }]  payment: !card { pan: "4111" } }
+}

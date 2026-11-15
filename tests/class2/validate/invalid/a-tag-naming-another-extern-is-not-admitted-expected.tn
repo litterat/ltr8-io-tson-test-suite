@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-naming-another-extern-is-not-admitted-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  description: """
+    At a position typed `rec_x`, the tag `dog_x` names an extern whose target is not IS-A `rec`.
+    """
+  error: {
+    category: validation
+    path: "/r"
+  }
+}

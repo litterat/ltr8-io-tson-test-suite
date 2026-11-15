@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-imported-name-reaching-the-target-is-admitted-at-the-boundary-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  description: """
+    The reading schema imports extern-foreign.tn, so `rec` is a name of the enclosing scope, and it reaches the
+    entry `rec_x` lands on: the tag is admitted, and the value is read as at the position.
+    """
+  valid: _
+}

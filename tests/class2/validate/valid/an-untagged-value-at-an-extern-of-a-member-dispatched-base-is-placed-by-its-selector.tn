@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-untagged-value-at-an-extern-of-a-member-dispatched-base-is-placed-by-its-selector.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!all { s: { kind: circle  size: 3 } }

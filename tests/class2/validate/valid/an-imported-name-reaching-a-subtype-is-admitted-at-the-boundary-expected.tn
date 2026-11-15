@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-imported-name-reaching-a-subtype-is-admitted-at-the-boundary-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  description: """
+    `dog`, imported, reaches an entry that IS-A `pet`, the target of `pet_x`, judged by identity: the tag is
+    admitted and the value is read against `dog`.
+    """
+  valid: _
+}

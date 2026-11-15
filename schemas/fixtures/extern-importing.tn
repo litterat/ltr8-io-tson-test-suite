@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/extern-importing.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"
+@doc:"""
+  A fixture schema that imports extern-foreign.tn and also names two of its entries through externs ([TSON-SCHEMA]
+  §5.13): a tag at an extern position is read in this scope, where the imported names `rec` and `dog` reach the
+  target and a subtype of it, by identity, as `rec_x` and `pet_x` do (§7.9).
+  """
+!schema {
+  rec_x  => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: rec }
+  pet_x  => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-foreign.tn"  type: pet }
+  bearer => { r?: rec_x  p?: pet_x }
+}
