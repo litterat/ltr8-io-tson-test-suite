@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-number-equal-to-its-exclusive-max.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-exclusive-bounds.tn"
+!ranges {
+  amount: 2.5
+}

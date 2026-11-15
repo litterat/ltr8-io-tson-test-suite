@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-moving-a-date-exclusive-max-outward.tn"
+!!import:"https://tson.io/2026/40/m/temporal.tn"
+!schema {
+  open_day  => !date ^ { exclusive_min: 2000-01-01  exclusive_max: 2100-01-01 }
+  wider_day => !open_day ^ { exclusive_max: 2200-01-01 }
+}

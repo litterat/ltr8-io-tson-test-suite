@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-int32-refinement-writing-min-and-exclusive-min.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  both_floors => !int32 ^ { min: 1  exclusive_min: 0 }
+}

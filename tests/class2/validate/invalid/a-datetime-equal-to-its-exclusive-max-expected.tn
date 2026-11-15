@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-datetime-equal-to-its-exclusive-max-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: "`instant` is `open_datetime`, whose `exclusive_max` is `2026-12-31T00:00:00Z`. A value must be strictly less than an exclusive maximum, so `2026-12-31T00:00:00Z` itself is refused."
+  error: {
+    category: validation
+    path: "/instant"
+  }
+}

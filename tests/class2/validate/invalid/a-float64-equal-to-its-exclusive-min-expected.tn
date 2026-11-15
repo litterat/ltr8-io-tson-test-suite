@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-float64-equal-to-its-exclusive-min-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: "`measure` is `open_float64`, whose `exclusive_min` is `0.5`. A value must be strictly greater than an exclusive minimum, so `0.5` itself is refused."
+  error: {
+    category: validation
+    path: "/measure"
+  }
+}

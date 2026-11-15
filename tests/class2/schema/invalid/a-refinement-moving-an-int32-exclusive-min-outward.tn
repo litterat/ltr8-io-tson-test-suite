@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-moving-an-int32-exclusive-min-outward.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  open_count  => !int32 ^ { exclusive_min: 0  exclusive_max: 100 }
+  wider_count => !open_count ^ { exclusive_min: -10 }
+}

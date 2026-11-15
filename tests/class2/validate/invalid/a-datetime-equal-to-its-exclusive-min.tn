@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-datetime-equal-to-its-exclusive-min.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-exclusive-bounds.tn"
+!ranges {
+  instant: "2026-01-01T00:00:00Z"
+}

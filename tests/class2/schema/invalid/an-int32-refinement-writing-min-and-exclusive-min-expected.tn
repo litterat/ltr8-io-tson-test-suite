@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-int32-refinement-writing-min-and-exclusive-min-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.11"
+  description: """
+    `integer_type` states its lower bound as the group `( min: integer | exclusive_min: integer )?`, which
+    admits at most one chosen option. The body writes both, so it is no instance of the constructor and
+    the schema fails to load. The two bounds agree on every integer, so nothing but the group refuses it.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-value-strictly-inside-each-familys-exclusive-bounds-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: "Each of the nine ordered families carries an exclusive bound at both ends, and each field holds a value strictly between them. An exclusive bound excludes only its own value, so every one is admitted."
+  valid: _
+}

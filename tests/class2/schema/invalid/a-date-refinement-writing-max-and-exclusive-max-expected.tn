@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-date-refinement-writing-max-and-exclusive-max-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.11"
+  description: """
+    `date_type` states its upper bound as the group `( max: date | exclusive_max: date )?`, which admits
+    at most one chosen option. The body writes both, so it is no instance of the constructor and the
+    schema fails to load. The two bounds agree on every date, so nothing but the group refuses it.
+    """
+  error: {
+    category: resolver
+  }
+}
