@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-incomplete-entry-completed-in-braces-or-in-brackets-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  description: """
+    `!X { ... }` completes an incomplete entry with the fields it lacks, and `!X [ ... ]` does where exactly one
+    required field is absent, the brackets being that field's value. Both are plain constructions of
+    `meta.enum_type`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        status => !meta.enum_type { name_type: meta.identifier  members: [OPEN DONE] }
+        phase  => !meta.enum_type { name_type: meta.identifier  members: [DRAFT FINAL] }
+      }
+      """
+  }
+}

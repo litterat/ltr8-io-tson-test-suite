@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-application-of-an-incomplete-entry-with-too-few-arguments-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  description: """
+    `X<A ...>` takes one argument for each type slot `X` leaves absent; `open` leaves `key_type` and `value_type`.
+    """
+  error: {
+    category: resolver
+  }
+}

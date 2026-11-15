@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-incomplete-entry-refined-then-completed-accumulates-its-fields.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  bounded  => !meta.array ^ { min_items: 2 }
+  capped   => !bounded ^ { max_items: 5 }
+  tags     => capped<text>
+}

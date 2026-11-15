@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-data-tag-naming-an-incomplete-entry.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-incomplete-entries.tn"
+!nonempty [a]

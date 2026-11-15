@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-an-incomplete-entry-writing-its-last-required-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  description: """
+    `^` keeps what its base is: a refinement of an incomplete entry leaves a required field absent, and one
+    writing the last is refused, the completion being spelled `!nonempty { element_type: text }` or
+    `nonempty<text>`.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-incomplete-entry-holding-a-name-that-reaches-nothing-in-a-type-written-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40), [TSON-SCHEMA] §4.2"
+  description: """
+    A type written in place inside an incomplete entry is judged as that construction is: its `element_type`
+    reaches nothing.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/data-read-against-a-completion-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  description: """
+    A completion in place reads as the construction written there.
+    """
+  valid: _
+}

@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-an-array-type-narrows-by-facet-and-keeps-is-a-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7 (refinement of a collection type, proposed for Revision 40)"
+  description: """
+    `!T ^ { ... }` over an array type is a refinement, IS-A `T` and its chain, each written facet moving by its
+    kind over effective values: the bounds inward, `unique_items` to true, `voidable` to false, while
+    `element_type` and `ordered` are restated only.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        tags => !meta.array { chain: { subtypes: [more same] }  element_type: text  min_items: 1 }
+        more => !meta.array {
+          chain: { supertypes: [tags] }
+          element_type: text  unique_items: true  min_items: 2  max_items: 8
+        }
+        same => !meta.array { chain: { supertypes: [tags] }  element_type: text  min_items: 1 }
+      }
+      """
+  }
+}

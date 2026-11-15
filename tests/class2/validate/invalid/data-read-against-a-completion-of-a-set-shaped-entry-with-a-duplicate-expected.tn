@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/data-read-against-a-completion-of-a-set-shaped-entry-with-a-duplicate-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  description: """
+    `ids` completes `distinct`, whose `unique_items: true` it keeps, so a repeated element is refused.
+    """
+  error: {
+    category: validation
+    path: "/2"
+  }
+}

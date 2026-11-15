@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-an-array-type-changing-its-element-type.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  names => [text]
+  ids   => !names ^ { element_type: uuid }
+}

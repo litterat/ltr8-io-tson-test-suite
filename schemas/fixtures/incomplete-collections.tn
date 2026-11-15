@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/incomplete-collections.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  Two incomplete entries ([TSON-SCHEMA] §5.5): `nonempty`, an array construction left open with
+  `element_type` absent, and `keyed`, a map construction left open with `value_type` absent. Neither is
+  a type, so this schema's resolved form lists neither; a schema importing it refines and completes them.
+  """
+!schema {
+  nonempty => !meta.array ^ { min_items: 1 }
+  keyed    => !meta.map ^ { key_type: text }
+}

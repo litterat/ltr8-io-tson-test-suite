@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-incomplete-entry-completed-in-braces-or-in-brackets.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  names  => !meta.enum_type ^ { name_type: meta.identifier }
+  status => !names [OPEN DONE]
+  phase  => !names { members: [DRAFT FINAL] }
+}

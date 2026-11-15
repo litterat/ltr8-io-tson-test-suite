@@ -177,6 +177,9 @@ pre-loaded kernel alone when the subject has none. For a subject importing `meta
 the ordinary reading; a fixture that declares types of its own imports what it builds on and adds them, and a value of
 one of them is typed there and nowhere else.
 
+An expected resolved form lists complete entries only: an incomplete entry ([TSON-SCHEMA] §5.5), and an alias whose
+chain ends at one, appears in the subject and never in its resolved form.
+
 ## `proposed/`
 
 `proposed/` holds vectors for spec questions that are still open — behaviour an implementation has

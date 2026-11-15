@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/incomplete-entries-are-checked-across-fields-only-where-they-are-completed.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  array_min  => !meta.array ^ { min_items: 10 }
+  max_things => !array_min ^ { max_items: 5 }
+  names      => [text]
+}
