@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-time-whose-offset-carries-it-past-midnight.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-instant-bounds.tn"
+!moments {
+  early: "23:30:00-02:00"
+}

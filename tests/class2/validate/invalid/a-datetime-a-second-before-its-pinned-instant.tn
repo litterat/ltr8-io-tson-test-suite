@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-datetime-a-second-before-its-pinned-instant.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-instant-bounds.tn"
+!moments {
+  instant: "2025-12-31T18:59:59-05:00"
+}

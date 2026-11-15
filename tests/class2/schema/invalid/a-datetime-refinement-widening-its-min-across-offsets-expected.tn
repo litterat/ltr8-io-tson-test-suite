@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-datetime-refinement-widening-its-min-across-offsets-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: """
+    A lower bound may only rise under refinement, and a `datetime` is compared as its instant.
+    `2026-01-01T10:30:00+01:00` reads later than `2026-01-01T10:00:00Z` on its own clock and is
+    `2026-01-01T09:30:00Z`, half an hour earlier, so `from_half` admits instants its source refuses and the
+    schema fails to load.
+    """
+  error: {
+    category: resolver
+  }
+}

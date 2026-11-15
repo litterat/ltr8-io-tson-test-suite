@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-datetime-pinned-by-min-and-max-in-two-offsets-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §7.4"
+  description: """
+    `2026-01-01T01:00:00+01:00` and `2026-01-01T00:00:00Z` are one `datetime`, the offset being a
+    spelling, so `new_year`'s lower bound is not above its upper: the two meet at one instant, both
+    inclusive, and the body admits exactly that instant. A range pinning a single value is coherent.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        new_year => !temporal.datetime_type { chain: { supertypes: [datetime] }  min: "2026-01-01T01:00:00+01:00"  max: "2026-01-01T00:00:00Z" }
+      }
+      """
+  }
+}

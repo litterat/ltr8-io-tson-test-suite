@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-time-refinement-widening-its-min-across-offsets.tn"
+!!import:"https://tson.io/2026/40/m/temporal.tn"
+!schema {
+  from_ten  => !time ^ { min: "10:00:00Z" }
+  from_half => !from_ten ^ { min: "10:30:00+01:00" }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-time-whose-min-is-after-its-max-across-offsets-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §7.4, [TSON-SCHEMA] §8.1"
+  description: """
+    The local times read in order, and the values do not: `10:30:00+01:00` is `09:30:00Z`, half an hour
+    before the lower bound, so `never` admits no `time`. Incoherent constraint values are a resolver error.
+    """
+  error: {
+    category: resolver
+  }
+}
