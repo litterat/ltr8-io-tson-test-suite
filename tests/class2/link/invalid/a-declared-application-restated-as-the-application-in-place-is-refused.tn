@@ -6,5 +6,5 @@
   page       => <T> { items: [T] }
   page_order => page<order>
   base       => { f: page_order }
-  sub        => base ^ { f: page<order> }
+  sub        => base & { f: page<order> }
 }

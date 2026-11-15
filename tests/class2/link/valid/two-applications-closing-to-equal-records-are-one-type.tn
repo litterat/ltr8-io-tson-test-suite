@@ -5,5 +5,5 @@
   box   => <T> { v: T }
   crate => <T> { v: T }
   base  => { f: box<int32> }
-  sub   => base ^ { f: crate<int32> }
+  sub   => base & { f: crate<int32> }
 }

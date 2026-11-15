@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-restated-field-narrows-to-a-subtype.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  person   => { name: text }
+  employee => person & { badge: text }
+  count    => !integer ^ { min: 0 }
+  label    => text
+  team     => { lead: person  size: integer  title: text }
+  staffed  => team & { lead: employee  title: label }
+  counted  => team & { size: count  note: text }
+}

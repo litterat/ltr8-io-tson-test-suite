@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-empty-composition-is-the-nominal-subtype-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8 (`^` follows `!name`, proposed for Revision 40)"
+  description: """
+    `person & {}` restates nothing and adds nothing: `vip` has `person`'s whole field set, IS-A `person`, and is an
+    entry of its own, the language's nominal subtype of a record.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        person => !meta.record { chain: { subtypes: [vip] }  fields: {
+          name => !meta.record_field { type: text }
+        } }
+
+        vip => !meta.record { chain: { supertypes: [person] }  fields: {
+          name => !meta.record_field { type: text }
+        } }
+      }
+      """
+  }
+}

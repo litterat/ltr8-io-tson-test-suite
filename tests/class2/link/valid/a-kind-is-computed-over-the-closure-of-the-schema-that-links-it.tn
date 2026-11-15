@@ -2,5 +2,5 @@
 !!import:"https://tson.io/2026/40/m/meta.tn"
 !schema {
   text_identifier => !unicode.identifier_type { continue_add: " " }
-  text_enum       => meta.enum_type ^ { name_type?: = text_identifier }
+  text_enum       => meta.enum_type & { name_type?: = text_identifier }
 }

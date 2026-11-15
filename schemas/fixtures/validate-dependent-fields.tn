@@ -13,7 +13,7 @@
   point     => { x: int32  y: int32 }
   records   => meta.ref<meta.record>
   cell      => { kind: meta.type_ref  v?: kind! }
-  int_cell  => cell ^ { kind?: = int32 }
+  int_cell  => cell & { kind?: = int32 }
   defaulted => { kind?: meta.type_ref ~ int32  v?: kind! }
   shaped    => { kind: records  v?: kind! }
   sheet     => { cells: [cell] }

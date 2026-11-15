@@ -43,6 +43,6 @@
   fpet => abstract fbase & { kind: text =?  name: text }
   fdog => fpet & { kind?: = "dog"  breed: text }
   fkennel => { p: fpet }
-  tightened => node ^ { "$ref": text }
+  tightened => node & { "$ref": text }
   trimmed => node - { "$ref" }
 }

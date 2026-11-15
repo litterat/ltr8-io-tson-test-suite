@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-typed-entry-naming-no-inherited-field-adds-it.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  person => { age: int32 }
+  adult  => person & { agee: int32 }
+}
