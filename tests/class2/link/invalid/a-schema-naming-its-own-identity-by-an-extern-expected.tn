@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-schema-naming-its-own-identity-by-an-extern-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  description: """
+    An extern's schema is a dependency of the document declaring it, and the reference relation over imports
+    and externs together is acyclic (§2.2.3, §3.4.1): a schema reaches itself through neither. An extern naming
+    the document's own identity is that cycle, so the schema does not load.
+    """
+  error: { category: resolver }
+}

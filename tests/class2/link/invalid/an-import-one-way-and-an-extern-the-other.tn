@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-import-one-way-and-an-extern-the-other.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/cycle-extern-back-to-importer.tn"
+!schema {
+  a => { b: b }
+}

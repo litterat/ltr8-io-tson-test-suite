@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-schema-naming-its-own-identity-by-an-extern.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  a  => { x: text }
+  me => !meta.extern { schema: "https://tson.io/test-suite/class2/link/invalid/a-schema-naming-its-own-identity-by-an-extern.tn"  type: a }
+}

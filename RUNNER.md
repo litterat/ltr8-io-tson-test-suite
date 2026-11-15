@@ -149,7 +149,8 @@ them in every subject, as it rewrites them in the fixtures; nothing else in the 
 *rule*, not a table, so a runner needs no edit when the corpus grows a fixture. Any other identity a Class 2
 subject imports is one of the bundled schemas, which a processor already holds; a Class 1 subject's imports are
 never fetched. The schema an extern names ([TSON-SCHEMA] §5.13) is served by the same rule, being a dependency of
-the subject as an import is.
+the subject as an import is. A reference reaching the subject's own `!!id`, from the subject or from a fixture, names
+the subject itself, whose resolution is in progress: it is a reference cycle ([TSON-SCHEMA] §2.2.3), never served.
 
 A subject is a schema document exactly when its root is tagged `!schema`, after any root annotations; any other
 root is data. So a `class2/schema/` or `class2/link/` subject is tagged, a `class2/validate/` subject names its
@@ -159,8 +160,9 @@ The link layer's §2.2.3 vectors need this: an import closure cannot be exercise
 topology lives in the fixture schemas' own `!!import` headers, so a chain, a diamond or a wide fan-in is a
 matter of which files exist rather than of anything a runner knows. Fixtures are named for what they declare
 rather than for the vector that uses them, the namespace being shared, and each one resolves on its own — the
-collisions those vectors are about exist only in the importer. The one exception is `fixtures/a-data-document.tn`,
-which is data by design: it is there to be refused as an import.
+collisions those vectors are about exist only in the importer. The exceptions are `fixtures/a-data-document.tn`,
+which is data by design: it is there to be refused as an import; and the `fixtures/cycle-*.tn` schemas, each on a
+reference cycle with the subject that names it, by design.
 
 ## A fixture schema's own records
 
