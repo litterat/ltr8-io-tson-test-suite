@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-period-equal-to-its-exclusive-max-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: "`term` is `open_period`, whose `exclusive_max` is `P1Y`. A value must be strictly less than an exclusive maximum, so `P1Y` itself is refused."
+  error: {
+    category: validation
+    path: "/term"
+  }
+}

@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-date-exclusive-bound-moves-inward-under-refinement-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: """
+    An exclusive bound on a date is an ordered bound like any other and may move only inward. `inner_day`
+    raises its source's `exclusive_min` and writes no upper bound, so the refinement merges with its source
+    and the resolved body carries the inherited `exclusive_max` beside the new `exclusive_min`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        open_day => !temporal.date_type { chain: { supertypes: [date]  subtypes: [inner_day] }  exclusive_min: 2000-01-01  exclusive_max: 2100-01-01 }
+
+        inner_day => !temporal.date_type { chain: { supertypes: [date open_day] }  exclusive_min: 2010-01-01  exclusive_max: 2100-01-01 }
+      }
+      """
+  }
+}

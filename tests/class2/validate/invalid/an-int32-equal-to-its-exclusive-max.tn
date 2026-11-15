@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-int32-equal-to-its-exclusive-max.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-exclusive-bounds.tn"
+!ranges {
+  count: 10
+}

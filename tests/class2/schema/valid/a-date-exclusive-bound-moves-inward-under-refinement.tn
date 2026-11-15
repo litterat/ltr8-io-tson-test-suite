@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-date-exclusive-bound-moves-inward-under-refinement.tn"
+!!import:"https://tson.io/2026/40/m/temporal.tn"
+!schema {
+  open_day  => !date ^ { exclusive_min: 2000-01-01  exclusive_max: 2100-01-01 }
+  inner_day => !open_day ^ { exclusive_min: 2010-01-01 }
+}

@@ -1,0 +1,36 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-exclusive-bounds.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  An exclusive bound on every ordered atom family. [TSON-SCHEMA] §5.5 and §5.7 state each family's bounds
+  as two field groups, `( min | exclusive_min )?` and `( max | exclusive_max )?`, and a value outside a
+  bound is a validation error; an exclusive bound is outside itself.
+
+  Each type is an open interval, so a value equal to either end is refused and every value between them
+  is admitted. Every field of `ranges` is optional, so an invalid document writes the one field it is
+  about and its pointer names that field alone. The `float64` ends are exact in binary64, so rounding
+  a written value onto the grid moves nothing; the `time` and `datetime` ends are written in `Z`.
+  """
+!schema {
+  open_int32    => !int32 ^ { exclusive_min: 0  exclusive_max: 10 }
+  open_number   => !number ^ { exclusive_min: 0.5  exclusive_max: 2.5 }
+  open_rational => !rational ^ { exclusive_min: "1/3"  exclusive_max: "2/3" }
+  open_float64  => !float64 ^ { exclusive_min: 0.5  exclusive_max: 2.5 }
+  open_date     => !date ^ { exclusive_min: 2000-01-01  exclusive_max: 2000-12-31 }
+  open_time     => !time ^ { exclusive_min: "09:00:00Z"  exclusive_max: "17:00:00Z" }
+  open_datetime => !datetime ^ { exclusive_min: "2026-01-01T00:00:00Z"  exclusive_max: "2026-12-31T00:00:00Z" }
+  open_duration => !duration ^ { exclusive_min: PT1M  exclusive_max: PT1H }
+  open_period   => !period ^ { exclusive_min: P1M  exclusive_max: P1Y }
+
+  ranges => {
+    count?:   open_int32
+    amount?:  open_number
+    ratio?:   open_rational
+    measure?: open_float64
+    day?:     open_date
+    clock?:   open_time
+    instant?: open_datetime
+    span?:    open_duration
+    term?:    open_period
+  }
+}

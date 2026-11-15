@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-moving-a-date-exclusive-max-outward-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: """
+    An upper bound may only fall under refinement. `wider_day` raises its source's `exclusive_max` from
+    2100-01-01 to 2200-01-01, admitting dates its source refuses, so the schema fails to load.
+    """
+  error: {
+    category: resolver
+  }
+}
