@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-composition-over-meta-set-type-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.8 (incomplete entries, proposed for Revision 40)"
+  description: """
+    `meta.set_type` is an incomplete entry and no type, so it is no operand of `&`. A constructor narrowing an
+    array composes `meta.array` and writes the set's facets itself.
+    """
+  error: {
+    category: resolver
+  }
+}

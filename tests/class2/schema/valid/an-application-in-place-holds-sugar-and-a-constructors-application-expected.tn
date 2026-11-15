@@ -16,14 +16,14 @@
           parameters: [ !meta.param { name: T } ]
           fields: {
             items => !meta.record_field { type: { of: !meta.array { element_type: T } } }
-            ids   => !meta.record_field { type: { of: !meta.set_type { element_type: T } } }
+            ids   => !meta.record_field { type: { of: !meta.array { element_type: T  ordered: false  unique_items: true } } }
           }
         }
 
         holder => !meta.record { fields: {
           p => !meta.record_field { type: { of: !meta.record { fields: {
             items => !meta.record_field { type: { of: !meta.array { element_type: order } } }
-            ids   => !meta.record_field { type: { of: !meta.set_type { element_type: order } } }
+            ids   => !meta.record_field { type: { of: !meta.array { element_type: order  ordered: false  unique_items: true } } }
           } } } }
         } }
       }

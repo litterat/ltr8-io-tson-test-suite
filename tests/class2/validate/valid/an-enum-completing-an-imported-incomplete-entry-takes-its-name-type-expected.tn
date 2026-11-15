@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-enum-completing-an-imported-incomplete-entry-takes-its-name-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.5"
+  description: "An imported schema writes its own identifier family as `text_enum`'s `name_type`, which the kernel types `meta.identifier_ref`, and leaves `members` absent. `text_identifier` is built with `identifier_type`, so it is a member where `text_enum` is declared, and `!text_enum [...]` completes it in the importing schema. `New York` is a member of `city`, read as a name of `text_identifier`."
+  valid: _
+}

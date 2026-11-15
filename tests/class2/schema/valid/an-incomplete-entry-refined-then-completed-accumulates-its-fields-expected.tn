@@ -9,6 +9,7 @@
   valid: {
     resolved: """
       !schema {
+        @meta.completion:{ of: [capped bounded] }
         tags => !meta.array { element_type: text  min_items: 2  max_items: 5 }
       }
       """

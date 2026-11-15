@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/enum-as-a-fields-type-is-refused.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  holder => { kind: enum }
+}

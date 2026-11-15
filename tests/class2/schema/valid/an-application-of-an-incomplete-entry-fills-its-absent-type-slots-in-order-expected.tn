@@ -9,7 +9,9 @@
   valid: {
     resolved: """
       !schema {
+        @meta.completion:{ of: [keyed] }
         counts => !meta.map { key_type: text  value_type: int32 }
+        @meta.completion:{ of: [open] }
         pairs  => !meta.map { key_type: text  value_type: uuid  voidable: true }
       }
       """

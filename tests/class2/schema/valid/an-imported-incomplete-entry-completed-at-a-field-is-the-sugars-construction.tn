@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-imported-incomplete-entry-completed-at-a-field-is-the-sugars-construction.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/nonempty-rows.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  post => {
+    a: rows<uuid>
+    b: [uuid; 1..]
+  }
+}

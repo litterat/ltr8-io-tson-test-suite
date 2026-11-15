@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/no-completion-is-stated-in-place-or-on-a-refinement-of-a-completed-type.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  nonempty => !meta.array ^ { min_items: 1 }
+  holder   => { a: nonempty<text> }
+  tags     => nonempty<text>
+  few_tags => !tags ^ { max_items: 3 }
+}

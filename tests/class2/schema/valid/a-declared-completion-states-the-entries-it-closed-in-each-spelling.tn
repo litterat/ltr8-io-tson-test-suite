@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-declared-completion-states-the-entries-it-closed-in-each-spelling.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  nonempty   => !meta.array ^ { min_items: 1 }
+  capped     => !nonempty ^ { max_items: 5 }
+  braced     => !capped { element_type: text }
+  positional => !capped text
+  applied    => capped<text>
+}

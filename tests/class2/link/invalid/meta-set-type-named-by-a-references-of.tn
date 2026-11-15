@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/meta-set-type-named-by-a-references-of.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  sets => !meta.ref { of: meta.set_type }
+}

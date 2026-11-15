@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-set-as-a-parameters-bound-is-refused.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  holder => <E: set> { items: E }
+}

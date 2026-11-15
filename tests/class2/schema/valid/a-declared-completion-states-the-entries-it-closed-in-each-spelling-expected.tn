@@ -1,0 +1,23 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-declared-completion-states-the-entries-it-closed-in-each-spelling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §8.1, [TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  description: """
+    A declaration completing an incomplete entry carries `@meta.completion` on its key, naming the incomplete
+    entries it closed, nearest first: `capped`, then `nonempty`, which `capped` was built from. The constructor is not
+    listed, the value's tag stating it. The braced, positional and applied spellings are one completion and state
+    the same; the value is the plain construction either way.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        @meta.completion:{ of: [capped nonempty] }
+        braced     => !meta.array { element_type: text  min_items: 1  max_items: 5 }
+        @meta.completion:{ of: [capped nonempty] }
+        positional => !meta.array { element_type: text  min_items: 1  max_items: 5 }
+        @meta.completion:{ of: [capped nonempty] }
+        applied    => !meta.array { element_type: text  min_items: 1  max_items: 5 }
+      }
+      """
+  }
+}

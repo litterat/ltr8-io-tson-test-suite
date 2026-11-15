@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-annotation-value-tagged-by-the-documents-own-incomplete-entry-is-refused.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-handler-api.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  post => @slot:{ of: !rows { element_type: text } } { title: text }
+  rows => !meta.array ^ { min_items: 1 }
+}

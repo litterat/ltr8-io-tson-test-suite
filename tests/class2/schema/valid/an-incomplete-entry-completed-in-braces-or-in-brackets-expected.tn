@@ -10,7 +10,9 @@
   valid: {
     resolved: """
       !schema {
+        @meta.completion:{ of: [names] }
         status => !meta.enum_type { name_type: meta.identifier  members: [OPEN DONE] }
+        @meta.completion:{ of: [names] }
         phase  => !meta.enum_type { name_type: meta.identifier  members: [DRAFT FINAL] }
       }
       """

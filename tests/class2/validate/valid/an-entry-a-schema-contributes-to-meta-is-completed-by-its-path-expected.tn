@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-entry-a-schema-contributes-to-meta-is-completed-by-its-path-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §5.5 (open schema maps, incomplete entries, proposed)"
+  description: "A schema may contribute an incomplete entry to the kernel's open namespace `meta`, and complete it by its path: `meta.code_list` writes `max_items` as 4, so `codes`, its completion, admits four elements."
+  valid: _
+}

@@ -11,6 +11,7 @@
   valid: {
     resolved: """
       !schema {
+        @meta.completion:{ of: [nonempty] }
         tags    => !meta.array { element_type: text  min_items: 1 }
         written => !meta.array { element_type: text  min_items: 1 }
       }

@@ -14,7 +14,8 @@
 
         method_ref => !meta.ref { of: method }
 
-        labels => !meta.set_type { element_type: text }
+        @meta.completion:{ of: [meta.set_type] }
+        labels => !meta.array { element_type: text  ordered: false  unique_items: true }
 
         post => !meta.record { fields: {
           by_method => !meta.record_field { type: { of: !meta.map { key_type: method_ref  value_type: int32 } } }
