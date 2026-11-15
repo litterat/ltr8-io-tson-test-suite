@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-import-one-way-and-an-extern-the-other-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  description: """
+    The subject imports cycle-extern-back-to-importer.tn, which names an entry of the subject by an extern. The
+    reference relation runs over imports and externs together and is acyclic (§2.2.3, §3.4.1): a schema reaches
+    itself through neither, nor through a mixture of the two, so the subject does not load.
+    """
+  error: { category: resolver }
+}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/cycle-import-back.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!!import:"https://tson.io/test-suite/class2/link/invalid/two-schemas-importing-each-other.tn"
+@doc:"""
+  On an import cycle by design ([TSON-SCHEMA] §2.2.3): imported by class2/link/invalid/two-schemas-importing-each-other,
+  it imports that subject back, so it resolves neither on its own nor through its importer.
+  """
+!schema {
+  b => { a?: a }
+}

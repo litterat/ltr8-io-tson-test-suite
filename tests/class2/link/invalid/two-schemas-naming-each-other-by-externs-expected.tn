@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/two-schemas-naming-each-other-by-externs-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  description: """
+    The subject names an entry of cycle-extern-back.tn by an extern, and that schema names an entry of the
+    subject by an extern of its own. An extern's schema is a dependency like an import's, and the reference
+    relation over both is acyclic (§2.2.3, §3.4.1), so the two externs close a cycle and the subject does not
+    load.
+    """
+  error: { category: resolver }
+}

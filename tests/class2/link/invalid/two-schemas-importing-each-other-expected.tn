@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/two-schemas-importing-each-other-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3"
+  description: """
+    The subject imports cycle-import-back.tn, which imports the subject back: the second import reaches a
+    schema whose resolution is in progress, so the closure is an import cycle and the subject does not load.
+    Shared types belong in a third schema both partners import.
+    """
+  error: { category: resolver }
+}

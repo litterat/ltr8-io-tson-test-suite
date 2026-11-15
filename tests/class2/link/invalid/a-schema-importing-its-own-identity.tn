@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-schema-importing-its-own-identity.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!!import:"https://tson.io/test-suite/class2/link/invalid/a-schema-importing-its-own-identity.tn"
+!schema {
+  a => { x: text }
+}

@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/cycle-extern-back.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  On a reference cycle by design ([TSON-SCHEMA] §5.13): named by an extern of
+  class2/link/invalid/two-schemas-naming-each-other-by-externs, it names that subject back by an extern of its own,
+  so it resolves neither on its own nor through the subject.
+  """
+!schema {
+  b  => { a?: aa }
+  aa => !meta.extern { schema: "https://tson.io/test-suite/class2/link/invalid/two-schemas-naming-each-other-by-externs.tn"  type: a }
+}
