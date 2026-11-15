@@ -4,5 +4,5 @@
 !schema {
   text_list => [text]
   base      => { tags: text_list }
-  sub       => base ^ { tags: [text] }
+  sub       => base & { tags: [text] }
 }

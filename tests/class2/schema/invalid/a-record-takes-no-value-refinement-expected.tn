@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-takes-no-value-refinement-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.3, [TSON-SCHEMA] §5.5 (`^` follows `!name`, proposed for Revision 40)"
+  description: """
+    A record states no rule for a value body, so `!person ^ { … }` refines nothing and is refused, as a tuple or a
+    choice before `!…^` is: a record's fields are restated in a composition, `person & { … }`.
+    """
+  error: {
+    category: resolver
+  }
+}
