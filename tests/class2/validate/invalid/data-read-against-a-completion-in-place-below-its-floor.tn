@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/data-read-against-a-completion-in-place-below-its-floor.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-incomplete-entries.tn"
+!holder { names: [] }

@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-incomplete-entries.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  Types completed from incomplete entries ([TSON-SCHEMA] §5.5): `nonempty` and `distinct` are array
+  constructions left open, `tags` and `ids` complete them, and `holder` completes `nonempty` in place.
+  `few` refines the array type `tags` (§5.7). Data is read against a completion as against the
+  construction it is; `nonempty` itself is no type, and a tag naming it is refused.
+  """
+!schema {
+  nonempty => !meta.array ^ { min_items: 1 }
+  distinct => !meta.array ^ { ordered: false  unique_items: true }
+  tags     => nonempty<text>
+  ids      => distinct<int32>
+  few      => !tags ^ { max_items: 2 }
+  holder   => { names: nonempty<text> }
+}

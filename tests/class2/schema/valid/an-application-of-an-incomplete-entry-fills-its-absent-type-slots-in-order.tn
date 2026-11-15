@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-of-an-incomplete-entry-fills-its-absent-type-slots-in-order.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  keyed  => !meta.map ^ { key_type: text }
+  counts => keyed<int32>
+  open   => !meta.map ^ { voidable: true }
+  pairs  => open<text uuid>
+}

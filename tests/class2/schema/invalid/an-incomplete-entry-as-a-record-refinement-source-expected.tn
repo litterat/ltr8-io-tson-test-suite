@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-incomplete-entry-as-a-record-refinement-source-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  description: """
+    An incomplete entry is no type, and the source of a record `^` names a type.
+    """
+  error: {
+    category: resolver
+  }
+}

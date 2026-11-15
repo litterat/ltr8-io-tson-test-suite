@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-an-incomplete-entry-writing-a-field-again-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  description: """
+    A field of an incomplete entry is written once. `min_items` is written by `array_min`, so writing it again is
+    refused whatever the value, even one that would narrow: to narrow, complete the entry and refine the type.
+    """
+  error: {
+    category: resolver
+  }
+}

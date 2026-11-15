@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-incomplete-entry-as-a-parameters-bound-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40), [TSON-SCHEMA] §5.10"
+  description: """
+    A bound names a type every argument IS-A; an incomplete entry is no type, and no completion IS-A it.
+    """
+  error: {
+    category: resolver
+  }
+}

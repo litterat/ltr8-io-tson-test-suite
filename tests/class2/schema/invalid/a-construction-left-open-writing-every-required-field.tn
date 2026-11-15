@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-construction-left-open-writing-every-required-field.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  done => !meta.array ^ { element_type: text }
+}

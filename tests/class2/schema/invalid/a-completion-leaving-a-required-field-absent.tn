@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-completion-leaving-a-required-field-absent.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  open  => !meta.map ^ { voidable: true }
+  half  => !open { key_type: text }
+}

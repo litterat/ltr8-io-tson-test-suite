@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/data-read-against-a-completed-type-below-its-floor-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  description: """
+    `tags` is `!meta.array { element_type: text min_items: 1 }`, so an empty array is no value of it.
+    """
+  error: {
+    category: validation
+  }
+}

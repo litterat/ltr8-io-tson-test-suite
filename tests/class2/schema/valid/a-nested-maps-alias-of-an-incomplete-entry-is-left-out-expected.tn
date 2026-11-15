@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-nested-maps-alias-of-an-incomplete-entry-is-left-out-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40), [TSON-SCHEMA] §4.1 (nested schema maps)"
+  description: """
+    A resolved form holds complete entries only, in a nested schema map as at the root: `geo.nonempty`, and
+    `geo.filled`, an alias whose chain ends at it, are left out of `geo`'s members.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        geo => !meta.schema {
+          tags => !meta.array { element_type: text  min_items: 1 }
+        }
+      }
+      """
+  }
+}

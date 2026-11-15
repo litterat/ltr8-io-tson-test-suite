@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-data-tag-naming-an-incomplete-entry-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  description: """
+    An incomplete entry is no type, so nothing is read against it, and a tag naming it is refused.
+    """
+  error: {
+    category: validation
+  }
+}

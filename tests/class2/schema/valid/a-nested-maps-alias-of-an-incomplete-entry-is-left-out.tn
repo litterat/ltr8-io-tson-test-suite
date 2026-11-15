@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-nested-maps-alias-of-an-incomplete-entry-is-left-out.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  geo => !schema {
+    nonempty => !meta.array ^ { min_items: 1 }
+    filled   => geo.nonempty
+    tags     => geo.filled<text>
+  }
+}

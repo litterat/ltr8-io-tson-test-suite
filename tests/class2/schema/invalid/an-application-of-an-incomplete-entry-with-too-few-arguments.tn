@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-application-of-an-incomplete-entry-with-too-few-arguments.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  open  => !meta.map ^ { voidable: true }
+  texts => open<text>
+}

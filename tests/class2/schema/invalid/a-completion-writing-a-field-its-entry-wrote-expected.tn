@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-completion-writing-a-field-its-entry-wrote-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  description: """
+    A completion writes only fields the incomplete entry has not written; `min_items` is `array_min`'s.
+    """
+  error: {
+    category: resolver
+  }
+}

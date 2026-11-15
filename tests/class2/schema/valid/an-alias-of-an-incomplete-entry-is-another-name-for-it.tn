@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-alias-of-an-incomplete-entry-is-another-name-for-it.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  nonempty => !meta.array ^ { min_items: 1 }
+  filled   => nonempty
+  tags     => filled<text>
+}

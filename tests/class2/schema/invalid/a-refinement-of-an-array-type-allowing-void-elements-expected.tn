@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-an-array-type-allowing-void-elements-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7 (refinement of a collection type, proposed for Revision 40)"
+  description: """
+    `voidable` goes to false only: an element may be void only where the source allows it.
+    """
+  error: {
+    category: resolver
+  }
+}

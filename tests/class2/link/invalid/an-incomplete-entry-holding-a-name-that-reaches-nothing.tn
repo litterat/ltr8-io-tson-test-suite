@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-incomplete-entry-holding-a-name-that-reaches-nothing.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  keyed => !meta.map ^ { key_type: no_such_type }
+}

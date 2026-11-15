@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-incomplete-entry-holding-a-name-outside-its-slots-kind-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40), [TSON-SCHEMA] §4.2"
+  description: """
+    `name_type` is a `meta.identifier_ref`, whose kind is the identifier families; `text` is no member of it, and
+    the incomplete entry is refused where its schema links.
+    """
+  error: {
+    category: resolver
+  }
+}

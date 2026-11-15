@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-an-array-type-allowing-duplicates.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  names  => [text]
+  unique => !names ^ { unique_items: true }
+  again  => !unique ^ { unique_items: false }
+}
