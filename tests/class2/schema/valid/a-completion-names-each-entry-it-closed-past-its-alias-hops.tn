@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-completion-names-each-entry-it-closed-past-its-alias-hops.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  nonempty  => !meta.array ^ { min_items: 1 }
+  open_list => nonempty
+  tags      => open_list<text>
+  labels    => set<text>
+  status    => !enum [OPEN DONE]
+}

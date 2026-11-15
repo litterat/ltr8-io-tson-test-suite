@@ -10,6 +10,7 @@
     resolved: """
       !schema {
         geo => !meta.schema {
+          @meta.completion:{ of: [geo.nonempty] }
           tags => !meta.array { element_type: text  min_items: 1 }
         }
       }

@@ -20,7 +20,7 @@
               key_type: text
               value_type: { of: !meta.array { element_type: T } }
             } } }
-            s => !meta.record_field { type: { of: !meta.set_type { element_type: T } } }
+            s => !meta.record_field { type: { of: !meta.array { element_type: T  ordered: false  unique_items: true } } }
             r => !meta.record_field { type: { of: !meta.ref { of: T } } }
           }
         }
@@ -33,7 +33,7 @@
               key_type: text
               value_type: { of: !meta.array { element_type: T } }
             } } }
-            s => !meta.record_field { type: { of: !meta.set_type { element_type: T } } }
+            s => !meta.record_field { type: { of: !meta.array { element_type: T  ordered: false  unique_items: true } } }
             r => !meta.record_field { type: { of: !meta.ref { of: T } } }
           }
         }
@@ -45,7 +45,7 @@
             key_type: text
             value_type: { of: !meta.array { element_type: order } }
           } } }
-          s => !meta.record_field { type: { of: !meta.set_type { element_type: order } } }
+          s => !meta.record_field { type: { of: !meta.array { element_type: order  ordered: false  unique_items: true } } }
           r => !meta.record_field { type: { of: !meta.ref { of: order } } }
         } }
 
@@ -56,7 +56,7 @@
             key_type: text
             value_type: { of: !meta.array { element_type: order } }
           } } }
-          s => !meta.record_field { type: { of: !meta.set_type { element_type: order } } }
+          s => !meta.record_field { type: { of: !meta.array { element_type: order  ordered: false  unique_items: true } } }
           r => !meta.record_field { type: { of: !meta.ref { of: order } } }
         } }
       }

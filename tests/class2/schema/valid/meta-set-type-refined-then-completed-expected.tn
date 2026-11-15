@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/meta-set-type-refined-then-completed-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §7.5 (incomplete entries, proposed for Revision 40)"
+  description: """
+    The kernel's `meta.set_type` is an incomplete entry, an array left open with its set facets written, so it is
+    refined like any other: `nonempty_set` writes `min_items` and leaves `element_type` absent, and `tags` completes
+    it into a set of at least one element.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        @meta.completion:{ of: [nonempty_set meta.set_type] }
+        tags => !meta.array { element_type: text  ordered: false  unique_items: true  min_items: 1 }
+      }
+      """
+  }
+}

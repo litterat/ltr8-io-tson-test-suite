@@ -178,7 +178,9 @@ the ordinary reading; a fixture that declares types of its own imports what it b
 one of them is typed there and nowhere else.
 
 An expected resolved form lists complete entries only: an incomplete entry ([TSON-SCHEMA] §5.5), and an alias whose
-chain ends at one, appears in the subject and never in its resolved form.
+chain ends at one, appears in the subject and never in its resolved form. What a declared completion closed is stated
+on its key, `@meta.completion:{ of: [...] }` ([TSON-SCHEMA] §8.1), and is part of the expected form: a runner compares
+each key's `@meta.completion`, as it compares its `@meta.application`.
 
 ## `proposed/`
 

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-at-a-field-is-written-in-place-under-its-constructor.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order => { id: text }
+  post  => {
+    labels: set<text>
+    target: meta.ref<order>
+  }
+}

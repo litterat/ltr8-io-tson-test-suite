@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-payload-of-the-kernels-constructor-completes-an-imported-incomplete-entry-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3, [TSON-SCHEMA] §3.3.4, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.5"
+  description: """
+    A construction's payload is read in the closure of the schema that writes it, not the closure of the schema that
+    declared its head. `meta.record` is the kernel's, and the field's type in place completes the fixture's `rows`, an
+    incomplete entry the kernel never sees: `!rows { … }` is the construction it completes to, written in place.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        post => !meta.record { fields: {
+          tags => !meta.record_field { type: { of: !meta.array { element_type: text  min_items: 1 } } }
+        } }
+      }
+      """
+  }
+}

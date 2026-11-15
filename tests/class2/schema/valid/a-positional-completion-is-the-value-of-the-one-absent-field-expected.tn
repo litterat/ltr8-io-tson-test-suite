@@ -10,8 +10,11 @@
   valid: {
     resolved: """
       !schema {
+        @meta.completion:{ of: [nonempty] }
         spelled => !meta.array { element_type: text  min_items: 1 }
+        @meta.completion:{ of: [nonempty] }
         applied => !meta.array { element_type: text  min_items: 1 }
+        @meta.completion:{ of: [nonempty] }
         braced  => !meta.array { element_type: text  min_items: 1 }
       }
       """

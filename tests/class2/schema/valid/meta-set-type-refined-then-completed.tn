@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/meta-set-type-refined-then-completed.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  nonempty_set => !meta.set_type ^ { min_items: 1 }
+  tags         => nonempty_set<text>
+}
