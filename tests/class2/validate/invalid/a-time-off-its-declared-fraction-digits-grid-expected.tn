@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-time-off-its-declared-fraction-digits-grid-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "`12:00:00.51Z` is not a whole number of tenths of a second, so `fraction_digits: 1` refuses it and nothing rounds it onto the grid. `when` and `over` are admitted, which fixes the pointer on `at`."
+  error: {
+    category: validation
+    path: "/at"
+  }
+}

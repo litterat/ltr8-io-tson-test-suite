@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/fraction-digits-at-nine-and-at-zero-on-each-temporal-family.tn"
+!!import:"https://tson.io/2026/40/m/temporal.tn"
+!schema {
+  nano_time     => !time ^ { fraction_digits: 9 }
+  whole_time    => !time ^ { fraction_digits: 0 }
+  nano_instant  => !datetime ^ { fraction_digits: 9 }
+  whole_instant => !datetime ^ { fraction_digits: 0 }
+  nano_span     => !duration ^ { fraction_digits: 9 }
+  whole_span    => !duration ^ { fraction_digits: 0 }
+}

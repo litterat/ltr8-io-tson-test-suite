@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-time-refinement-with-fraction-digits-above-nine-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §7.4"
+  description: """
+    `fraction_digits` on `temporal.time_type` may not exceed 9: the value space carries no tenth
+    fractional-second digit, so `fraction_digits: 10` names a grid finer than any value. A body's facets
+    must between them admit a value, and the larger value is a schema-load coherence error.
+    """
+  error: {
+    category: resolver
+  }
+}

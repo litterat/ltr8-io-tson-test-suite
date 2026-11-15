@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/fraction-digits-at-nine-and-at-zero-on-each-temporal-family-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §7.4"
+  description: """
+    `fraction_digits` on the three temporal families runs from 0, whole seconds, to 9, the nanosecond
+    grid, both ends included. Each refinement resolves to its family's constructor carrying the facet as
+    written, its chain the instance it refined.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        nano_time     => !temporal.time_type { chain: { supertypes: [time] }  fraction_digits: 9 }
+        whole_time    => !temporal.time_type { chain: { supertypes: [time] }  fraction_digits: 0 }
+        nano_instant  => !temporal.datetime_type { chain: { supertypes: [datetime] }  fraction_digits: 9 }
+        whole_instant => !temporal.datetime_type { chain: { supertypes: [datetime] }  fraction_digits: 0 }
+        nano_span     => !temporal.duration_type { chain: { supertypes: [duration] }  fraction_digits: 9 }
+        whole_span    => !temporal.duration_type { chain: { supertypes: [duration] }  fraction_digits: 0 }
+      }
+      """
+  }
+}

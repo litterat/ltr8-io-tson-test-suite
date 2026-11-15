@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-fraction-digits-constrained-value-spelled-with-trailing-zeros.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-fraction-digits.tn"
+!reading {
+  at:   "12:00:00.500Z"
+  when: "2026-01-01T12:00:00.500Z"
+  over: PT0.500S
+}

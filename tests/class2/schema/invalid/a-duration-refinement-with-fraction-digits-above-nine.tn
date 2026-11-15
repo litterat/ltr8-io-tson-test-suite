@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-duration-refinement-with-fraction-digits-above-nine.tn"
+!!import:"https://tson.io/2026/40/m/temporal.tn"
+!schema {
+  too_fine => !duration ^ { fraction_digits: 10 }
+}

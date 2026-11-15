@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-time-off-its-declared-fraction-digits-grid.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-fraction-digits.tn"
+!reading {
+  at:   "12:00:00.51Z"
+  when: "2026-01-01T12:00:00.5Z"
+  over: PT0.5S
+}
