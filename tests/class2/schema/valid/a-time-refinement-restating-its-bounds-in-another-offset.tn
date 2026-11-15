@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-time-refinement-restating-its-bounds-in-another-offset.tn"
+!!import:"https://tson.io/2026/40/m/temporal.tn"
+!schema {
+  office_hours     => !time ^ { min: "09:00:00+01:00"  exclusive_max: "18:00:00+01:00" }
+  office_hours_utc => !office_hours ^ { min: "08:00:00Z"  exclusive_max: "17:00:00Z" }
+}

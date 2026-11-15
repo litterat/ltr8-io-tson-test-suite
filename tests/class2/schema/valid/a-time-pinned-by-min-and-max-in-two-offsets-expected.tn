@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-time-pinned-by-min-and-max-in-two-offsets-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §7.4"
+  description: """
+    `13:00:00+01:00` and `12:00:00Z` are one `time`, the offset being a spelling, so `noon`'s lower bound
+    is not above its upper: the two meet at one value, both inclusive, and the body admits exactly that
+    value. A range pinning a single value is coherent.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        noon => !temporal.time_type { chain: { supertypes: [time] }  min: "13:00:00+01:00"  max: "12:00:00Z" }
+      }
+      """
+  }
+}

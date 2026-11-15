@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-time-a-second-past-its-pinned-value.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-instant-bounds.tn"
+!moments {
+  clock: "07:00:01-05:00"
+}

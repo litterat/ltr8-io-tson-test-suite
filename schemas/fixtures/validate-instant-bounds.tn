@@ -1,0 +1,23 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-instant-bounds.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  Bounds on `time` and `datetime` written in offsets other than the value's. [TSON-SCHEMA] §5.5 makes the
+  offset a spelling: a `datetime` is the instant on the UTC timeline and a `time` the time of day in UTC on
+  `[00:00:00, 24:00:00)`, so a bound and a value are compared as those, whatever each is written in.
+
+  `noon` and `new_year` each pin one value with a `min` and a `max` written in two offsets. `before_two`
+  has one bound, in `Z`, for a value whose offset carries its local time past midnight. Every field of
+  `moments` is optional, so an invalid document writes the one field it is about.
+  """
+!schema {
+  noon       => !time ^ { min: "13:00:00+01:00"  max: "12:00:00Z" }
+  new_year   => !datetime ^ { min: "2026-01-01T01:00:00+01:00"  max: "2026-01-01T00:00:00Z" }
+  before_two => !time ^ { max: "02:00:00Z" }
+
+  moments => {
+    clock?:   noon
+    instant?: new_year
+    early?:   before_two
+  }
+}

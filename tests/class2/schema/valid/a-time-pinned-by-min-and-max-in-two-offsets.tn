@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-time-pinned-by-min-and-max-in-two-offsets.tn"
+!!import:"https://tson.io/2026/40/m/temporal.tn"
+!schema {
+  noon => !time ^ { min: "13:00:00+01:00"  max: "12:00:00Z" }
+}

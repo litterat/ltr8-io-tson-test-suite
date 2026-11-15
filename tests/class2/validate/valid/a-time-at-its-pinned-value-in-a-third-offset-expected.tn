@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-time-at-its-pinned-value-in-a-third-offset-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: "`clock` is `noon`, pinned at `12:00:00Z` by a `min` written in `+01:00` and a `max` written in `Z`. `07:00:00-05:00` is `12:00:00Z` in a third offset, so it is the pinned value and is admitted."
+  valid: _
+}

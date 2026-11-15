@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-time-at-its-pinned-value-in-a-third-offset.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-instant-bounds.tn"
+!moments {
+  clock: "07:00:00-05:00"
+}
