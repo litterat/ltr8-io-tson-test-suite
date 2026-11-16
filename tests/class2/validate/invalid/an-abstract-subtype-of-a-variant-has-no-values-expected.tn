@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-abstract-subtype-of-a-variant-has-no-values-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2 (choice subtypes, proposed for Revision 40)"
+  description: """
+    `round` IS-A `shape` and no other variant of `( text | shape )`, so `!round` selects `shape`, and the value
+    validates as a `round`, which is abstract: no value's effective type is an abstract record, so it is refused
+    though the tag selected a variant.
+    """
+  error: {
+    category: validation
+    path: "/i"
+  }
+}

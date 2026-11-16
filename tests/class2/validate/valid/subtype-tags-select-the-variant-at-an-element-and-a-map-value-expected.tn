@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/subtype-tags-select-the-variant-at-an-element-and-a-map-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2 (choice subtypes, proposed for Revision 40)"
+  description: """
+    A choice is read the same wherever it stands: at `[item]` and `{ text => item }`, each element and map value
+    tagged with a member of `shape` selects `shape` and validates as its tag's type, and the string beside them
+    reads as `text`.
+    """
+  valid: _
+}

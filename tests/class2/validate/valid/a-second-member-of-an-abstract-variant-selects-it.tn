@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-second-member-of-an-abstract-variant-selects-it.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-choice-subtypes.tn"
+!holder { i: !square { name: "b"  side: 2 } }

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-atom-refinement-tag-at-a-choice-validates-as-the-refinement-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §5.5, [TSON-SCHEMA] §7.2 (choice subtypes, proposed for Revision 40)"
+  description: """
+    `!small` selects `int32` at `( int32 | text )`, and the value validates as a `small`: 11 is an `int32` and above
+    `small`'s `max` of 10, a range violation and a validation error at the field.
+    """
+  error: {
+    category: validation
+    path: "/n"
+  }
+}

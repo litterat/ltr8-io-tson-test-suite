@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-whose-type-is-a-two-variants-and-names-neither-selects-none-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2 (choice subtypes, proposed for Revision 40)"
+  description: """
+    `both`, declared by a schema importing the choice's, composes `a` and `b`, so at `( a | b )` the tag names
+    neither variant and IS-A two: it selects none, a validation error at the data. The choice is not refused for the
+    type, which an importer is free to declare, and neither schema is.
+    """
+  error: {
+    category: validation
+    path: "/e"
+  }
+}

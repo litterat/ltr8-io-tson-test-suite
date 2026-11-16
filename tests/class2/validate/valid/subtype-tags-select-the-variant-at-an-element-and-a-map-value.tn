@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/subtype-tags-select-the-variant-at-an-element-and-a-map-value.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-choice-subtypes.tn"
+!holder {
+  items:   [!circle { name: "a"  r: 1 }  "plain"  !disc { name: "c"  smooth: false  d: 2 }]
+  by_name: { first => !square { name: "b"  side: 2 } }
+}
