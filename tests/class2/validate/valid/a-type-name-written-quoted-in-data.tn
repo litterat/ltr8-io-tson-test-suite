@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-type-name-written-quoted-in-data.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-reference-reach.tn"
+!holder { t: "meta.identifier" }

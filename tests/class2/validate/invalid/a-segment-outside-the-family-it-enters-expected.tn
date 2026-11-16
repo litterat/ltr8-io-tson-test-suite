@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-segment-outside-the-family-it-enters-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.12, [TSON-SCHEMA] §4.2 (reference reach, proposed for Revision 40)"
+  description: """
+    Each segment is judged by the family of what it enters. `main.internal` is an `api`, keyed by `meta.identifier`,
+    which admits no space, so `good morning` is no name of it and the reference reaches nothing. The same segment
+    selects a key of `phrases`, whose family is `word`.
+    """
+  error: {
+    category: validation
+    path: "/r"
+  }
+}

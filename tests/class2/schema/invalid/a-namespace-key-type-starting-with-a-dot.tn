@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-key-type-starting-with-a-dot.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  leading => !unicode.identifier_type { start_add: "." }
+  index   => !meta.namespace { key_type: leading  value_type: text }
+}

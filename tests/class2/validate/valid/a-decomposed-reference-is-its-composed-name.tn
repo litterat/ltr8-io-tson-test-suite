@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-decomposed-reference-is-its-composed-name.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-reference-reach.tn"
+!holder { r: "cafe\u0301.cre\u0300me bru\u0302le\u0301e" }

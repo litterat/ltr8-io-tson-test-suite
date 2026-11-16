@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-quoted-reference-is-its-unquoted-spelling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §2.4, [TSON-SCHEMA] §5.12 (reference reach, proposed for Revision 40)"
+  description: """
+    `list` is an array of `text_ref`, `meta.ref<text>`, holding one name in each token form. A reference is its
+    token's text, so both elements are the name `main.internal.pong`, each reaching the text under the key `pong`:
+    quoting a name whose segments are all identifiers changes nothing.
+    """
+  valid: _
+}

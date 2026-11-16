@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-quoted-token-is-no-field-type.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  row => { b: "text" }
+}

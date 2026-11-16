@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-segment-under-a-non-folding-family-keeps-its-case.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-reference-reach.tn"
+!holder { r: main.internal.PONG }

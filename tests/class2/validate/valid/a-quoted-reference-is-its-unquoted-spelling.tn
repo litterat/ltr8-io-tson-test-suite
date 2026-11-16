@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-quoted-reference-is-its-unquoted-spelling.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-reference-reach.tn"
+!holder { list: [main.internal.pong "main.internal.pong"] }
