@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-reference-to-a-namespace-type-reads-the-name-of-a-value-of-its-refinement-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12, [TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  description: """
+    A data document's name resolves in the governing schema: `book` is a value of `few_orders`, a refinement of
+    `orders` and IS-A it, so the slot `pick`, typed `meta.ref<orders>`, reads its name.
+    """
+  valid: _
+}

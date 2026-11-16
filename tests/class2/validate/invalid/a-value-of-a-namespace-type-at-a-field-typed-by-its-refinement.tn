@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-value-of-a-namespace-type-at-a-field-typed-by-its-refinement.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-refined-namespace.tn"
+!desk {
+  few: !orders { a => { id: "A-1" } }
+}

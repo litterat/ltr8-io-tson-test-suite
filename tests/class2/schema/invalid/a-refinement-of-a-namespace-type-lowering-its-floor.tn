@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-a-namespace-type-lowering-its-floor.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  filled => !meta.namespace { key_type: meta.identifier  value_type: text  min_items: 2 }
+  wider  => !filled ^ { min_items: 1 }
+}

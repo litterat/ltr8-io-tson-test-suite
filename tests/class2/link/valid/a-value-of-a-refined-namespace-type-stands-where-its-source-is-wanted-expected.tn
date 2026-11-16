@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-value-of-a-refined-namespace-type-stands-where-its-source-is-wanted-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.2, [TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  description: """
+    A refined namespace type is IS-A its source, so a value tagged `!small` is admitted at a field typed `api`, and
+    is read as a `small`.
+    """
+  valid: {
+    binds: [small holder h]
+  }
+}

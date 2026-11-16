@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-a-namespace-type-lowering-its-floor-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  description: """
+    A lower bound of a namespace type only rises, as a map type's does: `min_items` 1 is below `filled`'s 2.
+    """
+  error: {
+    category: resolver
+  }
+}

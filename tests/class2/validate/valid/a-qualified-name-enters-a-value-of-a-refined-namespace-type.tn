@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-qualified-name-enters-a-value-of-a-refined-namespace-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-refined-namespace.tn"
+!desk { one: book.first }

@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-refined-namespace.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  A namespace type and a refinement of it. `orders` maps identifiers to `order` records and states no bound;
+  `few_orders => !orders ^ { max_items: 2 }` is a namespace type IS-A `orders` holding at most two
+  ([TSON-SCHEMA] §5.7). `desk`'s fields are typed by each: `few` by the refinement, `any` by its source, `pick` by
+  `meta.ref<orders>`, which names a value of `orders`, and `one` by `meta.ref<order>`. `book` is a value of
+  `few_orders`, so `book.first` names one of its orders. An entry built with a record type or a namespace type is a
+  value, not a type, and a processor that binds binds each value of the map to a host class of its own: the record
+  `order`.
+  """
+!schema {
+  order      => { id: text }
+  orders     => !meta.namespace { key_type: meta.identifier  value_type: order }
+  few_orders => !orders ^ { max_items: 2 }
+  desk       => { few?: few_orders  any?: orders  pick?: meta.ref<orders>  one?: meta.ref<order> }
+  book       => !few_orders { first => { id: "B-1" } }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-a-namespace-type-raising-its-ceiling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  description: """
+    `max_items` is `meta.map`'s ordered bound, kept through `meta.namespace`'s composition, and an upper bound only
+    falls: 5 is above `bounded`'s 3.
+    """
+  error: {
+    category: resolver
+  }
+}

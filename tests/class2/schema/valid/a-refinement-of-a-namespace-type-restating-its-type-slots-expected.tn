@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-a-namespace-type-restating-its-type-slots-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  description: """
+    `key_type` and `value_type` are fixed at construction, and a refinement may restate them verbatim: `same`
+    writes the types `api` has, narrows nothing, and is a namespace type IS-A `api`, its body the source's.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        api  => !meta.namespace { chain: { subtypes: [same] }  key_type: meta.identifier  value_type: text }
+        same => !meta.namespace { chain: { supertypes: [api] }  key_type: meta.identifier  value_type: text }
+      }
+      """
+  }
+}
