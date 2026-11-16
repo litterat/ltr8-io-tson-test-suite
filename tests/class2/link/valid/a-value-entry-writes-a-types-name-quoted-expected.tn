@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-value-entry-writes-a-types-name-quoted-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12 (reference reach, proposed for Revision 40)"
+  description: """
+    A reference over a constructor is a reference like any other, so its token's form carries nothing: `request`,
+    typed `meta.ref<meta.record>`, and `response`, typed `meta.type_ref`, hold `"place_order_request"` and
+    `"order"`, the same names as the two written bare.
+    """
+  valid: {
+    binds: [api order place_order_request]
+  }
+}

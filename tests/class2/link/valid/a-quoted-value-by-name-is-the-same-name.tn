@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-quoted-value-by-name-is-the-same-name.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-orders-interface.tn"
+!schema {
+  routes => !bindings {
+    plain  => { method: orders.place_order  verb: POST  route: "/orders" }
+    quoted => { method: "orders.place_order"  verb: POST  route: "/orders/quoted" }
+  }
+}

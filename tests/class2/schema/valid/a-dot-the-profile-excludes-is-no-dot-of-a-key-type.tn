@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-dot-the-profile-excludes-is-no-dot-of-a-key-type.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  segment => !unicode.identifier_type { continue_add: "-."  exclude: "." }
+  index   => !meta.namespace { key_type: segment  value_type: text }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-key-type-starting-with-a-dot-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12 (reference reach, proposed for Revision 40)"
+  description: """
+    A `key_type` admits U+002E at no position of its profile, Start, Continue or Medial. `leading` adds `.` to Start
+    alone, so a name of it may begin with one, and the namespace type naming it is refused.
+    """
+  error: {
+    category: resolver
+  }
+}

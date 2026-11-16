@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-type-name-written-quoted-in-data-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12, [TSON-DATA] §2.4 (reference reach, proposed for Revision 40)"
+  description: """
+    `t` is typed `meta.type_ref`, a reference over a constructor, and holds a type's name in either token form:
+    `"meta.identifier"` is the name `meta.identifier`, split at `.` into the kernel's schema map `meta` and its
+    member, an identifier family.
+    """
+  valid: _
+}

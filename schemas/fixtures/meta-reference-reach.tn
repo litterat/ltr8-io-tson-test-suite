@@ -1,0 +1,28 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/meta-reference-reach.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+@doc:"""
+  Values whose names a reference reaches past a [TSON-DATA] §7.7 identifier, or in a folded form. `word` is an
+  identifier family whose names may hold a single space between two characters, and `verb` an ASCII one whose names
+  fold to lower case. `site` takes `word` as its field names' type from `worded`, a fieldless abstract base, so its
+  field `public api` holds a space; `phrasebook` is a namespace keyed by `word`, `verbs` one keyed by `verb`, and
+  `api` one keyed by the kernel's identifier. `main`, `phrases`, `http` and `café` are values of those types, the
+  last named and keyed with composed characters. `holder`'s
+  fields hold a reference to a text value, `text_ref`, singly, in a list and in a set, and a type's name. An entry
+  built with a record or a namespace type is a value, not a type, and a processor that binds binds each such value
+  to a host class of its own: the records `site` and `holder`.
+  """
+!schema {
+  word       => !unicode.identifier_type { medial: " " }
+  verb       => !unicode.identifier_type { start: ASCII  continue: ASCII  normalization: ASCII_CASEFOLD }
+  api        => !meta.namespace { key_type: meta.identifier  value_type: text }
+  phrasebook => !meta.namespace { key_type: word  value_type: text }
+  verbs      => !meta.namespace { key_type: verb  value_type: text }
+  worded     => !meta.record { name_type: word  extension: ABSTRACT  fields: {} }
+  site       => worded & { "public api": api  internal: api }
+  text_ref   => meta.ref<text>
+  holder     => { r?: text_ref  t?: meta.type_ref  list?: [text_ref]  refs?: set<text_ref> }
+  main       => !site { "public api": !api { ping => "x" }  internal: !api { pong => "y" } }
+  phrases    => !phrasebook { "good morning" => "x" }
+  http       => !verbs { GET => "read"  POST => "write" }
+  café       => !phrasebook { "cr\u00e8me br\u00fbl\u00e9e" => "z" }
+}

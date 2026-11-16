@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-quoted-token-is-no-parent-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.12, [TSON-SCHEMA] §12.1 (reference reach, proposed for Revision 40)"
+  description: """
+    A composition's operand is a `supertype-ref`, a name of the schema grammar written unquoted: `"base"` is none,
+    so the declaration does not parse.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-quoted-token-is-no-application-head-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §12.1"
+  description: """
+    An application is schema grammar: its head is a type's name, an unquoted token the argument list is adjacent
+    to. A type position of that grammar reads no quoted form, so `"box"<text>` applies nothing and the schema does
+    not load. A quoted token is a reference only at a position typed by one, in data or in a body read as data.
+    """
+  error: {
+    category: resolver
+  }
+}

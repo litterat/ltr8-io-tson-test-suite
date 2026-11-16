@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-taking-a-dotted-name-type-from-its-supertype-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.12 (reference reach, proposed for Revision 40)"
+  description: """
+    A `name_type` admits no `.`, at the record that states it and at a record taking it from a supertype: the
+    fieldless abstract `dotted_record` names `dotted`, which adds `.` to Continue, and `row` composes it and takes
+    `dotted` as its own. The schema does not load.
+    """
+  error: {
+    category: resolver
+  }
+}

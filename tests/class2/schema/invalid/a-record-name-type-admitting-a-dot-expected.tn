@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-name-type-admitting-a-dot-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12 (reference reach, proposed for Revision 40)"
+  description: """
+    A reference's segments are matched against a record value's field names, so a `name_type` admits no `.`.
+    `dotted` adds `.` to Continue, and `row` naming it is refused: the family is judged, not the names, and no field
+    of `row` holds a `.`.
+    """
+  error: {
+    category: resolver
+  }
+}

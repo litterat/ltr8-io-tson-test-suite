@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-name-quoted-segment-by-segment-is-three-tokens-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.12, [TSON-DATA] §2.4 (reference reach, proposed for Revision 40)"
+  description: """
+    A reference is one token, quoted whole where a segment needs it: `"main.public api.ping"`. Written
+    `main."public api".ping` it is three tokens, `main.`, `"public api"` and `.ping`, with no separator between
+    them, which is no value, and the schema does not load.
+    """
+  error: {
+    category: resolver
+  }
+}
