@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-choice-with-an-abstract-variant-loads.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  shape  => abstract { name: text }
+  circle => shape & { r: integer }
+  round  => abstract shape & { smooth: boolean }
+  disc   => round & { d: integer }
+
+  item => ( text | shape )
+}

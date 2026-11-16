@@ -1,0 +1,47 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-choice-subtypes.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  Choices whose variants have subtypes ([TSON-SCHEMA] §5.4, §7.2). A tag at a choice names a variant or a type that
+  IS-A exactly one variant, and the value is read at that variant as at a position typed by it.
+
+  `item` sets `text` beside `shape`, an abstract record declaring no discriminator, whose members are `circle`,
+  `square` and, two levels down through the abstract `round`, `disc`. `based` sets `text` beside the concrete `base`,
+  of which `sub` is a subtype. `narrow` sets `int32` beside `text`, and `small` refines `int32`, so IS-A it. `ranked`
+  lists `base` and `sub` both, so `sub` is a variant and IS-A another. `either` is two records, `a` and `b`, which
+  nothing here composes; validate-choice-shared-subtype.tn declares a type IS-A both. `item`, `based` and `narrow`
+  are disjoint, `ranked` and `either` are not.
+
+  `holder` puts each choice at a field, and `item` at an array's element and a map's value.
+  """
+!schema {
+  shape  => abstract { name: text }
+  circle => shape & { r: integer }
+  square => shape & { side: integer }
+  round  => abstract shape & { smooth: boolean }
+  disc   => round & { d: integer }
+
+  base => { id: text }
+  sub  => base & { extra: integer }
+
+  small => !int32 ^ { max: 10 }
+
+  a => { x: text }
+  b => { y: text }
+
+  item   => ( text | shape )
+  based  => ( text | base )
+  narrow => ( int32 | text )
+  ranked => ( base | sub )
+  either => ( a | b )
+
+  holder => {
+    i?:       item
+    k?:       based
+    n?:       narrow
+    r?:       ranked
+    e?:       either
+    items?:   [item]
+    by_name?: { text => item }
+  }
+}

@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-choice-whose-variants-share-a-subtype-loads-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §5.8 (choice subtypes, proposed for Revision 40)"
+  description: """
+    `both` IS-A both variants of `( a | b )`, and the choice is not refused for it: a tag naming `both` names
+    neither variant and selects none, an error at the data and never at the declaration, since a schema importing
+    the choice's may declare such a type. Two records share a class, so the choice is not disjoint and its values
+    are tagged.
+    """
+  valid: {
+    disjoint: [
+      { name: either  value: false }
+    ]
+    subtypes: [
+      { name: a  subtypes: [both] }
+      { name: b  subtypes: [both] }
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-atom-refinement-tag-at-a-choice-validates-as-the-refinement.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-choice-subtypes.tn"
+!holder { n: !small 11 }
