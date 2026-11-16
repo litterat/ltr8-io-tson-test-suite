@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-a-namespace-type-lowers-its-ceiling.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  bounded => !meta.namespace { key_type: meta.identifier  value_type: text  min_items: 1  max_items: 3 }
+  tighter => !bounded ^ { max_items: 2 }
+}

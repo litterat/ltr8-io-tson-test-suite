@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-value-at-a-refined-namespace-type-within-its-ceiling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  description: """
+    Two entries, at `few_orders`'s ceiling: a refined namespace type's bounds are inclusive, as its source's map's
+    are.
+    """
+  valid: _
+}

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-refinement-of-a-namespace-type-is-a-namespace-type-beneath-its-source.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  api        => !meta.namespace { key_type: meta.identifier  value_type: text }
+  small      => !api ^ { max_items: 3 }
+  namespaces => !meta.ref { of: meta.namespace }
+}

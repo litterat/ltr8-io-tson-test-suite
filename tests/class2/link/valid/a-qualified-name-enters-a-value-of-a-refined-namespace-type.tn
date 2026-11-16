@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-qualified-name-enters-a-value-of-a-refined-namespace-type.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  api      => !meta.namespace { key_type: meta.identifier  value_type: text }
+  small    => !api ^ { max_items: 2 }
+  mine     => !small { greeting => "hello" }
+  text_ref => meta.ref<text>
+  holder   => { r: text_ref }
+  h        => !holder { r: mine.greeting }
+}
