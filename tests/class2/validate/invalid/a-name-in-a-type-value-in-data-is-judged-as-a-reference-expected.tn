@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-name-in-a-type-value-in-data-is-judged-as-a-reference-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
+  description: """
+    A type value written as data declares nothing, but a name in it is judged as a reference is: `element_type`
+    holds a `meta.type_ref`, and `no_such_type` is no entry of meta.tn's closure, so the name reaches no type and the
+    slot refuses it.
+    """
+  error: {
+    category: validation
+    path: "/element_type"
+  }
+}

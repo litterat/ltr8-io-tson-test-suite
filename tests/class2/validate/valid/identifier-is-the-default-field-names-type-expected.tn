@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/identifier-is-the-default-field-names-type-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.8"
-  description: "The default name type `meta.field_name` is the kernel's alias of `meta.identifier`, so a record stating `meta.identifier` composes with one stating nothing."
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.8"
+  description: "A record that states no name type has `meta.identifier`'s, and two name types are one by the entry they resolve to, so a record stating `meta.identifier` composes with one stating nothing."
   valid: _
 }
