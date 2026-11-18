@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-an-enum-restating-its-name-type-through-an-alias-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4, [TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.3"
+  description: """
+    An enum's `name_type` is fixed at construction: a refinement narrows the member set and never changes the type.
+    Two name types are one by the entry they resolve to, not by spelling, so `ident`, an alias of `meta.identifier`,
+    restates `colour`'s name type while `warm` shrinks its members, and `warm` IS-A `colour`. The resolved value
+    states `name_type` as the source wrote it, and a refinement of a completed type carries no `@meta.completion`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        ident => !meta.alias { target: meta.identifier }
+
+        @meta.completion:{ of: [enum] }
+        colour => !meta.enum_type {
+          chain: { subtypes: [warm] }
+          name_type: meta.identifier  members: [RED ORANGE BLUE]
+        }
+
+        warm => !meta.enum_type { chain: { supertypes: [colour] }  name_type: meta.identifier  members: [RED ORANGE] }
+      }
+      """
+  }
+}

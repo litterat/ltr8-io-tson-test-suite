@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-an-array-type-restating-an-aliased-element-type-by-its-target-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7 (refinement of a collection type, proposed for Revision 40), [TSON-SCHEMA] §8.3"
+  description: """
+    The rule runs both ways: `labels` writes its element type through the alias `label`, and `short` restates it
+    as `text`, the entry `label` resolves to, so the slot is restated and `short` IS-A `labels`. The resolved
+    value states the slot as the source wrote it, `element_type: label`, an alias being stated as written.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        label  => !meta.alias { target: text }
+        labels => !meta.array { chain: { subtypes: [short] }  element_type: label }
+        short  => !meta.array { chain: { supertypes: [labels] }  element_type: label  max_items: 3 }
+      }
+      """
+  }
+}

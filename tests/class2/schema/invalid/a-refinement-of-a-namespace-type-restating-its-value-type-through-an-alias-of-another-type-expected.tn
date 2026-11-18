@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-a-namespace-type-restating-its-value-type-through-an-alias-of-another-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40), [TSON-SCHEMA] §8.3"
+  description: """
+    `tally` resolves to `int32`, another type than `api`'s `text`: an alias of another type restates nothing, and
+    another value type is refused as it is over a map.
+    """
+  error: {
+    category: resolver
+  }
+}

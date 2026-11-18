@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-a-namespace-type-restating-its-value-type-through-an-alias-of-another-type.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  tally  => int32
+  api    => !meta.namespace { key_type: meta.identifier  value_type: text }
+  counts => !api ^ { value_type: tally }
+}

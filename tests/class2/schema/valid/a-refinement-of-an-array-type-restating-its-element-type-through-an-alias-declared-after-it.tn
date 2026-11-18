@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-an-array-type-restating-its-element-type-through-an-alias-declared-after-it.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  tags  => [text]
+  some  => !tags ^ { element_type: label  min_items: 1 }
+  label => text
+}
