@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-an-array-type-restating-its-element-type-through-another-alias-of-one-target-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7 (refinement of a collection type, proposed for Revision 40), [TSON-SCHEMA] §8.3"
+  description: """
+    Two aliases of one entry are one type: `label` and `heading` each resolve to `text`, so `element_type: heading`
+    restates the slot `labels` wrote as `label`, neither spelling being the entry itself. The resolved value states
+    the slot as the source wrote it, `element_type: label`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        label  => !meta.alias { target: text }
+        heading => !meta.alias { target: text }
+        labels => !meta.array { chain: { subtypes: [short] }  element_type: label }
+        short  => !meta.array { chain: { supertypes: [labels] }  element_type: label  max_items: 3 }
+      }
+      """
+  }
+}

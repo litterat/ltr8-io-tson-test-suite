@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-an-array-type-restating-its-element-type-through-an-alias-declared-after-it-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7 (refinement of a collection type, proposed for Revision 40), [TSON-SCHEMA] §8.3"
+  description: """
+    Where an alias is declared does not matter: `label` follows the refinement that names it, resolves to `text`
+    as any alias of the schema does, and so restates `tags`' slot. The resolved value states the slot as the source
+    wrote it, `element_type: text`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        tags  => !meta.array { chain: { subtypes: [some] }  element_type: text }
+        some  => !meta.array { chain: { supertypes: [tags] }  element_type: text  min_items: 1 }
+        label => !meta.alias { target: text }
+      }
+      """
+  }
+}

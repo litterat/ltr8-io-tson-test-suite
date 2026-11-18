@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-an-array-type-restating-its-element-type-through-an-alias-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7 (refinement of a collection type, proposed for Revision 40), [TSON-SCHEMA] §8.3"
+  description: """
+    A type slot is fixed at construction and restated as the type it holds, which is one by the entry a name
+    resolves to and not by spelling: `label` is an alias, the same type as `text` under another name, so
+    `element_type: label` restates `tags`' slot, and `short` IS-A `tags`. The resolved value states the slot as
+    the source wrote it, `element_type: text`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        label => !meta.alias { target: text }
+        tags  => !meta.array { chain: { subtypes: [short] }  element_type: text }
+        short => !meta.array { chain: { supertypes: [tags] }  element_type: text  max_items: 3 }
+      }
+      """
+  }
+}

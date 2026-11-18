@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-an-array-type-restating-an-aliased-element-type-by-its-target.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  label  => text
+  labels => [label]
+  short  => !labels ^ { element_type: text  max_items: 3 }
+}

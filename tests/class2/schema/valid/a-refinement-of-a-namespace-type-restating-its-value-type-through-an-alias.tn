@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-a-namespace-type-restating-its-value-type-through-an-alias.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  summary => text
+  api     => !meta.namespace { key_type: meta.identifier  value_type: text }
+  small   => !api ^ { value_type: summary  max_items: 3 }
+}
