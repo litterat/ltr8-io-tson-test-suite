@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-extern-of-a-type-is-a-no-variant-selects-none-at-a-choice-of-externs-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  description: """
+    `card_v1` reaches extern-family-1.tn's `card`, which is neither variant's target nor IS-A either `order`: the
+    tag selects no variant of `( order_v1 | order_v2 )`, a validation error at the field.
+    """
+  error: {
+    category: validation
+    path: "/body"
+  }
+}

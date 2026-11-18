@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-naming-a-variant-extern-places-the-value-by-its-selectors-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13, [TSON-SCHEMA] §7.9, [TSON-SCHEMA] §5.4 (externs, proposed for Revision 40)"
+  description: """
+    At `( ticket_v1 | ticket_v2 )` the tag names a variant, and a tag naming the position's extern says no more than
+    the position does: the value is read as an untagged one at the target, an abstract `ticket` naming the selector
+    `kind`, so it is placed by its members under the foreign schema. `kind: urgent` places the value at `ticket_v1`
+    at extern-family-1.tn's `urgent`, which declares `by`, and at `ticket_v2` at extern-family-2.tn's, which
+    declares `lane`.
+    """
+  valid: _
+}

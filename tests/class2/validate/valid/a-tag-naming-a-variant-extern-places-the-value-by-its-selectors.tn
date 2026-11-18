@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-naming-a-variant-extern-places-the-value-by-its-selectors.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-family-envelope.tn"
+!envelope {
+  id: e
+  job: !ticket_v1 { kind: urgent  id: x  by: y }
+  task: !ticket_v2 { kind: urgent  id: z  lane: l }
+}

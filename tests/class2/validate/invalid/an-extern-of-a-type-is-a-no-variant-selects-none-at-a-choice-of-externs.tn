@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-extern-of-a-type-is-a-no-variant-selects-none-at-a-choice-of-externs.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-family-envelope.tn"
+!envelope { id: e  body: !card_v1 { number: n } }
