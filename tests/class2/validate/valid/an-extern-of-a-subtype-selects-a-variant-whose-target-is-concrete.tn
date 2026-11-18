@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-extern-of-a-subtype-selects-a-variant-whose-target-is-concrete.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-family-envelope.tn"
+!envelope {
+  id: e
+  box: !bulky_v1 { id: x  weight: w }
+  crate: !bulky_v2 { id: z  crane: c }
+}

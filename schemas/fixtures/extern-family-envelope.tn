@@ -1,0 +1,51 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/extern-family-envelope.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  A fixture schema of choices whose variants are externs ([TSON-SCHEMA] §5.4, §5.13, §7.9). It externs a base and
+  a subtype of each family extern-family-1.tn and extern-family-2.tn both declare, suffixed `_v1` and `_v2`, and
+  chooses between the two bases: `orders` over two abstract records naming no selector, `parcels` over two plain
+  records, `tickets` over two abstract records naming a selector. `sides` chooses between `left_v1` and `right_v1`,
+  and `both_v1` names a type IS-A both; `card_v1` names a type IS-A no variant here. `shaped` sets `text` beside
+  `shape_v1`, and `item_v1` names extern-family-1.tn's choice `item`. It declares no name either foreign schema
+  declares.
+
+  `envelope` puts each choice at a field, `orders`, `parcels` and `tickets` at two each.
+  """
+!schema {
+  order_v1  => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-1.tn"  type: order }
+  order_v2  => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-2.tn"  type: order }
+  rush_v1   => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-1.tn"  type: rush }
+  rush_v2   => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-2.tn"  type: rush }
+  parcel_v1 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-1.tn"  type: parcel }
+  parcel_v2 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-2.tn"  type: parcel }
+  bulky_v1  => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-1.tn"  type: bulky }
+  bulky_v2  => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-2.tn"  type: bulky }
+  ticket_v1 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-1.tn"  type: ticket }
+  ticket_v2 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-2.tn"  type: ticket }
+  card_v1   => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-1.tn"  type: card }
+  left_v1   => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-1.tn"  type: left }
+  right_v1  => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-1.tn"  type: right }
+  both_v1   => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-1.tn"  type: both }
+  shape_v1  => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-1.tn"  type: shape }
+  circle_v1 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-1.tn"  type: circle }
+  item_v1   => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-family-1.tn"  type: item }
+
+  orders  => ( order_v1 | order_v2 )
+  parcels => ( parcel_v1 | parcel_v2 )
+  tickets => ( ticket_v1 | ticket_v2 )
+  sides   => ( left_v1 | right_v1 )
+  shaped  => ( text | shape_v1 )
+
+  envelope => {
+    id:     text
+    body?:  orders
+    reply?: orders
+    box?:   parcels
+    crate?: parcels
+    job?:   tickets
+    task?:  tickets
+    side?:  sides
+    thing?: shaped
+    item?:  item_v1
+  }
+}

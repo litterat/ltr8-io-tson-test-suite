@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-value-of-one-schemas-subtype-is-refused-under-the-others-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9, [TSON-SCHEMA] §5.4 (externs, proposed for Revision 40)"
+  description: """
+    The value is read against the entry its tag reaches: `rush_v2` selects `order_v2` and reaches extern-family-2.tn's
+    `rush`, which declares `lane` and no `by`. The fields of extern-family-1.tn's `rush` are refused inside the
+    foreign value, a validation error at the field that schema's `rush` does not declare.
+    """
+  error: {
+    category: validation
+    path: "/body/by"
+  }
+}

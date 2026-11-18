@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-extern-of-a-subtype-selects-a-variant-of-an-externs-choice-target-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9, [TSON-SCHEMA] §5.4 (externs, proposed for Revision 40)"
+  description: """
+    Where an extern's target is a choice, a tag at its position is admitted where it selects one of the variants as a
+    tag at a choice does. `item_v1` names extern-family-1.tn's `( text | shape )`, and `circle_v1` reaches that
+    schema's `circle`, IS-A `shape` alone: the tag selects the variant `shape`, and the value is read against
+    `circle`.
+    """
+  valid: _
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-naming-an-extern-of-a-subtype-selects-the-variant-its-target-is-a.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-family-envelope.tn"
+!envelope {
+  id: e
+  body: !rush_v1 { id: x  by: y }
+  reply: !rush_v2 { id: z  lane: l }
+}

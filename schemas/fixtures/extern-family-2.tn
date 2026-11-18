@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/extern-family-2.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  The second of two fixture schemas that both declare the families `order`, `parcel` and `ticket` ([TSON-SCHEMA]
+  §5.13), with the same names and bases as extern-family-1.tn and subtypes of other fields: `rush` carries `lane`
+  and no `by`, `bulky` carries `crane`, and `urgent` carries `lane`.
+  """
+!schema {
+  order    => abstract { id: text }
+  rush     => order & { lane?: text }
+  standard => order & { note?: text }
+
+  parcel => { id: text }
+  bulky  => parcel & { crane: text }
+
+  ticket  => abstract { kind: text =?  id: text }
+  urgent  => ticket & { kind?: = "urgent"  lane: text }
+  routine => ticket & { kind?: = "routine" }
+}
