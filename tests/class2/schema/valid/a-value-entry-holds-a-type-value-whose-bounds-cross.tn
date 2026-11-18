@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-value-entry-holds-a-type-value-whose-bounds-cross.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-type-valued-field.tn"
+!schema {
+  held => !described { name: x  shape: !meta.array { element_type: text  min_items: 5  max_items: 2 } }
+}

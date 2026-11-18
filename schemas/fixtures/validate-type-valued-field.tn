@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-type-valued-field.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+@doc:"""
+  A field typed `meta.type`: `shape` holds a type value as data, held to the kernel's types as any value is to its
+  type, and declaring nothing ([TSON-SCHEMA] §4.2). A subject holding a value entry of `described` holds a value of
+  that record.
+  """
+!schema {
+  described => { name: text  shape: meta.type }
+}

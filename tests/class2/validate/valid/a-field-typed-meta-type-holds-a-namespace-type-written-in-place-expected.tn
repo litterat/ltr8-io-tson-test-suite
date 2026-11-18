@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-field-typed-meta-type-holds-a-namespace-type-written-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2"
+  description: """
+    A type value at a field typed `meta.type` of a schema's own record is held to the kernel's types as any value is
+    to its type, and declares nothing. A namespace type is never written in place in a declaration, but
+    `meta.type_inline.of` is a `meta.type` and `!meta.namespace { … }` is one, its names `meta.identifier` and `text`
+    references reaching entries of the closure, so the record is valid data.
+    """
+  valid: _
+}

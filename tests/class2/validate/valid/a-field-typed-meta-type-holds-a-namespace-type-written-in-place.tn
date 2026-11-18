@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-field-typed-meta-type-holds-a-namespace-type-written-in-place.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-type-valued-field.tn"
+!described { name: x  shape: !meta.array { element_type: { of: !meta.namespace { key_type: meta.identifier  value_type: text } } } }

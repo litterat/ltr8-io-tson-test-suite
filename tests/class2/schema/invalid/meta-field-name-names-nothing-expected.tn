@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/meta-field-name-names-nothing-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3.2, [TSON-SCHEMA] §9"
+  description: """
+    The kernel's identifier is `meta.identifier`, with the aliases `meta.type_name` and `meta.param_name`, and it
+    declares no `meta.field_name`: a field typed by that name names no entry of the schema's namespace, an unresolved
+    reference. A record that states no name type has `meta.identifier`'s, and a field typed by the role writes
+    `meta.identifier` or an alias of the schema's own.
+    """
+  error: {
+    category: resolver
+  }
+}

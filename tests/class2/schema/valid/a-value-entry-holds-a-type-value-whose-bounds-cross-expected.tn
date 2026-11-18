@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-value-entry-holds-a-type-value-whose-bounds-cross-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.1"
+  description: """
+    A value entry's payload holds a type value as data: held to the kernel's types as any value is to its type, and
+    declaring nothing, so crossed bounds, a declaration's rule, are not asked of it and the schema loads. Resolved
+    output writes the value entry as the value read against `described`, the type value in it as written, with no
+    chain.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        held => !described { name: x  shape: !meta.array { element_type: text  min_items: 5  max_items: 2 } }
+      }
+      """
+  }
+}

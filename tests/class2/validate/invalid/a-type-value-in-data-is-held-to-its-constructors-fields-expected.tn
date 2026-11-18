@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-type-value-in-data-is-held-to-its-constructors-fields-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2"
+  description: """
+    A type value written as data is held to the kernel's types as any value is to its type: `meta.array.min_items` is
+    a `numeric.count`, an `int64` of at least 0, and -1 is a range violation at the field.
+    """
+  error: {
+    category: validation
+    path: "/min_items"
+  }
+}
