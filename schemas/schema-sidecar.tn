@@ -31,7 +31,7 @@
     composes with says so here. What §2.2.3's import closure makes of a *namespace* is the link layer's,
     which is why nothing at this layer states an imported name.
 
-    A template's resolved output is an ordinary record: an open record, a `!meta.record` carrying
+    A parametric record's resolved output is an ordinary record: a `!meta.record` carrying
     `parameters` (§5.10), each parameter written where it stands as its name, a reference value looked up
     in the record's `parameters` before the namespace. Read back, it binds the value the resolver built,
     so the two sides of a vector compare as values like any other entry's. An application closes to a

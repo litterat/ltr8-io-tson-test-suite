@@ -1,9 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/schema/invalid/a-template-parameter-spelled-like-an-absorbed-argument.tn"
-!!import:"https://tson.io/2026/40/m/meta.tn"
-!!import:"https://tson.io/2026/40/m/core.tn"
-!schema {
-  T    => { q: int32 }
-  pick => <M> { m: M }
-  base => { f: pick<T> }
-  t2   => <T> base & { x: T }
-}

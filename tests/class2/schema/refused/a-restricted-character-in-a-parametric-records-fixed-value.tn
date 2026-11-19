@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/a-restricted-character-in-a-parametric-records-fixed-value.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  slug => !unicode.identifier_type { continue_add: "-" }
+
+  acct => <T> { kind: slug = aĲb  v: T }
+}

@@ -4,8 +4,8 @@
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (an application is a construction, proposed for Revision 40)"
   description: """
     `meta.apply` is written in place and never as a declaration's body: `weird => !meta.apply { … }` over
-    the open record `box` is a resolver error, a declared application being written `weird => box<text>`, whose
-    value is the type it closes or constructs to.
+    the parametric record `box` is a resolver error, a declared application being written `weird => box<text>`,
+    whose value is the type it closes or constructs to.
     """
   error: {
     category: resolver

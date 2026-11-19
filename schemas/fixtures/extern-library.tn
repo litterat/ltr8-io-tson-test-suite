@@ -4,9 +4,9 @@
 @doc:"""
   A fixture schema holding one entry of each sort an extern ([TSON-SCHEMA] §5.13) may or may not name: types a
   value can have (a record, an abstract record, an atom instance, an enum, a choice, named collections, an alias,
-  a declared application, a member of a nested schema map, an extern of its own), and what is no such type (an
-  open record, a schema map, an alias of a constructor). It imports extern-order-1.tn, so `order` and `card` are
-  in its closure too.
+  a declared application, a member of a nested schema map, an extern of its own), and what is no such type (a
+  parametric record, a schema map, an alias of a constructor). It imports extern-order-1.tn, so `order` and
+  `card` are in its closure too.
   """
 !schema {
   rec       => { a: text }

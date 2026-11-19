@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-naming-a-parametric-records-discriminators.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  fam => <D> !meta.record { fields: { kind => { type: text } }  extension: ABSTRACT  discriminators: [D] }
+}

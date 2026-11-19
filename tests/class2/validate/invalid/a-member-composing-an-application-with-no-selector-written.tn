@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-member-composing-an-application-with-no-selector-written.tn"
-!!import:"https://tson.io/test-suite/schemas/fixtures/validate-family-through-a-template.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-family-through-a-parametric-record.tn"
 !holder {
   p: {
     name: Rex

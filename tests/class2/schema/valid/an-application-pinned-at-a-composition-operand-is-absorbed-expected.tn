@@ -5,7 +5,7 @@
   description: """
     An application at a composition operand is absorbed by value whether the body adds a field or only restates one:
     `fixed` pins a field of the substituted record, adding no entry, and is IS-A the declaration `text_box` that
-    names `box<text>`, never the open record `box`.
+    names `box<text>`, never the parametric record `box`.
     """
   valid: {
     resolved: """

@@ -70,9 +70,9 @@ A vector naming two sections counts under both, so this column sums to more than
 | [TSON-SCHEMA] §4.2 | 136 | link, schema, validate |
 | [TSON-SCHEMA] §4.2 (reference reach | 2 | link, validate |
 | [TSON-SCHEMA] §4.2 (one reference | 2 | link, validate |
+| [TSON-SCHEMA] §4.2 (an application is a construction | 2 | schema |
 | [TSON-SCHEMA] §4.2 (one reference spelling | 1 | schema |
 | [TSON-SCHEMA] §4.2 (a parameter in a type written in place | 1 | schema |
-| [TSON-SCHEMA] §4.2 (an application is a construction | 2 | schema |
 | [TSON-SCHEMA] §4.2 (qualified names | 2 | validate |
 | §4.3 | 7 | resolver |
 | [TSON-SCHEMA] §4.3 | 5 | link, schema, validate |
@@ -128,7 +128,7 @@ A vector naming two sections counts under both, so this column sums to more than
 | [TSON-SCHEMA] §5.9 | 5 | link, schema, validate |
 | [TSON-SCHEMA] §5.9 (qualified names | 1 | schema |
 | [TSON-SCHEMA] §5.10 (inline types | 19 | link, schema, validate |
-| [TSON-SCHEMA] §5.10 | 119 | link, schema, validate |
+| [TSON-SCHEMA] §5.10 | 120 | link, schema, validate |
 | [TSON-SCHEMA] §5.10 (a parameter in a type written in place | 3 | schema |
 | §5.10 | 2 | schema |
 | [TSON-SCHEMA] §5.10 (a record written in place | 2 | schema |
@@ -200,7 +200,7 @@ A vector naming two sections counts under both, so this column sums to more than
 | [TSON-SCHEMA] §8.1 (nested schema maps and inline types | 1 | schema |
 | §8.2 | 7 | reader |
 | [TSON-SCHEMA] §8.2 (inline types | 13 | link, schema, validate |
-| [TSON-SCHEMA] §8.2 | 11 | link, schema |
+| [TSON-SCHEMA] §8.2 | 12 | link, schema |
 | [TSON-SCHEMA] §8.2 (an application is a construction | 2 | schema |
 | [TSON-SCHEMA] §8.2 (a record written in place | 6 | schema |
 | [TSON-DATA] §8.2 | 14 | schema, validate |

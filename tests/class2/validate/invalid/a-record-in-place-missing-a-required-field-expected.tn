@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.2 (inline types, proposed for Revision 40)"
   description: """
-    A record in place keeps its open record's required fields: `items` is unmarked, so a value at `p` without it is a
-    validation error at the missing field.
+    A record in place keeps its parametric record's required fields: `items` is unmarked, so a value at `p` without
+    it is a validation error at the missing field.
     """
   error: {
     category: validation

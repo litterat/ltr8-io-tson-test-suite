@@ -3,8 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
   description: """
-    An application of an open record at an array's `element_type` closes in place, as at a field: `[box<text>]` is the
-    array in place whose element is the record `box<text>` closes to, in place in turn, with no name and no entry.
+    An application of a parametric record at an array's `element_type` closes in place, as at a field: `[box<text>]`
+    is the array in place whose element is the record `box<text>` closes to, in place in turn, with no name and no
+    entry.
     """
   valid: {
     resolved: """

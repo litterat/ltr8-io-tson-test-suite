@@ -3,11 +3,11 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.4 (a parameter in a type written in place, proposed for Revision 40)"
   description: """
-    A choice over a parameter loads at its open record: whether its variants are distinct and whether it is disjoint
-    depend on the argument, so both are judged where each application closes. `reply<text>` holds `text` beside the
-    record `problem`, two classes, so the choice it closes to is disjoint and the declaration loads. In the open record
-    the derivation is total and a parameter has no class, so the choice there states `disjoint: false`, which nothing
-    at the open record judges.
+    A choice over a parameter loads at its parametric record: whether its variants are distinct and whether it is
+    disjoint depend on the argument, so both are judged where each application closes. `reply<text>` holds `text`
+    beside the record `problem`, two classes, so the choice it closes to is disjoint and the declaration loads. In the
+    parametric record the derivation is total and a parameter has no class, so the choice there states `disjoint:
+    false`, which nothing at the parametric record judges.
     """
   valid: {
     resolved: """

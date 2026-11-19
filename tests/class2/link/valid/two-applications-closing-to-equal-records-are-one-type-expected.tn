@@ -3,9 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
   description: """
-    Two records in place are one type when their bodies are equal, whichever open records produced them: `box<int32>`
-    and `crate<int32>` close to one field list, so restating an inherited `f: box<int32>` as `f: crate<int32>`
-    restates the inherited type and is accepted.
+    Two records in place are one type when their bodies are equal, whichever parametric records produced them:
+    `box<int32>` and `crate<int32>` close to one field list, so restating an inherited `f: box<int32>` as `f:
+    crate<int32>` restates the inherited type and is accepted.
     """
   valid: {
     binds: [sub]

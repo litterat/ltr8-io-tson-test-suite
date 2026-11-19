@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parametric-record-named-bare-as-an-argument-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10"
+  description: """
+    An argument is a type, and no position names a parametric record bare: `wrap<box>` binds `T` to a name that stands
+    only as the head of an application, so it is a resolver error at `holder`. The application is declared first,
+    `text_box => box<text>`, and `wrap<text_box>` is written.
+    """
+  error: {
+    category: resolver
+  }
+}

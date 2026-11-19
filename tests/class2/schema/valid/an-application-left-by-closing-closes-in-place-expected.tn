@@ -3,9 +3,10 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
   description: """
-    An application an open record holds over its parameter is closed when the record is applied, where it stands:
-    `cursor: box<T>` in `page` becomes `box<order>` in `order_page => page<order>`, and closes in place there to the
-    record `box<order>` closes to. Nothing is minted for it, and only the declaration records an application.
+    An application a parametric record holds over its parameter is closed when the record is applied, where it
+    stands: `cursor: box<T>` in `page` becomes `box<order>` in `order_page => page<order>`, and closes in place
+    there to the record `box<order>` closes to. Nothing is minted for it, and only the declaration records an
+    application.
     """
   valid: {
     resolved: """

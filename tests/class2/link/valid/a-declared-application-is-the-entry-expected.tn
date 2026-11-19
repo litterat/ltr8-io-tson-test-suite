@@ -5,8 +5,8 @@
   description: """
     A declaration whose body is a fully-bound application is the closed record itself, under its author's name, and
     carries the application on its key: `text_box` is the record `{ value: text }`. It is the one name the
-    application has, an application never being looked up at a slot. An open record is no type, so `text_box` is
-    not IS-A `box` and `box` indexes nothing.
+    application has, an application never being looked up at a slot. No application is IS-A its head, so
+    `text_box` is not IS-A `box` and `box` indexes nothing.
     """
   valid: {
     binds: [box text_box]

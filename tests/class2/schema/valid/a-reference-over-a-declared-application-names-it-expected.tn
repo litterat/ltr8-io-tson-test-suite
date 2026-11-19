@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
   description: """
-    A reference's `of` holds a name, so a reference over an application of an open record names the declaration that
-    closes it: `text_box => box<text>` is the record `{ v: text }` under its author's name, and both
+    A reference's `of` holds a name, so a reference over an application of a parametric record names the declaration
+    that closes it: `text_box => box<text>` is the record `{ v: text }` under its author's name, and both
     `!meta.ref { of: text_box }` and `meta.ref<text_box>` refer to it. The two spellings resolve to one
     reference over one entry; a construction substitutes nothing and carries no `@meta.application`.
     """

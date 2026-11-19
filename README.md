@@ -106,14 +106,14 @@ The expected side is carried as a multi-line token rather than modelled field by
 would restate meta.tn inside a sidecar schema and leave two statements of one shape to drift; a
 multi-line token escapes nothing, so this stays inside the conservative subset RUNNER.md rule 2 states.
 
-**A template's resolved output is an ordinary record**, so a `schema/` subject may declare one and state
-it. A template is an open record (§5.10): a `!meta.record` carrying `parameters`, read against `record`'s
-own vocabulary as any record is, each parameter written where it stands as its name, a reference value
-looked up in the record's `parameters` before the namespace. Read back, it binds the value the resolver
-built, so the two sides compare as values like any other entry. A declaration naming an application of one
-is the closed `!meta.record`, without `parameters`, stating on its key the application it closes as
-`@meta.application`; a construction (`set<text>`, `meta.ref<order>`) states its constructor and carries
-none.
+**A parametric record's resolved output is an ordinary record**, so a `schema/` subject may declare
+one and state it. A parametric record (§5.10) is a `!meta.record` carrying `parameters`, read against
+`record`'s own vocabulary as any record is, each parameter written where it stands as its name, a
+reference value looked up in the record's `parameters` before the namespace. Read back, it binds the
+value the resolver built, so the two sides compare as values like any other entry. A declaration naming
+an application of one is the closed `!meta.record`, without `parameters`, stating on its key the
+application it closes as `@meta.application`; a construction (`set<text>`, `meta.ref<order>`) states its
+constructor and carries none.
 
 **A type written at a slot stays there.** Sugar or an applied constructor at a type slot (`tags: [text]`,
 `set<text>`) resolves in place to the construction it denotes, held in the untagged wrapper

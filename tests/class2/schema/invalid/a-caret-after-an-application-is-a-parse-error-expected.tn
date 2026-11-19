@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §12.1 (`^` follows `!name`, proposed for Revision 40)"
   description: """
-    An application of an open record before `^` is a bare reference, and a parse error: the substituted record's
-    fields are restated in a composition, `box<text> & { v?: = a }`.
+    An application of a parametric record before `^` is a bare reference, and a parse error: the substituted
+    record's fields are restated in a composition, `box<text> & { v?: = a }`.
     """
   error: {
     category: resolver

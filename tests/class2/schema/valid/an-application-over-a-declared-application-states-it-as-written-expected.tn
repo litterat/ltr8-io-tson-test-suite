@@ -3,9 +3,10 @@
 {
   spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
   description: """
-    An argument of an open record's application is a name, so an application of another open record is declared
-    before it is passed: `inner => box<text>`, then `pair<inner int32>`. Each declaration's `@meta.application`
-    states its application as written, and the substituted field names the declaration: `outer.a` is `inner`.
+    An argument of a parametric record's application is a name, so an application of another parametric record
+    is declared before it is passed: `inner => box<text>`, then `pair<inner int32>`. Each declaration's
+    `@meta.application` states its application as written, and the substituted field names the declaration:
+    `outer.a` is `inner`.
     """
   valid: {
     resolved: """

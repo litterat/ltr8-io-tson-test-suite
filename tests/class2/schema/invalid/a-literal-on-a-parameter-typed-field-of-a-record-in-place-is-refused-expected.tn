@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2 (a parameter in a type written in place, proposed for Revision 40)"
   description: """
-    A literal value needs a closed type, inside a record written in place as at the open record's own field: `w` is
-    typed by the parameter, which differs in every application, so `~ 5` is refused at `page`.
+    A literal value needs a closed type, inside a record written in place as at the parametric record's own field:
+    `w` is typed by the parameter, which differs in every application, so `~ 5` is refused at `page`.
     """
   error: {
     category: resolver

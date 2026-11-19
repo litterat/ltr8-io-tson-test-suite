@@ -3,9 +3,10 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
   description: """
-    A record that would hold a recursive open record's application takes the closed type as a parameter instead, and
-    is applied to a declared one: `wrap_text => wrap<node_text>` substitutes the name `node_text` for `N`, so
-    `n` holds that name, the recursion having tied at `node_text`'s own declaration, and nothing closes in place.
+    A record that would hold a recursive parametric record's application takes the closed type as a parameter
+    instead, and is applied to a declared one: `wrap_text => wrap<node_text>` substitutes the name `node_text` for
+    `N`, so `n` holds that name, the recursion having tied at `node_text`'s own declaration, and nothing closes in
+    place.
     """
   valid: {
     resolved: """
