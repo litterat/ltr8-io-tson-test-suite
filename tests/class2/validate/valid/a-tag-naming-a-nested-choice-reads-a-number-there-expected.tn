@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-naming-a-nested-choice-reads-a-number-there-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4 (nested choices, proposed for Revision 40)"
+  description: """
+    `outer` is `( boolean | narrow )` over `narrow => ( int32 | text )`. The tag names the variant `narrow`, so it
+    selects it, and the value is read there untagged, as at a position typed by `narrow`, which is disjoint: `5` is
+    number-class and goes to `int32`.
+    """
+  valid: _
+}
