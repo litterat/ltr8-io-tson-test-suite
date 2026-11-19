@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-choice-variant-that-is-an-extern-of-a-disjoint-choice-has-no-class-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §5.13 (nested choices, proposed for Revision 40)"
+  description: """
+    A variant that is an extern of a choice loads when the choice it reaches is disjoint: extern-choices.tn's
+    `narrow`, int32 beside text, is. An extern is classified at its target and a choice has no class, so
+    `( boolean | narrow_x )` is not disjoint, and a value of the variant carries the tag naming `narrow_x`.
+    """
+  valid: {
+    binds: [narrow_x]
+    disjoint: [
+      { name: outer  value: false }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-nested-choice-extern.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  Choices of extern-choices.tn named through externs ([TSON-SCHEMA] §5.13, §5.4). `narrow_x` reaches a disjoint
+  choice and is a variant of `outer`, which is not disjoint, a nested choice having no class. `either_x` reaches a
+  choice of two records that is not disjoint, and `a_x` and `b_x` reach its variants, so a value at a position
+  typed by `either_x` is tagged with one of them.
+
+  `holder` puts `outer` and `either_x` each at a field.
+  """
+!schema {
+  a_x      => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-choices.tn"  type: a }
+  b_x      => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-choices.tn"  type: b }
+  either_x => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-choices.tn"  type: either }
+  narrow_x => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-choices.tn"  type: narrow }
+
+  outer => ( boolean | narrow_x )
+
+  holder => {
+    o?: outer
+    e?: either_x
+  }
+}

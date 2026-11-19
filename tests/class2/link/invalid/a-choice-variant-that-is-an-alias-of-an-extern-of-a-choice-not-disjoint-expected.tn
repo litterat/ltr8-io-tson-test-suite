@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-choice-variant-that-is-an-alias-of-an-extern-of-a-choice-not-disjoint-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §5.13, [TSON-SCHEMA] §8.3 (nested choices, proposed for Revision 40)"
+  description: """
+    The hops to a variant's entry are followed whatever their order: `mine` is an alias of the extern `held_x`,
+    whose target `held` is, in extern-choices.tn, an alias of `either`, a choice of two records that is not
+    disjoint. `( text | mine )` is therefore a choice holding a choice not disjoint, a resolver error at the
+    declaration.
+    """
+  error: {
+    category: resolver
+  }
+}
