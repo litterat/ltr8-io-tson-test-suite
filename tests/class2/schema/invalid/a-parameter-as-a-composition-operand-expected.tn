@@ -4,7 +4,8 @@
   spec: "[TSON-SCHEMA] §5.10"
   description: """
     A parameter is never an operand of `&`: composition reads the operand's fields to flatten, and `T` has none
-    until the template is applied. An operand applied to a parameter, `result<T> & { ... }`, is admitted.
+    until the parametric record is applied. An operand applied to a parameter, `result<T> & { ... }`, is
+    admitted.
     """
   error: {
     category: resolver

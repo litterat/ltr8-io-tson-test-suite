@@ -3,10 +3,10 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
   description: """
-    An application of an open record written at a type slot closes in place: `a: box<int32>` holds the substituted
-    record in the wrapper, `{ of: !meta.record { … } }`, with no name, no chain and no `@meta.application`, and
-    nothing is added to the schema for it. `box<int32>` and `crate<int32>`, over two open records with one field
-    list, close to equal records, one type by §8.2's structural identity.
+    An application of a parametric record written at a type slot closes in place: `a: box<int32>` holds the
+    substituted record in the wrapper, `{ of: !meta.record { … } }`, with no name, no chain and no
+    `@meta.application`, and nothing is added to the schema for it. `box<int32>` and `crate<int32>`, over two
+    parametric records with one field list, close to equal records, one type by §8.2's structural identity.
     """
   valid: {
     resolved: """

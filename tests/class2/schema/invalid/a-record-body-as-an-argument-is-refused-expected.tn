@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (a record written in place, proposed for Revision 40)"
   description: """
-    An argument of an open record's application is a name or a parameter: a record body there parses and is refused,
-    to be declared first and passed by its name.
+    An argument of a parametric record's application is a name or a parameter: a record body there parses and is
+    refused, to be declared first and passed by its name.
     """
   error: {
     category: resolver

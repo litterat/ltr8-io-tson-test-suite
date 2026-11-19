@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
   description: """
-    Where no declaration names the application, a composition of it is IS-A its open record's written parents alone:
-    `fixed` is IS-A `base`, and nothing is added for `box<text>`.
+    Where no declaration names the application, a composition of it is IS-A its head's written parents
+    alone: `fixed` is IS-A `base`, and nothing is added for `box<text>`.
     """
   valid: {
     binds: [fixed]

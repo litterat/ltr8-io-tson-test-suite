@@ -3,9 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3 (a parameter in a type written in place, proposed for Revision 40)"
   description: """
-    Inside an open record a form over a parameter is written in place like any other, a size included: `[T; 1..]` is
-    the array with `T` at its element and `min_items` beside it, and applying the record substitutes `text` there,
-    the size unchanged.
+    Inside a parametric record a form over a parameter is written in place like any other, a size included: `[T;
+    1..]` is the array with `T` at its element and `min_items` beside it, and applying the record substitutes `text`
+    there, the size unchanged.
     """
   valid: {
     resolved: """

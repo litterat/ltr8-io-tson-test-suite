@@ -3,8 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
   description: """
-    A tuple element's `element_type` is a type slot, so an application of an open record there closes in place: the
-    second element of `[text, box<text>]` holds the record `box<text>` closes to, with no name and no entry.
+    A tuple element's `element_type` is a type slot, so an application of a parametric record there closes in
+    place: the second element of `[text, box<text>]` holds the record `box<text>` closes to, with no name and no
+    entry.
     """
   valid: {
     resolved: """

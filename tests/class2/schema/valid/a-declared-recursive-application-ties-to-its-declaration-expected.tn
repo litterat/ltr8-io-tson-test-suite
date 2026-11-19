@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
   description: """
-    A recursive open record closes through the declaration that applies it: in `node_text => node<text>` the nested
-    `node<text>` left by substituting `next` is the application the declaration is closing, so it names that
+    A recursive parametric record closes through the declaration that applies it: in `node_text => node<text>` the
+    nested `node<text>` left by substituting `next` is the application the declaration is closing, so it names that
     declaration, `next: node_text`, and nothing is expanded without end or added to the schema.
     """
   valid: {

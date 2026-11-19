@@ -3,8 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §5.10 (a parameter in a type written in place, proposed for Revision 40)"
   description: """
-    A choice over a parameter loads at its open record and is judged where each application closes: `pick<int32>`
-    closes to `( int32 | int32 )`, which lists `int32` twice, and `p` is refused at its own declaration.
+    A choice over a parameter loads at its parametric record and is judged where each application closes:
+    `pick<int32>` closes to `( int32 | int32 )`, which lists `int32` twice, and `p` is refused at its own
+    declaration.
     """
   error: {
     category: resolver

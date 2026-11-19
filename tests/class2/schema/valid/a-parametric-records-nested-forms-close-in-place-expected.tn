@@ -1,0 +1,36 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-parametric-records-nested-forms-close-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  description: """
+    Inside a parametric record a form over a parameter is written in place like any other, the parameter at its
+    slot: `{text => [T]}` is a map whose `value_type` holds the array in place, and `[T]` an array. Applying the
+    record substitutes `text` at each slot: the declared `text_index` holds the same constructions over `text`, each
+    in the wrapper.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        index => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: {
+            by_key => !meta.record_field { type: { of: !meta.map {
+              key_type: text
+              value_type: { of: !meta.array { element_type: T } }
+            } } }
+            all    => !meta.record_field { type: { of: !meta.array { element_type: T } } }
+          }
+        }
+
+        @meta.application:{ head: index  arguments: [text] }
+        text_index => !meta.record { fields: {
+          by_key => !meta.record_field { type: { of: !meta.map {
+            key_type: text
+            value_type: { of: !meta.array { element_type: text } }
+          } } }
+          all => !meta.record_field { type: { of: !meta.array { element_type: text } } }
+        } }
+      }
+      """
+  }
+}

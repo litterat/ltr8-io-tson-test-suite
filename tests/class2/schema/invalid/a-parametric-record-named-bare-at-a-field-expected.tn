@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parametric-record-named-bare-at-a-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: """
+    No position names a parametric record bare: `p: pet` is a resolver error at `holder`,
+    though `pet` is abstract and states a selector. A family is declared with records: an abstract record states
+    the selector, and a position names that record. A processor that reads a parametric record named at a position
+    as an abstract base dispatching over the declarations composing its applications accepts this schema.
+    """
+  error: {
+    category: resolver
+  }
+}

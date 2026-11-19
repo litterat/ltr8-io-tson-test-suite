@@ -1,6 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/link/invalid/an-extern-naming-an-open-record.tn"
-!!import:"https://tson.io/2026/40/m/core.tn"
-!schema {
-  x => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: box }
-  use => { f: x }
-}

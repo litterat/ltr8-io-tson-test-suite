@@ -3,9 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
   description: """
-    A composition of an application is IS-A its open record's written parents and the declaration naming the
-    application, wherever that declaration stands: `early` and `late` are each IS-A `base` and `text_box`, and
-    nothing is IS-A `box`, an open record being no type.
+    A composition of an application is IS-A its head's written parents and the declaration naming
+    the application, wherever that declaration stands: `early` and `late` are each IS-A `base` and `text_box`,
+    and nothing is IS-A `box`, no application being IS-A its head.
     """
   valid: {
     subtypes: [

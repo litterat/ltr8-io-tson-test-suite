@@ -3,7 +3,7 @@
 {
   spec: "[TSON-SCHEMA] §5.10"
   description: """
-    `R` decides whether `v`'s value is a default or fixed, which an open record states as written for every
+    `R` decides whether `v`'s value is a default or fixed, which a parametric record states as written for every
     application. A parameter is a type, and stands only at a field's type or as an argument of an application there
     or in a parent.
     """

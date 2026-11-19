@@ -3,8 +3,8 @@
 {
   spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §12.1 (`^` follows `!name`, proposed for Revision 40)"
   description: """
-    A parameter list changes nothing about what may follow it: `<T> box<T> ^ {}` is a parse error, and the open
-    record restating `box`'s fields is `<T> box<T> & {}`.
+    A parameter list changes nothing about what may follow it: `<T> box<T> ^ {}` is a parse error, and the
+    parametric record restating `box`'s fields is `<T> box<T> & {}`.
     """
   error: {
     category: resolver

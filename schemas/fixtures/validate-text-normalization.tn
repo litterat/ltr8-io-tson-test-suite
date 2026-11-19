@@ -9,7 +9,7 @@
   `header_name` is a profile of lowercase letters, digits and `-` whose values are folded, so it admits a
   name however it is cased. `charset` lists its members in either case and folds them too. `safe_header`
   is an enum over `header_name`, so it matches its members in that type's form, and `safe_typed` restates a
-  default over a template application at one of them, however it is cased.
+  default over an application of a parametric record at one of them, however it is cased.
   """
 !schema {
   header_name => !unicode.identifier_type { start: NONE  continue: NONE

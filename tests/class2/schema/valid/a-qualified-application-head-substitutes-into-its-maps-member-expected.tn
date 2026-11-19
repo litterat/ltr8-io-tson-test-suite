@@ -4,10 +4,10 @@
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (qualified names, proposed)"
   description: """
     An application's head and a reference's `of` are qualified names like any other: `geo.box<text>` substitutes into
-    the open record `box` of `geo`, and `meta.ref<geo.base>` constructs `!meta.ref { of: geo.base }`. The declaration
-    closing the application is its record wherever it is declared, and its `@meta.application` states the head by its
-    path; written at a field, `geo.box<int32>` closes in place to its record, with no name. The construction carries
-    no `@meta.application`.
+    the parametric record `box` of `geo`, and `meta.ref<geo.base>` constructs `!meta.ref { of: geo.base }`. The
+    declaration closing the application is its record wherever it is declared, and its `@meta.application` states the
+    head by its path; written at a field, `geo.box<int32>` closes in place to its record, with no name. The
+    construction carries no `@meta.application`.
     """
   valid: {
     resolved: """

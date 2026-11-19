@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-parametric-record-family-members.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  No position names a parametric record, so a family whose members are applications is based on a record
+  ([TSON-SCHEMA] §5.10). `boxed` is the abstract base, `box` composes it, and `bt` declares an application of
+  `box`, which IS-A `boxed` through `box`'s written parent. A position typed `boxed` dispatches by tag over the
+  declared members.
+  """
+!schema {
+  boxed  => abstract { }
+  box    => <T> boxed & { v: T }
+  bt     => box<int32>
+  holder => { any: boxed }
+}

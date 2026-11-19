@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parametric-record-may-not-compose-a-final-record.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  c => final { x: int32 }
+
+  t => <T> c & { v: T }
+}

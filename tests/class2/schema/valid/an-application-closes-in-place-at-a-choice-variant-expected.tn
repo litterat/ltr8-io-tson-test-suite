@@ -3,9 +3,9 @@
 {
   spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
   description: """
-    A choice's variant is a type slot, so an application of an open record there closes in place: `( box<text> | int32
-    )` holds the record `box<text>` closes to as its first variant, with no name and no entry. A record is brace-class
-    and `int32` number-class, so the choice is disjoint and its record variant is read untagged.
+    A choice's variant is a type slot, so an application of a parametric record there closes in place: `( box<text> |
+    int32 )` holds the record `box<text>` closes to as its first variant, with no name and no entry. A record is
+    brace-class and `int32` number-class, so the choice is disjoint and its record variant is read untagged.
     """
   valid: {
     resolved: """
