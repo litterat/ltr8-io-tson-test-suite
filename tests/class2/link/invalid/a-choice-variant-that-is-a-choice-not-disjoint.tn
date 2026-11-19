@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-choice-variant-that-is-a-choice-not-disjoint.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  a => { x: text }
+  b => { y: text }
+
+  either => ( a | b )
+
+  pick => ( text | either )
+}

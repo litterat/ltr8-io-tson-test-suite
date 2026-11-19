@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-naming-a-nested-choice-reads-a-text-there-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4 (nested choices, proposed for Revision 40)"
+  description: """
+    The tag `!narrow` selects the nested choice, and the value is read there untagged: `"s"` is string-class and goes
+    to `text`, `narrow` being disjoint.
+    """
+  valid: _
+}

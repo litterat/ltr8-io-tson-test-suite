@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-nested-choice.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  A choice holding a choice ([TSON-SCHEMA] §5.4). `narrow` sets `int32` beside `text` and is disjoint; `outer`
+  sets `boolean` beside `narrow`, and a nested choice has no class, so `outer` is not disjoint and a value of
+  `narrow` there carries the tag naming it, then is read at `narrow` untagged.
+
+  `holder` puts `outer` at a field.
+  """
+!schema {
+  narrow => ( int32 | text )
+  outer  => ( boolean | narrow )
+
+  holder => {
+    o?: outer
+  }
+}
