@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-value-of-a-refined-namespace-type-at-a-field-typed-by-its-source-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §7.2, [TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §7.2, [TSON-SCHEMA] §5.7"
   description: """
     `few_orders` is a refinement of `orders` and IS-A it, so at the field `any`, typed `orders`, a value tagged
     `!few_orders` is admitted, and it is within the refined type's bounds.

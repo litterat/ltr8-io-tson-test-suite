@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-alias-of-an-incomplete-entry-is-another-name-for-it-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.5"
   description: """
     An alias of an incomplete entry is admitted and is another name for it: `filled<text>` completes `nonempty`.
     Neither the incomplete entry nor its alias is in the resolved form.

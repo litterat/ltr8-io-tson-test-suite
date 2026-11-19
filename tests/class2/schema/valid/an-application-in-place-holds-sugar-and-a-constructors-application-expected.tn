@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-application-in-place-holds-sugar-and-a-constructors-application-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10"
   description: """
     A record in place holds what its parametric record holds, closed: `items: [T]` and `ids: set<T>` are the array
     and the set written in place in `page`, `T` at each element, a constructor's application over a parameter being

@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-multiple-of-above-the-count-range-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.6 (`numeric.integer_type`, proposed)"
+  spec: "[TSON-SCHEMA] §5.6"
   description: """
     `multiple_of` is a step in the constrained integer's own domain, not a count: it is an `integer`, so a
     128-bit unsigned type may step by 2^64, above the 2^63-1 a count facet stops at.

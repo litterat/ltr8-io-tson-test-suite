@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-application-at-a-composition-operand-is-is-a-its-declaration-in-either-order-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10"
   description: """
     A composition of an application is IS-A its head's written parents and the declaration naming
     the application, wherever that declaration stands: `early` and `late` are each IS-A `base` and `text_box`,

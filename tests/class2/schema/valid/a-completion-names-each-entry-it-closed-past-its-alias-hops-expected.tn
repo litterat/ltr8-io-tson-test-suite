@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-completion-names-each-entry-it-closed-past-its-alias-hops-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §8.1, [TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §8.1, [TSON-SCHEMA] §5.5"
   description: """
     An alias of an incomplete entry is another name for it, and a completion names the entry itself: `open_list<text>`
     lists `nonempty`, and `set<text>`, through the kernel's root alias `set`, lists `meta.set_type`. A completion of

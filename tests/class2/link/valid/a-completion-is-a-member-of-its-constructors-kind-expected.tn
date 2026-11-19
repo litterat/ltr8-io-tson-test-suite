@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-completion-is-a-member-of-its-constructors-kind-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.5"
   description: """
     `nonempty` is an incomplete entry, no type and no kind's member. `texts => nonempty<text>` completes it into
     `!meta.array { element_type: text  min_items: 1 }`, an entry built with `meta.array` as `plain` is, so the kind

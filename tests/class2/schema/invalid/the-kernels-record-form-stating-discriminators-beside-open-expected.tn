@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/the-kernels-record-form-stating-discriminators-beside-open-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.2 (discriminators beside ABSTRACT, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.2"
   description: """
     `discriminators` stands only beside `extension: ABSTRACT` in the kernel's form. An OPEN record has values of its
     own, and a record its members are selected from has none, so the two fields contradict each other: the

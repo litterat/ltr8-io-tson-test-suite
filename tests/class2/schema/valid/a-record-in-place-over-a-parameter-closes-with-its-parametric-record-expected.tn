@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-record-in-place-over-a-parameter-closes-with-its-parametric-record-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2 (a parameter in a type written in place, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2"
   description: """
     A record written in place over a parameter is a record body whose field types are slots the parameter stands at:
     `meta` holds `T` at `cursor`. Applying `page` substitutes the argument there, declared (`order_page`) and at a

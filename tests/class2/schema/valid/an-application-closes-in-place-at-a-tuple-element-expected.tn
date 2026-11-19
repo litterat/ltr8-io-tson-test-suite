@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-application-closes-in-place-at-a-tuple-element-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
   description: """
     A tuple element's `element_type` is a type slot, so an application of a parametric record there closes in
     place: the second element of `[text, box<text>]` holds the record `box<text>` closes to, with no name and no

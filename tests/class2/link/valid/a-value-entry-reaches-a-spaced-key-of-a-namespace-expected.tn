@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-value-entry-reaches-a-spaced-key-of-a-namespace-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.12, [TSON-SCHEMA] §4.2, [TSON-DATA] §2.4 (reference reach, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.12, [TSON-SCHEMA] §4.2, [TSON-DATA] §2.4"
   description: """
     `phrases` is a value of `phrasebook`, a namespace keyed by `word`, so the segment `good morning` is a name of
     its key family and selects the key so spelled, whose value is text. Every key of a namespace value can be

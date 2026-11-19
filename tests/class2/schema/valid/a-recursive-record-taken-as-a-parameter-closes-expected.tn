@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-recursive-record-taken-as-a-parameter-closes-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.10.1"
   description: """
     A record that would hold a recursive parametric record's application takes the closed type as a parameter
     instead, and is applied to a declared one: `wrap_text => wrap<node_text>` substitutes the name `node_text` for

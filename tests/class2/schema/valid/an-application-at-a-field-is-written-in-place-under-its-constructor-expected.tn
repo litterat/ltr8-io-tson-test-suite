@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-application-at-a-field-is-written-in-place-under-its-constructor-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.3"
   description: """
     An application at a field is written in place under the constructor it builds with: `set<text>` completes the
     incomplete entry `meta.set_type`, `!meta.array { element_type: text  ordered: false  unique_items: true }`, and

@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-whose-type-is-a-no-variant-selects-none-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2 (choice subtypes, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2"
   description: """
     A tag at a choice names a variant or a type that IS-A exactly one: `base` is neither `text` nor `shape` and IS-A
     neither, so `!base` selects no variant of `( text | shape )`, a validation error at the field.

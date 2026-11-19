@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-quoted-value-by-name-is-the-same-name-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.12, [TSON-DATA] §2.4 (reference reach, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.12, [TSON-DATA] §2.4"
   description: """
     A reference is its token's text, whatever the token's form. `binding.method` is typed `meta.ref<method>`, and in
     a value entry's body `"orders.place_order"` and `orders.place_order` are one name, each reaching the method

@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/an-extern-of-each-sort-of-type-reads-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §7.9"
   description: """
     An extern of an atom instance, an enum, a disjoint choice, an array, a map and a tuple each read a value against
     its target.

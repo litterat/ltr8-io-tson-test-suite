@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-application-pinned-at-a-composition-operand-is-absorbed-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10"
   description: """
     An application at a composition operand is absorbed by value whether the body adds a field or only restates one:
     `fixed` pins a field of the substituted record, adding no entry, and is IS-A the declaration `text_box` that

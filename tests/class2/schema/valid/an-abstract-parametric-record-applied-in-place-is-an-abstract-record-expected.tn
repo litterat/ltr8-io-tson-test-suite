@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-abstract-parametric-record-applied-in-place-is-an-abstract-record-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10"
   description: """
     `abstract` and a selector on a parametric record are each application's, so `s?: shape<circle>` closes in place
     to an abstract record dispatching on `kind`. A member reaches a family only through a declared application, so

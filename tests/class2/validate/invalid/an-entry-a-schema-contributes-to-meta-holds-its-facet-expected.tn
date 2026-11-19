@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/an-entry-a-schema-contributes-to-meta-holds-its-facet-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §5.5 (open schema maps, incomplete entries, proposed)"
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §5.5"
   description: "`codes` completes `meta.code_list`, the incomplete entry this schema contributes to `meta`, which writes `max_items` as 4, so five elements are refused."
   error: {
     category: validation

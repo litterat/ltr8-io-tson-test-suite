@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-voidable-element-over-a-parameter-is-written-in-place-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3 (a parameter in a type written in place, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3"
   description: """
     A `?` element over a parameter is written in place, `voidable` bound beside `T` at the element, and survives
     substitution as any other field of the construction does.

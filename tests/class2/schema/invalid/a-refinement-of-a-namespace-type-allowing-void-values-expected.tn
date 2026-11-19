@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-a-namespace-type-allowing-void-values-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.7"
   description: """
     `voidable` is a permission, which a refinement may only withdraw, and `meta.namespace` pins it to false: a
     written value must equal the pin, and `voidable: true` would grant what the source withholds.

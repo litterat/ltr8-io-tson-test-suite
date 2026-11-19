@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/no-completion-is-stated-in-place-or-on-a-refinement-of-a-completed-type-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §8.1, [TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §8.1, [TSON-SCHEMA] §5.5"
   description: """
     A completion written in place has no key and states none. A refinement of a completed type is a refinement of a
     type, IS-A `tags`, and states none either: its chain says what it is. Only the declared completion, `tags`,

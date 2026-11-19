@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-extern-of-a-record-is-a-member-of-a-reference-over-record-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.13"
   description: """
     A reference over a constructor admits an extern where the foreign entry's constructor is that constructor or
     IS-A it, judged by identity: both schemas hold one kernel, so `meta.ref<meta.record>` admits an extern of a

@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-choice-of-declared-constructions-with-no-tag-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.4 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.4"
   description: """
     `( texts | ints )` is not disjoint, so the tag is required: an untagged bracket selects no variant, a validation
     error at the field.

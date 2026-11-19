@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-extern-is-written-as-written-and-used-by-its-local-name-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.13"
   description: """
     Resolved output writes an extern as written, its schema and the foreign name, and every use of it by the
     local name: a field, a variant, an element and an alias target name `order_v1`, never the foreign `order`.

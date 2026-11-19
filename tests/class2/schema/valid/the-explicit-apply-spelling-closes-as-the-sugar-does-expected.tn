@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/the-explicit-apply-spelling-closes-as-the-sugar-does-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §4.2 (an application is a construction, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §4.2"
   description: """
     An application is the construction `meta.apply` written in place, and `box<text>` is its sugar: the explicit
     spelling means the same and closes the same way, to the record `box<text>` denotes, held in place with no name.

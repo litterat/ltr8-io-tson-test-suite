@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/the-scope-example-reads-its-body-in-the-foreign-schema-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §7.9"
   description: """
     The example of §7.9: `!order_v2` is the reading document's name for the extern, and `!card` inside the value is
     extern-order-2.tn's `card`, a name the reading document's namespace does not hold.

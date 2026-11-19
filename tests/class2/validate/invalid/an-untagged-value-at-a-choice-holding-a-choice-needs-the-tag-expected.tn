@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/an-untagged-value-at-a-choice-holding-a-choice-needs-the-tag-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.4 (nested choices, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.4"
   description: """
     A nested choice has no class, so `( boolean | narrow )` is not disjoint and the tag is required, though `5` is
     number-class and only `narrow` holds a number-class variant. An untagged value selects no variant, a validation

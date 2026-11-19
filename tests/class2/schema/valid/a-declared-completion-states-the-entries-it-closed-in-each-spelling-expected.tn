@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-declared-completion-states-the-entries-it-closed-in-each-spelling-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §8.1, [TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §8.1, [TSON-SCHEMA] §5.5"
   description: """
     A declaration completing an incomplete entry carries `@meta.completion` on its key, naming the incomplete
     entries it closed, nearest first: `capped`, then `nonempty`, which `capped` was built from. The constructor is not

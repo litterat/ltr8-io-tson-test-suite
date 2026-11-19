@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-an-array-type-allowing-duplicates-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.7 (refinement of a collection type, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.7"
   description: """
     `unique_items` goes to true only; `again` would grant back the duplicates `unique` withdrew.
     """

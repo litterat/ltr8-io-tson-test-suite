@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/an-untagged-value-at-an-extern-of-an-abstract-record-naming-no-selectors-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §7.9"
   description: """
     `pet` is abstract and names no selector, so a value at `pet_x` names a subtype, through an extern of its own.
     """

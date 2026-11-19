@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-composition-pins-the-sibling-and-keeps-the-dependent-type-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.7"
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.8"
   description: """
     A dependent field's type is fixed by pinning its sibling, not by restating the field: `int_cell` pins `kind` to
     `int32`, so every `int_cell` reads `v` as an `int32`. The composition's flattened body keeps `v`'s dependent

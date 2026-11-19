@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-caret-in-a-parameterised-declaration-is-a-parse-error-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §12.1 (`^` follows `!name`, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §12.1"
   description: """
     A parameter list changes nothing about what may follow it: `<T> box<T> ^ {}` is a parse error, and the
     parametric record restating `box`'s fields is `<T> box<T> & {}`.

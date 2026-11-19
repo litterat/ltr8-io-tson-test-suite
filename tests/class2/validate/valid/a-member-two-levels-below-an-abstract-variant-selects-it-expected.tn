@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-member-two-levels-below-an-abstract-variant-selects-it-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2 (choice subtypes, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2"
   description: """
     IS-A is the complete chain: `disc` composes the abstract `round`, which composes `shape`, so `!disc` IS-A
     `shape` and no other variant of `( text | shape )`, selects it, and validates as a `disc`. The intermediate

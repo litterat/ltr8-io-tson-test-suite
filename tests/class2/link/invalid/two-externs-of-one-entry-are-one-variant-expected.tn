@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/two-externs-of-one-entry-are-one-variant-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.13"
   description: """
     Two externs of one foreign entry are two names for one type, compared by the foreign entry's identity, so a
     choice listing both lists one type twice.

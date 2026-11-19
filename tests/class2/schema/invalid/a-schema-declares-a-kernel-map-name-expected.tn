@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-declares-a-kernel-map-name-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §2.2.3 (the bundled libraries, proposed)"
+  spec: "[TSON-SCHEMA] §2.2.3"
   description: """
     The pre-loaded kernel declares its machinery under six schema maps, `meta`, `atom`, `numeric`, `unicode`, `net`
     and `binary`, so every schema has those names in its namespace, importing nothing: a record named `unicode`

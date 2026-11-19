@@ -8,10 +8,8 @@
   them while looking like it does: the schema loads, the document reads, and every comparison silently
   answers "different".
 
-  Every vector over this fixture states one value **in one spelling, twice**, so none of them depends on
-  what §7.5's contract says about two spellings of one octet string — that question is open (see the
-  register) and a vector turning on it would fail a processor that answers it the other way. A value equals
-  itself under any contract there could be, which is what makes these safe and what makes them sharp: an
+  Every vector over this fixture states one value **in one spelling, twice**. §7.5 compares octets whatever
+  the spelling, and these do not turn on it: a value equals itself under any contract there could be, so an
   implementation failing them has no equality at all rather than the wrong one.
   """
 !schema {

@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-application-over-a-declared-application-states-it-as-written-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10"
   description: """
     An argument of a parametric record's application is a name, so an application of another parametric record
     is declared before it is passed: `inner => box<text>`, then `pair<inner int32>`. Each declaration's

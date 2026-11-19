@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/enum-as-a-fields-type-is-refused-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §7.4 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §7.4"
   description: """
     The kernel's `enum` is an incomplete entry, `members` absent, and no type. A field holding an enum type is
     typed `meta.enum_type`.

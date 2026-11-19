@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/incomplete-entries-are-checked-across-fields-only-where-they-are-completed-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.5"
   description: """
     Each field of an incomplete entry is read against its own type where it is written; required fields, defaults
     and coherence across fields are checked where the entry is completed. `max_things` writes `max_items: 5`

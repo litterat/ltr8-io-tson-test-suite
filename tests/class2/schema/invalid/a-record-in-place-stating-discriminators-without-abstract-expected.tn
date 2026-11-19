@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-in-place-stating-discriminators-without-abstract-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.2 (discriminators beside ABSTRACT, proposed for Revision 40), [TSON-SCHEMA] §5.10.1 (a record written in place, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10.1"
   description: """
     The pair is held in place as at a declaration: a `!meta.record` written at a field's type that states
     `discriminators` and no `extension` is OPEN by the field's default, which is not ABSTRACT, so the schema is a

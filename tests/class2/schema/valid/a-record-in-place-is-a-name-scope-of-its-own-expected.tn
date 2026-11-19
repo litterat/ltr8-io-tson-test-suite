@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-record-in-place-is-a-name-scope-of-its-own-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §11.4 (a record written in place, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §11.4"
   description: """
     A record written in place is a scope of field names of its own, as a declared record is, and the record holding it
     is another: `comer` beside `at` and `corner` inside it are in two scopes, so the look-alike rule compares neither

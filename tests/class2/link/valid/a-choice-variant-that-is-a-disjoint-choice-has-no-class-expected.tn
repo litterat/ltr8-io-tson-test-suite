@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-choice-variant-that-is-a-disjoint-choice-has-no-class-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.4 (nested choices, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.4"
   description: """
     A variant that is a choice loads when it is disjoint: `narrow`, int32 beside text, is. A nested choice has no
     class, so `( boolean | narrow )` is not disjoint although no other variant is number- or string-class, and a

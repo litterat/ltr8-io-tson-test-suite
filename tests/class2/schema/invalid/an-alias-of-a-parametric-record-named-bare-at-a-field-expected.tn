@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-alias-of-a-parametric-record-named-bare-at-a-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.3"
+  description: """
+    An alias of a parametric record is named bare where its target is, at no position: `b: bx` is a resolver error at
+    `holder`, as `b: box` is. Write the application, `bx<text>`.
+    """
+  error: {
+    category: resolver
+  }
+}

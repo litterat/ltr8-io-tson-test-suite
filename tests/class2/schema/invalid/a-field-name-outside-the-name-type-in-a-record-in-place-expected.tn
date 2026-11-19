@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-field-name-outside-the-name-type-in-a-record-in-place-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.2 (a record written in place, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.2"
   description: """
     A record written in place is judged as a declared record is: its field names are values of its name type, the
     identifier by default, so `unit price` in the record in place an array's element holds is a resolver error at

@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-import-free-schema-declares-schema-and-nests-a-map-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §4.1 (the kernel's root names, nested schema maps, proposed)"
+  spec: "[TSON-SCHEMA] §2.2.3, [TSON-SCHEMA] §4.1"
   description: """
     The kernel's names enter a schema only by import, so a schema importing nothing may declare `schema`, as it may
     declare `int64`. A tag still names the pre-loaded kernel's: the root's `!schema` and a nested map's are the

@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-qualified-name-enters-a-value-of-a-refined-namespace-type-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.12, [TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.12, [TSON-SCHEMA] §5.7"
   description: """
     A qualified name enters a value of a namespace type, and a refined namespace type is one: `mine` is a value of
     `small`, its further segment `greeting` selects that key, and the value there is of `small`'s `value_type`,

@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-naming-a-variant-extern-places-the-value-by-its-selectors-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.13, [TSON-SCHEMA] §7.9, [TSON-SCHEMA] §5.4 (externs, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.13, [TSON-SCHEMA] §7.9, [TSON-SCHEMA] §5.4"
   description: """
     At `( ticket_v1 | ticket_v2 )` the tag names a variant, and a tag naming the position's extern says no more than
     the position does: the value is read as an untagged one at the target, an abstract `ticket` naming the selector

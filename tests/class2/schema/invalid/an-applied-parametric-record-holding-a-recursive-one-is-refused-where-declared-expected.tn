@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/an-applied-parametric-record-holding-a-recursive-one-is-refused-where-declared-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.10.1"
   description: """
     A parametric record holding an application of a recursive parametric record it is not on a cycle of could never
     be closed, and is refused at its own declaration: `wrap` holds `n: node<T>`, which closes in place wherever

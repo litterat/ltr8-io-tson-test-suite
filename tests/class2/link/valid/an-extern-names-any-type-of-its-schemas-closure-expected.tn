@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-extern-names-any-type-of-its-schemas-closure-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.13"
   description: """
     An extern names any type a value can have, declared anywhere in its schema's closure: a record, an abstract
     record, an atom instance, an enum, a choice, an array, a map and a tuple type, an alias, a declared

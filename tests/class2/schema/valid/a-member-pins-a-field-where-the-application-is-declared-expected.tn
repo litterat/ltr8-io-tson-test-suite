@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-member-pins-a-field-where-the-application-is-declared-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.10"
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10"
   description: """
     A value that differs per application is written where the application is declared, a field's value never being a
     parameter: `created` composes `response<order>` and restates `status` FIXED to `201`, as a hand-written member

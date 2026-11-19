@@ -37,7 +37,7 @@ small `scripts/fetch-references.sh`.
 ```
 tests/
   class1/                      the data-format processor ([TSON-DATA] §1.5)
-    lexer/{valid,invalid}/                 §7.2, §7.3
+    lexer/{valid,invalid}/                 §7.1, §7.2, §7.3
     parser/{valid,invalid,schema-document}/  §2, §3, §7.4, §7.5
     resolver/valid/                        §4
     vocabulary/{valid,invalid}/            §5

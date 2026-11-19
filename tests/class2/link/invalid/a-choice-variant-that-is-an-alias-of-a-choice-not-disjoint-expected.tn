@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-choice-variant-that-is-an-alias-of-a-choice-not-disjoint-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §8.3 (nested choices, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §8.3"
   description: """
     Whether a variant is a choice is judged after following its alias chain: `held` is an alias of `either`, a
     choice of two records that is not disjoint, so `( text | held )` is refused as `( text | either )` is, a

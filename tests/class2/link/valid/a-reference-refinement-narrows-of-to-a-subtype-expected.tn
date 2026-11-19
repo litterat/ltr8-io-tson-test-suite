@@ -4,7 +4,7 @@
   spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
   description: """
     A refinement of a reference narrows `of` to a type IS-A the source's, and is IS-A its source. `meta.map` IS-A
-    `meta.product`, and `meta.namespace`, a refinement of `meta.map`, IS-A `meta.map`, so `maps` and
+    `meta.product`, and `meta.namespace`, a composition of `meta.map`, IS-A `meta.map`, so `maps` and
     `namespaces` refine `products` and `maps` in turn and are listed among their sources' subtypes. Each admits a
     subset of its source's names: the namespace types `api`, `meta.schema` and `schema`, an alias of it, are
     members of all three, and `labels` and `meta.field_map`, plain maps, of `maps` and not `namespaces`.

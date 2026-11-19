@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/an-alias-of-an-incomplete-entry-named-as-a-fields-type-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.5"
   description: """
     An alias of an incomplete entry is admitted, and is another name for it, so a field's type naming the alias is
     refused as one naming the entry is.

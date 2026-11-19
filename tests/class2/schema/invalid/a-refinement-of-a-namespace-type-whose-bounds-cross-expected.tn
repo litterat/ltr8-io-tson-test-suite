@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-a-namespace-type-whose-bounds-cross-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.7"
   description: """
     Each bound moves inward, a ceiling of 1 below the source's none, but the refined body holds `min_items` 2
     above `max_items` 1 and admits no value of any size: the pair is the map's wherever it arises, and its

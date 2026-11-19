@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-choice-variant-that-is-a-choice-not-disjoint-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.4 (nested choices, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.4"
   description: """
     A variant that is a choice is disjoint. A nested choice has no class, so `( text | either )` is not disjoint and
     a value of `either` carries the tag naming it; with its one tag spent, it is read at `either` untagged, and

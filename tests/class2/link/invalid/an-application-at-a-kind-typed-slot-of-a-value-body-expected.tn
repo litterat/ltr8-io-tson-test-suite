@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/an-application-at-a-kind-typed-slot-of-a-value-body-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §5.10"
   description: """
     A kind-typed slot of a value body holds a type's name, one bare token. An application of a parametric
     record is never looked up as a name, and a value body's slot does not close one in place, so `box<order>`

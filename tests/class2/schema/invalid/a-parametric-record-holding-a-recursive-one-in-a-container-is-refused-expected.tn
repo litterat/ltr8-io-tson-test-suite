@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-parametric-record-holding-a-recursive-one-in-a-container-is-refused-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.10.1 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.10.1"
   description: """
     An application held inside a type written in place closes where it stands: `{text => [node<T>]}` is the map
     whose value type holds the array in place, with `node<T>` at the array's element, closing in place there when
