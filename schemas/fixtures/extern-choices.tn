@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/extern-choices.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  A fixture schema whose choices another schema names through externs ([TSON-SCHEMA] §5.13, §5.4). `either` sets
+  two records side by side and is not disjoint; `held` is an alias of it; `narrow` sets `int32` beside `text` and
+  is disjoint.
+  """
+!schema {
+  a => { x: text }
+  b => { y: text }
+
+  either => ( a | b )
+  held   => either
+
+  narrow => ( int32 | text )
+}

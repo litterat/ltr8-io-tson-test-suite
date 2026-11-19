@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-naming-an-extern-of-a-variant-selects-it-at-an-extern-of-a-choice-not-disjoint-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13, [TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  description: """
+    An extern of a choice that is not disjoint stands at a position of its own. `either_x` reaches
+    extern-choices.tn's `( a | b )`, two records, so a value there takes a tag, and the tag is the enclosing
+    scope's: `a_x` reaches the variant `a`, and the value is read against it.
+    """
+  valid: _
+}
