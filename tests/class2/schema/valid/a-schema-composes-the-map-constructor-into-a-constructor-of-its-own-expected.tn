@@ -4,8 +4,8 @@
   spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §4.1, [TSON-SCHEMA] §4.2"
   description: """
     Any schema may declare a constructor, by composing a constructor it imports. `meta.map` composes `meta.product`,
-    so the chain of `labelled_map` reaches exactly one base kind and the entry is PRODUCT-kinded, a constructor by
-    its chain. Its body is the complete inherited field set, `meta.map`'s pins and defaults with their values, and its
+    so the chain of `labelled_map` reaches exactly one base kind and the entry is a constructor by its chain. Its
+    body is the complete inherited field set, `meta.map`'s pins and defaults with their values, and its
     own field after them. Declaring it is valid; whether a processor backs an instance of a schema's own constructor
     of types is the processor's, so no instance is written here.
     """

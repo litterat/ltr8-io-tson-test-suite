@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/the-kernels-record-form-stating-discriminators-and-no-extension-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2 (discriminators beside ABSTRACT, proposed for Revision 40)"
+  description: """
+    A missing `extension` is its default, OPEN (`extension?: meta.record_extension_type ~ OPEN`), so this is the
+    record that states OPEN beside `discriminators`, and is refused as that one is. Only the source sugar implies
+    ABSTRACT: `=?` lowers to `extension: ABSTRACT` beside `discriminators`, and the kernel's form states both.
+    """
+  error: {
+    category: resolver
+  }
+}

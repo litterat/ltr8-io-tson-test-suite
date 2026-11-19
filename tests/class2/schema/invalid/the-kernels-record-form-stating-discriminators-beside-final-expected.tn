@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/the-kernels-record-form-stating-discriminators-beside-final-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2 (discriminators beside ABSTRACT, proposed for Revision 40)"
+  description: """
+    A record written as `!meta.record` is held to the pair: `discriminators` says the record's members are
+    selected by `pet_type`, so it has no values of its own, and stands only beside `extension: ABSTRACT`. FINAL
+    says the opposite, that nothing composes onto it. A stated field means what it says and nothing is derived over
+    it, so the declaration is a resolver error rather than a record made ABSTRACT.
+    """
+  error: {
+    category: resolver
+  }
+}

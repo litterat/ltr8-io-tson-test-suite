@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-in-place-stating-discriminators-without-abstract.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order => !meta.record { fields: {
+    at => !meta.record_field { type: { of: !meta.record {
+      fields: { kind => !meta.record_field { type: text }  x => !meta.record_field { type: int32 } }
+      discriminators: [kind]
+    } }  optional: true }
+  } }
+}
