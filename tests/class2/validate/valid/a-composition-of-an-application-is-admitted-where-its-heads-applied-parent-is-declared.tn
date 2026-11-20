@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-composition-of-an-application-is-admitted-where-its-heads-applied-parent-is-declared.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-an-operand-reaching-its-heads-applied-parent.tn"
+!holder {
+  b: !boxed { v: hello  w: 1 }
+  c: !reboxed { v: hello  w: 1  r: 2 }
+}

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-parametric-records-restatement-admitted-for-an-application-it-narrows.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box        => <T> { v: T }
+  wrap       => <T> box<T> & { v: int32 }
+  wrap_int32 => wrap<int32>
+}

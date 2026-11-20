@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-field-absorbed-from-an-undeclared-application-narrows-to-a-subtype.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  dog_type   => { bark: text }
+  puppy_type => dog_type & { age: int32 }
+  pet        => { name: text }
+  pet_of     => <T> pet & { pet: T }
+  dog        => pet_of<dog_type> & { pet: puppy_type }
+}

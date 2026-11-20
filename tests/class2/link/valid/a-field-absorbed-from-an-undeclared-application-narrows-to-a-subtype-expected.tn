@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-field-absorbed-from-an-undeclared-application-narrows-to-a-subtype-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.2"
+  description: """
+    A body entry naming a field absorbed from an application at an operand restates it, and a restated
+    field's type may narrow to a type IS-A the inherited one. `pet_of<dog_type>` contributes `pet: dog_type`
+    and `puppy_type` IS-A `dog_type` by composition, so `dog` narrows it, though nothing declares
+    `pet_of<dog_type>`. `dog` is IS-A `pet` through `pet_of`'s written parent, and never IS-A `pet_of`.
+    """
+  valid: {
+    subtypes: [
+      { name: pet  subtypes: [dog] }
+      { name: dog_type  subtypes: [puppy_type] }
+      { name: pet_of  subtypes: [] }
+    ]
+  }
+}
