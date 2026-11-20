@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-an-array-type-narrows-by-facet-and-keeps-is-a-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.7 (refinement of a collection type, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.7"
   description: """
     `!T ^ { ... }` over an array type is a refinement, IS-A `T` and its chain, each written facet moving by its
     kind over effective values: the bounds inward, `unique_items` to true, `voidable` to false, while

@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-completion-in-a-payload-writes-a-field-of-its-entry-once-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.5"
   description: """
     `rows` writes `min_items` as 1 and leaves `element_type` absent. A completion of it inside the kernel's
     `meta.record` payload writes only fields `rows` has not written, so `min_items: 0` there is refused, whatever

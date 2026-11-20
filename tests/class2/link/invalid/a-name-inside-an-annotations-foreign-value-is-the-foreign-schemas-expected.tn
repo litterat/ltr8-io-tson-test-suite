@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-name-inside-an-annotations-foreign-value-is-the-foreign-schemas-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §6, [TSON-SCHEMA] §5.13 (externs, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §6, [TSON-SCHEMA] §5.13"
   description: """
     `!memo` inside the value of `@rec_x` is extern-foreign.tn's, which declares no `other`.
     """

@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-apply-nested-in-a-container-in-place-stays-until-applied-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3 (an application is a construction, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3"
   description: """
     Inside a parametric record an application over a parameter is written in place, at any depth of a type written
     there: `[box<T>]` is the array whose element is `{ of: !meta.apply { head: box  arguments: [T] } }`. Applying the

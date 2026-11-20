@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-completion-in-place-is-the-construction-written-in-place-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.5"
   description: """
     At a type slot a completion is the constructor's construction written in place, equal to that construction
     written directly: `a` and `b` hold one type, and `{ of: !nonempty { ... } }` spelled out in a payload is the

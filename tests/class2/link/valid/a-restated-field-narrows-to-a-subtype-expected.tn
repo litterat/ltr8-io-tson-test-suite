@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-restated-field-narrows-to-a-subtype-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §7.2"
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §7.2"
   description: """
     A restated field's type may narrow to a type IS-A the inherited one. `employee` IS-A `person` by
     composition and `count` IS-A `integer` by atom refinement, so `staffed` and `counted` narrow `team`'s

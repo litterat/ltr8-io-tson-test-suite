@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-kernel-extension-composes-the-kernel-by-path-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.8 (the kernel under meta, proposed)"
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.8"
   description: """
     A kernel extension is an ordinary declaration composing a kernel constructor by its path and a kernel
     type bare, wherever it lives: here a constructor declared at the schema's own root, composing `meta.atom`

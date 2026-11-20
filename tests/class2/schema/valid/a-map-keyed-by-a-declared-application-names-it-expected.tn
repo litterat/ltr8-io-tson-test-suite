@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-map-keyed-by-a-declared-application-names-it-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.3"
   description: """
     A map's key is a name, so a key over a constructed type is declared and named: `method_ref => meta.ref<method>`
     and `labels => set<text>` are entries, and `{method_ref => int32}` holds `key_type: method_ref`. The map itself

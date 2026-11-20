@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/an-extern-whose-target-is-a-two-variants-and-names-neither-selects-none-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.9"
   description: """
     `both_v1` reaches extern-family-1.tn's `both`, which composes `left` and `right`, the targets of the two variants
     of `( left_v1 | right_v1 )`: the tag names neither variant and IS-A two, so it selects none, a validation error

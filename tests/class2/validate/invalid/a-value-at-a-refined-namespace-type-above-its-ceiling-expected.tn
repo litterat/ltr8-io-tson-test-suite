@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-value-at-a-refined-namespace-type-above-its-ceiling-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §4.1, [TSON-SCHEMA] §5.7"
   description: """
     Three entries against `few_orders`'s `max_items: 2`: the refinement narrowed `orders`, which states no
     ceiling, and a value of the refined type is judged under the narrowed bound.

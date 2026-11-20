@@ -5,8 +5,8 @@
   description: """
     A schema need import nothing: its root's `!schema` tag classifies it, so a map of declarations with no
     header is unambiguous, and with no imports its namespace is its own entries alone. `a.b` is typed by `b`,
-    a sibling, and `{}` declares the zero-field record, `!record { fields: {} }`. The kernel's constructors
-    build both entries without being names this schema can see.
+    a sibling, and `{}` declares the zero-field record, `!meta.record { fields: {} }`. The kernel's
+    constructors build both entries without being names this schema can see.
     """
   valid: {
     resolved: """

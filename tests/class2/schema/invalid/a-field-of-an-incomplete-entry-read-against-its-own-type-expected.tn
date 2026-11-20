@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-field-of-an-incomplete-entry-read-against-its-own-type-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.5"
   description: """
     Each field written is read against its own declared type where it is written, completed or not: `min_items` is
     a count.

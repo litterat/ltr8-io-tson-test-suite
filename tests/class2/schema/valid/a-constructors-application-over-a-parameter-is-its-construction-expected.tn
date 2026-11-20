@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-constructors-application-over-a-parameter-is-its-construction-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3 (a parameter in a type written in place, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3"
   description: """
     A constructor's application over a parameter is its construction in place at the parametric record, the
     parameter at its slot, so the explicit spelling and the sugar are one resolved form: `explicit` and `sugar`

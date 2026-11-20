@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-a-namespace-type-restating-its-order-and-voidability-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.7"
   description: """
     Each facet is judged against the source's effective value. `ordered` is fixed at construction and `api` takes
     `meta.map`'s default, false, so `ordered: false` restates it; `voidable` is a permission `meta.namespace`

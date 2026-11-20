@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-declared-application-is-the-entry-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
   description: """
     A declaration whose body is a fully-bound application is the closed record itself, under its author's name, and
     carries the application on its key: `text_box` is the record `{ value: text }`. It is the one name the

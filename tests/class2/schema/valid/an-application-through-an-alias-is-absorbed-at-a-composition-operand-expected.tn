@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-application-through-an-alias-is-absorbed-at-a-composition-operand-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §8.3 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §8.3"
   description: """
     An application whose head is an alias of a parametric record applies the parametric record, the alias being the
     same entry under another name, and at a composition operand it is absorbed by value as the parametric record's

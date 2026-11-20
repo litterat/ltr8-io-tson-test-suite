@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-construction-left-open-is-completed-by-its-application-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.5"
   description: """
     `!meta.array ^ { min_items: 1 }` leaves `element_type`, a required field of `meta.array`, absent, so
     `nonempty` is an incomplete entry: no type, and not in the resolved form, which holds complete entries only.

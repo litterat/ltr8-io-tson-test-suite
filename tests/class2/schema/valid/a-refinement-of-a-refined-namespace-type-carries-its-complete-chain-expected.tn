@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-a-refined-namespace-type-carries-its-complete-chain-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
   description: """
     A refined namespace type is itself refined as its source is: `smaller` raises `small`'s floor and keeps its
     ceiling, and its chain is complete, `small` and everything `small` IS-A. `subtypes` is the inverse, so `api`

@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-choice-over-a-parameter-loads-and-is-judged-where-applied-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.4 (a parameter in a type written in place, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.4"
   description: """
     A choice over a parameter loads at its parametric record: whether its variants are distinct and whether it is
     disjoint depend on the argument, so both are judged where each application closes. `reply<text>` holds `text`

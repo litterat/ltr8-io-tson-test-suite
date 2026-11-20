@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-foreign-value-at-the-root-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §7.9"
   description: """
     A document's root names its type in the reading document's namespace, an extern among its entries.
     """

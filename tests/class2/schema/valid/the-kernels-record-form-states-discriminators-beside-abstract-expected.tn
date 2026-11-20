@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/the-kernels-record-form-states-discriminators-beside-abstract-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.2 (discriminators beside ABSTRACT, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.2"
   description: """
     The kernel's form of a member-dispatched base states both facts the sugar `pet_type: text =?` lowers to:
     `discriminators` beside `extension: ABSTRACT`. Its members compose it and pin the selector to distinct values,

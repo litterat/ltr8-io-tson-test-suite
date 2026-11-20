@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-dotted-family-keys-a-plain-map-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12 (reference reach, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
   description: """
     The `.` that joins a reference's segments is refused only in a family a segment is matched against: a
     namespace's `key_type` and a record's `name_type`. No reference enters a plain map, so a family admitting `.`

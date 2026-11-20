@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-typed-entry-naming-no-inherited-field-adds-it-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.8 (`^` follows `!name`, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.8"
   description: """
     A composition body entry with a type that names no inherited field declares a new field, appended after the
     inherited ones: `agee` beside `age`, however close the spelling. Only a modifier-only entry must name an

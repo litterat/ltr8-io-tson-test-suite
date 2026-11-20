@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/meta-reference-type-names-nothing-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §3.3.1 (one reference constructor, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §3.3.1"
   description: """
     The kernel has one reference constructor, `meta.ref`, and declares no `meta.reference_type`: a construction tagged
     with that name names no entry of the schema's namespace, an unresolved reference. The same reference is

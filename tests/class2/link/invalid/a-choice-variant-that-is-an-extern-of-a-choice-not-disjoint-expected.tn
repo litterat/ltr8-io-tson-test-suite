@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-choice-variant-that-is-an-extern-of-a-choice-not-disjoint-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §5.13 (nested choices, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §5.13"
   description: """
     Whether a variant is a choice is judged of the entry it reaches, through an extern as through an alias, an
     extern being a hop and every judgement through it made of its target. `either_x` reaches extern-choices.tn's

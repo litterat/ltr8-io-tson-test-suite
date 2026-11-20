@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-a-namespace-type-lowers-its-ceiling-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.7"
   description: """
     An upper bound falls: `tighter` moves `bounded`'s `max_items` from 3 to 2, judged against the bound the source
     states. The refinement merges with its source, so the resolved body keeps the inherited `min_items` beside the

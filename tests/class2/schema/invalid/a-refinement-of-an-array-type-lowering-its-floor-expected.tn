@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-an-array-type-lowering-its-floor-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.7 (refinement of a collection type, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.7"
   description: """
     A bound of an array type moves inward: `min_items` 1 is below the source's 2.
     """

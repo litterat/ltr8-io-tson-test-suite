@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-incomplete-entry-completed-before-it-is-declared-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §3.4.1 (the wait order, proposed), [TSON-SCHEMA] §5.5"
+  spec: "[TSON-SCHEMA] §3.4.1, [TSON-SCHEMA] §5.5"
   description: """
     `counts` completes `counted`, an incomplete entry the same document declares after it. The completion
     waits on the entry being ready, which the processor makes it first: the order entries are written in is

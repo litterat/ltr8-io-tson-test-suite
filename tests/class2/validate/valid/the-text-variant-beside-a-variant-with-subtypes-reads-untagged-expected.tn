@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/the-text-variant-beside-a-variant-with-subtypes-reads-untagged-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.4 (choice subtypes, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.4"
   description: """
     `( text | shape )` and `( text | base )` are disjoint, a subtype having its variant's class, so a string at
     either goes untagged to `text`, as at any choice of a string-class and a brace-class variant.

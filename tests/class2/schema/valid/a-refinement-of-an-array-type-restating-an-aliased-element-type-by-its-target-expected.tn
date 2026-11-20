@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-an-array-type-restating-an-aliased-element-type-by-its-target-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.7 (refinement of a collection type, proposed for Revision 40), [TSON-SCHEMA] §8.3"
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.3"
   description: """
     The rule runs both ways: `labels` writes its element type through the alias `label`, and `short` restates it
     as `text`, the entry `label` resolves to, so the slot is restated and `short` IS-A `labels`. The resolved

@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-incomplete-entry-refined-then-completed-accumulates-its-fields-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.5"
   description: """
     A refinement of an incomplete entry writes fields its base has not written and is another incomplete entry;
     the completion writes the rest. `capped<text>` is the construction over everything each step wrote.

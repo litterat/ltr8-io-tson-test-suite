@@ -123,7 +123,7 @@ MUST is that a processor *report* a position, not that two processors agree on o
 A conformance claim that silently skips is not a claim. A runner MUST report what it skipped and
 why. Exactly three grounds are legitimate:
 
-- **An encoding the implementation does not read.** §9.1 permits `utf-16` and `utf-32`; not reading
+- **An encoding the implementation does not read.** §7.1 permits `utf-16` and `utf-32`; not reading
   them is a gap in the implementation, not a failed conformance claim. `invalid-utf8` is *not* such a
   ground — it must reach the lexer and be rejected there.
 - **A `class2/` vector under a Class 1 processor.** Declared by conformance class, not per vector.

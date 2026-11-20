@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-segment-under-a-non-folding-family-keeps-its-case-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.12, [TSON-SCHEMA] §5.5 (reference reach, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.12, [TSON-SCHEMA] §5.5"
   description: """
     A segment is matched in the form of the family it enters, and only a folding family folds. `main.internal` is an
     `api`, keyed by `meta.identifier`, whose form is NFC: `PONG` is a name of it, and a different one from the key

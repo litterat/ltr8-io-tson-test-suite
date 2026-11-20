@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/a-foreign-name-is-no-root-type-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §7.9"
   description: """
     The root names its type in the reading document's namespace, which holds the extern `rec_x` and no `rec`.
     """

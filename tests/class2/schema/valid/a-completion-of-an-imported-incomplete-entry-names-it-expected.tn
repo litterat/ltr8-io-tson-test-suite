@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-completion-of-an-imported-incomplete-entry-names-it-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §8.1, [TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40), [TSON-SCHEMA] §2.2.3"
+  spec: "[TSON-SCHEMA] §8.1, [TSON-SCHEMA] §5.5, [TSON-SCHEMA] §2.2.3"
   description: """
     An imported incomplete entry is named in `@meta.completion` by its name in the one namespace, as it is
     written in the importing schema: `ne<uuid>` lists the fixture's `nonempty` past the local alias, and `few<text>`

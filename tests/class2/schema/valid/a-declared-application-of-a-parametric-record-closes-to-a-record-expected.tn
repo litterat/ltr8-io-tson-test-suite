@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-declared-application-of-a-parametric-record-closes-to-a-record-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.1 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.1"
   description: """
     An application of a parametric record substitutes its arguments for the parameters and closes to a `!meta.record`
     without `parameters`. A declaration naming the application is that record under its author's name, and carries

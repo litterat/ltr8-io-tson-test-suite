@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-value-entry-matches-a-segment-in-its-familys-form-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.12, [TSON-SCHEMA] §5.5 (reference reach, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.12, [TSON-SCHEMA] §5.5"
   description: """
     A segment is matched as a document's own key there is, in the key family's form and under its equality. `http`
     is a value of `verbs`, keyed by `verb`, whose `normalization` is `ASCII_CASEFOLD`: the key written `GET` is the

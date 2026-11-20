@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-reference-spelled-meta-kind-is-unresolved-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §4.2 (one reference spelling, proposed)"
+  spec: "[TSON-SCHEMA] §4.2"
   description: """
     A reference has one spelling, `meta.ref<T>`, whatever `T` names: over a constructor it holds the names of
     the types built with it, and otherwise the names of values of `T`. The kernel declares no `kind` parametric

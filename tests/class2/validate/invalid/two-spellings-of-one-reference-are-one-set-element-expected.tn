@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/invalid/two-spellings-of-one-reference-are-one-set-element-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-DATA] §2.4, [TSON-SCHEMA] §5.12 (reference reach, proposed for Revision 40)"
+  spec: "[TSON-DATA] §2.4, [TSON-SCHEMA] §5.12"
   description: """
     A reference is its token's text, whatever the form, so `main.internal.pong` and `"main.internal.pong"` are one
     reference, with one referent. `refs` is a set of `text_ref`, and it holds that element twice.

@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-quoted-name-with-a-leading-separator-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.12 (reference reach, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.12"
   description: """
     A reference's text splits at `.`, and no segment is empty: a leading `.` leaves an empty first segment, so
     `".orders.place_order"` is no name, quoted as unquoted.

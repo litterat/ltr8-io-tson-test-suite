@@ -5,7 +5,7 @@
   description: """
     A type's `chain` is its IS-A order, which the resolver computes from composition and refinement
     and a declaration never writes, as it never writes `choice.disjoint`. `n` states its supertypes
-    on an explicit `!record`; `n => base & { ... }` is the declaration that means it.
+    on an explicit `!meta.record`; `n => base & { ... }` is the declaration that means it.
     """
   error: {
     category: resolver

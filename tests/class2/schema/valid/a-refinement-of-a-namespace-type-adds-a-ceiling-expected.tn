@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-a-namespace-type-adds-a-ceiling-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.7 (a namespace type refined, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.7"
   description: """
     A namespace type is built by `meta.namespace`, a constructor that IS-A `meta.map`, so it is refined as a map
     type is: `max_items` is an ordered bound, and `api` states none, so `small` may set one. The result carries

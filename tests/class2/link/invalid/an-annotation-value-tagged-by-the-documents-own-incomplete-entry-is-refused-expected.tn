@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/an-annotation-value-tagged-by-the-documents-own-incomplete-entry-is-refused-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §3.3.3, [TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40), [TSON-SCHEMA] §6"
+  spec: "[TSON-SCHEMA] §3.3.3, [TSON-SCHEMA] §5.5, [TSON-SCHEMA] §6"
   description: """
     An annotation's value is data, read against its type in the annotating schema's namespace, and no construction:
     a tag in it naming `rows`, an incomplete entry the annotating schema declares after it, names no type, and is

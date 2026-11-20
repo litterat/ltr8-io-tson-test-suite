@@ -15,7 +15,7 @@
 !schema {
   @doc:"""
     A resolved schema, as §8.1's ingest form: a `!schema` map from each name to the value its entry
-    resolves to -- `name => !record { ... }`, a type body carrying its own `chain` --
+    resolves to -- `name => !meta.record { ... }`, a type body carrying its own `chain` --
     exactly what the spec's resolver-output fixtures (`*-resolved.tn`) carry and what §8.2 keys
     identity on.
 

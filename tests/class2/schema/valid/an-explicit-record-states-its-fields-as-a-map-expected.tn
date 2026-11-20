@@ -3,7 +3,7 @@
 {
   spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
   description: """
-    The explicit `!record` form states `fields` as an ordered map from each
+    The explicit `!meta.record` form states `fields` as an ordered map from each
     field's name to its `meta.record_field`, which carries the facts and no name: the
     name is the key. A name that is no identifier is a quoted key, judged by the
     record's `name_type` like any other.

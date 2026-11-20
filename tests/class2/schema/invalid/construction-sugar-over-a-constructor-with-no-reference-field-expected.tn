@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/construction-sugar-over-a-constructor-with-no-reference-field-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.3 (construction sugar, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.3"
   description: """
     `meta.tuple`'s one required field, `elements`, is a list of records and no reference, so the constructor has no
     field construction sugar fills and takes no arguments: `meta.tuple<uuid>` is refused. The arguments are not

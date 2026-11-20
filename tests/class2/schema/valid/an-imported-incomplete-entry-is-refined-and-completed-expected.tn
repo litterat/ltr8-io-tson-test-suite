@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-imported-incomplete-entry-is-refined-and-completed-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40), [TSON-SCHEMA] §2.2.3"
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §2.2.3"
   description: """
     An incomplete entry is imported like any entry: this schema refines and completes the fixture's `nonempty` and
     completes its `keyed`. Its own resolved form lists its own complete entries.

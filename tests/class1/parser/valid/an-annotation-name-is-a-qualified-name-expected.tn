@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class1/parser/valid/an-annotation-name-is-a-qualified-name-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
 {
-  spec: "§3.1, §7.4 (qualified annotation names, proposed)"
+  spec: "§3.1, §7.4"
   description: "An annotation's name is a qualified name, segments joined by `.`, each an identifier, as a tag's is: every name resolves from the root, so a schema names the kernel's `doc` as `@doc`. A schemaless read resolves nothing and keeps the name as written."
   valid: {
     document: {

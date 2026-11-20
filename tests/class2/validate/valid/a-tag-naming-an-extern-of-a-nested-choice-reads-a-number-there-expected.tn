@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-naming-an-extern-of-a-nested-choice-reads-a-number-there-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.9 (nested choices, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.9"
   description: """
     `outer` is `( boolean | narrow_x )`, and `narrow_x` reaches extern-choices.tn's `narrow`, `( int32 | text )`.
     The tag names the variant `narrow_x` and is the enclosing scope's; the value is read at the target untagged,

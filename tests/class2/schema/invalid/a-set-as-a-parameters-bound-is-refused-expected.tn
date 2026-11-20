@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-set-as-a-parameters-bound-is-refused-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.10 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.10"
   description: """
     A bound names a type every argument must IS-A. The kernel's `set` is an alias of the incomplete entry
     `meta.set_type`, and no type IS-A an incomplete entry.

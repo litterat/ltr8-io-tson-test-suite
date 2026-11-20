@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/whitespace-inside-an-argument-list-is-one-reference-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.3 (inline types, proposed for Revision 40), [TSON-SCHEMA] §12.1"
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §12.1"
   description: """
     An application in schema source is read as its parsed form and never its text, so whitespace and a separating
     comma inside an argument list are free: `meta.map< text, int32 >` at an element type is the construction

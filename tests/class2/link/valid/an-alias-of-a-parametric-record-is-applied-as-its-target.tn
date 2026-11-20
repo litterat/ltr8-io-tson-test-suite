@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-alias-of-a-parametric-record-is-applied-as-its-target.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box => <V> { item: V }
+
+  bx => box
+
+  text_box => bx<text>
+
+  holder => { b: bx<text> }
+
+  sub => text_box & { extra: text }
+}

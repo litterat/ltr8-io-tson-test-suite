@@ -1,11 +1,11 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-application-left-by-closing-closes-in-place-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.2"
   description: """
     An application a parametric record holds over its parameter is closed when the record is applied, where it
     stands: `cursor: box<T>` in `page` becomes `box<order>` in `order_page => page<order>`, and closes in place
-    there to the record `box<order>` closes to. Nothing is minted for it, and only the declaration records an
+    there to the record `box<order>` closes to. No entry is added for it, and only the declaration records an
     application.
     """
   valid: {

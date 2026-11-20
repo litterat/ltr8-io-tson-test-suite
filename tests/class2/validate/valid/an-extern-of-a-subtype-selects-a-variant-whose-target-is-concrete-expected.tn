@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/an-extern-of-a-subtype-selects-a-variant-whose-target-is-concrete-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.9 (externs, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.9"
   description: """
     A concrete variant admits its subtypes as an abstract one does. At `( parcel_v1 | parcel_v2 )`, two plain
     records, `bulky_v1` and `bulky_v2` reach the `bulky` of each foreign schema, each IS-A the `parcel` of its own

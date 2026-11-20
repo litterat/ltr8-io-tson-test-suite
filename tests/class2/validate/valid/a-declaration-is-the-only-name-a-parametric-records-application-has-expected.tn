@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/validate/valid/a-declaration-is-the-only-name-a-parametric-records-application-has-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §7.2, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §7.2, [TSON-SCHEMA] §5.10"
   description: """
     `ok_of => ok<text>` is the closed record under its author's name, the one name the application has: an
     application is never looked up, so a document tags the member with its declaration. `ok_of` IS-A `result_of`

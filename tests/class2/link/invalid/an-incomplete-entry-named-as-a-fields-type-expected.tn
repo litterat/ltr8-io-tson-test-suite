@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/an-incomplete-entry-named-as-a-fields-type-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.5"
   description: """
     An incomplete entry is no type, so a field's type naming it is refused; `nonempty<text>` completes it there.
     """

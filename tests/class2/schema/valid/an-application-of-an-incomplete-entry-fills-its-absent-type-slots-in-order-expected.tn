@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-application-of-an-incomplete-entry-fills-its-absent-type-slots-in-order-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.5 (incomplete entries, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.5"
   description: """
     `X<A ...>` fills the type slots `X` leaves absent, in the constructor's declared order: `keyed` wrote
     `key_type`, so its one argument is `value_type`; `open` wrote neither, so it takes both.

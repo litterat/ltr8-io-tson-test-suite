@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-argument-naming-a-declared-construction-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10 (inline types, proposed for Revision 40)"
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.10"
   description: """
     An argument of a parametric record's application is a name or a parameter, so a construction passed as
     one is declared first: `orders => [order]`, then `page<orders>`, whose substituted field names the
