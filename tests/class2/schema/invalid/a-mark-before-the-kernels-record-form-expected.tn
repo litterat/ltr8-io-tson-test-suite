@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-mark-before-the-kernels-record-form-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.1"
+  description: """
+    A definition mark is sugar for a record definition's `extension`, and `!meta.record { … }` is the record that
+    sugar lowers to, so the grammar has no mark before it: §12.1 admits `abstract` and `final` before a record body,
+    a composition or a subtraction alone. Before `!` the mark is a parse error, wherever the payload states
+    `extension` and wherever it does not. The kernel's form states the fact itself, `!meta.record { fields: { … }
+    extension: ABSTRACT }`, and the source form is `pet => abstract { name: text }`.
+    """
+  error: {
+    category: resolver
+  }
+}

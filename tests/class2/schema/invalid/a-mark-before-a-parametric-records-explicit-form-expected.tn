@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-mark-before-a-parametric-records-explicit-form-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.1, [TSON-SCHEMA] §5.10"
+  description: """
+    A parameter list before `!meta.record` declares a parametric record in the kernel's form (§5.10), and a mark
+    before that parameter list is still a mark before `!`: §12.1's mark stands before a record body, a composition or
+    a subtraction alone, before the parameter list where there is one. It is a parse error at the mark. The kernel's
+    form states `extension: ABSTRACT` in its payload, and the source form is `box => abstract <T> { v: T }`.
+    """
+  error: {
+    category: resolver
+  }
+}
