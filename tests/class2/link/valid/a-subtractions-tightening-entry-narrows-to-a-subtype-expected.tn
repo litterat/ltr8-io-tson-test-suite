@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-subtractions-tightening-entry-narrows-to-a-subtype-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.9"
+  description: """
+    §5.9's rule 4 puts a subtraction's tightening entries under §5.8's rules, and a restated field's type may
+    narrow to a type IS-A the inherited one: `employee` IS-A `person`, so `view` narrows `owner`. The removal
+    leaves `view`'s chain empty, so it IS-A nothing and is no subtype of `account`.
+    """
+  valid: {
+    subtypes: [
+      { name: person  subtypes: [employee] }
+      { name: account  subtypes: [] }
+    ]
+  }
+}

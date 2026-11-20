@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-parametric-records-restatement-refused-for-an-application-whose-operand-no-declaration-names-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10"
+  description: """
+    `wrap`'s body names `v`, which it absorbs from `box<T>`, so it restates it, and in a parametric record a
+    restatement is judged with each application's arguments wherever the application closes or is
+    absorbed. `wrap<text>` absorbs `box<text>`'s `v: text` and restates it as `int32`, which is neither
+    `text` nor IS-A it, so `wrap_text` is refused. Nothing declares `box<text>`: the verdict is the one a
+    declaration of it would give.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-field-absorbed-from-an-undeclared-application-restated-as-an-unrelated-type.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  dog_type => { bark: text }
+  cat_type => { purr: text }
+  pet      => { name: text }
+  pet_of   => <T> pet & { pet: T }
+  dog      => pet_of<dog_type> & { pet: cat_type }
+}

@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-parametric-records-restatement-admitted-for-an-application-it-narrows-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10"
+  description: """
+    A restatement in a parametric record is judged with each application's arguments, not at the
+    declaration. `wrap`'s `v: int32` restates `box<T>`'s `v: T`; `wrap<int32>` absorbs `box<int32>`'s
+    `v: int32`, which `int32` restates as itself, so `wrap_int32` links. The same parametric record applied
+    to `text` is refused.
+    """
+  valid: {
+    binds: [box wrap wrap_int32]
+  }
+}

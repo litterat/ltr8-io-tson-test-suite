@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-field-absorbed-from-an-undeclared-application-restated-through-an-alias-argument-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §8.2"
+  description: """
+    `box<text>` is absorbed at the operand and contributes `v: item<text>`, which `boxed`'s body restates as
+    `item<label>`. Two applications of a parametric record are one where their canonical applications are
+    structurally equal, every argument's alias chain followed to its terminal entry, and `label` is a
+    reference to `text`, so the two are one type and the restatement is the identity. Nothing declares
+    `box<text>`, and the verdict is the one a declaration of it would give.
+    """
+  valid: {
+    binds: [item box label boxed]
+  }
+}
