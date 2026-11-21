@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-pinned-field-restated-with-another-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8"
+  description: """
+    A restatement may change a default and MUST NOT change a pin. `base` pins `pet_type` to `"pet"`, and `dog`'s
+    modifier-only restatement pins it to `"dog"`: a value that is not the inherited pin, so `dog` is refused where it is
+    declared. The base of a family leaves its selector unpinned for this reason (§5.2).
+    """
+  error: {
+    category: resolver
+  }
+}
