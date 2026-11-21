@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-construction-of-a-composed-constructor-writing-another-value-at-its-pin.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/composed-array-constructor.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  any_list => !my_list { element_type: text  min_items: 0 }
+}

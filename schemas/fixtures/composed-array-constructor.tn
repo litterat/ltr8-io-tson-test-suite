@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/composed-array-constructor.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  A constructor of this schema's own, composed over `meta.array` with no field added ([TSON-SCHEMA] §5.8):
+  `my_list` is IS-A `meta.array`, and its `min_items` is pinned to 1, an optional name so omission injects the pin.
+  `names` is a type `my_list` builds, so a value of `names` has at least one element. No value of a record of this
+  schema's own is held, so a processor that binds needs no class for one.
+  """
+!schema {
+  my_list => meta.array & { min_items?: = 1 }
+  names   => my_list<text>
+}

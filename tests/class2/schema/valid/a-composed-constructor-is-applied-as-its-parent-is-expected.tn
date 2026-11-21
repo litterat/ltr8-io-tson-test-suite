@@ -1,0 +1,23 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-composed-constructor-is-applied-as-its-parent-is-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.6, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §8.1"
+  description: """
+    `my_list => meta.array & { min_items?: = 1 }` is a constructor, IS-A `meta.array` by composition, so it has the
+    argument slot `meta.array` has: `element_type`, its one required field typed by a reference naming types and
+    pinned by nothing. `my_list<text>` is `!my_list { element_type: text }`, the construction of `my_list` and not of
+    `meta.array`, and is written so: the binding record headed by the applied constructor, holding the field the
+    application bound. `min_items` is pinned in `my_list`'s own declaration, so it comes from the vocabulary and is not
+    in the binding record. At a field's type the same application is that construction written in place.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        tags => !my_list { element_type: text }
+        page => !meta.record {
+          fields: { labels => !meta.record_field { type: { of: !my_list { element_type: text } } } }
+        }
+      }
+      """
+  }
+}

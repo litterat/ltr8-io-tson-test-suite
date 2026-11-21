@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-type-a-composed-constructor-built-is-refined-by-its-facets.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/composed-array-constructor.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  few => !names ^ { max_items: 3 }
+}
