@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/data-read-against-a-type-a-composed-constructor-built-below-its-pinned-floor-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.8"
+  description: """
+    `names` is `my_list<text>`. `my_list` pins `min_items` to 1 on an optional name, so omission injects the pin and
+    `names` has at least one element: an empty array is no value of it.
+    """
+  error: {
+    category: validation
+  }
+}

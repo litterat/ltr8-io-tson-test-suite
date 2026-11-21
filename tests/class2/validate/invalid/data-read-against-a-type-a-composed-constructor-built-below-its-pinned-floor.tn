@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/data-read-against-a-type-a-composed-constructor-built-below-its-pinned-floor.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/composed-array-constructor.tn"
+!names []

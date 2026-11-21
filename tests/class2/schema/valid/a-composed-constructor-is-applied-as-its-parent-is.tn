@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-composed-constructor-is-applied-as-its-parent-is.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/composed-array-constructor.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  tags => my_list<text>
+  page => { labels: my_list<text> }
+}
