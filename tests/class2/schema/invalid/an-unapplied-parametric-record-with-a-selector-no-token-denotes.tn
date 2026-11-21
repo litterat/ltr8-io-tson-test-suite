@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-unapplied-parametric-record-with-a-selector-no-token-denotes.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  base => { k: text }
+  p    => <T> { k: base =?  v: T }
+}

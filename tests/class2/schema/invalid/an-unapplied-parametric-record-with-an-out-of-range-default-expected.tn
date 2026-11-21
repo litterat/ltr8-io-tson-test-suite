@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-unapplied-parametric-record-with-an-out-of-range-default-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2"
+  description: """
+    A literal value stands only under a type that names no parameter, so it is judged at the parametric record's
+    declaration as any record's is: `500` is no `int8`, and a field's default is a value of its declared type. Nothing
+    applies `t`, and it is a resolver error at `t`.
+    """
+  error: {
+    category: resolver
+  }
+}
