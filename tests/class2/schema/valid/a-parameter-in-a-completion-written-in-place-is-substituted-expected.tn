@@ -1,0 +1,49 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-parameter-in-a-completion-written-in-place-is-substituted-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.5"
+  description: """
+    A completion written in place is the construction of the incomplete entry's constructor, so a parameter at one
+    of that constructor's type slots stands there as at a field's type, in the explicit spelling as in the sugar:
+    the kernel's `set_type` and a schema's own `nonempty` alike, braced or in the positional form. Each parametric
+    record holds the `array` construction with the parameter at `element_type`, and each application substitutes
+    the argument there.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        sets => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: { of: !meta.array {
+            element_type: T  ordered: false  unique_items: true
+          } } } }
+        }
+
+        firsts => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: { of: !meta.array { element_type: T  min_items: 1 } } } }
+        }
+
+        lone => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: { of: !meta.array { element_type: T  min_items: 1 } } } }
+        }
+
+        @meta.application:{ head: sets  arguments: [text] }
+        s => !meta.record { fields: { v => !meta.record_field { type: { of: !meta.array {
+          element_type: text  ordered: false  unique_items: true
+        } } } } }
+
+        @meta.application:{ head: firsts  arguments: [text] }
+        f => !meta.record { fields: {
+          v => !meta.record_field { type: { of: !meta.array { element_type: text  min_items: 1 } } }
+        } }
+
+        @meta.application:{ head: lone  arguments: [text] }
+        l => !meta.record { fields: {
+          v => !meta.record_field { type: { of: !meta.array { element_type: text  min_items: 1 } } }
+        } }
+      }
+      """
+  }
+}
