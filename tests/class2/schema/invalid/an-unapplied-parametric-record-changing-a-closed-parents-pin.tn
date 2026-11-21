@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-unapplied-parametric-record-changing-a-closed-parents-pin.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  base  => { tag: text = "base" }
+  boxed => <T> base & { v: T  tag: = "boxed" }
+}

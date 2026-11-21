@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-unapplied-parametric-record-changing-a-closed-parents-pin-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10"
+  description: """
+    A restatement may change a default and never a pin, and a pin under a type that names no parameter
+    is the same in every application, so it is judged at the parametric record's declaration as any
+    record's is: `tag: = "boxed"` changes `base`'s pin `"base"`. Nothing applies `boxed`, and it is a
+    resolver error at `boxed`.
+    """
+  error: {
+    category: resolver
+  }
+}

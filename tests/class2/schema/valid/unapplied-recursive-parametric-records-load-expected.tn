@@ -1,0 +1,53 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/unapplied-recursive-parametric-records-load-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.10.1"
+  description: """
+    A parametric record is judged for productivity at its declaration, its parameters assumed inhabited, and a guarded
+    recursion is productive applied or not: `next?` may be omitted, `children?` too, and the mutual cycle through `a`
+    and `b` passes the optional `b?`. Nothing applies any of them, and each resolves to its parametric record.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        linked_list => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: {
+            value => !meta.record_field { type: T }
+            next  => !meta.record_field {
+              type: { of: !meta.apply { head: linked_list  arguments: [T] } }
+              optional: true
+            }
+          }
+        }
+
+        tree => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: {
+            value    => !meta.record_field { type: T }
+            children => !meta.record_field {
+              type: { of: !meta.array { element_type: { of: !meta.apply { head: tree  arguments: [T] } } } }
+              optional: true
+            }
+          }
+        }
+
+        a => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: {
+            v => !meta.record_field { type: T }
+            b => !meta.record_field { type: { of: !meta.apply { head: b  arguments: [T] } }  optional: true }
+          }
+        }
+
+        b => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: {
+            w => !meta.record_field { type: T }
+            a => !meta.record_field { type: { of: !meta.apply { head: a  arguments: [T] } } }
+          }
+        }
+      }
+      """
+  }
+}
