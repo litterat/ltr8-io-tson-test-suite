@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-construction-left-open-writing-another-value-at-a-fixed-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, §5.5"
+  description: """
+    `meta.array` pins `access_pattern` to `INDEX`, and a value contradicting a pin is refused in every
+    construction (§5.2). A field of a construction left open is read where it is written, a value its
+    declaration refuses being a resolver error at that declaration (§5.5), though nothing completes `named`.
+    """
+  error: {
+    category: resolver
+  }
+}
