@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-completion-writing-a-fixed-fields-own-value-its-entry-left-unwritten-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, §5.5"
+  description: """
+    A completion may write any field its incomplete entry has not written, and a fixed field takes the pin's
+    own value there as in any construction (§5.2): `nonempty` leaves `access_pattern` unwritten, so the
+    completion writes `INDEX`, `meta.array`'s pin, beside `element_type`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        @meta.completion:{ of: [nonempty] }
+        tags => !meta.array { element_type: text  min_items: 1 }
+      }
+      """
+  }
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-construction-left-open-writing-a-fixed-fields-own-value.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  indexed => !meta.array ^ { access_pattern: INDEX }
+  tags    => indexed<text>
+  written => !meta.array { access_pattern: INDEX  element_type: text }
+}

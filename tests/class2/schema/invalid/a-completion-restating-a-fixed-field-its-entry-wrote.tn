@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-completion-restating-a-fixed-field-its-entry-wrote.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  indexed => !meta.array ^ { access_pattern: INDEX }
+  tags    => !indexed { access_pattern: INDEX  element_type: text }
+}

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-completion-restating-a-fixed-field-its-entry-wrote-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: """
+    A completion never writes a field its incomplete entry has written, a restatement of the same value
+    included, and a written pin is such a field: `indexed` writes `access_pattern`, so the completion may
+    not write it again, though `INDEX` is `meta.array`'s pin.
+    """
+  error: {
+    category: resolver
+  }
+}
