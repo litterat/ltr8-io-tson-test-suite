@@ -2,11 +2,12 @@
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.5"
-  description: "An enum declaration resolves to an ATOM entry whose source is the enum constructor and whose members keep the order they were written in."
+  description: "An enum declaration completes the kernel's `enum`: an ATOM entry built with `meta.enum_type` over `meta.identifier`, whose members keep the order they were written in, and whose key states the completion."
   valid: {
     resolved: """
       !schema {
-        colour => !enum { members: [RED GREEN BLUE] }
+        @meta.completion:{ of: [enum] }
+        colour => !meta.enum_type { name_type: meta.identifier  members: [RED GREEN BLUE] }
       }
       """
   }

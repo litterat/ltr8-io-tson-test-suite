@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-container-written-in-place-may-not-state-a-chain-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2"
+  description: """
+    The rule that a type written in place carries no `chain` is every such type's, not a record's alone: the array
+    `tags` holds in place states `base` as a supertype, a resolver error at `order`. `[text]` at the field is the
+    construction with none.
+    """
+  error: {
+    category: resolver
+  }
+}

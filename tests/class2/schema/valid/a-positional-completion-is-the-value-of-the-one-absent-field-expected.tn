@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-positional-completion-is-the-value-of-the-one-absent-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.6"
+  description: """
+    With exactly one required field absent, a value after `!X` that is no braced record is that field's value,
+    §5.6's positional form as for a constructor with one unmarked field: `!nonempty text`, `nonempty<text>` and
+    `!nonempty { element_type: text }` are one construction.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        @meta.completion:{ of: [nonempty] }
+        spelled => !meta.array { element_type: text  min_items: 1 }
+        @meta.completion:{ of: [nonempty] }
+        applied => !meta.array { element_type: text  min_items: 1 }
+        @meta.completion:{ of: [nonempty] }
+        braced  => !meta.array { element_type: text  min_items: 1 }
+      }
+      """
+  }
+}

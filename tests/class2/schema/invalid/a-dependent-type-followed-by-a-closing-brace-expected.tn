@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-dependent-type-followed-by-a-closing-brace-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §12.1, [TSON-SCHEMA] §12.3"
+  description: """
+    A dependent type's `!` is followed by whitespace, even at a record field's type, the one place it stands: `kind!}`
+    does not parse. A dependent type ends a field's type, so in a well-formed record whitespace always follows it.
+    """
+  error: {
+    category: resolver
+  }
+}

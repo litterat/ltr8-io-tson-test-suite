@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/construction-sugar-over-array-is-the-sugar-forms-construction.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  post => {
+    a: meta.array<uuid>
+    b: [uuid]
+  }
+}

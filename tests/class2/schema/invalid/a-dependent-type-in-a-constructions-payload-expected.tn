@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-dependent-type-in-a-constructions-payload-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §7.4, [TSON-DATA] §7.5, [TSON-SCHEMA] §5.2"
+  description: """
+    A construction's payload is data, and `kind!` is schema-grammar sugar with no data form: written as the explicit
+    `record_field.type`, `kind` is read as a token and the `!` adjacent to it breaks the separation rule, so the
+    document does not parse. The explicit form writes a dependent type in place, `{ of: !meta.dependent { on: kind }
+    }`. Category is `resolver`, as every error that stops a schema loading is.
+    """
+  error: {
+    category: resolver
+  }
+}

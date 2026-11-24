@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-an-array-type-restating-its-element-type-through-an-alias-of-another-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.3"
+  description: """
+    An alias restates a slot only as the entry it resolves to: `other` resolves to `uuid`, another type than `tags`'
+    `text`, and another element type is another type and its construction, whatever name it is written under.
+    """
+  error: {
+    category: resolver
+  }
+}

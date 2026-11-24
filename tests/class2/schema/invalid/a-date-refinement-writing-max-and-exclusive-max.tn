@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-date-refinement-writing-max-and-exclusive-max.tn"
+!!import:"https://tson.io/2026/40/m/temporal.tn"
+!schema {
+  both_ceilings => !date ^ { max: 2099-12-31  exclusive_max: 2100-01-01 }
+}

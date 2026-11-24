@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-alias-of-the-extern-constructor-is-no-extern-head.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  ext      => meta.extern
+  order_v1 => !ext { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"  type: order }
+}

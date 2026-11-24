@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/data-read-against-a-type-a-composed-constructor-built-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.8"
+  description: """
+    `names` is `my_list<text>`, and `my_list` pins `min_items` to 1: one text is a value of it.
+    """
+  valid: _
+}

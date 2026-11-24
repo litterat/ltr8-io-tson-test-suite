@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-fraction-digits-constrained-value-spelled-with-trailing-zeros-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "temporal.tn's own worked example for `time_type.fraction_digits`, and its datetime and duration twins. Each value is a whole number of tenths of a second and each is spelled with three digits, so a processor counting the digits written refuses them and one testing the value admits them. The atom is exact either way — nothing is truncated to fit."
+  valid: _
+}

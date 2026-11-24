@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-extern-reads-at-every-position-a-type-stands-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9"
+  description: """
+    A value read through an extern as an element, a map value, a map key, a tuple position, an untagged variant of a
+    disjoint choice, a value naming its type at a declared position, a field of a type argument closed in place and
+    of one a declaration names, and through an alias of an extern.
+    """
+  valid: _
+}

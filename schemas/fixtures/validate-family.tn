@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-family.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 @doc:"""
   A subtype family, both ways a position typed by one is read ([TSON-SCHEMA] §5.2).
 
@@ -9,13 +9,13 @@
   no discriminator, so the tag is the only selector and is required. Both bases are abstract — neither has
   direct instances — and that is what makes a tag naming either of them select nothing.
 
-  `outcome` is ABSTRACT and a **template**. The mark constrains the marked type alone — no direct instances
-  — which holds of every instantiation identically, so closing `outcome<text>` yields an abstract entry and
-  `won<text>` is its one member. Both are entries the resolver minted, and §8.2 makes such a name
-  implementation-chosen, so the aliases are the only spellings a document has for either: this is the family
-  where §7.2's "after alias flattening of both" is the difference between a readable family and one
-  nothing can name. `abstract` and `final` are refused on a template, having no set of subtypes to range
-  over, and no vector states that here — it is a schema-layer refusal.
+  `outcome` is a **parametric record** marked ABSTRACT, and `abstract` on a parametric record is each application's
+  `extension` ([TSON-SCHEMA] §5.10), so `outcome<text>` is an abstract record, declared as `outcome_of`. `won` composes
+  `outcome<T>`, so `won<text>`, declared as `won_of`, IS-A the entry `outcome<text>` denotes and is its one
+  member; neither is IS-A a parametric record, no application being IS-A its head. A document names each by its declaration,
+  the one name an application has: a tag naming `won_of` selects the member, and one naming `outcome_of`
+  selects nothing. `final` is refused on a parametric record, and no vector states that here — it is a schema-layer
+  refusal.
 
   `frame` pins with `= 0xFF` where the documents write `255`, which is the case a processor comparing
   tokens rather than values gets wrong while passing everything else here: §4.3 makes those one integer,

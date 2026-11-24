@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-required-field-typed-by-an-abstract-application-in-place-is-unsatisfiable.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  circle => { r: int32 }
+  shape  => <T> { kind: text =?  data: T }
+  plot   => { s: shape<circle> }
+}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-extern-of-a-subtype-is-admitted-at-its-supertypes-extern-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9"
+  description: """
+    At a position typed `pet_x`, the tag `dog_x` names an extern whose target IS-A `pet_x`'s, judged of the targets
+    by identity, and the value is read against `dog`.
+    """
+  valid: _
+}

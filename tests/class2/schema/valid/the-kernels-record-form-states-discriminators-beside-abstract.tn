@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/the-kernels-record-form-states-discriminators-beside-abstract.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  pet => !meta.record {
+    fields: { pet_type => !meta.record_field { type: text }  name => !meta.record_field { type: text } }
+    extension: ABSTRACT
+    discriminators: [pet_type]
+  }
+
+  cat => pet & { pet_type?: = "cat" }
+  dog => pet & { pet_type?: = "dog" }
+}

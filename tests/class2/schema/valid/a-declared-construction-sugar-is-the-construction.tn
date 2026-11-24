@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-declared-construction-sugar-is-the-construction.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  uuid_list  => meta.array<uuid>
+  uuid_index => meta.map<text uuid>
+  written    => !meta.array { element_type: uuid }
+}

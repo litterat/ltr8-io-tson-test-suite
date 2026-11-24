@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-reference-to-a-refined-namespace-type-refuses-a-value-of-its-source.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  api    => !meta.namespace { key_type: meta.identifier  value_type: text }
+  small  => !api ^ { max_items: 2 }
+  plain  => !api { a => "x" }
+  smalls => meta.ref<small>
+  slot   => { s: smalls }
+  held   => !slot { s: plain }
+}

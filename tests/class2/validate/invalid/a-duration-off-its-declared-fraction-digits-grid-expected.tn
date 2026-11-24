@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-duration-off-its-declared-fraction-digits-grid-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: "The other half of the value rule, and the reason it is not simply a relaxation: 0.51 seconds is not a whole number of tenths, so `fraction_digits: 1` refuses it and nothing rounds it onto the grid. `at` and `when` are admitted, which fixes the pointer on `over`."
+  error: {
+    category: validation
+    path: "/over"
+  }
+}

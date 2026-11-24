@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-decomposed-reference-is-its-composed-name-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §7.7, [TSON-SCHEMA] §5.12, [TSON-SCHEMA] §7.4"
+  description: """
+    A quoted reference whose every accented letter is written decomposed. A quoted spelling of a name is read in
+    NFC, and each segment is matched in the form of the family it enters, so the first segment is the entry
+    `caf\u00e9` and the second the key `cr\u00e8me br\u00fbl\u00e9e` of the namespace it holds.
+    """
+  valid: _
+}

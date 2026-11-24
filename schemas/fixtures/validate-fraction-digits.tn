@@ -1,0 +1,24 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-fraction-digits.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  `fraction_digits` on the three temporal families that carry it ([TSON-SCHEMA] §5.5). temporal.tn's own
+  `@doc` for `time_type` is explicit that it constrains the value and not the spelling — "`fraction_digits: N`
+  admits a value that is a whole number of 10^-N seconds… `12:00:00.500` is admitted under
+  `fraction_digits: 1`, and is written `12:00:00.5`" — and gives the worked example the vectors here use.
+
+  Every field is at `fraction_digits: 1`, so one document separates a processor testing the value from one
+  counting the digits the author typed: the two agree on every value written in its shortest form and
+  disagree on every other.
+  """
+!schema {
+  tenth_second  => !time ^ { fraction_digits: 1 }
+  tenth_instant => !datetime ^ { fraction_digits: 1 }
+  tenth_span    => !duration ^ { fraction_digits: 1 }
+
+  reading => {
+    at:   tenth_second
+    when: tenth_instant
+    over: tenth_span
+  }
+}

@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-required-field-typed-by-an-abstract-record-in-place-is-unsatisfiable-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.10.1"
+  description: """
+    An abstract record has no direct instances, and one written in place has no name, so no schema can declare a
+    member of it: it is empty. `at` is required, so no document can state an `order`, a resolver error at `order` by
+    the productivity rule, as `a: void` is. A declared abstract record stays open to the members an importing schema
+    declares, and a required field typed by one loads.
+    """
+  error: {
+    category: resolver
+  }
+}

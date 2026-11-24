@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-passed-to-a-bounded-parameter-with-no-bound-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10"
+  description: "A bound is what the declaration writes, and nothing about a parameter is inferred. `rebox` passes `T` to `boxed`, whose parameter is bounded by `text`, so `T` must itself be written with a bound that IS-A `text`. It is written with none, so `rebox` is refused at its declaration, though nothing applies it; `rebox => <T: text> { b: boxed<T> }` resolves."
+  error: {
+    category: resolver
+  }
+}

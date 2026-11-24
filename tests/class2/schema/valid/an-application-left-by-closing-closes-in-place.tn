@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-left-by-closing-closes-in-place.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order      => { id: text }
+  box        => <T> { v: T }
+  page       => <T> { cursor: box<T> }
+  order_page => page<order>
+}

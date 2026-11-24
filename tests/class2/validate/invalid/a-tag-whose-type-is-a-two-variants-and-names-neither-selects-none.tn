@@ -1,0 +1,4 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-whose-type-is-a-two-variants-and-names-neither-selects-none.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-choice-subtypes.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-choice-shared-subtype.tn"
+!holder { e: !both { x: "1"  y: "2" } }

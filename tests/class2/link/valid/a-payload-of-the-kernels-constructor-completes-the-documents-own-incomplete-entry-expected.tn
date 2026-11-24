@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-payload-of-the-kernels-constructor-completes-the-documents-own-incomplete-entry-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.3, [TSON-SCHEMA] §3.4.1, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.5"
+  description: """
+    A construction's payload is read in the namespace of the schema that writes it, its own entries included. `rows`
+    is an incomplete entry, and `!rows { … }` in the kernel's `meta.record` payload completes it wherever a type is
+    written in place: a field's type, and an element type in place inside another construction. `post` is written
+    first: its payload names `rows` and waits on it being ready.
+    """
+  valid: {
+    binds: [post]
+  }
+}

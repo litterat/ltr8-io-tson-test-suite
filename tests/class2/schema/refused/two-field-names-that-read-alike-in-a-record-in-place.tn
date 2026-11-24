@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/refused/two-field-names-that-read-alike-in-a-record-in-place.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order => { at: { comer: int32  corner: int32 } }
+}

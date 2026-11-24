@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-application-nothing-declares-closes-in-place.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box   => <T> { v: T }
+  crate => <T> { v: T }
+
+  holder => {
+    a: box<int32>
+    b: crate<int32>
+  }
+}

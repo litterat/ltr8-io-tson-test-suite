@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-alias-of-the-extern-constructor-is-no-extern-head-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13"
+  description: """
+    An extern is written with its head `!meta.extern`, which is how a document's externs are found with its
+    imports before any name resolves; a head reaching `meta.extern` through an alias is refused.
+    """
+  error: { category: resolver }
+}

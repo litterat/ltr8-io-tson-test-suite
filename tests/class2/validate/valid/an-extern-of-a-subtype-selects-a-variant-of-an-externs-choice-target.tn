@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-extern-of-a-subtype-selects-a-variant-of-an-externs-choice-target.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-family-envelope.tn"
+!envelope { id: e  item: !circle_v1 { name: n  radius: r } }

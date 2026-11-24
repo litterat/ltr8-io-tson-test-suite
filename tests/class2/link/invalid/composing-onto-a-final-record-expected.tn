@@ -2,7 +2,7 @@
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.2"
-  description: "FINAL admits no subtype, and composition mints one. The refusal reaches the declaring schema and any schema that imports it."
+  description: "FINAL admits no subtype, and composition makes one. The refusal reaches the declaring schema and any schema that imports it."
   error: {
     category: resolver
   }

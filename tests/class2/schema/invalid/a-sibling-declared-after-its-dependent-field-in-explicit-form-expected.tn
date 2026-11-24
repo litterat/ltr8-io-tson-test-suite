@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-declared-after-its-dependent-field-in-explicit-form-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: """
+    The field-order rule holds for the explicit form as for the sugar: `fields` is an ordered map, and `on: kind` names
+    a field declared after `v`, so the dependent field is refused at the declaration.
+    """
+  error: {
+    category: resolver
+  }
+}

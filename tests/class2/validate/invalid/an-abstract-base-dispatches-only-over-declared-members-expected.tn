@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-abstract-base-dispatches-only-over-declared-members-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2"
+  description: "`boxed` is abstract with no selector, so a value at `any` names its member by tag. Its members are the declarations composing it: `bt`, which declares `box<int32>` and reaches `boxed` through `box`'s written parent. An untagged value names none."
+  error: {
+    category: validation
+  }
+}

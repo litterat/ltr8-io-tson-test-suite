@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-supertypes-extern-is-not-admitted-at-a-subtypes-extern.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!all { d: !pet_x { name: rex } }

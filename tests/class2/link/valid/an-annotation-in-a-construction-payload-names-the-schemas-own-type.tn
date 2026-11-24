@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-annotation-in-a-construction-payload-names-the-schemas-own-type.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  before => !meta.record { fields: { a => @note:"hi" { type: int32 } } }
+  note   => text
+  after  => !meta.record { fields: { a => @note:"hi" { type: int32 } } }
+}

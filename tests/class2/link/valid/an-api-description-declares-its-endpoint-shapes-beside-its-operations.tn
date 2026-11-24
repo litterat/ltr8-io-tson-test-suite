@@ -1,7 +1,7 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/an-api-description-declares-its-endpoint-shapes-beside-its-operations.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/link-http.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/link-order.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   page        => <T> { items: [T]  next?: uri  total: int32 }
   order_page  => page<order>

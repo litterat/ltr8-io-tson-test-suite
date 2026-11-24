@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-dependent-type-as-an-explicit-choice-variant-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.4"
+  description: """
+    A dependent type stands in place directly at a record field's type and at no other slot, its record being what
+    binds `on`. Written as one of a choice's `variants`, even inside the type of a field of a record that declares
+    `kind` before it, `{ of: !meta.dependent { on: kind } }` is refused at the declaration. A choice holding one
+    cannot be disjoint either, the type the sibling names being any type, so §5.4 refuses the same choice for a
+    second reason.
+    """
+  error: {
+    category: resolver
+  }
+}

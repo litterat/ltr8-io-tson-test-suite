@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-defaulted-to-a-parametric-record-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    A sibling's default names a type a value can be read against, as its pin does: `box` is a parametric record, which
+    stands only as the head of an application, so an instance omitting `kind` would have no type to read `v` by.
+    Refused at the declaration.
+    """
+  error: {
+    category: resolver
+  }
+}

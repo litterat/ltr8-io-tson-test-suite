@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-pinned-field-restated-as-itself-in-another-spelling.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  base => { pet_type: text = "pet"  mask: uint8 = 0xFF }
+  same => base & { pet_type: = "pet"  mask: = 255 }
+}

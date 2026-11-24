@@ -1,0 +1,34 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/extern-family-1.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  One of two fixture schemas that both declare the families `order`, `parcel` and `ticket` under the same names
+  ([TSON-SCHEMA] §5.13): extern-family-envelope.tn names a base and a subtype of each through externs. `order` is
+  abstract and names no selector, `parcel` is a plain record, and `ticket` is abstract and names the selector
+  `kind`. extern-family-2.tn's subtypes carry other fields than these: here `rush` and `urgent` carry `by`, and
+  `bulky` carries `weight`.
+
+  It also declares what only this schema is externed for: `card`, a record IS-A nothing above; `left` and `right`,
+  two records `both` composes; and `item`, a choice of `text` and the abstract `shape`, whose subtype is `circle`.
+  """
+!schema {
+  order    => abstract { id: text }
+  rush     => order & { by: text }
+  standard => order & { note?: text }
+
+  parcel => { id: text }
+  bulky  => parcel & { weight: text }
+
+  ticket  => abstract { kind: text =?  id: text }
+  urgent  => ticket & { kind?: = "urgent"  by: text }
+  routine => ticket & { kind?: = "routine" }
+
+  card => { number: text }
+
+  left  => { l: text }
+  right => { r: text }
+  both  => left & right
+
+  shape  => abstract { name: text }
+  circle => shape & { radius: text }
+  item   => ( text | shape )
+}

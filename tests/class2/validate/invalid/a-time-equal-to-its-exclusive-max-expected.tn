@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-time-equal-to-its-exclusive-max-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: "`clock` is `open_time`, whose `exclusive_max` is `17:00:00Z`. A value must be strictly less than an exclusive maximum, so `17:00:00Z` itself is refused."
+  error: {
+    category: validation
+    path: "/clock"
+  }
+}

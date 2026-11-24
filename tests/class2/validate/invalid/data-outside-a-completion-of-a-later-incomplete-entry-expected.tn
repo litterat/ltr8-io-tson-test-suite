@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/data-outside-a-completion-of-a-later-incomplete-entry-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1, [TSON-SCHEMA] §5.5"
+  description: """
+    `counts` caps its elements at three, a facet its completion of a same-document incomplete entry writes:
+    four is no value of it.
+    """
+  error: {
+    category: validation
+  }
+}

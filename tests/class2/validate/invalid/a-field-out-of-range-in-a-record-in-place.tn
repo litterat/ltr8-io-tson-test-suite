@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-field-out-of-range-in-a-record-in-place.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-records-in-place.tn"
+!holder { p: { items: []  size: 4294967296 } }

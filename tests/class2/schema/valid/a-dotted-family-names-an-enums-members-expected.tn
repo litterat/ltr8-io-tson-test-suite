@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-dotted-family-names-an-enums-members-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.4, [TSON-SCHEMA] §5.12"
+  description: """
+    An enum's members are names no reference enters, so its `name_type` may admit `.`: `content.type` is a name of
+    `dotted` and a member of `property`. Only a namespace's `key_type` and a record's `name_type` are refused a
+    dotted family.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        dotted => !unicode.identifier_type { continue_add: "." }
+        property => !meta.enum_type { name_type: dotted  members: [content.type http.method] }
+      }
+      """
+  }
+}

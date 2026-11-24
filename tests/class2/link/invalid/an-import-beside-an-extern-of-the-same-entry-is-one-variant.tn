@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-import-beside-an-extern-of-the-same-entry-is-one-variant.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order_v1 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"  type: order }
+  either => (order | order_v1)
+}

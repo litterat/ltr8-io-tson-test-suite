@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-in-place-at-a-map-value-reads.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-records-in-place.tn"
+!holder { p: { items: [] }  byName: { first => { items: [ { id: x } ] } } }

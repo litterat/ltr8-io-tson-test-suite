@@ -1,0 +1,21 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-imported-incomplete-entry-completed-at-a-field-is-the-sugars-construction-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §5.5, [TSON-SCHEMA] §8.1"
+  description: """
+    The fixture's `rows` is an array left open, `min_items` written as 1, as the kernel's `meta.set_type` is.
+    `rows<uuid>` completes it, and written at a field it resolves in place to `!meta.array { element_type: uuid
+    min_items: 1 }`, the construction `[uuid; 1..]` resolves to: a completion carries no chain and is equal to that
+    construction written anywhere. Neither records an application or a completion, having no key.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        post => !meta.record { fields: {
+          a => !meta.record_field { type: { of: !meta.array { element_type: uuid  min_items: 1 } } }
+          b => !meta.record_field { type: { of: !meta.array { element_type: uuid  min_items: 1 } } }
+        } }
+      }
+      """
+  }
+}

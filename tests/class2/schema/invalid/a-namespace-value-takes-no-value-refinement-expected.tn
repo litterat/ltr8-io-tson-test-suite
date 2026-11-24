@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-value-takes-no-value-refinement-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.3, [TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: """
+    A namespace type is refined, and a value of one is not: `orders` is a value entry, the map `api` describes,
+    and is finished to `^` as a record, a tuple and a choice are. `!orders ^ { … }` refines nothing and is
+    refused.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/nonempty-rows.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  An incomplete entry: `rows` is an array left open with `min_items` written as 1 ([TSON-SCHEMA] §5.5).
+  `rows<T>` and `!rows { element_type: T }` complete it, each the array `[T; 1..]` is.
+  """
+!schema {
+  rows => !meta.array ^ { min_items: 1 }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-quoted-name-with-an-empty-segment-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.12"
+  description: """
+    A reference's text splits at `.` before any family is consulted, and no segment is empty. Quoted, a doubled `.`
+    stays inside one token, which the range rule does not split, and `"orders..place_order"` is refused as no name.
+    """
+  error: {
+    category: resolver
+  }
+}

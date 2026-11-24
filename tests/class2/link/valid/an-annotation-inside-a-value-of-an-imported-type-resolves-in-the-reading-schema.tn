@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-annotation-inside-a-value-of-an-imported-type-resolves-in-the-reading-schema.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-feed.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  home => !bookmark { url: @title:"Home" "/" }
+}

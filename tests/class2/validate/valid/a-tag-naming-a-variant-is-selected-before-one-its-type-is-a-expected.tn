@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-naming-a-variant-is-selected-before-one-its-type-is-a-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2"
+  description: """
+    A variant the tag names is selected before one its type only IS-A: at `( base | sub )`, `!sub` names the variant
+    `sub` and IS-A `base` as well, and selects `sub`. A reader that counts every variant the tag's type IS-A, its
+    own name among them, finds two and refuses it.
+    """
+  valid: _
+}

@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-member-declared-after-the-value-that-selects-it-by-pin-is-waited-on.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-feed.tn"
+!schema {
+  reader   => @subscription:{ feed: { format: rss  url: "/rss" } } { name: text }
+  rss_feed => feed & { format?: = "rss" }
+}

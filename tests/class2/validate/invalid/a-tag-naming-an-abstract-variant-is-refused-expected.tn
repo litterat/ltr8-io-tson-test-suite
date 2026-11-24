@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-naming-an-abstract-variant-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2"
+  description: """
+    A tag naming an abstract variant itself selects it and is refused there, as at every position typed by an
+    abstract record: `shape` has no direct instances, so no value satisfies `!shape`, a validation error at the
+    field.
+    """
+  error: {
+    category: validation
+    path: "/i"
+  }
+}

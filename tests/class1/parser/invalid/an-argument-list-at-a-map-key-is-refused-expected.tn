@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/an-argument-list-at-a-map-key-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§2.6, §7.2.5"
+  description: """
+    A map key is a data value, and an argument list is no part of one: `set<text>` as a key does not parse.
+    """
+  error: { category: parser }
+}

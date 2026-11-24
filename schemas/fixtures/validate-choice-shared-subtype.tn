@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-choice-shared-subtype.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-choice-subtypes.tn"
+@doc:"""
+  A type IS-A both variants of a choice another schema declares ([TSON-SCHEMA] §5.4): `both` composes `a` and `b`,
+  the variants of validate-choice-subtypes.tn's `either`. A schema importing a choice's may declare such a type, so
+  neither schema is refused for it; a tag naming `both` at `either` names neither variant and selects none.
+  """
+!schema {
+  both => a & b
+}

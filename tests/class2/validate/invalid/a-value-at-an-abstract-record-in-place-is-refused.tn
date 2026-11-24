@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-value-at-an-abstract-record-in-place-is-refused.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-abstract-record-in-place.tn"
+!order { id: o1  at: { x: 1 } }

@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/data-read-against-a-completed-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: """
+    `tags` completes `nonempty` with `text`: two texts are a value of it.
+    """
+  valid: _
+}

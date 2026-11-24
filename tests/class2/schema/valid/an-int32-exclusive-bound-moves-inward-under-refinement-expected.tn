@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-int32-exclusive-bound-moves-inward-under-refinement-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: """
+    An exclusive bound is an ordered bound, and an ordered bound may move only inward: a lower bound may
+    rise and an upper bound may fall. `inner_count` raises its source's `exclusive_min` and lowers its
+    `exclusive_max`, and resolves to its family's constructor carrying both as written, beside the `size`
+    it inherits; its chain is the type it refined and that type's own supertypes.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        open_count => !numeric.integer_type { chain: { supertypes: [int32 integer]  subtypes: [inner_count] }  size: { bits: 32  signed: true }  exclusive_min: 0  exclusive_max: 100 }
+
+        inner_count => !numeric.integer_type { chain: { supertypes: [int32 integer open_count] }  size: { bits: 32  signed: true }  exclusive_min: 10  exclusive_max: 50 }
+      }
+      """
+  }
+}

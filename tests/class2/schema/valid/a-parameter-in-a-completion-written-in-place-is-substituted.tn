@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-parameter-in-a-completion-written-in-place-is-substituted.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  nonempty => !meta.array ^ { min_items: 1 }
+  sets     => <T> !meta.record { fields: { v => { type: { of: !meta.set_type { element_type: T } } } } }
+  firsts   => <T> !meta.record { fields: { v => { type: { of: !nonempty { element_type: T } } } } }
+  lone     => <T> !meta.record { fields: { v => { type: { of: !nonempty T } } } }
+  s        => sets<text>
+  f        => firsts<text>
+  l        => lone<text>
+}

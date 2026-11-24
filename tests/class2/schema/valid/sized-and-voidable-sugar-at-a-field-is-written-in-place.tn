@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/sized-and-voidable-sugar-at-a-field-is-written-in-place.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  post => {
+    some:    [text; 1..3]
+    holes:   [text?]
+    maybe?:  [text]?
+  }
+}

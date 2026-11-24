@@ -1,0 +1,25 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-an-operand-reaching-its-heads-applied-parent.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  An application at a composition operand takes its head's written parents' edges, an applied parent reaching the
+  entry a declaration gives that application ([TSON-SCHEMA] §5.8, §5.10).
+
+  `wrap` composes `box<T>`, and `tb` declares `box<text>`. `boxed` absorbs `wrap<text>`, whose head's written parent
+  is `box<text>` there, so `boxed` IS-A `tb` though its own operand names only `wrap<text>`, which nothing declares.
+  `reboxed` goes one level further, absorbing `rewrap<text>`, whose head composes `wrap<T>`. Neither is IS-A `box`,
+  `wrap` or `rewrap`: no application is IS-A its head.
+  """
+!schema {
+  box     => <T> { v: T }
+  tb      => box<text>
+  wrap    => <T> box<T> & { w: int32 }
+  rewrap  => <T> wrap<T> & { r: int32 }
+  boxed   => wrap<text> & {}
+  reboxed => rewrap<text> & {}
+
+  holder => {
+    b: tb
+    c?: tb?
+  }
+}

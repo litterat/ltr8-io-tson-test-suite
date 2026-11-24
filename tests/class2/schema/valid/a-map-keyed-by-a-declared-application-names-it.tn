@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-map-keyed-by-a-declared-application-names-it.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  method     => { name: text }
+  method_ref => meta.ref<method>
+  labels     => set<text>
+  post => {
+    by_method: {method_ref => int32}
+    by_labels: {labels => int32}
+  }
+}

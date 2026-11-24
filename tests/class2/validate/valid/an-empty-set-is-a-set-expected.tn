@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.3"
-  description: "A set field given no elements. `set_type` refines `array` and bounds it no further, so a set admits `[]` as an array does; a set that must be non-empty states `min_items: 1` on a named entry, which the `set<T>` template does not carry."
+  description: "A set field given no elements. `set_type` refines `array` and bounds it no further, so a set admits `[]` as an array does; a set that must be non-empty states `min_items: 1` on a named entry, which the construction `set<T>` does not carry."
   valid: _
 }

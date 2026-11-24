@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-mark-before-the-kernels-record-form-stating-another-extension-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.1"
+  description: """
+    The companion of the plain case, and the one a processor reading the mark as an override gets wrong: the payload
+    states `extension: FINAL` and the mark says ABSTRACT. Neither wins, because the grammar has no mark before `!`
+    (§12.1): the declaration is a parse error at the mark, not an abstract record and not a contradiction for the
+    resolver to arbitrate. The kernel's form writes the one `extension` it means.
+    """
+  error: {
+    category: resolver
+  }
+}

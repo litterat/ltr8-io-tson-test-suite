@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-dependent-type-as-an-explicit-element-type.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  cell => !meta.record { fields: {
+    kind => !meta.record_field { type: meta.type_ref }
+    v    => !meta.record_field {
+      type: { of: !meta.array { element_type: { of: !meta.dependent { on: kind } } } }
+      optional: true
+    }
+  } }
+}

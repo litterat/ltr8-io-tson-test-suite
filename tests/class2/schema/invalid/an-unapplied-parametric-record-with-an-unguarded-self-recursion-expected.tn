@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-unapplied-parametric-record-with-an-unguarded-self-recursion-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10.1"
+  description: """
+    Every entry is judged for productivity, a parametric record with its parameters assumed inhabited: `next` is
+    required and every application of `loop` needs another, so no finite value exists whatever `T` is. Nothing applies
+    `loop`, and it is still a resolver error at its declaration.
+    """
+  error: {
+    category: resolver
+  }
+}

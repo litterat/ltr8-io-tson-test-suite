@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/data-read-against-a-completion-in-place-below-its-floor-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: """
+    `names` is `nonempty<text>` in place, so an empty array is refused at the field.
+    """
+  error: {
+    category: validation
+    path: "/names"
+  }
+}

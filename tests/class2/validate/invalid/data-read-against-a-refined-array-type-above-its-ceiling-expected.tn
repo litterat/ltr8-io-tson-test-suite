@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/data-read-against-a-refined-array-type-above-its-ceiling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: """
+    `few` refines `tags` with `max_items: 2`; three elements exceed it.
+    """
+  error: {
+    category: validation
+  }
+}

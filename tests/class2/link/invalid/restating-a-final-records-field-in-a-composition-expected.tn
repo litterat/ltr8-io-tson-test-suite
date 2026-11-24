@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/restating-a-final-records-field-in-a-composition-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: "A composition that only restates an inherited field adds no field and still adds an IS-A edge, so FINAL refuses it as it refuses one that adds a field. A processor checking only for added fields admits half of what the mark forbids."
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-composed-constructor-is-constructed-as-its-parent-is.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/composed-array-constructor.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  braced     => !my_list { element_type: text  max_items: 5 }
+  positional => !my_list text
+}

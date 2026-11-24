@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-member-selected-by-pin-that-composes-the-entry-reading-it-is-a-wait-cycle.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-feed.tn"
+!schema {
+  reader       => @subscription:{ feed: { format: podcast  url: "/podcast" } } { name: text }
+  podcast_feed => feed & reader & { format?: = "podcast" }
+}

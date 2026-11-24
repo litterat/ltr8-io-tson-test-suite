@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-composition-restates-an-inherited-relaxed-name-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8"
+  description: "`tightened` restates `$ref`, a json_name `node` declares optional, and makes it required; the brace form takes a relaxed name quoted, and the composition keeps node's name type."
+  valid: _
+}

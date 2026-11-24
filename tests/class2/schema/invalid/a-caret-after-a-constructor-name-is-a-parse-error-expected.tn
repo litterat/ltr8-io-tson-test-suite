@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-caret-after-a-constructor-name-is-a-parse-error-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §12.1"
+  description: """
+    A constructor is a record, and a bare name before `^` is a parse error for it as for any record. Its
+    construction left open is `!meta.array ^ { min_items: 1 }`, and a constructor composed from it
+    `meta.array & { min_items?: = 1 }`.
+    """
+  error: {
+    category: resolver
+  }
+}

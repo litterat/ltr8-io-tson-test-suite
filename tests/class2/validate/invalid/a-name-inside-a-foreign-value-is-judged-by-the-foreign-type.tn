@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-name-inside-a-foreign-value-is-judged-by-the-foreign-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!all { r: { a: x  memo: !memo { other: 1 } } }

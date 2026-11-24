@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-a-map-type-narrows-its-bounds.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  index => {text => int32}
+  small => !index ^ { max_items: 3 }
+}

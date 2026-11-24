@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-atom-construction-may-not-be-written-in-place-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.2"
+  description: """
+    An atom is nominal and is declared and named; only a container, a tuple, a choice, a reference, a record or, at
+    a record field's type, a dependent type is written in place. `{ of: !numeric.integer_type { min: 0 } }` at
+    `count` is the canonical form of a refinement written inline, a resolver error at `order` stating that
+    rule: `count_type => !numeric.integer_type { min: 0 }`, then `count: count_type`.
+    """
+  error: {
+    category: resolver
+  }
+}

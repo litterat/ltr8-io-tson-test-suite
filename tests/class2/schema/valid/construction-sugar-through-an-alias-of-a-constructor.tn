@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/construction-sugar-through-an-alias-of-a-constructor.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  list => meta.array
+
+  post => {
+    a: list<uuid>
+    b: [uuid]
+  }
+}

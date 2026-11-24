@@ -1,0 +1,17 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-a-namespace-type-adds-a-floor-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: """
+    `min_items` is `meta.map`'s ordered bound, kept by `meta.namespace` through its composition, and a lower bound
+    may rise: from `api`'s effective floor, none, to 1. `filled` is a namespace type IS-A `api`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        api    => !meta.namespace { chain: { subtypes: [filled] }  key_type: meta.identifier  value_type: text }
+        filled => !meta.namespace { chain: { supertypes: [api] }  key_type: meta.identifier  value_type: text  min_items: 1 }
+      }
+      """
+  }
+}

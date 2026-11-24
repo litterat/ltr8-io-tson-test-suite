@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-name-inside-a-foreign-value-is-judged-by-the-foreign-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9"
+  description: """
+    `!memo` inside the value is extern-foreign.tn's, which declares `note` and no `other`.
+    """
+  error: {
+    category: validation
+    path: "/r/memo/other"
+  }
+}

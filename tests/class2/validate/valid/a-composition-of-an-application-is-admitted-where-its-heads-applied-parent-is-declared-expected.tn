@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-composition-of-an-application-is-admitted-where-its-heads-applied-parent-is-declared-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10, [TSON-SCHEMA] §7.2"
+  description: "An application at an operand takes its head's written parents' edges, an applied parent reaching the entry a declaration gives it. `boxed` absorbs `wrap<text>`, whose head composes `box<T>`, `box<text>` there, which `tb` declares, so `boxed` IS-A `tb` and a value tagged `!boxed` is admitted at `b`. `reboxed` reaches the same edge one level further, through `rewrap`'s parent `wrap<T>` and `wrap`'s `box<T>`, and is admitted at `c`."
+  valid: _
+}

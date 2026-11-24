@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/validate-wide-integer.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
 @doc:"""
   Integer widths far past any host integer. `numeric.integer_size.bits` is an `integer`, so a width of three
   billion bits is a valid width whose range no host can materialise: a value's membership is decided by its bit

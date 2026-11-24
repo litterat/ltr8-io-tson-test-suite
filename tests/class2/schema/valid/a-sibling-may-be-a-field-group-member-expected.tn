@@ -14,7 +14,7 @@
           fields: {
             kind => !meta.record_field { type: meta.type_ref  optional: true }
             name => !meta.record_field { type: text  optional: true }
-            v    => !meta.record_field { type: kind!  optional: true }
+            v    => !meta.record_field { type: { of: !meta.dependent { on: kind } }  optional: true }
           }
           groups: [ !meta.field_group { members: [[kind] [name]] } ]
         }

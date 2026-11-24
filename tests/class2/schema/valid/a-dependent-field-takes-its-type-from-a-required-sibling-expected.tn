@@ -1,20 +1,20 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-dependent-field-takes-its-type-from-a-required-sibling-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.3, [TSON-SCHEMA] §8.1"
   description: """
-    A postfix `!` on a field name is a sibling reference: `v` and `w` are each read against the type that the same
-    instance's `kind` names. It is a reference spelling and not sugar, so resolved output writes `type: kind!` as the
-    source does. One sibling may type more than one dependent field, and a dependent field's own marks resolve as any
-    field's do.
+    A postfix `!` on a field name at a record field's type is a dependent type: `v` and `w` are each read against
+    the type that the same instance's `kind` names. It is sugar for the dependent type written in place, so resolved
+    output writes `type: { of: !meta.dependent { on: kind } }`. One sibling may type more than one dependent field,
+    and a dependent field's own marks resolve as any field's do.
     """
   valid: {
     resolved: """
       !schema {
         cell => !meta.record { fields: {
           kind => !meta.record_field { type: meta.type_ref }
-          v    => !meta.record_field { type: kind!  optional: true }
-          w    => !meta.record_field { type: kind! }
+          v    => !meta.record_field { type: { of: !meta.dependent { on: kind } }  optional: true }
+          w    => !meta.record_field { type: { of: !meta.dependent { on: kind } } }
         } }
       }
       """

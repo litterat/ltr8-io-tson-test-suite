@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-time-refinement-widening-its-min-across-offsets-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: """
+    A lower bound may only rise under refinement, and a `time` is compared as its time of day in UTC.
+    `10:30:00+01:00` reads later than `10:00:00Z` on its own clock and is `09:30:00Z`, half an hour earlier,
+    so `from_half` admits times its source refuses and the schema fails to load.
+    """
+  error: {
+    category: resolver
+  }
+}

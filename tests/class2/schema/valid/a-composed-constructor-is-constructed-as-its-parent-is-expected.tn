@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-composed-constructor-is-constructed-as-its-parent-is-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.6, [TSON-SCHEMA] §5.8"
+  description: """
+    `my_list` is a constructor IS-A `meta.array`, so `!my_list { … }` applies it: its payload is read against
+    `my_list`'s record, every field `meta.array` has with `min_items` pinned to 1. `element_type` is the one unmarked
+    name, so `!my_list text` is the positional form of the same construction. Each resolves to the binding record
+    headed by `my_list`, carrying no chain, construction granting no IS-A; the pin, concrete in `my_list`'s own
+    declaration, is not in it.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        braced     => !my_list { element_type: text  max_items: 5 }
+        positional => !my_list { element_type: text }
+      }
+      """
+  }
+}

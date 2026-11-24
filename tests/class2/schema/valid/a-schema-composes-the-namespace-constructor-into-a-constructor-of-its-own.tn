@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-schema-composes-the-namespace-constructor-into-a-constructor-of-its-own.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  labelled_namespace => meta.namespace & { label?: text }
+}

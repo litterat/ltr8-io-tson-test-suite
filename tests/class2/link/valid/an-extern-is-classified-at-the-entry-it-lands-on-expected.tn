@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-extern-is-classified-at-the-entry-it-lands-on-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13"
+  description: """
+    An extern is classified for disjointness at the foreign entry it lands on, in the namespace that declares
+    it: two foreign records share the brace class, and a foreign record beside a foreign integer is disjoint.
+    """
+  valid: {
+    binds: [order_v1 order_v2 count_x]
+    disjoint: [
+      { name: two_orders  value: false }
+      { name: order_or_count  value: true }
+    ]
+  }
+}

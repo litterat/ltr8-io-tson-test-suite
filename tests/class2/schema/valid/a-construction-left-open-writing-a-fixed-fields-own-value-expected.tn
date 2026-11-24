@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-construction-left-open-writing-a-fixed-fields-own-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, §5.5"
+  description: """
+    A fixed field may be written with the pin's own value in every construction (§5.2), one left open
+    included: `access_pattern` is pinned to `INDEX` by `meta.array`, so `indexed` writes it, leaves
+    `element_type` absent, and is an incomplete entry, a pin being no required field. `indexed<text>` is the
+    construction over both bodies, the same value as `written`, which writes the pin in the plain form.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        @meta.completion:{ of: [indexed] }
+        tags    => !meta.array { element_type: text }
+        written => !meta.array { element_type: text }
+      }
+      """
+  }
+}

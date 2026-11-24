@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-pinned-field-restated-as-itself-in-another-spelling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.5"
+  description: """
+    Each field may be restated as itself, a pin included: the identity restatement lets a body restate a fixed field
+    without error. Equality is the field type's own and never the spelling's, so `mask: = 255` restates `uint8`'s pin
+    `0xFF` as the same value, and `pet_type: = "pet"` restates its pin exactly. Each restated field carries the
+    restatement's state and value, the two compared as values of the field's type.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        base => !meta.record { chain: { subtypes: [same] }  fields: {
+          pet_type => !meta.record_field { type: text   role: FIXED  value: "pet" }
+          mask     => !meta.record_field { type: uint8  role: FIXED  value: 0xFF }
+        } }
+
+        same => !meta.record { chain: { supertypes: [base] }  fields: {
+          pet_type => !meta.record_field { type: text   role: FIXED  value: "pet" }
+          mask     => !meta.record_field { type: uint8  role: FIXED  value: 255 }
+        } }
+      }
+      """
+  }
+}

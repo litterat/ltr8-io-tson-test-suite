@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-sibling-pinned-to-a-parametric-record-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2"
+  description: """
+    A sibling's pin names a type a value can be read against, and a parametric record stands only as the head
+    of an application: `box` gives nothing to read `v` by, and reading never starts a materialisation. Refused at the
+    declaration.
+    """
+  error: {
+    category: resolver
+  }
+}

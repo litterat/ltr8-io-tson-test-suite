@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-completion-names-each-entry-it-closed-past-its-alias-hops-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §8.1, [TSON-SCHEMA] §5.5"
+  description: """
+    An alias of an incomplete entry is another name for it, and a completion names the entry itself: `open_list<text>`
+    lists `nonempty`, and `set<text>`, through the kernel's root alias `set`, lists `meta.set_type`. A completion of
+    the kernel's `enum` lists `enum`. Neither alias nor incomplete entry is written.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        @meta.completion:{ of: [nonempty] }
+        tags   => !meta.array { element_type: text  min_items: 1 }
+        @meta.completion:{ of: [meta.set_type] }
+        labels => !meta.array { element_type: text  ordered: false  unique_items: true }
+        @meta.completion:{ of: [enum] }
+        status => !meta.enum_type { name_type: meta.identifier  members: [OPEN DONE] }
+      }
+      """
+  }
+}

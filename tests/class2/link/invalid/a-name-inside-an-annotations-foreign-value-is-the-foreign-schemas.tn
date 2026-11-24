@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-name-inside-an-annotations-foreign-value-is-the-foreign-schemas.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!schema {
+  z => @rec_x:{ a: x  memo: !memo { other: 1 } } { b: text }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-completion-is-a-member-of-its-constructors-kind.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!schema {
+  nonempty => !meta.array ^ { min_items: 1 }
+  arrays   => meta.ref<meta.array>
+  texts    => nonempty<text>
+  plain    => [text; 1..]
+  post => {
+    a: nonempty<text>
+    b: [text; 1..]
+  }
+}

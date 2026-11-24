@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-member-through-its-operands-heads-applied-parent-that-does-not-pin-the-discriminator.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box   => abstract <T> { kind: text =?  v: T }
+  tb    => box<text>
+  wrap  => <T> box<T> & { w: int32 }
+  boxed => wrap<text> & {}
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-constructions-reference-slot-takes-a-quoted-name.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  tags   => !meta.array { element_type: "text" }
+  lookup => !meta.map { key_type: "text"  value_type: "meta.identifier" }
+}

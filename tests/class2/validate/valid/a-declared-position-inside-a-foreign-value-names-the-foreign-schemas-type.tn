@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-declared-position-inside-a-foreign-value-names-the-foreign-schemas-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!all { h: { any: !memo { note: n } } }

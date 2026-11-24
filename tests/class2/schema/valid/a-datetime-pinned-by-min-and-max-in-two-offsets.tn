@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-datetime-pinned-by-min-and-max-in-two-offsets.tn"
+!!import:"https://tson.io/2026/40/m/temporal.tn"
+!schema {
+  new_year => !datetime ^ { min: "2026-01-01T01:00:00+01:00"  max: "2026-01-01T00:00:00Z" }
+}

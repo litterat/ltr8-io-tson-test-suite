@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/cycle-extern-back-to-importer.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  On a reference cycle by design ([TSON-SCHEMA] §5.13): imported by
+  class2/link/invalid/an-import-one-way-and-an-extern-the-other, it names that subject back by an extern, so it
+  resolves neither on its own nor through its importer.
+  """
+!schema {
+  b  => { a?: aa }
+  aa => !meta.extern { schema: "https://tson.io/test-suite/class2/link/invalid/an-import-one-way-and-an-extern-the-other.tn"  type: a }
+}

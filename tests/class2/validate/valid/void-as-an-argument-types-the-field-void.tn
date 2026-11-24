@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/void-as-an-argument-types-the-field-void.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-void-argument.tn"
+!nothing { v: _ }

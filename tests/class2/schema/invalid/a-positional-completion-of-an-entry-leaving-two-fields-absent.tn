@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-positional-completion-of-an-entry-leaving-two-fields-absent.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  open => !meta.map ^ { voidable: true }
+  one  => !open text
+}

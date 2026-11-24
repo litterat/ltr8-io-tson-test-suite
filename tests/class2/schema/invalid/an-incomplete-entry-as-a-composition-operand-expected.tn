@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-incomplete-entry-as-a-composition-operand-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: """
+    An incomplete entry is no type, and an operand of `&` names a type.
+    """
+  error: {
+    category: resolver
+  }
+}

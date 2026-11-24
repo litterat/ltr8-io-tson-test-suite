@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/an-alias-of-a-parametric-record-is-applied-as-its-target-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.3"
+  description: """
+    An alias of a parametric record is another name for it, applied as its target is: `bx<text>` is the application
+    `box<text>`, declared as `text_box` and written in place at `holder.b`. The declared application is a record like
+    any other, so `sub` composes it and is IS-A it.
+    """
+  valid: {
+    binds: [box bx text_box holder sub]
+    subtypes: [
+      { name: text_box  subtypes: [sub] }
+    ]
+  }
+}

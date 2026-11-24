@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-name-of-the-enclosing-scope-is-unresolved-inside-a-foreign-value.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!all { h: { any: !all { } } }

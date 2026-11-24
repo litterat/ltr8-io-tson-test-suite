@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-namespace-key-type-admitting-a-dot-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
+  description: """
+    A reference's segments, which `.` joins, are matched against a namespace value's keys, so a `key_type` admits no
+    `.`. `dotted` adds `.` to Continue, and the namespace type naming it is refused where it is declared, though no
+    value of it is written.
+    """
+  error: {
+    category: resolver
+  }
+}

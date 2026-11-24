@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-annotation-in-front-of-a-foreign-value-is-the-enclosing-scopes.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!all { r: @label_x:"first" { a: @label:"inside" x } }

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-unapplied-parametric-record-with-a-selector-no-token-denotes-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §5.2"
+  description: """
+    A parametric record's marks are judged at its declaration, as any record's are, and a selector's type names no
+    parameter, so its verdict is every application's: `k: base =?` is typed by a record, where a selector's declared
+    type resolves to an atom-family instance or an enum. Nothing applies `p`, and it is a resolver error at `p`.
+    """
+  error: {
+    category: resolver
+  }
+}

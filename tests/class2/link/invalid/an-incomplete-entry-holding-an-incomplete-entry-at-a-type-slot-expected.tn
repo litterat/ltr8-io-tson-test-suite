@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-incomplete-entry-holding-an-incomplete-entry-at-a-type-slot-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §4.2"
+  description: """
+    A type slot of an incomplete entry names a type, and an incomplete entry is none, so `rows` is refused where
+    its schema links, whether or not anything completes it.
+    """
+  error: {
+    category: resolver
+  }
+}

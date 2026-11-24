@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-subtractions-tightening-entry-restated-as-an-unrelated-type.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  account => { name: text  password: text }
+  view    => account & { name: int32 } - { password }
+}

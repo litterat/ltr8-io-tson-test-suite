@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-extern-of-an-extern-beside-its-target-is-one-variant-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13"
+  description: """
+    An extern naming another schema's extern lands where that one does: both here land on the `card` of extern-
+    order-1.tn, so the choice lists one type twice.
+    """
+  error: { category: resolver }
+}

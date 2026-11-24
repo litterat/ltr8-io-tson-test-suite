@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-marked-composition-over-an-application-is-an-abstract-record.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box => <T> { v: T }
+
+  x => abstract box<text> & {}
+}

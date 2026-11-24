@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/the-explicit-apply-spelling-closes-as-the-sugar-does.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box      => <T> { v: T }
+  sugar    => { f: box<text> }
+  explicit => !meta.record { fields: {
+    f => !meta.record_field { type: { of: !meta.apply { head: box  arguments: [text] } } }
+  } }
+}

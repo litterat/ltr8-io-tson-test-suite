@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-map-key-through-an-extern-meets-its-constraints-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9"
+  description: """
+    The map's key type is an extern of `count`, whose minimum is 0.
+    """
+  error: {
+    category: validation
+  }
+}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/an-opening-angle-bracket-is-no-value-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.2.5"
+  description: """
+    `<` is a special token the schema grammar reserves, and has no role in a data value: alone where a value
+    stands, it is a parse error.
+    """
+  error: { category: parser }
+}

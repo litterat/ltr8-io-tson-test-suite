@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-annotations-value-through-an-extern-is-judged-by-its-target.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!schema {
+  @count_x:-1 y => { a: text }
+}

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-quoted-token-is-no-type-argument-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §12.1"
+  description: """
+    An argument is a type, written in the schema grammar as a name or an application, an unquoted token. A type
+    position of that grammar reads no quoted form, so `box<"dog">` is no application and the schema does not load.
+    A quoted token is a reference only at a position typed by one, in data or in a body read as data.
+    """
+  error: {
+    category: resolver
+  }
+}

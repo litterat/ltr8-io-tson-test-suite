@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-an-incomplete-entry-writing-a-field-again.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  array_min => !meta.array ^ { min_items: 10 }
+  narrower  => !array_min ^ { min_items: 12 }
+}

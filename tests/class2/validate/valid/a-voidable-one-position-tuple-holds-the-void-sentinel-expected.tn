@@ -2,6 +2,6 @@
 !!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
 {
   spec: "[TSON-SCHEMA] §5.3, [TSON-SCHEMA] §7.6"
-  description: "Core's `meta.voidable_tuple1<int32>` given the void sentinel. The position is voidable, so `_` occupies it, and the tuple still has its one element."
+  description: "A one-position tuple whose position is `int32`, voidable, given the void sentinel. The position is voidable, so `_` occupies it, and the tuple still has its one element."
   valid: _
 }

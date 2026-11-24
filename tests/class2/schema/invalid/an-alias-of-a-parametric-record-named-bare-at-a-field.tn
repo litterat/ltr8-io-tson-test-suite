@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-alias-of-a-parametric-record-named-bare-at-a-field.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box    => <V> { item: V }
+  bx     => box
+  holder => { b: bx }
+}

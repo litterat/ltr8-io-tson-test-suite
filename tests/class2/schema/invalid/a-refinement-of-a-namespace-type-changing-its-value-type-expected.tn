@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-a-namespace-type-changing-its-value-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: """
+    `value_type` is a type slot of `meta.map`, fixed at construction and restated only: `int32` is not `api`'s
+    `text`.
+    """
+  error: {
+    category: resolver
+  }
+}

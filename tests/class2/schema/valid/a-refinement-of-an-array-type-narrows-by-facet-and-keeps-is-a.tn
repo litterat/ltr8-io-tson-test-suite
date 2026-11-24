@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-an-array-type-narrows-by-facet-and-keeps-is-a.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  tags => [text; 1..]
+  more => !tags ^ { min_items: 2  max_items: 8  unique_items: true }
+  same => !tags ^ { element_type: text  ordered: true  voidable: false }
+}

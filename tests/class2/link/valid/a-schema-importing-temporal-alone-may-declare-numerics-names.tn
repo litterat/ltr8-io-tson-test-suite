@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/link/valid/a-schema-importing-temporal-alone-may-declare-numerics-names.tn"
-!!import:"https://tson.io/2026/39/m/temporal.tn"
+!!import:"https://tson.io/2026/40/m/temporal.tn"
 !schema {
   int32   => { high: integer  low: integer }
   float64 => { on: date  value: int32 }

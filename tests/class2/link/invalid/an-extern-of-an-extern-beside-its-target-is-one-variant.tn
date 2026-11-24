@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-extern-of-an-extern-beside-its-target-is-one-variant.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  card_hop => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-library.tn"  type: ext_card }
+  card_direct => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"  type: card }
+  either => (card_hop | card_direct)
+}

@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-optional-field-typed-by-an-abstract-record-in-place-may-be-missing.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-abstract-record-in-place.tn"
+!order { id: o1 }

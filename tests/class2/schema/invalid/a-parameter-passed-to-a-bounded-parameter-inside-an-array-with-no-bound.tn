@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-passed-to-a-bounded-parameter-inside-an-array-with-no-bound.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  boxed => <T: text> { v: T }
+  rebox => <T> { b: [boxed<T>] }
+}

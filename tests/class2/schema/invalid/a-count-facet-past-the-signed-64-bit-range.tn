@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-count-facet-past-the-signed-64-bit-range.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
 !schema {
   longer_text => !unicode.text_type { max_length: 9223372036854775808 }
 }

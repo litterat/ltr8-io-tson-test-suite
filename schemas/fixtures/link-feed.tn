@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/link-feed.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+@doc:"""
+  A family selected by its pins, a record holding a member of it, and a record no host class binds, declared by a
+  schema importing meta.tn alone. `feed` selects its members by the pin on `format` ([TSON-SCHEMA] §5.2) and declares
+  one, `atom_feed`; an importing schema adds members of its own. `subscription` holds a feed, as an entry's value or an
+  annotation's. A processor that binds binds `subscription` and each member of `feed` to a host class of its own: the
+  records `subscription`, `atom_feed` and `rss_feed`; a value of `bookmark` is held as written.
+  """
+!schema {
+  feed         => { format: text =?  url: text }
+  atom_feed    => feed & { format?: = "atom" }
+  subscription => { feed: feed }
+  bookmark     => { url: text }
+}

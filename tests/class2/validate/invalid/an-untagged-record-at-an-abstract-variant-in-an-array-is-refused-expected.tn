@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-untagged-record-at-an-abstract-variant-in-an-array-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2"
+  description: """
+    At `[item]` the second element is an untagged brace, which goes to the abstract `shape` and is refused as at a
+    position typed by it; the error is the element's.
+    """
+  error: {
+    category: validation
+    path: "/items/1"
+  }
+}

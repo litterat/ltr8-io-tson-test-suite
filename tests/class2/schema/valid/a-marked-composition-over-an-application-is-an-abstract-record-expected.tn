@@ -1,0 +1,25 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-marked-composition-over-an-application-is-an-abstract-record-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.1, [TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10"
+  description: """
+    A declared application takes no mark (§12.1), its `extension` being its head's; one application marked alone is
+    a record composing it. `x` composes `box<text>`, absorbing its fields by value, adds none, and states its own
+    `extension`: ABSTRACT, with no subtype in this closure, as a library's base may be. It is a record of its own and
+    not the application's declaration, so its key carries no `@meta.application`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        box => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { v => !meta.record_field { type: T } }
+        }
+
+        x => !meta.record { fields: {
+          v => !meta.record_field { type: text }
+        }  extension: ABSTRACT }
+      }
+      """
+  }
+}

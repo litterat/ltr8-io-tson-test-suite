@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/a-kind-compares-a-nested-applications-arguments-past-their-aliases-expected.tn"
-!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
-{
-  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.2, [TSON-SCHEMA] §8.3"
-  description: "Identity follows an argument's whole alias chain, at every level of a nested application: `uid` reaches `uuid` through `user_id`, so the inner `box<uid>` is `box<uuid>`, closed as `boxed`, and `box<box<uid>>` is `box<box<uuid>>`, closed as `nested`."
-  valid: _
-}

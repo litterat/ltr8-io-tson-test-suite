@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-a-map-type-narrows-its-bounds-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: """
+    A map type is refined as an array type is: `max_items` falls, and the result IS-A `index`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        index => !meta.map { chain: { subtypes: [small] }  key_type: text  value_type: int32 }
+        small => !meta.map { chain: { supertypes: [index] }  key_type: text  value_type: int32  max_items: 3 }
+      }
+      """
+  }
+}

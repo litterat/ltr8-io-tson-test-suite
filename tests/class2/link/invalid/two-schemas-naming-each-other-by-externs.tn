@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/two-schemas-naming-each-other-by-externs.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  a => { b: bb }
+  bb => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/cycle-extern-back.tn"  type: b }
+}

@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-value-of-a-refined-namespace-type-at-its-source-above-the-refined-ceiling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.2, [TSON-SCHEMA] §5.7"
+  description: """
+    A tag at a position selects the type the value validates against in full: `!few_orders` is admitted at `any`,
+    typed `orders`, and its constraints are `few_orders`'s, so three entries fail the ceiling of 2 that `orders`
+    alone would not impose.
+    """
+  error: {
+    category: validation
+    path: "/any"
+  }
+}

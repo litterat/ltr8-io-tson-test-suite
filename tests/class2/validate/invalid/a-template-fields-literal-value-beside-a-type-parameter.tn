@@ -1,3 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/invalid/a-template-fields-literal-value-beside-a-type-parameter.tn"
-!!import:"https://tson.io/test-suite/schemas/fixtures/validate-dependent-fields.tn"
-!spec { field: { type_param: T  value: 5 } }

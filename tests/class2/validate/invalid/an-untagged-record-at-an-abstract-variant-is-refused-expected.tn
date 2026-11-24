@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-untagged-record-at-an-abstract-variant-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2"
+  description: """
+    `( text | shape )` is disjoint, so an untagged brace goes to `shape`, the variant of its class, and is read
+    there as at a position typed by `shape`: an abstract record naming no discriminators has no value for an
+    untagged one to be. A shape matching `circle` exactly is not recovered to it.
+    """
+  error: {
+    category: validation
+    path: "/i"
+  }
+}

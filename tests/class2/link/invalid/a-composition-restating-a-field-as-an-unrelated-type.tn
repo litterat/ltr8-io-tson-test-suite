@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-composition-restating-a-field-as-an-unrelated-type.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   reading => { value: text }
   sample  => reading & { value: int32  taken: datetime }

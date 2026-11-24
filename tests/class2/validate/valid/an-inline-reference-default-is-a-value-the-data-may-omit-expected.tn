@@ -4,7 +4,7 @@
   spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.12"
   description: """
     `defaulted_pick`'s field is typed by `meta.ref<order>` written inline and defaults to `o1`, a value of `order`. The
-    application closes to its entry when the schema loads, and a document omitting the field holds the default.
+    reference is held in place at the field, and a document omitting the field holds the default.
     """
   valid: _
 }

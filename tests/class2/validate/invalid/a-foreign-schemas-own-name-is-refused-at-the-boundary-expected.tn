@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-foreign-schemas-own-name-is-refused-at-the-boundary-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9"
+  description: """
+    The tag in front of a foreign value is read in the enclosing scope, which holds no `rec`: the foreign schema's
+    own names do not resolve there.
+    """
+  error: {
+    category: resolver
+  }
+}

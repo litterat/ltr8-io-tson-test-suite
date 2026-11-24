@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-alias-of-an-extern-is-no-operand-of-composition.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order_v1 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"  type: order }
+  o => order_v1
+  y => o & { extra: text }
+}

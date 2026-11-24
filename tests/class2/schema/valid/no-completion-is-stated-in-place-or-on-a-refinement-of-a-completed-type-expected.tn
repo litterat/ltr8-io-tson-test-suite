@@ -1,0 +1,22 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/no-completion-is-stated-in-place-or-on-a-refinement-of-a-completed-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §8.1, [TSON-SCHEMA] §5.5"
+  description: """
+    A completion written in place has no key and states none. A refinement of a completed type is a refinement of a
+    type, IS-A `tags`, and states none either: its chain says what it is. Only the declared completion, `tags`,
+    carries `@meta.completion`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        holder => !meta.record { fields: {
+          a => !meta.record_field { type: { of: !meta.array { element_type: text  min_items: 1 } } }
+        } }
+        @meta.completion:{ of: [nonempty] }
+        tags => !meta.array { chain: { subtypes: [few_tags] }  element_type: text  min_items: 1 }
+        few_tags => !meta.array { chain: { supertypes: [tags] }  element_type: text  min_items: 1  max_items: 3 }
+      }
+      """
+  }
+}

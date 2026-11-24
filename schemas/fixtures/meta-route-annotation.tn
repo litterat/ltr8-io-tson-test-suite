@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/meta-route-annotation.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
 @doc:"""
   A meta layer declaring an annotation whose value is an identifier-keyed map. A schema importing this one
   writes `@routes` on its declarations, and the map's keys are names ([TSON-DATA] §8.2): a value of an

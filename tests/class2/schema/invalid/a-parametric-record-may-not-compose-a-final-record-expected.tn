@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parametric-record-may-not-compose-a-final-record-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10"
+  description: """
+    `final` admits no subtype, and a parametric record composing a final record writes one into every application:
+    an application's IS-A edges are its head's written parents', so each application of `t` would be IS-A `c`. The
+    refusal is the declaration's, where `t` names `c`, not the first application's -- there is none here.
+    """
+  error: {
+    category: resolver
+  }
+}

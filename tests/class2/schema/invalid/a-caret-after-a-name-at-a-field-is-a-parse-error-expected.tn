@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-caret-after-a-name-at-a-field-is-a-parse-error-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.2"
+  description: """
+    `^` follows `!name` and takes values, and a composition is declared, never written in place: `point ^ { x?: = 0 }`
+    at a field's type is a parse error.
+    """
+  error: {
+    category: resolver
+  }
+}

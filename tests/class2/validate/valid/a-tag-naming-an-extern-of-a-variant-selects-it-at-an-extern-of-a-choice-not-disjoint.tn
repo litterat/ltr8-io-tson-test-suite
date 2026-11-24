@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-naming-an-extern-of-a-variant-selects-it-at-an-extern-of-a-choice-not-disjoint.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-nested-choice-extern.tn"
+!holder { e: !a_x { x: v } }

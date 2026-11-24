@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-constructions-reference-slot-takes-a-quoted-name-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.12, [TSON-SCHEMA] §4.2, [TSON-DATA] §2.4"
+  description: """
+    A construction's body is read as data, so a slot there typed by a reference takes a name in either token form:
+    `element_type: "text"` is `element_type: text`, and `"meta.identifier"` splits at `.` into the schema map `meta`
+    and its member. The schema grammar's own type positions take the unquoted form alone.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        tags => !meta.array { element_type: text }
+        lookup => !meta.map { key_type: text  value_type: meta.identifier }
+      }
+      """
+  }
+}

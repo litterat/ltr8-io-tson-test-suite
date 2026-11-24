@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-pinned-field-restated-with-another-value.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  base => { name: text  pet_type: text = "pet" }
+  dog  => base & { pet_type: = "dog" }
+}

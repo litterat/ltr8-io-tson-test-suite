@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-imported-incomplete-entry-is-refined-and-completed.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/incomplete-collections.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  few   => !nonempty ^ { max_items: 9 }
+  tags  => few<text>
+  ids   => nonempty<uuid>
+  names => keyed<uuid>
+}

@@ -1,8 +1,8 @@
 !!id:"https://tson.io/test-suite/class2/link/invalid/a-name-whose-segment-is-no-identifier-expected.tn"
 !!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
 {
-  spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §8.3 (values by name, proposed as §5.12)"
-  description: "Each segment is a [TSON-DATA] §7.7 identifier, which begins with no digit: 1x is no segment, so orders.1x is no name."
+  spec: "[TSON-SCHEMA] §5.6, [TSON-SCHEMA] §7.2, [TSON-SCHEMA] §5.12"
+  description: "Each segment is a name of the family of what it enters: orders is an interface, keyed by method_name, the kernel's identifier ([TSON-DATA] §7.7), which begins with no digit, so 1x selects no key and orders.1x is no name."
   error: {
     category: resolver
   }

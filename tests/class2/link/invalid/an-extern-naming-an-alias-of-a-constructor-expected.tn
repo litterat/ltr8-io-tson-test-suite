@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-extern-naming-an-alias-of-a-constructor-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13"
+  description: """
+    An extern names a type a value can have, declared anywhere in its schema's closure; `my_list` is an alias of
+    the constructor `meta.array`, whose values are types, so the extern is refused, and with it the schema
+    declaring it.
+    """
+  error: { category: resolver }
+}

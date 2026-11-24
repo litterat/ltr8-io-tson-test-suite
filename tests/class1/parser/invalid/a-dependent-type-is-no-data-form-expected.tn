@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/a-dependent-type-is-no-data-form-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.4, §7.5"
+  description: """
+    A token with a postfix `!` is no data form. `kind!` is the schema grammar's sugar for a dependent field's type
+    ([TSON-SCHEMA] §5.2) and has no place in the data grammar, so here `kind` is a token and the `!` adjacent to it
+    breaks the separation rule: the document does not parse.
+    """
+  error: { category: parser }
+}

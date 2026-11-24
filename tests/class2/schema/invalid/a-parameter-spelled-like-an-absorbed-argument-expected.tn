@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-parameter-spelled-like-an-absorbed-argument-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8, [TSON-SCHEMA] §5.10"
+  description: """
+    Inside a parametric record a reference's name is read in its `parameters` before the namespace, so a parameter
+    may not shadow a schema entry. `base`'s `f: pick<T>` applies `pick` to the entry `T`, and an argument is always a
+    reference, so a parameter of `t2` spelled `T` shadows that entry and would change the type of the field `t2`
+    absorbs: the shadowing rule refuses it, a resolver error at `t2`.
+    """
+  error: {
+    category: resolver
+  }
+}

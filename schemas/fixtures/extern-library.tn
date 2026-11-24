@@ -1,0 +1,26 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/extern-library.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"
+@doc:"""
+  A fixture schema holding one entry of each sort an extern ([TSON-SCHEMA] §5.13) may or may not name: types a
+  value can have (a record, an abstract record, an atom instance, an enum, a choice, named collections, an alias,
+  a declared application, a member of a nested schema map, an extern of its own), and what is no such type (a
+  parametric record, a schema map, an alias of a constructor). It imports extern-order-1.tn, so `order` and
+  `card` are in its closure too.
+  """
+!schema {
+  rec       => { a: text }
+  pet       => abstract { name: text }
+  count     => !integer ^ { min: 0 }
+  colour    => !enum [red green]
+  either    => (text | int32)
+  names     => [text]
+  lookup    => { text => int32 }
+  pair      => [text, int32]
+  rec_alias => rec
+  box       => <T> { v: T }
+  text_box  => box<text>
+  geo       => !schema { address => { street: text } }
+  my_list   => meta.array
+  ext_card  => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"  type: card }
+}

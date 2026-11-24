@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-field-absorbed-from-an-undeclared-application-restated-as-an-unrelated-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.8"
+  description: """
+    An application at a composition operand is absorbed by value, so `pet_of<dog_type>` contributes
+    `pet: dog_type`, and a body entry naming an absorbed field restates it under §5.8's rules whether or not
+    a declaration names the application. `cat_type` is neither `dog_type` nor IS-A it, so `dog` is refused,
+    as composing a record holding `pet: dog_type` with `{ pet: cat_type }` is. Nothing here declares
+    `pet_of<dog_type>`: the verdict is the one a declaration of it would give.
+    """
+  error: {
+    category: resolver
+  }
+}

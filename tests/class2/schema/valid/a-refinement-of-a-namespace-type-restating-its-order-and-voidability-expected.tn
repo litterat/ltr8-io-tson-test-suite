@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-a-namespace-type-restating-its-order-and-voidability-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: """
+    Each facet is judged against the source's effective value. `ordered` is fixed at construction and `api` takes
+    `meta.map`'s default, false, so `ordered: false` restates it; `voidable` is a permission `meta.namespace`
+    pins to false, so `voidable: false` withdraws nothing and equals the pin. `same` is IS-A `api` with its body.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        api  => !meta.namespace { chain: { subtypes: [same] }  key_type: meta.identifier  value_type: text }
+        same => !meta.namespace { chain: { supertypes: [api] }  key_type: meta.identifier  value_type: text }
+      }
+      """
+  }
+}

@@ -1,0 +1,25 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-extern-is-written-as-written-and-used-by-its-local-name-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13"
+  description: """
+    Resolved output writes an extern as written, its schema and the foreign name, and every use of it by the
+    local name: a field, a variant, an element and an alias target name `order_v1`, never the foreign `order`.
+    Two schemas that both declare `order` are named side by side; the choice of two foreign records is not
+    disjoint.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        order_v1 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-1.tn"  type: order }
+        order_v2 => !meta.extern { schema: "https://tson.io/test-suite/schemas/fixtures/extern-order-2.tn"  type: order }
+        latest => !meta.alias { target: order_v2 }
+        envelope => !meta.record { fields: {
+          id     => !meta.record_field { type: text }
+          body   => !meta.record_field { type: { of: !meta.choice { variants: [order_v1 order_v2]  disjoint: false } } }
+          copies => !meta.record_field { type: { of: !meta.array { element_type: order_v1 } } }
+        } }
+      }
+      """
+  }
+}

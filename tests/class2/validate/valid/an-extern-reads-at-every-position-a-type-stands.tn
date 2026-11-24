@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-extern-reads-at-every-position-a-type-stands.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-holder.tn"
+!all {
+  els: [{ a: x } !rec_x { a: y }]
+  m: { k => { a: x } }
+  keys: { 3 => three }
+  tup: [{ a: x } t]
+  dis: { a: x }
+  any: !rec_x { a: x }
+  pg: { items: [{ a: x }] }
+  pd: { items: [{ a: x }] }
+  ra: !rec_alias { a: x }
+}

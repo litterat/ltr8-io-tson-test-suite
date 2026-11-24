@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-foreign-schemas-own-name-is-unresolved-at-a-choice-of-externs-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9"
+  description: """
+    At a choice the tag selects the variant before any scope is known, so it is read in the enclosing scope, which
+    holds no `rush`: the name both foreign schemas declare is unresolved at the boundary, and a subtype is named
+    there only through an extern of it.
+    """
+  error: {
+    category: resolver
+    path: "/body"
+  }
+}

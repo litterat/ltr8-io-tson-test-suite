@@ -1,0 +1,15 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-tag-naming-a-variant-of-a-nested-choice-selects-none-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2"
+  description: """
+    A tag at a choice names a variant or a type that IS-A exactly one. `int32` is a variant of `narrow`, not of
+    `( boolean | narrow )`, and a variant of a choice is not IS-A the choice, so `!int32` selects no variant of
+    `outer`: a validation error at the field. A value of `narrow` at `outer` has one tag, and it names `narrow`,
+    never a variant of it.
+    """
+  error: {
+    category: validation
+    path: "/o"
+  }
+}

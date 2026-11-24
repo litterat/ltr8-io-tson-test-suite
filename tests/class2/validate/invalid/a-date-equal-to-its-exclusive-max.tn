@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-date-equal-to-its-exclusive-max.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-exclusive-bounds.tn"
+!ranges {
+  day: 2000-12-31
+}

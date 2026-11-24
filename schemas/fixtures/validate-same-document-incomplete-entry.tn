@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/schemas/fixtures/validate-same-document-incomplete-entry.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+@doc:"""
+  An incomplete entry and its completions in one document, each completion written before the entry it
+  completes: `counted`, an array left open whose completions are unordered, and `counts` and `tags`
+  completing it. Completing waits on the entry being ready ([TSON-SCHEMA] §3.4.1's wait order), so the
+  schema loads, and data is read against a completion as against any type.
+  """
+!schema {
+  counts  => !counted { element_type: int32  max_items: 3 }
+  tags    => !counted { element_type: tag }
+  tag     => @kind_note:"a short name" !text ^ { max_length: 8 }
+  counted => !meta.array ^ { ordered: false }
+  kind_note => @meta.annotation text
+}

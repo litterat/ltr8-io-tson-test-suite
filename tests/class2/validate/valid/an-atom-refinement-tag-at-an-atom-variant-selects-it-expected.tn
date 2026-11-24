@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-atom-refinement-tag-at-an-atom-variant-selects-it-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §5.5, [TSON-SCHEMA] §7.2"
+  description: """
+    A refinement IS-A its source, an atom's as a record's: `small => !int32 ^ { max: 10 }` IS-A `int32`, so at `(
+    int32 | text )` the tag `!small` selects `int32` and the value validates as a `small`. A tag is never wrong at a
+    disjoint choice.
+    """
+  valid: _
+}

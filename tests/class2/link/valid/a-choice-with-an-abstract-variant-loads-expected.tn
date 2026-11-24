@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-choice-with-an-abstract-variant-loads-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.4"
+  description: """
+    A choice may hold an abstract variant: a tag naming a member of `shape` selects it, so `( text | shape )` holds
+    every value of the family. Its disjointness is derived over the variants' classes alone, `shape` being
+    brace-class as every record is, and `subtypes` lists the family complete, `disc` under `shape` through the
+    abstract `round`.
+    """
+  valid: {
+    disjoint: [
+      { name: item  value: true }
+    ]
+    subtypes: [
+      { name: shape  subtypes: [circle round disc] }
+      { name: round  subtypes: [disc] }
+    ]
+  }
+}

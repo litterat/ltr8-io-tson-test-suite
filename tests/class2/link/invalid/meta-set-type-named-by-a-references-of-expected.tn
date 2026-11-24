@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/meta-set-type-named-by-a-references-of-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.5"
+  description: """
+    A reference's `of` names a type or a constructor whose members it admits. `meta.set_type` is an incomplete
+    entry, neither; a kind holding sets is the kind of arrays, `of: meta.array`.
+    """
+  error: {
+    category: resolver
+  }
+}

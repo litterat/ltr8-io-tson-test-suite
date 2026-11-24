@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-author-written-completion-annotation-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §8.1, [TSON-SCHEMA] §5.5"
+  description: """
+    `@meta.completion` is derived and never written: the resolver states it on the key of a declared completion,
+    and an author writing it is refused, as writing `@meta.application` is.
+    """
+  error: {
+    category: resolver
+  }
+}

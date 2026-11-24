@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-written-in-place-may-not-take-parameters.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order => !meta.record { fields: {
+    at => !meta.record_field { type: { of: !meta.record {
+      parameters: [ !meta.param { name: T } ]
+      fields: { x => !meta.record_field { type: T } }
+    } } }
+  } }
+}

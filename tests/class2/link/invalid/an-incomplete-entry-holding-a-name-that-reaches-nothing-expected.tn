@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/an-incomplete-entry-holding-a-name-that-reaches-nothing-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §4.2"
+  description: """
+    Every name a schema writes is judged when the schema links, an incomplete entry's included, completed or not:
+    `no_such_type` reaches nothing, so no completion of `keyed` could use it.
+    """
+  error: {
+    category: resolver
+  }
+}

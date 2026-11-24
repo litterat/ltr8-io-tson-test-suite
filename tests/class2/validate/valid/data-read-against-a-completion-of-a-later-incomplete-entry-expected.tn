@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/data-read-against-a-completion-of-a-later-incomplete-entry-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §3.4.1, [TSON-SCHEMA] §5.5"
+  description: """
+    `counts` completes `counted`, an incomplete entry its schema declares after it; the schema loads, and
+    three integers are a value of `counts`.
+    """
+  valid: _
+}

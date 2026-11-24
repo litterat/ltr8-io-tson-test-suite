@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/two-schemas-importing-each-other.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/cycle-import-back.tn"
+!schema {
+  a => { b: b }
+}

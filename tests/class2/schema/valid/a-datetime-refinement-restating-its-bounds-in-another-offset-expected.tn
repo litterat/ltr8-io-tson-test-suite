@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-datetime-refinement-restating-its-bounds-in-another-offset-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: """
+    A `datetime` is the instant on the UTC timeline and its offset a spelling, so `2026-03-02T08:00:00Z` is
+    `2026-03-02T09:00:00+01:00` and `2026-03-02T16:30:00Z` is `2026-03-02T17:30:00+01:00`.
+    `trading_day_utc` restates both of its source's bounds, which an ordered bound may do, so the refinement
+    resolves. Each bound is kept as written.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        trading_day => !temporal.datetime_type { chain: { supertypes: [datetime]  subtypes: [trading_day_utc] }  exclusive_min: "2026-03-02T09:00:00+01:00"  max: "2026-03-02T17:30:00+01:00" }
+
+        trading_day_utc => !temporal.datetime_type { chain: { supertypes: [datetime trading_day] }  exclusive_min: "2026-03-02T08:00:00Z"  max: "2026-03-02T16:30:00Z" }
+      }
+      """
+  }
+}

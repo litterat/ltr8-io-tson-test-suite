@@ -1,0 +1,18 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-refinement-of-a-namespace-type-is-a-namespace-type-beneath-its-source-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.7"
+  description: """
+    `small` is a refinement of the namespace type `api`, so it is listed among `api`'s subtypes, and it is itself a
+    namespace type, an instance of `meta.namespace`: a member of `meta.ref<meta.namespace>` beside `api` and the
+    kernel's `meta.schema` and its root alias `schema`.
+    """
+  valid: {
+    subtypes: [
+      { name: api  subtypes: [small] }
+    ]
+    members: [
+      { name: namespaces  members: [api meta.schema schema small] }
+    ]
+  }
+}

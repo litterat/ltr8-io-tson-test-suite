@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-record-fields-type-may-be-a-dependent-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: """
+    A schema read as data against the kernel: `record_field.type` is a `meta.type_expr`, a type's name or a type
+    written in place, and a dependent type written in place, `{ of: !meta.dependent { on: kind } }`, is one, so the
+    record is valid data. Whether `on` names a field declared before it is the schema's rule, judged where a schema
+    resolves, not this read's.
+    """
+  valid: _
+}

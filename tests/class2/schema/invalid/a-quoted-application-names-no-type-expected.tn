@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-quoted-application-names-no-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-DATA] §7.4, [TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12"
+  description: """
+    A construction's body is read as data, where a reference is its token's text in either form, so `"box<text>"`
+    at a type slot is the reference whose one segment is `box<text>`: no name of `meta.type_name`, so it names no
+    type and the construction is refused. An argument list is schema grammar and no part of a value, quoted or not.
+    """
+  error: {
+    category: resolver
+  }
+}

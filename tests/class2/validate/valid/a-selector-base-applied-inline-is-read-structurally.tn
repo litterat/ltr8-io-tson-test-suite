@@ -1,3 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/a-selector-base-applied-inline-is-read-structurally.tn"
-!!import:"https://tson.io/test-suite/schemas/fixtures/validate-template-family-members.tn"
-!plot { s: { kind: anything  data: { r: 2 } } }

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-value-at-an-abstract-record-in-place-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.2"
+  description: "`at` is typed by an abstract record written in place: it has no direct instances and no member, so the value written there, though it states every field the record declares, is refused at `/at`. A processor that reads an abstract record in place as an ordinary one accepts it."
+  error: {
+    category: validation
+    path: "/at"
+  }
+}

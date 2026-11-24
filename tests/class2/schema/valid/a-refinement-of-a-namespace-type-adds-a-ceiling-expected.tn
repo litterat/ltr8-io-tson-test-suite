@@ -1,0 +1,19 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-a-namespace-type-adds-a-ceiling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: """
+    A namespace type is built by `meta.namespace`, a constructor that IS-A `meta.map`, so it is refined as a map
+    type is: `max_items` is an ordered bound, and `api` states none, so `small` may set one. The result carries
+    `api`'s constructor as its tag, the source's body with the bound beside it, and `api` in its chain: a namespace
+    type IS-A `api`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        api   => !meta.namespace { chain: { subtypes: [small] }  key_type: meta.identifier  value_type: text }
+        small => !meta.namespace { chain: { supertypes: [api] }  key_type: meta.identifier  value_type: text  max_items: 3 }
+      }
+      """
+  }
+}

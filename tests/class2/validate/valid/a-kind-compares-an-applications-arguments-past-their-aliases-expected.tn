@@ -1,7 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/valid/a-kind-compares-an-applications-arguments-past-their-aliases-expected.tn"
-!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
-{
-  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §8.2, [TSON-SCHEMA] §8.3"
-  description: "An application in data has the identity §8.2 gives it, its arguments compared after following their alias chains: `user_id` is `uuid` under another name, so `box<user_id>` is `box<uuid>`, which the schema closes as `boxed`, a type and so a member of `meta.type_ref`."
-  valid: _
-}

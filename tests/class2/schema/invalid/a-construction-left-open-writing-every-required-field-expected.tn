@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-construction-left-open-writing-every-required-field-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: """
+    `!C ^ { ... }` writing every required field of `C` leaves nothing open; the construction is written
+    `!meta.array { element_type: text }`.
+    """
+  error: {
+    category: resolver
+  }
+}

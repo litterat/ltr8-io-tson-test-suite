@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-untagged-value-at-an-extern-of-a-choice-not-disjoint-needs-the-tag-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.9"
+  description: """
+    `either_x` reaches extern-choices.tn's `( a | b )`, two records sharing a class, so the choice is not disjoint
+    and an untagged value selects no variant, whichever variant's fields it carries: a validation error at the
+    field. The tag that selects one is an extern of the variant, `!a_x`.
+    """
+  error: {
+    category: validation
+    path: "/e"
+  }
+}

@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-subtractions-tightening-entry-narrows-to-a-subtype.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  person   => { name: text }
+  employee => person & { badge: text }
+  account  => { owner: person  password: text }
+  view     => account & { owner: employee } - { password }
+}

@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-record-taking-a-dotted-name-type-from-its-supertype.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  dotted        => !unicode.identifier_type { continue_add: "." }
+  dotted_record => !meta.record { name_type: dotted  extension: ABSTRACT  fields: {} }
+  row           => dotted_record & { a: text }
+}

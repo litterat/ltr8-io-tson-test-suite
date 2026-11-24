@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-value-entrys-segment-outside-the-family-it-enters.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-reference-reach.tn"
+!schema {
+  h => !holder { r: "main.internal.good morning" }
+}

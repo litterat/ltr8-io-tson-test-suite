@@ -37,7 +37,7 @@ small `scripts/fetch-references.sh`.
 ```
 tests/
   class1/                      the data-format processor ([TSON-DATA] §1.5)
-    lexer/{valid,invalid}/                 §7.2, §7.3
+    lexer/{valid,invalid}/                 §7.1, §7.2, §7.3
     parser/{valid,invalid,schema-document}/  §2, §3, §7.4, §7.5
     resolver/valid/                        §4
     vocabulary/{valid,invalid}/            §5
@@ -106,18 +106,20 @@ The expected side is carried as a multi-line token rather than modelled field by
 would restate meta.tn inside a sidecar schema and leave two statements of one shape to drift; a
 multi-line token escapes nothing, so this stays inside the conservative subset RUNNER.md rule 2 states.
 
-**No `schema/` subject declares a template**, and the reason is about where the comparison happens rather
-than about what §8 admits. A resolver holds an open entry's body as the application as written, held
-unread until materialisation (§5.10); the same declaration written as §8 output and read back binds an
-ordinary record body, a reference's segment being an `meta.identifier` and a parameter being one. So the two sides
-of such a vector agree as documents and differ as values, and a runner comparing values has nothing it can
-state.
+**A parametric record's resolved output is an ordinary record**, so a `schema/` subject may declare
+one and state it. A parametric record (§5.10) is a `!meta.record` carrying `parameters`, read against
+`record`'s own vocabulary as any record is, each parameter written where it stands as its name, a
+reference value looked up in the record's `parameters` before the namespace. Read back, it binds the
+value the resolver built, so the two sides compare as values like any other entry. A declaration naming
+an application of one is the closed `!meta.record`, without `parameters`, stating on its key the
+application it closes as `@meta.application`; a construction (`set<text>`, `meta.ref<order>`) states its
+constructor and carries none.
 
-§8.1 does not settle which side should move — it says no constructor's record shape could carry a held body,
-and then specifies how a parameter reference is read "in any `type_ref`, at any depth ... against the
-enclosing entry's `parameters` list", a rule with no position to apply at if the first sentence holds. What a
-template resolves to is stated at the link layer instead, over the entries it mints, until that is
-answered.
+**A type written at a slot stays there.** Sugar or an applied constructor at a type slot (`tags: [text]`,
+`set<text>`) resolves in place to the construction it denotes, held in the untagged wrapper
+`meta.type_inline`: `type: { of: !meta.array { element_type: text } }`. Nothing is added to the schema
+for it, so the expected side holds only the entries the subject declares, and the two sides compare as
+written.
 
 **`link/` states individual facts** about the linked namespace rather than a whole document: what
 §2.2.3's import closure binds, what §5.4 derives for a choice, what §8.2's `subtypes` index holds,
@@ -218,11 +220,11 @@ vocabulary an author writes and its machinery under a nested map of its own name
 
 | Bundled schema | Current identity                        |
 |----------------|-----------------------------------------|
-| `meta.tn`      | `https://tson.io/2026/39/m/meta.tn`     |
-| `numeric.tn`   | `https://tson.io/2026/39/m/numeric.tn`  |
-| `temporal.tn`  | `https://tson.io/2026/39/m/temporal.tn` |
-| `net.tn`       | `https://tson.io/2026/39/m/net.tn`      |
-| `core.tn`      | `https://tson.io/2026/39/m/core.tn`     |
+| `meta.tn`      | `https://tson.io/2026/40/m/meta.tn`     |
+| `numeric.tn`   | `https://tson.io/2026/40/m/numeric.tn`  |
+| `temporal.tn`  | `https://tson.io/2026/40/m/temporal.tn` |
+| `net.tn`       | `https://tson.io/2026/40/m/net.tn`      |
+| `core.tn`      | `https://tson.io/2026/40/m/core.tn`     |
 
 The corpus's own schemas are named by their path under `schemas/` — so `fixtures/link-money.tn` is
 `https://tson.io/test-suite/schemas/fixtures/link-money.tn` — which is what lets the corpus grow a fixture

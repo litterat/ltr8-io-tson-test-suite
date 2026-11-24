@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-naming-the-variant-beside-a-nested-choice-selects-it-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4"
+  description: """
+    At `( boolean | narrow )`, `!boolean` names a variant, so it selects it and `true` is read there. The choice is
+    not disjoint, a nested choice having no class, so the tag is required of every value of it.
+    """
+  valid: _
+}

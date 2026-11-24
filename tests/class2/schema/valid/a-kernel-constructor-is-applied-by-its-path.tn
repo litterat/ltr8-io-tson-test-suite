@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/a-kernel-constructor-is-applied-by-its-path.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
 @doc:"A schema importing the kernel alone names its constructors by path and its types bare."
 !schema {
   @doc:"A percentage."

@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-completion-writing-a-field-its-entry-wrote.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  array_min => !meta.array ^ { min_items: 10 }
+  done      => !array_min { element_type: text  min_items: 12 }
+}

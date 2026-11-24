@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-value-entry-writes-a-types-name-quoted.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/meta-service.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-orders-interface.tn"
+!schema {
+  api => !interface { m => { request: "place_order_request"  response: "order" } }
+}

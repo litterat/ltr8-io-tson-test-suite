@@ -1,0 +1,23 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-a-namespace-type-restating-its-key-type-through-an-alias-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.3"
+  description: """
+    `key_type` keeps `meta.map`'s rule through `meta.namespace`'s composition, and a slot is one by the entry a name
+    resolves to: `method_name` is `meta.identifier` under another name, so it restates `api`'s key family, and
+    `small` is a namespace type IS-A `api`. The resolved value states the slot as the source wrote it,
+    `key_type: meta.identifier`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        method_name => !meta.alias { target: meta.identifier }
+        api   => !meta.namespace { chain: { subtypes: [small] }  key_type: meta.identifier  value_type: text }
+        small => !meta.namespace {
+          chain: { supertypes: [api] }
+          key_type: meta.identifier  value_type: text  max_items: 3
+        }
+      }
+      """
+  }
+}

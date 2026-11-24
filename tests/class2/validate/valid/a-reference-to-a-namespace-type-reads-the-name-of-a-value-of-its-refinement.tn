@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-reference-to-a-namespace-type-reads-the-name-of-a-value-of-its-refinement.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-refined-namespace.tn"
+!desk { pick: book }

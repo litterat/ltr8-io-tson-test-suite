@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-parameter-stands-at-any-depth-of-a-type-in-place.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  deep      => <T> { d: [{ at: T  tags: {text => T} }] }
+  text_deep => deep<text>
+}

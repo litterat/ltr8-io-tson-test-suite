@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-a-namespace-type-restating-its-type-slots.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  api  => !meta.namespace { key_type: meta.identifier  value_type: text }
+  same => !api ^ { key_type: meta.identifier  value_type: text }
+}

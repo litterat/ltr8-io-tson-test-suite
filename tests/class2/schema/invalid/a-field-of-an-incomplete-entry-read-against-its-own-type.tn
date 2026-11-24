@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-field-of-an-incomplete-entry-read-against-its-own-type.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  counted => !meta.array ^ { min_items: "ten" }
+}

@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-tag-naming-an-extern-of-a-subtype-selects-the-variant-its-target-is-a-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §5.13, [TSON-SCHEMA] §7.9"
+  description: """
+    A tag at a choice names a variant or a type that IS-A exactly one, each name followed through its extern and the
+    entries compared by identity. At `( order_v1 | order_v2 )`, `rush_v1` reaches extern-family-1.tn's `rush`, IS-A
+    that schema's `order`, the target of `order_v1` alone, so it selects `order_v1` and the value is read against
+    extern-family-1.tn's `rush`; `rush_v2` selects `order_v2` and is read against extern-family-2.tn's `rush`, whose
+    `lane` the other lacks. One subtype name in two schemas, each read in its own scope.
+    """
+  valid: _
+}

@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class1/parser/invalid/a-nested-argument-list-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/parser-sidecar.tn"
+{
+  spec: "§7.2.5"
+  description: """
+    An argument list is no data syntax at any depth: `pair<box<text> int32>` fails at its first `<`.
+    """
+  error: { category: parser }
+}

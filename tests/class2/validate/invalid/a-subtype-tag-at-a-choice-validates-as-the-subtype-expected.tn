@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-subtype-tag-at-a-choice-validates-as-the-subtype-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2"
+  description: """
+    A value whose tag selects a variant by IS-A validates in full against the tag's type, the variant contributing
+    admission alone: `!circle` selects `shape`, and the value lacks `circle`'s required `r`, a validation error at
+    the missing field though every field `shape` declares is present.
+    """
+  error: {
+    category: validation
+    path: "/i/r"
+  }
+}

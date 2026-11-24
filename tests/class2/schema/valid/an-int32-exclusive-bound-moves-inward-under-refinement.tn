@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-int32-exclusive-bound-moves-inward-under-refinement.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  open_count  => !int32 ^ { exclusive_min: 0  exclusive_max: 100 }
+  inner_count => !open_count ^ { exclusive_min: 10  exclusive_max: 50 }
+}

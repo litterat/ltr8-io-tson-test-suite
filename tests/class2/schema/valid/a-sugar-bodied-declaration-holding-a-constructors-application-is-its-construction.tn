@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-sugar-bodied-declaration-holding-a-constructors-application-is-its-construction.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!schema {
+  box => <T> { v: T }
+  x   => [meta.array<box<text>>]
+  k   => { f: [meta.array<box<text>>] }
+}

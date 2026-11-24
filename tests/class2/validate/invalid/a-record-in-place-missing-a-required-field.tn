@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-record-in-place-missing-a-required-field.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-records-in-place.tn"
+!holder { p: { size: 3 } }

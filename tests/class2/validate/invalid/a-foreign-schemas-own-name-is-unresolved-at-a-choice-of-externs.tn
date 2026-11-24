@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-foreign-schemas-own-name-is-unresolved-at-a-choice-of-externs.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/extern-family-envelope.tn"
+!envelope { id: e  body: !rush { id: x  by: y } }

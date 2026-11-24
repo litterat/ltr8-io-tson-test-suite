@@ -123,7 +123,7 @@ MUST is that a processor *report* a position, not that two processors agree on o
 A conformance claim that silently skips is not a claim. A runner MUST report what it skipped and
 why. Exactly three grounds are legitimate:
 
-- **An encoding the implementation does not read.** §9.1 permits `utf-16` and `utf-32`; not reading
+- **An encoding the implementation does not read.** §7.1 permits `utf-16` and `utf-32`; not reading
   them is a gap in the implementation, not a failed conformance claim. `invalid-utf8` is *not* such a
   ground — it must reach the lexer and be rejected there.
 - **A `class2/` vector under a Class 1 processor.** Declared by conformance class, not per vector.
@@ -137,19 +137,10 @@ why. Exactly three grounds are legitimate:
 Anything else — a vector the implementation cannot currently pass — is a failure. Recording it as a
 skip is how a corpus stops measuring anything.
 
-### 6. Normalise a resolver-minted name before comparing (Class 2)
-
-The entries a resolver mints for itself — a synthetic lifted from a sugar form, an instantiation closed
-from a template application — carry a name ending in an implementation-chosen content hash.
-[TSON-SCHEMA] §8.2 keys identity on structure, not on that spelling, so it is **not normative**: both
-sides reduce a trailing `_[0-9a-f]{8}` to a fixed placeholder before comparing, wherever such a name
-appears — as an entry's own key, inside a body, or in a list of names a sidecar states. A runner that
-compares the hashes is testing its own hash function.
-
 ## Every subject is a complete document
 
 A subject carries its own header: an optional `!!id`, then an `!!import` for each schema it needs, each named
-by its full, unpinned identity (`https://tson.io/2026/39/m/core.tn`). A runner adds nothing to it and feeds it
+by its full, unpinned identity (`https://tson.io/2026/40/m/core.tn`). A runner adds nothing to it and feeds it
 as it is on disk (rule 1). The bundled schemas' identities carry the spec revision, so a revision bump rewrites
 them in every subject, as it rewrites them in the fixtures; nothing else in the corpus moves with the revision.
 
@@ -157,7 +148,9 @@ them in every subject, as it rewrites them in the fixtures; nothing else in the 
 `https://tson.io/test-suite/schemas/fixtures/link-money.tn`, which a runner serves from its checkout. That is a
 *rule*, not a table, so a runner needs no edit when the corpus grows a fixture. Any other identity a Class 2
 subject imports is one of the bundled schemas, which a processor already holds; a Class 1 subject's imports are
-never fetched.
+never fetched. The schema an extern names ([TSON-SCHEMA] §5.13) is served by the same rule, being a dependency of
+the subject as an import is. A reference reaching the subject's own `!!id`, from the subject or from a fixture, names
+the subject itself, whose resolution is in progress: it is a reference cycle ([TSON-SCHEMA] §2.2.3), never served.
 
 A subject is a schema document exactly when its root is tagged `!schema`, after any root annotations; any other
 root is data. So a `class2/schema/` or `class2/link/` subject is tagged, a `class2/validate/` subject names its
@@ -167,8 +160,9 @@ The link layer's §2.2.3 vectors need this: an import closure cannot be exercise
 topology lives in the fixture schemas' own `!!import` headers, so a chain, a diamond or a wide fan-in is a
 matter of which files exist rather than of anything a runner knows. Fixtures are named for what they declare
 rather than for the vector that uses them, the namespace being shared, and each one resolves on its own — the
-collisions those vectors are about exist only in the importer. The one exception is `fixtures/a-data-document.tn`,
-which is data by design: it is there to be refused as an import.
+collisions those vectors are about exist only in the importer. The exceptions are `fixtures/a-data-document.tn`,
+which is data by design: it is there to be refused as an import; and the `fixtures/cycle-*.tn` schemas, each on a
+reference cycle with the subject that names it, by design.
 
 ## A fixture schema's own records
 
@@ -185,6 +179,11 @@ A `class2/schema/` vector's expected resolved output is read under the subject's
 pre-loaded kernel alone when the subject has none. For a subject importing `meta.tn`, a library or `core.tn` that is
 the ordinary reading; a fixture that declares types of its own imports what it builds on and adds them, and a value of
 one of them is typed there and nowhere else.
+
+An expected resolved form lists complete entries only: an incomplete entry ([TSON-SCHEMA] §5.5), and an alias whose
+chain ends at one, appears in the subject and never in its resolved form. What a declared completion closed is stated
+on its key, `@meta.completion:{ of: [...] }` ([TSON-SCHEMA] §8.1), and is part of the expected form: a runner compares
+each key's `@meta.completion`, as it compares its `@meta.application`.
 
 ## `proposed/`
 

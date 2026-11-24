@@ -3,25 +3,26 @@
 {
   spec: "[TSON-SCHEMA] §5.10, [TSON-SCHEMA] §8.1"
   description: """
-    A record template keeps its parents as written in its chain, and a parent still applied to a parameter is
-    an open application: a reference with an argument list, data grammar written unquoted. `ok` holds
-    `parents: [result<T>]` beside the fields it absorbed, and closes with every other reference it holds.
+    A parametric record keeps its parents as written in its chain, and a parent still applied to a parameter is
+    an open application, the construction `meta.apply` written in place: `ok` holds `parents: [{ of: !meta.apply
+    { head: result  arguments: [T] } }]` beside the fields it absorbed, and closes with every other application it
+    holds.
     """
   valid: {
     resolved: """
       !schema {
-        result => !meta.record_template {
-          parameters: [ !meta.template_param { name: T  type: meta.type_ref } ]
-          fields: { value => !meta.record_template_field { type_param: T  optional: true } }
+        result => !meta.record {
+          parameters: [ !meta.param { name: T } ]
+          fields: { value => !meta.record_field { type: T  optional: true } }
           extension: ABSTRACT
         }
 
-        ok => !meta.record_template {
-          chain: { parents: [result<T>] }
-          parameters: [ !meta.template_param { name: T  type: meta.type_ref } ]
+        ok => !meta.record {
+          chain: { parents: [{ of: !meta.apply { head: result  arguments: [T] } }] }
+          parameters: [ !meta.param { name: T } ]
           fields: {
-            value => !meta.record_template_field { type_param: T  optional: true }
-            done  => !meta.record_template_field { type: boolean }
+            value => !meta.record_field { type: T  optional: true }
+            done  => !meta.record_field { type: boolean }
           }
         }
       }

@@ -1,0 +1,16 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-mark-before-a-declared-application-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.1, [TSON-SCHEMA] §5.10"
+  description: """
+    A declared application is substitution and nothing more: `x` is `box`'s record with `text` in place of `T`, and
+    its `extension` is the head's (§5.10), so `f: x` and `f: box<text>` are two types of one shape. The mark is sugar
+    for a record definition's `extension` and §12.1 admits it before a record body, a composition or a subtraction
+    alone, so before an application it is a parse error at the mark. To make every application abstract, mark the
+    parametric record, `box => abstract <T> { v: T }`; to make one, declare a record composing the application,
+    `x => abstract box<text> & {}`.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-entry-a-schema-contributes-to-meta-is-completed-by-its-path.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-meta-contribution.tn"
+!tagged { c: [a b c d] }

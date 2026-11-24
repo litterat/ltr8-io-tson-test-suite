@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-name-inside-a-foreign-value-resolves-in-the-foreign-schema-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9"
+  description: """
+    The value at `r` is read against extern-foreign.tn's `rec`, so `!memo` inside it is that schema's `memo`, with a
+    `note`, and not the reading schema's own `memo`.
+    """
+  valid: _
+}

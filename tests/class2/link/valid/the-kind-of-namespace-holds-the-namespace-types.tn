@@ -2,5 +2,5 @@
 !!import:"https://tson.io/test-suite/schemas/fixtures/meta-api.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/link-api-orders.tn"
 !schema {
-  namespaces => !meta.reference_type { of: meta.namespace }
+  namespaces => !meta.ref { of: meta.namespace }
 }

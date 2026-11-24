@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/set-and-meta-ref-applied-are-constructions.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  tags    => set<text>
+  records => meta.ref<meta.record>
+}

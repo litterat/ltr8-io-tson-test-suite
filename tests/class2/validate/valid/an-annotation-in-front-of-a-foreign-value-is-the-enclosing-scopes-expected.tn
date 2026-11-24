@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-annotation-in-front-of-a-foreign-value-is-the-enclosing-scopes-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9"
+  description: """
+    The annotation in front of the value names `label_x`, an extern of the reading schema; the one inside it names
+    `label`, which only the foreign schema declares.
+    """
+  valid: _
+}

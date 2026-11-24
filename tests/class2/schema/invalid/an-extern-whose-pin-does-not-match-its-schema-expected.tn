@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/an-extern-whose-pin-does-not-match-its-schema-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13"
+  description: """
+    An extern's schema is verified as an import's is: a `?sha256=` pin that does not match the content the
+    identity names refuses the schema declaring the extern ([TSON-SCHEMA] §10.2).
+    """
+  error: { category: resolver }
+}

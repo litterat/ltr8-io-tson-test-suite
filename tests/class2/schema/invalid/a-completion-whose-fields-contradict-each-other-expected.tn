@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-completion-whose-fields-contradict-each-other-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: """
+    Coherence across fields is checked where an incomplete entry is closed, and the refusal is reported there:
+    `max_things<text>` has `min_items` 10 above `max_items` 5.
+    """
+  error: {
+    category: resolver
+  }
+}

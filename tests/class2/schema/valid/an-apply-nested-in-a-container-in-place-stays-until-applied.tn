@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-apply-nested-in-a-container-in-place-stays-until-applied.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  box       => <T> { v: T }
+  rows      => <T> { rows: [box<T>] }
+  text_rows => rows<text>
+}

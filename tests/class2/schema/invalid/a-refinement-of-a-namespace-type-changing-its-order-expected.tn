@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-a-namespace-type-changing-its-order-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7"
+  description: """
+    `ordered` is fixed at construction and judged against the source's effective value: `api` writes none and
+    takes `meta.map`'s default, false, so `ordered: true` changes it, and another order is another type.
+    """
+  error: {
+    category: resolver
+  }
+}

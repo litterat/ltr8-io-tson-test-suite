@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-qualified-name-enters-a-value-of-a-refined-namespace-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.12, [TSON-SCHEMA] §5.7"
+  description: """
+    A qualified name enters a value of a refined namespace type as it enters its source's: `book` is a value of
+    `few_orders`, its further segment selects the key `first`, and the value there is an `order`, the type the slot
+    `one`, `meta.ref<order>`, wants.
+    """
+  valid: _
+}

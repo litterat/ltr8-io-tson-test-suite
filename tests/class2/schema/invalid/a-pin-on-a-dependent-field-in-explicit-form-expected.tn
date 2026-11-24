@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-pin-on-a-dependent-field-in-explicit-form-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §8.1"
+  description: """
+    A dependent field carries no pin, and the explicit form, which can state one, is refused for stating it: its type is
+    not fixed at its declaration. A pin belongs on the sibling, which fixes the dependent field's type instead.
+    """
+  error: {
+    category: resolver
+  }
+}

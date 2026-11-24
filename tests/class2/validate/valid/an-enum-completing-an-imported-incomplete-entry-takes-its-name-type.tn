@@ -1,0 +1,3 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-enum-completing-an-imported-incomplete-entry-takes-its-name-type.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-text-enum-cities.tn"
+!city "New York"

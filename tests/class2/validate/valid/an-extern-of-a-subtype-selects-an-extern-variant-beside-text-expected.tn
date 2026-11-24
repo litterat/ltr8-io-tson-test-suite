@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/an-extern-of-a-subtype-selects-an-extern-variant-beside-text-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.9"
+  description: """
+    At `( text | shape_v1 )`, `circle_v1` reaches extern-family-1.tn's `circle`, which IS-A `shape`, the target of
+    `shape_v1`, and is not `text` nor IS-A it: the tag selects `shape_v1` and the value is read against `circle`.
+    """
+  valid: _
+}

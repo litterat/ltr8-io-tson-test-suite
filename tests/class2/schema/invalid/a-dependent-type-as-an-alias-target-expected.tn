@@ -1,0 +1,14 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-dependent-type-as-an-alias-target-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.1"
+  description: """
+    The schema grammar reads a dependent type, `kind!`, only as a record field's type, a field group member's included:
+    `x => kind!` writes it as a declaration's body, which is no field, and an entry has no siblings, so it does not
+    parse, even though `cell` beside it declares `kind`. Category is `resolver`, as every error that stops a schema
+    loading is.
+    """
+  error: {
+    category: resolver
+  }
+}

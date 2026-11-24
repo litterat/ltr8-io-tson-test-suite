@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-construction-of-a-composed-constructor-writing-another-value-at-its-pin-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.5"
+  description: """
+    A construction's payload is read against its constructor's record, and `my_list` pins `min_items` to 1. A value
+    written at a FIXED field is verified against the pin, and `0` contradicts it, so the schema does not load.
+    """
+  error: {
+    category: resolver
+  }
+}

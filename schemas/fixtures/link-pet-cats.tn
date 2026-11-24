@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/schemas/fixtures/link-pet-cats.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
 !!import:"https://tson.io/test-suite/schemas/fixtures/link-pet-base.tn"
 @doc:"Adds one member to link-pet-base.tn's family, pinning \"cat\". Valid alone."
 !schema {

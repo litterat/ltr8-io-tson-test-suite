@@ -1,0 +1,21 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/an-optional-field-typed-by-an-abstract-record-in-place-loads-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.10.1"
+  description: """
+    An abstract record written in place is an empty type, not a refused one: an optional field typed by it loads, and
+    can only be missing, as `a?: void` can. The record resolves as written.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        order => !meta.record { fields: {
+          at => !meta.record_field { optional: true  type: { of: !meta.record {
+            fields: { x => !meta.record_field { type: int32 } }
+            extension: ABSTRACT
+          } } }
+        } }
+      }
+      """
+  }
+}

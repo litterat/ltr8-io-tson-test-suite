@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-reference-to-a-namespace-type-names-a-value-of-its-refinement-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12, [TSON-SCHEMA] §5.7"
+  description: """
+    A slot over `T` holds a name exactly when the type of the named entry's value IS-A `T`. `mine` is a value of
+    `small`, a refinement of `api` and IS-A it, so `meta.ref<api>` holds its name.
+    """
+  valid: {
+    binds: [mine apis slot held]
+  }
+}

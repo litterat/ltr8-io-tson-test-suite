@@ -1,6 +1,6 @@
 !!id:"https://tson.io/test-suite/class2/schema/valid/an-explicit-record-states-its-fields-as-a-map.tn"
-!!import:"https://tson.io/2026/39/m/meta.tn"
-!!import:"https://tson.io/2026/39/m/core.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
 !schema {
   json_name => !unicode.identifier_type { start_add: "@" }
   point => !meta.record { fields: { x => { type: int32 }  y => { type: int32  optional: true } } }

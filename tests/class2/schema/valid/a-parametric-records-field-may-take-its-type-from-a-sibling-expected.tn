@@ -1,0 +1,34 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-parametric-records-field-may-take-its-type-from-a-sibling-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §5.10"
+  description: """
+    A parametric record's field may be typed by a sibling: `v`'s sibling is `kind`, an ordinary field. A parameter
+    is a reference and the dependent type names a field, so substitution cannot confuse the two: `pair<text>`
+    closes `w` to `text` and leaves `v`'s dependent type as it stands, in the parametric record and in the declared
+    application alike.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        pair => !meta.record {
+          fields: {
+            kind => !meta.record_field { type: meta.type_ref }
+            v    => !meta.record_field { type: { of: !meta.dependent { on: kind } }  optional: true }
+            w    => !meta.record_field { type: T }
+          }
+          parameters: [ !meta.param { name: T } ]
+        }
+
+        @meta.application:{ head: pair  arguments: [text] }
+        p => !meta.record {
+          fields: {
+            kind => !meta.record_field { type: meta.type_ref }
+            v    => !meta.record_field { type: { of: !meta.dependent { on: kind } }  optional: true }
+            w    => !meta.record_field { type: text }
+          }
+        }
+      }
+      """
+  }
+}

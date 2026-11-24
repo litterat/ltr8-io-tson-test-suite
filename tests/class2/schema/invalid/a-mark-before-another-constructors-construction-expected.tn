@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-mark-before-another-constructors-construction-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.2, [TSON-SCHEMA] §12.1"
+  description: """
+    A mark says how a record may be realised, and stands before a record definition alone (§12.1): before a
+    construction of any constructor it is a parse error at the mark, whatever the constructor builds. An enum is no
+    record, and its declaration is written unmarked: `status => !enum [OPEN DONE]`.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-parameter-passed-to-an-imported-bounded-parameter-with-no-bound.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/link-bounded-box.tn"
+!schema {
+  rebox => <T> { b: boxed<T> }
+}

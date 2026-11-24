@@ -4,7 +4,8 @@
   spec: "[TSON-SCHEMA] §5.10"
   description: """
     A literal value needs a closed type: what a token means is decided by the type it is read as, and `v` has a
-    different type in every application of `box`. A field typed by a parameter takes a value parameter or no value.
+    different type in every application of `box`. A field typed by a parameter takes no value; one that differs per
+    application is written where the application is declared.
     """
   error: {
     category: resolver

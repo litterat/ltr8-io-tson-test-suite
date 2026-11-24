@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-spaced-segment-naming-no-key-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.12"
+  description: """
+    `good evening` is a name of `word`, the key family of `phrases`, but `phrases` holds the key `good morning` and
+    no other, so the reference reaches nothing.
+    """
+  error: {
+    category: validation
+    path: "/r"
+  }
+}

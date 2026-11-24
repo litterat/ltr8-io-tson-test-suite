@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-type-value-in-data-may-state-bounds-that-cross-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.7"
+  description: """
+    Bounds that cross are a declaration's rule, and a value of a kernel type written as data declares nothing:
+    `min_items` and `max_items` are each a `numeric.count`, and 5 and 2 each are one, so the array is valid data.
+    The same bounds in a schema declaration are refused (class2/schema/invalid/container-bounds-that-admit-nothing).
+    """
+  valid: _
+}

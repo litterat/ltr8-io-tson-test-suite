@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-completion-leaving-a-required-field-absent-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: """
+    A completion supplies every required field its entry lacks; `value_type` is not written.
+    """
+  error: {
+    category: resolver
+  }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-schema-importing-its-own-identity-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §2.2.3"
+  description: """
+    Import references are acyclic, and the shortest cycle is a schema importing its own identity: the import
+    reaches a schema whose resolution is in progress, which no dependencies-first order can resolve, so the
+    schema does not load. The identity names the subject itself, so the cycle is the verdict however the
+    identity would be served.
+    """
+  error: { category: resolver }
+}

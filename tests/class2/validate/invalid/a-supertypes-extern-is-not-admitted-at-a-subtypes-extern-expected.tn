@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-supertypes-extern-is-not-admitted-at-a-subtypes-extern-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9"
+  description: """
+    At a position typed `dog_x`, the tag `pet_x` names an extern of `dog`'s supertype, which is not IS-A `dog`.
+    """
+  error: {
+    category: validation
+    path: "/d"
+  }
+}

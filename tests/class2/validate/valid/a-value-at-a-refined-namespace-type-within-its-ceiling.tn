@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-value-at-a-refined-namespace-type-within-its-ceiling.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-refined-namespace.tn"
+!desk {
+  few: { a => { id: "A-1" }  b => { id: "A-2" } }
+}

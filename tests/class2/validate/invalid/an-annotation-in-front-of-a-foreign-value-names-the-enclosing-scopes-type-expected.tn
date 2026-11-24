@@ -1,0 +1,11 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-annotation-in-front-of-a-foreign-value-names-the-enclosing-scopes-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9"
+  description: """
+    The annotation in front of the value is read in the enclosing scope, which declares no `label`.
+    """
+  error: {
+    category: resolver
+  }
+}

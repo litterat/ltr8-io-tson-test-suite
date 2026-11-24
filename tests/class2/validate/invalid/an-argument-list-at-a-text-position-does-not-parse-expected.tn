@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/an-argument-list-at-a-text-position-does-not-parse-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-DATA] §7.2.5"
+  description: """
+    An argument list is no data grammar, whatever types the position: `n` is text, and `set<text>` does not parse,
+    the schema in scope changing nothing.
+    """
+  error: {
+    category: parser
+  }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-schema-importing-one-with-externs-has-the-extern-names-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.13"
+  description: """
+    A schema importing a schema that declares externs has the extern names in its namespace, as it has every
+    other entry of its import, and none of the names of the schemas the externs name.
+    """
+  valid: {
+    binds: [batch order_v1 order_v2 envelope]
+  }
+}

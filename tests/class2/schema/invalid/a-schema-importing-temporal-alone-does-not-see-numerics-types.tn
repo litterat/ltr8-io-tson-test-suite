@@ -1,5 +1,5 @@
 !!id:"https://tson.io/test-suite/class2/schema/invalid/a-schema-importing-temporal-alone-does-not-see-numerics-types.tn"
-!!import:"https://tson.io/2026/39/m/temporal.tn"
+!!import:"https://tson.io/2026/40/m/temporal.tn"
 !schema {
   event => { at: date  attendees: int32 }
 }

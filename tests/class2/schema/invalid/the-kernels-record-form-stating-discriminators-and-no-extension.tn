@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/the-kernels-record-form-stating-discriminators-and-no-extension.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  pet => !meta.record {
+    fields: { pet_type => !meta.record_field { type: text } }
+    discriminators: [pet_type]
+  }
+}

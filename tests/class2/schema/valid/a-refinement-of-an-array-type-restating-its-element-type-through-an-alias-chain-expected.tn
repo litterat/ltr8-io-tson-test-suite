@@ -1,0 +1,20 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-refinement-of-an-array-type-restating-its-element-type-through-an-alias-chain-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.7, [TSON-SCHEMA] §8.3"
+  description: """
+    A slot is one by the entry a name resolves to past every alias hop: `tag` names `label`, which names `text`, so
+    `element_type: tag` restates `tags`' slot through a chain of two hops. The chain is stated as written, and the
+    resolved value states the slot as the source wrote it, `element_type: text`.
+    """
+  valid: {
+    resolved: """
+      !schema {
+        label => !meta.alias { target: text }
+        tag   => !meta.alias { target: label }
+        tags  => !meta.array { chain: { subtypes: [some] }  element_type: text }
+        some  => !meta.array { chain: { supertypes: [tags] }  element_type: text  min_items: 1 }
+      }
+      """
+  }
+}

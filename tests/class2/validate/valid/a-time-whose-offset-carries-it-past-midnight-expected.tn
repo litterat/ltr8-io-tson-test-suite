@@ -1,0 +1,7 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-time-whose-offset-carries-it-past-midnight-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5, [TSON-SCHEMA] §5.7"
+  description: "`early` is `before_two`, whose `max` is `02:00:00Z`. A `time` is the time of day in UTC on `[00:00:00, 24:00:00)`, so `23:30:00-02:00` is `01:30:00Z`, not a day later, and is admitted."
+  valid: _
+}

@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/schema/valid/a-constructors-application-over-a-parameter-is-its-construction.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  order    => { id: text }
+  explicit => <T> { a: meta.array<T>  m: meta.map<text meta.array<T>>  s: set<T>  r: meta.ref<T> }
+  sugar    => <T> { a: [T]  m: {text => [T]}  s: set<T>  r: meta.ref<T> }
+  e        => explicit<order>
+  g        => sugar<order>
+}

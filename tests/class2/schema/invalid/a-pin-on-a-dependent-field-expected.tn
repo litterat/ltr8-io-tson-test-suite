@@ -4,7 +4,9 @@
   spec: "[TSON-SCHEMA] §5.2"
   description: """
     A dependent field carries no pin, for the reason it carries no default: its type is not fixed at its declaration.
-    A pin belongs on the sibling, which fixes the dependent field's type instead.
+    A pin belongs on the sibling, which fixes the dependent field's type instead. A dependent type is also a type
+    written in place that is no reference, and only a field typed by an atom, an enum or a reference carries a value,
+    so the pin is refused on either ground.
     """
   error: {
     category: resolver

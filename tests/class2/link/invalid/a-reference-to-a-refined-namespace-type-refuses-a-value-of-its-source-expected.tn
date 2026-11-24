@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/link/invalid/a-reference-to-a-refined-namespace-type-refuses-a-value-of-its-source-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2, [TSON-SCHEMA] §5.12, [TSON-SCHEMA] §5.7"
+  description: """
+    IS-A runs from the refinement to its source and not back: `plain` is a value of `api`, which is no `small`,
+    so `meta.ref<small>` refuses its name when the schema links, whatever the size of the map.
+    """
+  error: {
+    category: resolver
+  }
+}

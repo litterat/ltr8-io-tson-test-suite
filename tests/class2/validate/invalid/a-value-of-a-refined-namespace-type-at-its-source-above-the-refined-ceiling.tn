@@ -1,0 +1,5 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-value-of-a-refined-namespace-type-at-its-source-above-the-refined-ceiling.tn"
+!!import:"https://tson.io/test-suite/schemas/fixtures/validate-refined-namespace.tn"
+!desk {
+  any: !few_orders { a => { id: "A-1" }  b => { id: "A-2" }  c => { id: "A-3" } }
+}

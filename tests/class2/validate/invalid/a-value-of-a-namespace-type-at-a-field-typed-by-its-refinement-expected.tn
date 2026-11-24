@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/invalid/a-value-of-a-namespace-type-at-a-field-typed-by-its-refinement-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.2, [TSON-SCHEMA] §5.7"
+  description: """
+    IS-A runs from the refinement to its source and not back: at `few`, typed `few_orders`, a value tagged
+    `!orders` is refused, `orders` being no `few_orders`, though its one entry is within the refined bounds.
+    """
+  error: {
+    category: validation
+    path: "/few"
+  }
+}

@@ -1,0 +1,12 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-enum-writing-its-members-is-refused-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/schema-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.5"
+  description: """
+    `^` keeps what its base is: `enum` leaves only `members` absent, so a refinement writing it would close the
+    entry, and is refused. The completion is `!enum [OPEN DONE]`.
+    """
+  error: {
+    category: resolver
+  }
+}

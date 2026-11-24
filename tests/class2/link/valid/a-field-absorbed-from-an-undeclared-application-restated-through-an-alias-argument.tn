@@ -1,0 +1,9 @@
+!!id:"https://tson.io/test-suite/class2/link/valid/a-field-absorbed-from-an-undeclared-application-restated-through-an-alias-argument.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  item  => <T> { x: T }
+  box   => <T> { v: item<T> }
+  label => text
+  boxed => box<text> & { v: item<label> }
+}

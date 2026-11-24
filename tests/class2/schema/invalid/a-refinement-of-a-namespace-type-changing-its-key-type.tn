@@ -1,0 +1,8 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-a-namespace-type-changing-its-key-type.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  header_name => !unicode.identifier_type { continue_add: "-" }
+  api         => !meta.namespace { key_type: meta.identifier  value_type: text }
+  by_header   => !api ^ { key_type: header_name }
+}

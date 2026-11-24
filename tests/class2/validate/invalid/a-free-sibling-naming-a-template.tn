@@ -1,3 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/validate/invalid/a-free-sibling-naming-a-template.tn"
-!!import:"https://tson.io/test-suite/schemas/fixtures/validate-dependent-fields.tn"
-!cell { kind: box  v: { item: 5 } }

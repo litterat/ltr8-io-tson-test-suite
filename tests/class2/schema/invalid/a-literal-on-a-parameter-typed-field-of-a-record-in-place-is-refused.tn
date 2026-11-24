@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-literal-on-a-parameter-typed-field-of-a-record-in-place-is-refused.tn"
+!!import:"https://tson.io/2026/40/m/meta.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  page => <T> { meta: { w?: T ~ 5 } }
+}

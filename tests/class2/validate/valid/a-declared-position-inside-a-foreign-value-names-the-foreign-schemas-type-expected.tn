@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-declared-position-inside-a-foreign-value-names-the-foreign-schemas-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §7.9"
+  description: """
+    A value at a declared position inside a foreign value names its type in the foreign schema's namespace: `memo`
+    is extern-foreign.tn's.
+    """
+  valid: _
+}

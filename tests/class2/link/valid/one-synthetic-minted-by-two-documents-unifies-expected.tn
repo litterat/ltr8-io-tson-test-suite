@@ -1,9 +1,0 @@
-!!id:"https://tson.io/test-suite/class2/link/valid/one-synthetic-minted-by-two-documents-unifies-expected.tn"
-!!import:"https://tson.io/test-suite/schemas/link-sidecar.tn"
-{
-  spec: "[TSON-SCHEMA] §8.2, §2.2.3"
-  description: "Two imports that each write [text], neither importing the other, each mint the synthetic entry it lifts to, under the one name §8.2 derives from the form. A synthetic is identified by its form, so the importer reaches one entry by two routes and the merge is ordinary, as a diamond's is; the subject's own [text] is that entry too. A processor treating the two mints as two declarations of one name reports a collision here and is wrong."
-  valid: {
-    binds: [catalogue tag_list label_list]
-  }
-}

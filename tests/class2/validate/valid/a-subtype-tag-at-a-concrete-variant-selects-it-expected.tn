@@ -1,0 +1,10 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-subtype-tag-at-a-concrete-variant-selects-it-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §5.4, [TSON-SCHEMA] §7.2"
+  description: """
+    A concrete variant admits its subtypes, as a field typed by it does: at `( text | base )`, `!sub` IS-A `base`
+    alone, so it selects `base` and validates as a `sub`, whose `extra` is no field of `base`.
+    """
+  valid: _
+}

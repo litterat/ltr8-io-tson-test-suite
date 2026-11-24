@@ -1,0 +1,6 @@
+!!id:"https://tson.io/test-suite/class2/schema/invalid/a-refinement-of-an-array-type-raising-its-ceiling.tn"
+!!import:"https://tson.io/2026/40/m/core.tn"
+!schema {
+  few  => [text; ..5]
+  more => !few ^ { max_items: 6 }
+}

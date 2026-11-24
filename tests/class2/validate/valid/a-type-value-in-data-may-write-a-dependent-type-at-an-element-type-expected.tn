@@ -1,0 +1,13 @@
+!!id:"https://tson.io/test-suite/class2/validate/valid/a-type-value-in-data-may-write-a-dependent-type-at-an-element-type-expected.tn"
+!!import:"https://tson.io/test-suite/schemas/validate-sidecar.tn"
+{
+  spec: "[TSON-SCHEMA] §4.2"
+  description: """
+    A value of a kernel type written as data is held to the kernel's types and declares nothing, so the rules a
+    declaration is held to are not asked of it. `meta.array.element_type` is a `meta.type_expr` and
+    `meta.type_inline.of` a `meta.type`, which `!meta.dependent { on: kind }` is, so the array is valid data. The same
+    body in a schema declaration is refused, a dependent type standing in place at a record field's type and at no
+    other slot (class2/schema/invalid/a-dependent-type-as-an-explicit-element-type).
+    """
+  valid: _
+}
